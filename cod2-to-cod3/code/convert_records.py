@@ -130,6 +130,15 @@ def convert_record(rec):
     if 'Primary-Dataset' in ' '.join(collections):
         maintype = 'Dataset'
         subtype = 'Collision Data'
+    if 'Derived-Dataset' in ' '.join(collections):
+        maintype = 'Dataset'
+        subtype = 'Derived Data'
+    if 'Reconstructed-Data' in ' '.join(collections):
+        maintype = 'Dataset'
+        subtype = 'Reconstructed Data'
+    if 'Tools' in ' '.join(collections):
+        maintype = 'Software'
+        subtype = ''
     elif 'Validation-Utilities' in ' '.join(collections):
         maintype = 'Software'
         subtype = 'Validation'
