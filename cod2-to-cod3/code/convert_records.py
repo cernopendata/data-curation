@@ -538,7 +538,33 @@ def convert_record(rec):
         jrec['language'] = language
 
     # links / 8564
-    # FIXME Tibor Sunday
+    links = []
+    for file_instance in record_get_field_instances(rec, tag="856", ind1="4"):
+        link = {}
+        link_hostname = field_get_subfield_values(file_instance, "a")
+        if link_hostname:
+            link['hostname'] = link_hostname[0]
+        link_compression_information = field_get_subfield_values(file_instance, "c")
+        if link_compression_information:
+            link['compression_information'] = link_compression_information[0]
+        link_size = field_get_subfield_values(file_instance, "s")
+        if link_size:
+            link['size'] = link_size[0]
+        link_url = field_get_subfield_values(file_instance, "u")
+        if link_url:
+            link['url'] = link_url[0]
+        link_description = field_get_subfield_values(file_instance, "y")
+        if link_description:
+            link['description'] = link_description[0]
+        link_comment = field_get_subfield_values(file_instance, "z")
+        if link_comment:
+            link['comment'] = link_comment[0]
+        links.append(link)
+    if links:
+        if jrec.has_key('links'):
+            jrec['links'].extend(links)
+        else:
+            jrec['links'] = links
 
     # files / FFT
     # FIXME need to put files onto EOS in respective directories
