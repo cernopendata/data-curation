@@ -34,6 +34,17 @@ def convert_record(rec):
     if dois:
         jrec['doi'] = field_get_subfield_values(dois[0], "a")[0]
 
+    # CMS ConfDB ID / 035
+    cmsconfdbids = filter_field_instances(record_get_field_instances(rec, tag="035"),
+                                  "9", "CMS-ConfDB")
+    if cmsconfdbids:
+        jrec['cms_confdb_id'] = field_get_subfield_values(cmsconfdbids[0], "a")[0]
+
+    # report number / 037
+    reportnumber = record_get_field_value(rec, tag="037", code="a")
+    if reportnumber:
+        jrec['report_number'] = reportnumber
+
     # authors / 100, 700
     authors = []
     for field_instance in record_get_field_instances(rec, tag="100") + record_get_field_instances(rec, tag="700"):
@@ -54,46 +65,125 @@ def convert_record(rec):
     if authors:
         jrec['authors'] = authors
 
-    # collaboration / 110
+    # collaboration / 110, 710
     collaboration_name = record_get_field_value(rec, tag="110", code="a")
+    collaboration_name_additionals = record_get_field_values(rec, tag="710", code="a")
     collaboration_group = record_get_field_value(rec, tag="110", code="g")
     collaboration_recid = record_get_field_value(rec, tag="110", code="w")
     if collaboration_name or collaboration_group or collaboration_recid:
         collaboration = {}
         if collaboration_name:
             collaboration['name'] = collaboration_name
+        if collaboration_name_additionals:
+            collaboration['additional_names'] = collaboration_name_additionals
         if collaboration_group:
             collaboration['group'] = collaboration_group
         if collaboration_recid:
             collaboration['recid'] = collaboration_recid
         jrec['collaboration'] = collaboration
 
-    # title / 245
+    # title / 245 $a
     title = record_get_field_value(rec, tag="245", code="a")
     if title:
         jrec['title'] = title
 
-    # additional title / 246
-    additional_title = record_get_field_value(rec, tag="246", code="a")
-    if additional_title:
-        jrec['additional_title'] = additional_title
+    # title subtitle / 245 $b
+    title_subtitle = record_get_field_value(rec, tag="245", code="b")
+    if title_subtitle:
+        jrec['title_subtitle'] = title_subtitle
+
+    # title additional / 246 $a
+    title_additional = record_get_field_value(rec, tag="246", code="a")
+    if title_additional:
+        jrec['title_additional'] = title_additional
+
+    # title additional subtitle / 246 $b
+    title_additional_subtitle = record_get_field_value(rec, tag="246", code="b")
+    if title_additional_subtitle:
+        jrec['title_additional_subtitle'] = title_additional_subtitle
 
     # publisher / 260
     publisher = record_get_field_value(rec, tag="260", code="b")
     if publisher:
         jrec['publisher'] = publisher
+
     # date_published / 260
     date_published = record_get_field_value(rec, tag="260", code="c")
     if date_published:
         jrec['date_published'] = date_published
+
     # date_created, date_reprocessed / 264
     date_created = record_get_field_value(rec, tag="264", ind2="0", code="c")
     if date_created:
         jrec['date_created'] = date_created
+
     # date_reprocessed / 960
     date_reprocessed = record_get_field_value(rec, tag="960", code="c")
     if date_reprocessed:
         jrec['date_reprocessed'] = date_reprocessed
+
+    # prepublication / 269
+    prepublication = {}
+    for field_instance in record_get_field_instances(rec, tag="269"):
+        prepublication_places = field_get_subfield_values(field_instance, "a")
+        if prepublication_places:
+            prepublication['place'] = prepublication_places[0]
+        prepublication_publishers = field_get_subfield_values(field_instance, "b")
+        if prepublication_publishers:
+            prepublication['publisher'] = prepublication_publishers[0]
+        prepublication_dates = field_get_subfield_values(field_instance, "c")
+        if prepublication_dates:
+            prepublication['date'] = prepublication_dates[0]
+    if prepublication:
+        jrec['prepublication'] = prepublication
+
+    # pileup / 770
+    pileup = {}
+    pileup_description = record_get_field_value(rec, tag="770", code="i")
+    if pileup_description:
+        pileup = {'description': pileup_description}
+        pileup_links = []
+        for field_instance in record_get_field_instances(rec, tag="770"):
+            field_instance_recids = field_get_subfield_values(field_instance, 'w')
+            field_instance_titles = field_get_subfield_values(field_instance, 'a')
+            pileup_link = {}
+            if field_instance_recids:
+                pileup_link['recid'] = field_instance_recids[0]
+            if field_instance_titles:
+                pileup_link['title'] = field_instance_titles[0]
+            if pileup_link:
+                if pileup.has_key('links'):
+                    pileup['links'].append(pileup_link)
+                else:
+                    pileup['links'] = [pileup_link, ]
+        jrec['pileup'] = pileup
+
+    # extent / 300
+    extent = record_get_field_value(rec, tag="300", code="a")
+    if extent:
+        jrec['extent'] = extent
+
+    # comment / 500
+    comment = record_get_field_value(rec, tag="500", code="a")
+    if comment:
+        jrec['comment'] = comment
+
+    # dataset_semantics / 505
+    dataset_semantics = []
+    for field_instance in record_get_field_instances(rec, tag="505"):
+        entry = {}
+        entry_variables = field_get_subfield_values(field_instance, "t")
+        if entry_variables:
+            entry['variable'] = entry_variables[0]
+        entry_descriptions = field_get_subfield_values(field_instance, "g")
+        if entry_descriptions:
+            entry['description'] = entry_descriptions[0]
+        if dataset_semantics:
+            dataset_semantics.append(entry)
+        else:
+            dataset_semantics = [entry, ]
+    if dataset_semantics:
+        jrec['dataset_semantics'] = dataset_semantics
 
     # distribution / 256
     distribution = {}
@@ -119,36 +209,15 @@ def convert_record(rec):
     # collections / 980
     collections = record_get_field_values(rec, tag="980", code="a")
     collections.extend(record_get_field_values(rec, tag="980", code="b"))
+    collections.extend(record_get_field_values(rec, tag="980", code="c"))
+    if 'DELETED' in collections:
+        return {} # record was deleted
     if 'Education' in collections:
         collections.remove('Education')
     if 'Research' in collections:
         collections.remove('Research')
     if collections:
         jrec['collections'] = collections
-
-    # type, subtype / new
-    if 'Primary-Dataset' in ' '.join(collections):
-        maintype = 'Dataset'
-        subtype = 'Collision Data'
-    if 'Derived-Dataset' in ' '.join(collections):
-        maintype = 'Dataset'
-        subtype = 'Derived Data'
-    if 'Reconstructed-Data' in ' '.join(collections):
-        maintype = 'Dataset'
-        subtype = 'Reconstructed Data'
-    if 'Tools' in ' '.join(collections):
-        maintype = 'Software'
-        subtype = ''
-    elif 'Validation-Utilities' in ' '.join(collections):
-        maintype = 'Software'
-        subtype = 'Validation'
-    else:
-        maintype = 'FIXME'
-        subtype = 'FIXME'
-    if maintype:
-        jrec['type'] = maintype
-    if subtype:
-        jrec['subtype'] = subtype
 
     # system_details / 538
     system_details = {}
@@ -189,6 +258,26 @@ def convert_record(rec):
                 else:
                     abstract['links'] = [abstract_link, ]
         jrec['abstract'] = abstract
+
+    # methodology / 567
+    methodology_description = record_get_field_value(rec, tag="567", code="a")
+    if methodology_description:
+        methodology = {'description': methodology_description}
+        methodology_links = []
+        for field_instance in record_get_field_instances(rec, tag="567"):
+            field_instance_recids = field_get_subfield_values(field_instance, 'w')
+            field_instance_urls = field_get_subfield_values(field_instance, 'u')
+            methodology_link = {}
+            if field_instance_recids:
+                methodology_link['recid'] = field_instance_recids[0]
+            if field_instance_urls:
+                methodology_link['url'] = field_instance_urls[0]
+            if methodology_link:
+                if methodology.has_key('links'):
+                    methodology['links'].append(methodology_link)
+                else:
+                    methodology['links'] = [methodology_link, ]
+        jrec['methodology'] = methodology
 
     # license / 540
     license_attribution = record_get_field_value(rec, tag="540", code="a")
@@ -265,34 +354,39 @@ def convert_record(rec):
                     usage['links'] = [usage_link, ]
         jrec['usage'] = usage
 
-    # note / 787
-    note_description = record_get_field_value(rec, tag="787", code="a")
+    # note / 556
+    note_description = record_get_field_value(rec, tag="556", code="a")
     if note_description:
         note = {'description': note_description}
-        jrec['note'] = note
-
-    # documentation / 556
-    documentation_description = record_get_field_value(rec, tag="556", code="a")
-    if documentation_description:
-        documentation = {'description': documentation_description}
-        documentation_links = []
+        note_links = []
         for field_instance in record_get_field_instances(rec, tag="556"):
             field_instance_recids = field_get_subfield_values(field_instance, 'w')
             field_instance_urls = field_get_subfield_values(field_instance, 'u')
             field_instance_titles = field_get_subfield_values(field_instance, 'y')
-            documentation_link = {}
+            note_link = {}
             if field_instance_recids:
-                documentation_link['recid'] = field_instance_recids[0]
+                note_link['recid'] = field_instance_recids[0]
             if field_instance_urls:
-                documentation_link['url'] = field_instance_urls[0]
+                note_link['url'] = field_instance_urls[0]
             if field_instance_urls:
-                documentation_link['title'] = field_instance_titles[0]
-            if documentation_link:
-                if documentation.has_key('links'):
-                    documentation['links'].append(documentation_link)
+                note_link['title'] = field_instance_titles[0]
+            if note_link:
+                if note.has_key('links'):
+                    note['links'].append(note_link)
                 else:
-                    documentation['links'] = [documentation_link, ]
-        jrec['documentation'] = documentation
+                    note['links'] = [note_link, ]
+        jrec['note'] = note
+
+    # generator / 593
+    generator = {}
+    generator_name = record_get_field_value(rec, tag="593", code="a")
+    if generator_name:
+        generator['name'] = generator_name
+    generator_global_tag = record_get_field_value(rec, tag="593", code="b")
+    if generator_global_tag:
+        generator['global_tag'] = generator_global_tag
+    if generator:
+        jrec['generator'] = generator
 
     # accelerator / 693
     accelerator = record_get_field_value(rec, tag="693", code="a")
@@ -309,7 +403,10 @@ def convert_record(rec):
     if run_period:
         jrec['run_period'] = run_period
 
-    # generation
+    # generation / for simulated data
+    # FIXME to be populated from DAS client
+
+    # selection / for collision data
     # FIXME to be populated from DAS client
 
     # collision_information / 942
@@ -340,9 +437,63 @@ def convert_record(rec):
         if parent_dataset_recid:
             parent_dataset['recid'] = parent_dataset_recid
         if jrec.has_key('relations'):
-            jrec['relations'].extend(parent_dataset)
+            jrec['relations'].append(parent_dataset)
         else:
-            jrec['relations'] = [parent_dataset,]
+            jrec['relations'] = [parent_dataset, ]
+
+    # code to produce files / 777
+    code_to_produce_files_description = record_get_field_value(rec, tag="777", code="a")
+    code_to_produce_files_recid = record_get_field_value(rec, tag="777", code="w")
+    if code_to_produce_files_description or code_to_produce_files_recid:
+        code_to_produce_files = {}
+        code_to_produce_files['type'] = 'isProducedBy'
+        if code_to_produce_files_description:
+            code_to_produce_files['description'] = code_to_produce_files_description
+        if code_to_produce_files_recid:
+            code_to_produce_files['recid'] = code_to_produce_files_recid
+        if jrec.has_key('relations'):
+            jrec['relations'].append(code_to_produce_files)
+        else:
+            jrec['relations'] = [code_to_produce_files, ]
+
+    # related dataset / 786
+    related_dataset_description = record_get_field_value(rec, tag="786", code="a")
+    related_dataset_recid = record_get_field_value(rec, tag="786", code="w")
+    if related_dataset_description or related_dataset_recid:
+        related_dataset = {}
+        related_dataset['type'] = 'isPartOf'
+        if related_dataset_description:
+            related_dataset['description'] = related_dataset_description
+        if related_dataset_recid:
+            related_dataset['recid'] = related_dataset_recid
+        if jrec.has_key('relations'):
+            jrec['relations'].append(related_dataset)
+        else:
+            jrec['relations'] = [related_dataset, ]
+
+    # related item / 787
+    related_item_description = record_get_field_value(rec, tag="787", code="a")
+    related_item_recid = record_get_field_value(rec, tag="787", code="w")
+    related_item_note = record_get_field_value(rec, tag="787", code="n")
+    related_item_url = record_get_field_value(rec, tag="787", code="u")
+    related_item_label = record_get_field_value(rec, tag="787", code="y")
+    if related_item_description or related_item_recid:
+        related_item = {}
+        related_item['type'] = 'isRelatedTo'
+        if related_item_description:
+            related_item['description'] = related_item_description
+        if related_item_recid:
+            related_item['recid'] = related_item_recid
+        if related_item_note:
+            related_item['note'] = related_item_note
+        if related_item_url:
+            related_item['url'] = related_item_url
+        if related_item_label:
+            related_item['label'] = related_item_label
+        if jrec.has_key('relations'):
+            jrec['relations'].append(related_item)
+        else:
+            jrec['relations'] = [related_item, ]
 
     # files / 8567
     files = []
@@ -369,8 +520,98 @@ def convert_record(rec):
         else:
             jrec['keywords'] = keywords
 
+    # topic / 655
+    topic = {}
+    for field_instance in record_get_field_instances(rec, tag="655", ind2="7"):
+        topic_categories = field_get_subfield_values(field_instance, "a")
+        if topic_categories:
+            topic['category'] = topic_categories[0]
+        topic_sources = field_get_subfield_values(field_instance, "9")
+        if topic_sources:
+            topic['source'] = topic_sources[0]
+    if topic:
+        jrec['topic'] = topic
+
+    # language / 041
+    language = record_get_field_value(rec, tag="041", code="a")
+    if language:
+        jrec['language'] = language
+
+    # links / 8564
+    # FIXME Tibor Sunday
+
     # files / FFT
     # FIXME need to put files onto EOS in respective directories
+
+    # type, subtype / new
+    jrec['type'] = {}
+    if 'Primary-Dataset' in ' '.join(collections):
+        jrec['type']['primary'] = 'Dataset'
+        jrec['type']['secondary'] = ['Collision Data', ]
+    elif '-Detector-Datasets' in ' '.join(collections):
+        jrec['type']['primary'] = 'Dataset'
+        jrec['type']['secondary'] = ['Event Data', ]
+    elif '-Detector-Events' in ' '.join(collections):
+        jrec['type']['primary'] = 'Dataset'
+        jrec['type']['secondary'] = ['Event Data', ]
+    elif 'Derived-Dataset' in ' '.join(collections):
+        jrec['type']['primary'] = 'Dataset'
+        jrec['type']['secondary'] = ['Derived Data', ]
+    elif 'Reconstructed-Data' in ' '.join(collections):
+        jrec['type']['primary'] = 'Dataset'
+        jrec['type']['secondary'] = ['Reconstructed Data', ]
+    elif 'Simulated-Dataset' in ' '.join(collections):
+        jrec['type']['primary'] = 'Dataset'
+        jrec['type']['secondary'] = ['Simulated Data', ]
+    elif 'Tools' in ' '.join(collections):
+        jrec['type']['primary'] = 'Software'
+        jrec['type']['secondary'] = []
+    elif 'Validation-Utilities' in ' '.join(collections):
+        jrec['type']['primary'] = 'Software'
+        jrec['type']['secondary'] = ['Validation', ]
+    elif 'Learning-Resources' in ' '.join(collections):
+        jrec['type']['primary'] = 'Documentation'
+        jrec['type']['secondary'] = []
+    elif 'Configuration-Files' in ' '.join(collections):
+        jrec['type']['primary'] = 'Configuration'
+        jrec['type']['secondary'] = ['Configuration File', ]
+    elif 'Trigger-Information' in ' '.join(collections):
+        jrec['type']['primary'] = 'Configuration'
+        jrec['type']['secondary'] = ['Trigger Information', ]
+    elif 'Luminosity-Information' in ' '.join(collections):
+        jrec['type']['primary'] = 'Configuration'
+        jrec['type']['secondary'] = ['Luminosity Information', ]
+    elif 'Condition-Data' in ' '.join(collections):
+        jrec['type']['primary'] = 'Configuration'
+        jrec['type']['secondary'] = ['Condition Database', ]
+    elif 'Open-Data-Instructions' in ' '.join(collections):
+        jrec['type']['primary'] = 'Documentation'
+        jrec['type']['secondary'] = []
+    elif 'Data-Policies' in ' '.join(collections):
+        jrec['type']['primary'] = 'Documentation'
+        jrec['type']['secondary'] = []
+    elif 'Author-Lists' in ' '.join(collections):
+        jrec['type']['primary'] = 'Documentation'
+        jrec['type']['secondary'] = []
+    elif 'ATLAS-Higgs-Challenge-2014' in ' '.join(collections):
+        if 'Dataset' in title:
+            jrec['type']['primary'] = 'Dataset'
+            jrec['type']['secondary'] = ['Derived Data']
+        elif 'Documentation' in title:
+            jrec['type']['primary'] = 'Documentation'
+            jrec['type']['secondary'] = []
+        elif 'Video' in title:
+            jrec['type']['primary'] = 'Documentation'
+            jrec['type']['secondary'] = []
+        elif 'Software' in title:
+            jrec['type']['primary'] = 'Software'
+            jrec['type']['secondary'] = ['Analysis']
+        else:
+            jrec['type']['primary'] = 'FIXME'
+            jrec['type']['secondary'] = []
+    else:
+        jrec['type']['primary'] = 'FIXME'
+        jrec['type']['secondary'] = ['FIXME', ]
 
     return jrec
 
