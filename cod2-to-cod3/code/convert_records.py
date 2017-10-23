@@ -185,6 +185,19 @@ def convert_record(rec):
     if dataset_semantics:
         jrec['dataset_semantics'] = dataset_semantics
 
+    # collections / 980
+    collections = record_get_field_values(rec, tag="980", code="a")
+    collections.extend(record_get_field_values(rec, tag="980", code="b"))
+    collections.extend(record_get_field_values(rec, tag="980", code="c"))
+    if 'DELETED' in collections:
+        return {} # record was deleted
+    if 'Education' in collections:
+        collections.remove('Education')
+    if 'Research' in collections:
+        collections.remove('Research')
+    if collections:
+        jrec['collections'] = collections
+
     # distribution / 256
     distribution = {}
     distribution_number_events = sum([int(x) for x in record_get_field_values(rec, tag="256", code="e")])
@@ -199,25 +212,14 @@ def convert_record(rec):
     formats = []
     if '.root' in ' '.join(record_get_field_values(rec, tag="856", ind1="7", code="u")):
         formats.append('root')
+    if 'OPERA' in ' '.join(collections):
+        formats.append('csv')
     if title.endswith('/AOD'):
         formats.append('aod')
     if formats:
         distribution['formats'] = formats
     if distribution:
         jrec['distribution'] = distribution
-
-    # collections / 980
-    collections = record_get_field_values(rec, tag="980", code="a")
-    collections.extend(record_get_field_values(rec, tag="980", code="b"))
-    collections.extend(record_get_field_values(rec, tag="980", code="c"))
-    if 'DELETED' in collections:
-        return {} # record was deleted
-    if 'Education' in collections:
-        collections.remove('Education')
-    if 'Research' in collections:
-        collections.remove('Research')
-    if collections:
-        jrec['collections'] = collections
 
     # system_details / 538
     system_details = {}
