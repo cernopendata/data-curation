@@ -41,9 +41,6 @@ def convert_record(rec):
         jrec['cms_confdb_id'] = field_get_subfield_values(cmsconfdbids[0], "a")[0]
 
     # report number / 037
-    reportnumber = record_get_field_value(rec, tag="037", code="a")
-    if reportnumber:
-        jrec['report_number'] = reportnumber
 
     # authors / 100, 700
     authors = []
@@ -73,9 +70,9 @@ def convert_record(rec):
     if collaboration_name or collaboration_group or collaboration_recid:
         collaboration = {}
         if collaboration_name:
+            for collaboration_name_additional in collaboration_name_additionals:
+                collaboration_name += ' and ' + collaboration_name_additional
             collaboration['name'] = collaboration_name
-        if collaboration_name_additionals:
-            collaboration['additional_names'] = collaboration_name_additionals
         if collaboration_group:
             collaboration['group'] = collaboration_group
         if collaboration_recid:
@@ -122,7 +119,7 @@ def convert_record(rec):
     if date_reprocessed:
         jrec['date_reprocessed'] = date_reprocessed
 
-    # prepublication / 269
+    # prepublication with reportnumber / 269, 037
     prepublication = {}
     for field_instance in record_get_field_instances(rec, tag="269"):
         prepublication_places = field_get_subfield_values(field_instance, "a")
@@ -134,6 +131,9 @@ def convert_record(rec):
         prepublication_dates = field_get_subfield_values(field_instance, "c")
         if prepublication_dates:
             prepublication['date'] = prepublication_dates[0]
+        prepublication_reportnumber = record_get_field_value(rec, tag="037", code="a")
+        if prepublication_reportnumber:
+            prepublication['report_number'] = prepublication_reportnumber
     if prepublication:
         jrec['prepublication'] = prepublication
 
@@ -160,7 +160,7 @@ def convert_record(rec):
 
     # extent / 300
     extent = record_get_field_value(rec, tag="300", code="a")
-    if extent:
+    if extent and False:  # we decided not to retain extent field in COD3
         jrec['extent'] = extent
 
     # comment / 500
@@ -225,9 +225,14 @@ def convert_record(rec):
     system_details = {}
     system_details_release = record_get_field_value(rec, tag="538", code="a")
     if system_details_release:
+        system_details_release = system_details_release.replace('Recommended release for analysis: ', '')
+        system_details_release = system_details_release.replace('Recommended Software Release: ', '')
+        system_details_release = system_details_release.replace('Software release: ', '')
+        system_details_release = system_details_release.replace('Release: ', '')
         system_details['release'] = system_details_release
     system_details_global_tag = record_get_field_value(rec, tag="538", code="b")
     if system_details_global_tag:
+        system_details_global_tag = system_details_global_tag.replace('Global tag: ', '')
         system_details['global_tag'] = system_details_global_tag
     system_details_description = record_get_field_value(rec, tag="538", code="i")
     if system_details_description:
@@ -319,18 +324,22 @@ def convert_record(rec):
             field_instance_recids = field_get_subfield_values(field_instance, 'w')
             field_instance_urls = field_get_subfield_values(field_instance, 'u')
             field_instance_descriptions = field_get_subfield_values(field_instance, 'y')
-            use_with_link = {}
-            if field_instance_recids:
-                use_with_link['recid'] = field_instance_recids[0]
-            if field_instance_urls:
-                use_with_link['url'] = field_instance_urls[0]
-            if field_instance_descriptions:
-                use_with_link['description'] = field_instance_descriptions[0]
-            if use_with_link:
-                if use_with.has_key('links'):
-                    use_with['links'].append(use_with_link)
-                else:
-                    use_with['links'] = [use_with_link, ]
+            # workaround for one record:
+            if not field_instance_recids and field_instance_urls and \
+               field_instance_urls[0] == 'http://opendata.cern.ch/record/14':
+                field_instance_recids = ["14", ]
+            for field_instance_recid in field_instance_recids:
+                use_with_link = {}
+                use_with_link['recid'] = field_instance_recid
+                if field_instance_urls:
+                    use_with_link['url'] = field_instance_urls[0]
+                if field_instance_descriptions:
+                    use_with_link['description'] = field_instance_descriptions[0]
+                if use_with_link:
+                    if use_with.has_key('links'):
+                        use_with['links'].append(use_with_link)
+                    else:
+                        use_with['links'] = [use_with_link, ]
         jrec['use_with'] = use_with
 
     # usage / 581
@@ -383,9 +392,12 @@ def convert_record(rec):
     generator = {}
     generator_name = record_get_field_value(rec, tag="593", code="a")
     if generator_name:
-        generator['name'] = generator_name
+        generator_name = generator_name.replace('Generators: ', '')
+        generator_names = generator_name.split()
+        generator['names'] = generator_names
     generator_global_tag = record_get_field_value(rec, tag="593", code="b")
     if generator_global_tag:
+        generator_global_tag = generator_global_tag.replace('Global tag: ', '')
         generator['global_tag'] = generator_global_tag
     if generator:
         jrec['generator'] = generator
@@ -406,10 +418,10 @@ def convert_record(rec):
         jrec['run_period'] = run_period
 
     # generation / for simulated data
-    # FIXME to be populated from DAS client
+    # FIXME to be populated from DAS client? introduce structure inside methodology field
 
     # selection / for collision data
-    # FIXME to be populated from DAS client
+    # FIXME to be populated from DAS client? introduce structure inside methodology field
 
     # collision_information / 942
     collision_information_energy = record_get_field_value(rec, tag="942", code="e")
@@ -475,27 +487,43 @@ def convert_record(rec):
 
     # related item / 787
     related_item_description = record_get_field_value(rec, tag="787", code="a")
-    related_item_recid = record_get_field_value(rec, tag="787", code="w")
+    related_item_recids = record_get_field_values(rec, tag="787", code="w")
     related_item_note = record_get_field_value(rec, tag="787", code="n")
     related_item_url = record_get_field_value(rec, tag="787", code="u")
     related_item_label = record_get_field_value(rec, tag="787", code="y")
-    if related_item_description or related_item_recid:
-        related_item = {}
-        related_item['type'] = 'isRelatedTo'
-        if related_item_description:
-            related_item['description'] = related_item_description
-        if related_item_recid:
-            related_item['recid'] = related_item_recid
+    if related_item_description and not related_item_recids:
+        # workaround for a record
+        if related_item_description == 'The default output of the code below is a ROOT file Mu00val.root':
+            note = related_item_description
+            if jrec.has_key('note') and jrec['note'].has_key('description'):
+                jrec['note']['description'] += note
+            else:
+                jrec['note'] = {'description': note}
+    if related_item_recids:
+        for related_item_recid in related_item_recids:
+            related_item = {}
+            related_item['type'] = 'isRelatedTo'
+            if related_item_description:
+                related_item['description'] = related_item_description
+            if related_item_recid:
+                related_item['recid'] = related_item_recid
+            if jrec.has_key('relations'):
+                jrec['relations'].append(related_item)
+            else:
+                jrec['relations'] = [related_item, ]
+    if related_item_url:
+        link = {}
         if related_item_note:
-            related_item['note'] = related_item_note
+            link['description'] = related_item_note
         if related_item_url:
-            related_item['url'] = related_item_url
+            link['url'] = related_item_url
         if related_item_label:
-            related_item['label'] = related_item_label
-        if jrec.has_key('relations'):
-            jrec['relations'].append(related_item)
+            if related_item_label != related_item_url:
+                link['comment'] = related_item_label
+        if jrec.has_key('links'):
+            jrec['links'].append(link)
         else:
-            jrec['relations'] = [related_item, ]
+            jrec['links'] = [link, ]
 
     # files / 8567
     files = []
@@ -507,6 +535,7 @@ def convert_record(rec):
         afile['uri'] = file_uri
         file_size = field_get_subfield_values(file_instance, "s")[0]
         afile['size'] = int(file_size)
+        afile['checksum'] = 'checksum": "sha1:0000000000000000000000000000000000000000' # FIXME
         files.append(afile)
     if files:
         if jrec.has_key('files'):
