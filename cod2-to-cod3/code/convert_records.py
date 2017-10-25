@@ -535,7 +535,7 @@ def convert_record(rec):
         afile['uri'] = file_uri
         file_size = field_get_subfield_values(file_instance, "s")[0]
         afile['size'] = int(file_size)
-        afile['checksum'] = 'checksum": "sha1:0000000000000000000000000000000000000000' # FIXME
+        afile['checksum'] = 'sha1:0000000000000000000000000000000000000000'  # FIXME detect real SHA1 of files
         files.append(afile)
     if files:
         if jrec.has_key('files'):
