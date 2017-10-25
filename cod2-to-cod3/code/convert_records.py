@@ -392,7 +392,7 @@ def convert_record(rec):
         if jrec.has_key('note'):
             raise StandardError('Sorry, cannot have both note/556 and note/500 fields.')
         else:
-            jrec['note'] = comment
+            jrec['note'] = {'description': comment}
 
     # generator / 593
     generator = {}
