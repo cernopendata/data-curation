@@ -568,6 +568,8 @@ def convert_record(rec):
     # language / 041
     language = record_get_field_value(rec, tag="041", code="a")
     if language:
+        if language == 'eng':
+            language = 'English'
         jrec['language'] = language
 
     # links / 8564
