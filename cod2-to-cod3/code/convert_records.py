@@ -6,9 +6,11 @@ Usage: see ../run.sh
 """
 
 import copy
+import datetime
 import json
 import os
 import sys
+import time
 
 from invenio.bibrecord import create_records, \
     field_get_subfield_values, \
@@ -130,7 +132,8 @@ def convert_record(rec):
             prepublication['publisher'] = prepublication_publishers[0]
         prepublication_dates = field_get_subfield_values(field_instance, "c")
         if prepublication_dates:
-            prepublication['date'] = prepublication_dates[0]
+            prepublication_time = time.strptime(prepublication_dates[0], "%d %b %Y")
+            prepublication['date'] = time.strftime("%Y-%m-%d", prepublication_time)
         prepublication_reportnumber = record_get_field_value(rec, tag="037", code="a")
         if prepublication_reportnumber:
             prepublication['report_number'] = prepublication_reportnumber
