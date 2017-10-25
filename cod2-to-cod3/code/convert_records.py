@@ -430,6 +430,8 @@ def convert_record(rec):
     if collision_information_energy or collision_information_luminosity or collision_information_type:
         collision_information = {}
         if collision_information_energy:
+            collision_information_energy = collision_information_energy.replace('Collision energy: ', '')
+            collision_information_energy = collision_information_energy.replace('Collision energy:', '')
             collision_information['energy'] = collision_information_energy
         if collision_information_luminosity:
             collision_information['luminosity'] = collision_information_luminosity
