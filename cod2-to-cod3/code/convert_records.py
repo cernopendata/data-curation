@@ -553,6 +553,7 @@ def convert_record(rec):
 
     # keywords / 653
     keywords = record_get_field_values(rec, tag="653", ind1="1", code="a")
+    keywords = [keyword.lower() for keyword in keywords]
     if keywords:
         if jrec.has_key('keywords'):
             jrec['keywords'].extend(keywords)
