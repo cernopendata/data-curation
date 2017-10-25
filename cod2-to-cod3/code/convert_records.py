@@ -163,11 +163,6 @@ def convert_record(rec):
     if extent and False:  # we decided not to retain extent field in COD3
         jrec['extent'] = extent
 
-    # comment / 500
-    comment = record_get_field_value(rec, tag="500", code="a")
-    if comment:
-        jrec['comment'] = comment
-
     # dataset_semantics / 505
     dataset_semantics = []
     for field_instance in record_get_field_instances(rec, tag="505"):
@@ -387,6 +382,14 @@ def convert_record(rec):
                 else:
                     note['links'] = [note_link, ]
         jrec['note'] = note
+
+    # note / 500
+    comment = record_get_field_value(rec, tag="500", code="a")
+    if comment:
+        if jrec.has_key('note'):
+            raise StandardError('Sorry, cannot have both note/556 and note/500 fields.')
+        else:
+            jrec['note'] = comment
 
     # generator / 593
     generator = {}
