@@ -214,6 +214,23 @@ def convert_record(rec):
         formats.append('csv')
     if title.endswith('/AOD'):
         formats.append('aod')
+    if title.endswith('/AODSIM'):
+        formats.append('aodsim')
+    if title.endswith('/RAW'):
+        formats.append('raw')
+    fft_extensions = []
+    for fft in record_get_field_values(rec, tag="FFT", code="a"):
+        fft_basename, fft_extension = os.path.splitext(fft)
+        if 'file-indexes' in fft_basename:
+            continue
+        if fft_extension == '.configFile':
+            fft_extension = '.py'
+        if fft_extension not in fft_extensions:
+            fft_extensions.append(fft_extension[1:])
+    for fft_extension in fft_extensions:
+        if fft_extension:
+            if not fft_extension in formats:
+                formats.append(fft_extension)
     if formats:
         distribution['formats'] = formats
     if distribution:
@@ -443,6 +460,12 @@ def convert_record(rec):
             collision_information['luminosity'] = collision_information_luminosity
         if collision_information_type:
             collision_information['type'] = collision_information_type
+        else:
+            if 'Data' in ' '.join(collections):
+                if 'PbPb' in title:
+                    collision_information['type'] = 'PbPb'
+                else:
+                    collision_information['type'] = 'pp'
         jrec['collision_information'] = collision_information
 
     # parent_dataset / 772
@@ -615,25 +638,29 @@ def convert_record(rec):
     jrec['type'] = {}
     if 'Primary-Dataset' in ' '.join(collections):
         jrec['type']['primary'] = 'Dataset'
-        jrec['type']['secondary'] = ['Collision Data', ]
+        jrec['type']['secondary'] = ['Collision', ]
     elif '-Detector-Datasets' in ' '.join(collections):
         jrec['type']['primary'] = 'Dataset'
-        jrec['type']['secondary'] = ['Event Data', ]
+        jrec['type']['secondary'] = ['Derived', ]
     elif '-Detector-Events' in ' '.join(collections):
         jrec['type']['primary'] = 'Dataset'
-        jrec['type']['secondary'] = ['Event Data', ]
+        jrec['type']['secondary'] = ['Derived', ]
     elif 'Derived-Dataset' in ' '.join(collections):
         jrec['type']['primary'] = 'Dataset'
-        jrec['type']['secondary'] = ['Derived Data', ]
+        jrec['type']['secondary'] = ['Derived', ]
     elif 'Reconstructed-Data' in ' '.join(collections):
         jrec['type']['primary'] = 'Dataset'
-        jrec['type']['secondary'] = ['Reconstructed Data', ]
+        jrec['type']['secondary'] = ['Collision', ]
     elif 'Simulated-Dataset' in ' '.join(collections):
         jrec['type']['primary'] = 'Dataset'
-        jrec['type']['secondary'] = ['Simulated Data', ]
+        jrec['type']['secondary'] = ['Simulated', ]
     elif 'Tools' in ' '.join(collections):
-        jrec['type']['primary'] = 'Software'
-        jrec['type']['secondary'] = []
+        if 'virtual machine' in abstract_description.lower():
+            jrec['type']['primary'] = 'Environment'
+            jrec['type']['secondary'] = ['VM']
+        else:
+            jrec['type']['primary'] = 'Software'
+            jrec['type']['secondary'] = []
     elif 'Validation-Utilities' in ' '.join(collections):
         jrec['type']['primary'] = 'Software'
         jrec['type']['secondary'] = ['Validation', ]
@@ -641,17 +668,17 @@ def convert_record(rec):
         jrec['type']['primary'] = 'Documentation'
         jrec['type']['secondary'] = []
     elif 'Configuration-Files' in ' '.join(collections):
-        jrec['type']['primary'] = 'Configuration'
-        jrec['type']['secondary'] = ['Configuration File', ]
+        jrec['type']['primary'] = 'Supplementaries'
+        jrec['type']['secondary'] = ['Configuration', ]
     elif 'Trigger-Information' in ' '.join(collections):
-        jrec['type']['primary'] = 'Configuration'
-        jrec['type']['secondary'] = ['Trigger Information', ]
+        jrec['type']['primary'] = 'Supplementaries'
+        jrec['type']['secondary'] = ['Trigger', ]
     elif 'Luminosity-Information' in ' '.join(collections):
-        jrec['type']['primary'] = 'Configuration'
-        jrec['type']['secondary'] = ['Luminosity Information', ]
+        jrec['type']['primary'] = 'Supplementaries'
+        jrec['type']['secondary'] = ['Luminosity', ]
     elif 'Condition-Data' in ' '.join(collections):
-        jrec['type']['primary'] = 'Configuration'
-        jrec['type']['secondary'] = ['Condition Database', ]
+        jrec['type']['primary'] = 'Environment'
+        jrec['type']['secondary'] = ['Condition', ]
     elif 'Open-Data-Instructions' in ' '.join(collections):
         jrec['type']['primary'] = 'Documentation'
         jrec['type']['secondary'] = []
@@ -664,7 +691,7 @@ def convert_record(rec):
     elif 'ATLAS-Higgs-Challenge-2014' in ' '.join(collections):
         if 'Dataset' in title:
             jrec['type']['primary'] = 'Dataset'
-            jrec['type']['secondary'] = ['Derived Data']
+            jrec['type']['secondary'] = ['Derived']
         elif 'Documentation' in title:
             jrec['type']['primary'] = 'Documentation'
             jrec['type']['secondary'] = []
