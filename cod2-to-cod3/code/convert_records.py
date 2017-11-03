@@ -8,6 +8,7 @@ Usage: see ../run.sh
 import copy
 import datetime
 import json
+import re
 import os
 import sys
 import time
@@ -574,6 +575,53 @@ def convert_record(rec):
         else:
             jrec['files'] = files
 
+    # files / FFT
+    files = []
+    for file_instance in record_get_field_instances(rec, tag="FFT"):
+        file_name = field_get_subfield_values(file_instance, "a")[0]
+        file_name = os.path.basename(file_name)
+        file_descriptions = field_get_subfield_values(file_instance, "z")
+        if file_descriptions:
+            file_description = file_descriptions[0]
+        else:
+            file_description = ''
+        file_uri = ''
+        match = re.search(r'(.*?)_(.*?)_(.*)_(AOD|RAW)_(.*)_([0-9]+)_file_index.txt$', file_name)
+        if match:
+            file_experiment, file_release, file_dataset, file_format, file_version, file_volume = match.groups()
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/' + \
+                       file_experiment.lower() + '/' + \
+                       file_release + '/' + \
+                       file_dataset + '/' + \
+                       file_format + '/' + \
+                       file_version + '/' + \
+                       'file-indexes/' + file_name
+        else:
+            match = re.search(r'(.*?)_(MonteCarlo[0-9]+)_(.*?)_(.*)_(AODSIM)_(.*)_([0-9]+)_file_index.txt$', file_name)
+            if match:
+                file_experiment, file_montecarlo, file_release, file_dataset, file_format, file_version, file_volume = match.groups()
+                file_uri = 'root://eospublic.cern.ch//eos/opendata/' + \
+                           file_experiment.lower() + '/' + \
+                           file_montecarlo + '/' + \
+                           file_release + '/' + \
+                           file_dataset + '/' + \
+                           file_format + '/' + \
+                           file_version + '/' + \
+                           'file-indexes/' + file_name
+        if file_uri:
+            afile = {}
+            afile['type'] = 'index'
+            afile['uri'] = file_uri
+            afile['size'] = 0 # FIXME detect real size of file
+            afile['description'] = file_description
+            afile['checksum'] = 'sha1:0000000000000000000000000000000000000000'  # FIXME detect real SHA1 of files
+            files.append(afile)
+    if files:
+        if jrec.has_key('files'):
+            jrec['files'].extend(files)
+        else:
+            jrec['files'] = files
+
     # keywords / 653
     keywords = record_get_field_values(rec, tag="653", ind1="1", code="a")
     keywords = [keyword.lower() for keyword in keywords]
@@ -630,9 +678,6 @@ def convert_record(rec):
             jrec['links'].extend(links)
         else:
             jrec['links'] = links
-
-    # files / FFT
-    # FIXME need to put files onto EOS in respective directories
 
     # type, subtype / new
     jrec['type'] = {}
