@@ -21,6 +21,9 @@ from invenio.bibrecord import create_records, \
     record_get_field_values
 
 
+from fft_file_cache_info import fft_file_cache_info
+
+
 def convert_record(rec):
     "Convert single REC record to JSON."
 
@@ -211,14 +214,14 @@ def convert_record(rec):
     formats = []
     if '.root' in ' '.join(record_get_field_values(rec, tag="856", ind1="7", code="u")):
         formats.append('root')
+    if '/AOD/' in ' '.join(record_get_field_values(rec, tag="856", ind1="7", code="u")):
+        formats.append('aod')
+    if '/AODSIM/' in ' '.join(record_get_field_values(rec, tag="856", ind1="7", code="u")):
+        formats.append('aodsim')
+    if '/RAW/' in ' '.join(record_get_field_values(rec, tag="856", ind1="7", code="u")):
+        formats.append('raw')
     if 'OPERA' in ' '.join(collections):
         formats.append('csv')
-    if title.endswith('/AOD'):
-        formats.append('aod')
-    if title.endswith('/AODSIM'):
-        formats.append('aodsim')
-    if title.endswith('/RAW'):
-        formats.append('raw')
     fft_extensions = []
     for fft in record_get_field_values(rec, tag="FFT", code="a"):
         fft_basename, fft_extension = os.path.splitext(fft)
@@ -612,9 +615,9 @@ def convert_record(rec):
             afile = {}
             afile['type'] = 'index'
             afile['uri'] = file_uri
-            afile['size'] = 0 # FIXME detect real size of file
+            afile['size'] = fft_file_cache_info[file_name]['size']
             afile['description'] = file_description
-            afile['checksum'] = 'sha1:0000000000000000000000000000000000000000'  # FIXME detect real SHA1 of files
+            afile['checksum'] = 'sha1:' + fft_file_cache_info[file_name]['checksum']
             files.append(afile)
     if files:
         if jrec.has_key('files'):
