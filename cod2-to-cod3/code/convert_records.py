@@ -374,7 +374,10 @@ def convert_record(rec):
             if field_instance_recids:
                 usage_link['recid'] = field_instance_recids[0]
             if field_instance_urls:
-                usage_link['url'] = field_instance_urls[0]
+                field_instance_url = field_instance_urls[0]
+                if field_instance_url.startswith('http://atlas-opendata.web.cern.ch/atlas-opendata/'):
+                    field_instance_url = field_instance_url.replace('http://atlas-opendata.web.cern.ch/atlas-opendata/', 'http://opendata.atlas.cern/')
+                usage_link['url'] = field_instance_url
             if field_instance_descriptions:
                 usage_link['description'] = field_instance_descriptions[0]
             if usage_link:
