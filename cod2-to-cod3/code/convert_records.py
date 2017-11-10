@@ -439,6 +439,8 @@ def convert_record(rec):
 
     # experiment / 693
     experiment = record_get_field_value(rec, tag="693", code="e")
+    if not experiment and (recid == '60' or recid == '352'):
+        experiment = 'ATLAS'
     if experiment:
         jrec['experiment'] = experiment
 
@@ -630,7 +632,7 @@ def convert_record(rec):
 
     # keywords / 653
     keywords = record_get_field_values(rec, tag="653", ind1="1", code="a")
-    keywords = [keyword.lower() for keyword in keywords]
+    keywords = [keyword.lower() for keyword in keywords if keyword != experiment]
     if keywords:
         if jrec.has_key('keywords'):
             jrec['keywords'].extend(keywords)
