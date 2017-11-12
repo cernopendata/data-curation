@@ -511,19 +511,20 @@ def convert_record(rec):
             jrec['relations'] = [code_to_produce_files, ]
 
     # related dataset / 786
-    related_dataset_description = record_get_field_value(rec, tag="786", code="a")
-    related_dataset_recid = record_get_field_value(rec, tag="786", code="w")
-    if related_dataset_description or related_dataset_recid:
-        related_dataset = {}
-        related_dataset['type'] = 'isPartOf'
-        if related_dataset_description:
-            related_dataset['description'] = related_dataset_description
-        if related_dataset_recid:
-            related_dataset['recid'] = related_dataset_recid
-        if jrec.has_key('relations'):
-            jrec['relations'].append(related_dataset)
-        else:
-            jrec['relations'] = [related_dataset, ]
+    for field_instance in record_get_field_instances(rec, tag="786"):
+        related_dataset_descriptions = field_get_subfield_values(field_instance, "a")
+        related_dataset_recids = field_get_subfield_values(field_instance, "w")
+        if related_dataset_descriptions or related_dataset_recids:
+            related_dataset = {}
+            related_dataset['type'] = 'isPartOf'
+            if related_dataset_descriptions:
+                related_dataset['description'] = related_dataset_descriptions[0]
+            if related_dataset_recids:
+                related_dataset['recid'] = related_dataset_recids[0]
+            if jrec.has_key('relations'):
+                jrec['relations'].append(related_dataset)
+            else:
+                jrec['relations'] = [related_dataset, ]
 
     # related item / 787
     related_item_description = record_get_field_value(rec, tag="787", code="a")
