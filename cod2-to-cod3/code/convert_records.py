@@ -586,6 +586,8 @@ def convert_record(rec):
     # files / FFT
     files = []
     for file_instance in record_get_field_instances(rec, tag="FFT"):
+
+        # read FFT file properties
         file_name = field_get_subfield_values(file_instance, "a")[0]
         file_name = os.path.basename(file_name)
         file_descriptions = field_get_subfield_values(file_instance, "z")
@@ -593,35 +595,59 @@ def convert_record(rec):
             file_description = file_descriptions[0]
         else:
             file_description = ''
+
+        #  output location that will be populated below
         file_uri = ''
-        match = re.search(r'(.*?)_(.*?)_(.*)_(AOD|RAW)_(.*)_([0-9]+)_file_index.txt$', file_name)
-        if match:
-            file_experiment, file_release, file_dataset, file_format, file_version, file_volume = match.groups()
-            file_uri = 'root://eospublic.cern.ch//eos/opendata/' + \
-                       file_experiment.lower() + '/' + \
-                       file_release + '/' + \
-                       file_dataset + '/' + \
-                       file_format + '/' + \
-                       file_version + '/' + \
-                       'file-indexes/' + file_name
-        else:
-            match = re.search(r'(.*?)_(MonteCarlo[0-9]+)_(.*?)_(.*)_(AODSIM)_(.*)_([0-9]+)_file_index.txt$', file_name)
+        file_type = 'xrootd'
+
+        # CMS
+        if 'CMS' in ' '.join(collections):
+            match = re.search(r'(.*?)_(.*?)_(.*)_(AOD|RAW)_(.*)_([0-9]+)_file_index.txt$', file_name)
             if match:
-                file_experiment, file_montecarlo, file_release, file_dataset, file_format, file_version, file_volume = match.groups()
+                file_type = 'index'
+                file_experiment, file_release, file_dataset, file_format, file_version, file_volume = match.groups()
                 file_uri = 'root://eospublic.cern.ch//eos/opendata/' + \
-                           file_experiment.lower() + '/' + \
-                           file_montecarlo + '/' + \
-                           file_release + '/' + \
-                           file_dataset + '/' + \
-                           file_format + '/' + \
-                           file_version + '/' + \
-                           'file-indexes/' + file_name
+                        file_experiment.lower() + '/' + \
+                        file_release + '/' + \
+                        file_dataset + '/' + \
+                        file_format + '/' + \
+                        file_version + '/' + \
+                        'file-indexes/' + file_name
+            else:
+                match = re.search(r'(.*?)_(MonteCarlo[0-9]+)_(.*?)_(.*)_(AODSIM)_(.*)_([0-9]+)_file_index.txt$', file_name)
+                if match:
+                    file_type = 'index'
+                    file_experiment, file_montecarlo, file_release, file_dataset, file_format, file_version, file_volume = match.groups()
+                    file_uri = 'root://eospublic.cern.ch//eos/opendata/' + \
+                            file_experiment.lower() + '/' + \
+                            file_montecarlo + '/' + \
+                            file_release + '/' + \
+                            file_dataset + '/' + \
+                            file_format + '/' + \
+                            file_version + '/' + \
+                            'file-indexes/' + file_name
+
+        # OPERA
+        if 'OPERA' in ' '.join(collections):
+            match = re.search(r'^(.*).(csv|zip)$', file_name)
+            if match:
+                file_name_base, file_name_ext = match.groups()
+                if file_name_ext == 'zip':
+                    file_uri_base = 'root://eospublic.cern.ch//eos/opendata/opera/datasets/multiplicity'
+                elif file_name_ext == 'csv':
+                    file_uri_base = 'root://eospublic.cern.ch//eos/opendata/opera/events/multiplicity'
+                else:
+                    raise StandardError('Not expected.')
+                file_uri = file_uri_base + '/' + file_name_base + '.' + file_name_ext
+
+        # generate files output
         if file_uri:
             afile = {}
-            afile['type'] = 'index'
+            afile['type'] = file_type
             afile['uri'] = file_uri
             afile['size'] = fft_file_cache_info[file_name]['size']
-            afile['description'] = file_description
+            if file_description:
+                afile['description'] = file_description
             afile['checksum'] = 'sha1:' + fft_file_cache_info[file_name]['checksum']
             files.append(afile)
     if files:
