@@ -641,7 +641,14 @@ def convert_record(rec):
                     raise StandardError('Not expected.')
                 file_uri = file_uri_base + '/' + file_name_base + '.' + file_name_ext
 
-        # generate files output
+        # author lists
+        if 'Author-Lists' in collections:
+            match = re.search(r'^(.*)-author-list-(.*).pdf$', file_name)
+            if match:
+                file_name_exp, file_name_year = match.groups()
+                file_uri = 'root://eospublic.cern.ch//eos/opendata/' + file_name_exp + '/documentation/' + file_name
+
+        # ok, recognised enough; now generate files output
         if file_uri:
             afile = {}
             afile['type'] = file_type
