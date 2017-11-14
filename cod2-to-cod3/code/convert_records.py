@@ -646,7 +646,14 @@ def convert_record(rec):
             match = re.search(r'^(.*)-author-list-(.*).pdf$', file_name)
             if match:
                 file_name_exp, file_name_year = match.groups()
-                file_uri = 'root://eospublic.cern.ch//eos/opendata/' + file_name_exp + '/documentation/' + file_name
+                file_uri = 'root://eospublic.cern.ch//eos/opendata/' + file_name_exp.lower() + '/documentation/' + file_name
+
+        # data policies
+        if 'Data-Policies' in collections:
+            match = re.search(r'^(.*)-Data-Policy.pdf$', file_name)
+            if match:
+                file_name_exp, = match.groups()
+                file_uri = 'root://eospublic.cern.ch//eos/opendata/' + file_name_exp.lower() + '/documentation/' + file_name
 
         # ok, recognised enough; now generate files output
         if file_uri:
