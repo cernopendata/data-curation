@@ -601,8 +601,9 @@ def convert_record(rec):
         file_uri = ''
         file_type = 'xrootd'
 
-        # CMS
-        if 'CMS' in ' '.join(collections):
+        # CMS-Primary-Datasets, CMS-Simulated-Datasets
+        if 'CMS-Primary-Datasets' in collections or \
+           'CMS-Simulated-Datasets' in collections:
             match = re.search(r'(.*?)_(.*?)_(.*)_(AOD|RAW)_(.*)_([0-9]+)_file_index.txt$', file_name)
             if match:
                 file_type = 'index'
@@ -627,6 +628,10 @@ def convert_record(rec):
                             file_format + '/' + \
                             file_version + '/' + \
                             'file-indexes/' + file_name
+
+        # cms-eventdisplay-files
+        if int(recid) >= 600 and int(recid) <= 613:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/Run2010B/' + os.path.splitext(file_name)[0] + '/IG/Apr21ReReco-v1/' + file_name
 
         # OPERA
         if 'OPERA' in ' '.join(collections):
