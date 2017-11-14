@@ -637,6 +637,12 @@ def convert_record(rec):
         if int(recid) >= 614 and int(recid) <= 632:
             file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/Run2011A/' + os.path.splitext(file_name)[0].replace('_Run2011A', '') + '/IG/12Oct2013-v1/' + file_name.replace('_Run2011A', '')
 
+        # cms-derived-csv-Run2011A
+        if int(recid) == 545:
+            match = re.search(r'^(.*)_(.*)_Run2011A.csv$', file_name)
+            file_name_filename, file_name_dataset = match.groups()
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/Run2011A/' + file_name_dataset + '/CSV/12Oct2013-v1/' + file_name_filename + '.csv'
+
         # OPERA
         if 'OPERA' in ' '.join(collections):
             match = re.search(r'^(.*).(csv|zip)$', file_name)
