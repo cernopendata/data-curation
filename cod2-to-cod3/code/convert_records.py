@@ -633,6 +633,10 @@ def convert_record(rec):
         if int(recid) >= 600 and int(recid) <= 613:
             file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/Run2010B/' + os.path.splitext(file_name)[0] + '/IG/Apr21ReReco-v1/' + file_name
 
+        # cms-eventdisplay-files-Run2011A
+        if int(recid) >= 614 and int(recid) <= 632:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/Run2011A/' + os.path.splitext(file_name)[0].replace('_Run2011A', '') + '/IG/12Oct2013-v1/' + file_name.replace('_Run2011A', '')
+
         # OPERA
         if 'OPERA' in ' '.join(collections):
             match = re.search(r'^(.*).(csv|zip)$', file_name)
