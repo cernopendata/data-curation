@@ -677,6 +677,13 @@ def convert_record(rec):
         if int(recid) >= 251 and int(recid) <= 252:
             file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/environment/2011/' + file_name
 
+        # CMS-Open-Data-Instructions
+        if 'CMS-Open-Data-Instructions' in collections:
+            if int(recid) == 55:
+                file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/documentation/outreach-exercise-2010/' + file_name
+            if int(recid) == 72:
+                file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/documentation/hst-programme-2016/' + file_name
+
         # OPERA
         if 'OPERA' in ' '.join(collections):
             match = re.search(r'^(.*).(csv|zip)$', file_name)
