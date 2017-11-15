@@ -732,6 +732,10 @@ def convert_record(rec):
             file_uri = 'root://eospublic.cern.ch//eos/opendata/atlas/OutreachDatasets/2016-07-29/file-indexes/' + file_name
             file_type = 'index'
 
+        # ATLAS-Higgs-Challenge-2014
+        if 'ATLAS-Higgs-Challenge-2014' in collections:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/atlas/higgs-challenge-2014/' + file_name
+
         # ALICE-Learning-Resources
         if 'ALICE-Learning-Resources' in collections:
             file_uri = 'root://eospublic.cern.ch//eos/opendata/alice/documentation/' + file_name
