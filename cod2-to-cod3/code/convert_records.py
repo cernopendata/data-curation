@@ -673,6 +673,10 @@ def convert_record(rec):
         if int(recid) >= 249 and int(recid) <= 250:
             file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/environment/2010/' + file_name
 
+        # cms-tools-vm-image-Run2011A.xml
+        if int(recid) >= 251 and int(recid) <= 252:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/environment/2011/' + file_name
+
         # OPERA
         if 'OPERA' in ' '.join(collections):
             match = re.search(r'^(.*).(csv|zip)$', file_name)
