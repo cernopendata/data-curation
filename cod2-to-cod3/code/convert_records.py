@@ -692,6 +692,14 @@ def convert_record(rec):
         if 'CMS-Trigger-Information' in collections:
             file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/trigger-information/' + date_created + '/' + file_name
 
+        # cms-derived-pattuples-ana
+        if int(recid) == 201:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/Run2010B/Mu/PATtuples/file-indexes/' + file_name
+            file_type = 'index'
+        if int(recid) == 202:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/Run2010B/Electron/PATtuples/file-indexes/' + file_name
+            file_type = 'index'
+
         # OPERA
         if 'OPERA' in ' '.join(collections):
             match = re.search(r'^(.*).(csv|zip)$', file_name)
