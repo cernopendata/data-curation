@@ -708,6 +708,10 @@ def convert_record(rec):
             file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/Run2011A/DoubleElectron/PATtuples/file-indexes/' + file_name
             file_type = 'index'
 
+        # cms-hamburg-files
+        if int(recid) >= 203 and int(recid) <= 212:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/hep-tutorial-2012/' + file_name
+
         # OPERA
         if 'OPERA' in ' '.join(collections):
             match = re.search(r'^(.*).(csv|zip)$', file_name)
