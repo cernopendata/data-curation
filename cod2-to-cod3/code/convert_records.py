@@ -684,6 +684,10 @@ def convert_record(rec):
             if int(recid) == 72:
                 file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/documentation/hst-programme-2016/' + file_name
 
+        # CMS-Luminosity-Information
+        if 'CMS-Luminosity-Information' in collections:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/luminosity/' + date_created + '/' + file_name
+
         # OPERA
         if 'OPERA' in ' '.join(collections):
             match = re.search(r'^(.*).(csv|zip)$', file_name)
