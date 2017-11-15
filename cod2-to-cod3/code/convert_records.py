@@ -727,6 +727,11 @@ def convert_record(rec):
                 file_uri = 'root://eospublic.cern.ch//eos/opendata/atlas/MasterclassDatasets/' + file_xpath + '/' + file_year + '/' + file_number + '/file-indexes/' + file_name
                 file_type = 'index'
 
+        # ATLAS-Simulated-Datasets
+        if 'ATLAS-Simulated-Datasets' in collections:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/atlas/OutreachDatasets/2016-07-29/file-indexes/' + file_name
+            file_type = 'index'
+
         # ALICE-Learning-Resources
         if 'ALICE-Learning-Resources' in collections:
             file_uri = 'root://eospublic.cern.ch//eos/opendata/alice/documentation/' + file_name
