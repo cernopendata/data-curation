@@ -12493,6 +12493,7 @@ fft_file_cache_info["1_VisualisationOfEventsTutorial.docx"] = {"size": 460846, "
 fft_file_cache_info["3_DiMuonHistogramExcelInstructions.pdf"] = {"size": 782744, "checksum": "bdde3ebbd3845b7f1bb66ddbab3aa2d18254d3aa"}
 fft_file_cache_info["3_DiMuonHistogramExcelInstructions.docx"] = {"size": 931189, "checksum": "27f3f91cc39cae7e224babaa3c496afc8d1f4590"}
 fft_file_cache_info["5_SharingJupyterNotebookInstructions.pdf"] = {"size": 578131, "checksum": "f534d22ed0740f85a82b3f2f9c351899967535b7"}
+fft_file_cache_info["1103106_20-A4-at-144-dpi.jpg"] = {"size": 403277, "checksum": "2a6d0a372b14f4bccf62b5a658d66c3a591915d4"}
 fft_file_cache_info["ALICE-Data-Policy.pdf"] = {"size": 480778, "checksum": "e08357793eb426d68c44b87e11adc77893f73ac0"}
 fft_file_cache_info["massZZ.png"] = {"size": 50465, "checksum": "c376cd91f3ed94ee5142b17a58bd5aad0290a31b"}
 fft_file_cache_info["OutreachExercise2010-massZ.png"] = {"size": 44709, "checksum": "65610ba2dd6319f4571bce3db301f5651b612816"}
