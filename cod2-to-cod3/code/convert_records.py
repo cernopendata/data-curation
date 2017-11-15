@@ -654,6 +654,11 @@ def convert_record(rec):
             file_uri = 'root://eospublic.cern.ch//eos/opendata/alice/' + file_name
             file_type = 'index'
 
+        # ALICE-Reconstructed-Data
+        if 'ALICE-Reconstructed-Data' in collections:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/alice/' + file_name
+            file_type = 'index'
+
         # cms-derived-csv-Run2011A
         if int(recid) == 545:
             match = re.search(r'^(.*)_(.*)_Run2011A.csv$', file_name)
