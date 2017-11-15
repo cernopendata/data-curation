@@ -700,6 +700,14 @@ def convert_record(rec):
             file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/Run2010B/Electron/PATtuples/file-indexes/' + file_name
             file_type = 'index'
 
+        # cms-derived-pattuples-ana-Run2011A
+        if int(recid) == 230:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/Run2011A/DoubleMu/PATtuples/file-indexes/' + file_name
+            file_type = 'index'
+        if int(recid) == 231:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/Run2011A/DoubleElectron/PATtuples/file-indexes/' + file_name
+            file_type = 'index'
+
         # OPERA
         if 'OPERA' in ' '.join(collections):
             match = re.search(r'^(.*).(csv|zip)$', file_name)
