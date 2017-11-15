@@ -644,6 +644,16 @@ def convert_record(rec):
             else:
                 file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/configuration-files/2011/' + file_name
 
+        # LHCb-Derived-Datasets
+        if 'LHCb-Derived-Datasets' in collections:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/lhcb/MasterclassDatasets/D0lifetime/2014/file-indexes/' + file_name
+            file_type = 'index'
+
+        # ALICE-Derived-Datasets
+        if 'ALICE-Derived-Datasets' in collections:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/alice/' + file_name
+            file_type = 'index'
+
         # cms-derived-csv-Run2011A
         if int(recid) == 545:
             match = re.search(r'^(.*)_(.*)_Run2011A.csv$', file_name)
