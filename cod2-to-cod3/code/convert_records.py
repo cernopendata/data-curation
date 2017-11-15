@@ -736,6 +736,11 @@ def convert_record(rec):
         if 'ALICE-Learning-Resources' in collections:
             file_uri = 'root://eospublic.cern.ch//eos/opendata/alice/documentation/' + file_name
 
+        # cms-condition-data-Run2011A
+        if int(recid) >= 1801 and int(recid) <= 1802:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/Run2011A/db/file-indexes/' + file_name
+            file_type = 'index'
+
         # OPERA
         if 'OPERA' in ' '.join(collections):
             match = re.search(r'^(.*).(csv|zip)$', file_name)
