@@ -637,6 +637,13 @@ def convert_record(rec):
         if int(recid) >= 614 and int(recid) <= 632:
             file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/Run2011A/' + os.path.splitext(file_name)[0].replace('_Run2011A', '') + '/IG/12Oct2013-v1/' + file_name.replace('_Run2011A', '')
 
+        # CMS-Configuration-Files
+        if 'CMS-Configuration-Files' in collections:
+            if file_name.endswith('configFile'):
+                file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/configuration-files/2011/' + file_name + '.py'
+            else:
+                file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/configuration-files/2011/' + file_name
+
         # cms-derived-csv-Run2011A
         if int(recid) == 545:
             match = re.search(r'^(.*)_(.*)_Run2011A.csv$', file_name)
