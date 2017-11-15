@@ -688,6 +688,10 @@ def convert_record(rec):
         if 'CMS-Luminosity-Information' in collections:
             file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/luminosity/' + date_created + '/' + file_name
 
+        # CMS-Trigger-Information
+        if 'CMS-Trigger-Information' in collections:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/trigger-information/' + date_created + '/' + file_name
+
         # OPERA
         if 'OPERA' in ' '.join(collections):
             match = re.search(r'^(.*).(csv|zip)$', file_name)
