@@ -712,10 +712,20 @@ def convert_record(rec):
         if int(recid) >= 203 and int(recid) <= 212:
             file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/hep-tutorial-2012/' + file_name
 
-        # atlas-all-samples
-        if int(recid) == 3860:
-            file_uri = 'root://eospublic.cern.ch//eos/opendata/atlas/OutreachDatasets/2016-07-29/file-indexes/' + file_name
-            file_type = 'index'
+        # atlas-derived-datasets
+        if 'ATLAS-Derived-Datasets' in collections:
+            if int(recid) == 3860:
+                # atlas-all-samples
+                file_uri = 'root://eospublic.cern.ch//eos/opendata/atlas/OutreachDatasets/2016-07-29/file-indexes/' + file_name
+                file_type = 'index'
+            elif int(recid) == 390 or int(recid) == 391:
+                file_uri = 'root://eospublic.cern.ch//eos/opendata/atlas/OutreachDatasets/2016-07-29/file-indexes/' + file_name
+                file_type = 'index'
+            else:
+                match = re.search(r'ATLAS_MasterclassDatasets_(.*)_([0-9]+)_dataset_([0-9]+)_file_index.txt$', file_name)
+                file_xpath, file_year, file_number = match.groups()
+                file_uri = 'root://eospublic.cern.ch//eos/opendata/atlas/MasterclassDatasets/' + file_xpath + '/' + file_year + '/' + file_number + '/file-indexes/' + file_name
+                file_type = 'index'
 
         # OPERA
         if 'OPERA' in ' '.join(collections):
