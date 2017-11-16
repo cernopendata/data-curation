@@ -751,6 +751,13 @@ def convert_record(rec):
         if int(recid) == 700:
             file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/Run2010B/Mu/CSV/Apr21ReReco-v1/' + file_name_alias
 
+        # cms-masterclass-files
+        if int(recid) >= 300 and int(recid) <= 310:
+            if file_name_alias.startswith('masterclass.'):
+                file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/masterclass-2014/' + file_name
+            else:
+                file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/masterclass-2014/' + file_name_alias
+
         # atlas-derived-datasets
         if 'ATLAS-Derived-Datasets' in collections:
             if int(recid) == 3860:
