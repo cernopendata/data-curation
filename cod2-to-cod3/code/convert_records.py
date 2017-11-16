@@ -722,6 +722,10 @@ def convert_record(rec):
         if int(recid) == 200:
             file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/software/ayrodrig-pattuples2010/' + file_name
 
+        # cms-tools-dimuon-spectrum-2010
+        if int(recid) == 560:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/software/dimuon-spectrum-2010/' + file_name
+
         # atlas-derived-datasets
         if 'ATLAS-Derived-Datasets' in collections:
             if int(recid) == 3860:
