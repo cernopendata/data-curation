@@ -712,6 +712,10 @@ def convert_record(rec):
         if int(recid) >= 203 and int(recid) <= 212:
             file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/hep-tutorial-2012/' + file_name
 
+        # CMS-Learning-Resources
+        if 'CMS-Learning-Resources' in collections:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/hep-tutorial-2012/' + file_name
+
         # atlas-derived-datasets
         if 'ATLAS-Derived-Datasets' in collections:
             if int(recid) == 3860:

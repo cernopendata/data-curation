@@ -12765,6 +12765,11 @@ fft_file_cache_info["ATLAS_MasterclassDatasets_ZPath_2015_dataset_30_file_index.
 fft_file_cache_info["ATLAS_MasterclassDatasets_ZPath_2015_dataset_2_file_index.txt"] = {"size": 1780, "checksum": "2e5689eafbd3833177f84ef8e360d9b179068531"}
 fft_file_cache_info["mc_110910.ZPrime3000_file_index.txt"] = {"size": 102, "checksum": "28fa2d3eef8ecafb8a7ae913e775c26f80833496"}
 fft_file_cache_info["HEPTutorial_0.tar"] = {"size": 33730560, "checksum": "b703c0494e85b6914ef2aa960f01830e19ce97a2"}
+fft_file_cache_info["TutorialDocu_3.pdf"] = {"size": 176942, "checksum": "d867d94b052d96842fe9d7315cc08ee3086c9e91"}
+fft_file_cache_info["TutorialExercisesPart3_2.pdf"] = {"size": 72563, "checksum": "a419d01f7e714413e4646065b5d3b1eefff9e8fb"}
+fft_file_cache_info["TutorialExercisesPart4_1.pdf"] = {"size": 60883, "checksum": "a7b769d106be94a229730b1e5ed4f5cd628b07cd"}
+fft_file_cache_info["TutorialExercisesPart1_2.pdf"] = {"size": 50493, "checksum": "f7675608139f2f6fe149b091f6c49127f5c550c3"}
+fft_file_cache_info["TutorialExercisesPart2_2.pdf"] = {"size": 58664, "checksum": "894c700036c048be44441c0ab375f0705746b115"}
 fft_file_cache_info["ww.root"] = {"size": 338200, "checksum": "488d2d15c5f2e1c3446523f7da8b9a1c83340a64"}
 fft_file_cache_info["zz.root"] = {"size": 217945, "checksum": "ad1b1b7a7dda1cea99cbb302bb63267aabf41380"}
 fft_file_cache_info["dy.root"] = {"size": 4776709, "checksum": "9004e67beea2dd7be0c703bc01afde6a295c990b"}
