@@ -591,6 +591,11 @@ def convert_record(rec):
         # read FFT file properties
         file_name = field_get_subfield_values(file_instance, "a")[0]
         file_name = os.path.basename(file_name)
+        try:
+            file_name_alias = field_get_subfield_values(file_instance, "n")[0]
+            file_name_alias = re.sub(r'^(.*?)\.', file_name_alias + '.', file_name)
+        except IndexError:
+            file_name_alias = ''
         file_descriptions = field_get_subfield_values(file_instance, "z")
         if file_descriptions:
             file_description = file_descriptions[0]
@@ -740,6 +745,11 @@ def convert_record(rec):
         if int(recid) == 462:
             file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/software/validation-2010-MinimumBias/' + file_name
 
+        # cms-csv-files
+        if int(recid) == 554:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/Run2010B/MultiJet/CSV/Apr21ReReco-v1/' + file_name_alias
+        if int(recid) == 700:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/Run2010B/Mu/CSV/Apr21ReReco-v1/' + file_name_alias
 
         # atlas-derived-datasets
         if 'ATLAS-Derived-Datasets' in collections:
