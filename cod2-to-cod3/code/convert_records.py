@@ -726,6 +726,12 @@ def convert_record(rec):
         if int(recid) == 560:
             file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/software/dimuon-spectrum-2010/' + file_name
 
+        # cms-tools-dimuon-filter
+        if int(recid) == 553:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/software/SUSYBSMAnalysis-RazorFilter/' + file_name
+        if int(recid) == 552:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/software/dimuon-filter/' + file_name
+
         # atlas-derived-datasets
         if 'ATLAS-Derived-Datasets' in collections:
             if int(recid) == 3860:
