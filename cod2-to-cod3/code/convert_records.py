@@ -732,6 +732,15 @@ def convert_record(rec):
         if int(recid) == 552:
             file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/software/dimuon-filter/' + file_name
 
+        # cms-validation-code-Run2010B
+        if int(recid) == 460:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/software/validation-2010-Mu/' + file_name
+        if int(recid) == 461:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/software/validation-2010-Commissioning/' + file_name
+        if int(recid) == 462:
+            file_uri = 'root://eospublic.cern.ch//eos/opendata/cms/software/validation-2010-MinimumBias/' + file_name
+
+
         # atlas-derived-datasets
         if 'ATLAS-Derived-Datasets' in collections:
             if int(recid) == 3860:
