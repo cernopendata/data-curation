@@ -731,6 +731,18 @@ def convert_record(rec):
                 file_uri = 'root://eospublic.cern.ch//eos/opendata/atlas/MasterclassDatasets/' + file_xpath + '/' + file_year + '/' + file_number + '/file-indexes/' + file_name
                 file_type = 'index'
 
+        # ATLAS-Tools
+        if 'ATLAS-Tools' in collections:
+            if int(recid) == 352:
+                file_uri = 'root://eospublic.cern.ch//eos/opendata/atlas/MasterclassDatasets/WPath/2015/Software/' + file_name
+                file_type = 'index'
+            else:
+                file_type = 'index'
+                if int(recid) == 3851:
+                    file_name = file_name.replace('size_M_', 'size_S_')
+                file_uri = 'root://eospublic.cern.ch//eos/opendata/atlas/OutreachDatasets/2016-07-29/file-indexes/' + file_name
+                file_type = 'index'
+
         # ATLAS-Simulated-Datasets
         if 'ATLAS-Simulated-Datasets' in collections:
             file_uri = 'root://eospublic.cern.ch//eos/opendata/atlas/OutreachDatasets/2016-07-29/file-indexes/' + file_name
