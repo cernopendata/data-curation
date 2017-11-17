@@ -889,6 +889,8 @@ def convert_record(rec):
             link['size'] = link_size[0]
         link_url = field_get_subfield_values(file_instance, "u")
         if link_url:
+            if 'CMS-Learning-Resources' in collections and link_url[0] == 'http://mattbellis.github.io/Particle-Physics-Playground/':
+                link_url[0] = 'http://particle-physics-playground.github.io/'
             link['url'] = link_url[0]
         link_description = field_get_subfield_values(file_instance, "y")
         if link_description:
