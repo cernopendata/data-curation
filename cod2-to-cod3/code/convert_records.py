@@ -571,7 +571,8 @@ def convert_record(rec):
     for file_instance in record_get_field_instances(rec, tag="856", ind1="7"):
         afile = {}
         file_type = field_get_subfield_values(file_instance, "2")[0]
-        afile['type'] = file_type
+        if file_type and file_type != 'xrootd':
+            afile['type'] = file_type
         file_uri = field_get_subfield_values(file_instance, "u")[0]
         afile['uri'] = file_uri
         file_size = field_get_subfield_values(file_instance, "s")[0]
@@ -604,7 +605,7 @@ def convert_record(rec):
 
         #  output location that will be populated below
         file_uri = ''
-        file_type = 'xrootd'
+        file_type = ''
 
         # CMS-Primary-Datasets, CMS-Simulated-Datasets
         if 'CMS-Primary-Datasets' in collections or \
@@ -833,7 +834,8 @@ def convert_record(rec):
         # ok, recognised enough; now generate files output
         if file_uri:
             afile = {}
-            afile['type'] = file_type
+            if file_type and file_type != 'xrootd':
+                afile['type'] = file_type
             afile['uri'] = file_uri
             afile['size'] = fft_file_cache_info[file_name]['size']
             if file_description:
