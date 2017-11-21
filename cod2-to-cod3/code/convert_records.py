@@ -849,8 +849,18 @@ def convert_record(rec):
             jrec['files'] = files
 
     # keywords / 653
-    keywords = record_get_field_values(rec, tag="653", ind1="1", code="a")
-    keywords = [keyword.lower() for keyword in keywords if keyword != experiment]
+    keywords = []
+    keyword_values = record_get_field_values(rec, tag="653", ind1="1", code="a")
+    if int(recid) in [50, 53, 54, 61, 51, 52, 57, 58, 72]:
+        keyword_values.append('education')
+    if int(recid) in [53, 57, 72]:
+        keyword_values.append('teaching')
+    for keyword in keyword_values:
+        if keyword != experiment:
+            keyword = keyword.lower()
+            if keyword == 'masterclasses':
+                keyword = 'masterclass'
+            keywords.append(keyword)
     if keywords:
         if jrec.has_key('keywords'):
             jrec['keywords'].extend(keywords)
