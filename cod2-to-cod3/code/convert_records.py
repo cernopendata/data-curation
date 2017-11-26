@@ -222,6 +222,8 @@ def convert_record(rec):
         formats.append('raw')
     if 'OPERA' in ' '.join(collections):
         formats.append('csv')
+    if '.tar.gz' in ' '.join(record_get_field_values(rec, tag="856", ind1="7", code="u")):
+        formats.append('gz')
     fft_extensions = []
     for fft in record_get_field_values(rec, tag="FFT", code="a"):
         fft_basename, fft_extension = os.path.splitext(fft)
