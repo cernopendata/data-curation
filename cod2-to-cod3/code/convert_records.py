@@ -903,6 +903,8 @@ def convert_record(rec):
         if link_url:
             if 'CMS-Learning-Resources' in collections and link_url[0] == 'http://mattbellis.github.io/Particle-Physics-Playground/':
                 link_url[0] = 'http://particle-physics-playground.github.io/'
+            if 'CMS-Learning-Resources' in collections and link_url[0] == 'http://ippog.web.cern.ch/resources/2012/cms-hep-tutorial':
+                link_url[0] = 'http://ippog.org/resources/2012/cms-hep-tutorial'
             link['url'] = link_url[0]
         link_description = field_get_subfield_values(file_instance, "y")
         if link_description:
