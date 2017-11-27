@@ -49,18 +49,26 @@ def get_das_store_json(dataset):
 
 def get_number_events(dataset):
     """Return number of events for the dataset."""
-    return get_from_deep_json(get_das_store_json(dataset), 'nevents')
+    number_events = get_from_deep_json(get_das_store_json(dataset), 'nevents')
+    if number_events:
+        return number_events
+    return 0
 
 
 def get_number_files(dataset):
     """Return number of files for the dataset."""
-    return get_from_deep_json(get_das_store_json(dataset), 'nfiles')
+    number_files = get_from_deep_json(get_das_store_json(dataset), 'nfiles')
+    if number_files:
+        return number_files
+    return 0
 
 
 def get_size(dataset):
     """Return size of the dataset."""
-    return get_from_deep_json(get_das_store_json(dataset), 'size')
-
+    size = get_from_deep_json(get_das_store_json(dataset), 'size')
+    if size:
+        return size
+    return 0
 
 def populate_fwyzard():
     """Populate FWYZARD dictionary (dataset -> trigger list)."""
