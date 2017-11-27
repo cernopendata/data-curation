@@ -9,6 +9,9 @@ Create CMS 2012 open data release collision datasets.
 import json
 
 
+FWYZARD = {}
+
+
 def get_from_deep_json(data, akey):
     "Traverse DATA and return first value matching AKEY."
     if type(data) is dict:
@@ -53,6 +56,35 @@ def get_number_files(dataset):
 def get_size(dataset):
     """Return size of the dataset."""
     return get_from_deep_json(get_das_store_json(dataset), 'size')
+
+
+def populate_fwyzard():
+    """Populate FWYZARD dictionary (dataset -> trigger list)."""
+    for line in open('./inputs/fwyzard-hlt-2012-dataset.txt', 'r').readlines():
+        dataset, trigger = line.split()
+        if dataset in FWYZARD.keys():
+            FWYZARD[dataset].append(trigger)
+        else:
+            FWYZARD[dataset] = [trigger, ]
+
+
+def create_selection_information(dataset):
+    """Create box with selection information."""
+    out = ''
+    # HLT trigger paths:
+    out += '\n     <p><strong>HLT trigger paths</strong>'
+    out += '\n     <br/>The possible HLT trigger paths in this dataset are:'
+    trigger_paths = get_trigger_paths_for_dataset(dataset)
+    for trigger_path in trigger_paths:
+        out += '\n      <br/><a href="/search?q=%s>%s</a>' % (trigger_path,
+                                                              trigger_path)
+    out += '</p>'
+    return out
+
+
+def get_trigger_paths_for_dataset(dataset):
+    """Return list of trigger paths for given dataset."""
+    return FWYZARD.get(dataset, [])
 
 
 def create_record(recid, run_period, dataset):
@@ -105,7 +137,7 @@ def create_record(recid, run_period, dataset):
     rec['license'] = {}
     rec['license']['attribution'] = 'CC0'
 
-    rec['methodology'] = ''  # FIXME
+    rec['methodology'] = create_selection_information(dataset)
 
     rec['note'] = {}
     rec['note']['description'] = 'This dataset contains all runs from 2012 RunB/RunC. The list of validated runs, which must be applied to all analyses, can be found in'
@@ -134,11 +166,11 @@ def create_record(recid, run_period, dataset):
     rec['usage']['links'] = [
         {
             "description": "How to install the CMS Virtual Machine",
-            "url": "http://opendata.cern.ch/VM/CMS#2011"
+            "url": "http://opendata.cern.ch/vm/cms/2011"
         },
         {
             "description": "Getting started with CMS open data",
-            "url": "http://opendata.cern.ch/getting-started/CMS#2011"
+            "url": "http://opendata.cern.ch/getting-started/cms/2011"
         }
     ]
 
@@ -186,6 +218,7 @@ def print_records(records):
 
 def main():
     "Do the job."
+    populate_fwyzard()
     records = create_records(6000, 'Run2012B', [
         'BJetPlusX',
         'BTag',
