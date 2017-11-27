@@ -9,6 +9,52 @@ Create CMS 2012 open data release collision datasets.
 import json
 
 
+def get_from_deep_json(data, akey):
+    "Traverse DATA and return first value matching AKEY."
+    if type(data) is dict:
+        if akey in data.keys():
+            return data[akey]
+        else:
+            for val in data.values():
+                if type(val) is dict:
+                    aval = get_from_deep_json(val, akey)
+                    if aval:
+                        return aval
+                if type(val) is list:
+                    for elem in val:
+                        aval = get_from_deep_json(elem, akey)
+                        if aval:
+                            return aval
+    if type(data) is list:
+        for elem in data:
+            aval = get_from_deep_json(elem, akey)
+            if aval:
+                return aval
+    return None
+
+
+def get_das_store_json(dataset):
+    "Return DAS JSON from the DAS JSON Store for the given dataset."
+    filepath = './inputs/das-json-store/' + dataset.replace('/', '@') + '.json'
+    with open(filepath, 'r') as filestream:
+        return json.load(filestream)
+
+
+def get_number_events(dataset):
+    """Return number of events for the dataset."""
+    return get_from_deep_json(get_das_store_json(dataset), 'nevents')
+
+
+def get_number_files(dataset):
+    """Return number of files for the dataset."""
+    return get_from_deep_json(get_das_store_json(dataset), 'nfiles')
+
+
+def get_size(dataset):
+    """Return size of the dataset."""
+    return get_from_deep_json(get_das_store_json(dataset), 'size')
+
+
 def create_record(recid, run_period, dataset):
     """Create record for the given dataset."""
 
@@ -46,9 +92,9 @@ def create_record(recid, run_period, dataset):
 
     rec['distribution'] = {}
     rec['distribution']['formats'] = ['aod', 'root']
-    rec['distribution']['number_events'] = 0  # FIXME
-    rec['distribution']['number_files'] = 0  # FIXME
-    rec['distribution']['size'] = 0  # FIXME
+    rec['distribution']['number_events'] = get_number_events(dataset_full_name)
+    rec['distribution']['number_files'] = get_number_files(dataset_full_name)
+    rec['distribution']['size'] = get_size(dataset_full_name)
 
     rec['doi'] = ''  # FIXME
 
