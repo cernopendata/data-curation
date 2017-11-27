@@ -6,10 +6,14 @@
 Create CMS 2012 open data release collision datasets.
 """
 
+import click
 import json
+import re
 
 
 FWYZARD = {}
+
+FILEINFO = {}
 
 
 def get_from_deep_json(data, akey):
@@ -68,6 +72,18 @@ def populate_fwyzard():
             FWYZARD[dataset] = [trigger, ]
 
 
+def populate_fileinfo():
+    """Populate FILEINFO dictionary (file -> size)."""
+    for line in open('./inputs//eos-file-information.txt', 'r').readlines():
+        match = re.search(r'^path=(.*) size=(.*)$', line)
+        if match:
+            file_path, file_size = match.groups()
+            if file_path in FILEINFO:
+                raise Exception('Multiple FILEINFO files %s.' % file_path)
+            else:
+                FILEINFO[file_path] = int(file_size)
+
+
 def create_selection_information(dataset):
     """Create box with selection information."""
     out = ''
@@ -85,6 +101,15 @@ def create_selection_information(dataset):
 def get_trigger_paths_for_dataset(dataset):
     """Return list of trigger paths for given dataset."""
     return FWYZARD.get(dataset, [])
+
+
+def get_dataset_files(dataset, run_period, version):
+    """Return list of dataset file information {path,size} for the given dataset."""
+    files = []
+    for filepath in FILEINFO.keys():
+        if filepath.startswith('/eos/opendata/cms/' + run_period + '/' + dataset + '/AOD/' + version + '/'):
+            files.append((filepath, FILEINFO[filepath]))
+    return files
 
 
 def create_record(recid, run_period, dataset):
@@ -132,12 +157,33 @@ def create_record(recid, run_period, dataset):
 
     rec['experiments'] = 'CMS'
 
-    rec['files'] = []  # FIXME
+    rec['files'] = []
+    rec_files = get_dataset_files(dataset, run_period, version)
+    number_index_files = sum([1 for f in rec_files if f[0].endswith('.txt')])
+    number_index_file = 1
+    for file_path, file_size in rec_files:
+        if file_path.endswith('.txt'):
+            rec['files'].append({
+                'checksum': 'sha1:0000000000000000000000000000000000000000',
+                'description': dataset + ' AOD dataset file index (' + str(number_index_file) + ' of ' + str(number_index_files) + ') for access to data via CMS virtual machine',
+
+                'size': file_size,
+                'type': 'index',
+                'uri': 'root://eospublic.cern.ch/' + file_path
+            })
+            number_index_file += 1
+        else:
+            rec['files'].append({
+                'checksum': 'sha1:0000000000000000000000000000000000000000',
+                'size': file_size,
+                'uri': 'root://eospublic.cern.ch/' + file_path
+            })
 
     rec['license'] = {}
     rec['license']['attribution'] = 'CC0'
 
-    rec['methodology'] = create_selection_information(dataset)
+    rec['methodology'] = {}
+    rec['methodology']['description'] = create_selection_information(dataset)
 
     rec['note'] = {}
     rec['note']['description'] = 'This dataset contains all runs from 2012 RunB/RunC. The list of validated runs, which must be applied to all analyses, can be found in'
@@ -145,7 +191,7 @@ def create_record(recid, run_period, dataset):
 
     rec['publisher'] = 'CERN Open Data Portal'
 
-    rec['recid'] = recid
+    rec['recid'] = str(recid)
 
     rec['run_period'] = run_period
 
@@ -175,7 +221,7 @@ def create_record(recid, run_period, dataset):
     ]
 
     rec['validation'] = {}
-    rec['validation']['description'] = "During data taking all the runs recorded by CMS are certified as good for physics analysis if all subdetectors, trigger, lumi and physics objects (tracking, electron, muon, photon, jet and MET) show the expected performance. Certification is based first on the offline shifters evaluation and later on the feedback provided by detector and Physics Object Group experts. Based on the above information, which is stored in a specific database called Run Registry, the Data Quality Monitoring group verifies the consistency of the certification and prepares a json file of certified runs to be used for physics analysis. For each reprocessing of the raw data, the above mentioned steps are repeated. For more information see:",
+    rec['validation']['description'] = "During data taking all the runs recorded by CMS are certified as good for physics analysis if all subdetectors, trigger, lumi and physics objects (tracking, electron, muon, photon, jet and MET) show the expected performance. Certification is based first on the offline shifters evaluation and later on the feedback provided by detector and Physics Object Group experts. Based on the above information, which is stored in a specific database called Run Registry, the Data Quality Monitoring group verifies the consistency of the certification and prepares a json file of certified runs to be used for physics analysis. For each reprocessing of the raw data, the above mentioned steps are repeated. For more information see:"
     rec['validation']['links'] = [
         {
             "description": "CMS data quality monitoring: Systems and experiences",
@@ -216,10 +262,15 @@ def print_records(records):
     print(']')
 
 
-def main():
+@click.command()
+@click.option('--run-period',
+              required=True,
+              help='Run period (Run2012B, Run2012C).')
+def main(run_period):
     "Do the job."
     populate_fwyzard()
-    records = create_records(6000, 'Run2012B', [
+    populate_fileinfo()
+    datasets = [
         'BJetPlusX',
         'BTag',
         'Commissioning',
@@ -246,36 +297,15 @@ def main():
         'TauParked',
         'TauPlusX',
         'VBF1Parked',
-    ])
-    records.extend(create_records(6026, 'Run2012C', [
-        'BJetPlusX',
-        'BTag',
-        'Commissioning',
-        'DoubleElectron',
-        'DoubleMuParked',
-        'DoublePhoton',
-        'DoublePhotonHighPt',
-        'ElectronHad',
-        'HTMHTParked',
-        'HcalNZS',
-        'JetHT',
-        'JetMon',
-        'MET',
-        'MinimumBias',
-        'MuEG',
-        'MuHad',
-        'MuOnia',
-        'MuOniaParked',
-        'NoBPTX',
-        'PhotonHad',
-        'SingleElectron',
-        'SingleMu',
-        'SinglePhoton',
-        'TauParked',
-        'TauPlusX',
-        'VBF1Parked',
-    ]))
-    print_records(records)
+    ]
+    if run_period == 'Run2012B':
+        records = create_records(6000, run_period, datasets)
+        print_records(records)
+    elif run_period == 'Run2012C':
+        records = create_records(6000 + len(datasets), run_period, datasets)
+        print_records(records)
+    else:
+        raise Exception('Run period value %s invalid.' % run_period)
 
 
 if __name__ == '__main__':
