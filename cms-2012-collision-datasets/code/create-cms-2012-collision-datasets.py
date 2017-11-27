@@ -100,8 +100,8 @@ def create_selection_information(dataset):
     out += '\n     <br/>The possible HLT trigger paths in this dataset are:'
     trigger_paths = get_trigger_paths_for_dataset(dataset)
     for trigger_path in trigger_paths:
-        out += '\n      <br/><a href="/search?q=%s>%s</a>' % (trigger_path,
-                                                              trigger_path)
+        out += '\n      <br/><a href="/search?q=%s">%s</a>' % (trigger_path,
+                                                               trigger_path)
     out += '</p>'
     return out
 
