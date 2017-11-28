@@ -42,7 +42,7 @@ for dataset in \
     /Commissioning/Run2012C-22Jan2013-v1/AOD \
     /DoubleElectron/Run2012C-22Jan2013-v1/AOD \
     /DoubleMuParked/Run2012C-22Jan2013-v1/AOD \
-    /DoublePhoton/Run2012C-22Jan2013-v1/AOD \
+    /DoublePhoton/Run2012C-22Jan2013-v2/AOD \
     /DoublePhotonHighPt/Run2012C-22Jan2013-v1/AOD \
     /ElectronHad/Run2012C-22Jan2013-v1/AOD \
     /HTMHTParked/Run2012C-22Jan2013-v1/AOD \

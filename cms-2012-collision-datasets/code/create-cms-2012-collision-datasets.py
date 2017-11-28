@@ -129,6 +129,8 @@ def create_record(recid, run_period, dataset):
     global_tag = 'FT_53_LV5_AN1'
     release = 'CMSSW_5_3_32'
     version = '22Jan2013-v1'
+    if dataset == 'DoublePhoton' and run_period == 'Run2012C':
+        version = '22Jan2013-v2'  # quick fix; should be read from the input file
     dataset_full_name = '/' + dataset + '/' + run_period + '-' + version + '/' + 'AOD'
     year_created = run_period[3:7]
     year_published = '2017'
