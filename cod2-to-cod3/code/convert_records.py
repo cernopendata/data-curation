@@ -945,6 +945,9 @@ def convert_record(rec):
         if 'virtual machine' in abstract_description.lower():
             jrec['type']['primary'] = 'Environment'
             jrec['type']['secondary'] = ['VM']
+        elif int(recid) in [402, ]:
+            jrec['type']['primary'] = 'Environment'
+            jrec['type']['secondary'] = ['VM', ]
         else:
             jrec['type']['primary'] = 'Software'
             jrec['type']['secondary'] = []
@@ -953,7 +956,10 @@ def convert_record(rec):
         jrec['type']['secondary'] = ['Validation', ]
     elif 'Learning-Resources' in ' '.join(collections):
         jrec['type']['primary'] = 'Documentation'
-        jrec['type']['secondary'] = []
+        if int(recid) in [40, 59, 60, 51, 50, 61, 53, 52, 41]:
+            jrec['type']['secondary'] = ['Activities', ]
+        else:
+            jrec['type']['secondary'] = []
     elif 'Configuration-Files' in ' '.join(collections):
         jrec['type']['primary'] = 'Supplementaries'
         jrec['type']['secondary'] = ['Configuration', ]
@@ -968,26 +974,35 @@ def convert_record(rec):
         jrec['type']['secondary'] = ['Condition', ]
     elif 'Open-Data-Instructions' in ' '.join(collections):
         jrec['type']['primary'] = 'Documentation'
-        jrec['type']['secondary'] = []
+        if int(recid) in [57, 58]:
+            jrec['type']['secondary'] = ['Help', ]
+        elif int(recid) in [56, ]:
+            jrec['type']['secondary'] = ['Report', ]
+        elif int(recid) in [70, 71]:
+            jrec['type']['secondary'] = ['Guide', ]
+        if int(recid) in [72, 55]:
+            jrec['type']['secondary'] = ['Activities', ]
+        else:
+            jrec['type']['secondary'] = []
     elif 'Data-Policies' in ' '.join(collections):
         jrec['type']['primary'] = 'Documentation'
-        jrec['type']['secondary'] = []
+        jrec['type']['secondary'] = ['Policy', ]
     elif 'Author-Lists' in ' '.join(collections):
         jrec['type']['primary'] = 'Documentation'
-        jrec['type']['secondary'] = []
+        jrec['type']['secondary'] = ['Authors', ]
     elif 'ATLAS-Higgs-Challenge-2014' in ' '.join(collections):
         if 'Dataset' in title:
             jrec['type']['primary'] = 'Dataset'
-            jrec['type']['secondary'] = ['Derived']
+            jrec['type']['secondary'] = ['Derived', ]
         elif 'Documentation' in title:
             jrec['type']['primary'] = 'Documentation'
-            jrec['type']['secondary'] = []
+            jrec['type']['secondary'] = ['Activities', ]
         elif 'Video' in title:
             jrec['type']['primary'] = 'Documentation'
-            jrec['type']['secondary'] = []
+            jrec['type']['secondary'] = ['Activities', ]
         elif 'Software' in title:
             jrec['type']['primary'] = 'Software'
-            jrec['type']['secondary'] = ['Analysis']
+            jrec['type']['secondary'] = ['Analysis', ]
         else:
             jrec['type']['primary'] = 'FIXME'
             jrec['type']['secondary'] = []
