@@ -10563,6 +10563,7 @@ fft_file_cache_info["CMS_MonteCarlo2011_Summer11LegDR_GluGluToHToZZTo4L_M-1000_7
 fft_file_cache_info["CMS_MonteCarlo2011_Summer11LegDR_TTJets_MSDecays_scaleup_mt172_5_7TeV-madgraph-tauola_AODSIM_PU_S13_START53_LV6-v1_80000_file_index.txt"] = {"size": 32118, "checksum": "6879d0ff205a0be39083f8ffa98ad98ceb5fd713"}
 fft_file_cache_info["CMS_MonteCarlo2011_Summer11LegDR_QCD_Pt-600to800_MuEnrichedPt5_TuneZ2_7TeV_pythia6_AODSIM_PU_S13_START53_LV6-v1_00000_file_sizes.xml"] = {"size": 130082, "checksum": "3cf9cb0aee869933479fd030242d2864559beb36"}
 fft_file_cache_info["CMS_MonteCarlo2011_Summer11LegDR_ZZTo4eJJ_BSM25HContinInterf_M-125p6_7TeV-phantom-pythia6_AODSIM_PU_S13_START53_LV6-v1_40000_file_index.txt"] = {"size": 1854, "checksum": "cf83b99fe2835ed602fc9ecc0cade50b1692ec1b"}
+fft_file_cache_info["2010lumibyls.csv"] = {"size": 5840441, "checksum": "231d34287a8eb60320404a065a82a4caf8aa35f8"}
 fft_file_cache_info["2011RunAlumi.txt"] = {"size": 33867, "checksum": "64a5b4e899a1d25166d62d58c17444144e18fea7"}
 fft_file_cache_info["2010lumi.txt"] = {"size": 63840, "checksum": "c101dbd1bea6c4a0f4e0b02344693ff3c5d0272f"}
 fft_file_cache_info["prescale2011.txt"] = {"size": 41460, "checksum": "7e144b4b568a336d22f2915b9fac22fc4c3cc1e2"}

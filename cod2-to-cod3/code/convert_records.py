@@ -950,7 +950,17 @@ def convert_record(rec):
             jrec['type']['secondary'] = ['VM', ]
         else:
             jrec['type']['primary'] = 'Software'
-            jrec['type']['secondary'] = []
+            if int(recid) in [560, 234, 553, 101, 1200, 1201, 1202, 1203]:
+                jrec['type']['secondary'] = ['Analysis', ]
+            elif int(recid) in [220, 3850, 212, 221]:
+                jrec['type']['secondary'] = ['Framework', ]
+            elif int(recid) in [550, 352, 233, 200, 552, 1201, 551]:
+                jrec['type']['secondary'] = ['Tool', ]
+            else:
+                jrec['type']['secondary'] = []
+    elif 'Validated-Runs' in ' '.join(collections):
+        jrec['type']['primary'] = 'Environment'
+        jrec['type']['secondary'] = ['Validation', ]
     elif 'Validation-Utilities' in ' '.join(collections):
         jrec['type']['primary'] = 'Software'
         jrec['type']['secondary'] = ['Validation', ]
