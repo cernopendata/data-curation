@@ -196,7 +196,10 @@ def create_record(recid, run_period, dataset):
     rec['methodology']['description'] = create_selection_information(dataset)
 
     rec['note'] = {}
-    rec['note']['description'] = 'This dataset contains all runs from 2012 RunB/RunC. The list of validated runs, which must be applied to all analyses, can be found in'
+    if run_period == 'Run2012B':
+        rec['note']['description'] = 'This dataset contains all runs from 2012 RunB. The list of validated runs, which must be applied to all analyses, can be found in'
+    if run_period == 'Run2012C':
+        rec['note']['description'] = 'This dataset contains all runs from 2012 RunC. The list of validated runs, which must be applied to all analyses, can be found in'
     rec['note']['links'] = [{'recid': recid_validated_runs}, ]
 
     rec['publisher'] = 'CERN Open Data Portal'
