@@ -1,60 +1,22 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
 """
 Create HLT CMS Configuration Files records.
 """
 
+import hashlib
+import json
 import re
 import os
-import sys
 
-RECORD_TEMPLATE = """\
-  <record>
-    <controlfield tag="001">%(recid)s</controlfield>
-    <datafield tag="110" ind1=" " ind2=" ">
-      <subfield code="a">CMS collaboration</subfield>
-      <subfield code="w">451</subfield>
-    </datafield>
-    <datafield tag="245" ind1=" " ind2=" ">
-      <subfield code="a">%(title)s</subfield>
-    </datafield>
-    <datafield tag="260" ind1=" " ind2=" ">
-      <subfield code="b">CERN Open Data Portal</subfield>
-      <subfield code="c">2016</subfield>
-    </datafield>
-    <datafield tag="264" ind1=" " ind2="0">
-      <subfield code="c">2011</subfield>
-    </datafield>
-    <datafield tag="520" ind1=" " ind2=" ">
-      <subfield code="a">%(description)s</subfield>
-    </datafield>
-    <datafield tag="556" ind1=" " ind2=" ">
-      <subfield code="a"><![CDATA[ This file describes the exact setup for the
-      CMS software executable which was used in a data-processing step. It is
-      provided only <i>for information purposes</i>. Although all the components
-      required to <i>analyse</i> the public primary datasets - such as
-      corresponding input data, condition data, software version - are provided
-      on this portal, it is not necessarily possible to <i>reproduce</i> all the
-      described data-processing steps. ]]></subfield>
-    </datafield>
-    <datafield tag="693" ind1=" " ind2=" ">
-      <subfield code="a">CERN-LHC</subfield>
-      <subfield code="e">CMS</subfield>
-    </datafield>
-    <datafield tag="942" ind1=" " ind2=" ">
-      <subfield code="e">7TeV</subfield>
-    </datafield>
-    <datafield tag="964" ind1=" " ind2="0">
-      <subfield code="c">Run2011A</subfield>
-    </datafield>
-    <datafield tag="980" ind1=" " ind2=" ">
-      <subfield code="a">CMS-Configuration-Files</subfield>
-    </datafield>
-    <datafield tag="FFT" ind1=" " ind2=" ">
-      <subfield code="a">/tmp/opendata.cern.ch-fft-file-cache/cms-hlt-2011-configuration-files/%(afile)s</subfield>
-    </datafield>
-  </record>"""
+
+NOTE = 'This file describes the exact setup for the CMS software executable which ' \
+       'was used in a data-processing step. It is provided only <i>for information ' \
+       'purposes</i>. Although all the components required to <i>analyse</i> the public ' \
+       'primary datasets - such as corresponding input data, condition data, software ' \
+       'version - are provided on this portal, it is not necessarily possible to ' \
+       '<i>reproduce</i> all the described data-processing steps.'
 
 
 RECID_START = 6100
@@ -112,39 +74,109 @@ def create_rich_description(afile):
     tablename = get_tablename(afile)
     more_info = get_run_numbers_and_software(tablename)
     if more_info:
-        out += '<![CDATA[ '
+        out += ' '
     out += 'The configuration file used in data taking and %(process)s data processing step.' % {
         'process': process
     }
     if more_info:
         run_number = more_info[0]
         cmssw = more_info[1]
-        out += '<p>Run number %(run_number)s, software version <a href="https://github.com/cms-sw/cmssw/tree/%(cmssw)s">%(cmssw)s</a>.</p>' % {
+        out += '<p>Run number %(run_number)s, software version <a href="https://github.com/cms-sw/cmssw-cvs/tree/%(cmssw)s">%(cmssw)s</a>.</p>' % {
             'run_number': run_number,
-            'cmssw': cmssw
+            'cmssw': cmssw.replace('_ONLINE', '')
         }
-        out += ']]>'
+        out += ''
     return out
+
+
+def get_size(afile):
+    """Return the size of the configuration file."""
+    file_path = './inputs/hlt-config-files/' + afile
+    return os.path.getsize(file_path)
+
+
+def get_checksum(afile):
+    """Return the SHA1 checksum of the configuration file."""
+    file_path = './inputs/hlt-config-files/' + afile
+    return hashlib.sha1(open(file_path, 'rb').read()).hexdigest()
 
 
 def main():
     """Do the main job."""
 
-    print "<collection>"
+    year_created = '2012'
+    year_published = '2017'
+    run_period = '2012B-2012C'
+
     recid = RECID_START
+    fdesc = open('./outputs/hlt_config_files_link_info.py', 'w')
+    fdesc.write('LINK_INFO = {\n')
+
+    records = []
+
     for root, dirs, files in os.walk('./inputs/hlt-config-files'):
         for afile in files:
-            print RECORD_TEMPLATE % \
+
+            rec = {}
+
+            rec['abstract'] = {}
+            rec['abstract']['description'] = create_rich_description(afile)
+
+            rec['accelerator'] = "CERN-LHC"
+
+            rec['collaboration'] = {}
+            rec['collaboration']['name'] = 'CMS collaboration'
+            rec['collaboration']['recid'] = '451'
+
+            rec['collections'] = ['CMS-Configuration-Files', ]
+
+            rec['collision_information'] = {}
+            rec['collision_information']['energy'] = '8TeV'
+            rec['collision_information']['type'] = 'pp'
+
+            rec['date_created'] = year_created
+            rec['date_published'] = year_published
+
+            rec['distribution'] = {}
+            rec['distribution']['formats'] = ['py', ]
+            rec['distribution']['number_files'] = 1
+            rec['distribution']['size'] = get_size(afile)
+
+            rec['experiment'] = 'CMS'
+
+            rec['files'] = [
                 {
-                    'recid': str(recid),
-                    'afile': afile,
-                    'title': get_title(afile),
-                    'process': get_process(afile),
-                    'description': create_rich_description(afile),
+                    'checksum': get_checksum(afile),
+                    'size': get_size(afile),
+                    'uri': 'root://eospublic.cern.ch//eos/opendata/cms/configuration-files/2012/' + afile
+
                 }
-            sys.stderr.write("  '%s': %d,\n" % (get_tablename(afile), recid))
+            ]
+
+            rec['note'] = {}
+            rec['note']['description'] = NOTE
+
+            rec['publisher'] = 'CERN Open Data Portal'
+
+            rec['recid'] = str(recid)
+
+            rec['run_period'] = run_period
+
+            rec['title'] = get_title(afile)
+
+            rec['type'] = {}
+            rec['type']['primary'] = 'Supplementaries'
+            rec['type']['secondary'] = ['Configuration', ]
+
+            records.append(rec)
+
+            fdesc.write("  '%s': %d,\n" % (get_tablename(afile), recid))
             recid += 1
-    print "</collection>"
+
+    fdesc.write('}\n')
+    fdesc.close()
+
+    print(json.dumps(records, indent=2, sort_keys=True))
 
 
 if __name__ == '__main__':
