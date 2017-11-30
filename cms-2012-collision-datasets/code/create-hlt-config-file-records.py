@@ -22,6 +22,67 @@ NOTE = 'This file describes the exact setup for the CMS software executable whic
 RECID_START = 6100
 
 
+def get_run_period(afile):
+    """Return run period for configuration file.
+
+    The knowledge is based on run numbers.
+    """
+
+    run_periods = {
+        '/cdaq/physics/Run2012/5e33/v4.4/HLT/V5': '2012RunA',
+        '/cdaq/physics/Run2012/5e33/v4.4/HLT/V7': '2012RunA',
+        '/cdaq/physics/Run2012/5e33/v4.5/HLT/V3': '2012RunA',
+        '/cdaq/physics/Run2012/5e33/v4.6/HLT/V5': '2012RunA',
+        '/cdaq/physics/Run2012/5e33/v4.7/HLT/V1': '2012RunA',
+        '/cdaq/physics/Run2012/5e33/v4.8/HLT/V1': '2012RunA',
+        '/cdaq/physics/Run2012/5e33/v4.10/HLT/V1': '2012RunA',
+        '/cdaq/physics/Run2012/5e33/v4.11/HLT/V2': '2012RunA',
+        '/cdaq/physics/Run2012/5e33/v4.12/HLT/V1': '2012RunA',
+        '/cdaq/physics/Run2012/5e33/v4.13/HLT/V1': '2012RunA',
+        '/cdaq/physics/Run2012/5e33/v4.14/HLT/V1': '2012RunA',
+        '/cdaq/physics/Run2012/5e33/v4.16/HLT/V2': '2012RunA',
+        '/cdaq/physics/Run2012/5e33/v4.16/HLT/V3': '2012RunA',
+        '/cdaq/physics/Run2012/5e33/v4.16/HLT/V14': '2012RunA',
+        '/cdaq/physics/Run2012/5e33/v4.16/HLT/V15': '2012RunA',
+        '/cdaq/physics/Run2012/5e33/v4.16/HLT/V18': '2012RunA',
+        '/cdaq/physics/Run2012/5e33/v4.16/HLT/V21': '2012RunA',
+        '/cdaq/physics/Run2012/7e33/v2.1/HLT/V11': '2012RunB',
+        '/cdaq/physics/Run2012/7e33/v2.1/HLT/V12': '2012RunB',
+        '/cdaq/physics/Run2012/7e33/v2.1/HLT/V13': '2012RunB',
+        '/cdaq/physics/Run2012/7e33/v2.2/HLT/V2': '2012RunB',
+        '/cdaq/physics/Run2012/7e33/v2.2/HLT/V3': '2012RunB',
+        '/cdaq/physics/Run2012/7e33/v2.3/HLT/V1': '2012RunB',
+        '/cdaq/physics/Run2012/7e33/v2.3/HLT/V2': '2012RunB',
+        '/cdaq/physics/Run2012/7e33/v2.3/HLT/V3': '2012RunB',
+        '/cdaq/physics/Run2012/7e33/v2.3/HLT/V3': '2012RunB',
+        '/cdaq/physics/Run2012/7e33/v2.4/HLT/V1': '2012RunB',
+        '/cdaq/physics/Run2012/7e33/v2.5/HLT/V1': '2012RunB',
+        '/cdaq/physics/Run2012/7e33/v3.0/HLT/V2': '2012RunC',
+        '/cdaq/physics/Run2012/7e33/v3.0/HLT/V3': '2012RunC',
+        '/cdaq/physics/Run2012/7e33/v3.0/HLT/V4': '2012RunC',
+        '/cdaq/physics/Run2012/7e33/v3.0/HLT/V5': '2012RunC',
+        '/cdaq/physics/Run2012/7e33/v3.1/HLT/V1': '2012RunC',
+        '/cdaq/physics/Run2012/7e33/v3.1/HLT/V2': '2012RunC',
+        '/cdaq/physics/Run2012/7e33/v4.0/HLT/V1': '2012RunC',
+        '/cdaq/physics/Run2012/7e33/v4.0/HLT/V4': '2012RunC',
+        '/cdaq/physics/Run2012/7e33/v4.1/HLT/V1': '2012RunC',
+        '/cdaq/physics/Run2012PI/PilotRun/PIHLT/V2': '2012RunC',
+        '/cdaq/physics/Run2012PI/PilotRun/PIHLT/V4': '2012RunC',
+        '/cdaq/physics/Run2012/7e33/v4.2/HLT/V1': '2012RunC',
+        '/cdaq/physics/Run2012/7e33/v4.2/HLT/V1': '2012RunC',
+        '/cdaq/physics/Run2012/8e33/v1.0/HLT/V2': '2012RunD',
+        '/cdaq/physics/Run2012/8e33/v1.1/HLT/V1': '2012RunD',
+        '/cdaq/physics/Run2012/8e33/v1.2/HLT/V1': '2012RunD',
+        '/cdaq/physics/Run2012/8e33/v1.2/HLT/V1': '2012RunD',
+        '/cdaq/physics/Run2012/8e33/v2.0/HLT/V2': '2012RunD',
+        '/cdaq/physics/Run2012/8e33/v2.0/HLT/V3': '2012RunD',
+        '/cdaq/physics/Run2012/8e33/v2.1/HLT/V5': '2012RunD',
+        '/cdaq/physics/Run2012/8e33/v2.1/HLT/V6': '2012RunD',
+        '/cdaq/physics/Run2012/8e33/v2.1/HLT/V7': '2012RunD',
+    }
+    return run_periods['/' + afile.replace('_', '/')]
+
+
 def get_content(afile):
     "Return full content of the configuration file."
     return open('./inputs/hlt-config-files/' + afile, 'r').read()
@@ -106,7 +167,6 @@ def main():
 
     year_created = '2012'
     year_published = '2017'
-    run_period = '2012B-2012C'
 
     recid = RECID_START
     fdesc = open('./outputs/hlt_config_files_link_info.py', 'w')
@@ -160,7 +220,7 @@ def main():
 
             rec['recid'] = str(recid)
 
-            rec['run_period'] = run_period
+            rec['run_period'] = get_run_period(os.path.splitext(os.path.basename(afile))[0])
 
             rec['title'] = get_title(afile)
 
