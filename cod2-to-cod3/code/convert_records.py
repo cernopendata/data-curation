@@ -378,7 +378,11 @@ def convert_record(rec):
             if field_instance_urls:
                 field_instance_url = field_instance_urls[0]
                 if field_instance_url.startswith('http://atlas-opendata.web.cern.ch/atlas-opendata/'):
-                    field_instance_url = field_instance_url.replace('http://atlas-opendata.web.cern.ch/atlas-opendata/', 'http://opendata.atlas.cern/')
+                    field_instance_url = field_instance_url.replace('http://atlas-opendata.web.cern.ch/atlas-opendata/',
+                                                                    'http://opendata.atlas.cern/')
+                if field_instance_url.startswith('https://github.com/katilp/pattuples2011'):
+                    field_instance_url = field_instance_url.replace('https://github.com/katilp/pattuples2011',
+                                                                    'https://github.com/cms-opendata-analyses/pattuples2011')
                 usage_link['url'] = field_instance_url
             if field_instance_descriptions:
                 usage_link['description'] = field_instance_descriptions[0]
