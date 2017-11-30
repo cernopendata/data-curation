@@ -163,9 +163,9 @@ def create_record(recid, run_period, dataset):
     rec['distribution']['number_files'] = get_number_files(dataset_full_name)
     rec['distribution']['size'] = get_size(dataset_full_name)
 
-    rec['doi'] = ''  # FIXME
+    # rec['doi'] = ''  # FIXME
 
-    rec['experiments'] = 'CMS'
+    rec['experiment'] = 'CMS'
 
     rec['files'] = []
     rec_files = get_dataset_files(dataset, run_period, version)
