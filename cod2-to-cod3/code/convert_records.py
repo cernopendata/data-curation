@@ -338,6 +338,9 @@ def convert_record(rec):
 
     # use_with / 516
     use_with_description = record_get_field_value(rec, tag="516", code="a")
+    if int(recid) == 221 and \
+       use_with_description == 'Use this with 2011 CMS open data':
+        use_with_description = 'Use this with 2011 and 2012 CMS open data'
     if use_with_description:
         use_with = {'description': use_with_description}
         use_with_links = []
