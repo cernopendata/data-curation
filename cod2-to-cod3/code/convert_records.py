@@ -447,6 +447,10 @@ def convert_record(rec):
     experiment = record_get_field_value(rec, tag="693", code="e")
     if not experiment and (recid == '60' or recid == '352'):
         experiment = 'ATLAS'
+    if not experiment and (recid == '450' or recid == '451'):
+        experiment = 'CMS'
+    if not experiment and (recid == '452'):
+        experiment = 'OPERA'
     if experiment:
         jrec['experiment'] = experiment
 
