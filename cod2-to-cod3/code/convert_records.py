@@ -453,6 +453,8 @@ def convert_record(rec):
     # run_period / 964
     run_period = record_get_field_value(rec, tag="964", ind2="0", code="c")
     if run_period:
+        if run_period == '2011RunA':
+            run_period = 'Run2011A'
         jrec['run_period'] = run_period
 
     # generation / for simulated data
