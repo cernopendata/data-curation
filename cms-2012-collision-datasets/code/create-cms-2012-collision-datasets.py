@@ -7,6 +7,7 @@ Create CMS 2012 open data release collision datasets.
 """
 
 import click
+import csv
 import json
 import re
 
@@ -14,6 +15,8 @@ import re
 FWYZARD = {}
 
 FILEINFO = {}
+
+SELECTION_DESCRIPTIONS = {}
 
 
 def get_from_deep_json(data, akey):
@@ -70,6 +73,7 @@ def get_size(dataset):
         return size
     return 0
 
+
 def populate_fwyzard():
     """Populate FWYZARD dictionary (dataset -> trigger list)."""
     for line in open('./inputs/fwyzard-hlt-2012-dataset.txt', 'r').readlines():
@@ -82,7 +86,7 @@ def populate_fwyzard():
 
 def populate_fileinfo():
     """Populate FILEINFO dictionary (file -> size)."""
-    for line in open('./inputs//eos-file-information.txt', 'r').readlines():
+    for line in open('./inputs/eos-file-information.txt', 'r').readlines():
         match = re.search(r'^path=(.*) size=(.*)$', line)
         if match:
             file_path, file_size = match.groups()
@@ -92,9 +96,23 @@ def populate_fileinfo():
                 FILEINFO[file_path] = int(file_size)
 
 
-def create_selection_information(dataset):
+def populate_selection_descriptions():
+    """Populate SELECTION_DESCRIPTIONS dictionary (dataset -> selection description)."""
+    for input_file in ['./inputs/CMSDatasetDescription_Run2012B.csv',
+                       './inputs/CMSDatasetDescription_Run2012C.csv']:
+        with open(input_file, 'r') as csvfile:
+            for line_values in csv.reader(csvfile, delimiter=':'):
+                dataset, description = line_values
+                SELECTION_DESCRIPTIONS[dataset] = description
+
+
+def create_selection_information(dataset, dataset_full_name):
     """Create box with selection information."""
     out = ''
+    # description:
+    out += '<p>'
+    out += SELECTION_DESCRIPTIONS[dataset_full_name]
+    out += '</p>'
     # HLT trigger paths:
     out += '\n     <p><strong>HLT trigger paths</strong>'
     out += '\n     <br/>The possible HLT trigger paths in this dataset are:'
@@ -193,7 +211,7 @@ def create_record(recid, run_period, dataset):
     rec['license']['attribution'] = 'CC0'
 
     rec['methodology'] = {}
-    rec['methodology']['description'] = create_selection_information(dataset)
+    rec['methodology']['description'] = create_selection_information(dataset, dataset_full_name)
 
     rec['note'] = {}
     if run_period == 'Run2012B':
@@ -283,6 +301,7 @@ def main(run_period):
     "Do the job."
     populate_fwyzard()
     populate_fileinfo()
+    populate_selection_descriptions()
     datasets = [
         'BJetPlusX',
         'BTag',
