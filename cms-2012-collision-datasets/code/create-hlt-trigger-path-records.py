@@ -61,7 +61,7 @@ def main():
 
     year_created = '2012'
     year_published = '2017'
-    run_period = '2012RunB-2012RunC'
+    run_period = 'Run2012B-Run2012C'
 
     records = []
     recid = RECID_START
