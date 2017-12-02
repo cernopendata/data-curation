@@ -270,6 +270,8 @@ def convert_record(rec):
     # abstract / 520
     abstract_description = record_get_field_value(rec, tag="520", code="a")
     if abstract_description:
+        if 'http://opendata.cern.ch/' in abstract_description:
+            abstract_description = abstract_description.replace('http://opendata.cern.ch/', '/')
         abstract = {'description': abstract_description}
         abstract_links = []
         for field_instance in record_get_field_instances(rec, tag="520"):
@@ -279,7 +281,10 @@ def convert_record(rec):
             if field_instance_recids:
                 abstract_link['recid'] = field_instance_recids[0]
             if field_instance_urls:
-                abstract_link['url'] = field_instance_urls[0]
+                field_instance_url = field_instance_urls[0]
+                if field_instance_url.startswith('http://opendata.cern.ch/'):
+                    field_instance_url = field_instance_url.replace('http://opendata.cern.ch/', '/')
+                abstract_link['url'] = field_instance_url
             if abstract_link:
                 if abstract.has_key('links'):
                     abstract['links'].append(abstract_link)
@@ -290,6 +295,8 @@ def convert_record(rec):
     # methodology / 567
     methodology_description = record_get_field_value(rec, tag="567", code="a")
     if methodology_description:
+        if 'http://opendata.cern.ch/' in methodology_description:
+            methodology_description = methodology_description.replace('http://opendata.cern.ch/', '/')
         methodology = {'description': methodology_description}
         methodology_links = []
         for field_instance in record_get_field_instances(rec, tag="567"):
@@ -299,7 +306,10 @@ def convert_record(rec):
             if field_instance_recids:
                 methodology_link['recid'] = field_instance_recids[0]
             if field_instance_urls:
-                methodology_link['url'] = field_instance_urls[0]
+                field_instance_url = field_instance_urls[0]
+                if field_instance_url.startswith('http://opendata.cern.ch/'):
+                    field_instance_url = field_instance_url.replace('http://opendata.cern.ch/', '/')
+                methodology_link['url'] = field_instance_url
             if methodology_link:
                 if methodology.has_key('links'):
                     methodology['links'].append(methodology_link)
@@ -326,7 +336,10 @@ def convert_record(rec):
             if field_instance_recids:
                 validation_link['recid'] = field_instance_recids[0]
             if field_instance_urls:
-                validation_link['url'] = field_instance_urls[0]
+                field_instance_url = field_instance_urls[0]
+                if field_instance_url.startswith('http://opendata.cern.ch/'):
+                    field_instance_url = field_instance_url.replace('http://opendata.cern.ch/', '/')
+                validation_link['url'] = field_instance_url
             if field_instance_descriptions:
                 validation_link['description'] = field_instance_descriptions[0]
             if validation_link:
@@ -342,6 +355,8 @@ def convert_record(rec):
        use_with_description == 'Use this with 2011 CMS open data':
         use_with_description = 'Use this with 2011 and 2012 CMS open data'
     if use_with_description:
+        if int(recid) == 560:
+            use_with_description = use_with_description.replace('http://opendata.cern.ch/', '/')
         use_with = {'description': use_with_description}
         use_with_links = []
         for field_instance in record_get_field_instances(rec, tag="516"):
@@ -356,7 +371,10 @@ def convert_record(rec):
                 use_with_link = {}
                 use_with_link['recid'] = field_instance_recid
                 if field_instance_urls:
-                    use_with_link['url'] = field_instance_urls[0]
+                    field_instance_url = field_instance_urls[0]
+                    if field_instance_url.startswith('http://opendata.cern.ch/'):
+                        field_instance_url = field_instance_url.replace('http://opendata.cern.ch/', '/')
+                    use_with_link['url'] = field_instance_url
                 if field_instance_descriptions:
                     use_with_link['description'] = field_instance_descriptions[0]
                 if use_with_link:
@@ -369,6 +387,8 @@ def convert_record(rec):
     # usage / 581
     usage_description = record_get_field_value(rec, tag="581", code="a")
     if usage_description:
+        if int(recid) == 560:
+            usage_description = usage_description.replace('http://opendata.cern.ch/', '/')
         usage = {'description': usage_description}
         usage_links = []
         for field_instance in record_get_field_instances(rec, tag="581"):
@@ -380,6 +400,8 @@ def convert_record(rec):
                 usage_link['recid'] = field_instance_recids[0]
             if field_instance_urls:
                 field_instance_url = field_instance_urls[0]
+                if field_instance_url.startswith('http://opendata.cern.ch/'):
+                    field_instance_url = field_instance_url.replace('http://opendata.cern.ch/', '/')
                 if field_instance_url.startswith('http://atlas-opendata.web.cern.ch/atlas-opendata/'):
                     field_instance_url = field_instance_url.replace('http://atlas-opendata.web.cern.ch/atlas-opendata/',
                                                                     'http://opendata.atlas.cern/')
@@ -409,7 +431,10 @@ def convert_record(rec):
             if field_instance_recids:
                 note_link['recid'] = field_instance_recids[0]
             if field_instance_urls:
-                note_link['url'] = field_instance_urls[0]
+                field_instance_url = field_instance_urls[0]
+                if field_instance_url.startswith('http://opendata.cern.ch/'):
+                    field_instance_url = field_instance_url.replace('http://opendata.cern.ch/', '/')
+                note_link['url'] = field_instance_url
             if field_instance_urls:
                 note_link['title'] = field_instance_titles[0]
             if note_link:
@@ -916,11 +941,14 @@ def convert_record(rec):
             link['size'] = link_size[0]
         link_url = field_get_subfield_values(file_instance, "u")
         if link_url:
-            if 'CMS-Learning-Resources' in collections and link_url[0] == 'http://mattbellis.github.io/Particle-Physics-Playground/':
-                link_url[0] = 'http://particle-physics-playground.github.io/'
-            if 'CMS-Learning-Resources' in collections and link_url[0] == 'http://ippog.web.cern.ch/resources/2012/cms-hep-tutorial':
-                link_url[0] = 'http://ippog.org/resources/2012/cms-hep-tutorial'
-            link['url'] = link_url[0]
+            link_url = link_url[0]
+            if link_url.startswith('http://opendata.cern.ch/'):
+                link_url = link_url.replace('http://opendata.cern.ch/', '/')
+            if 'CMS-Learning-Resources' in collections and link_url == 'http://mattbellis.github.io/Particle-Physics-Playground/':
+                link_url = 'http://particle-physics-playground.github.io/'
+            if 'CMS-Learning-Resources' in collections and link_url == 'http://ippog.web.cern.ch/resources/2012/cms-hep-tutorial':
+                link_url = 'http://ippog.org/resources/2012/cms-hep-tutorial'
+            link['url'] = link_url
         link_description = field_get_subfield_values(file_instance, "y")
         if link_description:
             link['description'] = link_description[0]
