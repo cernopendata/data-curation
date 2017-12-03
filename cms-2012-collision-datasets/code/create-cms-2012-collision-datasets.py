@@ -243,11 +243,11 @@ def create_record(recid, run_period, dataset):
     rec['usage']['links'] = [
         {
             "description": "How to install the CMS Virtual Machine",
-            "url": "http://opendata.cern.ch/vm/cms/2011"
+            "url": "/vm/cms/2011"
         },
         {
             "description": "Getting started with CMS open data",
-            "url": "http://opendata.cern.ch/getting-started/cms/2011"
+            "url": "/getting-started/cms/2011"
         }
     ]
 
