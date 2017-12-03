@@ -18,6 +18,9 @@ FILEINFO = {}
 
 SELECTION_DESCRIPTIONS = {}
 
+LINK_INFO = {}
+exec(open('../physics-menus/outputs/reco_config_files_link_info.py', 'r').read())
+
 
 def get_from_deep_json(data, akey):
     "Traverse DATA and return first value matching AKEY."
@@ -113,13 +116,30 @@ def create_selection_information(dataset, dataset_full_name):
     out += '<p>'
     out += SELECTION_DESCRIPTIONS[dataset_full_name]
     out += '</p>'
+    # data taking / HLT:
+    out += '<p><strong>Data taking / HLT</strong>'
+    out += '<br/>The collision data were assigned to different RAW datasets using the following <a href="/record/1701">HLT configuration</a>.</p>'
+    # data processing / RECO:
+    run_period = re.search(r'(Run[0-9]+.)', dataset_full_name).groups()[0]
+    afile = 'reco_' + run_period[3:] + '_' + dataset
+    process = 'RECO'
+    generator_text = 'Configuration file for ' + process + ' step ' + afile
+    release = 'CMSSW_5_3_7_patch5'
+    global_tag = 'FT_R_53_V18::All'
+    out += '<p><strong>Data processing / RECO</strong>'
+    out += '<br/>This primary AOD dataset was processed from the RAW dataset by the following step: '
+    out += '<br/>Step: %s' % process
+    out += '<br/>Release: %s' % release
+    out += '<br/>Global tag: %s' % global_tag
+    out += '\n        <br/><a href="/record/%s">%s</a>' % (LINK_INFO[afile], generator_text)
+    out += '\n        </p>'
     # HLT trigger paths:
-    out += '\n     <p><strong>HLT trigger paths</strong>'
-    out += '\n     <br/>The possible HLT trigger paths in this dataset are:'
+    out += '<p><strong>HLT trigger paths</strong>'
+    out += '<br/>The possible HLT trigger paths in this dataset are:'
     trigger_paths = get_trigger_paths_for_dataset(dataset)
     for trigger_path in trigger_paths:
-        out += '\n      <br/><a href="/search?q=%s">%s</a>' % (trigger_path,
-                                                               trigger_path)
+        out += '<br/><a href="/search?q=%s">%s</a>' % (trigger_path,
+                                                       trigger_path)
     out += '</p>'
     return out
 
