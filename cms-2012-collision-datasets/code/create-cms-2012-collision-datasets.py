@@ -19,7 +19,7 @@ FILEINFO = {}
 SELECTION_DESCRIPTIONS = {}
 
 LINK_INFO = {}
-exec(open('../physics-menus/outputs/reco_config_files_link_info.py', 'r').read())
+exec(open('./outputs/reco_config_files_link_info.py', 'r').read())
 
 
 def get_from_deep_json(data, akey):
