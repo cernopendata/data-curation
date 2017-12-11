@@ -220,6 +220,8 @@ def create_record(recid, run_period, dataset):
                 'uri': 'root://eospublic.cern.ch/' + file_path
             })
             number_index_file += 1
+        elif file_path.endswith('.root'):
+            continue # ignore ROOT files since we have file indexes
         else:
             rec['files'].append({
                 'checksum': 'sha1:0000000000000000000000000000000000000000',
