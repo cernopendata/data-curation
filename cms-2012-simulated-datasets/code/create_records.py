@@ -40,9 +40,9 @@ def get_from_deep_json(data, akey):
     return None
 
 
-def get_das_store_json(dataset):
-    "Return DAS JSON from the DAS JSON Store for the given dataset."
-    filepath = './inputs/das-json-store/dataset/' + dataset.replace('/', '@') + '.json'
+def get_das_store_json(dataset, query='dataset'):
+    "Return DAS JSON from the DAS JSON Store for the given dataset and given query."
+    filepath = './inputs/das-json-store/' + query + '/' + dataset.replace('/', '@') + '.json'
     with open(filepath, 'r') as filestream:
         return json.load(filestream)
 
@@ -167,13 +167,6 @@ def create_record(dataset_full_name):
 
     rec['pileup'] = {}
     rec['pileup']['description'] = '<p>To make these simulated data comparable with the collision data, <a href="/about/CMS-Pileup-Simulation">pile-up events</a> are added to the simulated event in this step.</p>'
-    rec['pileup']['links'] = [
-        {
-            'recid': 0,  # FIXME
-            'title': '',  # FIXME
-        }
-
-    ]
 
     rec['publisher'] = 'CERN Open Data Portal'
 
