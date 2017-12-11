@@ -15,8 +15,6 @@ RECID_INFO = {}
 # read RECID_INFO dictionary created by a friendly program ahead of this one:
 exec(open('./outputs/recid_info.py', 'r').read())
 
-FILEINFO = {}
-
 
 def get_from_deep_json(data, akey):
     "Traverse DATA and return first value matching AKEY."
@@ -44,14 +42,13 @@ def get_from_deep_json(data, akey):
 
 def get_das_store_json(dataset):
     "Return DAS JSON from the DAS JSON Store for the given dataset."
-    filepath = './inputs/das-json-store/' + dataset.replace('/', '@') + '.json'
+    filepath = './inputs/das-json-store/dataset/' + dataset.replace('/', '@') + '.json'
     with open(filepath, 'r') as filestream:
         return json.load(filestream)
 
 
 def get_number_events(dataset):
     """Return number of events for the dataset."""
-    return 0  # FIXME
     number_events = get_from_deep_json(get_das_store_json(dataset), 'nevents')
     if number_events:
         return number_events
@@ -60,7 +57,6 @@ def get_number_events(dataset):
 
 def get_number_files(dataset):
     """Return number of files for the dataset."""
-    return 0  # FIXME
     number_files = get_from_deep_json(get_das_store_json(dataset), 'nfiles')
     if number_files:
         return number_files
@@ -69,7 +65,6 @@ def get_number_files(dataset):
 
 def get_size(dataset):
     """Return size of the dataset."""
-    return 0  # FIXME
     size = get_from_deep_json(get_das_store_json(dataset), 'size')
     if size:
         return size
@@ -81,25 +76,15 @@ def get_dataset(dataset_full_name):
     return re.search(r'^/(.*?)/', dataset_full_name).groups()[0]
 
 
-def populate_fileinfo():
-    """Populate FILEINFO dictionary (file -> size)."""
-    for line in open('./inputs/eos-file-information.txt', 'r').readlines():
+def get_dataset_files(dataset):
+    """Return list of dataset file information {path,size} for the given dataset."""
+    files = []
+    for line in open('./inputs/eos-file-information/' + dataset + '-file-list.txt', 'r').readlines():
         match = re.search(r'^path=(.*) size=(.*)$', line)
         if match:
             file_path, file_size = match.groups()
-            if file_path in FILEINFO:
-                raise Exception('Multiple FILEINFO files %s.' % file_path)
-            else:
-                FILEINFO[file_path] = int(file_size)
-
-
-def get_dataset_files(dataset):
-    """Return list of dataset file information {path,size} for the given dataset."""
-    return []  # FIXME
-    files = []
-    for filepath in FILEINFO.keys():
-        if filepath.startswith('/eos/opendata/cms/' + run_period + '/' + dataset + '/AOD/' + version + '/'):
-            files.append((filepath, FILEINFO[filepath]))
+            if file_path.endswith('_file_index.txt'):
+                files.append((file_path, int(file_size)))
     return files
 
 
@@ -112,8 +97,8 @@ def create_record(dataset_full_name):
     year_created = '2012'
     year_published = '2017'
     run_period = '2012B'  # FIXME
-    global_tag = ''  # FIXME
-    release = ''  # FIXME
+    global_tag = 'FT53_V21A_AN6'  # FIXME
+    release = 'CMSSW_5_3_32'  # FIXME
 
     rec['abstract'] = {}
     rec['abstract']['description'] = '<p>Simulated dataset ' + dataset + ' in AODSIM format for 2012 collision data.</p>' + \
@@ -175,7 +160,7 @@ def create_record(dataset_full_name):
     rec['license']['attribution'] = 'CC0'
 
     rec['methodology'] = {}
-    rec['methodology']['description'] = 'FIXME'
+    rec['methodology']['description'] = ''  # FIXME
 
     rec['note'] = {}
     rec['note']['description'] = 'These simulated datasets correspond to the collision data collected by the CMS experiment in 2011.'
