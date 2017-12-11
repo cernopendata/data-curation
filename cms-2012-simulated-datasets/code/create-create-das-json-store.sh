@@ -9,12 +9,16 @@
 # cernapcms@lxplus> voms-proxy-init --voms cms
 # cernapcms@lxplus> ./create-das-json-store.sh
 # tibor@laptop> mkdir -p ./inputs/das-json-store
-# tibor@laptop> scp cernapcms@lxplus.cern.ch:tibor/*.json ./inputs/das-json-store
+# tibor@laptop> scp -r cernapcms@lxplus.cern.ch:tibor/{config,dataset,parent} ./inputs/das-json-store
 #
 # The resulting `*.json` files are to be copied to ../inputs/das-json-store/
 # directory on the working laptop.
 
 mcdatasets=./inputs/mc-datasets.txt
+
+echo mkdir -p ./dataset
+echo mkdir -p ./parent
+echo mkdir -p ./config
 
 while IFS= read -r dataset_full_name
 do
@@ -22,6 +26,8 @@ do
     if [ -e "./inputs/eos-file-information/${dataset}-file-list.txt" ]; then
         # take only datasets that have EOS file information
         result_file=$(echo "${dataset_full_name}" | tr '/' '@')
-        echo "dasgoclient -query "dataset=${dataset_full_name}" -json > ${result_file}.json"
+        echo "dasgoclient -query \"dataset=${dataset_full_name}\" -json > ./dataset/${result_file}.json"
+        echo "dasgoclient -query \"parent dataset=${dataset_full_name}\" -json > ./parent/${result_file}.json"
+        echo "dasgoclient -query \"config dataset=${dataset_full_name}\" -json > ./config/${result_file}.json"
     fi
 done < "$mcdatasets"
