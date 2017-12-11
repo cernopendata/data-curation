@@ -76,15 +76,23 @@ def get_dataset(dataset_full_name):
     return re.search(r'^/(.*?)/', dataset_full_name).groups()[0]
 
 
-def get_dataset_files(dataset):
+def get_dataset_version(dataset_full_name):
+    "Return dataset version from dataset full name."
+    return re.search(r'^.*Summer12_DR53X-(.*)/AODSIM$', dataset_full_name).groups()[0]
+
+
+def get_dataset_files(dataset_full_name):
     """Return list of dataset file information {path,size} for the given dataset."""
     files = []
+    dataset = get_dataset(dataset_full_name)
+    dataset_version = get_dataset_version(dataset_full_name)
     for line in open('./inputs/eos-file-information/' + dataset + '-file-list.txt', 'r').readlines():
         match = re.search(r'^path=(.*) size=(.*)$', line)
         if match:
             file_path, file_size = match.groups()
             if file_path.endswith('_file_index.txt'):
-                files.append((file_path, int(file_size)))
+                if dataset in file_path and '/' + dataset_version in file_path:
+                    files.append((file_path, int(file_size)))
     return files
 
 
@@ -131,7 +139,7 @@ def create_record(dataset_full_name):
     rec['experiment'] = 'CMS'
 
     rec['files'] = []
-    rec_files = get_dataset_files(dataset)
+    rec_files = get_dataset_files(dataset_full_name)
     number_index_files = sum([1 for f in rec_files if f[0].endswith('.txt')])
     number_index_file = 1
     for file_path, file_size in rec_files:
@@ -154,7 +162,7 @@ def create_record(dataset_full_name):
 
     rec['generator'] = {}
     rec['generator']['global_tag'] = ''  # FIXME
-    rec['generator']['names'] = ''  # FIXME
+    rec['generator']['names'] = []  # FIXME
 
     rec['license'] = {}
     rec['license']['attribution'] = 'CC0'
@@ -172,9 +180,9 @@ def create_record(dataset_full_name):
 
     rec['recid'] = str(RECID_INFO[dataset_full_name])
 
-    rec['relations'] = {}
-    rec['relations']['title'] = ''  # FIXME
-    rec['relations']['type'] = 'isChildOf'
+    rec['relations'] = []
+    # rec['relations']['title'] = ''  # FIXME
+    # rec['relations']['type'] = 'isChildOf'
 
     rec['run_period'] = run_period
 
