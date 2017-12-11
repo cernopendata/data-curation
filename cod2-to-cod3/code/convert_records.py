@@ -618,6 +618,8 @@ def convert_record(rec):
         file_size = field_get_subfield_values(file_instance, "s")[0]
         afile['size'] = int(file_size)
         afile['checksum'] = 'sha1:0000000000000000000000000000000000000000'  # FIXME detect real SHA1 of files
+        if 'eos-file-indexes' in " ".join(record_get_field_values(rec, 'FFT', code='a')):
+            continue # remove individual ROOT files when we have file indexes
         files.append(afile)
     if files:
         if jrec.has_key('files'):
