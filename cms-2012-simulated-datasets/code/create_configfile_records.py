@@ -137,7 +137,7 @@ def main():
 
             rec['files'] = [
                 {
-                    'checksum': get_checksum(afile),
+                    'checksum': 'sha1:' + get_checksum(afile),
                     'size': get_size(afile),
                     'uri': 'root://eospublic.cern.ch//eos/opendata/cms/configuration-files/2012/' + afile + '.py'
 
