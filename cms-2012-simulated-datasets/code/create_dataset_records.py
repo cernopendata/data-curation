@@ -104,9 +104,9 @@ def create_record(dataset_full_name):
     dataset = get_dataset(dataset_full_name)
     year_created = '2012'
     year_published = '2017'
-    run_period = '2012B'  # FIXME
-    global_tag = 'FT53_V21A_AN6'  # FIXME
-    release = 'CMSSW_5_3_32'  # FIXME
+    run_period = '2012A-2012D'
+    global_tag = 'START53_V27'
+    release = 'CMSSW_5_3_32'
 
     rec['abstract'] = {}
     rec['abstract']['description'] = '<p>Simulated dataset ' + dataset + ' in AODSIM format for 2012 collision data.</p>' + \
@@ -171,7 +171,7 @@ def create_record(dataset_full_name):
     rec['methodology']['description'] = ''  # FIXME
 
     rec['note'] = {}
-    rec['note']['description'] = 'These simulated datasets correspond to the collision data collected by the CMS experiment in 2011.'
+    rec['note']['description'] = 'These simulated datasets correspond to the collision data collected by the CMS experiment in 2012.'
 
     rec['pileup'] = {}
     rec['pileup']['description'] = '<p>To make these simulated data comparable with the collision data, <a href="/about/CMS-Pileup-Simulation">pile-up events</a> are added to the simulated event in this step.</p>'
