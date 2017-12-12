@@ -530,10 +530,11 @@ def convert_record(rec):
             parent_dataset['doi'] = parent_dataset_doi
         if parent_dataset_recid:
             parent_dataset['recid'] = parent_dataset_recid
-        if jrec.has_key('relations'):
-            jrec['relations'].append(parent_dataset)
-        else:
-            jrec['relations'] = [parent_dataset, ]
+        if parent_dataset_title != title:
+            if jrec.has_key('relations'):
+                jrec['relations'].append(parent_dataset)
+            else:
+                jrec['relations'] = [parent_dataset, ]
 
     # code to produce files / 777
     code_to_produce_files_description = record_get_field_value(rec, tag="777", code="a")
