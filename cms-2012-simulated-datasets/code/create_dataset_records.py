@@ -105,7 +105,7 @@ def get_dataset_index_files(dataset_full_name):
     output = subprocess.getoutput('ls ./inputs/eos-file-indexes/ | grep ' + dataset_index_file_base)
     for line in output.split('\n'):
         afile = line.strip()
-        if afile.endswith('.txt'):
+        if afile.endswith('.txt') or afile.endswith('.json'):
             # take only TXT files
             afile_uri = XROOTD_URI_BASE + get_dataset_location(dataset_full_name) + '/file-indexes/' + afile
             afile_size = get_file_size('./inputs/eos-file-indexes/' + afile)
@@ -158,23 +158,15 @@ def create_record(dataset_full_name):
 
     rec['files'] = []
     rec_files = get_dataset_index_files(dataset_full_name)
-    number_index_files = sum([1 for f in rec_files if f[0].endswith('.txt')])
-    number_index_file = 1
-    for file_uri, file_size, file_checksum in rec_files:
-        if file_uri.endswith('.txt'):
+    for index_type in ['.json', '.txt']:
+        index_files = [f for f in rec_files if f[0].endswith(index_type)]
+        for file_number, (file_uri, file_size, file_checksum) in enumerate(index_files):
             rec['files'].append({
                 'checksum': 'sha1:' + file_checksum,
-                'description': dataset + ' AOD dataset file index (' + str(number_index_file) + ' of ' + str(number_index_files) + ') for access to data via CMS virtual machine',
+                'description': dataset + ' AOD dataset file index (' + str(file_number + 1) + ' of ' + str(len(index_files)) + ') for access to data via CMS virtual machine',
 
                 'size': file_size,
-                'type': 'index',
-                'uri': file_uri
-            })
-            number_index_file += 1
-        else:
-            rec['files'].append({
-                'checksum': 'sha1:0000000000000000000000000000000000000000',
-                'size': file_size,
+                'type': 'index' + index_type,
                 'uri': file_uri
             })
 
