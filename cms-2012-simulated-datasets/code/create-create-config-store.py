@@ -14,11 +14,15 @@ Create `create-config-store.sh` script to download configuration files for MC 20
 # tibor@laptop> scp -r cernapcms@lxplus.cern.ch:tibor/config-store/* ./inputs/config-store
 """
 
-import os
+import subprocess
 import sys
 
+from create_dataset_records import \
+    get_from_deep_json, \
+    get_das_store_json
 
-from create_records import get_dataset, get_from_deep_json, get_das_store_json
+from create_eos_file_indexes import \
+    get_dataset_index_file_base
 
 
 def get_conffile_ids(dataset):
@@ -38,11 +42,12 @@ def main():
     dataset_full_names = []
     for line in open('./inputs/mc-datasets.txt', 'r').readlines():
         dataset_full_name = line.strip()
-        if os.path.exists('./inputs/eos-file-information/' + get_dataset(dataset_full_name) + '-file-list.txt'):
-            dataset_full_names.append(dataset_full_name)
-        else:
+        dataset_index_file_base = get_dataset_index_file_base(dataset_full_name)
+        if subprocess.call('ls ./inputs/eos-file-indexes/ | grep -q ' + dataset_index_file_base, shell=True):
             print('[ERROR] Missing EOS information, ignoring dataset ' + dataset_full_name,
                   file=sys.stderr)
+        else:
+            dataset_full_names.append(dataset_full_name)
 
     conffile_ids = []
     for dataset_full_name in dataset_full_names:
