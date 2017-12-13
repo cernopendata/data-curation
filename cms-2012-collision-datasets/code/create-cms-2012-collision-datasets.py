@@ -8,9 +8,16 @@ Create CMS 2012 open data release collision datasets.
 
 import click
 import csv
+import hashlib
 import json
+import os
 import re
+import subprocess
 
+from create_eos_file_indexes import \
+    XROOTD_URI_BASE, \
+    get_dataset_index_file_base, \
+    get_dataset_location
 
 FWYZARD = {}
 
@@ -75,6 +82,16 @@ def get_size(dataset):
     if size:
         return size
     return 0
+
+
+def get_file_size(afile):
+    "Return file size of a file."
+    return os.path.getsize(afile)
+
+
+def get_file_checksum(afile):
+    """Return the SHA1 checksum of a file."""
+    return hashlib.sha1(open(afile, 'rb').read()).hexdigest()
 
 
 def populate_fwyzard():
@@ -158,6 +175,22 @@ def get_dataset_files(dataset, run_period, version):
     return files
 
 
+def get_dataset_index_files(dataset_full_name):
+    """Return list of dataset file information {path,size} for the given dataset."""
+    files = []
+    dataset_index_file_base = get_dataset_index_file_base(dataset_full_name)
+    output = subprocess.getoutput('ls ./inputs/eos-file-indexes/ | grep ' + dataset_index_file_base)
+    for line in output.split('\n'):
+        afile = line.strip()
+        if afile.endswith('.txt') or afile.endswith('.json'):
+            # take only TXT files
+            afile_uri = XROOTD_URI_BASE + get_dataset_location(dataset_full_name) + '/file-indexes/' + afile
+            afile_size = get_file_size('./inputs/eos-file-indexes/' + afile)
+            afile_checksum = get_file_checksum('./inputs/eos-file-indexes/' + afile)
+            files.append((afile_uri, afile_size, afile_checksum))
+    return files
+
+
 def create_record(recid, run_period, dataset):
     """Create record for the given dataset."""
 
@@ -206,27 +239,17 @@ def create_record(recid, run_period, dataset):
     rec['experiment'] = 'CMS'
 
     rec['files'] = []
-    rec_files = get_dataset_files(dataset, run_period, version)
-    number_index_files = sum([1 for f in rec_files if f[0].endswith('.txt')])
-    number_index_file = 1
-    for file_path, file_size in rec_files:
-        if file_path.endswith('.txt'):
+    rec_files = get_dataset_index_files(dataset_full_name)
+    for index_type in ['.json', '.txt']:
+        index_files = [f for f in rec_files if f[0].endswith(index_type)]
+        for file_number, (file_uri, file_size, file_checksum) in enumerate(index_files):
             rec['files'].append({
-                'checksum': 'sha1:0000000000000000000000000000000000000000',
-                'description': dataset + ' AOD dataset file index (' + str(number_index_file) + ' of ' + str(number_index_files) + ') for access to data via CMS virtual machine',
+                'checksum': 'sha1:' + file_checksum,
+                'description': dataset + ' AOD dataset file index (' + str(file_number + 1) + ' of ' + str(len(index_files)) + ') for access to data via CMS virtual machine',
 
                 'size': file_size,
-                'type': 'index',
-                'uri': 'root://eospublic.cern.ch/' + file_path
-            })
-            number_index_file += 1
-        elif file_path.endswith('.root'):
-            continue # ignore ROOT files since we have file indexes
-        else:
-            rec['files'].append({
-                'checksum': 'sha1:0000000000000000000000000000000000000000',
-                'size': file_size,
-                'uri': 'root://eospublic.cern.ch/' + file_path
+                'type': 'index' + index_type,
+                'uri': file_uri
             })
 
     rec['license'] = {}

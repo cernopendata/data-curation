@@ -60,6 +60,16 @@ def get_dataset_location(dataset):
         get_dataset_version(dataset)
 
 
+def get_dataset_index_file_base(dataset):
+    "Return index file base for given dataset."
+    filebase = EXPERIMENT.upper() + '_' + \
+               get_dataset_runperiod(dataset) + '_' + \
+               get_dataset_name(dataset) + '_' + \
+               get_dataset_format(dataset) + '_' + \
+               get_dataset_version(dataset)
+    return filebase
+
+
 def get_volumes(dataset):
     "Return list of volumes for the given dataset."
     volumes = []
