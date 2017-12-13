@@ -23,7 +23,7 @@ echo mkdir -p ./config
 while IFS= read -r dataset_full_name
 do
     dataset=$(echo "${dataset_full_name}" | awk -F'/' '{print $2;}')
-    if [ -e "./inputs/eos-file-information/${dataset}-file-list.txt" ]; then
+    if ls ./inputs/eos-file-indexes/ | grep -q "${dataset}"; then
         # take only datasets that have EOS file information
         result_file=$(echo "${dataset_full_name}" | tr '/' '@')
         echo "dasgoclient -query \"dataset=${dataset_full_name}\" -json > ./dataset/${result_file}.json"
