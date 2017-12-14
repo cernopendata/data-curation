@@ -114,6 +114,15 @@ def get_dataset_index_files(dataset_full_name):
     return files
 
 
+def newer_dataset_version_exists(dataset_full_name):
+    "Return whether the newer version of dataset exists."
+    dataset_full_name_until_version = dataset_full_name[0:dataset_full_name.rfind('-')]
+    output = subprocess.getoutput('grep ' + dataset_full_name_until_version + ' ./inputs/mc-datasets.txt')
+    similar_datasets = output.split('\n')
+    similar_datasets.sort()
+    return similar_datasets[-1] != dataset_full_name
+
+
 def create_record(dataset_full_name):
     """Create record for the given dataset."""
 
@@ -259,6 +268,9 @@ def main():
         dataset_index_file_base = get_dataset_index_file_base(dataset_full_name)
         if subprocess.call('ls ./inputs/eos-file-indexes/ | grep -q ' + dataset_index_file_base, shell=True):
             print('[ERROR] Missing EOS information, ignoring dataset ' + dataset_full_name,
+                  file=sys.stderr)
+        elif newer_dataset_version_exists(dataset_full_name):
+            print('[ERROR] Ignoring older dataset version ' + dataset_full_name,
                   file=sys.stderr)
         else:
             dataset_full_names.append(dataset_full_name)
