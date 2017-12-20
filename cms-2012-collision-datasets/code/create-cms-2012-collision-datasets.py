@@ -28,6 +28,8 @@ SELECTION_DESCRIPTIONS = {}
 LINK_INFO = {}
 exec(open('./outputs/reco_config_files_link_info.py', 'r').read())
 
+DOI_INFO = {}
+
 
 def get_from_deep_json(data, akey):
     "Traverse DATA and return first value matching AKEY."
@@ -102,6 +104,13 @@ def populate_fwyzard():
             FWYZARD[dataset].append(trigger)
         else:
             FWYZARD[dataset] = [trigger, ]
+
+
+def populate_doiinfo():
+    """Populate DOI_INFO dictionary (dataset -> doi)."""
+    for line in open('./inputs/doi-col.txt', 'r').readlines():
+        dataset, doi = line.split()
+        DOI_INFO[dataset] = doi
 
 
 def populate_fileinfo():
@@ -191,6 +200,11 @@ def get_dataset_index_files(dataset_full_name):
     return files
 
 
+def get_doi(dataset_full_name):
+    "Return DOI for the given dataset."
+    return DOI_INFO[dataset_full_name]
+
+
 def create_record(recid, run_period, dataset):
     """Create record for the given dataset."""
 
@@ -234,7 +248,7 @@ def create_record(recid, run_period, dataset):
     rec['distribution']['number_files'] = get_number_files(dataset_full_name)
     rec['distribution']['size'] = get_size(dataset_full_name)
 
-    # rec['doi'] = ''  # FIXME
+    rec['doi'] = get_doi(dataset_full_name)
 
     rec['experiment'] = 'CMS'
 
@@ -346,6 +360,7 @@ def main(run_period):
     "Do the job."
     populate_fwyzard()
     populate_fileinfo()
+    populate_doiinfo()
     populate_selection_descriptions()
     datasets = [
         'BJetPlusX',
