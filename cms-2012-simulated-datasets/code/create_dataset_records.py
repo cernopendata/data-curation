@@ -22,6 +22,12 @@ RECID_INFO = {}
 # read RECID_INFO dictionary created by a friendly program ahead of this one:
 exec(open('./outputs/recid_info.py', 'r').read())
 
+LINK_INFO = {}
+# read LINK_INFO dictionary created by a friendly program ahead of this one:
+exec(open('./outputs/config_files_link_info.py', 'r').read())
+
+DOI_INFO = {}
+
 
 def get_from_deep_json(data, akey):
     "Traverse DATA and return first value matching AKEY."
@@ -50,8 +56,13 @@ def get_from_deep_json(data, akey):
 def get_das_store_json(dataset, query='dataset'):
     "Return DAS JSON from the DAS JSON Store for the given dataset and given query."
     filepath = './inputs/das-json-store/' + query + '/' + dataset.replace('/', '@') + '.json'
-    with open(filepath, 'r') as filestream:
-        return json.load(filestream)
+    if os.path.exists(filepath):
+        with open(filepath, 'r') as filestream:
+            return json.load(filestream)
+    else:
+        print('[ERROR] There is no DAS JSON store ' + query + ' for dataset ' + dataset,
+              file=sys.stderr)
+        return json.loads('{}')
 
 
 def get_number_events(dataset):
@@ -123,6 +134,117 @@ def newer_dataset_version_exists(dataset_full_name):
     return similar_datasets[-1] != dataset_full_name
 
 
+def get_conffile_ids(dataset):
+    """Return location of the configuration files for the dataset."""
+    ids = {}
+    output = get_from_deep_json(get_das_store_json(dataset, 'config'),
+                                'byoutputdataset')
+    if output:
+        for someid in output:
+            ids[someid] = 1
+    return list(ids.keys())
+
+
+def get_generator_text(dataset):
+    """Return generator text for given dataset."""
+    from create_configfile_records import get_title as get_generator_title
+    from create_configfile_records import get_process
+    config_ids = get_conffile_ids(dataset)
+    process = ''
+    if config_ids:
+        for config_id in config_ids:
+            afile = config_id + '.configFile'
+            if process:
+                process += ' '
+            try:
+                process += get_process(afile)
+            except:
+                print('[ERROR] Missing configuration file ' + config_id, file=sys.stderr)
+    if not process:
+        return ''
+    lhe_info_needed = False
+    out = '<p>'
+    out += '<strong>Step %s</strong>' % process
+    # out += '<br>Release: %s' % 'FIXME'
+    # out += '<br>Global tag: %s' % 'FIXME'
+    if config_ids:
+        for config_id in config_ids:
+            afile = config_id + '.configFile'
+            generator_text = ''
+            try:
+                generator_text = get_generator_title(afile)
+                out += '<br><a href="/record/%s">%s</a>' % (LINK_INFO[config_id], generator_text)
+            except:
+                print('[ERROR] Missing configuration file ' + config_id, file=sys.stderr)
+            if 'LHE' in generator_text:
+                lhe_info_needed = True
+    out += '<br>Output dataset: %s' % dataset
+    out += '</p>'
+    if lhe_info_needed and False:  # FIXME
+        out += """
+        <p><strong>Note</strong>
+        <br>
+To extract the exact LHE configuration, you can use the following script available in the <a href="/getting-started/CMS">CMS working environment</a> on the <a href="/VM/CMS">CMS Open Data VM</a>:
+
+        <blockquote>
+        <pre>
+$ dumpLHEHeader.py input=file:somefile.root output=testout.lhe
+        </pre>
+        </blockquote>
+
+where <code>"somefile.foot"</code> is one of the root files in this dataset.
+
+For example, in the existing working area, you can read the generator information directly from any of the root files of this dataset on the CERN Open Data area (the path to the root files is available from the file index of the record):
+
+        <blockquote>
+        <pre>
+cd CMSSW_5_3_32/src
+cmsenv
+dumpLHEHeader.py input=file:root://eospublic.cern.ch//eos/opendata/cms/MonteCarlo2011/Summer11LegDR/TTJets_MSDecays_dileptonic_matchingdown_7TeV-madgraph-tauola/AODSIM/PU_S13_START53_LV6_ext1-v1/60000/0282B13B-490E-E511-8E8A-001E67A3EF70.root output=testout.lhe
+        </pre>
+        </blockquote>
+        </p>
+        """
+    return """
+%s
+""" % out
+
+
+def get_parent_dataset(dataset):
+    "Return parent dataset to the given dataset or an empty string if no parent found."
+    parent_dataset = ''
+    try:
+        parent_dataset = get_from_deep_json(get_das_store_json(dataset, 'parent'), 'parent_dataset')
+    except:
+        # troubles getting information about parent
+        pass
+    return parent_dataset
+
+
+def get_all_generator_text(dataset):
+    """Return generator text for given dataset and all its parents."""
+    out = '<p>These data were processed in several steps:</p>'
+    input_dataset = dataset
+    out_blocks = []
+    while input_dataset:
+        out_blocks.append(get_generator_text(input_dataset))
+        input_dataset = get_parent_dataset(input_dataset)
+    out_blocks.reverse()
+    return out + "".join(out_blocks)
+
+
+def populate_doiinfo():
+    """Populate DOI_INFO dictionary (dataset -> doi)."""
+    for line in open('./inputs/doi-sim.txt', 'r').readlines():
+        dataset, doi = line.split()
+        DOI_INFO[dataset] = doi
+
+
+def get_doi(dataset_full_name):
+    "Return DOI for the given dataset."
+    return DOI_INFO[dataset_full_name]
+
+
 def create_record(dataset_full_name):
     """Create record for the given dataset."""
 
@@ -161,7 +283,7 @@ def create_record(dataset_full_name):
     rec['distribution']['number_files'] = get_number_files(dataset_full_name)
     rec['distribution']['size'] = get_size(dataset_full_name)
 
-    # rec['doi'] = ''  # FIXME
+    rec['doi'] = get_doi(dataset_full_name)
 
     rec['experiment'] = 'CMS'
 
@@ -187,7 +309,7 @@ def create_record(dataset_full_name):
     rec['license']['attribution'] = 'CC0'
 
     rec['methodology'] = {}
-    rec['methodology']['description'] = ''  # FIXME
+    rec['methodology']['description'] = get_all_generator_text(dataset_full_name)
 
     rec['note'] = {}
     rec['note']['description'] = 'These simulated datasets correspond to the collision data collected by the CMS experiment in 2012.'
@@ -213,9 +335,9 @@ def create_record(dataset_full_name):
 
     rec['title_additional'] = 'Simulated dataset ' + dataset + ' in AODSIM format for 2012 collision data'
 
-    rec['topic'] = {}
-    rec['topic']['category'] = ''  # FIXME
-    rec['topic']['source'] = 'CMS collaboration'
+    #rec['topic'] = {}
+    #rec['topic']['category'] = ''  # FIXME
+    #rec['topic']['source'] = 'CMS collaboration'
 
     rec['type'] = {}
     rec['type']['primary'] = 'Dataset'
@@ -262,6 +384,7 @@ def print_records(records):
 
 def main():
     "Do the job."
+    populate_doiinfo()
     dataset_full_names = []
     for line in open('./inputs/mc-datasets.txt', 'r').readlines():
         dataset_full_name = line.strip()
