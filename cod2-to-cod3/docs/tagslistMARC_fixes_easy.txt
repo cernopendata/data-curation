@@ -1,0 +1,288 @@
+#TAG      TAG name (current)
+            TAG name (new)
+
+0247_2    doi.DOI
+            [NOT NEEDED]
+0247_a    doi
+            DOI
+
+035__9    system_control_number.system_control_number
+            CMS-ConfDB_ID
+035__a    system_control_number.system_control_number_source
+            [NOT NEEDED]
+[035 COMMENT: This tag is only used in "cms-configuration-files-Run2011A.xml" and only for this id]
+
+037__a    acquisition_source.number
+            report.number
+
+041__a    language.language
+            language
+
+100__a    first_author, creator.full_name
+            author.name
+100__e    first_author, creator.relator_name [NOT USED]
+100__h    first_author, creator.CCID
+            author.CCID
+100__i    first_author, creator.INSPIRE_number
+            author.INSPIRE_ID
+100__u    first_author, creator.affiliation
+            author.affiliation
+[100 COMMENT: Just like with the other ids, we could also keep the CCID outside of "author." for quicker access, if it makes sense]
+
+110__a    first_corporate_name.name
+            collaboration.name
+110__b    first_corporate_name.subordinate_unit [NOT USED]
+110__g    first_corporate_name.collaboration
+            collaboration.group
+110__w    first_corporate_name.recid
+            collaboration.recid
+
+245__a    title.title
+            title
+245__b    title.subtitle
+            subtitle
+245__k    title.form [NOT USED]
+245__n    title.volume [NOT USED]
+245__s    title.version [NOT USED]
+
+246__a    title_additional.title
+            additional_title
+246__b    title_additional.subtitle
+            additional_subtitle
+246__g    title_additional.misc [NOT USED]
+246__i    title_additional.text [NOT USED]
+246__n    title_additional.part_number [NOT USED]
+246__p    title_additional.part_name [NOT USED]
+
+250__a    edition_statement.statement [NOT USED]
+250__b    edition_statement.reminder [NOT USED]
+
+256__a    computer_file_characteristics.characteristics
+            file.type
+256__b    computer_file_characteristics.bytes
+            file.size
+256__e    computer_file_characteristics.events
+            file.number_events
+256__f    computer_file_characteristics.files
+            file.number_files
+256__t    computer_file_characteristics.text
+            file.description
+
+260__a    publication.place [NOT USED]
+260__b    publication.publisher_name
+            [KEEP]
+260__c    publication.date
+            publication.date_published
+260__g    publication.reprinted_editions [NOT USED]
+
+264_0c    manufacture_date
+            date_created
+
+269__a    pre_publication.place
+            prepub.place
+269__b    pre_publication.publisher_name
+            prepub.publisher_name
+269__c    pre_publication.complete_date
+            prepub.date_completed
+
+300__a    physical_description.extent
+            extent
+
+500__a    comment
+            [KEEP]
+
+505__t    formatted_contents_note.title
+            dataset_semantics.title
+505__g    formatted_contents_note.miscellaneous
+            dataset_semantics.description
+
+516__a    computer_file_type.note
+            use_with.description
+516__w    computer_file_type.recid
+            use_with.links.recid
+516__u    computer_file_type.url
+            use_with.links.url
+516__y    computer_file_type.description
+            use_with.links.title
+[516 COMMENT In "cms-learning-resources.xml", tag "516" is used a bit differently. Another tag can be used there for that information instead for consistency purposes (e.g. 567 or 500)]
+
+520__a    abstract.summary
+            abstract
+520__u    abstract.url
+            abstract.links.url
+520__w    abstract.recid
+            abstract.links.recid
+520__b    abstract.expansion [NOT USED]
+520__9    abstract.number [NOT USED]
+
+538__a    system_details.note
+            system_details.release
+538__b    system_details.notebis
+            system_details.global_tag
+538__i    system_details.displaytext
+            system_details.description
+538__u    system_details.url
+            [KEEP]
+538__w    system_details.recid
+            [KEEP]
+
+540__a    license.license
+            license
+540__b    license.imposing [NOT USED]
+540__u    license.url [NOT USED]
+540__3    license.material [NOT USED]
+
+556__a    documentation_note.note
+            documentation.description
+556__w    documentation_note.recid
+            documentation.links.recid
+556__u    documentation_note.url
+            documentation.links.url
+556__y    documentation_note.description
+            documentation.links.title
+
+567__a    methodology_note.note
+            methodology
+567__w    methodology_note.recid
+            methodology.recid
+
+581__a    material_publication_note.note
+            how_to.description
+581__w    material_publication_note.recid
+            how_to.links.recid
+581__u    material_publication_note.url
+            how_to.links.url
+581__y    material_publication_note.description
+            how_to.links.title
+
+583__a    action_note.action
+            validation.description
+583__w    action_note.recid
+            validation.links.recid
+583__u    action_note.url
+            validation.links.url
+583__y    action_note.description
+            validation.links.title
+
+593__a    local_note.type_generator
+            generator.type
+593__b    local_note.global_tag
+            generator.global_tag
+
+6531_a    english_index_term.term
+
+655_79    index_term_form.source
+            [NOT NEEDED?]
+655_7a    index_term_form.form_data
+            keywords
+
+693__a    accelerator_experiment.accelerator
+            accelerator
+693__e    accelerator_experiment.experiment
+            experiment
+
+700__a    additional_authors, contributor.full_name
+            author.name
+700__h    additional_authors, contributor.CCID
+            author.CCID
+700__i    additional_authors, contributor.INSPIRE_number
+            author.INSPIRE_ID
+700__u    additional_authors, contributor.affiliation
+            author.affiliation
+[700 COMMENT: Same as in COMMENT 100]
+
+710__a    additional_corporate_names.name
+            collaboration.name
+710__b    additional_corporate_names.subordinate_unit [NOT USED]
+710__g    additional_corporate_names.collaboration [NOT USED]
+
+770__i    supplement_special_issue_entry.displaytext
+            pileup.description
+770__w    supplement_special_issue_entry.recid
+            pileup.links.recid
+770__a    supplement_special_issue_entry.heading
+            pileup.links.title
+[COMMENT 770: This could also be a field where we have configuration files in general, like this:
+"configuration_files": {
+  "description": "",
+  "links": [
+    {
+    "title": "",
+    "recid": "",
+    "configuration_type": "pile-up"
+    }]}
+]
+
+772__a    supplement_parent_entry.heading
+            parent_dataset.title
+772__o    supplement_parent_entry.other_item_identifier
+            parent_dataset.DOI
+772__u    supplement_parent_entry.url [NOT USED]
+772__w    supplement_parent_entry.recid
+            parent_dataset.recid
+772__y    supplement_parent_entry.description [NOT USED]
+
+774__a    constituent_unit_entry.heading [NOT USED]
+774__w    constituent_unit_entry.recid [NOT USED]
+
+777__a    issued_with_entry.heading
+777__u    issued_with_entry.url [NOT USED]
+777__w    issued_with_entry.recid
+777__y    issued_with_entry.description [NOT USED]
+[777 COMMENT: This field appears only in "cms-derived-pattuples-ana-Run2011A.xml" and "cms-derived-pattuples-ana.xml" and refers to code used in derived datasets. Maybe it would make sense to merge it with one of the other 7__ fields?]
+
+786__a    data_source_entry.heading
+            related_dataset.title
+786__w    data_source_entry.recid
+            related_dataset.recid
+
+787__a    other_relationship_entry.heading
+            related_item.description
+787__n    other_relationship_entry.note
+            related_item.description
+787__o    other_relationship_entry.other_item_identifier [NOT USED]
+787__u    other_relationship_entry.url
+            related_item.links.url
+787__w    other_relationship_entry.recid
+            related_item.links.recid
+787__y    other_relationship_entry.description
+            related_item.links.url
+[COMMENT 787: I don't quite see how 787__a & 787__n are different here, so I merged them. Similarly, the two instances of 787__y that I can find have the exact same content (a link) with the 787__u tag that is also present there, but it only shows up in the .xml, not the record for some reason]
+
+8564_a    url.host_name
+8564_b    url.access_number [NOT USED]
+8564_c    url.compression_information
+8564_d    url.path [NOT USED]
+8564_f    url.electronic_name [NOT USED]
+8564_h    url.request_processor [NOT USED]
+8564_i    url.institution [NOT USED]
+8564_q    url.eformat [NOT USED]
+8564_r    url.settings [NOT USED]
+8564_s    url.file_size
+8564_u    url.url
+8564_x    url.subformat [NOT USED]
+8564_y    url.description
+8564_z    url.comment
+
+8567_2    electronic_location.method
+8567_s    electronic_location.size
+8567_u    electronic_location.uri
+
+942__e    collision_information.collision_energy
+            collision_information.energy
+942__l    collision_information.luminosity
+            [KEEP]
+942__t    collision_information.collision_type
+            collision_information.type
+
+960__c    reprocessing_date
+            date_reprocessed
+
+964_0c    run_period
+            [KEEP]
+980__a    collections.primary
+            [KEEP]
+980__b    collections.secondary
+            [KEEP]
+980__c    collection.deleted
+            [KEEP]

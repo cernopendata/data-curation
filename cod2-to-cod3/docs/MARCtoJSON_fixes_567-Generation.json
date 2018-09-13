@@ -1,0 +1,48 @@
+  {
+    "generation": {
+      "description": "These data were processed in several steps:",
+      "step": [
+        {
+          "type": "LHE",
+          "release": "CMSSW_4_1_8_patch14",
+          "global_tag": "START311_V2::All",
+          "configuration_files": [
+            {
+              "title": "Configuration file for LHE step HIG-Summer11pLHE-00143_1_cfg.py",
+              "recid": "3178"
+            }
+          ],
+          "output": "/WHiggs0PHToZZTo4L_M-125p6_7TeV-JHUGenV4/Summer11-START311_V2-v1/GEN",
+          "note": "To extract the exact LHE configuration, you can use the following script available in the CMS working environment on the CMS Open Data VM: $ dumpLHEHeader.py input=file:somefile.root output=testout.lhe where <code>\"somefile.foot\"</code> is one of the root files in this dataset. For example, in the existing working area, you can read the generator information directly from any of the root files of this dataset on the CERN Open Data area (the path to the root files is available from the file index of the record): cd CMSSW_5_3_32/src\ncmsenv\ndumpLHEHeader.py input=file:root://eospublic.cern.ch//eos/opendata/cms/MonteCarlo2011/Summer11LegDR/TTJets_MSDecays_dileptonic_matchingdown_7TeV-madgraph-tauola/AODSIM/PU_S13_START53_LV6_ext1-v1/60000/0282B13B-490E-E511-8E8A-001E67A3EF70.root output=testout.lhe"
+        },
+        {
+          "type": "SIM",
+          "release": "CMSSW_5_3_22_patch1",
+          "global_tag": "START53_LV4::All",
+          "configuration_files": [
+            {
+              "title": "Configuration file for SIM step HIG-Summer11Leg-00151_1_cfg.py",
+              "recid": "3132"
+            }
+          ],
+          "output": "/WHiggs0PHToZZTo4L_M-125p6_7TeV-JHUGenV4/Summer11Leg-START53_LV4-v1/GEN-SIM"
+        },
+        {
+          "type": "HLT_RECO",
+          "release": "CMSSW_5_3_23_patch1",
+          "global_tag": "START53_LV6::All",
+          "configuration_files": [
+            {
+              "title": "Configuration file for HLT step HIG-Summer11LegDR-00204_1_cfg.py",
+              "recid": "3042"
+            },
+            {
+              "title": "Configuration file for RECO step HIG-Summer11LegDR-00204_2_cfg.py",
+              "recid": "3085"
+            }
+          ],
+          "output":         "/WHiggs0PHToZZTo4L_M-125p6_7TeV-JHUGenV4/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM"
+        }
+      ]
+    }
+  }

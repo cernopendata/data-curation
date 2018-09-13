@@ -1,0 +1,57 @@
+{
+  "triggers": {
+    "description": "High-Level Trigger path information AlCa_EcalEta.",
+    "TOC": [
+      {
+      "first_seen": "160404",
+      "config_file": {"title": "/cdaq/physics/Run2011/5e32/v4.2/HLT/V2", "recid": "3521"}
+      },
+      {
+      "last_seen": "180252",
+      "config_file": {"title": "/cdaq/physics/Run2011/5e33/v2.2/HLT/V4", "recid": "3503"}
+      }
+    ],
+    "path": [
+      {
+        "run_number": {"from": "163591", "to": "163593"},
+        "run_version": "special",
+        "seeded_by": [
+          "L1_DoubleEG10",
+          "L1_DoubleEG2_FwdVeto",
+          "L1_DoubleEG3",
+          "L1_DoubleEG5",
+          "L1_DoubleEG5_HTT50",
+          "L1_DoubleEG5_HTT75",
+          "L1_DoubleEG8",
+          "L1_DoubleEG_12_5",
+          "L1_DoubleForJet32_EtaOpp",
+          "L1_DoubleForJet44_EtaOpp",
+          "L1_DoubleIsoEG10",
+          "L1_DoubleJet36_Central",
+          "L1_DoubleJet52",
+          "L1_EG5_HTT100",
+          "L1_EG5_HTT125",
+          "L1_EG5_HTT75",
+          "L1_SingleEG12",
+          "L1_SingleEG12_Eta2p17",
+          "L1_SingleEG15",
+          "L1_SingleEG20",
+          "L1_SingleEG30",
+          "L1_SingleIsoEG12",
+          "L1_SingleIsoEG12_Eta2p17",
+          "L1_SingleJet128",
+          "L1_SingleJet16",
+          "L1_SingleJet36",
+          "L1_SingleJet36_FwdVeto",
+          "L1_SingleJet52",
+          "L1_SingleJet68",
+          "L1_SingleJet80_Central",
+          "L1_SingleJet92",
+          "L1_TripleEG5",
+          "L1_TripleEG7",
+          "L1_TripleJet28_Central"
+        ]
+      }
+    ]
+  }
+}

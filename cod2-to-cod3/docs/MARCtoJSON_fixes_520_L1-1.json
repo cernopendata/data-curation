@@ -1,0 +1,16 @@
+{
+  "triggers": {
+    "description": "L1Menu_Collisions2011_v0_L1T_Scales_20101224_Imp0_0x101e:",
+    "menu": [
+      {
+        "info": {"title": "L1_ZeroBias", "url": "http://opendata.cern.ch/record/3701/files/L1Menu_Collisions2011_v0_L1T_Scales_20101224_Imp0_0x101e.html#L1_ZeroBias"}
+      },
+      {
+        "info": {"title": "L1_PreCollisions", "url": "http://opendata.cern.ch/record/3701/files/L1Menu_Collisions2011_v0_L1T_Scales_20101224_Imp0_0x101e.html#L1_PreCollisions"}
+      },
+      {
+        "info": {"title": "L1_BeamGas_Bsc", "url": "http://opendata.cern.ch/record/3701/files/L1Menu_Collisions2011_v0_L1T_Scales_20101224_Imp0_0x101e.html#L1_BeamGas_Bsc"}
+      }
+    ]
+  }
+}

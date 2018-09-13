@@ -1,0 +1,12 @@
+{
+  "triggers": {
+    "description": "Here is the list of trigger configuration files for the CMS Run2011A collision data:",
+    "TOC": [
+      {
+        "run_number": {"from": "160404", "to": "160406"},
+        "software_version": {"title": "CMSSW_4_1_1_onlpatch1_ONLINE", "url": "https://github.com/cms-sw/cmssw/tree/CMSSW_4_1_1_onlpatch1_ONLINE"},
+        "config_file": {"title": "/cdaq/physics/Run2011/5e32/v4.2/HLT/V2", "recid": "3521"}
+      }
+    ]
+  }
+}
