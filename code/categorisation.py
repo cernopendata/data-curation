@@ -9,15 +9,8 @@ import sys
 
 from urllib.parse import quote
 
-
-def read_titles(filename):
-    """Read dataset titles from filename."""
-    titles = {}
-    for line in open(filename).readlines():
-        line = line.strip()
-        if line:
-            titles[line] = 1
-    return list(titles.keys())
+from utils import read_titles, \
+                  get_datasets_from_dir
 
 
 def categorise_titles(titles):
@@ -64,33 +57,33 @@ def guess_title_category(title):
 
     returns a string with the category of the dataset."""
     # title is /PrimaryDataset/ProcessedDataset/Tier1-Tier-2-
-    title = '/' + title.split('/')[1] # get only the primary dataset name
+    title = '/' + title.split('/')[1]  # get only the primary dataset name
     title_lower = title.lower()
 
     # be careful with the sequence of the of the `if`s bellow
     # first we check for exotic/susy datasets, then SM.
 
-    if (re.search(r'/add', title_lower) or # Arkani-Hamed, Dimopoulos and Dvali model
-        re.search(r'/branon', title_lower) or # extra-dimensions, brane models
+    if (re.search(r'/add', title_lower) or  # Arkani-Hamed, Dimopoulos and Dvali model
+        re.search(r'/branon', title_lower) or  # extra-dimensions, brane models
         re.search(r'/stringball', title_lower) or
-        re.search(r'/qbh', title_lower) or # Quantum Black Hole
-        re.search(r'blackhole', title_lower)): # Quantum Black Hole also??
+        re.search(r'/qbh', title_lower) or  # Quantum Black Hole
+        re.search(r'blackhole', title_lower)):  # Quantum Black Hole also??
         return 'Exotica/Extra Dimensions'
 
     elif (re.search(r'darkmatter', title_lower) or
-          re.search(r'/dmsimp', title_lower) or # darkmatter SIMP: Strongly interacting massive particle
-          re.search(r'/dmz', title_lower) or    # darkmatter Z? FIXME
-          re.search(r'DMJets', title)):         # darkmatter Jets? FIXME
+          re.search(r'/dmsimp', title_lower) or  # darkmatter SIMP: Strongly interacting massive particle
+          re.search(r'/dmz', title_lower) or  # darkmatter Z? FIXME
+          re.search(r'DMJets', title)):       # darkmatter Jets? FIXME
         return 'Exotica/Dark Matter'
 
-    elif (re.search(r'/lqto', title_lower) or  # leptoquark to
-          re.search(r'/slq', title_lower) or   # single leptoquark
-          re.search(r'/lqlqto', title_lower)): # leptoquark leptoquark to
+    elif (re.search(r'/lqto', title_lower) or   # leptoquark to
+          re.search(r'/slq', title_lower) or    # single leptoquark
+          re.search(r'/lqlqto', title_lower)):  # leptoquark leptoquark to
         return 'Exotica/Leptoquark'
 
     elif (re.search(r'graviton', title_lower) or
-          re.search(r'/rsgravto', title_lower) or # RS Graviton to
-          re.search(r'radion', title_lower)):     # a.k.a. graviscalar
+          re.search(r'/rsgravto', title_lower) or  # RS Graviton to
+          re.search(r'radion', title_lower)):  # a.k.a. graviscalar
         return 'Exotica/Graviton'
 
     elif (re.search(r'/bstar', title_lower) or
@@ -103,14 +96,14 @@ def guess_title_category(title):
     elif (re.search(r'/cit', title_lower)):  # Contact Interactions to
         return 'Exotica/Contact Interaction'
 
-    elif (re.search(r'wprime', title_lower) or # Heavy Gauge bosons: Wprime
-          re.search(r'/heavygluon', title_lower) or # gluon is a boson
-          re.search(r'zprime', title_lower)): # Heavy Gauge bosons: Zprime
+    elif (re.search(r'wprime', title_lower) or  # Heavy Gauge bosons: Wprime
+          re.search(r'/heavygluon', title_lower) or  # gluon is a boson
+          re.search(r'zprime', title_lower)):  # Heavy Gauge bosons: Zprime
         return 'Exotica/Heavy Gauge Bosons'
 
-    elif (re.search(r'majorana', title_lower) or # Heavy Fermions, Heavy Righ-Handed Neutrinos
-          re.search(r'/majoron', title_lower) or # predicted by seesaw mechanism
-          re.search(r'/seesaw', title_lower)):   # Seesaw mechanism
+    elif (re.search(r'majorana', title_lower) or  # Heavy Fermions, Heavy Righ-Handed Neutrinos
+          re.search(r'/majoron', title_lower) or  # predicted by seesaw mechanism
+          re.search(r'/seesaw', title_lower)):    # Seesaw mechanism
         return 'Exotica/Heavy Fermions, Heavy Righ-Handed Neutrinos'
 
     elif ('bsm' in title_lower or
@@ -134,10 +127,10 @@ def guess_title_category(title):
         return 'Exotica/others'
 
     elif ('susy' in title_lower or
-          re.search(r'mssm', title_lower) or # Minimal Supersymmetric Standard Model
-          re.search(r'/sms', title_lower) or # Simplified Model Spectra FIXME right category?
-          re.search(r'/gmsb', title_lower) or # Gauge mediated supersymmetry breaking
-          re.search(r'stop', title_lower) or # sTop
+          re.search(r'mssm', title_lower) or  # Minimal Supersymmetric Standard Model
+          re.search(r'/sms', title_lower) or  # Simplified Model Spectra FIXME right category?
+          re.search(r'/gmsb', title_lower) or  # Gauge mediated supersymmetry breaking
+          re.search(r'stop', title_lower) or  # sTop
           re.search(r'sbottom', title_lower) or
           re.search(r'squark', title_lower) or
           re.search(r'slepton', title_lower) or
@@ -151,50 +144,50 @@ def guess_title_category(title):
         return 'Supersymmetry'
 
     elif ('Beyond 2 Generations' in title or
-          re.search(r'bprime', title_lower) or # 4th gen of quarks
-          re.search(r'tprime', title_lower)):  # 4th gen of quarks
+          re.search(r'bprime', title_lower) or  # 4th gen of quarks
+          re.search(r'tprime', title_lower)):   # 4th gen of quarks
         return 'Beyond 2 Generations'
 
     elif ('higgs0' in title_lower or
           'higgs2p' in title_lower or
-          'bsmh' in title_lower or # BSM Higgs
+          'bsmh' in title_lower or  # BSM Higgs
           'chargedhiggs' in title_lower or
           re.search(r'/ATo', title) or
           re.search(r'/GluGluToA', title) or
           re.search(r'susybbh', title_lower) or
-          re.search(r'primetoth', title_lower) or # TprimeToTH FIXME: SM Higgs from T' is here?
-          re.search(r'primejettoth', title_lower) or # TprimeJetToTH FIXME: SM Higgs from T' is here?
+          re.search(r'primetoth', title_lower) or  # TprimeToTH FIXME: SM Higgs from T' is here?
+          re.search(r'primejettoth', title_lower) or  # TprimeJetToTH FIXME: SM Higgs from T' is here?
           re.search(r'hminus', title_lower) or
-          re.search(r'sms[-]?higgs', title_lower) or # sms higgs
+          re.search(r'sms[-]?higgs', title_lower) or  # sms higgs
           re.search(r'hplus', title_lower)):
         return 'Higgs Physics/BSM'
 
-    elif ('higgs' in title_lower or # this also triggers higgsino FIXME
-           'hto' in title_lower or
-           '_hcontin' in title_lower or
-           '_smhcontin' in title_lower or
-           'vbf_hwwto' in title_lower or
-           re.search(r'smh_', title_lower) or # SM triggers BSM: 'bsmh' is above, should be safe
-           re.search(r'/glugluto', title_lower) or
-           'h_m' in title_lower):
-        if ('prime' in title_lower): # Tprime To Higgs
+    elif ('higgs' in title_lower or  # this also triggers higgsino FIXME
+          'hto' in title_lower or
+          '_hcontin' in title_lower or
+          '_smhcontin' in title_lower or
+          'vbf_hwwto' in title_lower or
+          re.search(r'smh_', title_lower) or  # SM triggers BSM: 'bsmh' is above, should be safe
+          re.search(r'/glugluto', title_lower) or
+          'h_m' in title_lower):
+        if ('prime' in title_lower):  # Tprime To Higgs
             return 'Higgs Physics/BSM'
         else:
             return 'Higgs Physics/SM'
             # FIXME gravitino going to SM Higgs ctegory.
 
-    elif (re.search('GammaGammaTo(E|Mu|Tau)*_(Inel|Elastic|SingleDiss)', title)): # gamma gamma -> mu+ mu- etc reactions which involve elastically scattered protons
+    elif (re.search('GammaGammaTo(E|Mu|Tau)*_(Inel|Elastic|SingleDiss)', title)):  # gamma gamma -> mu+ mu- etc reactions which involve elastically scattered protons
         return 'Forward and Small-x QCD Physics'
 
     elif ('matchingup' in title_lower or
           'matchingdown' in title_lower or
           'scaleup' in title_lower or
           'scaledown' in title_lower or
-          re.search(r'tt_weights.*auet2', title_lower) or # FIXME ???
-          re.search(r'pt[\w-]*gun', title_lower) or # neutrino, etc gun: ...Pt..gun
+          re.search(r'tt_weights.*auet2', title_lower) or  # FIXME ???
+          re.search(r'pt[\w-]*gun', title_lower) or  # neutrino, etc gun: ...Pt..gun
           '_mt' in title_lower or
-          'signal_' in title_lower or # FIXME ???
-          'signalplusbkgd' in title_lower or # FIXME ???
+          'signal_' in title_lower or  # FIXME ???
+          'signalplusbkgd' in title_lower or  # FIXME ???
           '_mass' in title_lower):
         return 'Physics Modelling'
 
@@ -204,29 +197,28 @@ def guess_title_category(title):
     elif re.search(r'/qcd', title_lower):
         return 'Standard Model Physics/QCD'
 
-    elif (re.search(r'/ewk', title_lower) or # electroweak
-          re.search(r'/diphoton', title_lower) or # G = Gamma
+    elif (re.search(r'/ewk', title_lower) or  # electroweak
+          re.search(r'/diphoton', title_lower) or  # G = Gamma
           re.search(r'/gjet', title_lower) or
-          re.search(r'/g[1-9]jet', title_lower) or# Photon nJet ?? FIXME
+          re.search(r'/g[1-9]jet', title_lower) or  # Photon nJet ?? FIXME
           re.search(r'/ggjets', title_lower) or
           re.search(r'/gg4j', title_lower) or
           re.search(r'/gammagammato', title_lower) or
           re.search(r'/gg_m', title_lower) or
           re.search(r'/g_pt', title_lower) or
           re.search(r'/doublephoton', title_lower) or
-          re.search(r'/zjetto', title_lower) or   # Zjet to
-          re.search(r'/wjetto', title_lower) or   # Wjet to
-          re.search(r'/w*[0-9]?jets', title_lower) or # any number of Wi, n Jets
+          re.search(r'/zjetto', title_lower) or  # Zjet to
+          re.search(r'/wjetto', title_lower) or  # Wjet to
+          re.search(r'/w*[0-9]?jets', title_lower) or  # any number of Wi, n Jets
           re.search(r'/z*[0-9]?jets', title_lower) or
           re.search(r'/zw[0-9]?jets', title_lower) or
           re.search(r'/wz[0-9]?jets', title_lower) or
-          re.search(r'/wplusto', title_lower) or  # W+ to
-          re.search(r'/wpto', title_lower) or     # W+ to
-          re.search(r'/wminusto', title_lower) or # W- to
-          re.search(r'/wmto', title_lower) or     # W- to
-          re.search(r'/zzto', title_lower)):      # ZZ To
+          re.search(r'/wplusto', title_lower) or   # W+ to
+          re.search(r'/wpto', title_lower) or      # W+ to
+          re.search(r'/wminusto', title_lower) or  # W- to
+          re.search(r'/wmto', title_lower) or      # W- to
+          re.search(r'/zzto', title_lower)):       # ZZ To
         return 'Standard Model Physics/ElectroWeak'
-
 
     elif (re.search(r'/ttbar', title_lower) or
           re.search(r'/tbarto', title_lower) or
@@ -236,8 +228,8 @@ def guess_title_category(title):
     elif (re.search(r'/muminus', title_lower) or
           re.search(r'/muplus', title_lower) or
           re.search(r'/doubleelectron', title_lower) or
-          re.search(r'/singlepi', title_lower) or # is this right? FIXME
-          'HT' in title or # from this line to end was SM Exclusive
+          re.search(r'/singlepi', title_lower) or  # is this right? FIXME
+          'HT' in title or  # from this line to end was SM Exclusive
           'Pt' in title or
           'enriched' in title_lower or
           'tt_mt1000' in title_lower or
@@ -257,14 +249,14 @@ def guess_title_category(title):
           'upsilon' in title_lower or
           'bctobspi' in title_lower or
           'bstokstar' in title_lower or
-          'etabto' in title_lower or # Eta_b To
+          'etabto' in title_lower or  # Eta_b To
           'xibstar0' in title_lower):
         return 'B physics and Quarkonia'
 
     elif ('Top Physics' in title_lower or
-          re.search(r'/t[tgz]*jets(_|to)', title_lower) or # TTZJetsTo, TTGJetsTo, TZJetsTo
-          re.search(r'/t*gamma_', title_lower) or # TGamma, TTGamma, TTTGamma, etc
-          re.search(r'FCNC', title) or # FCNC: Flavour Change Neutral Current
+          re.search(r'/t[tgz]*jets(_|to)', title_lower) or  # TTZJetsTo, TTGJetsTo, TZJetsTo
+          re.search(r'/t*gamma_', title_lower) or  # TGamma, TTGamma, TTTGamma, etc
+          re.search(r'FCNC', title) or  # FCNC: Flavour Change Neutral Current
           re.search(r'/ttoleptons_[t,s]', title_lower)):
         return 'Top Physics'
 
@@ -286,24 +278,6 @@ def print_results(categories):
                 print('- Dataset: [%s](%s)' %
                       (title,
                        'https://cmsweb.cern.ch/das/request?view=list&limit=5&instance=prod%2Fglobal&input=' + quote(title, safe='')))
-
-def get_datasets_from_dir(inputdir):
-    inputdatasets = []
-
-    if re.search(r'.txt$', inputdir):
-        for datasettitle in read_titles(inputdir):
-            if datasettitle not in inputdatasets:
-                inputdatasets.append(datasettitle)
-        return inputdatasets
-
-    for dirpath, dummy, inputfilenames in os.walk(inputdir):
-        for inputfilename in inputfilenames:
-            for datasettitle in read_titles(os.path.join(inputdir,
-                                                         inputfilename)):
-                if datasettitle not in inputdatasets:
-                    inputdatasets.append(datasettitle)
-
-    return inputdatasets
 
 
 def main():

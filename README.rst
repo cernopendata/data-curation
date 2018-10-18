@@ -40,6 +40,7 @@ Specific data ingestion and curation campaigns:
 - `cms-2012-event-display-files <cms-2012-event-display-files>`_ -- helper scripts for the CMS 2012 open data release (event display files)
 - `cod2-to-cod3 <cod2-to-cod3>`_ - record migration from version 2 to version 3
 - `opera-2017-multiplicity-studies <opera-2017-multiplicity-studies>`_ - helper scripts for the release of OPERA multiplicity studies
+- `code <code>`_ - scripts to manage simulated datasets records
 
 Related links
 -------------
