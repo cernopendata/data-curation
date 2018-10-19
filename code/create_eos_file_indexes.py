@@ -17,6 +17,10 @@ import json
 import os
 import re
 import subprocess
+from utils import get_dataset_name, \
+                  get_dataset_runperiod, \
+                  get_dataset_version, \
+                  get_dataset_format
 
 XROOTD_URI_BASE = 'root://eospublic.cern.ch/'
 
@@ -31,26 +35,6 @@ INPUT = './inputs/mc-datasets.txt'
 OUTPUTDIR = './inputs/eos-file-indexes'
 
 DEBUG = True
-
-
-def get_dataset_name(dataset):
-    "Return dataset name without version information."
-    return dataset.split('/')[1]
-
-
-def get_dataset_runperiod(dataset):
-    "Return dataset run period."
-    return dataset.split('/')[2].split('-')[0]
-
-
-def get_dataset_version(dataset):
-    "Return dataset run period."
-    return dataset.split('/')[2].split('-', 1)[1]
-
-
-def get_dataset_format(dataset):
-    "Return dataset format."
-    return dataset.split('/')[-1]
 
 
 def get_dataset_location(dataset):
@@ -145,14 +129,13 @@ def create_index_files(dataset, volume):
     copy_index_file(dataset, volume, filename)
 
 
-def main():
+def main(datasets = []):
     "Do the job."
 
     if not os.path.exists(OUTPUTDIR):
         os.makedirs(OUTPUTDIR)
 
-    for line in open(INPUT, 'r').readlines():
-        dataset = line.strip()
+    for dataset in datasets:
         volumes = get_dataset_volumes(dataset)
         for volume in volumes:
             create_index_files(dataset, volume)

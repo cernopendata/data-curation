@@ -31,3 +31,23 @@ def get_datasets_from_dir(inputdir):
                     inputdatasets.append(datasettitle)
 
     return inputdatasets
+
+
+def get_dataset_name(dataset):
+    "Return dataset name without version information."
+    return dataset.split('/')[1]
+
+
+def get_dataset_runperiod(dataset):
+    "Return dataset run period."
+    return dataset.split('/')[2].split('-')[0]
+
+
+def get_dataset_version(dataset):
+    "Return dataset run period."
+    return dataset.split('/')[2].split('-', 1)[1]
+
+
+def get_dataset_format(dataset):
+    "Return dataset format."
+    return dataset.split('/')[-1]
