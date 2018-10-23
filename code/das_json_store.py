@@ -38,6 +38,8 @@ def main(das_dir="./inputs/das-json-store",
         primary_dataset = get_dataset_name(dataset)
 
         # only for the datasets with EOS file information
+        # is it necessary to only get the ones with eos information?
+        # is this really working? FIXME
         if any(primary_dataset in s for s in eos_files):
             print("dasgoclienting ", dataset)
             result_file = dataset.replace('/', '@') + ".json"
