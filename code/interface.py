@@ -46,20 +46,41 @@ def main(dataset_list, output_dir,
 
     step 1) generate EOS index files for the datasets
 
+        \b
         $ export EOS_MGM_URL=root://eospublic.cern.ch
         $ python ./code/interface.py --create-eos-indexes DATASET_LIST
 
-        This will populate EOS_DIR with a txt and json file for each dataset
-        with the list of root files.
+        This will populate EOS_DIR with a txt and json file for each dataset.
+        The files contain list of root files of that dataset.
 
     step 2) get DAS metadata
 
+        \b
         $ voms-proxy-init -voms cms -rfc
         $ python ./code/interface.py --create-das-json-store DATASET_LIST
 
+        This creates a local cache. It queries DAS (Data Aggregation Service)
+        for the dataset, parent, config and mcm information and store it in
+        das-dir/{dataset/,parent/,config/,mcm/}.
+
+        (It takes a lot of time to run)
+
     setp 3) get the config files
 
+        \b
         $ voms-proxy-init -voms cms -rfc
+        $ python ./code/interface.py --get-conf-files DATASET_LIST
+
+    But you can also run everything in one go, assuming the voms-proxy lasts
+    long enough:
+
+        \b
+        $ export EOS_MGM_URL=root://eospublic.cern.ch
+        $ voms-proxy-init -voms cms -rfc
+        $ python ./code/interface.py --create-eos-indexes \\
+                                     --create-das-json-store \\
+                                     --get-conf-files \\
+                                     DATASET_LIST
     """
     datasets = get_datasets_from_dir(dataset_list)
 
@@ -68,7 +89,7 @@ def main(dataset_list, output_dir,
         create_eos_file_indexes.OUTPUTDIR = eos_dir
         create_eos_file_indexes.INPUT = dataset_list
 
-        if "EOS_MGM_URL" in os.environ:  # FIXME this does not check if user set the variable
+        if os.environ.get("EOS_MGM_URL") == "root://eospublic.cern.ch":
             create_eos_file_indexes.main(datasets)
         else:
             print("EOS_MGM_URL not set.")
@@ -92,7 +113,7 @@ def main(dataset_list, output_dir,
             print('Did you forget to "voms-proxy-init -voms cms -rfc"?')
         else:
             import config_store
-            config_store.main(das_dir, conf_dir, datasets)
+            config_store.main(eos_dir, das_dir, conf_dir, datasets)
 
 
 if __name__ == '__main__':

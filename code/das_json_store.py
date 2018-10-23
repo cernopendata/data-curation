@@ -5,13 +5,12 @@ from utils import get_dataset_name
 
 def mydasgoclient(dataset, query, out_dir, out_file):
     "Interface to dasgoclient"
-    cmd = 'dasgoclient -query '
-    if query == "dataset":
-        cmd += '"dataset=' + dataset + '" '
-    else:
-        cmd += '"' + query + ' dataset=' + dataset + '" '
 
-    cmd += '-json'
+    cmd = 'dasgoclient -query "'
+    if query != "dataset":
+        cmd += query + ' '
+    cmd += 'dataset=' + dataset + '" -json'
+
     out = out_dir + '/' + query + '/' + out_file
 
     das = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -30,7 +29,7 @@ def main(das_dir="./inputs/das-json-store",
     "Do the job."
 
     # create dirs for dataset, parent and config
-    for path in [das_dir + "/dataset", das_dir + "/parent", das_dir + "/config"]:
+    for path in [das_dir + "/dataset", das_dir + "/parent", das_dir + "/config", das_dir + "/mcm"]:
         if not os.path.exists(path):
             os.makedirs(path)
 
@@ -45,6 +44,7 @@ def main(das_dir="./inputs/das-json-store",
             mydasgoclient(dataset, "dataset", das_dir, result_file)
             mydasgoclient(dataset, "parent",  das_dir, result_file)
             mydasgoclient(dataset, "config",  das_dir, result_file)
+            mydasgoclient(dataset, "mcm",     das_dir, result_file)
 
 
 if __name__ == '__main__':
