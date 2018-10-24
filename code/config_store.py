@@ -1,8 +1,56 @@
 import os
+import sys
 import subprocess
+from create_eos_file_indexes import \
+    get_dataset_index_file_base
+from create_dataset_records import \
+    get_from_deep_json, \
+    get_das_store_json
 
 
-def main(das_dir="./inputs/das-json-store",
+def get_conffile_ids(dataset):
+    """Return location of the configuration files for the dataset."""
+    ids = {}
+    output = get_from_deep_json(get_das_store_json(dataset, 'config'),
+                                'byoutputdataset')
+    if output:
+        for someid in output:
+            ids[someid] = 1
+    return list(ids.keys())
+
+
+def main(eos_dir="./inputs/eos-file-indexes",
+         das_dir="./inputs/das-json-store",
          conf_dir="./inputs/config-store",
          datasets=[]):
-    print(conf_dir)
+    "Do the job"
+
+    dataset_full_names = []  # FIXME move this code to utils.py. Also present in ds_json_store.py:37
+    # eos_datasets = utils.datasets_in_eos_dir(datasets)
+    for dataset in datasets:
+        dataset_index_file_base = get_dataset_index_file_base(dataset)
+        if subprocess.call('ls ' + eos_dir + ' | grep -q ' + dataset_index_file_base, shell=True):
+            print('[ERROR] Missing EOS information, ignoring dataset ' + dataset,
+                  file=sys.stderr)
+        else:
+            dataset_full_names.append(dataset)
+
+    conffile_ids = []
+    for dataset_full_name in dataset_full_names:
+        for conffile_id in get_conffile_ids(dataset_full_name):
+            if conffile_id not in conffile_ids:
+                conffile_ids.append(conffile_id)
+
+    if not os.path.exists(conf_dir):
+        os.makedirs(conf_dir)
+
+    voms = subprocess.run("voms-proxy-info -p", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    voms_key = voms.stdout.decode("utf-8").strip()
+    for conffile_id in conffile_ids:
+        print("Getting {}/{}.configFile".format(conf_dir, conffile_id))
+
+        cmd = "curl -s -k --key {key} --cert {key} https://cmsweb.cern.ch/couchdb/reqmgr_config_cache/{conffile_id}/configFile".format(dir=conf_dir, conffile_id=conffile_id, key=voms_key)
+        conffile = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        print(conffile)
+        with open("{}/{}.configFile".format(conf_dir, conffile_id), 'w') as outfile:
+            outfile.write(str(conffile.stdout.decode("utf-8")))  # FIXME this can be empty?

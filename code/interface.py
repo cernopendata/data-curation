@@ -61,7 +61,7 @@ def main(dataset_list, output_dir,
 
         This creates a local cache. It queries DAS (Data Aggregation Service)
         for the dataset, parent, config and mcm information and store it in
-        das-dir/{dataset/,parent/,config/,mcm/}.
+        DAS_DIR/{dataset/,parent/,config/,mcm/}.
 
         (It takes a lot of time to run, ~5 seconds / dataset)
 
@@ -70,6 +70,8 @@ def main(dataset_list, output_dir,
         \b
         $ voms-proxy-init -voms cms -rfc
         $ python ./code/interface.py --get-conf-files DATASET_LIST
+
+        This downloads the configuration files to CONF_DIR.
 
     But you can also run everything in one go, assuming the voms-proxy lasts
     long enough:
