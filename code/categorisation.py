@@ -106,10 +106,8 @@ def guess_title_category(title):
           re.search(r'/seesaw', title_lower)):    # Seesaw mechanism
         return 'Exotica/Heavy Fermions, Heavy Righ-Handed Neutrinos'
 
-    elif ('bsm' in title_lower or
+    elif ('bsm' in title_lower or  # FIXME no idea what are those things, i just put them in the limbo
           re.search(r'/x53',        title_lower) or
-          re.search(r'/atozh',      title_lower) or
-          re.search(r'htohh',       title_lower) or
           re.search(r'/qdqd',       title_lower) or
           re.search(r'/qdto',       title_lower) or
           re.search(r'/quto',       title_lower) or
@@ -153,8 +151,10 @@ def guess_title_category(title):
           'bsmh' in title_lower or  # BSM Higgs
           'chargedhiggs' in title_lower or
           re.search(r'/ATo', title) or
+          re.search(r'/atozh', title_lower) or
           re.search(r'/GluGluToA', title) or
           re.search(r'susybbh', title_lower) or
+          re.search(r'HTohh', title) or  # H to hh
           re.search(r'primetoth', title_lower) or  # TprimeToTH FIXME: SM Higgs from T' is here?
           re.search(r'primejettoth', title_lower) or  # TprimeJetToTH FIXME: SM Higgs from T' is here?
           re.search(r'hminus', title_lower) or
@@ -162,21 +162,24 @@ def guess_title_category(title):
           re.search(r'hplus', title_lower)):
         return 'Higgs Physics/BSM'
 
-    elif ('higgs' in title_lower or  # this also triggers higgsino FIXME
+    elif ('higgs' in title_lower or  # higgsino is above, ok to be here
           'hto' in title_lower or
           '_hcontin' in title_lower or
           '_smhcontin' in title_lower or
           'vbf_hwwto' in title_lower or
+          re.search(r'htohh', title_lower) or
           re.search(r'smh_', title_lower) or  # SM triggers BSM: 'bsmh' is above, should be safe
           re.search(r'/glugluto', title_lower) or
           'h_m' in title_lower):
-        if ('prime' in title_lower):  # Tprime To Higgs
+        if ('prime' in title_lower or  # Tprime To Higgs
+            'susy' in title_lower):
             return 'Higgs Physics/BSM'
         else:
             return 'Higgs Physics/SM'
             # FIXME gravitino going to SM Higgs ctegory.
 
     elif (re.search('GammaGammaTo(E|Mu|Tau)*_(Inel|Elastic|SingleDiss)', title)):  # gamma gamma -> mu+ mu- etc reactions which involve elastically scattered protons
+                                                                                   # SingleDiss, means Single Diffractive Dissociation
         return 'Forward and Small-x QCD Physics'
 
     elif ('matchingup' in title_lower or
@@ -184,7 +187,7 @@ def guess_title_category(title):
           'scaleup' in title_lower or
           'scaledown' in title_lower or
           re.search(r'tt_weights.*auet2', title_lower) or  # FIXME ???
-          re.search(r'pt[\w-]*gun', title_lower) or  # neutrino, etc gun: ...Pt..gun
+          re.search(r'gun', title_lower) or  # particle gun
           '_mt' in title_lower or
           'signal_' in title_lower or  # FIXME ???
           'signalplusbkgd' in title_lower or  # FIXME ???
@@ -243,7 +246,7 @@ def guess_title_category(title):
         return 'Heavy-Ion Physics'
 
     elif ('lambda' in title_lower or
-          'Bu' in title or
+          'Bu' in title or  # Bu stands for B+
           'Bd' in title or
           'jpsi' in title_lower or
           'upsilon' in title_lower or
@@ -255,7 +258,7 @@ def guess_title_category(title):
 
     elif ('Top Physics' in title_lower or
           re.search(r'/t[tgz]*jets(_|to)', title_lower) or  # TTZJetsTo, TTGJetsTo, TZJetsTo
-          re.search(r'/t*gamma_', title_lower) or  # TGamma, TTGamma, TTTGamma, etc
+          re.search(r'/t*gamma_', title_lower) or  # TGamma, TTGamma, TTTGamma, etc with a photon in the final state
           re.search(r'FCNC', title) or  # FCNC: Flavour Change Neutral Current
           re.search(r'/ttoleptons_[t,s]', title_lower)):
         return 'Top Physics'
