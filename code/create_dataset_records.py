@@ -12,9 +12,9 @@ import os
 import subprocess
 import sys
 
+from utils import get_dataset_index_file_base
 from create_eos_file_indexes import \
     XROOTD_URI_BASE, \
-    get_dataset_index_file_base, \
     get_dataset_location
 
 

@@ -63,7 +63,8 @@ def main(dataset_list, output_dir,
         for the dataset, parent, config and mcm information and store it in
         DAS_DIR/{dataset/,parent/,config/,mcm/}.
 
-        (It takes a lot of time to run, ~5 seconds / dataset)
+        \b
+        (It takes a lot of time to run, up to ~30 seconds / dataset)
 
     setp 3) get the config files
 

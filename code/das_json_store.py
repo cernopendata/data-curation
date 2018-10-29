@@ -1,6 +1,7 @@
 import os
 import subprocess
-from utils import get_dataset_name
+from utils import get_dataset_name, \
+                  check_datasets_in_eos_dir
 
 
 def mydasgoclient(dataset, query, out_dir, out_file):
@@ -33,20 +34,21 @@ def main(das_dir="./inputs/das-json-store",
         if not os.path.exists(path):
             os.makedirs(path)
 
-    eos_files = os.listdir(eos_dir)
-    for dataset in datasets:
-        primary_dataset = get_dataset_name(dataset)
-
-        # only for the datasets with EOS file information
+    # only for the datasets with EOS file information
+    eos_datasets = check_datasets_in_eos_dir(datasets, eos_dir)
+    total = len(eos_datasets)
+    i = 1
+    for dataset in eos_datasets:
         # is it necessary to only get the ones with eos information?
-        # is this really working? FIXME
-        if any(primary_dataset in s for s in eos_files):
-            print("dasgoclienting ", dataset)
-            result_file = dataset.replace('/', '@') + ".json"
-            mydasgoclient(dataset, "dataset", das_dir, result_file)
-            mydasgoclient(dataset, "parent",  das_dir, result_file)
-            mydasgoclient(dataset, "config",  das_dir, result_file)
-            mydasgoclient(dataset, "mcm",     das_dir, result_file)
+        print("dasgoclienting ({}/{})".format(i, total), dataset)
+
+        result_file = dataset.replace('/', '@') + ".json"
+        mydasgoclient(dataset, "dataset", das_dir, result_file)
+        mydasgoclient(dataset, "parent",  das_dir, result_file)
+        mydasgoclient(dataset, "config",  das_dir, result_file)
+        mydasgoclient(dataset, "mcm",     das_dir, result_file)
+
+        i += 1
 
 
 if __name__ == '__main__':

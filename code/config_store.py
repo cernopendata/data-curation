@@ -1,11 +1,10 @@
 import os
 import sys
 import subprocess
-from create_eos_file_indexes import \
-    get_dataset_index_file_base
 from create_dataset_records import \
     get_from_deep_json, \
-    get_das_store_json
+    get_das_store_json # FIXME move this function to utils?
+from utils import check_datasets_in_eos_dir
 
 
 def get_conffile_ids(dataset):
@@ -25,18 +24,10 @@ def main(eos_dir="./inputs/eos-file-indexes",
          datasets=[]):
     "Do the job"
 
-    dataset_full_names = []  # FIXME move this code to utils.py. Also present in ds_json_store.py:37
-    # eos_datasets = utils.datasets_in_eos_dir(datasets)
-    for dataset in datasets:
-        dataset_index_file_base = get_dataset_index_file_base(dataset)
-        if subprocess.call('ls ' + eos_dir + ' | grep -q ' + dataset_index_file_base, shell=True):
-            print('[ERROR] Missing EOS information, ignoring dataset ' + dataset,
-                  file=sys.stderr)
-        else:
-            dataset_full_names.append(dataset)
+    eos_datasets = check_datasets_in_eos_dir(datasets, eos_dir)
 
     conffile_ids = []
-    for dataset_full_name in dataset_full_names:
+    for dataset_full_name in eos_datasets:
         for conffile_id in get_conffile_ids(dataset_full_name):
             if conffile_id not in conffile_ids:
                 conffile_ids.append(conffile_id)
@@ -46,11 +37,16 @@ def main(eos_dir="./inputs/eos-file-indexes",
 
     voms = subprocess.run("voms-proxy-info -p", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     voms_key = voms.stdout.decode("utf-8").strip()
+
+    total = len(conffile_ids)
+    i = 1
     for conffile_id in conffile_ids:
-        print("Getting {}/{}.configFile".format(conf_dir, conffile_id))
+        print("Getting ({}/{}) {}/{}.configFile".format(i, total, conf_dir, conffile_id))
 
         cmd = "curl -s -k --key {key} --cert {key} https://cmsweb.cern.ch/couchdb/reqmgr_config_cache/{conffile_id}/configFile".format(dir=conf_dir, conffile_id=conffile_id, key=voms_key)
         conffile = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        print(conffile)
+
         with open("{}/{}.configFile".format(conf_dir, conffile_id), 'w') as outfile:
             outfile.write(str(conffile.stdout.decode("utf-8")))  # FIXME this can be empty?
+
+        i += 1

@@ -20,7 +20,8 @@ import subprocess
 from utils import get_dataset_name, \
                   get_dataset_runperiod, \
                   get_dataset_version, \
-                  get_dataset_format
+                  get_dataset_format, \
+                  get_dataset_index_file_base
 
 XROOTD_URI_BASE = 'root://eospublic.cern.ch/'
 
@@ -79,17 +80,6 @@ def get_dataset_volume_files(dataset, volume):
                               'checksum': 'adler32:' + checksum,
                               'uri': XROOTD_URI_BASE + path})
     return files
-
-
-def get_dataset_index_file_base(dataset):
-    "Return index file base for given dataset."
-    filebase = EXPERIMENT.upper() + '_' + \
-               MCDIR + '_' + \
-               get_dataset_runperiod(dataset) + '_' + \
-               get_dataset_name(dataset) + '_' + \
-               get_dataset_format(dataset) + '_' + \
-               get_dataset_version(dataset)
-    return filebase
 
 
 def create_index_file(dataset, volume, files, style='txt'):
