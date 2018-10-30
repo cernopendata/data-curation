@@ -1,7 +1,21 @@
 import os
+import sys
 import subprocess
+import json
 from utils import get_dataset_name, \
                   check_datasets_in_eos_dir
+
+
+def get_das_store_json(dataset, query='dataset', das_dir='./inputs/das-json-store'):
+    "Return DAS JSON from the DAS JSON Store for the given dataset and given query."
+    filepath = das_dir + '/' + query + '/' + dataset.replace('/', '@') + '.json'
+    if os.path.exists(filepath) and os.stat(filepath).st_size != 0:
+        with open(filepath, 'r') as filestream:
+            return json.load(filestream)
+    else:
+        print('[ERROR] There is no DAS JSON store ' + query + ' for dataset ' + dataset,
+              file=sys.stderr)
+        return json.loads('{}')
 
 
 def mydasgoclient(dataset, query, out_dir, out_file):
@@ -36,6 +50,7 @@ def main(das_dir="./inputs/das-json-store",
 
     # only for the datasets with EOS file information
     eos_datasets = check_datasets_in_eos_dir(datasets, eos_dir)
+    #eos_datasets = datasets.copy()
     total = len(eos_datasets)
     i = 1
     for dataset in eos_datasets:

@@ -1,10 +1,9 @@
 import os
 import sys
 import subprocess
-from create_dataset_records import \
-    get_from_deep_json, \
-    get_das_store_json # FIXME move this function to utils?
-from utils import check_datasets_in_eos_dir
+from das_json_store import get_das_store_json
+from utils import check_datasets_in_eos_dir, \
+                  get_from_deep_json
 
 
 def get_conffile_ids(dataset):

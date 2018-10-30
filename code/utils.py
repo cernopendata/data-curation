@@ -2,6 +2,7 @@
 
 import re
 import os
+import sys
 import subprocess
 
 
@@ -57,6 +58,7 @@ def get_dataset_format(dataset):
 
 def check_datasets_in_eos_dir(datasets, eos_dir):
     "Return subset of datasets that have EOS information in eos_dir"
+    # FIXME this function is extremely slow. Takes some minutes for 3k datasets
     dataset_full_names = []
     for dataset in datasets:
         dataset_index_file_base = get_dataset_index_file_base(dataset)
@@ -78,3 +80,27 @@ def get_dataset_index_file_base(dataset, experiment='CMS', mcdir='MonteCarlo2012
                get_dataset_format(dataset) + '_' + \
                get_dataset_version(dataset)
     return filebase
+
+
+def get_from_deep_json(data, akey):
+    "Traverse DATA and return first value matching AKEY."
+    if type(data) is dict:
+        if akey in data.keys():
+            return data[akey]
+        else:
+            for val in data.values():
+                if type(val) is dict:
+                    aval = get_from_deep_json(val, akey)
+                    if aval:
+                        return aval
+                if type(val) is list:
+                    for elem in val:
+                        aval = get_from_deep_json(elem, akey)
+                        if aval:
+                            return aval
+    if type(data) is list:
+        for elem in data:
+            aval = get_from_deep_json(elem, akey)
+            if aval:
+                return aval
+    return None

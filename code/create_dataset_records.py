@@ -12,7 +12,9 @@ import os
 import subprocess
 import sys
 
-from utils import get_dataset_index_file_base
+from utils import get_dataset_index_file_base, \
+                  get_from_deep_json
+from das_json_store import get_das_store_json
 from create_eos_file_indexes import \
     XROOTD_URI_BASE, \
     get_dataset_location
@@ -27,42 +29,6 @@ LINK_INFO = {}
 #exec(open('./outputs/config_files_link_info.py', 'r').read())
 
 DOI_INFO = {}
-
-
-def get_from_deep_json(data, akey):
-    "Traverse DATA and return first value matching AKEY."
-    if type(data) is dict:
-        if akey in data.keys():
-            return data[akey]
-        else:
-            for val in data.values():
-                if type(val) is dict:
-                    aval = get_from_deep_json(val, akey)
-                    if aval:
-                        return aval
-                if type(val) is list:
-                    for elem in val:
-                        aval = get_from_deep_json(elem, akey)
-                        if aval:
-                            return aval
-    if type(data) is list:
-        for elem in data:
-            aval = get_from_deep_json(elem, akey)
-            if aval:
-                return aval
-    return None
-
-
-def get_das_store_json(dataset, query='dataset'):
-    "Return DAS JSON from the DAS JSON Store for the given dataset and given query."
-    filepath = './inputs/das-json-store/' + query + '/' + dataset.replace('/', '@') + '.json'
-    if os.path.exists(filepath):
-        with open(filepath, 'r') as filestream:
-            return json.load(filestream)
-    else:
-        print('[ERROR] There is no DAS JSON store ' + query + ' for dataset ' + dataset,
-              file=sys.stderr)
-        return json.loads('{}')
 
 
 def get_number_events(dataset):

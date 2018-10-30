@@ -25,6 +25,12 @@ from utils import get_datasets_from_dir
 @click.option('--das-dir', default='./inputs/das-json-store',
               show_default=True,
               help='Output directory for the DAS metadata')
+@click.option('--create-mcm-store/--no-create-mcm-store',
+              default=False, show_default=True,
+              help="Get McM json information")
+@click.option('--mcm-dir', default='./inputs/mcm-store',
+              show_default=True,
+              help='Output directory for the DAS metadata')
 @click.option('--get-conf-files/--no-get-conf-files',
               default=False, show_default=True,
               help='Get configuration files for the datasets')
@@ -34,6 +40,7 @@ from utils import get_datasets_from_dir
 def main(dataset_list, output_dir,
          create_eos_indexes, eos_dir,
          create_das_json_store, das_dir,
+	 create_mcm_store, mcm_dir,
          get_conf_files, conf_dir):
     """
     Interface for manipulation of dataset records for OpenData portal.
@@ -66,7 +73,15 @@ def main(dataset_list, output_dir,
         \b
         (It takes a lot of time to run, up to ~30 seconds / dataset)
 
-    setp 3) get the config files
+    step 3) get McM scripts to run cmsDriver
+
+        \b
+        $ python ./code/interface.py --create-mcm-store DATASET_LIST
+
+        This will query McM to get the dict and setup scripts for each dataset.
+	It also queries the input_dataset (GEN-SIM).
+
+    step 4) get the config files
 
         \b
         $ voms-proxy-init -voms cms -rfc
@@ -82,6 +97,7 @@ def main(dataset_list, output_dir,
         $ voms-proxy-init -voms cms -rfc
         $ python ./code/interface.py --create-eos-indexes \\
                                      --create-das-json-store \\
+                                     --create-mcm-store \\
                                      --get-conf-files \\
                                      DATASET_LIST
     """
@@ -107,6 +123,10 @@ def main(dataset_list, output_dir,
         else:
             import das_json_store
             das_json_store.main(das_dir, eos_dir, datasets)
+
+    if create_mcm_store:
+        import mcm_store
+        mcm_store.create(datasets, mcm_dir, das_dir, eos_dir)
 
     if get_conf_files:
         # check if user has voms-proxy
