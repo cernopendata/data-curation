@@ -102,3 +102,16 @@ def create(datasets, mcm_dir, das_dir, eos_dir):
                   file=sys.stderr)
 
         i += 1
+
+
+def get_mcm_dict(dataset, mcm_dir):
+    """Return cached McM dictionary of dataset in json format"""
+
+    filepath = mcm_dir + '/dict/' + dataset.replace('/', '@') + '.json'
+    if os.path.exists(filepath) and os.stat(filepath).st_size != 0:
+        with open(filepath, 'r') as filestream:
+            return json.load(filestream)
+    else:
+        print('[ERROR] There is no McM JSON store dict for dataset ' + dataset,
+              file=sys.stderr)
+        return json.loads('{}')

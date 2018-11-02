@@ -8,7 +8,7 @@ import re
 import sys
 
 from urllib.parse import quote
-
+from printer import print_results
 from utils import read_titles, \
                   get_datasets_from_dir
 
@@ -16,7 +16,7 @@ from utils import read_titles, \
 def categorise_titles(titles):
     """Categorise titles.
 
-    Receives a list of datasets and outputs a dicttionary: {category: [datasets]}.
+    Receives a list of datasets and outputs a dictionary: {category: [datasets]}.
 
     CMS categories as in https://cms-results.web.cern.ch/cms-results/public-results/publications/"""
     categories = {
@@ -54,6 +54,10 @@ def categorise_titles(titles):
 
 def guess_title_category(title):
     """Guess category for the dataset.
+
+    Only information to guess the category is the dataset name. Some "notes"
+    about the dataset are available in the McM dictionary store:
+    for f in *json; do cat $f | json_reformat | grep notes; done > notes
 
     returns a string with the category of the dataset."""
     # title is /PrimaryDataset/ProcessedDataset/Tier1-Tier-2-
@@ -268,21 +272,6 @@ def guess_title_category(title):
     # FIXME: FSR - Final State Radiation
 
 
-def print_results(categories):
-    """Print category statistics."""
-    for category, titles in categories.items():
-        print('')
-        print("### %s (%d)" % (category, len(titles)))
-        print('')
-        titles.sort()
-        if titles:
-            for title in titles:
-                print('')
-                print('- Dataset: [%s](%s)' %
-                      (title,
-                       'https://cmsweb.cern.ch/das/request?view=list&limit=5&instance=prod%2Fglobal&input=' + quote(title, safe='')))
-
-
 def main():
     """Do the main job."""
 
@@ -295,37 +284,11 @@ def main():
               'directory with text files.')
         sys.exit(1)
 
-    # print About information:
-    print('# Categorisation for MC datasets')
-    print('')
-    print('## About')
-    print('')
-    print('This page is automatically generated from a categorisation script'
-          ' that studies CMS MC 2012 datasets. If a dataset is mis-categorised,'
-          ' the rules in the categorisation script should be adjusted and'
-          ' the script rerun.')
-    print('')
-    print('See [#1229](https://github.com/cernopendata/opendata.cern.ch/issues/1229)'
-          ' and [this page](https://demo.codimd.org/s/BkoBknkqQ#)'
-          ' for more context.')
-    print('')
-    print('Generated on', datetime.datetime.now().strftime("%d-%m-%Y %H:%M:%S"))
-    print('')
-
     # read dataset titles
     inputdatasets = get_datasets_from_dir(inputdir)
 
-    # categorise datasets:
+    # categorise datasets
     categorised = categorise_titles(inputdatasets)
-
-    # print overview of results
-    print('{} datasets in total:\n'.format(len(inputdatasets)))
-    print('| # | Category |')
-    print('|--:|:---------|')
-    for category, titles in categorised.items():
-        print("| {}\t| `{}` |".format(len(titles), category))
-    print('')
-    print('## Categories and Datasets')
 
     # print results
     print_results(categorised)

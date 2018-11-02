@@ -19,6 +19,9 @@ from create_eos_file_indexes import \
     XROOTD_URI_BASE, \
     get_dataset_location
 
+# Hi Tibor, I commented these `exec` below to not screw the code.
+# I also moved some functions from this code to utils.py and das_json_store.py
+# this code is not in the interface yet
 
 RECID_INFO = {}
 # read RECID_INFO dictionary created by a friendly program ahead of this one:

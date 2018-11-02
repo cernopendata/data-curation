@@ -12,7 +12,6 @@ from utils import get_datasets_from_dir
 
 @click.command()
 @click.argument('dataset-list', type=click.Path(exists=True))
-@click.argument('output-dir', default="./output/")
 @click.option('--create-eos-indexes/--no-create-eos-indexes', default=False,
               show_default=True,
               help="Create EOS rich index files")
@@ -37,11 +36,18 @@ from utils import get_datasets_from_dir
 @click.option('--conf-dir', default='./inputs/config-store',
               show_default=True,
               help='Output directory for the configuration files')
-def main(dataset_list, output_dir,
+@click.option('--print-categorisation', default=False,
+              show_default=True, is_flag=True,
+              help='Print results of categorisation')
+@click.option('--print-results', default=False,
+              show_default=True, is_flag=True,
+              help='Print results of categorisation with gen info')
+def main(dataset_list,
          create_eos_indexes, eos_dir,
          create_das_json_store, das_dir,
-	 create_mcm_store, mcm_dir,
-         get_conf_files, conf_dir):
+         create_mcm_store, mcm_dir,
+         get_conf_files, conf_dir,
+         print_categorisation, print_results):
     """
     Interface for manipulation of dataset records for OpenData portal.
 
@@ -100,6 +106,19 @@ def main(dataset_list, output_dir,
                                      --create-mcm-store \\
                                      --get-conf-files \\
                                      DATASET_LIST
+
+    To get a markdown file with the results of the previous steps:
+
+        $ python ./code/interface.py --print-results DATASET_LIST
+
+        This will use all the information from the local cache to produe a list
+        with all the datasets in their categories, with as much additional
+        information as we got.
+
+    In case you are interested only in the categorisation, there is no need
+    to create the local cache, just run:
+
+        $ python ./code/interface.py --print-categorisation DATASET_LIST
     """
     datasets = get_datasets_from_dir(dataset_list)
 
@@ -137,6 +156,13 @@ def main(dataset_list, output_dir,
         else:
             import config_store
             config_store.main(eos_dir, das_dir, conf_dir, datasets)
+
+    if print_categorisation or print_results:
+        import printer
+        import categorisation
+
+        categorised = categorisation.categorise_titles(datasets)
+        printer.print_results(categorised, das_dir, mcm_dir, print_results)
 
 
 if __name__ == '__main__':
