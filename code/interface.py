@@ -18,6 +18,9 @@ from utils import get_datasets_from_dir
 @click.option('--eos-dir', default='./inputs/eos-file-indexes',
               show_default=True,
               help='Output directory for the EOS file indexes')
+@click.option('--ignore-eos-store/--no-ignore-eos-store',
+              show_default=True, default=False,
+              help='Presence of EOS file indexes')
 @click.option('--create-das-json-store/--no-create-das-json-store',
               default=False, show_default=True,
               help="Get DAS json information")
@@ -43,7 +46,7 @@ from utils import get_datasets_from_dir
               show_default=True, is_flag=True,
               help='Print results of categorisation with gen info')
 def main(dataset_list,
-         create_eos_indexes, eos_dir,
+         create_eos_indexes, eos_dir, ignore_eos_store,
          create_das_json_store, das_dir,
          create_mcm_store, mcm_dir,
          get_conf_files, conf_dir,
@@ -141,11 +144,11 @@ def main(dataset_list,
             print('Did you forget to "voms-proxy-init -voms cms -rfc"?')
         else:
             import das_json_store
-            das_json_store.main(das_dir, eos_dir, datasets)
+            das_json_store.main(das_dir, eos_dir, datasets, ignore_eos_store)
 
     if create_mcm_store:
         import mcm_store
-        mcm_store.create(datasets, mcm_dir, das_dir, eos_dir)
+        mcm_store.create(datasets, mcm_dir, das_dir, eos_dir, ignore_eos_store)
 
     if get_conf_files:
         # check if user has voms-proxy
@@ -155,7 +158,7 @@ def main(dataset_list,
             print('Did you forget to "voms-proxy-init -voms cms -rfc"?')
         else:
             import config_store
-            config_store.main(eos_dir, das_dir, conf_dir, datasets)
+            config_store.main(eos_dir, das_dir, conf_dir, datasets, ignore_eos_store)
 
     if print_categorisation or print_results:
         import printer

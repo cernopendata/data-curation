@@ -20,10 +20,14 @@ def get_conffile_ids(dataset):
 def main(eos_dir="./inputs/eos-file-indexes",
          das_dir="./inputs/das-json-store",
          conf_dir="./inputs/config-store",
-         datasets=[]):
+         datasets=[], ignore_eos_store=False):
     "Do the job"
 
-    eos_datasets = check_datasets_in_eos_dir(datasets, eos_dir)
+    # only for the datasets with EOS file information
+    if ignore_eos_store:
+        eos_datasets = datasets.copy()
+    else:
+        eos_datasets = check_datasets_in_eos_dir(datasets, eos_dir)
 
     conffile_ids = []
     for dataset_full_name in eos_datasets:

@@ -40,7 +40,7 @@ def mydasgoclient(dataset, query, out_dir, out_file):
 
 def main(das_dir="./inputs/das-json-store",
          eos_dir="./inputs/eos-file-indexes",
-         datasets=[]):
+         datasets=[], ignore_eos_store=False):
     "Do the job."
 
     # create dirs for dataset, parent and config
@@ -49,8 +49,11 @@ def main(das_dir="./inputs/das-json-store",
             os.makedirs(path)
 
     # only for the datasets with EOS file information
-    eos_datasets = check_datasets_in_eos_dir(datasets, eos_dir)
-    #eos_datasets = datasets.copy()
+    if ignore_eos_store:
+        eos_datasets = datasets.copy()
+    else:
+        eos_datasets = check_datasets_in_eos_dir(datasets, eos_dir)
+
     total = len(eos_datasets)
     i = 1
     for dataset in eos_datasets:

@@ -70,7 +70,7 @@ def mcm_downloader(prepid, dataset, mcm_dir, das_dir):
               file=sys.stderr)
 
 
-def create(datasets, mcm_dir, das_dir, eos_dir):
+def create(datasets, mcm_dir, das_dir, eos_dir, ignore_eos_store=False):
     "Get information from McM about each dataset"
 
     # create dirs
@@ -79,8 +79,10 @@ def create(datasets, mcm_dir, das_dir, eos_dir):
             os.makedirs(path)
 
     # only for datasets with EOS file information
-    eos_datasets = check_datasets_in_eos_dir(datasets, eos_dir)
-    #eos_datasets = datasets.copy()
+    if ignore_eos_store:
+        eos_datasets = datasets.copy()
+    else:
+        eos_datasets = check_datasets_in_eos_dir(datasets, eos_dir)
 
     total = len(eos_datasets)
     i = 1
@@ -93,6 +95,7 @@ def create(datasets, mcm_dir, das_dir, eos_dir):
         if prepid == None:
             # try to get from das/mcm:
             prepid = get_from_deep_json(get_das_store_json(dataset, 'mcm', das_dir), 'prepid')
+            # TODO also try different queries from the json. prep_id?
 
         if prepid != None:
             # query McM rest API for dictionary and setup script
