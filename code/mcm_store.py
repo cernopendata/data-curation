@@ -9,7 +9,7 @@ from das_json_store import get_das_store_json
 
 def mcm_downloader(prepid, dataset, mcm_dir, das_dir):
     "Query dictionary and setup script from McM database"
-    # TODO this function is so ugly... refactor it, please
+    # this function is so ugly... but finally works! You're welcome to refactor it though
 
     cmd = "curl -s -k https://cms-pdmv.cern.ch/mcm/public/restapi/requests/{query}/{prepId}"
 
@@ -18,22 +18,25 @@ def mcm_downloader(prepid, dataset, mcm_dir, das_dir):
     mcm_script = subprocess.run(cmd.format(query="get_setup", prepId=prepid),
                                 shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
+    mcm_dict_out = str(mcm_dict.stdout.decode("utf-8"))
+    mcm_script_out = str(mcm_script.stdout.decode("utf-8"))
+
     # check if results are not empty
-    if str(mcm_dict.stdout.decode("utf-8")) == '{"results": {}}\n':
+    if mcm_dict_out == '{"results": {}}\n':
         print("[ERROR] Empty McM dict (get) for {ds}".format(ds=dataset),
               file=sys.stderr)
     else:
         outfile = mcm_dir + "/dict/" + dataset.replace('/', '@') + ".json"
         with open(outfile, 'w') as dict_file:
-                dict_file.write(mcm_dict.stdout.decode("utf-8"))
+                dict_file.write(mcm_dict_out)
 
-    if mcm_script.stdout.decode("utf-8")[0] == '{':
+    if mcm_script_out == '' or mcm_script_out[0] == '{':
         print("[ERROR] Empty McM script (get_setup) for {ds}".format(ds=dataset),
               file=sys.stderr)
     else:
         outfile = mcm_dir + "/scripts/" + dataset.replace('/', '@') + ".sh"
         with open(outfile, 'w') as dict_file:
-                dict_file.write(mcm_script.stdout.decode("utf-8"))
+                dict_file.write(mcm_script_out)
 
     # same thing for "input_dataset": hopefully the GEN-SIM step
     dataset_json = get_das_store_json(dataset, 'mcm', das_dir)
@@ -51,7 +54,7 @@ def mcm_downloader(prepid, dataset, mcm_dir, das_dir):
             with open(outfile, 'w') as dict_file:
                     dict_file.write(mcm_out)
 
-            prepid = get_from_deep_json(mcm_out, "prepid")
+            prepid = get_prepid_from_mcm(input_dataset, mcm_dir)
             if prepid != None:
                 mcm_script = subprocess.run(cmd.format(query="get_setup", prepId=prepid),
                                             shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -87,16 +90,9 @@ def create(datasets, mcm_dir, das_dir, eos_dir, ignore_eos_store=False):
     total = len(eos_datasets)
     i = 1
     for dataset in eos_datasets:
-        print("({i}/{N}) {ds}".format(i=i, N=total, ds=dataset))
+        print("McM Storing ({i}/{N}) {ds}".format(i=i, N=total, ds=dataset))
 
-        # get prepid from das
-        dataset_json = get_das_store_json(dataset, 'dataset', das_dir)
-        prepid = get_from_deep_json(dataset_json, 'prep_id')
-        if prepid == None:
-            # try to get from das/mcm:
-            prepid = get_from_deep_json(get_das_store_json(dataset, 'mcm', das_dir), 'prepid')
-            # TODO also try different queries from the json. prep_id?
-
+        prepid = get_prepId_from_das(dataset, das_dir)
         if prepid != None:
             # query McM rest API for dictionary and setup script
             mcm_downloader(prepid, dataset, mcm_dir, das_dir)
@@ -118,3 +114,30 @@ def get_mcm_dict(dataset, mcm_dir):
         print('[ERROR] There is no McM JSON store dict for dataset ' + dataset,
               file=sys.stderr)
         return json.loads('{}')
+
+
+def get_prepId_from_das(dataset, das_dir):
+    "get prepid for dataset"
+
+    # get prepid from das/dataset
+    prepid = get_from_deep_json(get_das_store_json(dataset, 'dataset', das_dir), 'prep_id')
+
+    if prepid == None:
+        # try to get from das/mcm:
+        prepid = get_from_deep_json(get_das_store_json(dataset, 'mcm', das_dir), 'prepid')
+        # todo also try different queries from the json. prep_id?
+
+    return prepid
+
+
+def get_prepid_from_mcm(dataset, mcm_dir):
+    "get prepid for dataset from McM store"
+
+    # get prepid from das/dataset
+    prepid = get_from_deep_json(get_mcm_dict(dataset, mcm_dir), 'prep_id')
+
+    if prepid == None:
+        # try different queries from the json. prep_id?
+        prepid = get_from_deep_json(get_mcm_dict(dataset, mcm_dir), 'prepid')
+
+    return prepid
