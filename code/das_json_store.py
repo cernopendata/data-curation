@@ -31,8 +31,8 @@ def mydasgoclient(dataset, query, out_dir, out_file):
     das = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
     if das.returncode == 16:  # ????
-        print("Error with ", cmd)
-        print(das.stderr.decode("utf-8"), "\n")
+        print("[Error] in ", cmd, file=sys.stderr)
+        print(das.stderr.decode("utf-8"), "\n", file=sys.stderr)
     else:
         with open(out, 'w') as dasfile:
             dasfile.write(str(das.stdout.decode("utf-8")))  # FIXME this can be empty?
