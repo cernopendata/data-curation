@@ -49,7 +49,12 @@ def main(eos_dir="./inputs/eos-file-indexes",
         cmd = "curl -s -k --key {key} --cert {key} https://cmsweb.cern.ch/couchdb/reqmgr_config_cache/{conffile_id}/configFile".format(dir=conf_dir, conffile_id=conffile_id, key=voms_key)
         conffile = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
-        with open("{}/{}.configFile".format(conf_dir, conffile_id), 'w') as outfile:
-            outfile.write(str(conffile.stdout.decode("utf-8")))  # FIXME this can be empty?
+        confs = conffile.stdout.decode("utf-8")
+        if confs:
+            with open("{}/{}.configFile".format(conf_dir, conffile_id), 'w') as outfile:
+                outfile.write(confs)
+        else:
+            print("[ERROR] Empty conf file for {ds}".format(ds=conffile_id),
+                  file=sys.stderr)
 
         i += 1

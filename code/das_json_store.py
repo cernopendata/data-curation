@@ -34,8 +34,13 @@ def mydasgoclient(dataset, query, out_dir, out_file):
         print("[Error] in ", cmd, file=sys.stderr)
         print(das.stderr.decode("utf-8"), "\n", file=sys.stderr)
     else:
-        with open(out, 'w') as dasfile:
-            dasfile.write(str(das.stdout.decode("utf-8")))  # FIXME this can be empty?
+        das_out = das.stdout.decode("utf-8")
+        if das_out:
+            with open(out, 'w') as dasfile:
+                dasfile.write(das_out)
+        else:
+            print("[ERROR] Empty DAS {query} for {ds}".format(query=query, ds=dataset),
+                  file=sys.stderr)
 
 
 def main(das_dir="./inputs/das-json-store",

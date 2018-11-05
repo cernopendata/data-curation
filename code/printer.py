@@ -115,7 +115,7 @@ def print_ancestor_information(dataset, das_dir, mcm_dir):
 
         notes = get_from_deep_json(mcm_dict, 'notes')
         if notes != None:
-            print('    - notes:', notes)
+            print('    - notes:', notes.replace('\n', '\n        '))  # some notes have several lines, this make the markdown use them in the same item list
 
 
 def get_generator_parameters(dataset, das_dir):
