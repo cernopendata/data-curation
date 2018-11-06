@@ -29,7 +29,7 @@ def categorise_titles(titles):
         'Standard Model Physics/ElectroWeak': [],
         'Standard Model Physics/QCD': [],
         'Standard Model Physics/T': [],
-        'Standard Model Physics/Others': [],
+        'Standard Model Physics/Miscellaneous': [],
         'Heavy-Ion Physics': [],
         'Beyond 2 Generations': [],
         'Exotica/Colorons, Axigluons, Diquarks': [],
@@ -37,15 +37,15 @@ def categorise_titles(titles):
         'Exotica/Dark Matter': [],
         'Exotica/Excited Fermions': [],
         'Exotica/Extra Dimensions': [],
-        'Exotica/Graviton': [],
+        'Exotica/Gravitons': [],
         'Exotica/Heavy Fermions, Heavy Righ-Handed Neutrinos': [],
         'Exotica/Heavy Gauge Bosons': [],
-        'Exotica/Leptoquark': [],
+        'Exotica/Leptoquarks': [],
         'Exotica/Resonances': [],
-        'Exotica/others': [],
+        'Exotica/Miscellaneous': [],
         'Supersymmetry': [],
         'Physics Modelling': [],
-        'Categorisation failure': [],
+        'Miscellaneous': [],
     }
     for title in titles:
         categories[guess_title_category(title)].append(title)
@@ -83,12 +83,12 @@ def guess_title_category(title):
     elif (re.search(r'/lqto', title_lower) or   # leptoquark to
           re.search(r'/slq', title_lower) or    # single leptoquark
           re.search(r'/lqlqto', title_lower)):  # leptoquark leptoquark to
-        return 'Exotica/Leptoquark'
+        return 'Exotica/Leptoquarks'
 
     elif (re.search(r'graviton', title_lower) or
           re.search(r'/rsgravto', title_lower) or  # RS Graviton to
           re.search(r'radion', title_lower)):  # a.k.a. graviscalar
-        return 'Exotica/Graviton'
+        return 'Exotica/Gravitons'
 
     elif (re.search(r'/bstar', title_lower) or
           re.search(r'/estar', title_lower) or
@@ -110,7 +110,7 @@ def guess_title_category(title):
           re.search(r'/seesaw', title_lower)):    # Seesaw mechanism
         return 'Exotica/Heavy Fermions, Heavy Righ-Handed Neutrinos'
 
-    elif ('bsm' in title_lower or  # FIXME no idea what are those things, i just put them in the limbo
+    elif (('bsm' in title_lower and not re.search('bsm[0-9]*h', title_lower)) or  # FIXME no idea what are those things, i just put them in the limbo
           re.search(r'/x53',        title_lower) or
           re.search(r'/qdqd',       title_lower) or
           re.search(r'/qdto',       title_lower) or
@@ -126,7 +126,7 @@ def guess_title_category(title):
           re.search(r'/monolepton', title_lower) or
           re.search(r'/spin0plus',  title_lower) or
           re.search(r'/spin2ph',    title_lower)):
-        return 'Exotica/others'
+        return 'Exotica/Miscellaneous'
 
     elif ('susy' in title_lower or
           re.search(r'mssm', title_lower) or  # Minimal Supersymmetric Standard Model
@@ -152,7 +152,7 @@ def guess_title_category(title):
 
     elif ('higgs0' in title_lower or
           'higgs2p' in title_lower or
-          'bsmh' in title_lower or  # BSM Higgs
+          re.search('bsm[0-9]*h', title_lower) or  # BSM Higgs
           'chargedhiggs' in title_lower or
           re.search(r'/ATo', title) or
           re.search(r'/atozh', title_lower) or
@@ -244,7 +244,7 @@ def guess_title_category(title):
           'tt_mtt-1000' in title_lower or
           'tt_mtt-700' in title_lower or
           re.search(r'[0-9]jet', title_lower)):
-        return 'Standard Model Physics/Others'
+        return 'Standard Model Physics/Miscellaneous'
 
     elif 'Heavy-Ion Physics' in title:
         return 'Heavy-Ion Physics'
@@ -267,7 +267,7 @@ def guess_title_category(title):
           re.search(r'/ttoleptons_[t,s]', title_lower)):
         return 'Top Physics'
 
-    return 'Categorisation failure'
+    return 'Miscellaneous'
     # FIXME: ISR - Initial State Radiation
     # FIXME: FSR - Final State Radiation
 
