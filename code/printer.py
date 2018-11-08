@@ -8,7 +8,9 @@ import os
 
 from utils import get_from_deep_json
 from das_json_store import get_das_store_json
-from mcm_store import get_mcm_dict
+from mcm_store import get_mcm_dict, \
+                      get_global_tag, \
+                      get_cmssw_version
 
 
 def print_results(categories, das_dir='./inputs/das-json-store/', mcm_dir='./inputs/mcm-store/', all_information=False):
@@ -74,17 +76,31 @@ def print_ancestor_information(dataset, das_dir, mcm_dir):
     #     see github issue opendata.cern.ch#1137
     #     ideally we should make a local cache of that.
     #   - genfragment
-    # - global tag
     # - LHE stuff?
     # - Data popularity from github.com/katilp/cms-data-popularity
     #   ideally we should make a local cache of that.
     # it would be very nice if this printer script needed not external (non cached) information
+
+    # global tag & cmssw version
+    global_tag = get_global_tag(dataset, mcm_dir)
+    cmssw_ver = get_cmssw_version(dataset, mcm_dir)
+    if global_tag:
+    print("    - Global Tag:", global_tag)
+    if cmssw_ver:
+    print("    - CMSSW version:", cmssw_ver)
 
     # GEN-SIM dataset used to produce the AODSIM
     dataset_json = get_das_store_json(dataset, 'mcm', das_dir)
     input_dataset = get_from_deep_json(dataset_json, 'input_dataset')
     if input_dataset:
         print("    - Input Dataset:", input_dataset)
+
+        input_global_tag = get_global_tag(input_dataset, mcm_dir)
+        input_cmssw_ver = get_cmssw_version(input_dataset, mcm_dir)
+        if input_global_tag:
+        print("        - Global Tag:", input_global_tag)
+        if input_cmssw_ver:
+        print("        - CMSSW version:", input_cmssw_ver)
 
     # gen parameters of input dataset
     generator_parameters = get_generator_parameters(dataset, das_dir)
@@ -115,7 +131,7 @@ def print_ancestor_information(dataset, das_dir, mcm_dir):
 
         notes = get_from_deep_json(mcm_dict, 'notes')
         if notes != None:
-            print('    - notes:', notes.replace('\n', '\n        '))  # some notes have several lines, this make the markdown use them in the same item list
+            print('    - notes:', notes.replace('\n', '\n        '))  # some notes have several lines, this makes the markdown use them in the same item list
 
 
 def get_generator_parameters(dataset, das_dir):

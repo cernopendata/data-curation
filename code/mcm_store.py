@@ -141,3 +141,17 @@ def get_prepid_from_mcm(dataset, mcm_dir):
         prepid = get_from_deep_json(get_mcm_dict(dataset, mcm_dir), 'prepid')
 
     return prepid
+
+
+def get_global_tag(dataset, mcm_dir):
+    "Get global tag from McM dictionary"
+    mcm_dict = get_mcm_dict(dataset, mcm_dir)
+    global_tag = get_from_deep_json(mcm_dict, 'conditions')
+    return global_tag
+
+
+def get_cmssw_version(dataset, mcm_dir):
+    "Get CMSSW version from McM dictionary"
+    mcm_dict = get_mcm_dict(dataset, mcm_dir)
+    global_tag = get_from_deep_json(mcm_dict, 'cmssw_release')
+    return global_tag
