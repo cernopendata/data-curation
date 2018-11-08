@@ -13,19 +13,19 @@ import subprocess
 import sys
 
 from utils import get_dataset_index_file_base, \
-                  get_from_deep_json
+                  get_from_deep_json, \
+                  populate_doiinfo, \
+                  get_doi
 from das_json_store import get_das_store_json
-from create_eos_file_indexes import \
-    XROOTD_URI_BASE, \
-    get_dataset_location
+from create_eos_file_indexes import XROOTD_URI_BASE, \
+                                    get_dataset_location
+from mcm_store import get_mcm_dict, \
+                      get_global_tag, \
+                      get_cmssw_version
 
 # Hi Tibor, I commented these `exec` below to not screw the code.
 # I also moved some functions from this code to utils.py and das_json_store.py
 # this code is not in the interface yet
-
-RECID_INFO = {}
-# read RECID_INFO dictionary created by a friendly program ahead of this one:
-#exec(open('./outputs/recid_info.py', 'r').read())
 
 LINK_INFO = {}
 # read LINK_INFO dictionary created by a friendly program ahead of this one:
@@ -184,29 +184,22 @@ def get_all_generator_text(dataset):
     return out + "".join(out_blocks)
 
 
-def populate_doiinfo():
-    """Populate DOI_INFO dictionary (dataset -> doi)."""
-    for line in open('./inputs/doi-sim.txt', 'r').readlines():
-        dataset, doi = line.split()
-        DOI_INFO[dataset] = doi
-
-
-def get_doi(dataset_full_name):
-    "Return DOI for the given dataset."
-    return DOI_INFO[dataset_full_name]
-
-
-def create_record(dataset_full_name):
+def create_record(dataset_full_name, mcm_dir):
     """Create record for the given dataset."""
 
     rec = {}
 
     dataset = get_dataset(dataset_full_name)
-    year_created = '2012'
+    year_created = '2012'  # FIXME get from some database, do not hardcode it!
     year_published = '2017'
-    run_period = '2012A-2012D'
-    global_tag = 'START53_V27'
-    release = 'CMSSW_5_3_32'
+    run_period = '2012A-2012D'  # FIXME get from some database, do not hardcode it!
+    global_tag = get_global_tag(dataset_full_name, mcm_dir) or 'START53'
+    release = get_cmssw_version or 'CMSSW_5_3_X'
+
+    RECID_INFO = {}
+    _locals = locals()
+    exec(open(recid_file, 'r').read(), globals(), _locals)
+    RECID_INFO = _locals['RECID_INFO']
 
     rec['abstract'] = {}
     rec['abstract']['description'] = '<p>Simulated dataset ' + dataset + ' in AODSIM format for 2012 collision data.</p>' + \
@@ -313,11 +306,11 @@ def create_record(dataset_full_name):
     return rec
 
 
-def create_records(dataset_full_names):
+def create_records(dataset_full_names, mcm_dir):
     """Create records."""
     records = []
     for dataset_full_name in dataset_full_names:
-        records.append(create_record(dataset_full_name))
+        records.append(create_record(dataset_full_name, mcm_dir))
     return records
 
 
@@ -325,7 +318,8 @@ def print_records(records):
     """Print records."""
     print('[')
     for (idx, rec) in enumerate(records):
-        print(json.dumps(rec, indent=2, sort_keys=True))
+        #print(json.dumps(rec, indent=2, sort_keys=True))
+        print(rec)
         if idx == len(records) - 1:
             pass
         else:
@@ -333,25 +327,25 @@ def print_records(records):
     print(']')
 
 
-def main():
+def main(datasets = [], mcm_dir = './inputs/mcm-store' , doi_file = './inputs/doi-sim.txt'):
     "Do the job."
-    populate_doiinfo()
-    dataset_full_names = []
-    for line in open('./inputs/mc-datasets.txt', 'r').readlines():
-        dataset_full_name = line.strip()
-        dataset_index_file_base = get_dataset_index_file_base(dataset_full_name)
-        if subprocess.call('ls ./inputs/eos-file-indexes/ | grep -q ' + dataset_index_file_base, shell=True):
-            print('[ERROR] Missing EOS information, ignoring dataset ' + dataset_full_name,
-                  file=sys.stderr)
-        elif newer_dataset_version_exists(dataset_full_name):
-            print('[ERROR] Ignoring older dataset version ' + dataset_full_name,
-                  file=sys.stderr)
-        else:
-            dataset_full_names.append(dataset_full_name)
-    records = create_records(dataset_full_names)
-    print_records(records)
+    populate_doiinfo(doi_file)
+    #dataset_full_names = []
+    #for line in open('./inputs/mc-datasets.txt', 'r').readlines():
+    #    dataset_full_name = line.strip()
+    #    dataset_index_file_base = get_dataset_index_file_base(dataset_full_name)
+    #    if subprocess.call('ls ./inputs/eos-file-indexes/ | grep -q ' + dataset_index_file_base, shell=True):
+    #        print('[ERROR] Missing EOS information, ignoring dataset ' + dataset_full_name,
+    #              file=sys.stderr)
+    #    elif newer_dataset_version_exists(dataset_full_name):
+    #        print('[ERROR] Ignoring older dataset version ' + dataset_full_name,
+    #              file=sys.stderr)
+    #    else:
+    #        dataset_full_names.append(dataset_full_name)
+    #records = create_records(dataset_full_names, mcm_dir)
+    #print_records(records)
+    print(print_records(create_records(['/BBH_HToTauTau_M_125_TuneZ2star_8TeV_pythia6_tauola/Summer12_DR53X-PU_S10_START53_V19-v1/AODSIM'], mcm_dir)))
 
 
 if __name__ == '__main__':
-    #print(print_records(create_records(['/BBH_HToTauTau_M_125_TuneZ2star_8TeV_pythia6_tauola/Summer12_DR53X-PU_S10_START53_V19-v1/AODSIM'])))
-    main()
+    main([], mcm_dir, doi_file)

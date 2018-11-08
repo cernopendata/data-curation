@@ -45,12 +45,23 @@ from utils import get_datasets_from_dir
 @click.option('--print-results', default=False,
               show_default=True, is_flag=True,
               help='Print results of categorisation with gen info')
+@click.option('--create-records', default=False,
+              show_default=True, is_flag=True,
+              help='Create json file for records')
+@click.option('--recid-file', default="./inputs/recid_info.py",
+              show_default=True, type=click.Path(exists=True),
+              help='File with DOI information')
+@click.option('--doi-file', default='./inputs/doi-sim.txt',
+              show_default=True, type=click.Path(),
+              help='File with DOI information')
 def main(dataset_list,
          create_eos_indexes, eos_dir, ignore_eos_store,
          create_das_json_store, das_dir,
          create_mcm_store, mcm_dir,
          get_conf_files, conf_dir,
-         print_categorisation, print_results):
+         print_categorisation, print_results,
+         create_records,
+	 recid_file, doi_file):
     """
     Interface for manipulation of dataset records for OpenData portal.
 
@@ -165,8 +176,11 @@ def main(dataset_list,
         import categorisation
 
         categorised = categorisation.categorise_titles(datasets)
-        printer.print_results(categorised, das_dir, mcm_dir, print_results)
+        printer.print_results(categorised, das_dir, mcm_dir, recid_file, doi_file, print_results)
 
+    if create_records:
+        import create_dataset_records
+        create_dataset_records.main(datasets, mcm_dir, doi_file)
 
 if __name__ == '__main__':
     main()

@@ -104,3 +104,21 @@ def get_from_deep_json(data, akey):
             if aval:
                 return aval
     return None
+
+
+def populate_doiinfo(doi_file):
+    """Populate DOI_INFO dictionary (dataset -> doi)."""
+    doi_info = {}
+    for line in open(doi_file, 'r').readlines():
+        dataset, doi = line.split()
+        doi_info[dataset] = doi
+
+    return doi_info
+
+
+def get_doi(dataset_full_name, doi_info):
+    "Return DOI for the given dataset."
+    if dataset_full_name in doi_info.keys():
+        return doi_info[dataset_full_name]
+    else:
+        return None

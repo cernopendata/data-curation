@@ -6,14 +6,21 @@ from urllib.parse import quote
 import datetime
 import os
 
-from utils import get_from_deep_json
+from utils import get_from_deep_json, \
+                  populate_doiinfo, \
+                  get_doi
 from das_json_store import get_das_store_json
 from mcm_store import get_mcm_dict, \
                       get_global_tag, \
                       get_cmssw_version
 
 
-def print_results(categories, das_dir='./inputs/das-json-store/', mcm_dir='./inputs/mcm-store/', all_information=False):
+def print_results(categories,
+                  das_dir='./inputs/das-json-store/',
+                  mcm_dir='./inputs/mcm-store/',
+                  recid_file='./outputs/recid_info.py',
+                  doi_file='./outputs/doi-sim.txt',
+                  all_information=False):
     """Print category statistics."""
 
     # print About information:
@@ -57,10 +64,11 @@ def print_results(categories, das_dir='./inputs/das-json-store/', mcm_dir='./inp
                       (title,
                        'https://cmsweb.cern.ch/das/request?view=list&limit=5&instance=prod%2Fglobal&input=' + quote(title, safe='')))
                 if all_information:
-                    print_ancestor_information(title, das_dir, mcm_dir)
+                    doi_info = populate_doiinfo(doi_file)
+                    print_ancestor_information(title, das_dir, mcm_dir, recid_file, doi_info)
 
 
-def print_ancestor_information(dataset, das_dir, mcm_dir):
+def print_ancestor_information(dataset, das_dir, mcm_dir, recid_file, doi_info):
     "All the information we have so far"
     # everything should be a sublist item (4 spaces of indentation):
     # - dataset_name
@@ -75,19 +83,33 @@ def print_ancestor_information(dataset, das_dir, mcm_dir):
     #   - cross section from XSECDB.
     #     see github issue opendata.cern.ch#1137
     #     ideally we should make a local cache of that.
-    #   - genfragment
+    #   - genfragment used
     # - LHE stuff?
     # - Data popularity from github.com/katilp/cms-data-popularity
     #   ideally we should make a local cache of that.
     # it would be very nice if this printer script needed not external (non cached) information
 
+    # record ID as in OpenData portal
+    RECID_INFO = {}
+    _locals = locals()
+    exec(open(recid_file, 'r').read(), globals(), _locals)
+    RECID_INFO = _locals['RECID_INFO']
+
+    recid = RECID_INFO[dataset]
+    print("    - Record ID: [{recid}]({url})".format(recid=recid, url='http://opendata.cern.ch/record/' + str(recid)))
+
+    # DOI
+    doi = get_doi(dataset, doi_info)
+    if doi:
+            print("    - DOI: [{doi}]({url})".format(doi=doi, url='https://doi.org/' + str(doi)))
+
     # global tag & cmssw version
     global_tag = get_global_tag(dataset, mcm_dir)
     cmssw_ver = get_cmssw_version(dataset, mcm_dir)
     if global_tag:
-    print("    - Global Tag:", global_tag)
+        print("    - Global Tag:", global_tag)
     if cmssw_ver:
-    print("    - CMSSW version:", cmssw_ver)
+        print("    - CMSSW version:", cmssw_ver)
 
     # GEN-SIM dataset used to produce the AODSIM
     dataset_json = get_das_store_json(dataset, 'mcm', das_dir)
@@ -98,9 +120,9 @@ def print_ancestor_information(dataset, das_dir, mcm_dir):
         input_global_tag = get_global_tag(input_dataset, mcm_dir)
         input_cmssw_ver = get_cmssw_version(input_dataset, mcm_dir)
         if input_global_tag:
-        print("        - Global Tag:", input_global_tag)
+            print("        - Global Tag:", input_global_tag)
         if input_cmssw_ver:
-        print("        - CMSSW version:", input_cmssw_ver)
+            print("        - CMSSW version:", input_cmssw_ver)
 
     # gen parameters of input dataset
     generator_parameters = get_generator_parameters(dataset, das_dir)
