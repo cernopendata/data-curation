@@ -15,6 +15,11 @@ from mcm_store import get_mcm_dict, \
                       get_cmssw_version
 
 
+DATASETS_WITH_BOTH_CMSDRIVER = 0
+DATASETS_WITH_CMSDRIVER1 = 0
+DATASETS_WITH_CMSDRIVER2 = 0
+
+
 def print_results(categories,
                   das_dir='./inputs/das-json-store/',
                   mcm_dir='./inputs/mcm-store/',
@@ -66,6 +71,9 @@ def print_results(categories,
                 if all_information:
                     doi_info = populate_doiinfo(doi_file)
                     print_ancestor_information(title, das_dir, mcm_dir, recid_file, doi_info)
+
+    print('## Summary')
+    print('- datasets with both cmsDriver scripts: {}/{}'.format(DATASETS_WITH_BOTH_CMSDRIVER , total_datasets))
 
 
 def print_ancestor_information(dataset, das_dir, mcm_dir, recid_file, doi_info):
@@ -137,12 +145,21 @@ def print_ancestor_information(dataset, das_dir, mcm_dir, recid_file, doi_info):
     # mcm scripts with cmsDriver instructions
     cmsDriver1 = get_cmsDriver_script(input_dataset, mcm_dir)
     cmsDriver2 = get_cmsDriver_script(dataset, mcm_dir)
+    global DATASETS_WITH_BOTH_CMSDRIVER
+    global DATASETS_WITH_CMSDRIVER1
+    global DATASETS_WITH_CMSDRIVER2
+
     if cmsDriver1 or cmsDriver2:
         print("    - cmsDriver scripts:")
         if cmsDriver1:
             print('        - GEN-SIM:',  cmsDriver1)
+            DATASETS_WITH_CMSDRIVER1 += 1
         if cmsDriver2:
             print('        - RECO-HLT:', cmsDriver2)
+            DATASETS_WITH_CMSDRIVER2 += 1
+
+        if cmsDriver1 and cmsDriver2:
+            DATASETS_WITH_BOTH_CMSDRIVER += 1
 
     # pile up information
     mcm_dict = get_mcm_dict(dataset, mcm_dir)
