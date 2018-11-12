@@ -12,7 +12,9 @@ from utils import get_from_deep_json, \
 from das_json_store import get_das_store_json
 from mcm_store import get_mcm_dict, \
                       get_global_tag, \
-                      get_cmssw_version
+                      get_cmssw_version, \
+                      get_cmsDriver_script, \
+                      get_genfragment_url
 
 
 DATASETS_WITH_BOTH_CMSDRIVER = 0
@@ -91,7 +93,6 @@ def print_ancestor_information(dataset, das_dir, mcm_dir, recid_file, doi_info):
     #   - cross section from XSECDB.
     #     see github issue opendata.cern.ch#1137
     #     ideally we should make a local cache of that.
-    #   - genfragment used
     # - LHE stuff?
     # - Data popularity from github.com/katilp/cms-data-popularity
     #   ideally we should make a local cache of that.
@@ -131,6 +132,11 @@ def print_ancestor_information(dataset, das_dir, mcm_dir, recid_file, doi_info):
             print("        - Global Tag:", input_global_tag)
         if input_cmssw_ver:
             print("        - CMSSW version:", input_cmssw_ver)
+
+        gen_fragment = get_genfragment_url(dataset, mcm_dir, das_dir)
+        if gen_fragment:
+            print("        - Gen Fragment: [{url}]({url})".format(url=gen_fragment))
+
 
     # gen parameters of input dataset
     generator_parameters = get_generator_parameters(dataset, das_dir)
@@ -183,15 +189,3 @@ def get_generator_parameters(dataset, das_dir):
         return out[0]
     else:
         return {}
-
-
-def get_cmsDriver_script(dataset, mcm_dir):
-    """Return path to cmsDriver script for that dataset"""
-    if dataset == None:
-        return None
-
-    script = mcm_dir + '/scripts/' + dataset.replace('/', '@') + '.sh'
-    if os.path.exists(script):
-        return script
-    else:
-        return None

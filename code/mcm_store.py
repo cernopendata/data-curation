@@ -2,8 +2,10 @@ import os
 import sys
 import subprocess
 import json
+import re
 from utils import check_datasets_in_eos_dir, \
-                  get_from_deep_json
+                  get_from_deep_json, \
+                  get_dataset_format
 from das_json_store import get_das_store_json
 
 
@@ -155,3 +157,41 @@ def get_cmssw_version(dataset, mcm_dir):
     mcm_dict = get_mcm_dict(dataset, mcm_dir)
     global_tag = get_from_deep_json(mcm_dict, 'cmssw_release')
     return global_tag
+
+
+def get_cmsDriver_script(dataset, mcm_dir):
+    """Return path to cmsDriver script for that dataset"""
+    if dataset == None:
+        return None
+
+    script = mcm_dir + '/scripts/' + dataset.replace('/', '@') + '.sh'
+    if os.path.exists(script):
+        return script
+    else:
+        return None
+
+
+def get_genfragment_url(dataset, mcm_dir, das_dir):
+    "return github url of the genfragment used"
+    input_dataset = ''
+    url = None
+
+    # get GEN-SIM dataset
+    if get_dataset_format(dataset) == 'AODSIM':
+        dataset_json = get_das_store_json(dataset, 'mcm', das_dir)
+        input_dataset = get_from_deep_json(dataset_json, 'input_dataset')
+    else:
+        input_dataset = dataset
+
+    script_path = get_cmsDriver_script(input_dataset, mcm_dir)
+    if script_path == None:
+        return None
+
+    with open(script_path, 'r') as script:
+        for line in script:
+            if 'curl' in line:
+                url = re.search('(?P<url>https?://[^\s]+)', line)
+
+    if url:
+        url = url.group('url')
+    return url
