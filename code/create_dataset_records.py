@@ -16,7 +16,8 @@ from utils import get_dataset_index_file_base, \
                   get_from_deep_json, \
                   populate_doiinfo, \
                   get_doi
-from das_json_store import get_das_store_json
+from das_json_store import get_das_store_json, \
+                           get_parent_dataset
 from create_eos_file_indexes import XROOTD_URI_BASE, \
                                     get_dataset_location
 from mcm_store import get_mcm_dict, \
@@ -161,17 +162,6 @@ To get the exact LHE and generator's parameters, see <a href=\"/docs/cms-mc-prod
 """ % out
 
 
-def get_parent_dataset(dataset):
-    "Return parent dataset to the given dataset or an empty string if no parent found."
-    parent_dataset = ''
-    try:
-        parent_dataset = get_from_deep_json(get_das_store_json(dataset, 'parent'), 'parent_dataset')
-    except:
-        # troubles getting information about parent
-        pass
-    return parent_dataset
-
-
 def get_all_generator_text(dataset):
     """Return generator text for given dataset and all its parents."""
     out = '<p>These data were processed in several steps:</p>'
@@ -191,7 +181,7 @@ def create_record(dataset_full_name, mcm_dir):
 
     dataset = get_dataset(dataset_full_name)
     year_created = '2012'  # FIXME get from some database, do not hardcode it!
-    year_published = '2017'
+    year_published = '2017'  # FIXME get from some database, do not hardcode it!
     run_period = '2012A-2012D'  # FIXME get from some database, do not hardcode it!
     global_tag = get_global_tag(dataset_full_name, mcm_dir) or 'START53'
     release = get_cmssw_version or 'CMSSW_5_3_X'
@@ -256,7 +246,7 @@ def create_record(dataset_full_name, mcm_dir):
     rec['methodology']['description'] = get_all_generator_text(dataset_full_name)
 
     rec['note'] = {}
-    rec['note']['description'] = 'These simulated datasets correspond to the collision data collected by the CMS experiment in 2012.'
+    rec['note']['description'] = 'These simulated datasets correspond to the collision data collected by the CMS experiment in 2012.'  # FIXME
 
     rec['pileup'] = {}
     rec['pileup']['description'] = '<p>To make these simulated data comparable with the collision data, <a href="/about/CMS-Pileup-Simulation">pile-up events</a> are added to the simulated event in this step.</p>'

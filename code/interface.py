@@ -49,7 +49,7 @@ from utils import get_datasets_from_dir
               show_default=True, is_flag=True,
               help='Create json file for records')
 @click.option('--recid-file', default="./inputs/recid_info.py",
-              show_default=True, type=click.Path(exists=True),
+              show_default=True, type=click.Path(),
               help='File with DOI information')
 @click.option('--doi-file', default='./inputs/doi-sim.txt',
               show_default=True, type=click.Path(),
