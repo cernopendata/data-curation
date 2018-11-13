@@ -1,200 +1,217 @@
 #!/usr/bin/env python
 
+import hashlib
 import os
 
-FILEDIR = '/tmp/opendata.cern.ch-fft-file-cache'
+EVENTDIR = './inputs/events'
 
 template = """\
-  <record>
-    <controlfield tag="001">%(recid)s</controlfield>
-    <datafield tag="024" ind1="7" ind2=" ">
-      <subfield code="a">%(doi)s</subfield>
-      <subfield code="2">DOI</subfield>
-    </datafield>
-    <datafield tag="110" ind1=" " ind2=" ">
-      <subfield code="a">OPERA collaboration</subfield>
-      <subfield code="w">452</subfield>
-    </datafield>
-    <datafield tag="245" ind1=" " ind2=" ">
-      <subfield code="a">OPERA Detector Event %(eventid)s</subfield>
-    </datafield>
-    <datafield tag="246" ind1=" " ind2=" ">
-      <subfield code="a">OPERA Detector Event %(eventid)s</subfield>
-    </datafield>
-    <datafield tag="256" ind1=" " ind2=" ">
-      <subfield code="a">Dataset</subfield>
-      <subfield code="e">1</subfield>
-      <subfield code="t">events</subfield>
-    </datafield>
-    <datafield tag="256" ind1=" " ind2=" ">
-      <subfield code="f">%(nbfiles)s</subfield>
-      <subfield code="t">files</subfield>
-    </datafield>
-    <datafield tag="256" ind1=" " ind2=" ">
-      <subfield code="b">%(nbbytes)s</subfield>
-      <subfield code="t">bytes in total</subfield>
-    </datafield>
-    <datafield tag="260" ind1=" " ind2=" ">
-      <subfield code="b">CERN Open Data Portal</subfield>
-      <subfield code="c">2017</subfield>
-    </datafield>
-    <datafield tag="264" ind1=" " ind2="0">
-      <subfield code="c">2010-2012</subfield>
-    </datafield>
-    <datafield tag="505" ind1=" " ind2=" ">
-      <subfield code="t">amplL</subfield>
-      <subfield code="g">PMT amplitude measured from the "left" side of a scintillator strip (in photo-electrons)</subfield>
-    </datafield>
-    <datafield tag="505" ind1=" " ind2=" ">
-      <subfield code="t">amplR</subfield>
-      <subfield code="g">PMT amplitude measured from the "right" side of a scintillator strip (in photo-electrons)</subfield>
-    </datafield>
-    <datafield tag="505" ind1=" " ind2=" ">
-      <subfield code="t">amplRec</subfield>
-      <subfield code="g">PMT amplitude reconstructed from the "left" and "right" side amplitudes of a scintillator strip taking into account light attenuation in a WLS fiber (in photo-electrons)</subfield>
-    </datafield>
-    <datafield tag="505" ind1=" " ind2=" ">
-      <subfield code="t">clLength</subfield>
-      <subfield code="g">cluster length (in cm)</subfield>
-    </datafield>
-    <datafield tag="505" ind1=" " ind2=" ">
-      <subfield code="t">driftDist</subfield>
-      <subfield code="g">drift distance (in cm)</subfield>
-    </datafield>
-    <datafield tag="505" ind1=" " ind2=" ">
-      <subfield code="t">enHad</subfield>
-      <subfield code="g">energy of a hadron jet (in GeV)</subfield>
-    </datafield>
-    <datafield tag="505" ind1=" " ind2=" ">
-      <subfield code="t">enNeu</subfield>
-      <subfield code="g">energy of a neutrino (in GeV)</subfield>
-    </datafield>
-    <datafield tag="505" ind1=" " ind2=" ">
-      <subfield code="t">enVis</subfield>
-      <subfield code="g">visible energy (in MeV)</subfield>
-    </datafield>
-    <datafield tag="505" ind1=" " ind2=" ">
-      <subfield code="t">evID</subfield>
-      <subfield code="g">event Id (11-digit number)</subfield>
-    </datafield>
-    <datafield tag="505" ind1=" " ind2=" ">
-      <subfield code="t">globPosX</subfield>
-      <subfield code="g">X position of a vertex in the OPERA detector system of reference (in cm)</subfield>
-    </datafield>
-    <datafield tag="505" ind1=" " ind2=" ">
-      <subfield code="t">globPosY</subfield>
-      <subfield code="g">Y position of a vertex in the OPERA detector system of reference (in cm)</subfield>
-    </datafield>
-    <datafield tag="505" ind1=" " ind2=" ">
-      <subfield code="t">globPosZ</subfield>
-      <subfield code="g">Z position of a vertex in the OPERA detector system of reference (in cm)</subfield>
-    </datafield>
-    <datafield tag="505" ind1=" " ind2=" ">
-      <subfield code="t">mult</subfield>
-      <subfield code="g">number of ECC tracks attached to the vertex</subfield>
-    </datafield>
-    <datafield tag="505" ind1=" " ind2=" ">
-      <subfield code="t">muMom</subfield>
-      <subfield code="g">momentum of a muon (in GeV/c)</subfield>
-    </datafield>
-    <datafield tag="505" ind1=" " ind2=" ">
-      <subfield code="t">posX</subfield>
-      <subfield code="g">For Electronic Detector events, X position of a drift tube, RPC, Target Tracker hit in the OPERA detector system of reference (in cm). For Emulsion Detector events, X position of a track/vertex in the OPERA brick system of reference (in micrometers).</subfield>
-    </datafield>
-    <datafield tag="505" ind1=" " ind2=" ">
-      <subfield code="t">posY</subfield>
-      <subfield code="g">For Electronic Detector events, Y position of an RPC hit in the OPERA detector system of reference (in cm). For Emulsion Detector events, Y position of a track/vertex in the OPERA brick system of reference (in micrometers).</subfield>
-    </datafield>
-    <datafield tag="505" ind1=" " ind2=" ">
-      <subfield code="t">posZ </subfield>
-      <subfield code="g">For Electronic Detector events, Z position of a drift tube, RPC, Target Tracker hit in the OPERA detector system of reference (in cm). For Emulsion Detector events, Z position of a track/vertex in the OPERA brick system of reference (in micrometers).</subfield>
-    </datafield>
-    <datafield tag="505" ind1=" " ind2=" ">
-      <subfield code="t">slopeXZ</subfield>
-      <subfield code="g">tangent of a track angle in XZ view</subfield>
-    </datafield>
-    <datafield tag="505" ind1=" " ind2=" ">
-      <subfield code="t">slopeYZ</subfield>
-      <subfield code="g">tangent of a track angle in YZ view</subfield>
-    </datafield>
-    <datafield tag="505" ind1=" " ind2=" ">
-      <subfield code="t">timestamp</subfield>
-      <subfield code="g">event time in milliseconds since 01/01/1970</subfield>
-    </datafield>
-    <datafield tag="505" ind1=" " ind2=" ">
-      <subfield code="t">trType</subfield>
-      <subfield code="g">type of a track: 1 - muon; 2 - hadron; 3 - electron; 4 - black; 5 - back black; 6 - gray; 7 - back gray</subfield>
-    </datafield>
-    <datafield tag="520" ind1=" " ind2=" ">
-      <subfield code="a">The OPERA detector event is a muon neutrino interaction with the lead target where a muon was reconstructed in the final state. The event data from Electronic Detectors are available in the Drift Tube, RPC, and Target Tracker files. The event data from Emulsion Detectors are available in the Tracks and Vertex files. The EventInfo file presents general information about the event.</subfield>
-    </datafield>
-    <datafield tag="540" ind1=" " ind2=" ">
-      <subfield code="a">CC0</subfield>
-    </datafield>
-    <datafield tag="581" ind1=" " ind2=" ">
-      <subfield code="a">These OPERA event data files can be visualised using the online OPERA event display</subfield>
-      <subfield code="u">http://opendata.cern.ch/visualise/events/OPERA/%(eventid)s</subfield>
-      <subfield code="y">Visualise OPERA detector event %(eventid)s</subfield>b
-    </datafield>
-    <datafield tag="693" ind1=" " ind2=" ">
-      <subfield code="a">CERN-SPS</subfield>
-      <subfield code="e">OPERA</subfield>
-    </datafield>
-   <datafield tag="786" ind1=" " ind2=" ">
-      <subfield code="a">This event is part of OPERA Electronic Detector dataset</subfield>
-      <subfield code="w">3900</subfield>
-    </datafield>
-   <datafield tag="786" ind1=" " ind2=" ">
-      <subfield code="a">This event is part of OPERA Emulsion Detector dataset</subfield>
-      <subfield code="w">3901</subfield>
-    </datafield>
-    <datafield tag="980" ind1=" " ind2=" ">
-      <subfield code="a">OPERA-Detector-Events</subfield>
-    </datafield>
-    <datafield tag="980" ind1=" " ind2=" ">
-      <subfield code="b">Education</subfield>
-    </datafield>
-    <datafield tag="FFT" ind1=" " ind2=" ">
-      <subfield code="a">%(filedir)s/opera-ecc-datasets/%(filename0a)s</subfield>
-    </datafield>
-    <datafield tag="FFT" ind1=" " ind2=" ">
-      <subfield code="a">%(filedir)s/opera-ecc-datasets/%(filename0b)s</subfield>
-    </datafield>
-    <datafield tag="FFT" ind1=" " ind2=" ">
-      <subfield code="a">%(filedir)s/opera-ed-datasets/%(filename1)s</subfield>
-    </datafield>
-    <datafield tag="FFT" ind1=" " ind2=" ">
-      <subfield code="a">%(filedir)s/opera-ed-datasets/%(filename2)s</subfield>
-    </datafield>
-    <datafield tag="FFT" ind1=" " ind2=" ">
-      <subfield code="a">%(filedir)s/opera-ed-datasets/%(filename3)s</subfield>
-    </datafield>
-    <datafield tag="FFT" ind1=" " ind2=" ">
-      <subfield code="a">%(filedir)s/opera-ed-datasets/%(filename4)s</subfield>
-    </datafield>
-    <datafield tag="FFT" ind1=" " ind2=" ">
-      <subfield code="a">%(filedir)s/opera-ed-datasets/%(filename5)s</subfield>
-    </datafield>
-    <datafield tag="FFT" ind1=" " ind2=" ">
-      <subfield code="a">%(filedir)s/opera-ed-datasets/%(filename6)s</subfield>
-    </datafield>
-    <datafield tag="FFT" ind1=" " ind2=" ">
-      <subfield code="a">%(filedir)s/opera-ed-datasets/%(filename7)s</subfield>
-    </datafield>
-    <datafield tag="FFT" ind1=" " ind2=" ">
-      <subfield code="a">%(filedir)s/opera-ed-datasets/%(filename8)s</subfield>
-    </datafield>
-    <datafield tag="FFT" ind1=" " ind2=" ">
-      <subfield code="a">%(filedir)s/opera-ed-datasets/%(filename9)s</subfield>
-    </datafield>
-    <datafield tag="FFT" ind1=" " ind2=" ">
-      <subfield code="a">%(filedir)s/opera-ed-datasets/%(filename10)s</subfield>
-    </datafield>
-    <datafield tag="FFT" ind1=" " ind2=" ">
-      <subfield code="a">%(filedir)s/opera-ed-datasets/%(filename11)s</subfield>
-    </datafield>
-  </record>
-"""
+{
+    "recid": "%(recid)s",
+    "doi": "%(doi)s",
+    "collaboration": {
+            "name": "OPERA collaboration",
+            "recid": 452
+    },
+    "type": "Dataset",
+    "subtype": "Primary Dataset",
+    "title": "OPERA Detector Event %(eventid)s",
+    "additional_title": "OPERA Detector Event %(eventid)s",
+    "distribution": {
+        "formats": [
+            "csv"
+        ],
+        "number_events": "1",
+        "number_files": "%(nbfiles)s",
+        "size": "%(nbbytes)s"
+    },
+    "publisher": "CERN Open Data Portal",
+    "date_published": "2017",
+    "date_created": "2010-2012",
+    "dataset_semantics": [
+        {
+            "variable": "amplL",
+            "description": "PMT amplitude measured from the \\"left\\" side of a scintillator strip (in photo-electrons)"
+        },
+        {
+            "variable": "amplR",
+            "description": "PMT amplitude measured from the \\"right\\" side of a scintillator strip (in photo-electrons)"
+        },
+        {
+            "variable": "amplRec",
+            "description": "PMT amplitude reconstructed from the \\"left\\" and \\"right\\" side amplitudes of a scintillator strip taking into account light attenuation in a WLS fiber (in photo-electrons)"
+        },
+        {
+            "variable": "clLength",
+            "description": "cluster length (in cm)"
+        },
+        {
+            "variable": "driftDist",
+            "description": "drift distance (in cm)"
+        },
+        {
+            "variable": "enHad",
+            "description": "energy of a hadron jet (in GeV)"
+        },
+        {
+            "variable": "enNeu",
+            "description": "energy of a neutrino (in GeV)"
+        },
+        {
+            "variable": "enVis",
+            "description": "visible energy (in MeV)"
+        },
+        {
+            "variable": "evID",
+            "description": "event Id (11-digit number)"
+        },
+        {
+            "variable": "globPosX",
+            "description": "X position of a vertex in the OPERA detector system of reference (in cm)"
+        },
+        {
+            "variable": "globPosY",
+            "description": "Y position of a vertex in the OPERA detector system of reference (in cm)"
+        },
+        {
+            "variable": "globPosZ",
+            "description": "Z position of a vertex in the OPERA detector system of reference (in cm)"
+        },
+        {
+            "variable": "mult",
+            "description": "number of ECC tracks attached to the vertex"
+        },
+        {
+            "variable": "muMom",
+            "description": "momentum of a muon (in GeV/c)"
+        },
+        {
+            "variable": "posX",
+            "description": "For Electronic Detector events, X position of a drift tube, RPC, Target Tracker hit in the OPERA detector system of reference (in cm). For Emulsion Detector events, X position of a track/vertex in the OPERA brick system of reference (in micrometers)."
+        },
+        {
+            "variable": "posY",
+            "description": "For Electronic Detector events, Y position of an RPC hit in the OPERA detector system of reference (in cm). For Emulsion Detector events, Y position of a track/vertex in the OPERA brick system of reference (in micrometers)."
+        },
+        {
+            "variable": "posZ ",
+            "description": "For Electronic Detector events, Z position of a drift tube, RPC, Target Tracker hit in the OPERA detector system of reference (in cm). For Emulsion Detector events, Z position of a track/vertex in the OPERA brick system of reference (in micrometers)."
+        },
+        {
+            "variable": "slopeXZ",
+            "description": "tangent of a track angle in XZ view"
+        },
+        {
+            "variable": "slopeYZ",
+            "description": "tangent of a track angle in YZ view"
+        },
+        {
+            "variable": "timestamp",
+            "description": "event time in milliseconds since 01/01/1970"
+        },
+        {
+            "variable": "trType",
+            "description": "type of a track: 1 - muon; 2 - hadron; 3 - electron; 4 - black; 5 - back black; 6 - gray; 7 - back gray"
+        }
+    ],
+    "abstract": "The OPERA detector event is a muon neutrino interaction with the lead target where a muon was reconstructed in the final state. The event data from Electronic Detectors are available in the Drift Tube, RPC, and Target Tracker files. The event data from Emulsion Detectors are available in the Tracks and Vertex files. The EventInfo file presents general information about the event.",
+    "license": {
+        "attribution": "CC0"
+    },
+    "usage": {
+        "description": "These OPERA event data files can be visualised using the online OPERA event display",
+        "links": [
+            {
+                "url": "http://opendata.cern.ch/visualise/events/OPERA/%(eventid)s",
+                "description": "Visualise OPERA detector event %(eventid)s"
+            }
+        ]
+    },
+    "accelerator": "CERN-SPS",
+    "experiment": "OPERA",
+    "collections": [
+       "OPERA-Detector-Events"
+    ],
+    "relations": [
+        {
+            "type": "isPartOf",
+            "description": "This event is part of OPERA Electronic Detector dataset",
+            "recid": "3900"
+        },
+        {
+            "type": "isPartOf",
+            "description": "This event is part of OPERA Emulsion Detector dataset",
+            "recid": "3901"
+        }
+    ],
+    "files": [
+        {
+            "uri": "root://eospublic.cern.ch//eos/opendata/opera/events/multiplicity/%(file0name)s",
+            "size": %(file0size)s,
+            "checksum": "sha1:%(file0checksum)s"
+        },
+        {
+            "uri": "root://eospublic.cern.ch//eos/opendata/opera/events/multiplicity/%(file1name)s",
+            "size": %(file1size)s,
+            "checksum": "sha1:%(file1checksum)s"
+        },
+        {
+            "uri": "root://eospublic.cern.ch//eos/opendata/opera/events/multiplicity/%(file2name)s",
+            "size": %(file2size)s,
+            "checksum": "sha1:%(file2checksum)s"
+        },
+        {
+            "uri": "root://eospublic.cern.ch//eos/opendata/opera/events/multiplicity/%(file3name)s",
+            "size": %(file3size)s,
+            "checksum": "sha1:%(file3checksum)s"
+        },
+        {
+            "uri": "root://eospublic.cern.ch//eos/opendata/opera/events/multiplicity/%(file4name)s",
+            "size": %(file4size)s,
+            "checksum": "sha1:%(file4checksum)s"
+        },
+        {
+            "uri": "root://eospublic.cern.ch//eos/opendata/opera/events/multiplicity/%(file5name)s",
+            "size": %(file5size)s,
+            "checksum": "sha1:%(file5checksum)s"
+        },
+        {
+            "uri": "root://eospublic.cern.ch//eos/opendata/opera/events/multiplicity/%(file6name)s",
+            "size": %(file6size)s,
+            "checksum": "sha1:%(file6checksum)s"
+        },
+        {
+            "uri": "root://eospublic.cern.ch//eos/opendata/opera/events/multiplicity/%(file7name)s",
+            "size": %(file7size)s,
+            "checksum": "sha1:%(file7checksum)s"
+        },
+        {
+            "uri": "root://eospublic.cern.ch//eos/opendata/opera/events/multiplicity/%(file8name)s",
+            "size": %(file8size)s,
+            "checksum": "sha1:%(file8checksum)s"
+        },
+        {
+            "uri": "root://eospublic.cern.ch//eos/opendata/opera/events/multiplicity/%(file9name)s",
+            "size": %(file9size)s,
+            "checksum": "sha1:%(file9checksum)s"
+        },
+        {
+            "uri": "root://eospublic.cern.ch//eos/opendata/opera/events/multiplicity/%(file10name)s",
+            "size": %(file10size)s,
+            "checksum": "sha1:%(file10checksum)s"
+        },
+        {
+            "uri": "root://eospublic.cern.ch//eos/opendata/opera/events/multiplicity/%(file11name)s",
+            "size": %(file11size)s,
+            "checksum": "sha1:%(file11checksum)s"
+        },
+        {
+            "uri": "root://eospublic.cern.ch//eos/opendata/opera/events/multiplicity/%(file12name)s",
+            "size": %(file12size)s,
+            "checksum": "sha1:%(file12checksum)s"
+        }
+    ]
+}"""
 
 dois = {}
 recid = 4000
@@ -203,7 +220,7 @@ for line in open('./inputs/dois-opera-818.txt', 'r').readlines():
     recid += 1
 
 ed_events = {}
-for filename in os.listdir(FILEDIR + os.sep + 'opera-ed-datasets'):
+for filename in os.listdir(EVENTDIR):
     if filename.endswith('.csv'):
         event = filename.split('_',1)[0]
         if event in ed_events:
@@ -211,43 +228,111 @@ for filename in os.listdir(FILEDIR + os.sep + 'opera-ed-datasets'):
         else:
             ed_events[event] = [filename]
 
-ecc_events = {}
-for filename in os.listdir(FILEDIR + os.sep + 'opera-ecc-datasets'):
-    if filename.endswith('.csv'):
-        event = filename.split('_',1)[0]
-        if event in ecc_events:
-            ecc_events[event].append(filename)
-        else:
-            ecc_events[event] = [filename]
 
-fd = open('./outputs/opera-events.xml', 'w')
-fd.write('<collection>\n')
+fd = open('./outputs/opera-events.json', 'w')
+fd.write('[\n')
 recid = 4000
 eventskeys = list(ed_events.keys())
 eventskeys.sort()
-for event in eventskeys:
+for event in eventskeys[:-1]:
     ed_events[event].sort()
-    ecc_events[event].sort()
-    fd.write(template % {'recid': recid,
-                         'doi': dois[recid],
-                         'eventid': event,
-                         'nbfiles': len(ed_events[event] + ecc_events[event]),
-                         'nbbytes': sum([os.path.getsize(os.path.join(FILEDIR, 'opera-ed-datasets', f)) for f in ed_events[event]] +
-                                        [os.path.getsize(os.path.join(FILEDIR, 'opera-ecc-datasets', f)) for f in ecc_events[event]]),
-                         'filedir': FILEDIR,
-                         'filename0a' : ecc_events[event][0],
-                         'filename0b' : ecc_events[event][1],
-                         'filename1' : ed_events[event][0],
-                         'filename2' : ed_events[event][1],
-                         'filename3' : ed_events[event][2],
-                         'filename4' : ed_events[event][3],
-                         'filename5' : ed_events[event][4],
-                         'filename6' : ed_events[event][5],
-                         'filename7' : ed_events[event][6],
-                         'filename8' : ed_events[event][7],
-                         'filename9' : ed_events[event][8],
-                         'filename10' : ed_events[event][9],
-                         'filename11' : ed_events[event][10]})
+    fd.write(template % \
+        {'recid': recid,
+         'doi': dois[recid],
+         'eventid': event,
+         'nbfiles': len(ed_events[event]),
+         'nbbytes': sum([os.path.getsize(os.path.join(EVENTDIR, f)) for f in ed_events[event]]),
+         'filedir': EVENTDIR,
+         'file0name': ed_events[event][0],
+         'file0size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][0])),
+         'file0checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][0]), 'rb').read()).hexdigest(),
+         'file1name': ed_events[event][1],
+         'file1size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][1])),
+         'file1checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][1]), 'rb').read()).hexdigest(),
+         'file2name': ed_events[event][2],
+         'file2size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][2])),
+         'file2checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][2]), 'rb').read()).hexdigest(),
+         'file3name': ed_events[event][3],
+         'file3size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][3])),
+         'file3checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][3]), 'rb').read()).hexdigest(),
+         'file4name': ed_events[event][4],
+         'file4size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][4])),
+         'file4checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][4]), 'rb').read()).hexdigest(),
+         'file5name': ed_events[event][5],
+         'file5size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][5])),
+         'file5checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][5]), 'rb').read()).hexdigest(),
+         'file6name': ed_events[event][6],
+         'file6size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][6])),
+         'file6checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][6]), 'rb').read()).hexdigest(),
+         'file7name': ed_events[event][7],
+         'file7size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][7])),
+         'file7checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][7]), 'rb').read()).hexdigest(),
+         'file8name': ed_events[event][8],
+         'file8size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][8])),
+         'file8checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][8]), 'rb').read()).hexdigest(),
+         'file9name': ed_events[event][9],
+         'file9size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][9])),
+         'file9checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][9]), 'rb').read()).hexdigest(),
+         'file10name': ed_events[event][10],
+         'file10size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][10])),
+         'file10checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][10]), 'rb').read()).hexdigest(),
+         'file11name': ed_events[event][11],
+         'file11size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][11])),
+         'file11checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][11]), 'rb').read()).hexdigest(),
+         'file12name': ed_events[event][12],
+         'file12size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][12])),
+         'file12checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][12]), 'rb').read()).hexdigest()})
+    fd.write(',\n')
     recid += 1
-fd.write('</collection>\n')
+for event in eventskeys[-1:]:
+    ed_events[event].sort()
+    fd.write(template % \
+             {'recid': recid,
+              'doi': dois[recid],
+              'eventid': event,
+              'nbfiles': len(ed_events[event]),
+              'nbbytes': sum([os.path.getsize(os.path.join(EVENTDIR, f)) for f in ed_events[event]]),
+              'filedir': EVENTDIR,
+              'file0name': ed_events[event][0],
+              'file0size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][0])),
+              'file0checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][0]), 'rb').read()).hexdigest(),
+              'file1name': ed_events[event][1],
+              'file1size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][1])),
+              'file1checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][1]), 'rb').read()).hexdigest(),
+              'file2name': ed_events[event][2],
+              'file2size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][2])),
+              'file2checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][2]), 'rb').read()).hexdigest(),
+              'file3name': ed_events[event][3],
+              'file3size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][3])),
+              'file3checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][3]), 'rb').read()).hexdigest(),
+              'file4name': ed_events[event][4],
+              'file4size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][4])),
+              'file4checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][4]), 'rb').read()).hexdigest(),
+              'file5name': ed_events[event][5],
+              'file5size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][5])),
+              'file5checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][5]), 'rb').read()).hexdigest(),
+              'file6name': ed_events[event][6],
+              'file6size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][6])),
+              'file6checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][6]), 'rb').read()).hexdigest(),
+              'file7name': ed_events[event][7],
+              'file7size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][7])),
+              'file7checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][7]), 'rb').read()).hexdigest(),
+              'file8name': ed_events[event][8],
+              'file8size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][8])),
+              'file8checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][8]), 'rb').read()).hexdigest(),
+              'file9name': ed_events[event][9],
+              'file9size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][9])),
+              'file9checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][9]), 'rb').read()).hexdigest(),
+              'file10name': ed_events[event][10],
+              'file10size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][10])),
+              'file10checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][10]), 'rb').read()).hexdigest(),
+              'file11name': ed_events[event][11],
+              'file11size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][11])),
+              'file11checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][11]), 'rb').read()).hexdigest(),
+              'file12name': ed_events[event][12],
+              'file12size': os.path.getsize(os.path.join(EVENTDIR, ed_events[event][12])),
+              'file12checksum': hashlib.sha1(open(os.path.join(EVENTDIR, ed_events[event][12]), 'rb').read()).hexdigest()})
+    fd.write('\n')
+    recid += 1
+fd.write(']\n')
 fd.close()
