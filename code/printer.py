@@ -9,17 +9,21 @@ import os
 from utils import get_from_deep_json, \
                   populate_doiinfo, \
                   get_doi
-from das_json_store import get_das_store_json
+from das_json_store import get_das_store_json, \
+                           get_parent_dataset
 from mcm_store import get_mcm_dict, \
                       get_global_tag, \
                       get_cmssw_version, \
                       get_cmsDriver_script, \
                       get_genfragment_url
+from create_dataset_records import get_conffile_ids
 
 
 DATASETS_WITH_BOTH_CMSDRIVER = 0
 DATASETS_WITH_CMSDRIVER1 = 0
 DATASETS_WITH_CMSDRIVER2 = 0
+DATASETS_WITH_3CONFFILES = 0
+DATASETS_WITH_FULL_PROVENANCE = 0
 
 
 def print_results(categories,
@@ -74,8 +78,11 @@ def print_results(categories,
                     doi_info = populate_doiinfo(doi_file)
                     print_ancestor_information(title, das_dir, mcm_dir, recid_file, doi_info)
 
-    print('## Summary')
-    print('- datasets with both cmsDriver scripts: {}/{}'.format(DATASETS_WITH_BOTH_CMSDRIVER , total_datasets))
+    if all_information:
+        print('## Summary')
+        print('- datasets with both cmsDriver scripts: {}/{}'.format(DATASETS_WITH_BOTH_CMSDRIVER , total_datasets))
+        print('- datasets with 3+ config files: {}/{}'.format(DATASETS_WITH_3CONFFILES, total_datasets))
+        print('- datasets with 2 cmsDriver scripts and/or 3+ conffiles: {}/{}'.format(DATASETS_WITH_FULL_PROVENANCE , total_datasets))
 
 
 def print_ancestor_information(dataset, das_dir, mcm_dir, recid_file, doi_info):
@@ -104,8 +111,11 @@ def print_ancestor_information(dataset, das_dir, mcm_dir, recid_file, doi_info):
     exec(open(recid_file, 'r').read(), globals(), _locals)
     RECID_INFO = _locals['RECID_INFO']
 
-    recid = RECID_INFO[dataset]
-    print("    - Record ID: [{recid}]({url})".format(recid=recid, url='http://opendata.cern.ch/record/' + str(recid)))
+    try:
+        recid = RECID_INFO[dataset]
+        print("    - Record ID: [{recid}]({url})".format(recid=recid, url='http://opendata.cern.ch/record/' + str(recid)))
+    except:
+        pass
 
     # DOI
     doi = get_doi(dataset, doi_info)
@@ -166,6 +176,22 @@ def print_ancestor_information(dataset, das_dir, mcm_dir, recid_file, doi_info):
 
         if cmsDriver1 and cmsDriver2:
             DATASETS_WITH_BOTH_CMSDRIVER += 1
+
+    # python config files
+    conffile_ids = get_conffile_ids(dataset)
+    parent = get_parent_dataset(dataset)
+    while parent != '' and parent:
+        conffile_ids += get_conffile_ids(parent)
+        parent = get_parent_dataset(parent)
+    global DATASETS_WITH_3CONFFILES
+    if conffile_ids:
+        print("    - python config scripts: ", conffile_ids)
+        if len(conffile_ids) > 2:
+            DATASETS_WITH_3CONFFILES += 1
+
+    global DATASETS_WITH_FULL_PROVENANCE
+    if (cmsDriver1 and cmsDriver2) or len(conffile_ids) > 2:
+        DATASETS_WITH_FULL_PROVENANCE += 1
 
     # pile up information
     mcm_dict = get_mcm_dict(dataset, mcm_dir)

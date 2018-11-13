@@ -39,7 +39,7 @@ def get_das_store_json(dataset, query='dataset', das_dir='./inputs/das-json-stor
 def mydasgoclient(dataset, query, out_dir, out_file):
     "Interface to dasgoclient"
 
-    print('\t', query, dataset)
+    print('\t{:<9} {}'.format(query, dataset))
 
     cmd = 'dasgoclient -query "'
     if query != "dataset":
