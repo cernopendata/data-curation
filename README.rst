@@ -12,3 +12,4 @@ Generally useful utilities:
 Specific ingestion campaigns:
 
 - `cod2-to-cod3 <cod2-to-cod3>`_ - record migration from version 2 to version 3
+- `opera-2017-multiplicity-studies <opera-2017-multiplicity-studies>`_ - helper scripts for the release of OPERA multiplicity studies
