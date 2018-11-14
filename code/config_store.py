@@ -1,7 +1,8 @@
 import os
 import sys
 import subprocess
-from das_json_store import get_das_store_json
+from das_json_store import get_das_store_json, \
+                           get_parent_dataset
 from utils import check_datasets_in_eos_dir, \
                   get_from_deep_json
 
@@ -9,10 +10,15 @@ from utils import check_datasets_in_eos_dir, \
 def get_conffile_ids(dataset):
     """Return location of the configuration files for the dataset."""
     ids = {}
-    output = get_from_deep_json(get_das_store_json(dataset, 'config'),
+    byoutput = get_from_deep_json(get_das_store_json(dataset, 'config'),
                                 'byoutputdataset')
-    if output:
-        for someid in output:
+    byinput = get_from_deep_json(get_das_store_json(dataset, 'config'),
+                                'byinputdataset')
+    if byoutput:
+        for someid in byoutput:
+            ids[someid] = 1
+    if byinput:
+        for someid in byinput:
             ids[someid] = 1
     return list(ids.keys())
 
@@ -28,6 +34,14 @@ def main(eos_dir="./inputs/eos-file-indexes",
         eos_datasets = datasets.copy()
     else:
         eos_datasets = check_datasets_in_eos_dir(datasets, eos_dir)
+
+    # add parents of the parents to the eos_datasets list!
+    for dataset in eos_datasets:
+        parent = get_parent_dataset(dataset, das_dir)
+        while parent:
+            if parent not in eos_datasets:
+                eos_datasets.append(parent)
+            parent = get_parent_dataset(parent, das_dir)
 
     conffile_ids = []
     for dataset_full_name in eos_datasets:
@@ -47,6 +61,7 @@ def main(eos_dir="./inputs/eos-file-indexes",
         print("Getting ({}/{}) {}/{}.configFile".format(i, total, conf_dir, conffile_id))
 
         cmd = "curl -s -k --key {key} --cert {key} https://cmsweb.cern.ch/couchdb/reqmgr_config_cache/{conffile_id}/configFile".format(dir=conf_dir, conffile_id=conffile_id, key=voms_key)
+        print("[ERROR - CONFIG_STORE] this is not working anymore :(", file=sys.stderr)  # FIXME
         conffile = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
         confs = conffile.stdout.decode("utf-8")
