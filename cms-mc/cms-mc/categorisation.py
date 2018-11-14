@@ -86,6 +86,7 @@ def guess_title_category(title):
         return 'Exotica/Leptoquarks'
 
     elif (re.search(r'graviton', title_lower) or
+          re.search(r'bulkgrav', title_lower) or  # bulk (?) gravitons
           re.search(r'/rsgravto', title_lower) or  # RS Graviton to
           re.search(r'radion', title_lower)):  # a.k.a. graviscalar
         return 'Exotica/Gravitons'
@@ -207,24 +208,24 @@ def guess_title_category(title):
     elif (re.search(r'/ewk', title_lower) or  # electroweak
           re.search(r'/diphoton', title_lower) or  # G = Gamma
           re.search(r'/gjet', title_lower) or
-          re.search(r'/g[1-9]jet', title_lower) or  # Photon nJet ?? FIXME
-          re.search(r'/ggjets', title_lower) or
+          re.search(r'/g[1-9]jet', title_lower) or  # Photon nJet
+          re.search(r'/g*jets', title_lower) or
           re.search(r'/gg4j', title_lower) or
           re.search(r'/gammagammato', title_lower) or
           re.search(r'/gg_m', title_lower) or
           re.search(r'/g_pt', title_lower) or
           re.search(r'/doublephoton', title_lower) or
+          re.search(r'/[wzg]*to[nug]*', title_lower) or  # W/Z/G To Nu/G
+          re.search(r'/[wz]*_tunez2_', title_lower) or  # W/Z_TuneZ2_* or
           re.search(r'/zjetto', title_lower) or  # Zjet to
           re.search(r'/wjetto', title_lower) or  # Wjet to
-          re.search(r'/w*[0-9]?jets', title_lower) or  # any number of Wi, n Jets
-          re.search(r'/z*[0-9]?jets', title_lower) or
-          re.search(r'/zw[0-9]?jets', title_lower) or
-          re.search(r'/wz[0-9]?jets', title_lower) or
+          re.search(r'/[wzg]*[0-9]?jet', title_lower) or  # any number of W/Z/gamma, n Jets
           re.search(r'/wplusto', title_lower) or   # W+ to
           re.search(r'/wpto', title_lower) or      # W+ to
           re.search(r'/wminusto', title_lower) or  # W- to
           re.search(r'/wmto', title_lower) or      # W- to
-          re.search(r'/zzto', title_lower)):       # ZZ To
+          re.search(r'/z*to', title_lower) or      # ZZ To
+          re.search(r'/[wz]to[emunu]*', title_lower)):  #  W/Z to E,Mu,Nu
         return 'Standard Model Physics/ElectroWeak'
 
     elif (re.search(r'/ttbar', title_lower) or

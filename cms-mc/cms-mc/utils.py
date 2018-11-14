@@ -56,32 +56,6 @@ def get_dataset_format(dataset):
     return dataset.split('/')[-1]
 
 
-def check_datasets_in_eos_dir(datasets, eos_dir):
-    "Return subset of datasets that have EOS information in eos_dir"
-    # FIXME this function is extremely slow. Takes some minutes for 3k datasets
-    dataset_full_names = []
-    for dataset in datasets:
-        dataset_index_file_base = get_dataset_index_file_base(dataset)
-        if subprocess.call('ls ' + eos_dir + ' | grep -q ' + dataset_index_file_base, shell=True):
-            print('[ERROR] Missing EOS information, ignoring dataset ' + dataset,
-                  file=sys.stderr)
-        else:
-            dataset_full_names.append(dataset)
-
-    return dataset_full_names
-
-
-def get_dataset_index_file_base(dataset, experiment='CMS', mcdir='MonteCarlo2012'):
-    "Return index file base for given dataset."
-    filebase = experiment.upper() + '_' + \
-               mcdir + '_' + \
-               get_dataset_runperiod(dataset) + '_' + \
-               get_dataset_name(dataset) + '_' + \
-               get_dataset_format(dataset) + '_' + \
-               get_dataset_version(dataset)
-    return filebase
-
-
 def get_from_deep_json(data, akey):
     "Traverse DATA and return first value matching AKEY."
     if type(data) is dict:

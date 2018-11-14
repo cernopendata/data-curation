@@ -3,8 +3,8 @@ import sys
 import subprocess
 import json
 from utils import get_dataset_name, \
-                  check_datasets_in_eos_dir, \
                   get_from_deep_json
+from eos_store import  check_datasets_in_eos_dir
 
 
 def get_parent_dataset(dataset, das_dir='./inputs/das-json-store'):

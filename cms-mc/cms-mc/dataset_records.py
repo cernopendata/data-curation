@@ -12,14 +12,14 @@ import os
 import subprocess
 import sys
 
-from utils import get_dataset_index_file_base, \
-                  get_from_deep_json, \
+from utils import get_from_deep_json, \
                   populate_doiinfo, \
                   get_doi
 from das_json_store import get_das_store_json, \
                            get_parent_dataset
-from create_eos_file_indexes import XROOTD_URI_BASE, \
-                                    get_dataset_location
+from eos_store import XROOTD_URI_BASE, \
+                      get_dataset_index_file_base, \
+                      get_dataset_location
 from mcm_store import get_mcm_dict, \
                       get_global_tag, \
                       get_cmssw_version

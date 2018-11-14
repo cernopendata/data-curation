@@ -3,8 +3,8 @@ import sys
 import subprocess
 from das_json_store import get_das_store_json, \
                            get_parent_dataset
-from utils import check_datasets_in_eos_dir, \
-                  get_from_deep_json
+from utils import get_from_deep_json
+from eos_store import check_datasets_in_eos_dir
 
 
 def get_conffile_ids(dataset):

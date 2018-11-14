@@ -3,11 +3,10 @@ import sys
 import subprocess
 import json
 import re
-from utils import check_datasets_in_eos_dir, \
-                  get_from_deep_json, \
+from utils import get_from_deep_json, \
                   get_dataset_format
 from das_json_store import get_das_store_json
-
+from eos_store import check_datasets_in_eos_dir
 
 def mcm_downloader(prepid, dataset, mcm_dir, das_dir):
     "Query dictionary and setup script from McM database"

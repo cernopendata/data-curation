@@ -3,7 +3,7 @@
 """
 Create EOS rich index files for CMS 2012 MC datasets.
 
-Creates files in the OUTPUTDIR (see below) but also copies them onto EOS final
+Creates files in the eos_dir (see below) but also copies them onto EOS final
 destination (unless DEBUG is set).
 
 To be run on AIADM:
@@ -20,8 +20,7 @@ import subprocess
 from utils import get_dataset_name, \
                   get_dataset_runperiod, \
                   get_dataset_version, \
-                  get_dataset_format, \
-                  get_dataset_index_file_base
+                  get_dataset_format
 
 XROOTD_URI_BASE = 'root://eospublic.cern.ch/'
 
@@ -31,12 +30,33 @@ MCDIR = 'MonteCarlo2012'
 
 EXPERIMENT = 'cms'
 
-INPUT = './inputs/mc-datasets.txt'
-
-OUTPUTDIR = './inputs/eos-file-indexes'
-
 DEBUG = True
 
+
+def check_datasets_in_eos_dir(datasets, eos_dir):
+    "Return subset of datasets that have EOS information in eos_dir"
+    # FIXME this function is extremely slow. Takes some minutes for 3k datasets
+    dataset_full_names = []
+    for dataset in datasets:
+        dataset_index_file_base = get_dataset_index_file_base(dataset)
+        if subprocess.call('ls ' + eos_dir + ' | grep -q ' + dataset_index_file_base, shell=True):
+            print('[ERROR] Missing EOS information, ignoring dataset ' + dataset,
+                  file=sys.stderr)
+        else:
+            dataset_full_names.append(dataset)
+
+    return dataset_full_names
+
+
+def get_dataset_index_file_base(dataset, experiment='CMS', mcdir='MonteCarlo2012'):
+    "Return index file base for given dataset."
+    filebase = experiment.upper() + '_' + \
+               mcdir + '_' + \
+               get_dataset_runperiod(dataset) + '_' + \
+               get_dataset_name(dataset) + '_' + \
+               get_dataset_format(dataset) + '_' + \
+               get_dataset_version(dataset)
+    return filebase
 
 def get_dataset_location(dataset):
     "Return EOS location of the dataset."
@@ -82,13 +102,13 @@ def get_dataset_volume_files(dataset, volume):
     return files
 
 
-def create_index_file(dataset, volume, files, style='txt'):
+def create_index_file(dataset, volume, files, eos_dir, style='txt'):
     "Create index file in the given style format (text, json)."
     filebase = get_dataset_index_file_base(dataset) + '_' + \
                volume + '_' + \
                'file_index'
     filename = filebase + '.' + style
-    fdesc = open(OUTPUTDIR + '/' + filename, 'w')
+    fdesc = open(eos_dir + '/' + filename, 'w')
     if style == 'txt':
         for afile in files:
             fdesc.write(afile['uri'])
@@ -100,35 +120,35 @@ def create_index_file(dataset, volume, files, style='txt'):
     return filename
 
 
-def copy_index_file(dataset, volume, filename):
+def copy_index_file(dataset, volume, filename, eos_dir):
     "Copy index file filename to its final destination on EOS."
     dataset_location = get_dataset_location(dataset)
-    cmd = 'eos cp ' + OUTPUTDIR + '/' + filename + ' ' + dataset_location + '/file-indexes/' + filename
+    cmd = 'eos cp ' + eos_dir + '/' + filename + ' ' + dataset_location + '/file-indexes/' + filename
     if DEBUG:
         print(cmd)
     else:
         os.system(cmd)
 
 
-def create_index_files(dataset, volume):
+def create_index_files(dataset, volume, eos_dir):
     "Create index files for the given dataset and volumes."
     files = get_dataset_volume_files(dataset, volume)
-    filename = create_index_file(dataset, volume, files, 'txt')
-    copy_index_file(dataset, volume, filename)
-    filename = create_index_file(dataset, volume, files, 'json')
-    copy_index_file(dataset, volume, filename)
+    filename = create_index_file(dataset, volume, files, eos_dir, 'txt')
+    copy_index_file(dataset, volume, filename, eos_dir)
+    filename = create_index_file(dataset, volume, files, eos_dir, 'json')
+    copy_index_file(dataset, volume, filename, eos_dir)
 
 
-def main(datasets = []):
+def main(datasets = [], eos_dir = './inputs/eos-file-indexes'):
     "Do the job."
 
-    if not os.path.exists(OUTPUTDIR):
-        os.makedirs(OUTPUTDIR)
+    if not os.path.exists(eos_dir):
+        os.makedirs(eos_dir)
 
     for dataset in datasets:
         volumes = get_dataset_volumes(dataset)
         for volume in volumes:
-            create_index_files(dataset, volume)
+            create_index_files(dataset, volume, eos_dir)
 
 
 if __name__ == '__main__':

@@ -16,7 +16,7 @@ from mcm_store import get_mcm_dict, \
                       get_cmssw_version, \
                       get_cmsDriver_script, \
                       get_genfragment_url
-from create_dataset_records import get_conffile_ids
+from dataset_records import get_conffile_ids
 
 
 DATASETS_WITH_BOTH_CMSDRIVER = 0

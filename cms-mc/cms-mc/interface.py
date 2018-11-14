@@ -75,7 +75,7 @@ def main(dataset_list,
 
         \b
         $ export EOS_MGM_URL=root://eospublic.cern.ch
-        $ python ./code/interface.py --create-eos-indexes DATASET_LIST
+        $ python ./cms-mc/interface.py --create-eos-indexes DATASET_LIST
 
         This will populate EOS_DIR with a txt and json file for each dataset.
         The files contain list of root files of that dataset.
@@ -84,7 +84,7 @@ def main(dataset_list,
 
         \b
         $ voms-proxy-init -voms cms -rfc
-        $ python ./code/interface.py --create-das-json-store DATASET_LIST
+        $ python ./cms-mc/interface.py --create-das-json-store DATASET_LIST
 
         This creates a local cache. It queries DAS (Data Aggregation Service)
         for the dataset, parent, config and mcm information and store it in
@@ -96,7 +96,7 @@ def main(dataset_list,
     step 3) get McM scripts to run cmsDriver
 
         \b
-        $ python ./code/interface.py --create-mcm-store DATASET_LIST
+        $ python ./cms-mc/interface.py --create-mcm-store DATASET_LIST
 
         This will query McM to get the dict and setup scripts for each dataset.
 	It also queries the input_dataset (GEN-SIM).
@@ -105,7 +105,7 @@ def main(dataset_list,
 
         \b
         $ voms-proxy-init -voms cms -rfc
-        $ python ./code/interface.py --get-conf-files DATASET_LIST
+        $ python ./cms-mc/interface.py --get-conf-files DATASET_LIST
 
         This downloads the configuration files to CONF_DIR.
 
@@ -115,7 +115,7 @@ def main(dataset_list,
         \b
         $ export EOS_MGM_URL=root://eospublic.cern.ch
         $ voms-proxy-init -voms cms -rfc
-        $ python ./code/interface.py --create-eos-indexes \\
+        $ python ./cms-mc/interface.py --create-eos-indexes \\
                                      --create-das-json-store \\
                                      --create-mcm-store \\
                                      --get-conf-files \\
@@ -123,7 +123,7 @@ def main(dataset_list,
 
     To get a markdown file with the results of the previous steps:
 
-        $ python ./code/interface.py --print-results DATASET_LIST
+        $ python ./cms-mc/interface.py --print-results DATASET_LIST
 
         This will use all the information from the local cache to produe a list
         with all the datasets in their categories, with as much additional
@@ -132,17 +132,15 @@ def main(dataset_list,
     In case you are interested only in the categorisation, there is no need
     to create the local cache, just run:
 
-        $ python ./code/interface.py --print-categorisation DATASET_LIST
+        $ python ./cms-mc/interface.py --print-categorisation DATASET_LIST > categorisation.md
     """
     datasets = get_datasets_from_dir(dataset_list)
 
     if create_eos_indexes:
-        import create_eos_file_indexes
-        create_eos_file_indexes.OUTPUTDIR = eos_dir
-        create_eos_file_indexes.INPUT = dataset_list
+        import eos_store
 
         if os.environ.get("EOS_MGM_URL") == "root://eospublic.cern.ch":
-            create_eos_file_indexes.main(datasets)
+            eos_store.main(datasets, eos_dir)
         else:
             print("EOS_MGM_URL not set.")
             print('Did you forget to "export EOS_MGM_URL=root://eospublic.cern.ch"?')
@@ -179,8 +177,8 @@ def main(dataset_list,
         printer.print_results(categorised, das_dir, mcm_dir, recid_file, doi_file, print_results)
 
     if create_records:
-        import create_dataset_records
-        create_dataset_records.main(datasets, mcm_dir, doi_file)
+        import dataset_records
+        dataset_records.main(datasets, mcm_dir, doi_file)
 
 if __name__ == '__main__':
     main()
