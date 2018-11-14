@@ -1,4 +1,7 @@
 *.pyc
+cms-2011-collision-datasets/code/das.py
+cms-2011-collision-datasets/inputs/das-json-store
+cms-2011-collision-datasets/outputs/*.xml
 cms-2011-hlt-triggers/outputs/*.xml
 cms-2011-hlt-triggers/outputs/*.html
 cms-2011-l1-triggers/outputs/*.xml
