@@ -2,10 +2,10 @@
  data-curation
 ===============
 
-.. image:: https://img.shields.io/badge/licence-GPL_2-green.svg?style=flat
-   :target: https://raw.githubusercontent.com/cernopendata/data-curation/master/LICENSE
 .. image:: https://badges.gitter.im/Join%20Chat.svg
    :target: https://gitter.im/cernopendata/opendata.cern.ch?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
+.. image:: https://img.shields.io/badge/licence-GPL_2-green.svg?style=flat
+   :target: https://raw.githubusercontent.com/cernopendata/data-curation/master/LICENSE
 
 About
 -----
@@ -42,16 +42,10 @@ See also:
 - its `source code <https://github.com/cernopendata/opendata.cern.ch>`_
 - its `record fixtures <https://github.com/cernopendata/opendata.cern.ch/tree/master/cernopendata/modules/fixtures/data/records>`_
 
-License
--------
-
-GNU General Public License v2+. See the `LICENSE <LICENSE>`_ file for more
-details.
-
 Contributors
 ------------
 
 The list of contributors in alphabetical order:
 
-- `Artemis Lavasa <https://github.com/ArtemisLav>`_
+- `Artemis Lavasa <https://orcid.org/0000-0001-5633-2459>`_
 - `Tibor Simko <https://orcid.org/0000-0001-7202-5803>`_
