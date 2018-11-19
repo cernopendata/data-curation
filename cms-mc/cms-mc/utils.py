@@ -56,6 +56,20 @@ def get_dataset_format(dataset):
     return dataset.split('/')[-1]
 
 
+def get_dataset_year(dataset):
+    "Return the data-taking year related to the dataset."
+    second_name = dataset.split('/')[2].split('_')[0]
+    return {
+           'Summer12-LowPU2010' : 2010,
+           'Summer11LegDR-PU' : 2011,
+           'Summer12' : 2012,
+           'RunIIFall15MiniAODv2-PU25nsData2015v1' : 2015,
+           'RunIIFall15MiniAODv2-PU25nsData2015v1FSQ' : 2015,
+           'RunIIFall15MiniAODv2-PU25nsData2015v1Raw' : 2015,
+           'RunIISummer16MiniAODv2-PUMoriond17' : 2016,
+           }.get(second_name, 0)
+
+
 def get_from_deep_json(data, akey):
     "Traverse DATA and return first value matching AKEY."
     if type(data) is dict:
