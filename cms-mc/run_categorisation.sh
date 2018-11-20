@@ -44,7 +44,7 @@ do
 	my_markdown $md > $html
 
 	echo "## $listname" >> $summary
-	head $md -n 40 | tail -n 31 >> $summary
+	head $md -n 41 | tail -n 32 >> $summary
 	echo "" >> $summary
 	echo "**Details** [here]($listname.html)" >> $summary
 	echo "" >> $summary

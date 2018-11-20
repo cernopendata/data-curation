@@ -1,19 +1,59 @@
-datasets="lists/CMS-2010-mc-datasets.txt"
-datasets="lists/CMS-2012-mc-released.txt"
-datasets="lists/CMS-2012-mc-datasets.txt"
+#!/bin/bash
+
+# Run categorisation script for all dataset lists in lists/ and generate a
+# nice looking html page :)
+# run make_local_cache.sh first!
+
 
 doi="./inputs/doi-cms-mc-2012-released.txt"
 recid="./inputs/recid-cms-mc-2012-datasets.py"
 
 
-echo "dataset:   " $datasets
-echo "DOI:       " $doi
-echo "Record ID: " $recid
-echo -e "\n\n"
+function my_markdown()
+{
+	dir="../markdownpy-spytoc-template/"
+	if [ -d $dir ]
+	then
+		python $dir/spytoc.py $1
+	elif which markdown_py &> /dev/null
+	then
+		markdown_py -x tables $1
+	else
+		python -m markdown -x tables -o html $1
+	fi
+}
 
 
-python cms-mc/interface.py --print-results --ignore-eos-store --recid-file $recid --doi-file $doi $datasets > bla
+today="$(date +"%Y-%m-%d")-results"
+now=$(date)
+if [ ! -d $today ];
+then
+	mkdir $today
+fi
 
-markdown -o html4 -x tables bla > bla.html
-echo mv bla.html ~/www/tmp/$(basename $datasets .txt).html
-mv bla.html ~/www/tmp/$(basename $dataset .txt).html
+summary="$today/summary.md"
+index="$today/index.html"
+echo "# Categorisation Rich Results" > $summary
+echo "" >> $summary
+echo "Page generated on $now" >> $summary
+echo "" >> $summary
+
+for list in lists/*.txt;
+do
+	echo "Categorising $list"
+	listname=$(basename $list .txt)
+	md="$today/$listname.md"
+	html="$today/$listname.html"
+
+	python cms-mc/interface.py --print-results --ignore-eos-store --recid-file $recid --doi-file $doi $list > $md
+	my_markdown $md > $html
+
+	echo "## $listname" >> $summary
+	head $md -n 41 | tail -n 32 >> $summary
+	echo "" >> $summary
+	echo "**Details** [here]($listname.html)" >> $summary
+	echo "" >> $summary
+done
+
+echo "Making $index"
+my_markdown $summary > $index

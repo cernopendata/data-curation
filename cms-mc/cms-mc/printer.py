@@ -15,7 +15,9 @@ from mcm_store import get_mcm_dict, \
                       get_global_tag, \
                       get_cmssw_version, \
                       get_cmsDriver_script, \
-                      get_genfragment_url
+                      get_genfragment_url, \
+                      get_prepId_from_das, \
+                      get_prepid_from_mcm
 from dataset_records import get_conffile_ids
 
 
@@ -121,6 +123,13 @@ def print_ancestor_information(dataset, das_dir, mcm_dir, recid_file, doi_info):
     doi = get_doi(dataset, doi_info)
     if doi:
             print("    - DOI: [{doi}]({url})".format(doi=doi, url='https://doi.org/' + str(doi)))
+
+    # PrepId
+    prepid = get_prepId_from_das(dataset, das_dir)
+    if not prepid:
+        prepid = get_prepid_from_mcm(dataset, mcm_dir)
+    if prepid:
+            print("    - PrepId: [{prepid}]({url})".format(prepid=prepid, url='https://cms-pdmv.cern.ch/mcm/requests?prepid=' + str(prepid)))
 
     # global tag & cmssw version
     global_tag = get_global_tag(dataset, mcm_dir)
