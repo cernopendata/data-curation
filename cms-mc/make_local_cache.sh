@@ -19,15 +19,15 @@ echo -e "\n\n"
 
 # step 1
 export EOS_MGM_URL=root://eospublic.cern.ch
-python cms-mc/interface.py --create-eos-indexes $datasets 2>eos-indexes.err
+python cms-mc/interface.py --create-eos-indexes $datasets 2>eos-indexes.err || exit $?
 
 # step 2
 # you should have voms-proxy here!
 # voms-proxy-init --voms cms --rfc --valid 190:00
-python cms-mc/interface.py --create-das-json-store --ignore-eos-store $datasets 2>das-store.err
+python cms-mc/interface.py --create-das-json-store --ignore-eos-store $datasets 2>das-store.err || exit $?
 
 # step 3
-python cms-mc/interface.py --create-mcm-store --ignore-eos-store $datasets 2>mcm-store.err
+python cms-mc/interface.py --create-mcm-store --ignore-eos-store $datasets 2>mcm-store.err || exit $?
 
 # step 4
-python cms-mc/interface.py --get-conf-files --ignore-eos-store $datasets 2>confs.err
+python cms-mc/interface.py --get-conf-files --ignore-eos-store $datasets 2>confs.err || exit $?

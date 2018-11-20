@@ -45,7 +45,7 @@ do
 	md="$today/$listname.md"
 	html="$today/$listname.html"
 
-	python cms-mc/interface.py --print-results --ignore-eos-store --recid-file $recid --doi-file $doi $list > $md
+	python cms-mc/interface.py --print-results --ignore-eos-store --recid-file $recid --doi-file $doi $list > $md || exit $?
 	my_markdown $md > $html
 
 	echo "## $listname" >> $summary

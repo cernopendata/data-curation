@@ -40,7 +40,7 @@ do
 	md="$today/$listname.md"
 	html="$today/$listname.html"
 
-	python cms-mc/interface.py --print-categorisation $list > $md
+	python cms-mc/interface.py --print-categorisation $list > $md || exit $?
 	my_markdown $md > $html
 
 	echo "## $listname" >> $summary
