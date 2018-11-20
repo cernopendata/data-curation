@@ -154,7 +154,8 @@ def print_ancestor_information(dataset, das_dir, mcm_dir, recid_file, doi_info):
 
         gen_fragment = get_genfragment_url(dataset, mcm_dir, das_dir)
         if gen_fragment:
-            print("        - Gen Fragment: [{url}]({url})".format(url=gen_fragment))
+            for url in gen_fragment:
+                    print("        - Gen Fragment: [{url}]({url})".format(url=url))
 
 
     # gen parameters of input dataset
