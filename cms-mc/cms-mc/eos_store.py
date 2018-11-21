@@ -20,13 +20,14 @@ import subprocess
 from utils import get_dataset_name, \
                   get_dataset_runperiod, \
                   get_dataset_version, \
-                  get_dataset_format
+                  get_dataset_format, \
+                  get_dataset_year
 
 XROOTD_URI_BASE = 'root://eospublic.cern.ch/'
 
 XROOTD_DIR_BASE = '/eos/opendata/'
 
-MCDIR = 'MonteCarlo2012'
+MCDIR_BASE = 'MonteCarlo'
 
 EXPERIMENT = 'cms'
 
@@ -48,10 +49,10 @@ def check_datasets_in_eos_dir(datasets, eos_dir):
     return dataset_full_names
 
 
-def get_dataset_index_file_base(dataset, experiment='CMS', mcdir='MonteCarlo2012'):
+def get_dataset_index_file_base(dataset):
     "Return index file base for given dataset."
-    filebase = experiment.upper() + '_' + \
-               mcdir + '_' + \
+    filebase = EXPERIMENT.upper() + '_' + \
+               MCDIR_BASE + str(get_dataset_year(dataset)) + '_' + \
                get_dataset_runperiod(dataset) + '_' + \
                get_dataset_name(dataset) + '_' + \
                get_dataset_format(dataset) + '_' + \
@@ -62,7 +63,7 @@ def get_dataset_location(dataset):
     "Return EOS location of the dataset."
     return XROOTD_DIR_BASE + \
         EXPERIMENT + '/' + \
-        MCDIR + '/' + \
+        MCDIR_BASE + str(get_dataset_year(dataset)) + '/' + \
         get_dataset_runperiod(dataset) + '/' + \
         get_dataset_name(dataset) + '/' + \
         get_dataset_format(dataset) + '/' + \

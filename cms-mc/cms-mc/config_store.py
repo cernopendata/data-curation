@@ -7,12 +7,12 @@ from utils import get_from_deep_json
 from eos_store import check_datasets_in_eos_dir
 
 
-def get_conffile_ids(dataset):
+def get_conffile_ids(dataset, das_dir):
     """Return location of the configuration files for the dataset."""
     ids = {}
-    byoutput = get_from_deep_json(get_das_store_json(dataset, 'config'),
+    byoutput = get_from_deep_json(get_das_store_json(dataset, 'config', das_dir),
                                 'byoutputdataset')
-    byinput = get_from_deep_json(get_das_store_json(dataset, 'config'),
+    byinput = get_from_deep_json(get_das_store_json(dataset, 'config', das_dir),
                                 'byinputdataset')
     if byoutput:
         for someid in byoutput:
@@ -23,10 +23,11 @@ def get_conffile_ids(dataset):
     return list(ids.keys())
 
 
-def main(eos_dir="./inputs/eos-file-indexes",
-         das_dir="./inputs/das-json-store",
-         conf_dir="./inputs/config-store",
-         datasets=[], ignore_eos_store=False):
+def main(eos_dir,
+         das_dir,
+         conf_dir,
+         datasets,
+         ignore_eos_store):
     "Do the job"
 
     # only for the datasets with EOS file information
@@ -45,7 +46,7 @@ def main(eos_dir="./inputs/eos-file-indexes",
 
     conffile_ids = []
     for dataset_full_name in eos_datasets:
-        for conffile_id in get_conffile_ids(dataset_full_name):
+        for conffile_id in get_conffile_ids(dataset_full_name, das_dir):
             if conffile_id not in conffile_ids:
                 conffile_ids.append(conffile_id)
 

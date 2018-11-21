@@ -7,7 +7,7 @@ from utils import get_dataset_name, \
 from eos_store import  check_datasets_in_eos_dir
 
 
-def get_parent_dataset(dataset, das_dir='./inputs/das-json-store'):
+def get_parent_dataset(dataset, das_dir):
     "Return parent dataset to the given dataset or an empty string if no parent found."
     parent_dataset = ''
     try:
@@ -18,7 +18,7 @@ def get_parent_dataset(dataset, das_dir='./inputs/das-json-store'):
     return parent_dataset
 
 
-def get_das_store_json(dataset, query='dataset', das_dir='./inputs/das-json-store'):
+def get_das_store_json(dataset, query='dataset', das_dir=''):
     "Return DAS JSON from the DAS JSON Store for the given dataset and given query."
 
     if not dataset:
@@ -63,9 +63,10 @@ def mydasgoclient(dataset, query, out_dir, out_file):
                   file=sys.stderr)
 
 
-def main(das_dir="./inputs/das-json-store",
-         eos_dir="./inputs/eos-file-indexes",
-         datasets=[], ignore_eos_store=False):
+def main(das_dir,
+         eos_dir,
+         datasets,
+         ignore_eos_store):
     "Do the job."
 
     # create dirs for dataset, parent and config
@@ -99,7 +100,3 @@ def main(das_dir="./inputs/das-json-store",
             parent = get_parent_dataset(parent, das_dir)
 
         i += 1
-
-
-if __name__ == '__main__':
-    main()

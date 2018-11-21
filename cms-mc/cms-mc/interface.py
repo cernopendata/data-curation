@@ -178,7 +178,7 @@ def main(dataset_list,
 
     if create_records:
         import dataset_records
-        dataset_records.main(datasets, mcm_dir, doi_file)
+        dataset_records.main(datasets, eos_dir, das_dir, mcm_dir, doi_file, recid_file)
 
 if __name__ == '__main__':
     main()

@@ -26,6 +26,7 @@ then
 	mkdir $today
 fi
 
+
 summary="$today/summary.md"
 index="$today/index.html"
 echo "# Categorisation Results" > $summary
@@ -33,14 +34,23 @@ echo "" >> $summary
 echo "Page generated on $now" >> $summary
 echo "" >> $summary
 
-for list in lists/*.txt;
+years=(2010 2011 2012 2015 2016)
+for year in ${years[*]}
 do
-	echo "Categorising $list"
+	list="lists/CMS-"$year"-mc-datasets.txt"
+
 	listname=$(basename $list .txt)
 	md="$today/$listname.md"
 	html="$today/$listname.html"
 
-	python cms-mc/interface.py --print-categorisation $list > $md || exit $?
+	echo "Categorising $list"
+
+	python cms-mc/interface.py --print-categorisation \
+	                           --eos-dir  ./cache/$year/eos-file-indexes/ \
+	                           --das-dir  ./cache/$year/das-json-store/ \
+	                           --mcm-dir  ./cache/$year/mcm-store/ \
+	                           --conf-dir ./cache/$year/config-store/ \
+	                           $list > $md || exit $?
 	my_markdown $md > $html
 
 	echo "## $listname" >> $summary

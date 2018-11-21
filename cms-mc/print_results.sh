@@ -5,10 +5,6 @@
 # run make_local_cache.sh first!
 
 
-doi="./inputs/doi-cms-mc-2012-released.txt"
-recid="./inputs/recid-cms-mc-2012-datasets.py"
-
-
 function my_markdown()
 {
 	dir="../markdownpy-spytoc-template/"
@@ -31,6 +27,7 @@ then
 	mkdir $today
 fi
 
+
 summary="$today/summary.md"
 index="$today/index.html"
 echo "# Categorisation Rich Results" > $summary
@@ -38,14 +35,26 @@ echo "" >> $summary
 echo "Page generated on $now" >> $summary
 echo "" >> $summary
 
-for list in lists/*.txt;
+years=(2010 2011 2012 2015 2016)
+for year in ${years[*]}
 do
+	list="lists/CMS-"$year"-mc-datasets.txt"
+	doi="./inputs/doi-cms-mc-2012-released.txt"
+	recid="./inputs/recid-cms-mc-2012-datasets.py"
+
 	echo "Categorising $list"
 	listname=$(basename $list .txt)
 	md="$today/$listname.md"
 	html="$today/$listname.html"
 
-	python cms-mc/interface.py --print-results --ignore-eos-store --recid-file $recid --doi-file $doi $list > $md || exit $?
+	python cms-mc/interface.py --print-results \
+	                           --eos-dir  ./cache/$year/eos-file-indexes/ \
+	                           --das-dir  ./cache/$year/das-json-store/ \
+	                           --mcm-dir  ./cache/$year/mcm-store/ \
+	                           --conf-dir ./cache/$year/config-store/ \
+	                           --doi-file $doi \
+	                           --recid-file $recid \
+	                           $list > $md || exit $?
 	my_markdown $md > $html
 
 	echo "## $listname" >> $summary

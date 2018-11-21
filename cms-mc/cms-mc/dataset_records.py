@@ -32,12 +32,12 @@ LINK_INFO = {}
 # read LINK_INFO dictionary created by a friendly program ahead of this one:
 #exec(open('./outputs/config_files_link_info.py', 'r').read())
 
-DOI_INFO = {}
+DOI_INFO = {} # we still need this global variable ? FIXME
 
 
-def get_number_events(dataset):
+def get_number_events(dataset, das_dir):
     """Return number of events for the dataset."""
-    number_events = get_from_deep_json(get_das_store_json(dataset), 'nevents')
+    number_events = get_from_deep_json(get_das_store_json(dataset, 'dataset', das_dir), 'nevents')
     if number_events:
         return number_events
     return 0
@@ -45,7 +45,7 @@ def get_number_events(dataset):
 
 def get_number_files(dataset):
     """Return number of files for the dataset."""
-    number_files = get_from_deep_json(get_das_store_json(dataset), 'nfiles')
+    number_files = get_from_deep_json(get_das_store_json(dataset, 'dataset', das_dir), 'nfiles')
     if number_files:
         return number_files
     return 0
@@ -53,7 +53,7 @@ def get_number_files(dataset):
 
 def get_size(dataset):
     """Return size of the dataset."""
-    size = get_from_deep_json(get_das_store_json(dataset), 'size')
+    size = get_from_deep_json(get_das_store_json(dataset, 'dataset', das_dir), 'size')
     if size:
         return size
     return 0
@@ -104,10 +104,10 @@ def newer_dataset_version_exists(dataset_full_name):
     return similar_datasets[-1] != dataset_full_name
 
 
-def get_conffile_ids(dataset):
+def get_conffile_ids(dataset, das_dir):
     """Return location of the configuration files for the dataset."""
     ids = {}
-    output = get_from_deep_json(get_das_store_json(dataset, 'config'),
+    output = get_from_deep_json(get_das_store_json(dataset, 'config', das_dir),
                                 'byoutputdataset')
     if output:
         for someid in output:
@@ -119,7 +119,7 @@ def get_generator_text(dataset):
     """Return generator text for given dataset."""
     from create_configfile_records import get_title as get_generator_title
     from create_configfile_records import get_process
-    config_ids = get_conffile_ids(dataset)
+    config_ids = get_conffile_ids(dataset, das_dir)
     process = ''
     if config_ids:
         for config_id in config_ids:
@@ -162,19 +162,19 @@ To get the exact LHE and generator's parameters, see <a href=\"/docs/cms-mc-prod
 """ % out
 
 
-def get_all_generator_text(dataset):
+def get_all_generator_text(dataset, das_dir):
     """Return generator text for given dataset and all its parents."""
     out = '<p>These data were processed in several steps:</p>'
     input_dataset = dataset
     out_blocks = []
     while input_dataset:
         out_blocks.append(get_generator_text(input_dataset))
-        input_dataset = get_parent_dataset(input_dataset)
+        input_dataset = get_parent_dataset(input_dataset, das_dir)
     out_blocks.reverse()
     return out + "".join(out_blocks)
 
 
-def create_record(dataset_full_name, mcm_dir):
+def create_record(dataset_full_name, mcm_dir, das_dir):
     """Create record for the given dataset."""
 
     rec = {}
@@ -243,7 +243,7 @@ def create_record(dataset_full_name, mcm_dir):
     rec['license']['attribution'] = 'CC0'
 
     rec['methodology'] = {}
-    rec['methodology']['description'] = get_all_generator_text(dataset_full_name)
+    rec['methodology']['description'] = get_all_generator_text(dataset_full_name, das_dir)
 
     rec['note'] = {}
     rec['note']['description'] = 'These simulated datasets correspond to the collision data collected by the CMS experiment in 2012.'  # FIXME
@@ -317,7 +317,7 @@ def print_records(records):
     print(']')
 
 
-def main(datasets = [], mcm_dir = './inputs/mcm-store' , doi_file = './inputs/doi-sim.txt'):
+def main(datasets, eos_dir, das_dir, mcm_dir, doi_file, recid_file):
     "Do the job."
     populate_doiinfo(doi_file)
     #dataset_full_names = []
