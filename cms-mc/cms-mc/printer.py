@@ -13,9 +13,11 @@ from das_json_store import get_das_store_json, \
                            get_parent_dataset
 from mcm_store import get_mcm_dict, \
                       get_global_tag, \
+                      get_generator_name, \
                       get_cmssw_version, \
                       get_cmsDriver_script, \
                       get_genfragment_url, \
+                      get_dataset_energy, \
                       get_prepId_from_das, \
                       get_prepid_from_mcm
 from dataset_records import get_conffile_ids
@@ -108,6 +110,7 @@ def print_ancestor_information(dataset, das_dir, mcm_dir, recid_file, doi_info):
     # it would be very nice if this printer script needed not external (non cached) information
 
     # record ID as in OpenData portal
+# TODO move this code to other place, no need to open a file everytime
     RECID_INFO = {}
     _locals = locals()
     exec(open(recid_file, 'r').read(), globals(), _locals)
@@ -122,7 +125,7 @@ def print_ancestor_information(dataset, das_dir, mcm_dir, recid_file, doi_info):
     # DOI
     doi = get_doi(dataset, doi_info)
     if doi:
-            print("    - DOI: [{doi}]({url})".format(doi=doi, url='https://doi.org/' + str(doi)))
+        print("    - DOI: [{doi}]({url})".format(doi=doi, url='https://doi.org/' + str(doi)))
 
     # PrepId
     prepid = get_prepId_from_das(dataset, das_dir)
@@ -138,6 +141,14 @@ def print_ancestor_information(dataset, das_dir, mcm_dir, recid_file, doi_info):
         print("    - Global Tag:", global_tag)
     if cmssw_ver:
         print("    - CMSSW version:", cmssw_ver)
+
+    # Energy
+    print("    - Collision Energy: ", get_dataset_energy(dataset, mcm_dir), "TeV")
+
+    # Generators
+    generators = get_generator_name(dataset, das_dir, mcm_dir)
+    if generators:
+         print("    - Generators: ", generators)
 
     # GEN-SIM dataset used to produce the AODSIM
     dataset_json = get_das_store_json(dataset, 'mcm', das_dir)
@@ -206,9 +217,14 @@ def print_ancestor_information(dataset, das_dir, mcm_dir, recid_file, doi_info):
     # pile up information
     mcm_dict = get_mcm_dict(dataset, mcm_dir)
     if mcm_dict:
-        print('    - pile-up:')
-        print('        -', get_from_deep_json(mcm_dict, 'pileup'))
-        print('        -', get_from_deep_json(mcm_dict, 'pileup_dataset_name'))
+        pileup = get_from_deep_json(mcm_dict, 'pileup')
+        pileup_dataset = get_from_deep_json(mcm_dict, 'pileup_dataset_name')
+        if pileup or pileup_dataset:
+            print('    - pile-up:')
+            if pileup:
+                print('        -', pileup)
+            if pileup_dataset:
+                print('        -', pileup_dataset)
 
         notes = get_from_deep_json(mcm_dict, 'notes')
         if notes != None:

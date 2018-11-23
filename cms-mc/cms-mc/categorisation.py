@@ -8,7 +8,6 @@ import re
 import sys
 
 from urllib.parse import quote
-from printer import print_results
 from utils import read_titles, \
                   get_datasets_from_dir
 
@@ -22,8 +21,8 @@ def categorise_titles(titles):
     categories = {
         'B physics and Quarkonia': [],
         'Top Physics': [],
-        'Higgs Physics/SM': [],
-        'Higgs Physics/BSM': [],
+        'Higgs Physics/Standard Model': [],
+        'Higgs Physics/Beyond Standard Model': [],
         'Standard Model Physics/Drell-Yan': [],
         'Standard Model Physics/ElectroWeak': [],
         'Standard Model Physics/Forward and Small-x QCD Physics': [],
@@ -174,7 +173,7 @@ def guess_title_category(title):
           re.search(r'hminus', title_lower) or
           re.search(r'sms[-]?higgs', title_lower) or  # sms higgs
           re.search(r'hplus', title_lower)):
-        return 'Higgs Physics/BSM'
+        return 'Higgs Physics/Beyond Standard Model'
 
     elif ('higgs' in title_lower or  # higgsino is above, ok to be here
           'hto' in title_lower or
@@ -187,29 +186,24 @@ def guess_title_category(title):
           'h_m' in title_lower):
         if ('prime' in title_lower or  # Tprime To Higgs
             'susy' in title_lower):
-            return 'Higgs Physics/BSM'
+            return 'Higgs Physics/Beyond Standard Model'
         else:
-            return 'Higgs Physics/SM'
+            return 'Higgs Physics/Standard Model'
             # FIXME gravitino going to SM Higgs ctegory.
 
     elif (re.search('GammaGammaTo(E|Mu|Tau)*_(Inel|Elastic|SingleDiss)', title) or  # gamma gamma -> mu+ mu- etc reactions which involve elastically scattered protons
                                                                                     # SingleDiss, means Single Diffractive Dissociation
-          re.search('/singlediffractive[zw]?', title_lower)):
+          re.search('/singlediffractive[zw]?', title_lower) or
+          re.search('/cepdijets', title_lower) or  # Central Exclusive Production of dijets
+          re.search('/dpedijets', title_lower) or  # ???
+          re.search('/cs_', title_lower)):  # Color Singlet exchange (BFKL pomeron)
         return 'Standard Model Physics/Forward and Small-x QCD Physics'
 
     elif (re.search('/minbias', title_lower)):
         return 'Standard Model Physics/Minimum-Bias'
 
-    elif ('matchingup' in title_lower or
-          'matchingdown' in title_lower or
-          'scaleup' in title_lower or
-          'scaledown' in title_lower or
-          re.search(r'tt_weights.*auet2', title_lower) or  # FIXME ???
-          re.search(r'gun', title_lower) or  # particle gun
-          '_mt' in title_lower or
-          'signal_' in title_lower or  # FIXME ???
-          'signalplusbkgd' in title_lower or  # FIXME ???
-          '_mass' in title_lower):
+    elif (re.search(r'tt_weights.*auet2', title_lower) or  # FIXME ???
+          re.search(r'gun', title_lower)):  # particle gun
         return 'Physics Modelling'
 
     elif re.search(r'/dy', title_lower):
@@ -232,6 +226,7 @@ def guess_title_category(title):
           re.search(r'/w*l*nub*', title_lower) or
           re.search(r'/[lminusplus]*nu.*vbf', title_lower) or  # L+- Nu bla VBF
           re.search(r'/[wz]*vbf', title_lower) or
+          re.search(r'/zb*_[1-9]*f', title_lower) or
           re.search(r'/[wzg]*to[nug]*', title_lower) or  # W/Z/G To Nu/G
           re.search(r'/[wzg]*_', title_lower) or  # W/Z/G_*
           re.search(r'/zjetto', title_lower) or  # Zjet to
@@ -261,11 +256,8 @@ def guess_title_category(title):
 
     elif (re.search(r'/muminus', title_lower) or
           re.search(r'/muplus', title_lower) or
-          re.search(r'/doubleelectron', title_lower) or
-          re.search(r'/singlepi', title_lower) or  # is this right? FIXME
-          'HT' in title or  # from this line to end was SM Exclusive
-          'Pt' in title or
-          'enriched' in title_lower):
+          re.search(r'/doubleelectron', title_lower) or  # Is this an electron gun?
+          re.search(r'/singlepi', title_lower)):  # is this right? FIXME
         return 'Standard Model Physics/Miscellaneous'
 
     elif ('Heavy-Ion Physics' in title or
@@ -299,6 +291,7 @@ def guess_title_category(title):
 
 def main():
     """Do the main job."""
+    from printer import print_results
 
     # detect input directory with filenames containing dataset titles:
     try:

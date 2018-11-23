@@ -1,14 +1,19 @@
+#!/bin/bash
+
 # this script makes a local cache of a list of CMS MC datasets
 
-year=2010
+year=2012
 datasets="lists/CMS-"$year"-mc-datasets.txt"
 
+# TODO
+# targz each step
+# mount the dirs in RAM to avoid file number limit
 
 # step 1
 export EOS_MGM_URL=root://eospublic.cern.ch
 python cms-mc/interface.py --create-eos-indexes \
                            --eos-dir ./cache/$year/eos-file-indexes/ \
-                           $datasets 2>eos-indexes.err || exit $?
+                           $datasets 2>eos-indexes-${year}.err || exit $?
 
 # step 2
 # you should have voms-proxy here!
@@ -17,7 +22,7 @@ python cms-mc/interface.py --create-das-json-store \
                            --ignore-eos-store \
                            --eos-dir ./cache/$year/eos-file-indexes/ \
                            --das-dir ./cache/$year/das-json-store/ \
-                           $datasets 2>das-store.err || exit $?
+                           $datasets 2>das-store-${year}.err || exit $?
 
 # step 3
 python cms-mc/interface.py --create-mcm-store \
@@ -25,7 +30,7 @@ python cms-mc/interface.py --create-mcm-store \
                            --eos-dir ./cache/$year/eos-file-indexes/ \
                            --das-dir ./cache/$year/das-json-store/ \
                            --mcm-dir ./cache/$year/mcm-store/ \
-                           $datasets 2>mcm-store.err || exit $?
+                           $datasets 2>mcm-store-${year}.err || exit $?
 
 # step 4
 python cms-mc/interface.py --get-conf-files \
@@ -34,4 +39,13 @@ python cms-mc/interface.py --get-conf-files \
                            --das-dir ./cache/$year/das-json-store/ \
                            --mcm-dir ./cache/$year/mcm-store/ \
                            --conf-dir ./cache/$year/config-store/ \
-                           $datasets 2>conffiles.err || exit $?
+                           $datasets 2>conffiles-${year}.err || exit $?
+
+echo -e "\n\n"
+echo -e ":)"
+echo -e "Local cache created in ./cache/${year}/"
+echo -e "Check the error files in current dir:"
+echo -e "\t - eos-indexes-${year}.err"
+echo -e "\t - das-store-${year}.err"
+echo -e "\t - mcm-store-${year}.err"
+echo -e "\t - conffiles-${year}.err"

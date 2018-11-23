@@ -4,6 +4,7 @@ import subprocess
 import json
 import re
 from utils import get_from_deep_json, \
+                  get_dataset_year, \
                   get_dataset_format
 from das_json_store import get_das_store_json
 from eos_store import check_datasets_in_eos_dir
@@ -148,14 +149,44 @@ def get_global_tag(dataset, mcm_dir):
     "Get global tag from McM dictionary"
     mcm_dict = get_mcm_dict(dataset, mcm_dir)
     global_tag = get_from_deep_json(mcm_dict, 'conditions')
+
+    if not global_tag:
+        # if not available, we guess something generic enough to work.
+        year = get_dataset_year(dataset)
+        if year == 2010:
+            global_tag = 'START42_x'
+        elif year == 2011:
+            global_tag = 'START53_x'
+        elif year == 2012:
+            global_tag = 'START53_x'
+        elif year == 2015:
+            global_tag = 'START76_x'
+        elif year == 2016:
+            global_tag = 'START80_x'
+
     return global_tag
 
 
 def get_cmssw_version(dataset, mcm_dir):
     "Get CMSSW version from McM dictionary"
     mcm_dict = get_mcm_dict(dataset, mcm_dir)
-    global_tag = get_from_deep_json(mcm_dict, 'cmssw_release')
-    return global_tag
+    cmssw = get_from_deep_json(mcm_dict, 'cmssw_release')
+
+    if not cmssw:
+        # if not available, we guess something generic enough to work.
+        year = get_dataset_year(dataset)
+        if year == 2010:
+            cmssw = 'CMSSW_4_2_x'
+        if year == 2011:
+            cmssw = 'CMSSW_4_2_x'
+        if year == 2012:
+            cmssw = 'CMSSW_5_3_x'
+        if year == 2015:
+            cmssw = 'CMSSW_7_6_x'
+        if year == 2016:
+            cmssw = 'CMSSW_8_0_x'
+
+    return cmssw
 
 
 def get_cmsDriver_script(dataset, mcm_dir):
@@ -193,3 +224,46 @@ def get_genfragment_url(dataset, mcm_dir, das_dir):
                 if curl:
                     url.append(curl.group('url'))
     return url
+
+
+def get_dataset_energy(dataset, mcm_dir):
+    "Return energy of that dataset in TeV"
+    mcm_dict = get_mcm_dict(dataset, mcm_dir)
+    if mcm_dict:
+        return get_from_deep_json(mcm_dict, 'energy')
+    else:
+        year = get_dataset_year(dataset)
+        return {
+               2010:  7.0,
+               2011:  7.0,
+               2012:  8.0,
+               2015: 13.0,
+               2016: 13.0,
+               }.get(year, 0)
+
+
+def get_generator_name(dataset, das_dir, mcm_dir):
+    "Return list of generators used for that dataset"
+    generator_names = []
+    mcm_dict = get_mcm_dict(dataset, mcm_dir)
+    generators = get_from_deep_json(mcm_dict, 'generators')
+    input_generators = []
+
+    dataset_json = get_das_store_json(dataset, 'mcm', das_dir)
+    input_dataset = get_from_deep_json(dataset_json, 'input_dataset')
+    if input_dataset:
+        mcm_dict = get_mcm_dict(input_dataset, mcm_dir)
+        input_generators = get_from_deep_json(mcm_dict, 'generators')
+
+    if generators and input_generators:
+        generators += input_generators
+
+    if generators:
+        for item in generators:
+            for char in ['"', '\\', '[', ']']:  # remove ", \, [, ]
+                item = item.replace(char, '')
+            generator = item
+            if generator not in generator_names:
+                generator_names.append(item)
+
+    return generator_names

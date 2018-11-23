@@ -2,36 +2,37 @@
  cms-mc
 =======
 
-This directory contains helper scripts used to prepare CMS MC open data
-release.
+This directory contains helper scripts used to prepare CMS MC Open Data
+release:
 
+- `cms-mc/` folder contains the python code.
+- `lists/` folder contain text files with the list of datasets for each year.
+- `inputs/` folder contain files with extra information for the datasets, such
+  as `DOI` identifier and `RECID`.
 
-To run the cms-mc you need a text file with the list of datasets (one per
-line). Some lists are available in the directory `lists`.
+Every step necessary to produce the final `*.json` files is handled by the
+`cmc-mc/interface.py` script. Details about it can be queried with the command:
 
-.. cms-mc-block:: console
+.. code-block:: console
 
-   export EOS_MGM_URL=root://eospublic.cern.ch
-   voms-proxy-init --voms cms --rfc
-   python cms-mc/interface.py --create-eos-indexes \
-                              --create-das-json-store \
-                              --create-mcm-store \
-                              --get-conf-files \
-                              lists/CMS-2012-mc-datasets.txt
+   python cms-mc/interface.py --help
 
-To run for the categorisation only:
+The bash scrips in the current directory handle all the parameters of the
+interface:
 
-.. cms-mc-block:: console
+- `make_local_cache.sh`: creates a local cache of all information needed.
+- `print_results.sh`: creates a set of markdown and HTML pages with all the
+  information available.
+- `run_categorisation.sh`: creates a set of markdown and HTML pages with the
+  datasets splitted in their categories.
+- `create_records.sh`: create the final .json file.
 
-   python cms-mc/interface.py --print-categorisation \
-                              lists/CMS-2012-mc-datasets.txt > categories.md
+The steps to follow are:
 
-This will create a markdown file with the results.
+.. code-block:: console
 
-For details, see ``python cms-mc/interface.py --help``.
+   voms-proxy-init --voms cms --rfc --valid 190:00
+   sh make_local_cache.sh
+   sh create_records.sh
 
-You can also use the bash scrips:
-
-- `make_local_cache.sh`
-- `print_results.sh`
-- `run_categorisation.sh`
+Warning: creating a local cache takes a long time!

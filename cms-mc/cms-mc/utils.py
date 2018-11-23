@@ -47,7 +47,7 @@ def get_dataset_runperiod(dataset):
 
 
 def get_dataset_version(dataset):
-    "Return dataset run period."
+    "Return dataset version."
     return dataset.split('/')[2].split('-', 1)[1]
 
 
@@ -110,3 +110,15 @@ def get_doi(dataset_full_name, doi_info):
         return doi_info[dataset_full_name]
     else:
         return None
+
+
+def get_author_list_recid(dataset):
+    "Return recid for author list"
+    year = get_dataset_year(dataset)
+    return {
+           2010: '450',  # FIXME
+           2011: '451',
+           2012: '453',
+           2015: '',  # FIXME
+           2016: '',  # FIXME
+           }.get(year, '')  # FIXME
