@@ -33,6 +33,9 @@ python cms-mc/interface.py --create-mcm-store \
                            $datasets 2>mcm-store-${year}.err || exit $?
 
 # step 4
+# in ~/.globus/ dir, follow the instructions from
+# https://ca.cern.ch/ca/help/?kbid=024010 and also this other command:
+# $ openssl pkcs12 -in myCert.p12 -nocerts -nodes -out userkey.nodes.pem
 python cms-mc/interface.py --get-conf-files \
                            --ignore-eos-store \
                            --eos-dir ./cache/$year/eos-file-indexes/ \

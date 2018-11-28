@@ -53,16 +53,15 @@ def main(eos_dir,
     if not os.path.exists(conf_dir):
         os.makedirs(conf_dir)
 
-    voms = subprocess.run("voms-proxy-info -p", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    voms_key = voms.stdout.decode("utf-8").strip()
+    key_nodes = "~/.globus/userkey.nodes.pem"
+    cert = "~/.globus/usercert.pem"
 
     total = len(conffile_ids)
     i = 1
     for conffile_id in conffile_ids:
         print("Getting ({}/{}) {}/{}.configFile".format(i, total, conf_dir, conffile_id))
 
-        cmd = "curl -s -k --key {key} --cert {key} https://cmsweb.cern.ch/couchdb/reqmgr_config_cache/{conffile_id}/configFile".format(dir=conf_dir, conffile_id=conffile_id, key=voms_key)
-        print("[ERROR - CONFIG_STORE] this is not working anymore :(", file=sys.stderr)  # FIXME
+        cmd = "curl -s -k --key {key} --cert {cert} https://cmsweb.cern.ch/couchdb/reqmgr_config_cache/{conffile_id}/configFile".format(conffile_id=conffile_id, key=key_nodes, cert=cert)
         conffile = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
         confs = conffile.stdout.decode("utf-8")

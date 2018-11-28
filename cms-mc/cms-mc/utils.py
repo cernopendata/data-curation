@@ -58,6 +58,7 @@ def get_dataset_format(dataset):
 
 def get_dataset_year(dataset):
     "Return the data-taking year related to the dataset."
+    # cat CMS-2012-mc-datasets.txt | sed -r 's|^/.*/(.*)/.*|\1|g' | cut -d _ -f 1 | sort | uniq
     second_name = dataset.split('/')[2].split('_')[0]
     return {
            'Summer12-LowPU2010' : 2010,

@@ -104,22 +104,14 @@ def main(dataset_list,
     step 4) get the config files
 
         \b
-        $ voms-proxy-init -voms cms -rfc
+        in ~/.globus/ dir, follow the instructions from
+        https://ca.cern.ch/ca/help/?kbid=024010 and also this other command:
+        $ openssl pkcs12 -in myCert.p12 -nocerts -nodes -out userkey.nodes.pem
+        Then run the interface code
+
         $ python ./cms-mc/interface.py --get-conf-files DATASET_LIST
 
         This downloads the configuration files to CONF_DIR.
-
-    But you can also run everything in one go, assuming the voms-proxy lasts
-    long enough:
-
-        \b
-        $ export EOS_MGM_URL=root://eospublic.cern.ch
-        $ voms-proxy-init -voms cms -rfc
-        $ python ./cms-mc/interface.py --create-eos-indexes \\
-                                     --create-das-json-store \\
-                                     --create-mcm-store \\
-                                     --get-conf-files \\
-                                     DATASET_LIST
 
     To get a markdown file with the results of the previous steps:
 
@@ -160,14 +152,16 @@ def main(dataset_list,
         mcm_store.create(datasets, mcm_dir, das_dir, eos_dir, ignore_eos_store)
 
     if get_conf_files:
-        # check if user has voms-proxy
-        proxyinfo = subprocess.run("voms-proxy-info", stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
-        if proxyinfo.returncode != 0:
-            print("Error in VOMS proxy.")
-            print('Did you forget to "voms-proxy-init -voms cms -rfc"?')
-        else:
+        # check if user has key and cert
+        if os.path.isfile(os.environ.get("HOME") + "/.globus/usercert.pem") and os.path.isfile(os.environ.get("HOME") + "/.globus/userkey.nodes.pem"):
             import config_store
             config_store.main(eos_dir, das_dir, conf_dir, datasets, ignore_eos_store)
+        else:
+            print("Error in key and certificate pairs (~/.globus/usercert.pem, ~/.globus/userkey.nodes.pem).")
+            print('Did you forget to ')
+            print("\t$ openssl pkcs12 -in myCert.p12 -clcerts -nokeys -out usercert.pem")
+            print("\t$ openssl pkcs12 -in myCert.p12 -nocerts -nodes -out userkey.nodes.pem")
+            print('in the ~/.globus dir?')
 
     if print_categorisation or print_results:
         import printer

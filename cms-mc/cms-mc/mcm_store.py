@@ -202,7 +202,7 @@ def get_cmsDriver_script(dataset, mcm_dir):
 
 
 def get_genfragment_url(dataset, mcm_dir, das_dir):
-    "return list of github url of the genfragments used"
+    "return list of url's of the genfragments used"
     input_dataset = ''
     url = []
 
