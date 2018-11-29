@@ -9,6 +9,7 @@ from utils import get_from_deep_json, \
 from das_json_store import get_das_store_json
 from eos_store import check_datasets_in_eos_dir
 
+
 def mcm_downloader(prepid, dataset, mcm_dir, das_dir):
     "Query dictionary and setup script from McM database"
     # this function is so ugly... but finally works! You're welcome to refactor it though
@@ -163,6 +164,8 @@ def get_global_tag(dataset, mcm_dir):
             global_tag = 'START76_x'
         elif year == 2016:
             global_tag = 'START80_x'
+        else:
+            global_tag = 'UNKNOWN'
 
     return global_tag
 
@@ -185,6 +188,8 @@ def get_cmssw_version(dataset, mcm_dir):
             cmssw = 'CMSSW_7_6_x'
         if year == 2016:
             cmssw = 'CMSSW_8_0_x'
+        else:
+            cmssw = 'UNKNOWN'
 
     return cmssw
 
