@@ -202,8 +202,7 @@ def guess_title_category(title):
     elif (re.search('/minbias', title_lower)):
         return 'Standard Model Physics/Minimum-Bias'
 
-    elif (re.search(r'tt_weights.*auet2', title_lower) or  # FIXME ???
-          re.search(r'gun', title_lower)):  # particle gun
+    elif (re.search(r'gun', title_lower)):  # particle gun
         return 'Physics Modelling'
 
     elif re.search(r'/dy', title_lower):
@@ -224,11 +223,13 @@ def guess_title_category(title):
           re.search(r'/doublephoton', title_lower) or
           re.search(r'/lnugg', title_lower) or
           re.search(r'/w*l*nub*', title_lower) or
+          re.search(r'/w*j*to', title_lower) or
           re.search(r'/[lminusplus]*nu.*vbf', title_lower) or  # L+- Nu bla VBF
           re.search(r'/[wz]*vbf', title_lower) or
           re.search(r'/zb*_[1-9]*f', title_lower) or
+          re.search(r'/[WmpJ]*To[QLNuBar]*_', title) or  # Wp Wm J To Q L NuBar
           re.search(r'/[wzg]*to[nug]*', title_lower) or  # W/Z/G To Nu/G
-          re.search(r'/[wzg]*_', title_lower) or  # W/Z/G_*
+          re.search(r'/[WZGam]*_', title) or  # W/Z/G_*
           re.search(r'/zjetto', title_lower) or  # Zjet to
           re.search(r'/wjetto', title_lower) or  # Wjet to
           re.search(r'/[wzg]*[0-9]?jet', title_lower) or  # any number of W/Z/gamma, n Jets
@@ -281,6 +282,7 @@ def guess_title_category(title):
           re.search(r'/t[tgz]*jets(_|to)', title_lower) or  # TTZJetsTo, TTGJetsTo, TZJetsTo
           re.search(r'/t*gamma_', title_lower) or  # TGamma, TTGamma, TTTGamma, etc with a photon in the final state
           re.search(r'FCNC', title) or  # FCNC: Flavour Change Neutral Current
+          re.search(r'/tt_weights', title) or
           re.search(r'/ttoleptons_[t,s]', title_lower)):
         return 'Top Physics'
 
