@@ -48,6 +48,9 @@ from utils import get_datasets_from_dir
 @click.option('--create-records', default=False,
               show_default=True, is_flag=True,
               help='Create json file for records')
+@click.option('--create-conffile-records', default=False,
+              show_default=True, is_flag=True,
+              help='Create json file for conffiles')
 @click.option('--recid-file', default="./inputs/recid_info.py",
               show_default=True, type=click.Path(),
               help='File with DOI information')
@@ -61,6 +64,7 @@ def main(dataset_list,
          get_conf_files, conf_dir,
          print_categorisation, print_results,
          create_records,
+         create_conffile_records,
 	 recid_file, doi_file):
     """
     Interface for manipulation of dataset records for OpenData portal.
@@ -112,6 +116,12 @@ def main(dataset_list,
         $ python ./cms-mc/interface.py --get-conf-files DATASET_LIST
 
         This downloads the configuration files to CONF_DIR.
+
+    step 5) generate the records
+
+        \b
+        $ python ./cms-mc/interface.py --create-records DATASET_LIST
+        $ python ./cms-mc/interface.py --create-conffiles-records DATASET_LIST
 
     To get a markdown file with the results of the previous steps:
 
@@ -173,6 +183,11 @@ def main(dataset_list,
     if create_records:
         import dataset_records
         dataset_records.main(datasets, eos_dir, das_dir, mcm_dir, conf_dir, doi_file, recid_file)
+
+    if create_conffile_records:
+        import conffiles_records
+        conffiles_records.main(datasets, eos_dir, das_dir, mcm_dir, conf_dir)
+
 
 if __name__ == '__main__':
     main()

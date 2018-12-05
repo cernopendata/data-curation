@@ -248,11 +248,14 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir):
         gen_fragment = get_genfragment_url(dataset, mcm_dir, das_dir)  # FIXME genfragment store would be better
         if gen_fragment:
             for url in gen_fragment:
-                script = urlopen(url).read()
                 configuration_files = {}
                 configuration_files['title'] = 'Genfragment'
                 configuration_files['url'] = url
-                configuration_files['script'] = script.decode("utf-8")
+                try:
+                    script = urlopen(url).read()  # FIXME get rid of error on 404
+                    configuration_files['script'] = script.decode("utf-8")
+                except:
+                    pass
                 step['configuration_files'].append(configuration_files)
 
         config_ids = get_conffile_ids(input_dataset, das_dir)
@@ -280,9 +283,6 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
 
     # TODO
 # - add cross section
-# - hard code cmsDriver commands
-# - hard code genfragments
-# - hard code config files
 
     rec = {}
 
@@ -356,7 +356,6 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
 
     rec['note'] = {}
     rec['note']['description'] = 'These simulated datasets correspond to the collision data collected by the CMS experiment in ' + year_created + '.'
-
 
     mcm_dict = get_mcm_dict(dataset_full_name, mcm_dir)
     pileup = get_from_deep_json(mcm_dict, 'pileup')

@@ -25,7 +25,9 @@ interface:
   information available.
 - `run_categorisation.sh`: creates a set of markdown and HTML pages with the
   datasets splitted in their categories.
-- `create_records.sh`: create the final .json file.
+- `create_records.sh`: create the final .json files:
+  - one for the MC records
+  - one for the configuration files
 
 The steps to follow are:
 

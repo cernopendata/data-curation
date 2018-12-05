@@ -153,6 +153,7 @@ def get_global_tag(dataset, mcm_dir):
 
     if not global_tag:
         # if not available, we guess something generic enough to work.
+        # FIXME or return an empty string or None?
         year = get_dataset_year(dataset)
         if year == 2010:
             global_tag = 'START42_x'
@@ -177,6 +178,7 @@ def get_cmssw_version(dataset, mcm_dir):
 
     if not cmssw:
         # if not available, we guess something generic enough to work.
+        # FIXME or return an empty string or None?
         year = get_dataset_year(dataset)
         if year == 2010:
             cmssw = 'CMSSW_4_2_x'
@@ -237,6 +239,7 @@ def get_dataset_energy(dataset, mcm_dir):
     if mcm_dict:
         return get_from_deep_json(mcm_dict, 'energy')
     else:
+        # FIXME or return an empty string or None?
         year = get_dataset_year(dataset)
         return {
                2010:  7.0,
