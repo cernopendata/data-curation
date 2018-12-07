@@ -20,15 +20,14 @@ def categorise_titles(titles):
     CMS categories as in https://cms-results.web.cern.ch/cms-results/public-results/publications/"""
     categories = {
         'B physics and Quarkonia': [],
-        'Top Physics': [],
         'Higgs Physics/Standard Model': [],
         'Higgs Physics/Beyond Standard Model': [],
         'Standard Model Physics/Drell-Yan': [],
         'Standard Model Physics/ElectroWeak': [],
         'Standard Model Physics/Forward and Small-x QCD Physics': [],
-        'Standard Model Physics/Minimum-Bias': [],
+        'Standard Model Physics/Minimum Bias': [],
         'Standard Model Physics/QCD': [],
-        'Standard Model Physics/ttbar': [],
+        'Standard Model Physics/Top physics': [],
         'Standard Model Physics/Miscellaneous': [],
         'Heavy-Ion Physics': [],
         'Beyond 2 Generations': [],
@@ -67,6 +66,10 @@ def guess_title_category(title):
     # be careful with the sequence of the of the `if`s bellow
     # first we check for exotic/susy datasets, then SM.
 
+    # Be careful with regular expressions. They are nice and evil.
+    # They make this code unreadable. And might match more things than you
+    # expect. Been there, done that...
+
     if (re.search(r'/add', title_lower) or  # Arkani-Hamed, Dimopoulos and Dvali model
         re.search(r'/branon', title_lower) or  # extra-dimensions, brane models
         re.search(r'/stringball', title_lower) or
@@ -77,10 +80,10 @@ def guess_title_category(title):
     elif (re.search(r'darkmatter', title_lower) or
           re.search(r'/nonthdm', title_lower) or  # non thermal dark matter
           re.search(r'/dmsimp', title_lower) or  # darkmatter SIMP: Strongly interacting massive particle
-          re.search(r'/dmz', title_lower) or  # darkmatter Z? FIXME
+          re.search(r'/dmz', title_lower) or  # darkmatter Z?
           re.search(r'/dms', title_lower) or  # darkmatter scalar
           re.search(r'/dmv', title_lower) or  # darkmatter vector
-          re.search(r'DMJets', title)):       # darkmatter Jets? FIXME
+          re.search(r'DMJets', title)):       # darkmatter Jets?
         return 'Exotica/Dark Matter'
 
     elif (re.search(r'/lqto', title_lower) or   # leptoquark to
@@ -200,7 +203,7 @@ def guess_title_category(title):
         return 'Standard Model Physics/Forward and Small-x QCD Physics'
 
     elif (re.search('/minbias', title_lower)):
-        return 'Standard Model Physics/Minimum-Bias'
+        return 'Standard Model Physics/Minimum Bias'
 
     elif (re.search(r'gun', title_lower)):  # particle gun
         return 'Physics Modelling'
@@ -242,6 +245,11 @@ def guess_title_category(title):
         return 'Standard Model Physics/ElectroWeak'
 
     elif (re.search(r'/t+bar', title_lower) or
+          re.search(r'/t[tgz]*jets(_|to)', title_lower) or  # TTZJetsTo, TTGJetsTo, TZJetsTo
+          re.search(r'/t*gamma_', title_lower) or  # TGamma, TTGamma, TTTGamma, etc with a photon in the final state
+          re.search(r'FCNC', title) or  # FCNC: Flavour Change Neutral Current
+          re.search(r'/tt_weights', title) or
+          re.search(r'/ttoleptons_[t,s]', title_lower) or
           re.search(r'/tbarto', title_lower) or
           re.search(r'/t4qz', title_lower) or
           re.search(r'/tbz', title_lower) or
@@ -253,7 +261,7 @@ def guess_title_category(title):
           'tt_mtt-700' in title_lower or
           re.search(r'/[tbar]*_.+_[stuw]+-channel', title_lower) or  # T_bla_s/t/u/w-channel
           re.search(r'/t+_', title_lower)):
-        return 'Standard Model Physics/ttbar'
+        return 'Standard Model Physics/Top physics'
 
     elif (re.search(r'/muminus', title_lower) or
           re.search(r'/muplus', title_lower) or
@@ -277,14 +285,6 @@ def guess_title_category(title):
           'etabto' in title_lower or  # Eta_b To
           'xibstar0' in title_lower):
         return 'B physics and Quarkonia'
-
-    elif ('Top Physics' in title_lower or
-          re.search(r'/t[tgz]*jets(_|to)', title_lower) or  # TTZJetsTo, TTGJetsTo, TZJetsTo
-          re.search(r'/t*gamma_', title_lower) or  # TGamma, TTGamma, TTTGamma, etc with a photon in the final state
-          re.search(r'FCNC', title) or  # FCNC: Flavour Change Neutral Current
-          re.search(r'/tt_weights', title) or
-          re.search(r'/ttoleptons_[t,s]', title_lower)):
-        return 'Top Physics'
 
     return 'Miscellaneous'
     # FIXME: ISR - Initial State Radiation

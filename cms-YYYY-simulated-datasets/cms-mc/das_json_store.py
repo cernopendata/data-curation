@@ -100,3 +100,15 @@ def main(das_dir,
             parent = get_parent_dataset(parent, das_dir)
 
         i += 1
+
+
+def get_generator_parameters(dataset, das_dir):
+    """Return generator parameters dictionary for given dataset."""
+    # TODO get from mcm store instead?
+    # and/or from xsecDB
+    out = get_from_deep_json(get_das_store_json(dataset, 'mcm', das_dir),
+                             'generator_parameters')
+    if out:
+        return out[0]
+    else:
+        return {}

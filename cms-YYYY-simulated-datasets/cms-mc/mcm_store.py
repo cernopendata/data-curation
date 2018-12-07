@@ -152,21 +152,7 @@ def get_global_tag(dataset, mcm_dir):
     global_tag = get_from_deep_json(mcm_dict, 'conditions')
 
     if not global_tag:
-        # if not available, we guess something generic enough to work.
-        # FIXME or return an empty string or None?
-        year = get_dataset_year(dataset)
-        if year == 2010:
-            global_tag = 'START42_x'
-        elif year == 2011:
-            global_tag = 'START53_x'
-        elif year == 2012:
-            global_tag = 'START53_x'
-        elif year == 2015:
-            global_tag = 'START76_x'
-        elif year == 2016:
-            global_tag = 'START80_x'
-        else:
-            global_tag = 'UNKNOWN'
+        global_tag = ''
 
     return global_tag
 
@@ -177,21 +163,7 @@ def get_cmssw_version(dataset, mcm_dir):
     cmssw = get_from_deep_json(mcm_dict, 'cmssw_release')
 
     if not cmssw:
-        # if not available, we guess something generic enough to work.
-        # FIXME or return an empty string or None?
-        year = get_dataset_year(dataset)
-        if year == 2010:
-            cmssw = 'CMSSW_4_2_x'
-        if year == 2011:
-            cmssw = 'CMSSW_4_2_x'
-        if year == 2012:
-            cmssw = 'CMSSW_5_3_x'
-        if year == 2015:
-            cmssw = 'CMSSW_7_6_x'
-        if year == 2016:
-            cmssw = 'CMSSW_8_0_x'
-        else:
-            cmssw = 'UNKNOWN'
+        cmssw = ''
 
     return cmssw
 
@@ -237,16 +209,20 @@ def get_dataset_energy(dataset, mcm_dir):
     "Return energy of that dataset in TeV"
     mcm_dict = get_mcm_dict(dataset, mcm_dir)
     if mcm_dict:
-        return get_from_deep_json(mcm_dict, 'energy')
+        energy = get_from_deep_json(mcm_dict, 'energy')
+        if isinstance(energy, str):
+            return energy
+        else:
+            return str(energy).replace('.0', '') + 'TeV'
+
     else:
-        # FIXME or return an empty string or None?
         year = get_dataset_year(dataset)
         return {
-               2010:  7.0,
-               2011:  7.0,
-               2012:  8.0,
-               2015: 13.0,
-               2016: 13.0,
+               2010:  '7TeV',
+               2011:  '7TeV',
+               2012:  '8TeV',
+               2015: '13TeV',
+               2016: '13TeV',
                }.get(year, 0)
 
 

@@ -59,9 +59,11 @@ def get_dataset_format(dataset):
 def get_dataset_year(dataset):
     "Return the data-taking year related to the dataset."
     # cat CMS-2012-mc-datasets.txt | sed -r 's|^/.*/(.*)/.*|\1|g' | cut -d _ -f 1 | sort | uniq
+    # FIXME some datasets are getting weird year from this function
     second_name = dataset.split('/')[2].split('_')[0]
     return {
            'Summer12-LowPU2010' : 2010,
+           'Fall11-PU' : 2011,
            'Summer11LegDR-PU' : 2011,
            'Summer12' : 2012,
            'RunIIFall15MiniAODv2-PU25nsData2015v1' : 2015,
@@ -122,4 +124,28 @@ def get_author_list_recid(dataset):
            2012: '453',
            2015: '',  # FIXME
            2016: '',  # FIXME
-           }.get(year, '')  # FIXME
+           }.get(year, '')
+
+
+def get_recommended_global_tag_for_analysis(dataset):
+    "Return recomended global tag for analysis."
+    year = get_dataset_year(dataset)
+    return {
+           2010: 'START42_V17B::All',
+           2011: 'START53_LV6A1::All',
+           2012: 'START53_V27::All',
+           2015: '',  # FIXME
+           2016: '',  # FIXME
+           }.get(year, '')
+
+
+def get_recommended_cmssw_for_analysis(dataset):
+    "Return recomended CMSSW release for analysis."
+    year = get_dataset_year(dataset)
+    return {
+           2010: 'CMSSW_4_2_8',
+           2011: 'CMSSW_5_3_32',
+           2012: 'CMSSW_5_3_32',
+           2015: '',  # FIXME
+           2016: '',  # FIXME
+           }.get(year, '')

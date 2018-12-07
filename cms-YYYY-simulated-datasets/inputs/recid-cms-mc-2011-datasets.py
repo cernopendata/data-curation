@@ -380,4 +380,5 @@ RECID_INFO = {
     "/VBFHiggs0PToGG_M-125p6_7TeV-JHUGenV4-pythia6-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM": 1678,
     "/Vector1MToZZTo4L_M-125p6_7TeV-JHUGenV3-pythia6/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM": 1679,
     "/TTJets_MSDecays_scaleup_mt172_5_7TeV-madgraph-tauola/Summer11LegDR-PU_S13_START53_LV6-v1/AODSIM": 1680,
+    "/GluGluToHToGG_M-125_7TeV-powheg-pythia6/Fall11-PU_S6_START44_V9B-v1/AODSIM": 1681,
 }

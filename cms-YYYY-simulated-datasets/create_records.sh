@@ -6,7 +6,7 @@
 # - cms-simulated-datasets-YYYY-conffiles.json
 
 
-year=2012
+year=2010
 
 list="lists/CMS-"$year"-mc-datasets.txt"
 
@@ -41,6 +41,6 @@ python cms-mc/interface.py --create-conffile-records \
                            --recid-file $recid \
                            $list > $conffile 2>$conferrorfile || exit $?
 
-echo -e "\nDone :)"
+echo -e "\nDone :)\n"
 echo -e "Output files are: " $recordfile $conffile
-echo -e "Check errorss in " $errorfile $conferrorfile
+echo -e "Check errorss in: " $errorfile $conferrorfile

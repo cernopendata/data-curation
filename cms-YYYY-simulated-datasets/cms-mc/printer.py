@@ -10,6 +10,7 @@ from utils import get_from_deep_json, \
                   populate_doiinfo, \
                   get_doi
 from das_json_store import get_das_store_json, \
+                           get_generator_parameters, \
                            get_parent_dataset
 from mcm_store import get_mcm_dict, \
                       get_global_tag, \
@@ -229,15 +230,3 @@ def print_ancestor_information(dataset, das_dir, mcm_dir, recid_file, doi_info):
         notes = get_from_deep_json(mcm_dict, 'notes')
         if notes != None:
             print('    - notes:', notes.replace('\n', '\n        '))  # some notes have several lines, this makes the markdown use them in the same item list
-
-
-def get_generator_parameters(dataset, das_dir):
-    """Return generator parameters dictionary for given dataset."""
-    # TODO get from mcm store instead?
-    # and/or from xsecDB
-    out = get_from_deep_json(get_das_store_json(dataset, 'mcm', das_dir),
-                             'generator_parameters')
-    if out:
-        return out[0]
-    else:
-        return {}

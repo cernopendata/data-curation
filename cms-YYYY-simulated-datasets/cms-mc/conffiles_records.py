@@ -43,8 +43,8 @@ def create_record(conf_id, conffiles_dir):
     rec = {}
 
     with open(conffiles_dir + conf_id + '.configFile') as myfile:
-        rec['conffileId'] = conf_id
-        rec['conffileScript'] = myfile.read()
+        rec['cms_confdb_id'] = conf_id
+        rec['script'] = myfile.read()
 
     return rec
 

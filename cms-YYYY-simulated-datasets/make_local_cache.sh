@@ -2,7 +2,7 @@
 
 # this script makes a local cache of a list of CMS MC datasets
 
-year=2012
+year=2010
 datasets="lists/CMS-"$year"-mc-datasets.txt"
 
 # TODO

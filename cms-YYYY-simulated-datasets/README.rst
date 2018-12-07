@@ -38,3 +38,20 @@ The steps to follow are:
    sh create_records.sh
 
 Warning: creating a local cache takes a long time!
+
+
+Issues
+------
+
+2011
+~~~~
+
+The AODSIM files and metadata disappeared from McM. But the GEN-SIM are still
+there. The scripts do not handle this. It should be modified to get the oldest
+parent, find its prepId and then query McM. This way it should get the
+dictionary (cmsDriver script) and genFragment.
+
+General
+~~~~~~~
+
+Record json not tested with jsonschema.

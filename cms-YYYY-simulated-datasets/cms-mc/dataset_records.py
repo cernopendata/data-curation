@@ -6,6 +6,7 @@ Create MC 2012 records.
 """
 
 import hashlib
+import zlib
 import json
 import re
 import os
@@ -18,8 +19,11 @@ from utils import get_from_deep_json, \
                   get_dataset_format, \
                   get_dataset_year, \
                   get_author_list_recid, \
+                  get_recommended_global_tag_for_analysis, \
+                  get_recommended_cmssw_for_analysis, \
                   get_doi
 from das_json_store import get_das_store_json, \
+                           get_generator_parameters, \
                            get_parent_dataset
 from eos_store import XROOTD_URI_BASE, \
                       get_dataset_index_file_base, \
@@ -32,6 +36,7 @@ from mcm_store import get_mcm_dict, \
                       get_cmsDriver_script, \
                       get_cmssw_version
 from categorisation import guess_title_category
+
 
 # Hi Tibor, I commented these `exec` below to not screw the code.
 # I also moved some functions from this code to utils.py and das_json_store.py
@@ -72,8 +77,8 @@ def get_file_size(afile):
 
 
 def get_file_checksum(afile):
-    """Return the SHA1 checksum of a file."""
-    return hashlib.sha1(open(afile, 'rb').read()).hexdigest()
+    """Return the ADLER32 checksum of a file."""
+    return zlib.adler32(open(afile, 'rb').read(), 1) & 0xffffffff
 
 
 def get_dataset(dataset_full_name):
@@ -97,7 +102,8 @@ def get_dataset_index_files(dataset_full_name, eos_dir):
             # take only TXT files
             afile_uri = XROOTD_URI_BASE + get_dataset_location(dataset_full_name) + '/file-indexes/' + afile
             afile_size = get_file_size(eos_dir  + afile)
-            afile_checksum = get_file_checksum(eos_dir  + afile)
+            # FIXME CHANGE THIS checksum TO READ FROM SOMETHING SOMWEHERE
+            afile_checksum = '{:#010x}'.format(get_file_checksum(eos_dir + afile)).split('0x')[1]
             files.append((afile_uri, afile_size, afile_checksum))
     return files
 
@@ -190,17 +196,25 @@ To get the exact LHE and generator's parameters, see <a href=\"/docs/cms-mc-prod
 
 def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir):
     """Return DICT with all information about the generator steps."""
+    # FIXME OMG this function is ugly...
 
     info = {}
-    info["description"] = "<p>These data were processed in several steps:</p>"
+    info["description"] = "<p>These data were generated in several steps:</p>"
+    info["description"] += """<p><strong>Note</strong><br>
+                              To get the exact LHE and generator's parameters, see <a href=\"/docs/cms-mc-production-overview\">CMS Monte Carlo production Overview</a></p>
+                           """
     info["steps"] = []
 
     step = {}
 
     process = 'RECO-HLT'
     step['type'] = process  # LHE, GEN, SIM, HLT, RECO or any combination of those
-    step['release'] = get_cmssw_version(dataset, mcm_dir)
-    step['global_tag'] = get_global_tag(dataset, mcm_dir)
+    release = get_cmssw_version(dataset, mcm_dir)
+    if release:
+        step['release'] = release
+    global_tag = get_global_tag(dataset, mcm_dir)
+    if global_tag:
+        step['global_tag'] = global_tag
 
     cmsdriver_reco_path = get_cmsDriver_script(dataset, mcm_dir)
     step['configuration_files'] = []
@@ -221,7 +235,7 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir):
             configuration_files = {}
             configuration_files['title'] = 'conffile'
             configuration_files['process'] = proc
-            configuration_files['conffileID'] = config_id
+            configuration_files['cms_confdb_id'] = config_id
 
             step['configuration_files'].append(configuration_files)
 
@@ -233,8 +247,16 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir):
 
         process = 'GEN-SIM'
         step['type'] = process
-        step['release'] = get_cmssw_version(input_dataset, mcm_dir)
-        step['global_tag'] = get_global_tag(input_dataset, mcm_dir)
+        release = get_cmssw_version(input_dataset, mcm_dir)
+        if release:
+            step['release'] = release
+        global_tag = get_global_tag(input_dataset, mcm_dir)
+        if global_tag:
+            step['global_tag'] = global_tag
+
+        generator_names = get_generator_name(dataset, das_dir, mcm_dir)
+        if generator_names:
+            step['generators'] = generator_names
 
         cmsdriver_path = get_cmsDriver_script(input_dataset, mcm_dir)
         step['configuration_files'] = []
@@ -268,7 +290,7 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir):
                 configuration_files = {}
                 configuration_files['title'] = 'Configuration file'
                 configuration_files['process'] = proc
-                configuration_files['conffileID'] = config_id
+                configuration_files['cms_confdb_id'] = config_id
 
                 step['configuration_files'].append(configuration_files)
         info["steps"].append(step)
@@ -281,16 +303,13 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir):
 def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir):
     """Create record for the given dataset."""
 
-    # TODO
-# - add cross section
-
     rec = {}
 
     dataset = get_dataset(dataset_full_name)
     dataset_format = get_dataset_format(dataset_full_name)
     year_created   = str(get_dataset_year(dataset_full_name))
-    year_published = '2017'  # FIXME get from some database, do not hardcode it!
-    run_period = '2012A-2012D'  # FIXME get from some database, do not hardcode it!
+    year_published = '2018'  # FIXME get from somewhere, do not hardcode it!
+    run_period = ['Run' + year_created + 'A', 'Run' + year_created + 'B']  # FIXME remove the 'A'!!
     global_tag = get_global_tag(dataset_full_name, mcm_dir)
     release    = get_cmssw_version(dataset_full_name, mcm_dir)
 
@@ -303,51 +322,56 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     rec['accelerator'] = "CERN-LHC"
 
     rec['collaboration'] = {}
-    rec['collaboration']['name'] = 'CMS collaboration'
+    rec['collaboration']['name'] = 'CMS Collaboration'
     rec['collaboration']['recid'] = get_author_list_recid(dataset_full_name)
 
     rec['collections'] = ['CMS-Simulated-Datasets', ]
 
     rec['collision_information'] = {}
     rec['collision_information']['energy'] = get_dataset_energy(dataset_full_name, mcm_dir)
-    rec['collision_information']['type'] = 'pp'  # FIXME
+    rec['collision_information']['type'] = 'pp'  # FIXME do not hardcode
+
+    # FIXME cross section not working
+    # we should try to get the cross section from the parent, and the parent-parent, and so on...
+    generator_parameters = get_generator_parameters(dataset_full_name, das_dir)
+    if generator_parameters:
+        rec['cross_section'] = {}
+        rec['cross_section']['value'] = generator_parameters.get('cross_section', None)
+        rec['cross_section']['filter_efficiency:'] = generator_parameters.get('filter_efficiency', None)
+        rec['cross_section']['filter_efficiency_error:'] = generator_parameters.get('filter_efficiency_error', None)
+        rec['cross_section']['match_efficiency:'] = generator_parameters.get('match_efficiency', None)
+        rec['cross_section']['match_efficiency error:'] = generator_parameters.get('match_efficiency_error', None)
 
     rec['date_created'] = year_created
     rec['date_published'] = year_published
     rec['date_reprocessed'] = year_created
 
     rec['distribution'] = {}
-    rec['distribution']['formats'] = [dataset_format, 'root']
+    rec['distribution']['formats'] = [dataset_format.lower(), 'root']
     rec['distribution']['number_events'] = get_number_events(dataset_full_name, das_dir)
     rec['distribution']['number_files'] = get_number_files(dataset_full_name, das_dir)
     rec['distribution']['size'] = get_size(dataset_full_name, das_dir)
 
-    rec['doi'] = get_doi(dataset_full_name, doi_info) or ''
+    doi = get_doi(dataset_full_name, doi_info)
+    if doi:
+        rec['doi'] = doi
 
     rec['experiment'] = 'CMS'
 
-    rec['files'] = []  #TODO if no files: "Dataset available under request"
     rec_files = get_dataset_index_files(dataset_full_name, eos_dir)
-    for index_type in ['.json', '.txt']:
-        index_files = [f for f in rec_files if f[0].endswith(index_type)]
-        for file_number, (file_uri, file_size, file_checksum) in enumerate(index_files):
-            rec['files'].append({
-                'checksum': 'sha1:' + file_checksum,
-                'description': dataset + ' AOD dataset file index (' + str(file_number + 1) + ' of ' + str(len(index_files)) + ') for access to data via CMS virtual machine',
+    if rec_files:
+        rec['files'] = []  #TODO if no files: "Dataset available under request"
+        for index_type in ['.json', '.txt']:
+            index_files = [f for f in rec_files if f[0].endswith(index_type)]
+            for file_number, (file_uri, file_size, file_checksum) in enumerate(index_files):
+                rec['files'].append({
+                    'checksum': 'adler32:' + file_checksum,
+                    'description': dataset + dataset_format + ' dataset file index (' + str(file_number + 1) + ' of ' + str(len(index_files)) + ') for access to data via CMS virtual machine',
 
-                'size': file_size,
-                'type': 'index' + index_type,
-                'uri': file_uri
-            })
-
-    das_dataset_json = get_das_store_json(dataset_full_name, 'mcm', das_dir)
-    input_dataset = get_from_deep_json(das_dataset_json, 'input_dataset')
-    input_global_tag = ''
-    if input_dataset:
-        input_global_tag = get_global_tag(input_dataset, mcm_dir)
-    rec['generator'] = {}
-    rec['generator']['global_tag'] = input_global_tag
-    rec['generator']['names'] = get_generator_name(dataset_full_name, das_dir, mcm_dir)
+                    'size': file_size,
+                    'type': 'index' + index_type,
+                    'uri': file_uri
+                })
 
     rec['license'] = {}
     rec['license']['attribution'] = 'CC0'
@@ -358,26 +382,36 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     rec['note']['description'] = 'These simulated datasets correspond to the collision data collected by the CMS experiment in ' + year_created + '.'
 
     mcm_dict = get_mcm_dict(dataset_full_name, mcm_dir)
-    pileup = get_from_deep_json(mcm_dict, 'pileup')
+    pileup = get_from_deep_json(mcm_dict, 'pileup')  # this is some notes about it.
+    pileup_recid = {'2010': None,  # FIXME
+                    '2011': 36,
+                    '2012': 37}.get(year_created, 0)  # FIXME
     pileup_dataset = get_from_deep_json(mcm_dict, 'pileup_dataset_name')
-    rec['pileup'] = {}
-    rec['pileup']['description'] = '<p>To make these simulated data comparable with the collision data, <a href="/about/CMS-Pileup-Simulation">pile-up events</a> are added to the simulated event in this step.</p>'
-    rec['pileup']['dataset'] = pileup_dataset or ''
-    rec['pileup']['info'] = pileup or ''
+    if pileup_dataset:
+        rec['pileup'] = {}
+        rec['pileup']['description'] = '<p>To make these simulated data comparable with the collision data, <a href="/about/CMS-Pileup-Simulation">pile-up events</a> are added to the simulated event in this step.</p>'
+        if pileup_recid:
+            rec['pileup']['description'] += '<p>The pile-up dataset used is <a href="/record/{recid}">{dataset}</a>.</p>'.format(recid=pileup_recid, dataset=pileup_dataset)
+        if pileup:
+            rec['pileup']['description'] += '<p>{}</p>'.format(pileup)
+
 
     rec['publisher'] = 'CERN Open Data Portal'
 
     rec['recid'] = str(recid_info[dataset_full_name])
 
-    rec['relations'] = []
+    # rec['relations'] = []
     # rec['relations']['title'] = ''  # FIXME
     # rec['relations']['type'] = 'isChildOf'
 
     rec['run_period'] = run_period
 
+    # recomended global tag and cmssw release recommended for analysis
+    recommended_gt = get_recommended_global_tag_for_analysis(dataset_full_name)
+    recommended_cmssw = get_recommended_cmssw_for_analysis(dataset_full_name)
     rec['system_details'] = {}
-    rec['system_details']['global_tag'] = global_tag
-    rec['system_details']['release'] = release
+    rec['system_details']['global_tag'] = recommended_gt
+    rec['system_details']['release'] = recommended_cmssw
 
     rec['title'] = dataset_full_name
 
@@ -385,33 +419,38 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
 
     topic = guess_title_category(dataset_full_name)
     category = topic.split('/')[0]
-    subcategory = ''
+    subcategory = None
     if len(topic.split('/')) == 2:
         subcategory = topic.split('/')[1]
-    rec['topic'] = {}
-    rec['topic']['category'] = category
-    rec['topic']['subcategory'] = subcategory
-    #rec['topic']['source'] = 'CMS collaboration'  # FIXME
+    rec['categories'] = {}
+    rec['categories']['primary'] = category
+    if subcategory:
+        rec['categories']['secondary'] = [subcategory]
+    rec['categories']['source'] = 'CMS Collaboration'
 
     rec['type'] = {}
     rec['type']['primary'] = 'Dataset'
     rec['type']['secondary'] = ['Simulated', ]
 
+    year_getting_started = {'2010': 2010,
+                            '2011': 2011,
+                            '2012': 2011}.get(year_created, 2011)
     rec['usage'] = {}
     rec['usage']['description'] = 'You can access these data through the CMS Virtual Machine. See the instructions for setting up the Virtual Machine and getting started in'
     rec['usage']['links'] = [
         {
             "description": "How to install the CMS Virtual Machine",
-            "url": "/vm/cms/2011"
+            "url": "/docs/cms-virtual-machine-{}".format(year_created)
         },
         {
             "description": "Getting started with CMS open data",
-            "url": "/getting-started/cms/2011"
+            "url": "/docs/cms-getting-started-{}".format(year_getting_started)
         }
     ]
 
     rec['validation'] = {}
-    rec['validation']['description'] = "The generation and simulation of simulated Monte Carlo data has been validated through general CMS validation procedures."
+    rec['validation']['description'] = "The generation and simulation of Monte Carlo data has been validated through general CMS validation procedures."
+    #rec['validation']['links'] = 'FIXME'
 
     return rec
 
@@ -448,13 +487,13 @@ def print_records(records):
 def main(datasets, eos_dir, das_dir, mcm_dir, conffiles_dir, doi_file, recid_file):
     "Do the job."
 
-    dataset_full_names = []
-    for dataset_full_name in datasets:
-        if newer_dataset_version_exists(dataset_full_name, datasets):
-            print('[ERROR] Ignoring older dataset version ' + dataset_full_name,
-                  file=sys.stderr)
-        else:
-            dataset_full_names.append(dataset_full_name)
+    #dataset_full_names = []
+    #for dataset_full_name in datasets:
+    #    if newer_dataset_version_exists(dataset_full_name, datasets):
+    #        print('[ERROR] Ignoring older dataset version ' + dataset_full_name,
+    #              file=sys.stderr)
+    #    else:
+    #        dataset_full_names.append(dataset_full_name)
 
-    records = create_records(dataset_full_names, doi_file, recid_file, eos_dir, das_dir, mcm_dir, conffiles_dir)
+    records = create_records(datasets, doi_file, recid_file, eos_dir, das_dir, mcm_dir, conffiles_dir)
     json.dump(records, indent=2, sort_keys=True, ensure_ascii=True, fp=sys.stdout)
