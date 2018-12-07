@@ -29,8 +29,9 @@ Specific data ingestion and curation campaigns:
 - `atlas-2016-masterclasses <atlas-2016-masterclasses>`_ -- helper scripts for the ATLAS 2016 masterclasses release
 - `atlas-2016-outreach <atlas-2016-outreach>`_ -- helper scripts for the ATLAS 2016 outreach release
 - `cms-2011-collision-datasets <cms-2011-collision-datasets>`_ -- helper scripts for the CMS 2011 open data release (collision datasets)
-- `cms-2011-l1-triggers <cms-2011-l1-triggers>`_ -- helper scripts for the CMS 2011 open data release (L1 triggers)
 - `cms-2011-hlt-triggers <cms-2011-hlt-triggers>`_ -- helper scripts for the CMS 2011 open data release (HLT triggers)
+- `cms-2011-l1-triggers <cms-2011-l1-triggers>`_ -- helper scripts for the CMS 2011 open data release (L1 triggers)
+- `cms-2011-simulated-datasets <cms-2011-simulated-datasets>`_ -- helper scripts for the CMS 2011 open data release (simulated datasets)
 - `cod2-to-cod3 <cod2-to-cod3>`_ - record migration from version 2 to version 3
 - `opera-2017-multiplicity-studies <opera-2017-multiplicity-studies>`_ - helper scripts for the release of OPERA multiplicity studies
 

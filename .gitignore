@@ -5,5 +5,7 @@ cms-2011-collision-datasets/outputs/*.xml
 cms-2011-hlt-triggers/outputs/*.xml
 cms-2011-hlt-triggers/outputs/*.html
 cms-2011-l1-triggers/outputs/*.xml
+cms-2011-simulated-datasets/inputs/das-json-store
+cms-2011-simulated-datasets/outputs/*.xml
 cod2-to-cod3/outputs/*.json
 opera-2017-multiplicity-studies/outputs/opera-events.json
