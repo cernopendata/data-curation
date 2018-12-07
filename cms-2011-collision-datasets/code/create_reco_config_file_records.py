@@ -123,6 +123,7 @@ def main():
     """Do the main job."""
 
     print "<collection>"
+    sys.stderr.write("LINK_INFO = {\n")
     recid = 3601
     for root, dirs, files in os.walk('./inputs/config-store'):
         for afile in files:
@@ -137,6 +138,7 @@ def main():
                 }
             sys.stderr.write("  '%s': %d,\n" % (os.path.basename(afile).split('.', 1)[0], recid))
             recid += 1
+    sys.stderr.write("}\n")
     print "</collection>"
 
 

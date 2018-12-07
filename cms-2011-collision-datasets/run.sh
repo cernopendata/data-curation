@@ -24,7 +24,7 @@ mkdir -p ./outputs
 
 ## 6) create config file records
 #
-# python2 ./code/create_reco_config_file_records.py > ./outputs/cms-configuration-files-Run2011A-RECO.xml >& ./outputs/link_info.py
+# python2 ./code/create_reco_config_file_records.py > ./outputs/cms-configuration-files-Run2011A-RECO.xml 2> ./outputs/link_info.py
 
 ## 7) create collision dataset records
 
