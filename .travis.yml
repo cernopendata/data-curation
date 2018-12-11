@@ -1,0 +1,27 @@
+notifications:
+  email: false
+
+sudo: true
+
+language: python
+
+addons:
+  apt:
+    packages:
+      - shellcheck
+
+cache:
+  - pip
+
+matrix:
+  fast_finish: true
+  include:
+    - python: 3.6
+    - python: 3.7
+      dist: xenial
+
+before_install:
+  - travis_retry pip install pycodestyle pydocstyle
+
+script:
+  - ./run-tests.sh

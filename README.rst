@@ -2,8 +2,12 @@
  data-curation
 ===============
 
+.. image:: https://img.shields.io/travis/cernopendata/data-curation.svg
+   :target: https://travis-ci.org/cernopendata/data-curation
+
 .. image:: https://badges.gitter.im/Join%20Chat.svg
    :target: https://gitter.im/cernopendata/opendata.cern.ch?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
+
 .. image:: https://img.shields.io/badge/licence-GPL_2-green.svg?style=flat
    :target: https://raw.githubusercontent.com/cernopendata/data-curation/master/LICENSE
 
