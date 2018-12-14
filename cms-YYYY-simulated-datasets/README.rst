@@ -54,4 +54,6 @@ dictionary (cmsDriver script) and genFragment.
 General
 ~~~~~~~
 
-Record json not tested with jsonschema.
+- Creating a local cache for 2015 (or later) crashes in AFS due to the huge
+  number of files in the cache folder. Running it on EOS might solve it. Or not.
+- Record json not tested with jsonschema.
