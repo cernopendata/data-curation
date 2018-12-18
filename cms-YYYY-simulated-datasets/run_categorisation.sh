@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Run categorisation script for all dataset lists in lists/ and generate a
+# Run categorisation script for all dataset lists in inputs/ and generate a
 # nice looking html page :)
 # there is no need to have a local cache for this script
 
@@ -37,7 +37,7 @@ echo "" >> $summary
 years=(2010 2011 2012 2015 2016)
 for year in ${years[*]}
 do
-	list="lists/CMS-"$year"-mc-datasets.txt"
+	list="inputs/CMS-"$year"-mc-datasets.txt"
 
 	listname=$(basename $list .txt)
 	md="$today/$listname.md"
@@ -45,7 +45,7 @@ do
 
 	echo "Categorising $list"
 
-	python cms-mc/interface.py --print-categorisation \
+	python code/interface.py --print-categorisation \
 	                           --eos-dir  ./cache/$year/eos-file-indexes/ \
 	                           --das-dir  ./cache/$year/das-json-store/ \
 	                           --mcm-dir  ./cache/$year/mcm-store/ \

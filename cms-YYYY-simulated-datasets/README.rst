@@ -1,21 +1,21 @@
-=======
- cms-mc
-=======
+=============================
+ cms-YYYY-simulated-datasets
+=============================
 
 This directory contains helper scripts used to prepare CMS MC Open Data
 release:
 
-- `cms-mc/` folder contains the python code.
-- `lists/` folder contain text files with the list of datasets for each year.
-- `inputs/` folder contain files with extra information for the datasets, such
-  as `DOI` identifier and `RECID`.
+- `code/` folder contains the python code.
+- `inputs/` folder contains input text files with the list of datasets for each
+  year and input files with extra information for the datasets, such as `DOI`
+  identifier and `RECID`.
 
 Every step necessary to produce the final `*.json` files is handled by the
 `cmc-mc/interface.py` script. Details about it can be queried with the command:
 
 .. code-block:: console
 
-   python cms-mc/interface.py --help
+   python code/interface.py --help
 
 The bash scrips in the current directory handle all the parameters of the
 interface:

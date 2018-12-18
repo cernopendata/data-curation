@@ -1,29 +1,39 @@
 #!/bin/bash
 
+# Usage:
+# $ YYYY=2010 ./create_records.sh
+
 # This bash script reads the local cache and creates 2 json records for the
-# dataset list in lists/CMS-YYYY-mc-datasets.txt:
+# dataset list in inputs/CMS-YYYY-mc-datasets.txt:
 # - cms-simulated-datasets-YYYY.json
 # - cms-simulated-datasets-YYYY-conffiles.json
 
+if [ -z ${YYYY} ]; then
+    echo "[ERROR] Please set YYYY environment variable with wanted year."
+    echo "[ERROR] Example: YYYY=2010 $0"
+    exit 1
+fi
 
-year=2010
+year=${YYYY}
 
-list="lists/CMS-"$year"-mc-datasets.txt"
+list="inputs/CMS-"$year"-mc-datasets.txt"
 
-recordfile="cms-simulated-datasets-"$year".json"
-conffile="cms-simulated-datasets-"$year"-conffiles.json"
+recordfile="outputs/cms-simulated-datasets-"$year".json"
+conffile="outputs/cms-simulated-datasets-"$year"-conffiles.json"
 
-errorfile="records-"$year".err"
-conferrorfile="conffiles-"$year".err"
+errorfile=$(echo $recordfile | sed 's,.json,.err,g')
+conferrorfile=$(echo $conffile | sed 's,.json,.err,g')
 
 doi="./inputs/doi-cms-mc-"$year"-released.txt"
 recid="./inputs/recid-cms-mc-"$year"-datasets.py"
 
-echo -e "Creating json record for" $list
+mkdir -p outputs
+
+echo -e "Creating JSON records for" $list
 echo -e "DOI file:\t" $doi
 echo -e "RECID file:\t" $recid
 
-python cms-mc/interface.py --create-records \
+python code/interface.py --create-records \
                            --eos-dir  ./cache/$year/eos-file-indexes/ \
                            --das-dir  ./cache/$year/das-json-store/ \
                            --mcm-dir  ./cache/$year/mcm-store/ \
@@ -32,7 +42,7 @@ python cms-mc/interface.py --create-records \
                            --recid-file $recid \
                            $list > $recordfile 2>$errorfile || exit $?
 
-python cms-mc/interface.py --create-conffile-records \
+python code/interface.py --create-conffile-records \
                            --eos-dir  ./cache/$year/eos-file-indexes/ \
                            --das-dir  ./cache/$year/das-json-store/ \
                            --mcm-dir  ./cache/$year/mcm-store/ \
@@ -43,4 +53,4 @@ python cms-mc/interface.py --create-conffile-records \
 
 echo -e "\nDone :)\n"
 echo -e "Output files are: " $recordfile $conffile
-echo -e "Check errorss in: " $errorfile $conferrorfile
+echo -e "Check errors in: " $errorfile $conferrorfile

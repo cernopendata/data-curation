@@ -1,9 +1,19 @@
 #!/bin/bash
 
+# Usage:
+# $ YYYY=2010 ./make_local_cache.sh
+
 # this script makes a local cache of a list of CMS MC datasets
 
-year=2010
-datasets="lists/CMS-"$year"-mc-datasets.txt"
+if [ -z ${YYYY} ]; then
+    echo "[ERROR] Please set YYYY environment variable with wanted year."
+    echo "[ERROR] Example: YYYY=2010 $0"
+    exit 1
+fi
+
+year=${YYYY}
+
+datasets="inputs/CMS-"$year"-mc-datasets.txt"
 
 # TODO
 # targz each step
@@ -11,21 +21,21 @@ datasets="lists/CMS-"$year"-mc-datasets.txt"
 
 # step 1
 export EOS_MGM_URL=root://eospublic.cern.ch
-python cms-mc/interface.py --create-eos-indexes \
+python code/interface.py --create-eos-indexes \
                            --eos-dir ./cache/$year/eos-file-indexes/ \
                            $datasets 2>eos-indexes-${year}.err || exit $?
 
 # step 2
 # you should have voms-proxy here!
 # voms-proxy-init --voms cms --rfc --valid 190:00
-python cms-mc/interface.py --create-das-json-store \
+python code/interface.py --create-das-json-store \
                            --ignore-eos-store \
                            --eos-dir ./cache/$year/eos-file-indexes/ \
                            --das-dir ./cache/$year/das-json-store/ \
                            $datasets 2>das-store-${year}.err || exit $?
 
 # step 3
-python cms-mc/interface.py --create-mcm-store \
+python code/interface.py --create-mcm-store \
                            --ignore-eos-store \
                            --eos-dir ./cache/$year/eos-file-indexes/ \
                            --das-dir ./cache/$year/das-json-store/ \
@@ -36,7 +46,7 @@ python cms-mc/interface.py --create-mcm-store \
 # in ~/.globus/ dir, follow the instructions from
 # https://ca.cern.ch/ca/help/?kbid=024010 and also this other command:
 # $ openssl pkcs12 -in myCert.p12 -nocerts -nodes -out userkey.nodes.pem
-python cms-mc/interface.py --get-conf-files \
+python code/interface.py --get-conf-files \
                            --ignore-eos-store \
                            --eos-dir ./cache/$year/eos-file-indexes/ \
                            --das-dir ./cache/$year/das-json-store/ \

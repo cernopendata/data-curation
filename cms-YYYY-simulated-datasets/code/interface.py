@@ -79,7 +79,7 @@ def main(dataset_list,
 
         \b
         $ export EOS_MGM_URL=root://eospublic.cern.ch
-        $ python ./cms-mc/interface.py --create-eos-indexes DATASET_LIST
+        $ python ./code/interface.py --create-eos-indexes DATASET_LIST
 
         This will populate EOS_DIR with a txt and json file for each dataset.
         The files contain list of root files of that dataset.
@@ -88,7 +88,7 @@ def main(dataset_list,
 
         \b
         $ voms-proxy-init -voms cms -rfc
-        $ python ./cms-mc/interface.py --create-das-json-store DATASET_LIST
+        $ python ./code/interface.py --create-das-json-store DATASET_LIST
 
         This creates a local cache. It queries DAS (Data Aggregation Service)
         for the dataset, parent, config and mcm information and store it in
@@ -100,7 +100,7 @@ def main(dataset_list,
     step 3) get McM scripts to run cmsDriver
 
         \b
-        $ python ./cms-mc/interface.py --create-mcm-store DATASET_LIST
+        $ python ./code/interface.py --create-mcm-store DATASET_LIST
 
         This will query McM to get the dict and setup scripts for each dataset.
 	It also queries the input_dataset (GEN-SIM).
@@ -113,19 +113,19 @@ def main(dataset_list,
         $ openssl pkcs12 -in myCert.p12 -nocerts -nodes -out userkey.nodes.pem
         Then run the interface code
 
-        $ python ./cms-mc/interface.py --get-conf-files DATASET_LIST
+        $ python ./code/interface.py --get-conf-files DATASET_LIST
 
         This downloads the configuration files to CONF_DIR.
 
     step 5) generate the records
 
         \b
-        $ python ./cms-mc/interface.py --create-records DATASET_LIST
-        $ python ./cms-mc/interface.py --create-conffiles-records DATASET_LIST
+        $ python ./code/interface.py --create-records DATASET_LIST
+        $ python ./code/interface.py --create-conffiles-records DATASET_LIST
 
     To get a markdown file with the results of the previous steps:
 
-        $ python ./cms-mc/interface.py --print-results DATASET_LIST
+        $ python ./code/interface.py --print-results DATASET_LIST
 
         This will use all the information from the local cache to produe a list
         with all the datasets in their categories, with as much additional
@@ -134,7 +134,7 @@ def main(dataset_list,
     In case you are interested only in the categorisation, there is no need
     to create the local cache, just run:
 
-        $ python ./cms-mc/interface.py --print-categorisation DATASET_LIST > categorisation.md
+        $ python ./code/interface.py --print-categorisation DATASET_LIST > categorisation.md
     """
     datasets = get_datasets_from_dir(dataset_list)
 
