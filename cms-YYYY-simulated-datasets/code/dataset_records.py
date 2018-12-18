@@ -2,7 +2,7 @@
 
 
 """
-Create MC 2012 records.
+Create MC YYYY records.
 """
 
 import hashlib
@@ -381,20 +381,20 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     rec['note'] = {}
     rec['note']['description'] = 'These simulated datasets correspond to the collision data collected by the CMS experiment in ' + year_created + '.'
 
-    mcm_dict = get_mcm_dict(dataset_full_name, mcm_dir)
-    pileup = get_from_deep_json(mcm_dict, 'pileup')  # this is some notes about it.
-    pileup_recid = {'2010': None,  # FIXME
-                    '2011': 36,
-                    '2012': 37}.get(year_created, 0)  # FIXME
-    pileup_dataset = get_from_deep_json(mcm_dict, 'pileup_dataset_name')
-    if pileup_dataset:
+    pileup_dataset_title = {'2010': None,
+                            '2011': '/MinBias_TuneZ2_7TeV-pythia6/Summer11Leg-START53_LV4-v1/GEN-SIM',
+                            '2012': '/MinBias_TuneZ2star_8TeV-pythia6/Summer12-START50_V13-v3/GEN-SIM'}.get(year_created, 0)
+    pileup_dataset_recid = {'2010': None,
+                            '2011': 36,
+                            '2012': 37}.get(year_created, 0)
+    if pileup_dataset_recid:
         rec['pileup'] = {}
-        rec['pileup']['description'] = '<p>To make these simulated data comparable with the collision data, <a href="/about/CMS-Pileup-Simulation">pile-up events</a> are added to the simulated event in this step.</p>'
-        if pileup_recid:
-            rec['pileup']['description'] += '<p>The pile-up dataset used is <a href="/record/{recid}">{dataset}</a>.</p>'.format(recid=pileup_recid, dataset=pileup_dataset)
-        if pileup:
-            rec['pileup']['description'] += '<p>{}</p>'.format(pileup)
-
+        rec['pileup']['description'] = '<p>To make these simulated data comparable with the collision data, <a href="/docs/cms-guide-pileup-simulation">pile-up events</a> are added to the simulated event in this step.</p>'
+        if pileup_dataset_recid:
+            rec['pileup']['links'] = [
+                {'recid': str(pileup_dataset_recid),
+                 'title': pileup_dataset_title},
+            ]
 
     rec['publisher'] = 'CERN Open Data Portal'
 
