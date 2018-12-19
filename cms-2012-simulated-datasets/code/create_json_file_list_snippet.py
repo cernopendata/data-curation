@@ -55,11 +55,26 @@ def main(filename):
         if match:
             path, size, checksum = match.groups()
             if True:  # and not path.endswith('.root'):
-                files.append({
-                    'checksum': 'adler32:' + checksum,
-                    'size': int(size),
-                    'uri': path
-                })
+                if path.endswith('_file_index.txt'):
+                    files.append({
+                        'checksum': 'adler32:' + checksum,
+                        'size': int(size),
+                        'type': 'index.txt',
+                        'uri': path
+                    })
+                elif path.endswith('_file_index.json'):
+                    files.append({
+                        'checksum': 'adler32:' + checksum,
+                        'size': int(size),
+                        'type': 'index.json',
+                        'uri': path
+                    })
+                else:
+                    files.append({
+                        'checksum': 'adler32:' + checksum,
+                        'size': int(size),
+                        'uri': path
+                    })
     rec['files'] = files
     print(json.dumps(rec, indent=2, sort_keys=True))
 
