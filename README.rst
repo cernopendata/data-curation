@@ -31,11 +31,13 @@ Specific data ingestion and curation campaigns:
 
 - `atlas-2016-masterclasses <atlas-2016-masterclasses>`_ -- helper scripts for the ATLAS 2016 masterclasses release
 - `atlas-2016-outreach <atlas-2016-outreach>`_ -- helper scripts for the ATLAS 2016 outreach release
+- `cms-2010-collision-datasets <cms-2010-collision-datasets>`_ -- helper scripts for the CMS 2010 open data release (collision datasets)
 - `cms-2010-simulated-datasets <cms-2010-simulated-datasets>`_ -- helper scripts for the CMS 2010 open data release (simulated datasets)
 - `cms-2011-collision-datasets <cms-2011-collision-datasets>`_ -- helper scripts for the CMS 2011 open data release (collision datasets)
 - `cms-2011-hlt-triggers <cms-2011-hlt-triggers>`_ -- helper scripts for the CMS 2011 open data release (HLT triggers)
 - `cms-2011-l1-triggers <cms-2011-l1-triggers>`_ -- helper scripts for the CMS 2011 open data release (L1 triggers)
 - `cms-2011-simulated-datasets <cms-2011-simulated-datasets>`_ -- helper scripts for the CMS 2011 open data release (simulated datasets)
+- `cms-2012-collision-datasets <cms-2012-collision-datasets>`_ -- helper scripts for the CMS 2012 open data release (collision datasets)
 - `cms-2012-event-display-files <cms-2012-event-display-files>`_ -- helper scripts for the CMS 2012 open data release (event display files)
 - `cms-YYYY-simulated-datasets <cms-YYYY-simulated-datasets>`_ -- helper scripts for CMS simulated dataset records (any year)
 - `cod2-to-cod3 <cod2-to-cod3>`_ - record migration from version 2 to version 3
