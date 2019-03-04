@@ -1,0 +1,1976 @@
+Event filtering information for 1 processing steps is available.
+The ParameterSets will be printed out, with the oldest printed first.
+ParameterSetID: ea0972193530f531086947d06eb0f121
+{
+  EndPathPositions: vint32 tracked  = {+0}
+  EndPaths: vstring tracked  = {'RAWSIMoutput_step'}
+  InProcessHistory: bool tracked  = true
+  SelectEvents: vstring tracked  = {'generation_step'}
+ }
+     -------------------------
+Processing History:
+  SIM '' '"CMSSW_10_4_0_mtd1"' (4f6900a8cb1727250feffb2442377926)
+---------Producers with data in file---------
+Module: MEtoEDMConverter SIM
+ PSet id:a609a38eb41cc29a1004588e77cb043b
+ products: {
+  TH1DMEtoEDM_MEtoEDMConverter_MEtoEDMConverterLumi_SIM.
+  TH1DMEtoEDM_MEtoEDMConverter_MEtoEDMConverterRun_SIM.
+  TH1FMEtoEDM_MEtoEDMConverter_MEtoEDMConverterLumi_SIM.
+  TH1FMEtoEDM_MEtoEDMConverter_MEtoEDMConverterRun_SIM.
+  TH1SMEtoEDM_MEtoEDMConverter_MEtoEDMConverterLumi_SIM.
+  TH1SMEtoEDM_MEtoEDMConverter_MEtoEDMConverterRun_SIM.
+  TH2DMEtoEDM_MEtoEDMConverter_MEtoEDMConverterLumi_SIM.
+  TH2DMEtoEDM_MEtoEDMConverter_MEtoEDMConverterRun_SIM.
+  TH2FMEtoEDM_MEtoEDMConverter_MEtoEDMConverterLumi_SIM.
+  TH2FMEtoEDM_MEtoEDMConverter_MEtoEDMConverterRun_SIM.
+  TH2SMEtoEDM_MEtoEDMConverter_MEtoEDMConverterLumi_SIM.
+  TH2SMEtoEDM_MEtoEDMConverter_MEtoEDMConverterRun_SIM.
+  TH3FMEtoEDM_MEtoEDMConverter_MEtoEDMConverterLumi_SIM.
+  TH3FMEtoEDM_MEtoEDMConverter_MEtoEDMConverterRun_SIM.
+  TProfile2DMEtoEDM_MEtoEDMConverter_MEtoEDMConverterLumi_SIM.
+  TProfile2DMEtoEDM_MEtoEDMConverter_MEtoEDMConverterRun_SIM.
+  TProfileMEtoEDM_MEtoEDMConverter_MEtoEDMConverterLumi_SIM.
+  TProfileMEtoEDM_MEtoEDMConverter_MEtoEDMConverterRun_SIM.
+  TStringMEtoEDM_MEtoEDMConverter_MEtoEDMConverterLumi_SIM.
+  TStringMEtoEDM_MEtoEDMConverter_MEtoEDMConverterRun_SIM.
+  doubleMEtoEDM_MEtoEDMConverter_MEtoEDMConverterLumi_SIM.
+  doubleMEtoEDM_MEtoEDMConverter_MEtoEDMConverterRun_SIM.
+  llMEtoEDM_MEtoEDMConverter_MEtoEDMConverterLumi_SIM.
+  llMEtoEDM_MEtoEDMConverter_MEtoEDMConverterRun_SIM.
+ }
+ parameters: {
+  @module_edm_type: string tracked  = 'EDProducer'
+  @module_label: string tracked  = 'MEtoEDMConverter'
+  @module_type: string tracked  = 'MEtoEDMConverter'
+ }
+
+Module: TriggerResults SIM
+ PSet id:4503e947975ced2f614d65f6a1ecc62b
+ products: {
+  edmTriggerResults_TriggerResults__SIM.
+ }
+ parameters: {
+  @trigger_paths: vstring tracked  = {'generation_step','simulation_step'}
+ }
+
+Module: VtxSmeared SIM
+ PSet id:fd94909a8966b486b4db68ee675262b1
+ products: {
+  edmHepMCProduct_VtxSmeared__SIM.
+ }
+ parameters: {
+  @module_edm_type: string tracked  = 'EDProducer'
+  @module_label: string tracked  = 'VtxSmeared'
+  @module_type: string tracked  = 'HLLHCEvtVtxGenerator'
+  BetaCrossingPlaneInm: double tracked  = 0.2
+  BetaSeparationPlaneInm: double tracked  = 0.2
+  BunchLengthInm: double tracked  = 0.09
+  CrabFrequencyInMHz: double tracked  = 400
+  CrabbingAngleCrossingInurad: double tracked  = 380
+  CrabbingAngleSeparationInurad: double tracked  = 0
+  CrossingAngleInurad: double tracked  = 510
+  EprotonInGeV: double tracked  = 7000
+  HorizontalEmittance: double tracked  = 2.5e-06
+  MeanXIncm: double tracked  = 0
+  MeanYIncm: double tracked  = 0
+  MeanZIncm: double tracked  = 0
+  RF800: bool tracked  = false
+  TimeOffsetInns: double tracked  = 0
+  VerticalEmittance: double tracked  = 2.05e-06
+  readDB: bool tracked  = false
+  src: InputTag tracked  = generator:unsmeared
+ }
+
+Module: ak4GenJets SIM
+ PSet id:19ec3055265d569c845c9cc86eb6ee48
+ products: {
+  recoGenJets_ak4GenJets__SIM.
+ }
+ parameters: {
+  @module_edm_type: string tracked  = 'EDProducer'
+  @module_label: string tracked  = 'ak4GenJets'
+  @module_type: string tracked  = 'FastjetJetProducer'
+  Active_Area_Repeats: int32 tracked  = 5
+  DxyTrVtxMax: double tracked  = 999999
+  DzTrVtxMax: double tracked  = 999999
+  GhostArea: double tracked  = 0.01
+  Ghost_EtaMax: double tracked  = 6
+  MaxVtxZ: double tracked  = 15
+  MinVtxNdof: int32 tracked  = 5
+  R0: double tracked  = -1
+  Rho_EtaMax: double tracked  = 4.5
+  UseOnlyOnePV: bool tracked  = false
+  UseOnlyVertexTracks: bool tracked  = false
+  beta: double tracked  = -1
+  correctShape: bool tracked  = false
+  csRParam: double tracked  = -1
+  csRho_EtaMax: double tracked  = -1
+  dRMax: double tracked  = -1
+  dRMin: double tracked  = -1
+  doAreaDiskApprox: bool tracked  = false
+  doAreaFastjet: bool tracked  = false
+  doFastJetNonUniform: bool tracked  = false
+  doPUOffsetCorr: bool tracked  = false
+  doPVCorrection: bool tracked  = false
+  doRhoFastjet: bool tracked  = false
+  gridMaxRapidity: double tracked  = -1
+  gridSpacing: double tracked  = -1
+  inputEMin: double tracked  = 0
+  inputEtMin: double tracked  = 0
+  jetAlgorithm: string tracked  = 'AntiKt'
+  jetCollInstanceName: string tracked  = ''
+  jetPtMin: double tracked  = 3
+  jetType: string tracked  = 'GenJet'
+  maxBadEcalCells: uint32 tracked  = 9999999
+  maxBadHcalCells: uint32 tracked  = 9999999
+  maxDepth: int32 tracked  = -1
+  maxInputs: uint32 tracked  = 1
+  maxProblematicEcalCells: uint32 tracked  = 9999999
+  maxProblematicHcalCells: uint32 tracked  = 9999999
+  maxRecoveredEcalCells: uint32 tracked  = 9999999
+  maxRecoveredHcalCells: uint32 tracked  = 9999999
+  minSeed: uint32 tracked  = 14327
+  muCut: double tracked  = -1
+  muMax: double tracked  = -1
+  muMin: double tracked  = -1
+  nExclude: uint32 tracked  = 0
+  nFilt: int32 tracked  = -1
+  nSigmaPU: double tracked  = 1
+  puCenters: vdouble tracked  = {}
+  puPtMin: double tracked  = 10
+  puWidth: double tracked  = 0
+  rFilt: double tracked  = -1
+  rFiltFactor: double tracked  = -1
+  rParam: double tracked  = 0.4
+  radiusPU: double tracked  = 0.5
+  rcut_factor: double tracked  = -1
+  restrictInputs: bool tracked  = false
+  src: InputTag tracked  = genParticlesForJets
+  srcPVs: InputTag tracked  = 
+  subjetPtMin: double tracked  = -1
+  subtractorName: string tracked  = ''
+  sumRecHits: bool tracked  = false
+  trimPtFracMin: double tracked  = -1
+  useCMSBoostedTauSeedingAlgorithm: bool tracked  = false
+  useConstituentSubtraction: bool tracked  = false
+  useDeterministicSeed: bool tracked  = true
+  useDynamicFiltering: bool tracked  = false
+  useExplicitGhosts: bool tracked  = false
+  useFiltering: bool tracked  = false
+  useKtPruning: bool tracked  = false
+  useMassDropTagger: bool tracked  = false
+  usePruning: bool tracked  = false
+  useSoftDrop: bool tracked  = false
+  useTrimming: bool tracked  = false
+  verbosity: int32 tracked  = 0
+  voronoiRfact: double tracked  = -0.9
+  writeCompound: bool tracked  = false
+  writeJetsWithConst: bool tracked  = false
+  yCut: double tracked  = -1
+  yMax: double tracked  = -1
+  yMin: double tracked  = -1
+  zcut: double tracked  = -1
+ }
+
+Module: ak4GenJetsNoNu SIM
+ PSet id:5dac579b5f0bdeae8de7ce0920a493d9
+ products: {
+  recoGenJets_ak4GenJetsNoNu__SIM.
+ }
+ parameters: {
+  @module_edm_type: string tracked  = 'EDProducer'
+  @module_label: string tracked  = 'ak4GenJetsNoNu'
+  @module_type: string tracked  = 'FastjetJetProducer'
+  Active_Area_Repeats: int32 tracked  = 5
+  DxyTrVtxMax: double tracked  = 999999
+  DzTrVtxMax: double tracked  = 999999
+  GhostArea: double tracked  = 0.01
+  Ghost_EtaMax: double tracked  = 6
+  MaxVtxZ: double tracked  = 15
+  MinVtxNdof: int32 tracked  = 5
+  R0: double tracked  = -1
+  Rho_EtaMax: double tracked  = 4.5
+  UseOnlyOnePV: bool tracked  = false
+  UseOnlyVertexTracks: bool tracked  = false
+  beta: double tracked  = -1
+  correctShape: bool tracked  = false
+  csRParam: double tracked  = -1
+  csRho_EtaMax: double tracked  = -1
+  dRMax: double tracked  = -1
+  dRMin: double tracked  = -1
+  doAreaDiskApprox: bool tracked  = false
+  doAreaFastjet: bool tracked  = false
+  doFastJetNonUniform: bool tracked  = false
+  doPUOffsetCorr: bool tracked  = false
+  doPVCorrection: bool tracked  = false
+  doRhoFastjet: bool tracked  = false
+  gridMaxRapidity: double tracked  = -1
+  gridSpacing: double tracked  = -1
+  inputEMin: double tracked  = 0
+  inputEtMin: double tracked  = 0
+  jetAlgorithm: string tracked  = 'AntiKt'
+  jetCollInstanceName: string tracked  = ''
+  jetPtMin: double tracked  = 3
+  jetType: string tracked  = 'GenJet'
+  maxBadEcalCells: uint32 tracked  = 9999999
+  maxBadHcalCells: uint32 tracked  = 9999999
+  maxDepth: int32 tracked  = -1
+  maxInputs: uint32 tracked  = 1
+  maxProblematicEcalCells: uint32 tracked  = 9999999
+  maxProblematicHcalCells: uint32 tracked  = 9999999
+  maxRecoveredEcalCells: uint32 tracked  = 9999999
+  maxRecoveredHcalCells: uint32 tracked  = 9999999
+  minSeed: uint32 tracked  = 14327
+  muCut: double tracked  = -1
+  muMax: double tracked  = -1
+  muMin: double tracked  = -1
+  nExclude: uint32 tracked  = 0
+  nFilt: int32 tracked  = -1
+  nSigmaPU: double tracked  = 1
+  puCenters: vdouble tracked  = {}
+  puPtMin: double tracked  = 10
+  puWidth: double tracked  = 0
+  rFilt: double tracked  = -1
+  rFiltFactor: double tracked  = -1
+  rParam: double tracked  = 0.4
+  radiusPU: double tracked  = 0.5
+  rcut_factor: double tracked  = -1
+  restrictInputs: bool tracked  = false
+  src: InputTag tracked  = genParticlesForJetsNoNu
+  srcPVs: InputTag tracked  = 
+  subjetPtMin: double tracked  = -1
+  subtractorName: string tracked  = ''
+  sumRecHits: bool tracked  = false
+  trimPtFracMin: double tracked  = -1
+  useCMSBoostedTauSeedingAlgorithm: bool tracked  = false
+  useConstituentSubtraction: bool tracked  = false
+  useDeterministicSeed: bool tracked  = true
+  useDynamicFiltering: bool tracked  = false
+  useExplicitGhosts: bool tracked  = false
+  useFiltering: bool tracked  = false
+  useKtPruning: bool tracked  = false
+  useMassDropTagger: bool tracked  = false
+  usePruning: bool tracked  = false
+  useSoftDrop: bool tracked  = false
+  useTrimming: bool tracked  = false
+  verbosity: int32 tracked  = 0
+  voronoiRfact: double tracked  = -0.9
+  writeCompound: bool tracked  = false
+  writeJetsWithConst: bool tracked  = false
+  yCut: double tracked  = -1
+  yMax: double tracked  = -1
+  yMin: double tracked  = -1
+  zcut: double tracked  = -1
+ }
+
+Module: ak8GenJets SIM
+ PSet id:fcff84490f07bfad2b639167a383049f
+ products: {
+  recoGenJets_ak8GenJets__SIM.
+ }
+ parameters: {
+  @module_edm_type: string tracked  = 'EDProducer'
+  @module_label: string tracked  = 'ak8GenJets'
+  @module_type: string tracked  = 'FastjetJetProducer'
+  Active_Area_Repeats: int32 tracked  = 5
+  DxyTrVtxMax: double tracked  = 999999
+  DzTrVtxMax: double tracked  = 999999
+  GhostArea: double tracked  = 0.01
+  Ghost_EtaMax: double tracked  = 6
+  MaxVtxZ: double tracked  = 15
+  MinVtxNdof: int32 tracked  = 5
+  R0: double tracked  = -1
+  Rho_EtaMax: double tracked  = 4.5
+  UseOnlyOnePV: bool tracked  = false
+  UseOnlyVertexTracks: bool tracked  = false
+  beta: double tracked  = -1
+  correctShape: bool tracked  = false
+  csRParam: double tracked  = -1
+  csRho_EtaMax: double tracked  = -1
+  dRMax: double tracked  = -1
+  dRMin: double tracked  = -1
+  doAreaDiskApprox: bool tracked  = false
+  doAreaFastjet: bool tracked  = false
+  doFastJetNonUniform: bool tracked  = false
+  doPUOffsetCorr: bool tracked  = false
+  doPVCorrection: bool tracked  = false
+  doRhoFastjet: bool tracked  = false
+  gridMaxRapidity: double tracked  = -1
+  gridSpacing: double tracked  = -1
+  inputEMin: double tracked  = 0
+  inputEtMin: double tracked  = 0
+  jetAlgorithm: string tracked  = 'AntiKt'
+  jetCollInstanceName: string tracked  = ''
+  jetPtMin: double tracked  = 3
+  jetType: string tracked  = 'GenJet'
+  maxBadEcalCells: uint32 tracked  = 9999999
+  maxBadHcalCells: uint32 tracked  = 9999999
+  maxDepth: int32 tracked  = -1
+  maxInputs: uint32 tracked  = 1
+  maxProblematicEcalCells: uint32 tracked  = 9999999
+  maxProblematicHcalCells: uint32 tracked  = 9999999
+  maxRecoveredEcalCells: uint32 tracked  = 9999999
+  maxRecoveredHcalCells: uint32 tracked  = 9999999
+  minSeed: uint32 tracked  = 14327
+  muCut: double tracked  = -1
+  muMax: double tracked  = -1
+  muMin: double tracked  = -1
+  nExclude: uint32 tracked  = 0
+  nFilt: int32 tracked  = -1
+  nSigmaPU: double tracked  = 1
+  puCenters: vdouble tracked  = {}
+  puPtMin: double tracked  = 10
+  puWidth: double tracked  = 0
+  rFilt: double tracked  = -1
+  rFiltFactor: double tracked  = -1
+  rParam: double tracked  = 0.8
+  radiusPU: double tracked  = 0.5
+  rcut_factor: double tracked  = -1
+  restrictInputs: bool tracked  = false
+  src: InputTag tracked  = genParticlesForJets
+  srcPVs: InputTag tracked  = 
+  subjetPtMin: double tracked  = -1
+  subtractorName: string tracked  = ''
+  sumRecHits: bool tracked  = false
+  trimPtFracMin: double tracked  = -1
+  useCMSBoostedTauSeedingAlgorithm: bool tracked  = false
+  useConstituentSubtraction: bool tracked  = false
+  useDeterministicSeed: bool tracked  = true
+  useDynamicFiltering: bool tracked  = false
+  useExplicitGhosts: bool tracked  = false
+  useFiltering: bool tracked  = false
+  useKtPruning: bool tracked  = false
+  useMassDropTagger: bool tracked  = false
+  usePruning: bool tracked  = false
+  useSoftDrop: bool tracked  = false
+  useTrimming: bool tracked  = false
+  verbosity: int32 tracked  = 0
+  voronoiRfact: double tracked  = -0.9
+  writeCompound: bool tracked  = false
+  writeJetsWithConst: bool tracked  = false
+  yCut: double tracked  = -1
+  yMax: double tracked  = -1
+  yMin: double tracked  = -1
+  zcut: double tracked  = -1
+ }
+
+Module: ak8GenJetsNoNu SIM
+ PSet id:10ad5332e27d0282af83999c62fbb4f8
+ products: {
+  recoGenJets_ak8GenJetsNoNu__SIM.
+ }
+ parameters: {
+  @module_edm_type: string tracked  = 'EDProducer'
+  @module_label: string tracked  = 'ak8GenJetsNoNu'
+  @module_type: string tracked  = 'FastjetJetProducer'
+  Active_Area_Repeats: int32 tracked  = 5
+  DxyTrVtxMax: double tracked  = 999999
+  DzTrVtxMax: double tracked  = 999999
+  GhostArea: double tracked  = 0.01
+  Ghost_EtaMax: double tracked  = 6
+  MaxVtxZ: double tracked  = 15
+  MinVtxNdof: int32 tracked  = 5
+  R0: double tracked  = -1
+  Rho_EtaMax: double tracked  = 4.5
+  UseOnlyOnePV: bool tracked  = false
+  UseOnlyVertexTracks: bool tracked  = false
+  beta: double tracked  = -1
+  correctShape: bool tracked  = false
+  csRParam: double tracked  = -1
+  csRho_EtaMax: double tracked  = -1
+  dRMax: double tracked  = -1
+  dRMin: double tracked  = -1
+  doAreaDiskApprox: bool tracked  = false
+  doAreaFastjet: bool tracked  = false
+  doFastJetNonUniform: bool tracked  = false
+  doPUOffsetCorr: bool tracked  = false
+  doPVCorrection: bool tracked  = false
+  doRhoFastjet: bool tracked  = false
+  gridMaxRapidity: double tracked  = -1
+  gridSpacing: double tracked  = -1
+  inputEMin: double tracked  = 0
+  inputEtMin: double tracked  = 0
+  jetAlgorithm: string tracked  = 'AntiKt'
+  jetCollInstanceName: string tracked  = ''
+  jetPtMin: double tracked  = 3
+  jetType: string tracked  = 'GenJet'
+  maxBadEcalCells: uint32 tracked  = 9999999
+  maxBadHcalCells: uint32 tracked  = 9999999
+  maxDepth: int32 tracked  = -1
+  maxInputs: uint32 tracked  = 1
+  maxProblematicEcalCells: uint32 tracked  = 9999999
+  maxProblematicHcalCells: uint32 tracked  = 9999999
+  maxRecoveredEcalCells: uint32 tracked  = 9999999
+  maxRecoveredHcalCells: uint32 tracked  = 9999999
+  minSeed: uint32 tracked  = 14327
+  muCut: double tracked  = -1
+  muMax: double tracked  = -1
+  muMin: double tracked  = -1
+  nExclude: uint32 tracked  = 0
+  nFilt: int32 tracked  = -1
+  nSigmaPU: double tracked  = 1
+  puCenters: vdouble tracked  = {}
+  puPtMin: double tracked  = 10
+  puWidth: double tracked  = 0
+  rFilt: double tracked  = -1
+  rFiltFactor: double tracked  = -1
+  rParam: double tracked  = 0.8
+  radiusPU: double tracked  = 0.5
+  rcut_factor: double tracked  = -1
+  restrictInputs: bool tracked  = false
+  src: InputTag tracked  = genParticlesForJetsNoNu
+  srcPVs: InputTag tracked  = 
+  subjetPtMin: double tracked  = -1
+  subtractorName: string tracked  = ''
+  sumRecHits: bool tracked  = false
+  trimPtFracMin: double tracked  = -1
+  useCMSBoostedTauSeedingAlgorithm: bool tracked  = false
+  useConstituentSubtraction: bool tracked  = false
+  useDeterministicSeed: bool tracked  = true
+  useDynamicFiltering: bool tracked  = false
+  useExplicitGhosts: bool tracked  = false
+  useFiltering: bool tracked  = false
+  useKtPruning: bool tracked  = false
+  useMassDropTagger: bool tracked  = false
+  usePruning: bool tracked  = false
+  useSoftDrop: bool tracked  = false
+  useTrimming: bool tracked  = false
+  verbosity: int32 tracked  = 0
+  voronoiRfact: double tracked  = -0.9
+  writeCompound: bool tracked  = false
+  writeJetsWithConst: bool tracked  = false
+  yCut: double tracked  = -1
+  yMax: double tracked  = -1
+  yMin: double tracked  = -1
+  zcut: double tracked  = -1
+ }
+
+Module: g4SimHits SIM
+ PSet id:5cc65c0ac1a55e13fccbf471b3aef545
+ products: {
+  PCaloHits_g4SimHits_CaloHitsTk_SIM.
+  PCaloHits_g4SimHits_CastorBU_SIM.
+  PCaloHits_g4SimHits_CastorFI_SIM.
+  PCaloHits_g4SimHits_CastorPL_SIM.
+  PCaloHits_g4SimHits_CastorTU_SIM.
+  PCaloHits_g4SimHits_ChamberHits_SIM.
+  PCaloHits_g4SimHits_EcalHitsEB_SIM.
+  PCaloHits_g4SimHits_EcalHitsEE_SIM.
+  PCaloHits_g4SimHits_EcalHitsES_SIM.
+  PCaloHits_g4SimHits_EcalTBH4BeamHits_SIM.
+  PCaloHits_g4SimHits_FibreHits_SIM.
+  PCaloHits_g4SimHits_HFNoseHits_SIM.
+  PCaloHits_g4SimHits_HGCHitsEE_SIM.
+  PCaloHits_g4SimHits_HGCHitsHEback_SIM.
+  PCaloHits_g4SimHits_HGCHitsHEfront_SIM.
+  PCaloHits_g4SimHits_HcalHits_SIM.
+  PCaloHits_g4SimHits_HcalTB06BeamHits_SIM.
+  PCaloHits_g4SimHits_WedgeHits_SIM.
+  PCaloHits_g4SimHits_ZDCHITS_SIM.
+  PSimHits_g4SimHits_BCM1FHits_SIM.
+  PSimHits_g4SimHits_BHMHits_SIM.
+  PSimHits_g4SimHits_BSCHits_SIM.
+  PSimHits_g4SimHits_FP420SI_SIM.
+  PSimHits_g4SimHits_FastTimerHitsBarrel_SIM.
+  PSimHits_g4SimHits_FastTimerHitsEndcap_SIM.
+  PSimHits_g4SimHits_MuonCSCHits_SIM.
+  PSimHits_g4SimHits_MuonDTHits_SIM.
+  PSimHits_g4SimHits_MuonGEMHits_SIM.
+  PSimHits_g4SimHits_MuonME0Hits_SIM.
+  PSimHits_g4SimHits_MuonRPCHits_SIM.
+  PSimHits_g4SimHits_PLTHits_SIM.
+  PSimHits_g4SimHits_TotemHitsRP_SIM.
+  PSimHits_g4SimHits_TotemHitsT1_SIM.
+  PSimHits_g4SimHits_TotemHitsT2Gem_SIM.
+  PSimHits_g4SimHits_TrackerHitsPixelBarrelHighTof_SIM.
+  PSimHits_g4SimHits_TrackerHitsPixelBarrelLowTof_SIM.
+  PSimHits_g4SimHits_TrackerHitsPixelEndcapHighTof_SIM.
+  PSimHits_g4SimHits_TrackerHitsPixelEndcapLowTof_SIM.
+  PSimHits_g4SimHits_TrackerHitsTECHighTof_SIM.
+  PSimHits_g4SimHits_TrackerHitsTECLowTof_SIM.
+  PSimHits_g4SimHits_TrackerHitsTIBHighTof_SIM.
+  PSimHits_g4SimHits_TrackerHitsTIBLowTof_SIM.
+  PSimHits_g4SimHits_TrackerHitsTIDHighTof_SIM.
+  PSimHits_g4SimHits_TrackerHitsTIDLowTof_SIM.
+  PSimHits_g4SimHits_TrackerHitsTOBHighTof_SIM.
+  PSimHits_g4SimHits_TrackerHitsTOBLowTof_SIM.
+  SimTracks_g4SimHits__SIM.
+  SimVertexs_g4SimHits__SIM.
+ }
+ parameters: {
+  @module_edm_type: string tracked  = 'EDProducer'
+  @module_label: string tracked  = 'g4SimHits'
+  @module_type: string tracked  = 'OscarMTProducer'
+  G4Commands: vstring tracked  = {}
+  HepMCProductLabel: InputTag tracked  = generatorSmeared
+  NonBeamEvent: bool tracked  = false
+  PhysicsTablesDirectory: string tracked  = 'PhysicsTables'
+  RestorePhysicsTables: bool tracked  = false
+  RestoreRndmSeeds: bool tracked  = false
+  StepVerboseThreshold: double tracked  = 0.1
+  SteppingVerbosity: int32 tracked  = 0
+  StorePhysicsTables: bool tracked  = false
+  StoreRndmSeeds: bool tracked  = false
+  UseMagneticField: bool tracked  = true
+  VerboseEvents: vint32 tracked  = {}
+  VerboseTracks: vint32 tracked  = {}
+  VertexNumber: vint32 tracked  = {}
+  theLHCTlinkTag: InputTag tracked  = LHCTransport
+  AHCalSD: PSet tracked = ({
+   BirkC1: double tracked  = 0.0052
+   BirkC2: double tracked  = 0.142
+   BirkC3: double tracked  = 1.75
+   EminHit: double tracked  = 0
+   IgnoreTrackID: bool tracked  = false
+   TimeSliceUnit: double tracked  = 1
+   UseBirkLaw: bool tracked  = true
+  })
+  BHMSD: PSet tracked = ({
+  })
+  Bcm1fSD: PSet tracked = ({
+   EnergyThresholdForHistoryInGeV: double tracked  = 0.005
+   EnergyThresholdForPersistencyInGeV: double tracked  = 0.01
+  })
+  BscSD: PSet tracked = ({
+  })
+  CaloResponse: PSet tracked = ({
+   ResponseFile: FileInPath tracked  = V001 SimG4CMS/Calo/data/responsTBpim50.dat 2 /src/SimG4CMS/Calo/data/responsTBpim50.dat
+   ResponseScale: double tracked  = 1
+   UseResponseTable: bool tracked  = true
+  })
+  CaloSD: PSet tracked = ({
+   BeamPosition: double tracked  = 0
+   CorrectTOFBeam: bool tracked  = false
+   EminHits: vdouble tracked  = {0.015,0.01,0,0,0}
+   EminHitsDepth: vdouble tracked  = {0,0,0,0,0}
+   EminTrack: double tracked  = 1
+   HCNames: vstring tracked  = {'EcalHitsEB','EcalHitsEE','EcalHitsES','HcalHits','ZDCHITS'}
+   IonThreshold: double tracked  = 30
+   NeutronThreshold: double tracked  = 30
+   ProtonThreshold: double tracked  = 30
+   SuppressHeavy: bool tracked  = false
+   TmaxHit: double tracked  = 1000
+   TmaxHits: vdouble tracked  = {500,500,500,500,2000}
+   UseResponseTables: vint32 tracked  = {+0,+0,+0,+0,+0}
+  })
+  CaloTrkProcessing: PSet tracked = ({
+   EminTrack: double tracked  = 0.01
+   PutHistory: bool tracked  = false
+   TestBeam: bool tracked  = false
+  })
+  CastorSD: PSet tracked = ({
+   minEnergyInGeVforUsingSLibrary: double tracked  = 1
+   nonCompensationFactor: double tracked  = 0.8169999999999999
+   useShowerLibrary: bool tracked  = true
+  })
+  CastorShowerLibrary: PSet tracked = ({
+   FileName: FileInPath tracked  = V001 SimG4CMS/Forward/data/CastorShowerLibrary_CMSSW500_Standard.root 2 /external/slc6_amd64_gcc700/data/SimG4CMS/Forward/data/CastorShowerLibrary_CMSSW500_Standard.root
+  })
+  ECalSD: PSet tracked = ({
+   BirkC1: double tracked  = 0.03333
+   BirkC2: double tracked  = 0
+   BirkC3: double tracked  = 1
+   BirkCut: double tracked  = 0.1
+   BirkL3Parametrization: bool tracked  = true
+   BirkSlope: double tracked  = 0.253694
+   DelivLuminosity: double tracked  = 5000
+   IgnoreTrackID: bool tracked  = false
+   InstLuminosity: double tracked  = 0
+   SlopeLightYield: double tracked  = 0.02
+   StoreSecondary: bool tracked  = false
+   TimeSliceUnit: double tracked  = 0.001
+   UseBirkLaw: bool tracked  = true
+  })
+  EcalTBH4BeamSD: PSet tracked = ({
+   BirkC1: double tracked  = 0.013
+   BirkC2: double tracked  = 0.0568
+   BirkC3: double tracked  = 1.75
+   UseBirkLaw: bool tracked  = false
+  })
+  EventAction: PSet tracked = ({
+   CollapsePrimaryVertices: bool tracked  = false
+   PrintRandomSeed: bool tracked  = false
+   StopFile: string tracked  = ''
+  })
+  FP420SD: PSet tracked = ({
+  })
+  FastTimerSD: PSet tracked = ({
+   EminHit: double tracked  = 0
+   IgnoreTrackID: bool tracked  = false
+   TimeSliceUnit: double tracked  = 0.001
+  })
+  G4CheckOverlap: PSet tracked = ({
+   LVname: string tracked  = ''
+   NodeNames: vstring tracked  = {'World'}
+   PVname: string tracked  = ''
+  })
+  Generator: PSet tracked = ({
+   ApplyEtaCuts: bool tracked  = true
+   ApplyLumiMonitorCuts: bool tracked  = false
+   ApplyPCuts: bool tracked  = true
+   ApplyPhiCuts: bool tracked  = false
+   ApplyPtransCut: bool tracked  = false
+   EtaCutForHector: double tracked  = 8.199999999999999
+   HepMCProductLabel: InputTag tracked  = generatorSmeared
+   LDecLenCut: double tracked  = 30
+   MaxEtaCut: double tracked  = 5.5
+   MaxPCut: double tracked  = 99999
+   MaxPhiCut: double tracked  = 3.14159265359
+   MinEtaCut: double tracked  = -5.5
+   MinPCut: double tracked  = 0.04
+   MinPhiCut: double tracked  = -3.14159265359
+   RDecLenCut: double tracked  = 2.9
+   PDGselection: PSet tracked = ({
+    PDGfilter: vint32 tracked  = {+21,+1,+2,+3,+4,+5,+6}
+    PDGfilterSel: bool tracked  = false
+   })
+  })
+  HCalSD: PSet tracked = ({
+   BetaThreshold: double tracked  = 0.7
+   BirkC1: double tracked  = 0.0052
+   BirkC2: double tracked  = 0.142
+   BirkC3: double tracked  = 1.75
+   DelivLuminosity: double tracked  = 5000
+   EminHitHB: double tracked  = 0
+   EminHitHE: double tracked  = 0
+   EminHitHF: double tracked  = 0
+   EminHitHO: double tracked  = 0
+   HBDarkening: bool tracked  = false
+   HEDarkening: bool tracked  = false
+   HFDarkening: bool tracked  = false
+   IgnoreTrackID: bool tracked  = false
+   InstLuminosity: double tracked  = 0
+   TestNumberingScheme: bool tracked  = true
+   TimeSliceUnit: double tracked  = 1
+   UseBirkLaw: bool tracked  = true
+   UseFibreBundleHits: bool tracked  = false
+   UsePMTHits: bool tracked  = false
+   UseParametrize: bool tracked  = false
+   UseShowerLibrary: bool tracked  = true
+   doNeutralDensityFilter: bool tracked  = false
+   HFDarkeningParameterBlock: PSet tracked = ({
+    doseLayerDepth: vdouble tracked  = {1089.82672,430.74392,316.10688,198.15032,133.66563,92.69110999999999,63.84813,45.19114,30.58487,21.00216,12.95498,5.45337,0.4561,1662.5198,720.46188,590.62325,429.82339,282.39827,186.10415,120.91404,79.75749999999999,51.45268,32.77064,17.95221,6.07963,0.32217,1511.32547,708.54584,605.99167,495.66233,322.7595,207.45045,129.52382,81.14806,51.51518,30.54072,15.88012,5.04118,0.29664,1116.32013,574.64553,480.43324,409.50734,266.19544,168.75067,104.73339,63.34151,39.86312,22.97123,11.55581,3.68691,0.29269,800.2853,446.24557,359.63381,299.49924,195.82939,124.59848,77.29738,46.00855,28.52664,16.43682,8.18736,2.67659,0.28495,612.20865,355.40823,276.97155,219.61391,144.74911,93.28837,58.51092,35.08033,21.47604,12.29605,6.16789,2.12159,0.27661,504.87242,295.98737,226.62047,171.60095,113.64104,73.25579,46.67008,28.26167,17.42322,9.59497,5.02061,1.76107,0.28319,439.39199,252.97218,191.68489,143.625,94.50761,61.46441,38.8409,23.68308,14.69344,7.98846,4.18968,1.52224,0.28134,400.29378,223.24941,165.77051,124.7812,80.69381,52.80131,33.61851,20.37541,12.53798,7.00165,3.62975,1.38213,0.26854,367.42369,201.03927,146.05054,108.58533,70.57478999999999,46.07769,29.50341,17.87488,10.91036,6.12909,3.21967,1.25779,0.25991,329.90783,181.01783,128.96837,94.23766000000001,62.25865,40.17712,25.787,16.16342,9.46068,5.41504,2.81787,1.13574,0.2552,297.89937,163.50102,116.23316,83.18498,55.46801,35.4402,22.19535,14.31524,8.215730000000001,4.69969,2.50891,1.02412,0.24167,272.26937,147.64059,104.98641,72.05083,48.82044,31.0403,19.50233,12.6764,7.06137,4.11597,2.14441,0.93751,0.22596,249.14766,131.41739,93.58642,63.48269,42.64957,27.27858,17.06007,10.93655,6.0742,3.64389,1.88608,0.84005,0.22152,226.99648,116.79805,82.04924,55.57321,37.60804,23.8003,15.12373,9.59352,5.28989,3.16053,1.65219,0.74207,0.20077,207.71168,102.36457,72.48674,48.65921,32.76174,20.67312,13.34669,8.26618,4.70605,2.83691,1.4537,0.66819,0.18359,190.76744,90.63229,63.78329,42.44254,29.13414,18.03128,11.85671,7.31436,4.02773,2.45523,1.26776,0.58725,0.18424,178.21925,81.88379,57.03839,37.22998,24.90575,16.00853,10.46851,6.57621,3.50808,2.16873,1.12083,0.51166,0.16961,169.78037,73.27996,50.41326,32.70998,21.81181,14.35241,9.10403,5.68453,3.12387,1.85718,1.00079,0.44896,0.15281,162.59574,66.56493,43.80282,28.71882,18.54598,12.41703,7.92044,4.83008,2.7721,1.5999,0.86314,0.37843,0.13917,158.18666,59.65062,38.26824,24.43072,16.41785,10.76117,6.82664,4.16347,2.44142,1.4081,0.76763,0.34437,0.13022,150.13577,53.33958,34.18336,21.62898,14.27769,9.379770000000001,5.89517,3.6894,2.16963,1.18001,0.6684,0.3026,0.12473,144.67223,50.31662,31.59758,19.6959,12.52437,8.238,5.24535,3.24359,1.87348,1.03871,0.58652,0.26342,0.11119,136.98616,45.60196,28.92017,17.66014,10.97254,7.36928,4.53706,2.80986,1.65139,0.89451,0.49702,0.22609,0.09944,132.02552,41.30027,26.02537,15.64933,9.943680000000001,6.42028,3.90554,2.47866,1.47008,0.8163,0.4273,0.20726,0.08913,129.36562,38.47342,22.91677,13.76957,8.792299999999999,5.50856,3.44091,2.1008,1.26223,0.69379,0.38069,0.17625,0.07827000000000001,127.78974,35.60432,20.49112,12.18895,7.72131,4.74755,2.91111,1.82576,1.12159,0.5982,0.34274,0.15086,0.06907000000000001,124.07525,33.24689,18.53004,10.8278,6.97957,4.0935,2.46634,1.63918,0.97005,0.50387,0.29183,0.13397,0.05972,122.43579,31.75832,17.29619,9.831849999999999,6.05158,3.55086,2.21287,1.39251,0.82526,0.45851,0.24181,0.11202,0.05703,121.61748,30.44129,16.17414,8.93093,5.44004,3.08939,1.905,1.21964,0.71349,0.40864,0.21309,0.09492,0.0535,120.67237,29.01728,14.54675,8.140940000000001,4.8913,2.67395,1.62092,1.04203,0.59052,0.32811,0.19279,0.08357000000000001,0.05398,119.15188,27.50844,13.95703,7.2369,4.21802,2.32933,1.45072,0.87999,0.5075,0.29475,0.16882,0.08048,0.05269,114.6991,25.85671,12.93505,6.70319,3.86928,2.3702,1.37139,0.87629,0.50304,0.29778,0.18413,0.11134,0.07111000000000001,114.6991,25.85671,12.93505,6.70319,3.86928,2.3702,1.37139,0.87629,0.50304,0.29778,0.18413,0.11134,0.07111000000000001}
+   })
+  })
+  HFGflash: PSet tracked = ({
+  })
+  HFNoseSD: PSet tracked = ({
+   CornerMinMask: int32 tracked  = 0
+   DistanceFromEdge: double tracked  = 1
+   EminHit: double tracked  = 0
+   FiducialCut: bool tracked  = false
+   IgnoreTrackID: bool tracked  = false
+   RejectMouseBite: bool tracked  = false
+   RotatedWafer: bool tracked  = false
+   StoreAllG4Hits: bool tracked  = false
+   TimeSliceUnit: double tracked  = 0.001
+  })
+  HFShower: PSet tracked = ({
+   Aperture: double tracked  = 0.33
+   ApertureTrapped: double tracked  = 0.22
+   ApplyFiducialCut: bool tracked  = true
+   CFibre: double tracked  = 0.5
+   CheckSurvive: bool tracked  = false
+   CosApertureTrapped: double tracked  = 0.5
+   EminLibrary: double tracked  = 0
+   Gain: double tracked  = 0.33
+   Lambda1: double tracked  = 280
+   Lambda2: double tracked  = 700
+   LambdaMean: double tracked  = 350
+   OnlyLong: bool tracked  = true
+   PEPerGeV: double tracked  = 0.31
+   ProbMax: double tracked  = 1
+   RefIndex: double tracked  = 1.459
+   TrackEM: bool tracked  = false
+   UseHFGflash: bool tracked  = false
+   UseR7600UPMT: bool tracked  = false
+   UseShowerLibrary: bool tracked  = true
+  })
+  HFShowerConicalBundle: PSet tracked = ({
+   Aperture: double tracked  = 0.33
+   ApertureTrapped: double tracked  = 0.22
+   CheckSurvive: bool tracked  = false
+   CosApertureTrapped: double tracked  = 0.5
+   FactorBundle: double tracked  = 1
+   Gain: double tracked  = 0.33
+   Lambda1: double tracked  = 280
+   Lambda2: double tracked  = 700
+   RefIndex: double tracked  = 1.459
+   UseR7600UPMT: bool tracked  = false
+  })
+  HFShowerLibrary: PSet tracked = ({
+   ApplyFiducialCut: bool tracked  = true
+   BackProbability: double tracked  = 0.2
+   FileName: FileInPath tracked  = V001 SimG4CMS/Calo/data/HFShowerLibrary_npmt_noatt_eta4_16en_v4.root 2 /external/slc6_amd64_gcc700/data/SimG4CMS/Calo/data/HFShowerLibrary_npmt_noatt_eta4_16en_v4.root
+   TreeEMID: string tracked  = 'emParticles'
+   TreeHadID: string tracked  = 'hadParticles'
+  })
+  HFShowerPMT: PSet tracked = ({
+   Aperture: double tracked  = 0.99
+   ApertureTrapped: double tracked  = 0.22
+   CheckSurvive: bool tracked  = false
+   CosApertureTrapped: double tracked  = 0.5
+   Gain: double tracked  = 0.33
+   Lambda1: double tracked  = 280
+   Lambda2: double tracked  = 700
+   PEPerGeVPMT: double tracked  = 1
+   RefIndex: double tracked  = 1.52
+   UseR7600UPMT: bool tracked  = false
+  })
+  HFShowerStraightBundle: PSet tracked = ({
+   Aperture: double tracked  = 0.33
+   ApertureTrapped: double tracked  = 0.22
+   CheckSurvive: bool tracked  = false
+   CosApertureTrapped: double tracked  = 0.5
+   FactorBundle: double tracked  = 1
+   Gain: double tracked  = 0.33
+   Lambda1: double tracked  = 280
+   Lambda2: double tracked  = 700
+   RefIndex: double tracked  = 1.459
+   UseR7600UPMT: bool tracked  = false
+  })
+  HGCSD: PSet tracked = ({
+   CornerMinMask: int32 tracked  = 0
+   DistanceFromEdge: double tracked  = 1
+   EminHit: double tracked  = 0
+   FiducialCut: bool tracked  = false
+   IgnoreTrackID: bool tracked  = false
+   RejectMouseBite: bool tracked  = false
+   RotatedWafer: bool tracked  = false
+   StoreAllG4Hits: bool tracked  = false
+   TimeSliceUnit: double tracked  = 0.001
+  })
+  HGCScintSD: PSet tracked = ({
+   BirkC1: double tracked  = 0.0052
+   BirkC2: double tracked  = 0.142
+   BirkC3: double tracked  = 1.75
+   DistanceFromEdge: double tracked  = 1
+   EminHit: double tracked  = 0
+   FiducialCut: bool tracked  = false
+   StoreAllG4Hits: bool tracked  = false
+   UseBirkLaw: bool tracked  = true
+  })
+  HGCalTestBeamSD: PSet tracked = ({
+   BirkC1: double tracked  = 0.013
+   BirkC2: double tracked  = 0.0568
+   BirkC3: double tracked  = 1.75
+   Material: string tracked  = 'Scintillator'
+   UseBirkLaw: bool tracked  = false
+  })
+  HcalTB02SD: PSet tracked = ({
+  })
+  HcalTB06BeamSD: PSet tracked = ({
+   BirkC1: double tracked  = 0.013
+   BirkC2: double tracked  = 0.0568
+   BirkC3: double tracked  = 1.75
+   UseBirkLaw: bool tracked  = false
+  })
+  MagneticField: PSet tracked = ({
+   UseLocalMagFieldManager: bool tracked  = false
+   delta: double tracked  = 1
+   ConfGlobalMFM: PSet tracked = ({
+    Volume: string tracked  = 'OCMS'
+    OCMS: PSet tracked = ({
+     Stepper: string tracked  = 'G4DormandPrince745'
+     Type: string tracked  = 'CMSIMField'
+     StepperParam: PSet tracked = ({
+      DeltaChord: double tracked  = 0.001
+      DeltaChordSimple: double tracked  = 0.1
+      DeltaIntersection: double tracked  = 0.0001
+      DeltaIntersectionSimple: double tracked  = 0.01
+      DeltaOneStep: double tracked  = 0.001
+      DeltaOneStepSimple: double tracked  = 0.1
+      EnergyThSimple: double tracked  = 0.002
+      MinStep: double tracked  = 0.1
+     })
+    })
+   })
+  })
+  MtdSD: PSet tracked = ({
+   EminHit: double tracked  = 0
+   IgnoreTrackID: bool tracked  = false
+   TimeSliceUnit: double tracked  = 0.01
+  })
+  MuonSD: PSet tracked = ({
+   AllMuonsPersistent: bool tracked  = true
+   EnergyThresholdForPersistency: double tracked  = 1
+   PrintHits: bool tracked  = false
+  })
+  Physics: PSet tracked = ({
+   CriticalDensity: double tracked  = 1e-15
+   CriticalEnergyForVacuum: double tracked  = 2
+   CutsPerRegion: bool tracked  = true
+   DarkMPFactor: double tracked  = 1
+   DeadRegions: vstring tracked  = {'QuadRegion','InterimRegion'}
+   DefaultCutValue: double tracked  = 1
+   DummyEMPhysics: bool tracked  = false
+   ElectronRangeTest: bool tracked  = false
+   ElectronStepLimit: bool tracked  = false
+   FlagFluo: bool tracked  = false
+   FlagMuNucl: bool tracked  = false
+   G4BremsstrahlungThreshold: double tracked  = 0.5
+   GflashEcal: bool tracked  = false
+   GflashEcalHad: bool tracked  = false
+   GflashHcal: bool tracked  = false
+   GflashHcalHad: bool tracked  = false
+   MaxTimeNames: vstring tracked  = {'ZDCRegion'}
+   MaxTrackTime: double tracked  = 500
+   MaxTrackTimes: vdouble tracked  = {2000}
+   MinStepLimit: double tracked  = 1
+   ModifyTransportation: bool tracked  = false
+   PositronStepLimit: bool tracked  = false
+   Region: string tracked  = ''
+   RhadronPhysics: bool tracked  = false
+   RusRoCastorElectron: double tracked  = 1
+   RusRoEcalElectron: double tracked  = 1
+   RusRoElectronEnergyLimit: double tracked  = 0
+   RusRoHcalElectron: double tracked  = 1
+   RusRoMuonIronElectron: double tracked  = 1
+   RusRoPreShowerElectron: double tracked  = 1
+   RusRoWorldElectron: double tracked  = 1
+   SRType: bool tracked  = true
+   TrackingCut: bool tracked  = false
+   bField: double tracked  = 3.8
+   energyScaleEB: double tracked  = 1.032
+   energyScaleEE: double tracked  = 1.024
+   type: string tracked  = 'SimG4Core/Physics/FTFP_BERT_EMM'
+  })
+  PltSD: PSet tracked = ({
+   EnergyThresholdForHistoryInGeV: double tracked  = 0.05
+   EnergyThresholdForPersistencyInGeV: double tracked  = 0.2
+  })
+  RunAction: PSet tracked = ({
+   StopFile: string tracked  = ''
+  })
+  StackingAction: PSet tracked = ({
+   CriticalDensity: double tracked  = 1e-15
+   CriticalEnergyForVacuum: double tracked  = 2
+   DeadRegions: vstring tracked  = {'QuadRegion','InterimRegion'}
+   GammaThreshold: double tracked  = 0.0001
+   IonThreshold: double tracked  = 30
+   KillDeltaRay: bool tracked  = false
+   KillGamma: bool tracked  = true
+   KillHeavy: bool tracked  = false
+   MaxTimeNames: vstring tracked  = {'ZDCRegion'}
+   MaxTrackTime: double tracked  = 500
+   MaxTrackTimes: vdouble tracked  = {2000}
+   NeutronThreshold: double tracked  = 30
+   ProtonThreshold: double tracked  = 30
+   RusRoCastorGamma: double tracked  = 0.3
+   RusRoCastorNeutron: double tracked  = 0.1
+   RusRoCastorProton: double tracked  = 1
+   RusRoEcalGamma: double tracked  = 0.3
+   RusRoEcalNeutron: double tracked  = 0.1
+   RusRoEcalProton: double tracked  = 1
+   RusRoGammaEnergyLimit: double tracked  = 5
+   RusRoHcalGamma: double tracked  = 0.3
+   RusRoHcalNeutron: double tracked  = 0.1
+   RusRoHcalProton: double tracked  = 1
+   RusRoMuonIronGamma: double tracked  = 0.3
+   RusRoMuonIronNeutron: double tracked  = 0.1
+   RusRoMuonIronProton: double tracked  = 1
+   RusRoNeutronEnergyLimit: double tracked  = 10
+   RusRoPreShowerGamma: double tracked  = 0.3
+   RusRoPreShowerNeutron: double tracked  = 0.1
+   RusRoPreShowerProton: double tracked  = 1
+   RusRoProtonEnergyLimit: double tracked  = 0
+   RusRoWorldGamma: double tracked  = 0.3
+   RusRoWorldNeutron: double tracked  = 0.1
+   RusRoWorldProton: double tracked  = 1
+   TrackNeutrino: bool tracked  = false
+  })
+  SteppingAction: PSet tracked = ({
+   CriticalDensity: double tracked  = 1e-15
+   CriticalEnergyForVacuum: double tracked  = 2
+   DeadRegions: vstring tracked  = {'QuadRegion','InterimRegion'}
+   EkinNames: vstring tracked  = {}
+   EkinParticles: vstring tracked  = {}
+   EkinThresholds: vdouble tracked  = {}
+   MaxTimeNames: vstring tracked  = {'ZDCRegion'}
+   MaxTrackTime: double tracked  = 500
+   MaxTrackTimes: vdouble tracked  = {2000}
+  })
+  TotemSD: PSet tracked = ({
+  })
+  TrackerSD: PSet tracked = ({
+   ElectronicSigmaInNanoSeconds: double tracked  = 12.06
+   EnergyThresholdForHistoryInGeV: double tracked  = 0.05
+   EnergyThresholdForPersistencyInGeV: double tracked  = 0.2
+   NeverAccumulate: bool tracked  = false
+   PrintHits: bool tracked  = false
+   ZeroEnergyLoss: bool tracked  = false
+  })
+  TrackingAction: PSet tracked = ({
+  })
+  ZdcSD: PSet tracked = ({
+   FiberDirection: double tracked  = 45
+   UseShowerHits: bool tracked  = false
+   UseShowerLibrary: bool tracked  = true
+   Verbosity: int32 tracked  = 0
+   ZdcHitEnergyCut: double tracked  = 10
+  })
+  ZdcShowerLibrary: PSet tracked = ({
+  })
+  Watchers: VPSet tracked = ({
+  })
+ }
+
+Module: genCandidatesForMET SIM
+ PSet id:bed42ffa0ccf7f0324291b4c92da28d0
+ products: {
+  recoCandidateedmPtrVector_genCandidatesForMET__SIM.
+ }
+ parameters: {
+  @module_edm_type: string tracked  = 'EDProducer'
+  @module_label: string tracked  = 'genCandidatesForMET'
+  @module_type: string tracked  = 'InputGenJetsParticleSelector'
+  excludeFromResonancePids: vuint32 tracked  = {}
+  excludeResonances: bool tracked  = false
+  ignoreParticleIDs: vuint32 tracked  = {1000022,1000012,1000014,1000016,2000012,2000014,2000016,1000039,5100039,4000012,4000014,4000016,9900012,9900014,9900016,39,12,13,14,16}
+  partonicFinalState: bool tracked  = false
+  src: InputTag tracked  = genParticles
+  tausAsJets: bool tracked  = false
+ }
+
+Module: genFilterEfficiencyProducer SIM
+ PSet id:2e76930557e2a29a84e92620a6a76a06
+ products: {
+  GenFilterInfo_genFilterEfficiencyProducer__SIM.
+ }
+ parameters: {
+  @module_edm_type: string tracked  = 'EDProducer'
+  @module_label: string tracked  = 'genFilterEfficiencyProducer'
+  @module_type: string tracked  = 'GenFilterEfficiencyProducer'
+  filterPath: string tracked  = 'generation_step'
+ }
+
+Module: genMetCalo SIM
+ PSet id:e34bb34007a82a8ba30fb8ba64d1de59
+ products: {
+  recoGenMETs_genMetCalo__SIM.
+ }
+ parameters: {
+  @module_edm_type: string tracked  = 'EDProducer'
+  @module_label: string tracked  = 'genMetCalo'
+  @module_type: string tracked  = 'GenMETProducer'
+  alias: string tracked  = 'genMetCalo'
+  applyFiducialThresholdForFractions: bool tracked  = false
+  globalThreshold: double tracked  = 0
+  onlyFiducialParticles: bool tracked  = true
+  src: InputTag tracked  = genCandidatesForMET
+  usePt: bool tracked  = true
+ }
+
+Module: genMetTrue SIM
+ PSet id:a3980702a5cfe7c807b3eb0397805ade
+ products: {
+  recoGenMETs_genMetTrue__SIM.
+ }
+ parameters: {
+  @module_edm_type: string tracked  = 'EDProducer'
+  @module_label: string tracked  = 'genMetTrue'
+  @module_type: string tracked  = 'GenMETProducer'
+  alias: string tracked  = 'genMetTrue'
+  applyFiducialThresholdForFractions: bool tracked  = false
+  globalThreshold: double tracked  = 0
+  onlyFiducialParticles: bool tracked  = false
+  src: InputTag tracked  = genParticlesForMETAllVisible
+  usePt: bool tracked  = true
+ }
+
+Module: genParticles SIM
+ PSet id:f8f4b0f3319295ad82463554277790d6
+ products: {
+  float_genParticles_t0_SIM.
+  floatROOTMathCartesian3DROOTMathDefaultCoordinateSystemTagROOTMathPositionVector3D_genParticles_xyz0_SIM.
+  ints_genParticles__SIM.
+  recoGenParticles_genParticles__SIM.
+ }
+ parameters: {
+  @module_edm_type: string tracked  = 'EDProducer'
+  @module_label: string tracked  = 'genParticles'
+  @module_type: string tracked  = 'GenParticleProducer'
+  src: InputTag tracked  = generatorSmeared
+ }
+
+Module: genParticlesForJets SIM
+ PSet id:08a90e54f7a2a6f491c9ab79fb69252c
+ products: {
+  recoCandidateedmPtrVector_genParticlesForJets__SIM.
+ }
+ parameters: {
+  @module_edm_type: string tracked  = 'EDProducer'
+  @module_label: string tracked  = 'genParticlesForJets'
+  @module_type: string tracked  = 'InputGenJetsParticleSelector'
+  excludeFromResonancePids: vuint32 tracked  = {12,13,14,16}
+  excludeResonances: bool tracked  = false
+  ignoreParticleIDs: vuint32 tracked  = {1000022,1000012,1000014,1000016,2000012,2000014,2000016,1000039,5100039,4000012,4000014,4000016,9900012,9900014,9900016,39}
+  partonicFinalState: bool tracked  = false
+  src: InputTag tracked  = genParticles
+  tausAsJets: bool tracked  = false
+ }
+
+Module: genParticlesForJetsNoNu SIM
+ PSet id:30e4d1d90bee4fa2f92cf9063e58970d
+ products: {
+  recoCandidateedmPtrVector_genParticlesForJetsNoNu__SIM.
+ }
+ parameters: {
+  @module_edm_type: string tracked  = 'EDProducer'
+  @module_label: string tracked  = 'genParticlesForJetsNoNu'
+  @module_type: string tracked  = 'InputGenJetsParticleSelector'
+  excludeFromResonancePids: vuint32 tracked  = {12,13,14,16}
+  excludeResonances: bool tracked  = false
+  ignoreParticleIDs: vuint32 tracked  = {1000022,1000012,1000014,1000016,2000012,2000014,2000016,1000039,5100039,4000012,4000014,4000016,9900012,9900014,9900016,39,12,14,16}
+  partonicFinalState: bool tracked  = false
+  src: InputTag tracked  = genParticles
+  tausAsJets: bool tracked  = false
+ }
+
+Module: genParticlesForMETAllVisible SIM
+ PSet id:7b7e478966c12d47fbeccf6961b98b78
+ products: {
+  recoCandidateedmPtrVector_genParticlesForMETAllVisible__SIM.
+ }
+ parameters: {
+  @module_edm_type: string tracked  = 'EDProducer'
+  @module_label: string tracked  = 'genParticlesForMETAllVisible'
+  @module_type: string tracked  = 'InputGenJetsParticleSelector'
+  excludeFromResonancePids: vuint32 tracked  = {}
+  excludeResonances: bool tracked  = false
+  ignoreParticleIDs: vuint32 tracked  = {1000022,1000012,1000014,1000016,2000012,2000014,2000016,1000039,5100039,4000012,4000014,4000016,9900012,9900014,9900016,39,12,14,16}
+  partonicFinalState: bool tracked  = false
+  src: InputTag tracked  = genParticles
+  tausAsJets: bool tracked  = false
+ }
+
+Module: generator SIM
+ PSet id:2ef57ecc58913b0244df4e45bfdf43b7
+ products: {
+  GenEventInfoProduct_generator__SIM.
+  GenLumiInfoHeader_generator__SIM.
+  GenLumiInfoProduct_generator__SIM.
+  GenRunInfoProduct_generator__SIM.
+  edmHepMCProduct_generator_unsmeared_SIM.
+ }
+ parameters: {
+  @module_edm_type: string tracked  = 'EDFilter'
+  @module_label: string tracked  = 'generator'
+  @module_type: string tracked  = 'Pythia8GeneratorFilter'
+  comEnergy: double tracked  = 14000
+  PythiaParameters: PSet tracked = ({
+   parameterSets: vstring tracked  = {'pythia8CommonSettings','pythia8CP5Settings','processParameters'}
+   processParameters: vstring tracked  = {'SoftQCD:inelastic = on'}
+   pythia8CP5Settings: vstring tracked  = {'Tune:pp 14','Tune:ee 7','MultipartonInteractions:ecmPow=0.03344','PDF:pSet=20','MultipartonInteractions:bProfile=2','MultipartonInteractions:pT0Ref=1.41','MultipartonInteractions:coreRadius=0.7634','MultipartonInteractions:coreFraction=0.63','ColourReconnection:range=5.176','SigmaTotal:zeroAXB=off','SpaceShower:alphaSorder=2','SpaceShower:alphaSvalue=0.118','SigmaProcess:alphaSvalue=0.118','SigmaProcess:alphaSorder=2','MultipartonInteractions:alphaSvalue=0.118','MultipartonInteractions:alphaSorder=2','TimeShower:alphaSorder=2','TimeShower:alphaSvalue=0.118'}
+   pythia8CommonSettings: vstring tracked  = {'Tune:preferLHAPDF = 2','Main:timesAllowErrors = 10000','Check:epTolErr = 0.01','Beams:setProductionScalesFromLHEF = off','SLHA:keepSM = on','SLHA:minMassSM = 1000.','ParticleDecays:limitTau0 = on','ParticleDecays:tau0Max = 10','ParticleDecays:allowPhotonRadiation = on'}
+  })
+ }
+
+Module: generatorSmeared SIM
+ PSet id:98d8e2e94488f9c157776bbb8423b218
+ products: {
+  edmHepMCProduct_generatorSmeared__SIM.
+ }
+ parameters: {
+  @module_edm_type: string tracked  = 'EDProducer'
+  @module_label: string tracked  = 'generatorSmeared'
+  @module_type: string tracked  = 'GeneratorSmearedProducer'
+ }
+
+Module: randomEngineStateProducer SIM
+ PSet id:c6392fc595e0e4f9b0d2ce905b59cafd
+ products: {
+  edmRandomEngineStates_randomEngineStateProducer__SIM.
+  edmRandomEngineStates_randomEngineStateProducer_beginLumi_SIM.
+ }
+ parameters: {
+  @module_edm_type: string tracked  = 'EDProducer'
+  @module_label: string tracked  = 'randomEngineStateProducer'
+  @module_type: string tracked  = 'RandomEngineStateProducer'
+ }
+
+---------EventSetup---------
+ESSource: eegeom SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESSource'
+  @module_label: string tracked  = 'eegeom'
+  @module_type: string tracked  = 'EmptyESSource'
+  firstValid: vuint32 tracked  = {1}
+  iovIsRunNotTime: bool tracked  = true
+  recordName: string tracked  = 'EcalMappingRcd'
+ }
+ESSource: es_hardcode SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESSource'
+  @module_label: string tracked  = 'es_hardcode'
+  @module_type: string tracked  = 'HcalHardcodeCalibrations'
+  GainWidthsForTrigPrims: bool tracked  = true
+  HBRecalibration: bool tracked  = false
+  HBmeanenergies: FileInPath tracked  = V001 CalibCalorimetry/HcalPlugins/data/meanenergiesHB.txt 2 /src/CalibCalorimetry/HcalPlugins/data/meanenergiesHB.txt
+  HBreCalibCutoff: double tracked  = 100
+  HERecalibration: bool tracked  = false
+  HEmeanenergies: FileInPath tracked  = V001 CalibCalorimetry/HcalPlugins/data/meanenergiesHE.txt 2 /src/CalibCalorimetry/HcalPlugins/data/meanenergiesHE.txt
+  HEreCalibCutoff: double tracked  = 100
+  HFRecalibration: bool tracked  = false
+  appendToDataLabel: string tracked  = ''
+  iLumi: double tracked  = -1
+  killHE: bool tracked  = true
+  testHEPlan1: bool tracked  = false
+  testHFQIE10: bool tracked  = false
+  useHBUpgrade: bool tracked  = true
+  useHEUpgrade: bool tracked  = true
+  useHFUpgrade: bool tracked  = true
+  useHOUpgrade: bool tracked  = true
+  useIeta18depth1: bool tracked  = false
+  useLayer0Weight: bool tracked  = true
+  HFRecalParameterBlock: PSet tracked = ({
+   HFdepthOneParameterA: vdouble tracked  = {0.004123,0.00602,0.008201,0.010489,0.013379,0.016997,0.021464,0.027371,0.034195,0.044807,0.058939,0.125497}
+   HFdepthOneParameterB: vdouble tracked  = {-4e-06,-2e-06,0,4e-06,1.5e-05,2.6e-05,6.3e-05,8.4e-05,0.00016,0.000107,0.000425,0.000209}
+   HFdepthTwoParameterA: vdouble tracked  = {0.002861,0.004168,0.0064,0.008388,0.011601,0.014425,0.018633,0.023232,0.028274,0.035447,0.051579,0.086593}
+   HFdepthTwoParameterB: vdouble tracked  = {-2e-06,-0,-7e-06,-6e-06,-2e-06,1e-06,1.9e-05,3.1e-05,6.7e-05,1.2e-05,0.000157,-3e-06}
+  })
+  hb: PSet tracked = ({
+   darkCurrent: vdouble tracked  = {0}
+   doRadiationDamage: bool tracked  = false
+   gain: vdouble tracked  = {0.19}
+   gainWidth: vdouble tracked  = {0}
+   mcShape: int32 tracked  = 125
+   pedestal: double tracked  = 3.285
+   pedestalWidth: double tracked  = 0.8090000000000001
+   photoelectronsToAnalog: double tracked  = 0.3305
+   qieOffset: vdouble tracked  = {-0.49,1.8,7.2,37.9}
+   qieSlope: vdouble tracked  = {0.912,0.917,0.922,0.923}
+   qieType: int32 tracked  = 0
+   recoShape: int32 tracked  = 105
+   zsThreshold: int32 tracked  = 8
+  })
+  hbUpgrade: PSet tracked = ({
+   darkCurrent: vdouble tracked  = {0.01,0.015}
+   doRadiationDamage: bool tracked  = true
+   gain: vdouble tracked  = {0.0006252}
+   gainWidth: vdouble tracked  = {0}
+   mcShape: int32 tracked  = 206
+   pedestal: double tracked  = 17.3
+   pedestalWidth: double tracked  = 1.5
+   photoelectronsToAnalog: double tracked  = 40
+   qieOffset: vdouble tracked  = {0,0,0,0}
+   qieSlope: vdouble tracked  = {0.05376,0.05376,0.05376,0.05376}
+   qieType: int32 tracked  = 2
+   recoShape: int32 tracked  = 206
+   zsThreshold: int32 tracked  = 16
+   radiationDamage: PSet tracked = ({
+    depVsNeutrons: vdouble tracked  = {5.543e-10,8.012e-10}
+    depVsTemp: double tracked  = 0.0631
+    intlumiOffset: double tracked  = 150
+    intlumiToNeutrons: double tracked  = 367000000
+    temperatureBase: double tracked  = 20
+    temperatureNew: double tracked  = -5
+   })
+  })
+  he: PSet tracked = ({
+   darkCurrent: vdouble tracked  = {0}
+   doRadiationDamage: bool tracked  = false
+   gain: vdouble tracked  = {0.23}
+   gainWidth: vdouble tracked  = {0}
+   mcShape: int32 tracked  = 125
+   pedestal: double tracked  = 3.163
+   pedestalWidth: double tracked  = 0.9698
+   photoelectronsToAnalog: double tracked  = 0.3305
+   qieOffset: vdouble tracked  = {-0.38,2,7.6,39.6}
+   qieSlope: vdouble tracked  = {0.912,0.916,0.92,0.922}
+   qieType: int32 tracked  = 0
+   recoShape: int32 tracked  = 105
+   zsThreshold: int32 tracked  = 9
+  })
+  heUpgrade: PSet tracked = ({
+   darkCurrent: vdouble tracked  = {0.01,0.015}
+   doRadiationDamage: bool tracked  = true
+   gain: vdouble tracked  = {0.0006252}
+   gainWidth: vdouble tracked  = {0}
+   mcShape: int32 tracked  = 206
+   pedestal: double tracked  = 17.3
+   pedestalWidth: double tracked  = 1.5
+   photoelectronsToAnalog: double tracked  = 40
+   qieOffset: vdouble tracked  = {0,0,0,0}
+   qieSlope: vdouble tracked  = {0.05376,0.05376,0.05376,0.05376}
+   qieType: int32 tracked  = 2
+   recoShape: int32 tracked  = 206
+   zsThreshold: int32 tracked  = 16
+   radiationDamage: PSet tracked = ({
+    depVsNeutrons: vdouble tracked  = {5.543e-10,8.012e-10}
+    depVsTemp: double tracked  = 0.0631
+    intlumiOffset: double tracked  = 75
+    intlumiToNeutrons: double tracked  = 29200000
+    temperatureBase: double tracked  = 20
+    temperatureNew: double tracked  = 5
+   })
+  })
+  hf: PSet tracked = ({
+   darkCurrent: vdouble tracked  = {0}
+   doRadiationDamage: bool tracked  = false
+   gain: vdouble tracked  = {0.14,0.135}
+   gainWidth: vdouble tracked  = {0,0}
+   mcShape: int32 tracked  = 301
+   pedestal: double tracked  = 9.353999999999999
+   pedestalWidth: double tracked  = 2.516
+   photoelectronsToAnalog: double tracked  = 0
+   qieOffset: vdouble tracked  = {-0.87,1.4,7.8,-29.6}
+   qieSlope: vdouble tracked  = {0.359,0.358,0.36,0.367}
+   qieType: int32 tracked  = 0
+   recoShape: int32 tracked  = 301
+   zsThreshold: int32 tracked  = -9999
+  })
+  hfUpgrade: PSet tracked = ({
+   darkCurrent: vdouble tracked  = {0}
+   doRadiationDamage: bool tracked  = false
+   gain: vdouble tracked  = {0.14,0.135}
+   gainWidth: vdouble tracked  = {0,0}
+   mcShape: int32 tracked  = 301
+   pedestal: double tracked  = 13.33
+   pedestalWidth: double tracked  = 3.33
+   photoelectronsToAnalog: double tracked  = 0
+   qieOffset: vdouble tracked  = {0.0697,-0.7405,12.38,-671.9}
+   qieSlope: vdouble tracked  = {0.297,0.298,0.298,0.313}
+   qieType: int32 tracked  = 1
+   recoShape: int32 tracked  = 301
+   zsThreshold: int32 tracked  = -9999
+  })
+  ho: PSet tracked = ({
+   darkCurrent: vdouble tracked  = {0}
+   doRadiationDamage: bool tracked  = false
+   gain: vdouble tracked  = {0.006,0.008699999999999999}
+   gainWidth: vdouble tracked  = {0,0}
+   mcShape: int32 tracked  = 201
+   pedestal: double tracked  = 12.06
+   pedestalWidth: double tracked  = 0.6284999999999999
+   photoelectronsToAnalog: double tracked  = 4
+   qieOffset: vdouble tracked  = {-0.44,1.4,7.1,38.5}
+   qieSlope: vdouble tracked  = {0.907,0.915,0.92,0.921}
+   qieType: int32 tracked  = 0
+   recoShape: int32 tracked  = 201
+   zsThreshold: int32 tracked  = 24
+  })
+  SiPMCharacteristics: VPSet tracked = ({
+   {
+    crosstalk: double tracked  = 0
+    nonlin1: double tracked  = 1
+    nonlin2: double tracked  = 0
+    nonlin3: double tracked  = 0
+    pixels: int32 tracked  = 36000
+   },
+   {
+    crosstalk: double tracked  = 0
+    nonlin1: double tracked  = 1
+    nonlin2: double tracked  = 0
+    nonlin3: double tracked  = 0
+    pixels: int32 tracked  = 2500
+   },
+   {
+    crosstalk: double tracked  = 0.17
+    nonlin1: double tracked  = 1.00985
+    nonlin2: double tracked  = 7.840890000000001e-06
+    nonlin3: double tracked  = 2.86282e-10
+    pixels: int32 tracked  = 27370
+   },
+   {
+    crosstalk: double tracked  = 0.196
+    nonlin1: double tracked  = 1.00546
+    nonlin2: double tracked  = 6.40239e-06
+    nonlin3: double tracked  = 1.27011e-10
+    pixels: int32 tracked  = 38018
+   },
+   {
+    crosstalk: double tracked  = 0.17
+    nonlin1: double tracked  = 1.00985
+    nonlin2: double tracked  = 7.840890000000001e-06
+    nonlin3: double tracked  = 2.86282e-10
+    pixels: int32 tracked  = 27370
+   },
+   {
+    crosstalk: double tracked  = 0.196
+    nonlin1: double tracked  = 1.00546
+    nonlin2: double tracked  = 6.40239e-06
+    nonlin3: double tracked  = 1.27011e-10
+    pixels: int32 tracked  = 38018
+   },
+   {
+    crosstalk: double tracked  = 0
+    nonlin1: double tracked  = 1
+    nonlin2: double tracked  = 0
+    nonlin3: double tracked  = 0
+    pixels: int32 tracked  = 0
+   }
+  })
+ }
+ESSource: HcalTimeSlewEP SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESSource'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'HcalTimeSlewEP'
+  appendToDataLabel: string tracked  = 'HBHE'
+  timeSlewParametersM2: VPSet tracked = ({
+   {
+    slope: double tracked  = -3.178648
+    tmax: double tracked  = 16
+    tzero: double tracked  = 23.960177
+   },
+   {
+    slope: double tracked  = -1.5610227
+    tmax: double tracked  = 10
+    tzero: double tracked  = 11.977461
+   },
+   {
+    slope: double tracked  = -1.075824
+    tmax: double tracked  = 6.25
+    tzero: double tracked  = 9.109693999999999
+   }
+  })
+  timeSlewParametersM3: VPSet tracked = ({
+   {
+    cap: double tracked  = 6
+    tspar0: double tracked  = 12.2999
+    tspar0_siPM: double tracked  = 0
+    tspar1: double tracked  = -2.19142
+    tspar1_siPM: double tracked  = 0
+    tspar2: double tracked  = 0
+    tspar2_siPM: double tracked  = 0
+   },
+   {
+    cap: double tracked  = 6
+    tspar0: double tracked  = 15.5
+    tspar0_siPM: double tracked  = 0
+    tspar1: double tracked  = -3.2
+    tspar1_siPM: double tracked  = 0
+    tspar2: double tracked  = 32
+    tspar2_siPM: double tracked  = 0
+   },
+   {
+    cap: double tracked  = 6
+    tspar0: double tracked  = 12.2999
+    tspar0_siPM: double tracked  = 0
+    tspar1: double tracked  = -2.19142
+    tspar1_siPM: double tracked  = 0
+    tspar2: double tracked  = 0
+    tspar2_siPM: double tracked  = 0
+   },
+   {
+    cap: double tracked  = 6
+    tspar0: double tracked  = 12.2999
+    tspar0_siPM: double tracked  = 0
+    tspar1: double tracked  = -2.19142
+    tspar1_siPM: double tracked  = 0
+    tspar2: double tracked  = 0
+    tspar2_siPM: double tracked  = 0
+   }
+  })
+ }
+ESSource: HepPDTESSource SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESSource'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'HepPDTESSource'
+  pdtFileName: FileInPath tracked  = V001 SimGeneral/HepPDTESSource/data/pythiaparticle.tbl 2 /src/SimGeneral/HepPDTESSource/data/pythiaparticle.tbl
+ }
+ESSource: GlobalTag SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESSource'
+  @module_label: string tracked  = 'GlobalTag'
+  @module_type: string tracked  = 'PoolDBESSource'
+  connect: string tracked  = 'frontier://FrontierProd/CMS_CONDITIONS'
+  globaltag: string tracked  = '103X_upgrade2023_realistic_v2'
+  snapshotTime: string tracked  = ''
+  DBParameters: PSet tracked = ({
+  })
+  toGet: VPSet tracked = ({
+  })
+ }
+ESSource: siPixelFakeGainOfflineESSource SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESSource'
+  @module_label: string tracked  = 'siPixelFakeGainOfflineESSource'
+  @module_type: string tracked  = 'SiPixelFakeGainOfflineESSource'
+  file: FileInPath tracked  = V001 SLHCUpgradeSimulations/Geometry/data/PhaseII/Tilted/EmptyPixelSkimmedGeometry.txt 2 /src/SLHCUpgradeSimulations/Geometry/data/PhaseII/Tilted/EmptyPixelSkimmedGeometry.txt
+ }
+ESSource: siPixelFakeLorentzAngleESSource SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESSource'
+  @module_label: string tracked  = 'siPixelFakeLorentzAngleESSource'
+  @module_type: string tracked  = 'SiPixelFakeLorentzAngleESSource'
+  file: FileInPath tracked  = V001 SLHCUpgradeSimulations/Geometry/data/PhaseII/Tilted/PixelSkimmedGeometryT6.txt 2 /external/slc6_amd64_gcc700/data/SLHCUpgradeSimulations/Geometry/data/PhaseII/Tilted/PixelSkimmedGeometryT6.txt
+ }
+ESSource: XMLIdealGeometryESSource SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESSource'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'XMLIdealGeometryESSource'
+  geomXMLFiles: vstring tracked  = {'Geometry/CMSCommonData/data/materials.xml','Geometry/CMSCommonData/data/rotations.xml','Geometry/CMSCommonData/data/extend/v2/cmsextent.xml','Geometry/CMSCommonData/data/cms/2023/v1/cms.xml','Geometry/CMSCommonData/data/eta3/etaMax.xml','Geometry/CMSCommonData/data/cmsMother.xml','Geometry/CMSCommonData/data/cmsTracker.xml','Geometry/CMSCommonData/data/caloBase/2023/v1/caloBase.xml','Geometry/CMSCommonData/data/cmsCalo.xml','Geometry/CMSCommonData/data/muonBase/2023/v2/muonBase.xml','Geometry/CMSCommonData/data/cmsMuon.xml','Geometry/CMSCommonData/data/mgnt.xml','Geometry/CMSCommonData/data/beampipe/2023/v1/beampipe.xml','Geometry/CMSCommonData/data/cmsBeam/2023/v1/cmsBeam.xml','Geometry/CMSCommonData/data/muonMB.xml','Geometry/CMSCommonData/data/muonMagnet.xml','Geometry/CMSCommonData/data/cavern/2017/v2/cavern.xml','Geometry/CMSCommonData/data/cavernData/2017/v1/cavernData.xml','Geometry/CMSCommonData/data/cavernFloor/2017/v1/cavernFloor.xml','Geometry/TrackerCommonData/data/PhaseII/trackerParameters.xml','Geometry/TrackerCommonData/data/pixfwdCommon.xml','Geometry/TrackerCommonData/data/PhaseII/TiltedTracker404/pixfwd.xml','Geometry/TrackerCommonData/data/PhaseII/TiltedTracker404/pixbar.xml','Geometry/TrackerCommonData/data/trackermaterial.xml','Geometry/TrackerCommonData/data/PhaseII/TiltedTracker404/otst.xml','Geometry/TrackerCommonData/data/PhaseII/TiltedTracker404/tracker.xml','Geometry/TrackerCommonData/data/PhaseII/TiltedTracker404/pixel.xml','Geometry/TrackerCommonData/data/PhaseII/TiltedTracker404/trackerbar.xml','Geometry/TrackerCommonData/data/PhaseII/TiltedTracker404/trackerfwd.xml','Geometry/TrackerCommonData/data/PhaseII/TiltedTracker404/trackerStructureTopology.xml','Geometry/TrackerCommonData/data/PhaseII/TiltedTracker404/pixelStructureTopology.xml','Geometry/TrackerSimData/data/PhaseII/TiltedTracker404/trackersens.xml','Geometry/TrackerSimData/data/PhaseII/TiltedTracker404/pixelsens.xml','Geometry/TrackerRecoData/data/PhaseII/TiltedTracker404/trackerRecoMaterial.xml','Geometry/TrackerSimData/data/PhaseII/TiltedTracker404/trackerProdCuts.xml','Geometry/TrackerSimData/data/PhaseII/TiltedTracker404/pixelProdCuts.xml','Geometry/TrackerSimData/data/trackerProdCutsBEAM.xml','Geometry/EcalCommonData/data/ectkcable.xml','Geometry/EcalCommonData/data/PhaseII/eregalgo.xml','Geometry/EcalCommonData/data/ebalgo.xml','Geometry/EcalCommonData/data/ebcon.xml','Geometry/EcalCommonData/data/ebrot.xml','Geometry/EcalCommonData/data/eecon.xml','Geometry/EcalCommonData/data/PhaseII/escon.xml','Geometry/EcalCommonData/data/PhaseII/esalgo.xml','Geometry/HcalCommonData/data/hcalrotations.xml','Geometry/HcalCommonData/data/hcal/NoHE/hcalalgo.xml','Geometry/HcalCommonData/data/hcalbarrelalgo.xml','Geometry/HcalCommonData/data/hcalouteralgo.xml','Geometry/HcalCommonData/data/hcalforwardalgo.xml','Geometry/HcalCommonData/data/hcalSimNumbering/NoHE/hcalSimNumbering.xml','Geometry/HcalCommonData/data/hcalRecNumbering/NoHE/hcalRecNumbering.xml','Geometry/HcalCommonData/data/average/hcalforwardmaterial.xml','Geometry/HGCalCommonData/data/hgcalMaterial/v1/hgcalMaterial.xml','Geometry/HGCalCommonData/data/hgcal/v9/hgcal.xml','Geometry/HGCalCommonData/data/hgcalEE/v9/hgcalEE.xml','Geometry/HGCalCommonData/data/hgcalHEsil/v9/hgcalHEsil.xml','Geometry/HGCalCommonData/data/hgcalHEmix/v9/hgcalHEmix.xml','Geometry/HGCalCommonData/data/hgcalwafer/v9/hgcalwafer.xml','Geometry/HGCalCommonData/data/hgcalcell/v9/hgcalcell.xml','Geometry/HGCalCommonData/data/hgcalCons/v9/hgcalCons.xml','Geometry/MuonCommonData/data/mbCommon/2017/v2/mbCommon.xml','Geometry/MuonCommonData/data/mb1/2015/v1/mb1.xml','Geometry/MuonCommonData/data/mb2/2015/v1/mb2.xml','Geometry/MuonCommonData/data/mb3/2015/v1/mb3.xml','Geometry/MuonCommonData/data/mb4/2015/v1/mb4.xml','Geometry/MuonCommonData/data/design/muonYoke.xml','Geometry/MuonCommonData/data/mf/2023/v2/mf.xml','Geometry/MuonCommonData/data/rpcf/2023/v1/rpcf.xml','Geometry/MuonCommonData/data/gemf/TDR_BaseLine/gemf.xml','Geometry/MuonCommonData/data/gem11/TDR_BaseLine/gem11.xml','Geometry/MuonCommonData/data/gem21/TDR_Dev/gem21.xml','Geometry/MuonCommonData/data/csc/2015/v1/csc.xml','Geometry/MuonCommonData/data/mfshield/2023/v1/mfshield.xml','Geometry/MuonCommonData/data/me0/TDR_Dev/me0.xml','Geometry/ForwardCommonData/data/forwardshield/2017/v1/forwardshield.xml','Geometry/ForwardCommonData/data/brmrotations.xml','Geometry/ForwardCommonData/data/PostLS2/brm.xml','Geometry/ForwardCommonData/data/zdcmaterials.xml','Geometry/ForwardCommonData/data/lumimaterials.xml','Geometry/ForwardCommonData/data/zdcrotations.xml','Geometry/ForwardCommonData/data/lumirotations.xml','Geometry/ForwardCommonData/data/zdc.xml','Geometry/ForwardCommonData/data/zdclumi.xml','Geometry/ForwardCommonData/data/cmszdc.xml','Geometry/MTDCommonData/data/btl.xml','Geometry/MTDCommonData/data/etl.xml','Geometry/MTDCommonData/data/CrystalBarZflat/mtd.xml','Geometry/MuonCommonData/data/muonNumbering/TDR_DeV/muonNumbering.xml','Geometry/EcalSimData/data/PhaseII/ecalsens.xml','Geometry/HcalCommonData/data/hcalsens/NoHE/hcalsenspmf.xml','Geometry/HcalSimData/data/hf.xml','Geometry/HcalSimData/data/hfpmt.xml','Geometry/HcalSimData/data/hffibrebundle.xml','Geometry/HcalSimData/data/CaloUtil.xml','Geometry/HGCalSimData/data/hgcsensv9.xml','Geometry/MuonSimData/data/PhaseII/ME0EtaPart/muonSens.xml','Geometry/DTGeometryBuilder/data/dtSpecsFilter.xml','Geometry/CSCGeometryBuilder/data/cscSpecsFilter.xml','Geometry/CSCGeometryBuilder/data/cscSpecs.xml','Geometry/RPCGeometryBuilder/data/PhaseII/RPCSpecs.xml','Geometry/GEMGeometryBuilder/data/v7/GEMSpecsFilter.xml','Geometry/GEMGeometryBuilder/data/v7/GEMSpecs.xml','Geometry/ForwardCommonData/data/brmsens.xml','Geometry/ForwardSimData/data/zdcsens.xml','Geometry/MTDSimData/data/CrystalBarZflat/mtdsens.xml','Geometry/HcalSimData/data/HcalProdCuts.xml','Geometry/EcalSimData/data/EcalProdCuts.xml','Geometry/HGCalSimData/data/hgcProdCutsv9.xml','Geometry/MuonSimData/data/PhaseII/muonProdCuts.xml','Geometry/ForwardSimData/data/zdcProdCuts.xml','Geometry/ForwardSimData/data/ForwardShieldProdCuts.xml','Geometry/MTDSimData/data/CrystalBarZflat/mtdProdCuts.xml','Geometry/CMSCommonData/data/FieldParameters.xml'}
+  rootNodeName: string tracked  = 'cms:OCMS'
+ }
+ESModule: ParabolicParametrizedMagneticFieldProducer SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'ParabolicParametrizedMagneticFieldProducer'
+  @module_type: string tracked  = 'AutoParametrizedMagneticFieldProducer'
+  valueOverride: int32 tracked  = -1
+  version: string tracked  = 'Parabolic'
+ }
+ESModule: CSCGeometryESModule SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'CSCGeometryESModule'
+  alignmentsLabel: string tracked  = ''
+  appendToDataLabel: string tracked  = ''
+  applyAlignment: bool tracked  = true
+  useCentreTIOffsets: bool tracked  = false
+  useDDD: bool tracked  = true
+  useGangedStripsInME1a: bool tracked  = false
+  useOnlyWiresInME1a: bool tracked  = false
+  useRealWireGeometry: bool tracked  = true
+ }
+ESModule: idealForDigiCSCGeometry SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'idealForDigiCSCGeometry'
+  @module_type: string tracked  = 'CSCGeometryESModule'
+  alignmentsLabel: string tracked  = 'fakeForIdeal'
+  appendToDataLabel: string tracked  = 'idealForDigi'
+  applyAlignment: bool tracked  = false
+  useCentreTIOffsets: bool tracked  = false
+  useDDD: bool tracked  = true
+  useGangedStripsInME1a: bool tracked  = false
+  useOnlyWiresInME1a: bool tracked  = false
+  useRealWireGeometry: bool tracked  = true
+ }
+ESModule: CaloGeometryBuilder SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'CaloGeometryBuilder'
+  SelectedCalos: vstring tracked  = {'HCAL','ZDC','EcalBarrel','TOWER','HGCalEESensitive','HGCalHESiliconSensitive','HGCalHEScintillatorSensitive'}
+ }
+ESModule: CaloTopologyBuilder SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'CaloTopologyBuilder'
+ }
+ESModule: CaloTowerHardcodeGeometryEP SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'CaloTowerHardcodeGeometryEP'
+ }
+ESModule: CaloTowerTopologyEP SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'CaloTowerTopologyEP'
+  appendToDataLabel: string tracked  = ''
+ }
+ESModule: CastorDbProducer SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'CastorDbProducer'
+  appendToDataLabel: string tracked  = ''
+ }
+ESModule: CastorHardcodeGeometryEP SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'CastorHardcodeGeometryEP'
+ }
+ESModule: DTGeometryESModule SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'DTGeometryESModule'
+  alignmentsLabel: string tracked  = ''
+  appendToDataLabel: string tracked  = ''
+  applyAlignment: bool tracked  = true
+  fromDDD: bool tracked  = true
+ }
+ESModule: idealForDigiDTGeometry SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'idealForDigiDTGeometry'
+  @module_type: string tracked  = 'DTGeometryESModule'
+  alignmentsLabel: string tracked  = 'fakeForIdeal'
+  appendToDataLabel: string tracked  = 'idealForDigi'
+  applyAlignment: bool tracked  = false
+  fromDDD: bool tracked  = true
+ }
+ESModule: EcalBarrelGeometryEP SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'EcalBarrelGeometryEP'
+  applyAlignment: bool tracked  = false
+ }
+ESModule: EcalElectronicsMappingBuilder SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'EcalElectronicsMappingBuilder'
+ }
+ESModule: EcalLaserCorrectionService SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'EcalLaserCorrectionService'
+ }
+ESModule: EcalTrigTowerConstituentsMapBuilder SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'EcalTrigTowerConstituentsMapBuilder'
+ }
+ESModule: fakeForIdealAlignment SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'fakeForIdealAlignment'
+  @module_type: string tracked  = 'FakeAlignmentProducer'
+  appendToDataLabel: string tracked  = 'fakeForIdeal'
+ }
+ESModule: GEMGeometryESModule SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'GEMGeometryESModule'
+  useDDD: bool tracked  = true
+ }
+ESModule: GlobalTrackingGeometryESProducer SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'GlobalTrackingGeometryESProducer'
+ }
+ESModule: HGCalEEGeometryESProducer SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'HGCalEEGeometryESProducer'
+  @module_type: string tracked  = 'HGCalGeometryESProducer'
+ }
+ESModule: HGCalHESciGeometryESProducer SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'HGCalHESciGeometryESProducer'
+  @module_type: string tracked  = 'HGCalGeometryESProducer'
+ }
+ESModule: HGCalHESilGeometryESProducer SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'HGCalHESilGeometryESProducer'
+  @module_type: string tracked  = 'HGCalGeometryESProducer'
+ }
+ESModule: hgcalEENumberingInitialize SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'hgcalEENumberingInitialize'
+  @module_type: string tracked  = 'HGCalNumberingInitialization'
+ }
+ESModule: hgcalHEScNumberingInitialize SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'hgcalHEScNumberingInitialize'
+  @module_type: string tracked  = 'HGCalNumberingInitialization'
+ }
+ESModule: hgcalHESiNumberingInitialize SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'hgcalHESiNumberingInitialize'
+  @module_type: string tracked  = 'HGCalNumberingInitialization'
+ }
+ESModule: hgcalEEParametersInitialize SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'hgcalEEParametersInitialize'
+  @module_type: string tracked  = 'HGCalParametersESModule'
+ }
+ESModule: hgcalHEScParametersInitialize SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'hgcalHEScParametersInitialize'
+  @module_type: string tracked  = 'HGCalParametersESModule'
+ }
+ESModule: hgcalHESiParametersInitialize SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'hgcalHESiParametersInitialize'
+  @module_type: string tracked  = 'HGCalParametersESModule'
+ }
+ESModule: HGCalEETopologyBuilder SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'HGCalEETopologyBuilder'
+  @module_type: string tracked  = 'HGCalTopologyBuilder'
+  Name: string tracked  = 'HGCalEESensitive'
+  Type: int32 tracked  = 8
+ }
+ESModule: HGCalHESciTopologyBuilder SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'HGCalHESciTopologyBuilder'
+  @module_type: string tracked  = 'HGCalTopologyBuilder'
+  Name: string tracked  = 'HGCalHEScintillatorSensitive'
+  Type: int32 tracked  = 10
+ }
+ESModule: HGCalHESilTopologyBuilder SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'HGCalHESilTopologyBuilder'
+  @module_type: string tracked  = 'HGCalTopologyBuilder'
+  Name: string tracked  = 'HGCalHESiliconSensitive'
+  Type: int32 tracked  = 9
+ }
+ESModule: hcalDDDRecConstants SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'hcalDDDRecConstants'
+  @module_type: string tracked  = 'HcalDDDRecConstantsESModule'
+  appendToDataLabel: string tracked  = ''
+ }
+ESModule: hcalDDDSimConstants SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'hcalDDDSimConstants'
+  @module_type: string tracked  = 'HcalDDDSimConstantsESModule'
+  appendToDataLabel: string tracked  = ''
+ }
+ESModule: hcal_db_producer SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'hcal_db_producer'
+  @module_type: string tracked  = 'HcalDbProducer'
+ }
+ESModule: HcalHardcodeGeometryEP SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'HcalHardcodeGeometryEP'
+  UseOldLoader: bool tracked  = false
+ }
+ESModule: hcalParameters SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'hcalParameters'
+  @module_type: string tracked  = 'HcalParametersESModule'
+  appendToDataLabel: string tracked  = ''
+ }
+ESModule: hcalTopologyIdeal SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'hcalTopologyIdeal'
+  @module_type: string tracked  = 'HcalTopologyIdealEP'
+  appendToDataLabel: string tracked  = ''
+ }
+ESModule: ME0GeometryESModule SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'ME0GeometryESModule'
+  use10EtaPart: bool tracked  = true
+  useDDD: bool tracked  = true
+ }
+ESModule: mtdDetLayerGeometry SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'mtdDetLayerGeometry'
+  @module_type: string tracked  = 'MTDDetLayerGeometryESProducer'
+ }
+ESModule: idealForDigiMTDGeometry SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'idealForDigiMTDGeometry'
+  @module_type: string tracked  = 'MTDDigiGeometryESModule'
+  alignmentsLabel: string tracked  = 'fakeForIdeal'
+  appendToDataLabel: string tracked  = 'idealForDigi'
+  applyAlignment: bool tracked  = false
+  fromDDD: bool tracked  = true
+ }
+ESModule: mtdGeometry SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'mtdGeometry'
+  @module_type: string tracked  = 'MTDDigiGeometryESModule'
+  alignmentsLabel: string tracked  = ''
+  appendToDataLabel: string tracked  = ''
+  applyAlignment: bool tracked  = false
+  fromDDD: bool tracked  = true
+ }
+ESModule: mtdNumberingGeometry SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'mtdNumberingGeometry'
+  @module_type: string tracked  = 'MTDGeometricTimingDetESModule'
+  appendToDataLabel: string tracked  = ''
+  fromDDD: bool tracked  = true
+ }
+ESModule: mtdParameters SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'mtdParameters'
+  @module_type: string tracked  = 'MTDParametersESModule'
+  appendToDataLabel: string tracked  = ''
+  vpars: vint32 tracked  = {+4,+4,+4,+24}
+  vitems: VPSet tracked = ({
+   {
+    subdetPars: vint32 tracked  = {+22,+24,+16,+10,+1,+3,+63,+63,+4,+4,+4,+1}
+   },
+   {
+    subdetPars: vint32 tracked  = {+22,+24,+16,+7,+1,+3,+63,+255,+24,+4,+2,+8}
+   }
+  })
+ }
+ESModule: mtdTopology SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'mtdTopology'
+  @module_type: string tracked  = 'MTDTopologyEP'
+  appendToDataLabel: string tracked  = ''
+ }
+ESModule: MuonDetLayerGeometryESProducer SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'MuonDetLayerGeometryESProducer'
+ }
+ESModule: MuonNumberingInitialization SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'MuonNumberingInitialization'
+ }
+ESModule: RPCGeometryESModule SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'RPCGeometryESModule'
+ }
+ESModule: siPixelQualityESProducer SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'siPixelQualityESProducer'
+  @module_type: string tracked  = 'SiPixelQualityESProducer'
+  ListOfRecordToMerge: VPSet tracked = ({
+   {
+    record: string tracked  = 'SiPixelQualityFromDbRcd'
+    tag: string tracked  = ''
+   },
+   {
+    record: string tracked  = 'SiPixelDetVOffRcd'
+    tag: string tracked  = ''
+   }
+  })
+ }
+ESModule: siStripBackPlaneCorrectionDepESProducer SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'siStripBackPlaneCorrectionDepESProducer'
+  @module_type: string tracked  = 'SiStripBackPlaneCorrectionDepESProducer'
+  BackPlaneCorrectionDeconvMode: PSet tracked = ({
+   record: string tracked  = 'SiStripBackPlaneCorrectionRcd'
+  })
+  BackPlaneCorrectionPeakMode: PSet tracked = ({
+   record: string tracked  = 'SiStripBackPlaneCorrectionRcd'
+  })
+  LatencyRecord: PSet tracked = ({
+   record: string tracked  = 'SiStripLatencyRcd'
+  })
+ }
+ESModule: sistripconn SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'sistripconn'
+  @module_type: string tracked  = 'SiStripConnectivity'
+ }
+ESModule: siStripGainESProducer SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'siStripGainESProducer'
+  @module_type: string tracked  = 'SiStripGainESProducer'
+  AutomaticNormalization: bool tracked  = false
+  appendToDataLabel: string tracked  = ''
+  APVGain: VPSet tracked = ({
+   {
+    Record: string tracked  = 'SiStripApvGainRcd'
+   },
+   {
+    Record: string tracked  = 'SiStripApvGain2Rcd'
+   }
+  })
+ }
+ESModule: siStripGainSimESProducer SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'siStripGainSimESProducer'
+  @module_type: string tracked  = 'SiStripGainSimESProducer'
+  AutomaticNormalization: bool tracked  = false
+  appendToDataLabel: string tracked  = ''
+  APVGain: VPSet tracked = ({
+   {
+    Record: string tracked  = 'SiStripApvGainSimRcd'
+   }
+  })
+ }
+ESModule: siStripLorentzAngleDepESProducer SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'siStripLorentzAngleDepESProducer'
+  @module_type: string tracked  = 'SiStripLorentzAngleDepESProducer'
+  LatencyRecord: PSet tracked = ({
+   record: string tracked  = 'SiStripLatencyRcd'
+  })
+  LorentzAngleDeconvMode: PSet tracked = ({
+   record: string tracked  = 'SiStripLorentzAngleRcd'
+  })
+  LorentzAnglePeakMode: PSet tracked = ({
+   record: string tracked  = 'SiStripLorentzAngleRcd'
+  })
+ }
+ESModule: siStripQualityESProducer SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'siStripQualityESProducer'
+  @module_type: string tracked  = 'SiStripQualityESProducer'
+  PrintDebugOutput: bool tracked  = false
+  ReduceGranularity: bool tracked  = false
+  ThresholdForReducedGranularity: double tracked  = 0.3
+  UseEmptyRunInfo: bool tracked  = false
+  appendToDataLabel: string tracked  = ''
+  ListOfRecordToMerge: VPSet tracked = ({
+   {
+    record: string tracked  = 'SiStripDetVOffRcd'
+    tag: string tracked  = ''
+   },
+   {
+    record: string tracked  = 'SiStripDetCablingRcd'
+    tag: string tracked  = ''
+   },
+   {
+    record: string tracked  = 'RunInfoRcd'
+    tag: string tracked  = ''
+   },
+   {
+    record: string tracked  = 'SiStripBadChannelRcd'
+    tag: string tracked  = ''
+   },
+   {
+    record: string tracked  = 'SiStripBadFiberRcd'
+    tag: string tracked  = ''
+   },
+   {
+    record: string tracked  = 'SiStripBadModuleRcd'
+    tag: string tracked  = ''
+   },
+   {
+    record: string tracked  = 'SiStripBadStripRcd'
+    tag: string tracked  = ''
+   }
+  })
+ }
+ESModule: SiStripRecHitMatcherESProducer SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'SiStripRecHitMatcherESProducer'
+  ComponentName: string tracked  = 'StandardMatcher'
+  NSigmaInside: double tracked  = 3
+  PreFilter: bool tracked  = false
+ }
+ESModule: StripCPEfromTrackAngleESProducer SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'StripCPEfromTrackAngleESProducer'
+  @module_type: string tracked  = 'StripCPEESProducer'
+  ComponentName: string tracked  = 'StripCPEfromTrackAngle'
+  ComponentType: string tracked  = 'StripCPEfromTrackAngle'
+  parameters: PSet tracked = ({
+   mLC_P0: double tracked  = -0.326
+   mLC_P1: double tracked  = 0.618
+   mLC_P2: double tracked  = 0.3
+   mTEC_P0: double tracked  = -1.885
+   mTEC_P1: double tracked  = 0.471
+   mTIB_P0: double tracked  = -0.742
+   mTIB_P1: double tracked  = 0.202
+   mTID_P0: double tracked  = -1.427
+   mTID_P1: double tracked  = 0.433
+   mTOB_P0: double tracked  = -1.026
+   mTOB_P1: double tracked  = 0.253
+   maxChgOneMIP: double tracked  = 6000
+   useLegacyError: bool tracked  = false
+  })
+ }
+ESModule: stripCPEESProducer SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'stripCPEESProducer'
+  @module_type: string tracked  = 'StripCPEESProducer'
+  ComponentName: string tracked  = 'stripCPE'
+  ComponentType: string tracked  = 'SimpleStripCPE'
+  parameters: PSet tracked = ({
+  })
+ }
+ESModule: idealForDigiTrackerGeometry SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'idealForDigiTrackerGeometry'
+  @module_type: string tracked  = 'TrackerDigiGeometryESModule'
+  alignmentsLabel: string tracked  = 'fakeForIdeal'
+  appendToDataLabel: string tracked  = 'idealForDigi'
+  applyAlignment: bool tracked  = false
+  fromDDD: bool tracked  = true
+ }
+ESModule: trackerGeometry SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'trackerGeometry'
+  @module_type: string tracked  = 'TrackerDigiGeometryESModule'
+  alignmentsLabel: string tracked  = ''
+  appendToDataLabel: string tracked  = ''
+  applyAlignment: bool tracked  = false
+  fromDDD: bool tracked  = true
+ }
+ESModule: trackerNumberingGeometry SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'trackerNumberingGeometry'
+  @module_type: string tracked  = 'TrackerGeometricDetESModule'
+  appendToDataLabel: string tracked  = ''
+  fromDDD: bool tracked  = true
+ }
+ESModule: trackerParameters SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'trackerParameters'
+  @module_type: string tracked  = 'TrackerParametersESModule'
+  appendToDataLabel: string tracked  = ''
+ }
+ESModule: TrackerRecoGeometryESProducer SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'TrackerRecoGeometryESProducer'
+ }
+ESModule: trackerTopology SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'trackerTopology'
+  @module_type: string tracked  = 'TrackerTopologyEP'
+  appendToDataLabel: string tracked  = ''
+ }
+ESModule: VolumeBasedMagneticFieldESProducer SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = 'VolumeBasedMagneticFieldESProducer'
+  @module_type: string tracked  = 'VolumeBasedMagneticFieldESProducerFromDB'
+  valueOverride: int32 tracked  = -1
+ }
+ESModule: ZdcHardcodeGeometryEP SIM
+ parameters: {
+  @module_edm_type: string tracked  = 'ESProducer'
+  @module_label: string tracked  = ''
+  @module_type: string tracked  = 'ZdcHardcodeGeometryEP'
+ }
