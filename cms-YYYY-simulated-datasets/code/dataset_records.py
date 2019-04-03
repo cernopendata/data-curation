@@ -221,7 +221,7 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir):
     if cmsdriver_reco_path:
         with open(cmsdriver_reco_path) as myfile:
             configuration_files = {}
-            configuration_files['type'] = 'cmsDriver script'
+            configuration_files['title'] = 'Production script'
             configuration_files['script'] = myfile.read()
             step['configuration_files'].append(configuration_files)
 
@@ -233,7 +233,7 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir):
             generator_text = ''
             proc = get_process(afile, conf_dir)
             configuration_files = {}
-            configuration_files['title'] = 'conffile'
+            configuration_files['title'] = 'Configuration file'
             configuration_files['process'] = proc
             configuration_files['cms_confdb_id'] = config_id
 
@@ -271,7 +271,7 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir):
         if gen_fragment:
             for url in gen_fragment:
                 configuration_files = {}
-                configuration_files['title'] = 'Genfragment'
+                configuration_files['title'] = 'Generator parameters'
                 configuration_files['url'] = url
                 try:
                     script = urlopen(url).read()  # FIXME get rid of error on 404
@@ -376,7 +376,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     rec['license'] = {}
     rec['license']['attribution'] = 'CC0'
 
-    rec['generation'] = get_all_generator_text(dataset_full_name, das_dir, mcm_dir, conffiles_dir)
+    rec['methodology'] = get_all_generator_text(dataset_full_name, das_dir, mcm_dir, conffiles_dir)
 
     rec['note'] = {}
     rec['note']['description'] = 'These simulated datasets correspond to the collision data collected by the CMS experiment in ' + year_created + '.'
