@@ -351,6 +351,9 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     rec['distribution']['number_events'] = get_number_events(dataset_full_name, das_dir)
     rec['distribution']['number_files'] = get_number_files(dataset_full_name, das_dir)
     rec['distribution']['size'] = get_size(dataset_full_name, das_dir)
+    
+    if not dataset_full_name in doi_info:
+        rec['distribution']['availability'] = 'ondemand'
 
     doi = get_doi(dataset_full_name, doi_info)
     if doi:
