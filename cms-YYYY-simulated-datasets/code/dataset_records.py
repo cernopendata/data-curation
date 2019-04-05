@@ -199,10 +199,7 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir):
     # FIXME OMG this function is ugly...
 
     info = {}
-    info["description"] = "<p>These data were generated in several steps:</p>"
-    info["description"] += """<p><strong>Note</strong><br>
-                              To get the exact LHE and generator's parameters, see <a href=\"/docs/cms-mc-production-overview\">CMS Monte Carlo production Overview</a></p>
-                           """
+    info["description"] = "<p>These data were generated in several steps (see also <a href=\"/docs/cms-mc-production-overview\">CMS Monte Carlo Production Overview</a>):</p>"
     info["steps"] = []
 
     step = {}
@@ -263,7 +260,7 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir):
         if cmsdriver_path:
             with open(cmsdriver_path) as myfile:
                 configuration_files = {}
-                configuration_files['title'] = 'cmsDriver script'
+                configuration_files['title'] = 'Production script'
                 configuration_files['script'] = myfile.read()
                 step['configuration_files'].append(configuration_files)
 
@@ -342,7 +339,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
         rec['cross_section']['match_efficiency:'] = generator_parameters.get('match_efficiency', None)
         rec['cross_section']['match_efficiency error:'] = generator_parameters.get('match_efficiency_error', None)
 
-    rec['date_created'] = year_created
+    rec['date_created'] = [year_created]
     rec['date_published'] = year_published
     rec['date_reprocessed'] = year_created
 
