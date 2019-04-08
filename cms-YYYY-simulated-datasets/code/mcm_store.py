@@ -16,6 +16,12 @@ def mcm_downloader(prepid, dataset, mcm_dir, das_dir):
 
     cmd = "curl -s -k https://cms-pdmv.cern.ch/mcm/public/restapi/requests/{query}/{prepId}"
 
+    # As prep_id in DAS for some datasets can be found with underscores and MCM
+    # takes without underscores, we need to process prep_id removing all of them
+    if "_" in prepid:
+        print("Found some underscores in prep_id: " + prepid + ", removing...")
+        prepid = prepid.replace("_", "")
+
     mcm_dict = subprocess.run(cmd.format(query="get", prepId=prepid),
                               shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     mcm_script = subprocess.run(cmd.format(query="get_setup", prepId=prepid),
