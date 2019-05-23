@@ -24,7 +24,8 @@ from utils import get_from_deep_json, \
                   get_doi
 from das_json_store import get_das_store_json, \
                            get_generator_parameters, \
-                           get_parent_dataset
+                           get_parent_dataset, \
+                           get_cmssw_version_from_das
 from eos_store import XROOTD_URI_BASE, \
                       get_dataset_index_file_base, \
                       get_dataset_location
@@ -34,7 +35,8 @@ from mcm_store import get_mcm_dict, \
                       get_generator_name, \
                       get_dataset_energy, \
                       get_cmsDriver_script, \
-                      get_cmssw_version
+                      get_cmssw_version_from_mcm, \
+                      get_parent_dataset_from_mcm
 from categorisation import guess_title_category
 
 
@@ -137,123 +139,56 @@ def get_process(afile, conf_dir):
     with open(conf_dir + afile, 'r') as myfile:
         content = myfile.read()
     process = ''
-    m = re.search(r"process = cms.Process\(\s?['\"]([A-Z]+)['\"]\s?\)", content)
+    m = re.search(r"process = cms.Process\(\s?['\"]([A-Z0-9]+)['\"]\s?(\)|,)", content)
     if m:
         process = m.groups(1)[0]
+    if process == 'PAT':
+        process = "MINIAODSIM"
     return process
 
 
-def get_generator_title(afile):
-    "Return suitable title of configuration file."
-    process = get_process(afile)
-    return 'Configuration file for ' + process + ' step ' + get_python_filename(afile)
+def get_cmssw_version(dataset, das_dir, mcm_dir):
+    """Return CMSSW version either from McM or from DAS."""
+    release = get_cmssw_version_from_mcm(dataset, mcm_dir)
+    if not release:
+        release = get_cmssw_version_from_das(dataset, das_dir)
+    return release
 
 
-def get_generator_text(dataset, das_dir, mcm_dir):
-    """Return generator text for given dataset."""
-    config_ids = get_conffile_ids(dataset, das_dir)
-    process = ''
-    if config_ids:
-        for config_id in config_ids:
-            afile = config_id + '.configFile'
-            if process:
-                process += ' '
-            try:
-                process += get_process(afile)
-            except:
-                print('[ERROR] Missing configuration file ' + config_id, file=sys.stderr)
-    if not process:
-        return ''
-    lhe_info_needed = False
-    out = '<p>'
-    out += '<strong>Step {}</strong>'.format(process)
-    out += '<br>Release: {}'.format(get_cmssw_version(dataset, mcm_dir))
-    out += '<br>Global tag: {}'.format(get_global_tag(dataset, mcm_dir))
-    if config_ids:
-        for config_id in config_ids:
-            afile = config_id + '.configFile'
-            generator_text = ''
-            try:
-                generator_text = get_generator_title(afile)
-                out += '<br><a href="/record/%s">%s</a>' % (LINK_INFO[config_id], generator_text)
-            except:
-                print('[ERROR] Missing configuration file ' + config_id, file=sys.stderr)
-            if 'LHE' in generator_text:
-                lhe_info_needed = True
-    out += '<br>Output dataset: %s' % dataset
-    out += '</p>'
-    if lhe_info_needed and False:  # FIXME
-        out += """
-        <p><strong>Note</strong>
-        <br>
-To get the exact LHE and generator's parameters, see <a href=\"/docs/cms-mc-production-overview\">CMS Monte Carlo production Overview</a>
-        </p>
-        """
-    return """
-%s
-""" % out
+def get_globaltag_from_conffile(afile, conf_dir):
+    "Return global tag information from the configuration file."
+    content = ''
+    with open(conf_dir + afile, 'r') as myfile:
+        content = myfile.read()
+    globaltag = ''
+    m = re.search(r"globaltag = cms.string\(\s?['\"](.+)['\"]\s?\)", content)
+    if m:
+        globaltag = m.groups(1)[0]
+    else:
+        m = re.search(r"process.GlobalTag.globaltag\s?=\s?['\"](.+)['\"]", content)
+        if m:
+            globaltag = m.groups(1)[0]
+    return globaltag
 
 
 def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir):
     """Return DICT with all information about the generator steps."""
-    # FIXME OMG this function is ugly...
 
     info = {}
-    info["description"] = "<p>These data were generated in several steps (see also <a href=\"/docs/cms-mc-production-overview\">CMS Monte Carlo Production Overview</a>):</p>"
+    info["description"] = "<p>These data were generated in several steps (see also <a href=\"/docs/cms-mc-production-overview\">CMS Monte Carlo production overview</a>):</p>"
     info["steps"] = []
 
-    step = {}
-
-    process = 'RECO-HLT'
-    step['type'] = process  # LHE, GEN, SIM, HLT, RECO or any combination of those
-    release = get_cmssw_version(dataset, mcm_dir)
-    if release:
-        step['release'] = release
-    global_tag = get_global_tag(dataset, mcm_dir)
-    if global_tag:
-        step['global_tag'] = global_tag
-
-    cmsdriver_reco_path = get_cmsDriver_script(dataset, mcm_dir)
-    step['configuration_files'] = []
-    if cmsdriver_reco_path:
-        with open(cmsdriver_reco_path) as myfile:
-            configuration_files = {}
-            configuration_files['title'] = 'Production script'
-            configuration_files['script'] = myfile.read()
-            step['configuration_files'].append(configuration_files)
-
-    config_ids = get_conffile_ids(dataset, das_dir)
-    # FIXME there's no failure check here... no idea what to do
-    if config_ids:
-        for config_id in config_ids:
-            afile = config_id + '.configFile'
-            generator_text = ''
-            proc = get_process(afile, conf_dir)
-            configuration_files = {}
-            configuration_files['title'] = 'Configuration file'
-            configuration_files['process'] = proc
-            configuration_files['cms_confdb_id'] = config_id
-
-            step['configuration_files'].append(configuration_files)
-
-    info["steps"].append(step)
-    input_dataset = get_parent_dataset(dataset, das_dir)
-
-    if input_dataset:
+    input_dataset = dataset
+    while input_dataset:
         step = {}
-
-        process = 'GEN-SIM'
-        step['type'] = process
-        release = get_cmssw_version(input_dataset, mcm_dir)
+        process = ''
+        step['output_dataset'] = input_dataset
+        release = get_cmssw_version(input_dataset, das_dir, mcm_dir)
         if release:
             step['release'] = release
         global_tag = get_global_tag(input_dataset, mcm_dir)
         if global_tag:
             step['global_tag'] = global_tag
-
-        generator_names = get_generator_name(dataset, das_dir, mcm_dir)
-        if generator_names:
-            step['generators'] = generator_names
 
         cmsdriver_path = get_cmsDriver_script(input_dataset, mcm_dir)
         step['configuration_files'] = []
@@ -262,37 +197,86 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir):
                 configuration_files = {}
                 configuration_files['title'] = 'Production script'
                 configuration_files['script'] = myfile.read()
-                step['configuration_files'].append(configuration_files)
+                if configuration_files:
+                    step['configuration_files'].append(configuration_files)
 
-        gen_fragment = get_genfragment_url(dataset, mcm_dir, das_dir)  # FIXME genfragment store would be better
+        generator_names = get_generator_name(input_dataset, das_dir, mcm_dir)
+        if generator_names:
+            step['generators'] = generator_names
+        gen_fragment = get_genfragment_url(input_dataset, mcm_dir, das_dir)
         if gen_fragment:
             for url in gen_fragment:
                 configuration_files = {}
                 configuration_files['title'] = 'Generator parameters'
                 configuration_files['url'] = url
                 try:
-                    script = urlopen(url).read()  # FIXME get rid of error on 404
+                    script = urlopen(url).read()
                     configuration_files['script'] = script.decode("utf-8")
                 except:
                     pass
-                step['configuration_files'].append(configuration_files)
+                if configuration_files:
+                    step['configuration_files'].append(configuration_files)
 
         config_ids = get_conffile_ids(input_dataset, das_dir)
-        # FIXME there's no failure check here... no idea what to do
         if config_ids:
             for config_id in config_ids:
                 afile = config_id + '.configFile'
-                generator_text = ''
                 proc = get_process(afile, conf_dir)
+                if process:
+                    process += " " + proc
+                else:
+                    process += proc
                 configuration_files = {}
                 configuration_files['title'] = 'Configuration file'
                 configuration_files['process'] = proc
                 configuration_files['cms_confdb_id'] = config_id
+                globaltag = get_globaltag_from_conffile(afile, conf_dir)
+                if not 'global_tag' in step:
+                    step['global_tag'] = globaltag
 
                 step['configuration_files'].append(configuration_files)
+        if not process:
+            if input_dataset.endswith('LHE'):
+                process = 'LHE'
+            elif input_dataset.endswith('SIM'):
+                process = 'SIM'
+        if process == 'LHE':
+            step['note'] = "To get the exact generator parameters, please see <a href=\"/docs/cms-mc-production-overview#finding-the-generator-parameters\">Finding the generator parameters</a>."
+        step['type'] = process
         info["steps"].append(step)
 
-    # TODO check for LHE input
+        # find parent dataset, first via DAS, then via McM
+        input_dataset_das = get_parent_dataset(input_dataset, das_dir)
+        input_dataset_mcm = get_parent_dataset_from_mcm(input_dataset, das_dir, mcm_dir)
+        if input_dataset_mcm == 'Default':  # workaround McM bugs
+            input_dataset_mcm = ''
+        if input_dataset_das:
+            input_dataset = input_dataset_das
+        else:
+            input_dataset = input_dataset_mcm
+
+    # reverse order of steps for provenance
+    info['steps'].reverse()
+
+    # post-generation fix: if we have LHE step, let's modify the configuration file titles for other steps:
+    lhe_present = False
+    for step in info['steps']:
+        if lhe_present:
+            for configuration_file in step.get('configuration_files'):
+                if configuration_file['title'] == 'Generator parameters':
+                    configuration_file['title'] = 'Hadronizer parameters'
+        if step['type'] == 'LHE':
+            lhe_present = True
+
+    # post-generation fix: keep generators only for the first step, remove from others:
+    generators_present = False
+    for step in info['steps']:
+        if generators_present:
+            if 'generators' in step:
+                del(step['generators'])
+        else:
+            if 'generators' in step:
+                generators_present = True
 
     return info
 
@@ -308,13 +292,14 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     year_published = '2018'  # FIXME get from somewhere, do not hardcode it!
     run_period = ['Run' + year_created + 'A', 'Run' + year_created + 'B']  # FIXME remove the 'A'!!
     global_tag = get_global_tag(dataset_full_name, mcm_dir)
-    release    = get_cmssw_version(dataset_full_name, mcm_dir)
+    release    = get_cmssw_version(dataset_full_name, das_dir, mcm_dir)
 
     additional_title = 'Simulated dataset ' + dataset + ' in ' + dataset_format + ' format for ' + year_created + ' collision data'
 
     rec['abstract'] = {}
     rec['abstract']['description'] = '<p>' + additional_title + '.</p>' + \
-                                     '<p>See the description of the simulated dataset names in: <a href="/about/CMS-Simulated-Dataset-Names">About CMS simulated dataset names</a>.</p>'
+                                     '<p>See the description of the simulated dataset names in: <a href="/about/CMS-Simulated-Dataset-Names">About CMS simulated dataset names</a>.</p>' + \
+                                     '<p>These simulated datasets correspond to the collision data collected by the CMS experiment in ' + year_created + '.</p>'
 
     rec['accelerator'] = "CERN-LHC"
 
@@ -348,7 +333,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     rec['distribution']['number_events'] = get_number_events(dataset_full_name, das_dir)
     rec['distribution']['number_files'] = get_number_files(dataset_full_name, das_dir)
     rec['distribution']['size'] = get_size(dataset_full_name, das_dir)
-    
+
     if not dataset_full_name in doi_info:
         rec['distribution']['availability'] = 'ondemand'
 
@@ -377,9 +362,6 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     rec['license']['attribution'] = 'CC0'
 
     rec['methodology'] = get_all_generator_text(dataset_full_name, das_dir, mcm_dir, conffiles_dir)
-
-    rec['note'] = {}
-    rec['note']['description'] = 'These simulated datasets correspond to the collision data collected by the CMS experiment in ' + year_created + '.'
 
     pileup_dataset_title = {'2010': None,
                             '2011': '/MinBias_TuneZ2_7TeV-pythia6/Summer11Leg-START53_LV4-v1/GEN-SIM',

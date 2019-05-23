@@ -163,7 +163,7 @@ def get_global_tag(dataset, mcm_dir):
     return global_tag
 
 
-def get_cmssw_version(dataset, mcm_dir):
+def get_cmssw_version_from_mcm(dataset, mcm_dir):
     "Get CMSSW version from McM dictionary"
     mcm_dict = get_mcm_dict(dataset, mcm_dir)
     cmssw = get_from_deep_json(mcm_dict, 'cmssw_release')
@@ -188,17 +188,8 @@ def get_cmsDriver_script(dataset, mcm_dir):
 
 def get_genfragment_url(dataset, mcm_dir, das_dir):
     "return list of url's of the genfragments used"
-    input_dataset = ''
     url = []
-
-    # get GEN-SIM dataset
-    if get_dataset_format(dataset) == 'AODSIM':
-        dataset_json = get_das_store_json(dataset, 'mcm', das_dir)
-        input_dataset = get_from_deep_json(dataset_json, 'input_dataset')
-    else:
-        input_dataset = dataset
-
-    script_path = get_cmsDriver_script(input_dataset, mcm_dir)
+    script_path = get_cmsDriver_script(dataset, mcm_dir)
     if script_path == None:
         return None
 
@@ -237,16 +228,6 @@ def get_generator_name(dataset, das_dir, mcm_dir):
     generator_names = []
     mcm_dict = get_mcm_dict(dataset, mcm_dir)
     generators = get_from_deep_json(mcm_dict, 'generators')
-    input_generators = []
-
-    dataset_json = get_das_store_json(dataset, 'mcm', das_dir)
-    input_dataset = get_from_deep_json(dataset_json, 'input_dataset')
-    if input_dataset:
-        mcm_dict = get_mcm_dict(input_dataset, mcm_dir)
-        input_generators = get_from_deep_json(mcm_dict, 'generators')
-
-    if generators and input_generators:
-        generators += input_generators
 
     if generators:
         for item in generators:
@@ -257,3 +238,11 @@ def get_generator_name(dataset, das_dir, mcm_dir):
                 generator_names.append(item)
 
     return generator_names
+
+
+def get_parent_dataset_from_mcm(dataset, das_dir, mcm_dir):
+    "Return parent dataset to given DATASET from McM."
+    parent_dataset = ''
+    mcm_dict = get_mcm_dict(dataset, mcm_dir)
+    parent_dataset = get_from_deep_json(mcm_dict, 'input_dataset')
+    return parent_dataset

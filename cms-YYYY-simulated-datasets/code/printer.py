@@ -15,13 +15,13 @@ from das_json_store import get_das_store_json, \
 from mcm_store import get_mcm_dict, \
                       get_global_tag, \
                       get_generator_name, \
-                      get_cmssw_version, \
                       get_cmsDriver_script, \
                       get_genfragment_url, \
                       get_dataset_energy, \
                       get_prepId_from_das, \
                       get_prepid_from_mcm
-from dataset_records import get_conffile_ids
+from dataset_records import get_conffile_ids, \
+    get_cmssw_version
 
 
 DATASETS_WITH_BOTH_CMSDRIVER = 0
@@ -137,7 +137,7 @@ def print_ancestor_information(dataset, das_dir, mcm_dir, recid_file, doi_info):
 
     # global tag & cmssw version
     global_tag = get_global_tag(dataset, mcm_dir)
-    cmssw_ver = get_cmssw_version(dataset, mcm_dir)
+    cmssw_ver = get_cmssw_version(dataset, das_dir, mcm_dir)
     if global_tag:
         print("    - Global Tag:", global_tag)
     if cmssw_ver:
@@ -158,7 +158,7 @@ def print_ancestor_information(dataset, das_dir, mcm_dir, recid_file, doi_info):
         print("    - Input Dataset:", input_dataset)
 
         input_global_tag = get_global_tag(input_dataset, mcm_dir)
-        input_cmssw_ver = get_cmssw_version(input_dataset, mcm_dir)
+        input_cmssw_ver = get_cmssw_version(input_dataset, das_dir, mcm_dir)
         if input_global_tag:
             print("        - Global Tag:", input_global_tag)
         if input_cmssw_ver:

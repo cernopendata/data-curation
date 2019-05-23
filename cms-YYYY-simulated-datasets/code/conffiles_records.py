@@ -29,8 +29,7 @@ from mcm_store import get_mcm_dict, \
                       get_genfragment_url, \
                       get_generator_name, \
                       get_dataset_energy, \
-                      get_cmsDriver_script, \
-                      get_cmssw_version
+                      get_cmsDriver_script
 from categorisation import guess_title_category
 from dataset_records import get_dataset, \
                             get_conffile_ids, \

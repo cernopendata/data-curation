@@ -70,7 +70,11 @@ def main(das_dir,
     "Do the job."
 
     # create dirs for dataset, parent and config
-    for path in [das_dir + "/dataset", das_dir + "/parent", das_dir + "/config", das_dir + "/mcm"]:
+    for path in [das_dir + '/dataset',
+                 das_dir + '/parent',
+                 das_dir + '/config',
+                 das_dir + '/mcm',
+                 das_dir + '/release']:
         if not os.path.exists(path):
             os.makedirs(path)
 
@@ -90,12 +94,14 @@ def main(das_dir,
         mydasgoclient(dataset, "dataset", das_dir, result_file)
         mydasgoclient(dataset, "parent",  das_dir, result_file)
         mydasgoclient(dataset, "config",  das_dir, result_file)
+        mydasgoclient(dataset, "release", das_dir, result_file)
         mydasgoclient(dataset, "mcm",     das_dir, result_file)
 
         parent = get_parent_dataset(dataset, das_dir)
         while parent != '' and parent:
             #mydasgoclient(parent, "dataset",  das_dir, parent.replace('/', '@') + ".json")
             mydasgoclient(parent, "config",   das_dir, parent.replace('/', '@') + ".json")
+            mydasgoclient(parent, "release",   das_dir, parent.replace('/', '@') + ".json")
             mydasgoclient(parent, "parent",   das_dir, parent.replace('/', '@') + ".json")
             parent = get_parent_dataset(parent, das_dir)
 
@@ -108,6 +114,16 @@ def get_generator_parameters(dataset, das_dir):
     # and/or from xsecDB
     out = get_from_deep_json(get_das_store_json(dataset, 'mcm', das_dir),
                              'generator_parameters')
+    if out:
+        return out[0]
+    else:
+        return {}
+
+
+def get_cmssw_version_from_das(dataset, das_dir):
+    """Return CMSSW release version from DAS JSON."""
+    out = get_from_deep_json(get_das_store_json(dataset, 'release', das_dir),
+                             'name')
     if out:
         return out[0]
     else:
