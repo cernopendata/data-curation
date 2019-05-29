@@ -36,7 +36,8 @@ from mcm_store import get_mcm_dict, \
                       get_dataset_energy, \
                       get_cmsDriver_script, \
                       get_cmssw_version_from_mcm, \
-                      get_parent_dataset_from_mcm
+                      get_parent_dataset_from_mcm, \
+                      get_conffile_ids_from_mcm
 from categorisation import guess_title_category
 
 
@@ -122,8 +123,18 @@ def newer_dataset_version_exists(dataset_full_name, all_datasets):
     return len(similar_datasets) > 1
 
 
-def get_conffile_ids(dataset, das_dir):
-    """Return location of the configuration files for the dataset."""
+def get_conffile_ids(dataset, das_dir, mcm_dir):
+    """Return location of the configuration files for the dataset from either McM or DAS."""
+    ids = get_conffile_ids_from_mcm(dataset, das_dir, mcm_dir)
+    if not ids:
+        ids = get_conffile_ids_from_das(dataset, das_dir, mcm_dir)
+    if ids:
+        ids.sort()
+    return ids
+
+
+def get_conffile_ids_from_das(dataset, das_dir, mcm_dir):
+    """Return location of the configuration files for the dataset from DAS."""
     ids = {}
     output = get_from_deep_json(get_das_store_json(dataset, 'config', das_dir),
                                 'byoutputdataset')
@@ -136,8 +147,11 @@ def get_conffile_ids(dataset, das_dir):
 def get_process(afile, conf_dir):
     "Return suitable title of configuration file."
     content = ''
-    with open(conf_dir + afile, 'r') as myfile:
-        content = myfile.read()
+    try:
+        with open(conf_dir + afile, 'r') as myfile:
+            content = myfile.read()
+    except FileNotFoundError:
+        pass
     process = ''
     m = re.search(r"process = cms.Process\(\s?['\"]([A-Z0-9]+)['\"]\s?(\)|,)", content)
     if m:
@@ -158,8 +172,11 @@ def get_cmssw_version(dataset, das_dir, mcm_dir):
 def get_globaltag_from_conffile(afile, conf_dir):
     "Return global tag information from the configuration file."
     content = ''
-    with open(conf_dir + afile, 'r') as myfile:
-        content = myfile.read()
+    try:
+        with open(conf_dir + afile, 'r') as myfile:
+            content = myfile.read()
+    except FileNotFoundError:
+        pass
     globaltag = ''
     m = re.search(r"globaltag = cms.string\(\s?['\"](.+)['\"]\s?\)", content)
     if m:
@@ -217,7 +234,7 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir):
                 if configuration_files:
                     step['configuration_files'].append(configuration_files)
 
-        config_ids = get_conffile_ids(input_dataset, das_dir)
+        config_ids = get_conffile_ids(input_dataset, das_dir, mcm_dir)
         if config_ids:
             for config_id in config_ids:
                 afile = config_id + '.configFile'
@@ -235,10 +252,15 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir):
                     step['global_tag'] = globaltag
 
                 step['configuration_files'].append(configuration_files)
+
+        # if we couldn't detect process type from config files, try guessing
+        # via extension:
         if not process:
-            if input_dataset.endswith('LHE'):
+            if input_dataset.endswith('/LHE'):
                 process = 'LHE'
-            elif input_dataset.endswith('SIM'):
+            elif input_dataset.endswith('/SIM'):
+                process = 'SIM'
+            elif input_dataset.endswith('/GEN-SIM'):
                 process = 'SIM'
         if process == 'LHE':
             step['note'] = "To get the exact generator parameters, please see <a href=\"/docs/cms-mc-production-overview#finding-the-generator-parameters\">Finding the generator parameters</a>."

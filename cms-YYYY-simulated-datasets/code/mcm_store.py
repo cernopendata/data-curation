@@ -246,3 +246,11 @@ def get_parent_dataset_from_mcm(dataset, das_dir, mcm_dir):
     mcm_dict = get_mcm_dict(dataset, mcm_dir)
     parent_dataset = get_from_deep_json(mcm_dict, 'input_dataset')
     return parent_dataset
+
+
+def get_conffile_ids_from_mcm(dataset, das_dir, mcm_dir):
+    """Return location of the configuration files for the dataset from McM."""
+    config_ids = []
+    mcm_dict = get_mcm_dict(dataset, mcm_dir)
+    config_ids = get_from_deep_json(mcm_dict, 'config_id')
+    return config_ids

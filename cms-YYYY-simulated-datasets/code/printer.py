@@ -200,10 +200,10 @@ def print_ancestor_information(dataset, das_dir, mcm_dir, recid_file, doi_info):
             DATASETS_WITH_BOTH_CMSDRIVER += 1
 
     # python config files
-    conffile_ids = get_conffile_ids(dataset, das_dir)
+    conffile_ids = get_conffile_ids(dataset, das_dir, mcm_dir)
     parent = get_parent_dataset(dataset, das_dir)
     while parent != '' and parent:
-        conffile_ids += get_conffile_ids(parent, das_dir)
+        conffile_ids += get_conffile_ids(parent, das_dir, mcm_dir)
         parent = get_parent_dataset(parent, das_dir)
     global DATASETS_WITH_3CONFFILES
     if conffile_ids:

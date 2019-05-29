@@ -70,7 +70,7 @@ def main(datasets, eos_dir, das_dir, mcm_dir, conffiles_dir):
 
     conffiles = []
     for ds in dataset_full_names:
-        config_ids = get_conffile_ids(ds, das_dir)
+        config_ids = get_conffile_ids(ds, das_dir, mcm_dir)
         if config_ids:
             for config_id in config_ids:
                 if config_id not in conffiles:
