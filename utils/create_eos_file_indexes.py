@@ -15,7 +15,7 @@ import re
 import subprocess
 
 
-def get_dataset_files(directory, extension=''):
+def get_dataset_files(directory, extension='', pattern=''):
     """Return file list with information about name, size, URI.
 
     Handle all files in the DIRECTORY that have given file EXTENSION.
@@ -29,20 +29,27 @@ def get_dataset_files(directory, extension=''):
             if match:
                 path, size, checksum = match.groups()
                 if extension and path.endswith(extension):
+                    # detect file URI
+                    uri = path
                     if extension == 'h5':
                         # prefer to expose HTTP instead of XRootD
-                        path = path.replace('root://eospublic.cern.ch//eos/opendata/',
-                                            'http://opendata.cern.ch/eos/opendata/')
-                    files.append({'filename': os.path.basename(path),
-                                  'size': int(size),
-                                  'checksum': 'adler32:' + checksum,
-                                  'uri': path})
+                        uri = path.replace('root://eospublic.cern.ch//eos/opendata/',
+                                           'http://opendata.cern.ch/eos/opendata/')
+                    # detect file name
+                    filename = os.path.basename(path)
+                    if pattern and pattern not in filename:
+                        # exclude files not matching pattern
+                        continue
+                    files.append({'filename': filename,
+                                    'size': int(size),
+                                    'checksum': 'adler32:' + checksum,
+                                    'uri': uri})
     return files
 
 
-def create_index_file(name, directory, extension, style='txt'):
+def create_index_file(name, directory, extension, style='txt', pattern=''):
     """Create index file in the given style format (text, json)."""
-    files = get_dataset_files(directory, extension)
+    files = get_dataset_files(directory, extension, pattern)
     filebase = name + '_' + extension + '_file_index'
     filename = filebase + '.' + style
     fdesc = open(filename, 'w')
@@ -66,10 +73,12 @@ def create_index_file(name, directory, extension, style='txt'):
               help='Which directory? E.g. /eos/opendata/cms/datascience/HiggsToBBNTuple_HiggsToBB_QCD_RunII_13TeV_MC/test/')  # noqa: E501
 @click.option('--extension', '-e', required=True,
               help='Which file extension? E.g. h5.')
-def main(name, directory, extension):  # noqa: D301
+@click.option('--pattern', '-p',
+              help='Which file pattern to match? Optional. E.g. detachedTripletStepHitDoublets')
+def main(name, directory, extension, pattern=''):  # noqa: D301
     """Create file list index files for given directory and file extension."""
-    create_index_file(name, directory, extension, 'txt')
-    create_index_file(name, directory, extension, 'json')
+    create_index_file(name, directory, extension, 'txt', pattern)
+    create_index_file(name, directory, extension, 'json', pattern)
 
 
 if __name__ == '__main__':
