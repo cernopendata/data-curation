@@ -29,6 +29,10 @@ def get_dataset_files(directory, extension=''):
             if match:
                 path, size, checksum = match.groups()
                 if extension and path.endswith(extension):
+                    if extension == 'h5':
+                        # prefer to expose HTTP instead of XRootD
+                        path = path.replace('root://eospublic.cern.ch//eos/opendata/',
+                                            'http://opendata.cern.ch/eos/opendata/')
                     files.append({'filename': os.path.basename(path),
                                   'size': int(size),
                                   'checksum': 'adler32:' + checksum,
