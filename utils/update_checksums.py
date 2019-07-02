@@ -29,10 +29,19 @@ def populate_file_cache(filename):
               help='Source of information? [file1]')
 @click.option('--target', '-t', required=True,
               help='Target to modify? [file2]')
-def main(source, target):  # noqa: D301
+@click.option('--check-only', '-c', is_flag=True, default=False,
+              help="Check only without updating?")
+def main(source, target, check_only):  # noqa: D301
     """Alter record fixtures (TARGET) based on EOS file information (SOURCE).
 
-    Example:
+    Example: (check fixtures)
+
+     \b
+     $ eos find --xurl --size --checksum -name "*_file_index.*" /eos/opendata/ > z.txt
+     $ for file in cernopendata/modules/fixtures/data/records/*.json; \\
+         do ../data-curation/utils/update_checksums.py -c -s z.txt -t $file; done
+
+    Example: (update file info in fixtures)
 
      \b
      $ eos find --xurl --size --checksum /eos/opendata/alice/modules > alice.txt
@@ -56,17 +65,32 @@ def main(source, target):  # noqa: D301
     target_content = open(target, 'r').read()
     target_records = json.loads(target_content)
 
-    # amend target records
+    # check and amend target records
+    errors_found = 0
     for target_record in target_records:
         for record_file in target_record.get('files', []):
-            try:
-                eos_size = files.get(record_file['uri'])['size']
-                eos_checksum = files.get(record_file['uri'])['checksum']
-                record_file['size'] = eos_size
-                record_file['checksum'] = eos_checksum
-            except:
-                print("ERROR with {0}".format(record_file['uri']),
-                      file=sys.stderr)
+            if check_only:
+                if record_file['uri'] in files:
+                    if record_file['size'] == files.get(record_file['uri'])['size'] and \
+                       record_file['checksum'] == files.get(record_file['uri'])['checksum']:
+                        pass  # all OK
+                    else:
+                        errors_found = 1
+                        print("ERROR with record {0} file {1}".format(
+                            target_record['recid'], record_file['uri']),
+                              file=sys.stderr)
+            else:
+                try:
+                    eos_size = files.get(record_file['uri'])['size']
+                    eos_checksum = files.get(record_file['uri'])['checksum']
+                    record_file['size'] = eos_size
+                    record_file['checksum'] = eos_checksum
+                except:
+                    print("ERROR with record {0} file {1}".format(
+                        target_record['recid'], record_file['uri']),
+                          file=sys.stderr)
+    if check_only:
+        sys.exit(errors_found)
 
     # print records
     new_content = json.dumps(target_records, indent=2, sort_keys=True,
