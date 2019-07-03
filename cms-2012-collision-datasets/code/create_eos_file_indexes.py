@@ -114,7 +114,7 @@ def create_index_file(dataset, volume, files, style='txt'):
             fdesc.write(afile['uri'])
             fdesc.write('\n')
     elif style == 'json':
-        fdesc.write(json.dumps(files, indent=2, sort_keys=True))
+        fdesc.write(json.dumps(files, indent=2, sort_keys=True, separators=(',', ': ')))
         fdesc.write('\n')
     fdesc.close()
     return filename
