@@ -5,10 +5,10 @@
 Create HLT CMS Configuration Files records.
 """
 
-import hashlib
 import json
 import re
 import os
+import zlib
 
 
 NOTE = 'This file describes the exact setup for the CMS software executable which ' \
@@ -19,7 +19,7 @@ NOTE = 'This file describes the exact setup for the CMS software executable whic
        '<i>reproduce</i> all the described data-processing steps.'
 
 
-RECID_START = 6100
+RECID_START = 110
 
 
 def get_run_period(afile):
@@ -28,64 +28,64 @@ def get_run_period(afile):
     """
 
     run_periods = {
-        '/cdaq/physics/firstCollisions10/v2.0/HLT_7TeV/V5': 'Commissioning10',
-        '/cdaq/physics/firstCollisions10/v3.0/HLT_7TeV/V1': 'Commissioning10',
-        '/cdaq/physics/firstCollisions10/v3.0/HLT_7TeV/V2': 'Commissioning10',
-        '/cdaq/physics/firstCollisions10/v3.1/HLT_7TeV/V1': 'Commissioning10',
-        '/cdaq/physics/firstCollisions10/v3.1/HLT_7TeV/V2': 'Commissioning10',
-        '/cdaq/physics/firstCollisions10/v3.2/HLT_7TeV/V1': 'Commissioning10',
-        '/cdaq/physics/firstCollisions10/v4.0/HLT_7TeV_HR/V1': 'Commissioning10',
-        '/cdaq/physics/firstCollisions10/v4.0/HLT_7TeV/V1': 'Commissioning10',
-        '/cdaq/physics/firstCollisions10/v5.1/HLT_7TeV_HR/V1': 'Commissioning10',
-        '/cdaq/physics/firstCollisions10/v5.2/HLT_7TeV_HR/V1': 'Commissioning10',
-        '/cdaq/physics/firstCollisions10/v6.0/HLT_7TeV_HR/V1': 'Commissioning10',
-        '/cdaq/physics/firstCollisions10/v6.1/HLT_7TeV_HR/V1': 'Commissioning10',
-        '/cdaq/physics/Run2010/v1.1_HLT_LowInt_1E29/V2': 'Run2010A',
-        '/cdaq/physics/Run2010/v1.1_HLT_LowInt_2E29/V2': 'Run2010A',
-        '/cdaq/physics/Run2010/v1.1_HLT_LowInt_2E29/V4': 'Run2010A',
-        '/cdaq/physics/Run2010/v2.2_HLT_4E29_PRE2/V1': 'Run2010A',
-        '/cdaq/physics/Run2010/v2.2_HLT_4E29_PRE2/V2': 'Run2010A',
-        '/cdaq/physics/Run2010/v2.2_HLT_4E29_PRE5/V1': 'Run2010A',
-        '/cdaq/physics/Run2010/v2.2_HLT_4E29_PRE5/V2': 'Run2010A',
-        '/cdaq/physics/Run2010/v2.2_HLT_4E29/V1': 'Run2010A',
-        '/cdaq/physics/Run2010/v2.2_HLT_4E29/V2': 'Run2010A',
-        '/cdaq/physics/Run2010/v2.3_HLT_8E29_pre3/V2': 'Run2010A',
-        '/cdaq/physics/Run2010/v2.3_HLT/V2': 'Run2010A',
-        '/cdaq/physics/Run2010/v3.0_HLT_1.6E30/V1': 'Run2010A',
-        '/cdaq/physics/Run2010/v3.0_HLT_1.6E30_pre3/V1': 'Run2010A',
-        '/cdaq/physics/Run2010/v3.1_HLT_1.6E30/V1': 'Run2010A',
-        '/cdaq/physics/Run2010/v3.1_HLT_1.6E30_pre3/V1': 'Run2010A',
-        '/cdaq/physics/Run2010/v3.1_HLT_1.6E30_pre7/V1': 'Run2010A',
-        '/cdaq/physics/Run2010/4.0_HLT/V1': 'Run2010A',
-        '/cdaq/physics/Run2010/4.0_HLT/V2': 'Run2010A',
-        '/cdaq/physics/Run2010/4.1_HLT/V1': 'Run2010A',
-        '/cdaq/physics/Run2010/4.1_HLT/V3': 'Run2010A',
-        '/cdaq/physics/Run2010/4.1_HLT_pre20/V3': 'Run2010A',
-        '/cdaq/physics/Run2010/4.1_HLT_pre2_highrate/V1': 'Run2010A',
-        '/cdaq/physics/Run2010/v5.1_HLT/V1': 'Run2010A',
-        '/cdaq/physics/Run2010/v5.2_HLT/V1': 'Run2010A',
-        '/cdaq/physics/Run2010/v5.3_HLT/V2': 'Run2010A',
-        '/cdaq/physics/Run2010/v5.4_HLT/V1': 'Run2010A',
-        '/cdaq/physics/Run2010/v5.4_HLT/V3': 'Run2010A',
-        '/cdaq/physics/Run2010/v5.4_HLT/V4': 'Run2010A',
+        '/cdaq/physics/firstCollisions10/v2.0/HLT/7TeV/V5': 'Commissioning10',
+        '/cdaq/physics/firstCollisions10/v3.0/HLT/7TeV/V1': 'Commissioning10',
+        '/cdaq/physics/firstCollisions10/v3.0/HLT/7TeV/V2': 'Commissioning10',
+        '/cdaq/physics/firstCollisions10/v3.1/HLT/7TeV/V1': 'Commissioning10',
+        '/cdaq/physics/firstCollisions10/v3.1/HLT/7TeV/V2': 'Commissioning10',
+        '/cdaq/physics/firstCollisions10/v3.2/HLT/7TeV/V1': 'Commissioning10',
+        '/cdaq/physics/firstCollisions10/v4.0/HLT/7TeV/HR/V1': 'Commissioning10',
+        '/cdaq/physics/firstCollisions10/v4.0/HLT/7TeV/V1': 'Commissioning10',
+        '/cdaq/physics/firstCollisions10/v5.1/HLT/7TeV/HR/V1': 'Commissioning10',
+        '/cdaq/physics/firstCollisions10/v5.2/HLT/7TeV/HR/V1': 'Commissioning10',
+        '/cdaq/physics/firstCollisions10/v6.0/HLT/7TeV/HR/V1': 'Commissioning10',
+        '/cdaq/physics/firstCollisions10/v6.1/HLT/7TeV/HR/V1': 'Commissioning10',
+        '/cdaq/physics/Run2010/v1.1/HLT/LowInt/1E29/V2': 'Run2010A',
+        '/cdaq/physics/Run2010/v1.1/HLT/LowInt/2E29/V2': 'Run2010A',
+        '/cdaq/physics/Run2010/v1.1/HLT/LowInt/2E29/V4': 'Run2010A',
+        '/cdaq/physics/Run2010/v2.2/HLT/4E29/PRE2/V1': 'Run2010A',
+        '/cdaq/physics/Run2010/v2.2/HLT/4E29/PRE2/V2': 'Run2010A',
+        '/cdaq/physics/Run2010/v2.2/HLT/4E29/PRE5/V1': 'Run2010A',
+        '/cdaq/physics/Run2010/v2.2/HLT/4E29/PRE5/V2': 'Run2010A',
+        '/cdaq/physics/Run2010/v2.2/HLT/4E29/V1': 'Run2010A',
+        '/cdaq/physics/Run2010/v2.2/HLT/4E29/V2': 'Run2010A',
+        '/cdaq/physics/Run2010/v2.3/HLT/8E29/pre3/V2': 'Run2010A',
+        '/cdaq/physics/Run2010/v2.3/HLT/V2': 'Run2010A',
+        '/cdaq/physics/Run2010/v3.0/HLT/1.6E30/V1': 'Run2010A',
+        '/cdaq/physics/Run2010/v3.0/HLT/1.6E30/pre3/V1': 'Run2010A',
+        '/cdaq/physics/Run2010/v3.1/HLT/1.6E30/V1': 'Run2010A',
+        '/cdaq/physics/Run2010/v3.1/HLT/1.6E30/pre3/V1': 'Run2010A',
+        '/cdaq/physics/Run2010/v3.1/HLT/1.6E30/pre7/V1': 'Run2010A',
+        '/cdaq/physics/Run2010/4.0/HLT/V1': 'Run2010A',
+        '/cdaq/physics/Run2010/4.0/HLT/V2': 'Run2010A',
+        '/cdaq/physics/Run2010/4.1/HLT/V1': 'Run2010A',
+        '/cdaq/physics/Run2010/4.1/HLT/V3': 'Run2010A',
+        '/cdaq/physics/Run2010/4.1/HLT/pre20/V3': 'Run2010A',
+        '/cdaq/physics/Run2010/4.1/HLT/pre2/highrate/V1': 'Run2010A',
+        '/cdaq/physics/Run2010/v5.1/HLT/V1': 'Run2010A',
+        '/cdaq/physics/Run2010/v5.2/HLT/V1': 'Run2010A',
+        '/cdaq/physics/Run2010/v5.3/HLT/V2': 'Run2010A',
+        '/cdaq/physics/Run2010/v5.4/HLT/V1': 'Run2010A',
+        '/cdaq/physics/Run2010/v5.4/HLT/V3': 'Run2010A',
+        '/cdaq/physics/Run2010/v5.4/HLT/V4': 'Run2010A',
         '/cdaq/special/HeavyIon/HLT/Basic/Express/V7': 'Run2010B',
-        '/cdaq/physics/Run2010/v7.0_HLT/V2': 'Run2010B',
-        '/cdaq/physics/Run2010/v7.0_HLT/V3': 'Run2010B',
-        '/cdaq/physics/Run2010/v7.0_HLT/V4': 'Run2010B',
-        '/cdaq/physics/Run2010/v7.1_HLT/V1': 'Run2010B',
-        '/cdaq/physics/Run2010/v7.1_HLT/V2': 'Run2010B',
-        '/cdaq/physics/Run2010/v8.0_HLT/V2': 'Run2010B',
-        '/cdaq/physics/Run2010/v8.0_HLT/V3': 'Run2010B',
-        '/cdaq/physics/Run2010/v8.1_HLT/V1': 'Run2010B',
-        '/cdaq/physics/Run2010/v8.1_HLT/V2': 'Run2010B',
-        '/cdaq/physics/Run2010/v8.2_HLT/V1': 'Run2010B',
-        '/cdaq/physics/Run2010/v8.2_HLT/V2': 'Run2010B',
-        '/cdaq/physics/Run2010/v9.1_HLT/V1': 'Run2010B',
-        '/cdaq/physics/Run2010/v9.2_HLT/V1': 'Run2010B',
-        '/cdaq/physics/Run2010/v9.2_HLT/V2': 'Run2010B',
-        '/cdaq/physics/Run2010/v9.3_HLT/V1': 'Run2010B',
-        '/cdaq/physics/Run2010/v9.4_HLT/V1': 'Run2010B',
-        '/cdaq/physics/Run2010/v9.5_HLT/V1': 'Run2010B',
+        '/cdaq/physics/Run2010/v7.0/HLT/V2': 'Run2010B',
+        '/cdaq/physics/Run2010/v7.0/HLT/V3': 'Run2010B',
+        '/cdaq/physics/Run2010/v7.0/HLT/V4': 'Run2010B',
+        '/cdaq/physics/Run2010/v7.1/HLT/V1': 'Run2010B',
+        '/cdaq/physics/Run2010/v7.1/HLT/V2': 'Run2010B',
+        '/cdaq/physics/Run2010/v8.0/HLT/V2': 'Run2010B',
+        '/cdaq/physics/Run2010/v8.0/HLT/V3': 'Run2010B',
+        '/cdaq/physics/Run2010/v8.1/HLT/V1': 'Run2010B',
+        '/cdaq/physics/Run2010/v8.1/HLT/V2': 'Run2010B',
+        '/cdaq/physics/Run2010/v8.2/HLT/V1': 'Run2010B',
+        '/cdaq/physics/Run2010/v8.2/HLT/V2': 'Run2010B',
+        '/cdaq/physics/Run2010/v9.1/HLT/V1': 'Run2010B',
+        '/cdaq/physics/Run2010/v9.2/HLT/V1': 'Run2010B',
+        '/cdaq/physics/Run2010/v9.2/HLT/V2': 'Run2010B',
+        '/cdaq/physics/Run2010/v9.3/HLT/V1': 'Run2010B',
+        '/cdaq/physics/Run2010/v9.4/HLT/V1': 'Run2010B',
+        '/cdaq/physics/Run2010/v9.5/HLT/V1': 'Run2010B',
     }
     return run_periods['/' + afile.replace('_', '/')]
 
@@ -143,7 +143,7 @@ def create_rich_description(afile):
     more_info = get_run_numbers_and_software(tablename)
     if more_info:
         out += ' '
-    out += 'The configuration file used in data taking and %(process)s data processing step.' % {
+    out += 'The configuration file used in data taking and %(process)s data processing step in 2010.' % {
         'process': process
     }
     if more_info:
@@ -163,10 +163,9 @@ def get_size(afile):
     return os.path.getsize(file_path)
 
 
-def get_checksum(afile):
-    """Return the SHA1 checksum of the configuration file."""
-    file_path = './inputs/hlt-config-files/' + afile
-    return hashlib.sha1(open(file_path, 'rb').read()).hexdigest()
+def get_file_checksum(afile):
+    """Return the ADLER32 checksum of a file."""
+    return hex(zlib.adler32(open('./inputs/hlt-config-files/' + afile, 'rb').read(), 1) & 0xffffffff)[2:]
 
 
 def main():
@@ -201,7 +200,7 @@ def main():
             rec['collision_information']['energy'] = '7TeV'
             rec['collision_information']['type'] = 'pp'
 
-            rec['date_created'] = year_created
+            rec['date_created'] = [year_created, ]
             rec['date_published'] = year_published
 
             rec['distribution'] = {}
@@ -213,7 +212,7 @@ def main():
 
             rec['files'] = [
                 {
-                    'checksum': 'sha1:' + get_checksum(afile),
+                    'checksum': 'adler32:' + get_file_checksum(afile),
                     'size': get_size(afile),
                     'uri': 'root://eospublic.cern.ch//eos/opendata/cms/configuration-files/2010/' + afile
 
@@ -227,7 +226,7 @@ def main():
 
             rec['recid'] = str(recid)
 
-            rec['run_period'] = get_run_period(os.path.splitext(os.path.basename(afile))[0])
+            rec['run_period'] = [get_run_period(os.path.splitext(os.path.basename(afile))[0]), ]
 
             rec['title'] = get_title(afile)
 
