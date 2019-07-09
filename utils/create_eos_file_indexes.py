@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-
 """A helper script for creating generic EOS file indexes.
 
 This helper script is useful for creating generic EOS index files for
@@ -15,7 +14,7 @@ import re
 import subprocess
 
 
-def get_dataset_files(directory, extension='', pattern=''):
+def get_dataset_files(directory, extension='', pattern=''):  # noqa: E501
     """Return file list with information about name, size, URI.
 
     Handle all files in the DIRECTORY that have given file EXTENSION.
@@ -33,17 +32,18 @@ def get_dataset_files(directory, extension='', pattern=''):
                     uri = path
                     if extension == 'h5':
                         # prefer to expose HTTP instead of XRootD
-                        uri = path.replace('root://eospublic.cern.ch//eos/opendata/',
-                                           'http://opendata.cern.ch/eos/opendata/')
+                        uri = path.replace(
+                            'root://eospublic.cern.ch//eos/opendata/',
+                            'http://opendata.cern.ch/eos/opendata/')
                     # detect file name
                     filename = os.path.basename(path)
                     if pattern and pattern not in filename:
                         # exclude files not matching pattern
                         continue
                     files.append({'filename': filename,
-                                    'size': int(size),
-                                    'checksum': 'adler32:' + checksum,
-                                    'uri': uri})
+                                  'size': int(size),
+                                  'checksum': 'adler32:' + checksum,
+                                  'uri': uri})
     return files
 
 
@@ -74,7 +74,7 @@ def create_index_file(name, directory, extension, style='txt', pattern=''):
 @click.option('--extension', '-e', required=True,
               help='Which file extension? E.g. h5.')
 @click.option('--pattern', '-p',
-              help='Which file pattern to match? Optional. E.g. detachedTripletStepHitDoublets')
+              help='Which file pattern to match? Optional. E.g. detachedTripletStepHitDoublets')  # noqa: E501
 def main(name, directory, extension, pattern=''):  # noqa: D301
     """Create file list index files for given directory and file extension."""
     create_index_file(name, directory, extension, 'txt', pattern)

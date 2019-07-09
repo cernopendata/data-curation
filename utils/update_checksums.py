@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-
 """Helper script for updating file size and checksum information."""
 
 import click
@@ -57,7 +56,7 @@ def main(source, target, check_only):  # noqa: D301
      $ mv alice-analysis-modules-NEW.json \\
           alice-analysis-modules.json
      $ git commit -a -s -m 'records: ALICE file information update'
-    """
+    """  # noqa: E501
     # read source
     files = populate_file_cache(source)
 
@@ -71,8 +70,9 @@ def main(source, target, check_only):  # noqa: D301
         for record_file in target_record.get('files', []):
             if check_only:
                 if record_file['uri'] in files:
-                    if record_file['size'] == files.get(record_file['uri'])['size'] and \
-                       record_file['checksum'] == files.get(record_file['uri'])['checksum']:
+                    if record_file['size'] == files.get(
+                            record_file['uri'])['size'] and \
+                            record_file['checksum'] == files.get(record_file['uri'])['checksum']:  # noqa: E501
                         pass  # all OK
                     else:
                         errors_found = 1
@@ -85,7 +85,7 @@ def main(source, target, check_only):  # noqa: D301
                     eos_checksum = files.get(record_file['uri'])['checksum']
                     record_file['size'] = eos_size
                     record_file['checksum'] = eos_checksum
-                except:
+                except Exception:
                     print("ERROR with record {0} file {1}".format(
                         target_record['recid'], record_file['uri']),
                           file=sys.stderr)

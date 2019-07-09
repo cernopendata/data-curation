@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-
 """A helper script for updating record fixtures.
 
 This helper script is useful for updating selected JSON fields in the CERN Open
@@ -22,7 +21,7 @@ import json
               help='Field to match? E.g. "recid".')
 @click.option('--update', '-u', required=True,
               help='Field to update? E.g. "categories".')
-def main(source, target, match, update):  # noqa: D301
+def main(source, target, match, update):  # noqa: D301,D412,D413
     """Alter TARGET file based on SOURCE file information.
 
     Look through TARGET file records looking at MATCH fields and if some MATCH
