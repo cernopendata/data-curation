@@ -59,6 +59,9 @@ Contributors
 
 The list of contributors in alphabetical order:
 
+- `Anna Trzcinska <https://github.com/annatrz>`_
 - `Artemis Lavasa <https://orcid.org/0000-0001-5633-2459>`_
 - `Heitor de Bittencourt <https://linkedin.com/in/heitorpb>`_
-- `Tibor Simko <https://orcid.org/0000-0001-7202-5803>`_
+- `Kati Lassila-Perini <https://orcid.org/0000-0002-5502-1795>`_
+- `Mantas Savaniakas <https://github.com/mantasavas>`_
+- `Tibor Šimko <https://orcid.org/0000-0001-7202-5803>`_

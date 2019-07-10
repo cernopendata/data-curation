@@ -20,4 +20,5 @@
 # mkdir -p ./outputs
 
 # 3) create HLT config records
-python ./code/create_hlt_config_file_records.py > ./outputs/cms-hlt-configuration-files-2010.json
+#python ./code/create_hlt_config_file_records.py > ./outputs/cms-hlt-configuration-files-2010.json
+python ./code/update_hlt_trigger_information_record.py
