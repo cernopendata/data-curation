@@ -58,10 +58,9 @@ def create_index_file(name, directory, extension, style='txt', pattern=''):
             fdesc.write(afile['uri'])
             fdesc.write('\n')
     elif style == 'json':
-        content = json.dumps(files, indent=2, sort_keys=files)
-        for line in content.split('\n'):
-            line = line.rstrip()
-            fdesc.write(line + '\n')
+        content = json.dumps(files, indent=2, sort_keys=True,
+                             ensure_ascii=False, separators=(',', ': '))
+        fdesc.write(content + '\n')
     fdesc.close()
     return filename
 

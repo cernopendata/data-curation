@@ -94,10 +94,8 @@ def main(source, target, check_only):  # noqa: D301
 
     # print records
     new_content = json.dumps(target_records, indent=2, sort_keys=True,
-                             ensure_ascii=False)
-    for line in new_content.split('\n'):
-        line = line.rstrip()
-        print(line)
+                             ensure_ascii=False, separators=(',', ': '))
+    print(new_content + '\n')
 
 
 if __name__ == '__main__':

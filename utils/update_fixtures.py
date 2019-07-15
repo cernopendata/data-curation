@@ -69,10 +69,9 @@ def main(source, target, match, update):  # noqa: D301,D412,D413
                 target_record[update] = source_record[update]
 
     # print records
-    new_content = json.dumps(target_records, indent=2, sort_keys=True)
-    for line in new_content.split('\n'):
-        line = line.rstrip()
-        print(line)
+    new_content = json.dumps(target_records, indent=2, sort_keys=True,
+                             ensure_ascii=False, separators=(',', ': '))
+    print(new_content + '\n')
 
 
 if __name__ == '__main__':
