@@ -44,6 +44,7 @@ Specific data ingestion and curation campaigns:
 - `cod2-to-cod3 <cod2-to-cod3>`_ - record migration from version 2 to version 3
 - `cod2-to-cod3 <cod2-to-cod3>`_ - record migration from version 2 to version 3
 - `opera-2017-multiplicity-studies <opera-2017-multiplicity-studies>`_ - helper scripts for the release of OPERA multiplicity studies
+- `opera-2019-neutrino-induced-charm <opera-2019-neutrino-induced-charm>`_ - helper scripts for the release of OPERA charm events
 
 Related links
 -------------
