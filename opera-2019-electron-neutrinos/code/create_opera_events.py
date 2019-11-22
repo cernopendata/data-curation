@@ -136,7 +136,7 @@ template = """\
         }
     ],
     "abstract": {
-        "description": "The OPERA detector event is a muon neutrino interaction with the lead target where a muon was reconstructed in the final state. The event data from Electronic Detectors are available in the Drift Tube, RPC, and Target Tracker files. The event data from Emulsion Detectors are available in the Tracks and Vertex files. The EventInfo file presents general information about the event."
+        "description": "This OPERA detector event is a electron neutrino interaction with the lead target. The event data consist of Electronic Detector files (such as Drift Tube, RPC, and Target Tracker files) and Emulsion Detector files (such as Tracks and Vertex files). For more information, see the description of the whole dataset."
     },
     "license": {
         "attribution": "CC0"
