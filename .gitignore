@@ -5,6 +5,10 @@ cms-2010-simulated-datasets/outputs/*.json
 cms-2011-collision-datasets/code/das.py
 cms-2011-collision-datasets/inputs/das-json-store
 cms-2011-collision-datasets/outputs/*.xml
+cms-2011-collision-datasets-runb-update/inputs/das-json-store
+cms-2011-collision-datasets-runb-update/inputs/das-json-config-store
+cms-2011-collision-datasets-runb-update/inputs/config-store
+cms-2011-collision-datasets-runb-update/outputs/*.json
 cms-2011-hlt-triggers/outputs/*.html
 cms-2011-hlt-triggers/outputs/*.xml
 cms-2011-l1-triggers/outputs/*.xml
@@ -22,6 +26,8 @@ cms-2012-simulated-datasets/outputs/*.json
 cod2-to-cod3/outputs/*.json
 opera-2017-multiplicity-studies/outputs/opera-events.json
 cms-YYYY-simulated-datasets/cache
+cms-YYYY-simulated-datasets/outputs/*.csv
+cms-YYYY-simulated-datasets/outputs/*.err
 cms-YYYY-simulated-datasets/outputs/*.json
 cod2-to-cod3/outputs/*.json
 opera-2017-multiplicity-studies/outputs/opera-events.json

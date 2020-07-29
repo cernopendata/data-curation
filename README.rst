@@ -34,6 +34,7 @@ Specific data ingestion and curation campaigns:
 - `cms-2010-collision-datasets <cms-2010-collision-datasets>`_ -- helper scripts for the CMS 2010 open data release (collision datasets)
 - `cms-2010-simulated-datasets <cms-2010-simulated-datasets>`_ -- helper scripts for the CMS 2010 open data release (simulated datasets)
 - `cms-2011-collision-datasets <cms-2011-collision-datasets>`_ -- helper scripts for the CMS 2011 open data release (collision datasets)
+- `cms-2011-collision-datasets-runb-update <cms-2011-collision-datasets-runb-update>`_ -- helper scripts for the CMS 2011 RunB open data release (collision datasets)
 - `cms-2011-hlt-triggers <cms-2011-hlt-triggers>`_ -- helper scripts for the CMS 2011 open data release (HLT triggers)
 - `cms-2011-l1-triggers <cms-2011-l1-triggers>`_ -- helper scripts for the CMS 2011 open data release (L1 triggers)
 - `cms-2011-simulated-datasets <cms-2011-simulated-datasets>`_ -- helper scripts for the CMS 2011 open data release (simulated datasets)
