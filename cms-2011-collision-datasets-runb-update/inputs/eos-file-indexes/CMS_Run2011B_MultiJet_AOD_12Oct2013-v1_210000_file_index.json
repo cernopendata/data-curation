@@ -1,0 +1,962 @@
+[
+  {
+    "checksum": "adler32:16db998f",
+    "filename": "0028971E-E048-E311-9A89-003048F02C56.root",
+    "size": 609985108,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/0028971E-E048-E311-9A89-003048F02C56.root"
+  },
+  {
+    "checksum": "adler32:3f0266cc",
+    "filename": "006C78CB-E048-E311-812E-0025901AF1C6.root",
+    "size": 540889060,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/006C78CB-E048-E311-812E-0025901AF1C6.root"
+  },
+  {
+    "checksum": "adler32:6f9db237",
+    "filename": "00BB88F0-E348-E311-B0A8-02163E00AE95.root",
+    "size": 333981821,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/00BB88F0-E348-E311-B0A8-02163E00AE95.root"
+  },
+  {
+    "checksum": "adler32:85ad36ac",
+    "filename": "02901A36-E048-E311-B231-003048CF99DE.root",
+    "size": 790253154,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/02901A36-E048-E311-B231-003048CF99DE.root"
+  },
+  {
+    "checksum": "adler32:f4b564f8",
+    "filename": "08A4D28A-E148-E311-8A91-02163E00B4D1.root",
+    "size": 531164655,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/08A4D28A-E148-E311-8A91-02163E00B4D1.root"
+  },
+  {
+    "checksum": "adler32:baf8d08d",
+    "filename": "08BCBD64-E148-E311-BB4D-002590495244.root",
+    "size": 149187102,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/08BCBD64-E148-E311-BB4D-002590495244.root"
+  },
+  {
+    "checksum": "adler32:6a6cb8c8",
+    "filename": "0A668BE6-CC48-E311-8DBB-003048D4DF6E.root",
+    "size": 314730587,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/0A668BE6-CC48-E311-8DBB-003048D4DF6E.root"
+  },
+  {
+    "checksum": "adler32:4280ee70",
+    "filename": "0C036776-E048-E311-AEB3-002590496FE2.root",
+    "size": 662760408,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/0C036776-E048-E311-AEB3-002590496FE2.root"
+  },
+  {
+    "checksum": "adler32:378f069d",
+    "filename": "0EF261E7-E248-E311-9F8F-02163E00B50A.root",
+    "size": 316494448,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/0EF261E7-E248-E311-9F8F-02163E00B50A.root"
+  },
+  {
+    "checksum": "adler32:c77dc702",
+    "filename": "0EF837FE-E048-E311-9C64-002590494C62.root",
+    "size": 326553719,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/0EF837FE-E048-E311-9C64-002590494C62.root"
+  },
+  {
+    "checksum": "adler32:5b39e6dd",
+    "filename": "101599BE-E148-E311-88C3-02163E008CD7.root",
+    "size": 348782448,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/101599BE-E148-E311-88C3-02163E008CD7.root"
+  },
+  {
+    "checksum": "adler32:2f93c081",
+    "filename": "10E981AC-E148-E311-AAA3-02163E00B53C.root",
+    "size": 741916831,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/10E981AC-E148-E311-AAA3-02163E00B53C.root"
+  },
+  {
+    "checksum": "adler32:b7b5a6a6",
+    "filename": "12E571F0-E148-E311-916D-02163E00C4F2.root",
+    "size": 792047505,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/12E571F0-E148-E311-916D-02163E00C4F2.root"
+  },
+  {
+    "checksum": "adler32:6018dda0",
+    "filename": "12F48E78-E248-E311-81D5-02163E00AFE6.root",
+    "size": 304957061,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/12F48E78-E248-E311-81D5-02163E00AFE6.root"
+  },
+  {
+    "checksum": "adler32:8b9b400f",
+    "filename": "14123B21-E148-E311-B6D8-003048F01076.root",
+    "size": 346426172,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/14123B21-E148-E311-B6D8-003048F01076.root"
+  },
+  {
+    "checksum": "adler32:140824b0",
+    "filename": "141D110E-E148-E311-B1B8-003048F0E00A.root",
+    "size": 61195565,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/141D110E-E148-E311-B1B8-003048F0E00A.root"
+  },
+  {
+    "checksum": "adler32:21869cbe",
+    "filename": "144FFBA9-E248-E311-BBD9-02163E00B1AA.root",
+    "size": 133769257,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/144FFBA9-E248-E311-BBD9-02163E00B1AA.root"
+  },
+  {
+    "checksum": "adler32:dead86cd",
+    "filename": "147F38EF-E448-E311-BC33-02163E00BB57.root",
+    "size": 204777189,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/147F38EF-E448-E311-BC33-02163E00BB57.root"
+  },
+  {
+    "checksum": "adler32:7e06c09d",
+    "filename": "1620AE12-B848-E311-A0C8-0025904B5F8C.root",
+    "size": 291526683,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/1620AE12-B848-E311-A0C8-0025904B5F8C.root"
+  },
+  {
+    "checksum": "adler32:150ab6c4",
+    "filename": "1A78333A-E148-E311-A4C7-02163E00CCA3.root",
+    "size": 228111840,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/1A78333A-E148-E311-A4C7-02163E00CCA3.root"
+  },
+  {
+    "checksum": "adler32:c397c437",
+    "filename": "1C2CD000-E148-E311-BE2A-0025901D5A2A.root",
+    "size": 665739813,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/1C2CD000-E148-E311-BE2A-0025901D5A2A.root"
+  },
+  {
+    "checksum": "adler32:23c16d64",
+    "filename": "1C9940F6-E048-E311-9141-003048F23D62.root",
+    "size": 295557674,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/1C9940F6-E048-E311-9141-003048F23D62.root"
+  },
+  {
+    "checksum": "adler32:31efa0ad",
+    "filename": "2201B6CC-E048-E311-9093-0025904B5B32.root",
+    "size": 141271914,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/2201B6CC-E048-E311-9093-0025904B5B32.root"
+  },
+  {
+    "checksum": "adler32:e50d014d",
+    "filename": "223B4AA3-E148-E311-8C88-02163E00A0F7.root",
+    "size": 318872596,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/223B4AA3-E148-E311-8C88-02163E00A0F7.root"
+  },
+  {
+    "checksum": "adler32:8dd3d955",
+    "filename": "224E29D5-E048-E311-B962-003048CF6C32.root",
+    "size": 133855136,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/224E29D5-E048-E311-B962-003048CF6C32.root"
+  },
+  {
+    "checksum": "adler32:572f9f07",
+    "filename": "24336E47-E348-E311-AAE9-02163E00BA26.root",
+    "size": 145930060,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/24336E47-E348-E311-AAE9-02163E00BA26.root"
+  },
+  {
+    "checksum": "adler32:aa81931a",
+    "filename": "260559C5-E248-E311-B613-02163E00BD1D.root",
+    "size": 326954843,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/260559C5-E248-E311-B613-02163E00BD1D.root"
+  },
+  {
+    "checksum": "adler32:812e8039",
+    "filename": "26573BC7-E348-E311-A37A-02163E00BC76.root",
+    "size": 324135286,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/26573BC7-E348-E311-A37A-02163E00BC76.root"
+  },
+  {
+    "checksum": "adler32:5fa7d9ee",
+    "filename": "28AE4F34-E148-E311-96F5-0025904B0F70.root",
+    "size": 140395689,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/28AE4F34-E148-E311-96F5-0025904B0F70.root"
+  },
+  {
+    "checksum": "adler32:1fa50f87",
+    "filename": "2C9493ED-E048-E311-87E8-003048F1C3FE.root",
+    "size": 312473367,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/2C9493ED-E048-E311-87E8-003048F1C3FE.root"
+  },
+  {
+    "checksum": "adler32:9c26cbe9",
+    "filename": "2CD84740-E148-E311-8E09-003048F23C1E.root",
+    "size": 306010005,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/2CD84740-E148-E311-8E09-003048F23C1E.root"
+  },
+  {
+    "checksum": "adler32:75fa0b62",
+    "filename": "2E7ED433-E148-E311-97D4-3C4A9279BA72.root",
+    "size": 368547148,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/2E7ED433-E148-E311-97D4-3C4A9279BA72.root"
+  },
+  {
+    "checksum": "adler32:6a24487d",
+    "filename": "2ED4531D-E148-E311-B208-02163E00CC89.root",
+    "size": 334984600,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/2ED4531D-E148-E311-B208-02163E00CC89.root"
+  },
+  {
+    "checksum": "adler32:d822727d",
+    "filename": "32442A50-E148-E311-8F51-C860001BD828.root",
+    "size": 315890600,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/32442A50-E148-E311-8F51-C860001BD828.root"
+  },
+  {
+    "checksum": "adler32:046577c8",
+    "filename": "32564916-B348-E311-8CF2-002590494C8A.root",
+    "size": 247153775,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/32564916-B348-E311-8CF2-002590494C8A.root"
+  },
+  {
+    "checksum": "adler32:a24a8f57",
+    "filename": "36287E64-E148-E311-940E-002481E0E902.root",
+    "size": 553656446,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/36287E64-E148-E311-940E-002481E0E902.root"
+  },
+  {
+    "checksum": "adler32:54e4baa1",
+    "filename": "36D32D3D-E048-E311-A37A-002481E0D4B8.root",
+    "size": 742732077,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/36D32D3D-E048-E311-A37A-002481E0D4B8.root"
+  },
+  {
+    "checksum": "adler32:4beecdd6",
+    "filename": "3A1A281F-E148-E311-AE0C-003048F2456E.root",
+    "size": 227789223,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/3A1A281F-E148-E311-AE0C-003048F2456E.root"
+  },
+  {
+    "checksum": "adler32:ebfa459a",
+    "filename": "3C1F2D4A-E148-E311-B5D9-003048CF97B2.root",
+    "size": 77169688,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/3C1F2D4A-E148-E311-B5D9-003048CF97B2.root"
+  },
+  {
+    "checksum": "adler32:472f1992",
+    "filename": "3C341B42-E148-E311-9567-003048F118E4.root",
+    "size": 309165811,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/3C341B42-E148-E311-9567-003048F118E4.root"
+  },
+  {
+    "checksum": "adler32:e032d2c8",
+    "filename": "481AE116-E148-E311-A26A-002481E0E040.root",
+    "size": 92826911,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/481AE116-E148-E311-A26A-002481E0E040.root"
+  },
+  {
+    "checksum": "adler32:213854df",
+    "filename": "48BF5F16-E148-E311-8F98-003048CF99DE.root",
+    "size": 539157317,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/48BF5F16-E148-E311-8F98-003048CF99DE.root"
+  },
+  {
+    "checksum": "adler32:ad4027b2",
+    "filename": "4A5AFAD4-E048-E311-950E-0025904B1FBE.root",
+    "size": 221169415,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/4A5AFAD4-E048-E311-950E-0025904B1FBE.root"
+  },
+  {
+    "checksum": "adler32:859afb45",
+    "filename": "4CBCB104-E148-E311-9FE7-C860001BD93C.root",
+    "size": 217714626,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/4CBCB104-E148-E311-9FE7-C860001BD93C.root"
+  },
+  {
+    "checksum": "adler32:82c89d7d",
+    "filename": "4CC5E299-E448-E311-9369-02163E00A0E6.root",
+    "size": 662606472,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/4CC5E299-E448-E311-9369-02163E00A0E6.root"
+  },
+  {
+    "checksum": "adler32:d5faa8a1",
+    "filename": "4CF2CE62-B248-E311-A85E-003048C3366F.root",
+    "size": 321480182,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/4CF2CE62-B248-E311-A85E-003048C3366F.root"
+  },
+  {
+    "checksum": "adler32:aae48d09",
+    "filename": "50705F17-E148-E311-9BDE-003048F1BFE0.root",
+    "size": 365198904,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/50705F17-E148-E311-9BDE-003048F1BFE0.root"
+  },
+  {
+    "checksum": "adler32:ff05c1bd",
+    "filename": "50D97776-E248-E311-B706-02163E00C8E3.root",
+    "size": 291320441,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/50D97776-E248-E311-B706-02163E00C8E3.root"
+  },
+  {
+    "checksum": "adler32:3b5b5580",
+    "filename": "522BD3EB-E048-E311-8325-0025904B15AA.root",
+    "size": 232530504,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/522BD3EB-E048-E311-8325-0025904B15AA.root"
+  },
+  {
+    "checksum": "adler32:5769a8c5",
+    "filename": "5439DD44-E148-E311-A64F-02163E008F62.root",
+    "size": 324250828,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/5439DD44-E148-E311-A64F-02163E008F62.root"
+  },
+  {
+    "checksum": "adler32:ab365990",
+    "filename": "5440D928-E148-E311-AFD6-003048F17EFC.root",
+    "size": 233903179,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/5440D928-E148-E311-AFD6-003048F17EFC.root"
+  },
+  {
+    "checksum": "adler32:db7c805d",
+    "filename": "549A8252-E148-E311-AF73-02163E00A407.root",
+    "size": 213942990,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/549A8252-E148-E311-AF73-02163E00A407.root"
+  },
+  {
+    "checksum": "adler32:fc943f1d",
+    "filename": "54AC740D-E148-E311-9E75-003048F23A76.root",
+    "size": 150458628,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/54AC740D-E148-E311-9E75-003048F23A76.root"
+  },
+  {
+    "checksum": "adler32:32a5d466",
+    "filename": "564AECD7-E048-E311-8031-003048F02D3C.root",
+    "size": 315917320,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/564AECD7-E048-E311-8031-003048F02D3C.root"
+  },
+  {
+    "checksum": "adler32:27a7f895",
+    "filename": "5AF85D59-E148-E311-B9D8-02163E008D82.root",
+    "size": 233088685,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/5AF85D59-E148-E311-B9D8-02163E008D82.root"
+  },
+  {
+    "checksum": "adler32:1a57f917",
+    "filename": "5E664154-D748-E311-8271-0025904B5FAA.root",
+    "size": 305737215,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/5E664154-D748-E311-8271-0025904B5FAA.root"
+  },
+  {
+    "checksum": "adler32:03411b08",
+    "filename": "5ECBB507-E148-E311-94C7-002481E0D4B8.root",
+    "size": 195026722,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/5ECBB507-E148-E311-94C7-002481E0D4B8.root"
+  },
+  {
+    "checksum": "adler32:2e679fa1",
+    "filename": "60FC3C16-E148-E311-B80A-003048F01176.root",
+    "size": 239326324,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/60FC3C16-E148-E311-B80A-003048F01176.root"
+  },
+  {
+    "checksum": "adler32:88d32d50",
+    "filename": "625CE5BE-E248-E311-BB24-02163E00C4EF.root",
+    "size": 144541883,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/625CE5BE-E248-E311-BB24-02163E00C4EF.root"
+  },
+  {
+    "checksum": "adler32:7a9ddf37",
+    "filename": "62A89DEE-E048-E311-BB6C-0025904B57C8.root",
+    "size": 217808221,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/62A89DEE-E048-E311-BB6C-0025904B57C8.root"
+  },
+  {
+    "checksum": "adler32:92f32c52",
+    "filename": "62E52BCE-E048-E311-9127-002590496FE2.root",
+    "size": 233742269,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/62E52BCE-E048-E311-9127-002590496FE2.root"
+  },
+  {
+    "checksum": "adler32:6ca82df4",
+    "filename": "64150F8D-E448-E311-9A86-003048F23D62.root",
+    "size": 650088951,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/64150F8D-E448-E311-9A86-003048F23D62.root"
+  },
+  {
+    "checksum": "adler32:0159cf59",
+    "filename": "6448E21C-E048-E311-8AD4-002590496FE2.root",
+    "size": 717382541,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/6448E21C-E048-E311-8AD4-002590496FE2.root"
+  },
+  {
+    "checksum": "adler32:6ef65a1e",
+    "filename": "6499CC6C-E148-E311-81EF-0025904B5B6E.root",
+    "size": 41556577,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/6499CC6C-E148-E311-81EF-0025904B5B6E.root"
+  },
+  {
+    "checksum": "adler32:c6c6e995",
+    "filename": "669A353D-E148-E311-AD3C-0025904B5B72.root",
+    "size": 52388104,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/669A353D-E148-E311-AD3C-0025904B5B72.root"
+  },
+  {
+    "checksum": "adler32:497fad1d",
+    "filename": "66AFE08C-E048-E311-8EB0-003048CF99DE.root",
+    "size": 627095013,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/66AFE08C-E048-E311-8EB0-003048CF99DE.root"
+  },
+  {
+    "checksum": "adler32:4fd96c52",
+    "filename": "68C801B4-E148-E311-948C-02163E009D5A.root",
+    "size": 126573639,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/68C801B4-E148-E311-948C-02163E009D5A.root"
+  },
+  {
+    "checksum": "adler32:51f41b37",
+    "filename": "6A4BADC0-E048-E311-B546-00248C9BA50C.root",
+    "size": 147916063,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/6A4BADC0-E048-E311-B546-00248C9BA50C.root"
+  },
+  {
+    "checksum": "adler32:2ef9fcb3",
+    "filename": "6C42AF42-E148-E311-8CEF-0025904949BE.root",
+    "size": 222872607,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/6C42AF42-E148-E311-8CEF-0025904949BE.root"
+  },
+  {
+    "checksum": "adler32:e3658c75",
+    "filename": "6E50F5BF-E048-E311-8A28-0025904B26CA.root",
+    "size": 131374043,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/6E50F5BF-E048-E311-8A28-0025904B26CA.root"
+  },
+  {
+    "checksum": "adler32:613f1629",
+    "filename": "70AD7030-E148-E311-AB07-0025901AF1D6.root",
+    "size": 487962276,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/70AD7030-E148-E311-AB07-0025901AF1D6.root"
+  },
+  {
+    "checksum": "adler32:17d2ef70",
+    "filename": "728F6016-E148-E311-95EA-003048CF99DE.root",
+    "size": 324891916,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/728F6016-E148-E311-95EA-003048CF99DE.root"
+  },
+  {
+    "checksum": "adler32:744e0b25",
+    "filename": "72FC09E7-E048-E311-AE09-0025904B5B28.root",
+    "size": 216109325,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/72FC09E7-E048-E311-AE09-0025904B5B28.root"
+  },
+  {
+    "checksum": "adler32:0324c9f2",
+    "filename": "74BB4EFA-E048-E311-B4A1-001D09F24038.root",
+    "size": 223784419,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/74BB4EFA-E048-E311-B4A1-001D09F24038.root"
+  },
+  {
+    "checksum": "adler32:9d491e57",
+    "filename": "7612CDBE-E048-E311-9F53-02163E00A0F7.root",
+    "size": 695797329,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/7612CDBE-E048-E311-9F53-02163E00A0F7.root"
+  },
+  {
+    "checksum": "adler32:f45a7967",
+    "filename": "76357F66-D748-E311-9B1F-0025904B577E.root",
+    "size": 313135473,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/76357F66-D748-E311-9B1F-0025904B577E.root"
+  },
+  {
+    "checksum": "adler32:1a92f315",
+    "filename": "7659B4A0-E448-E311-99F3-02163E00CF73.root",
+    "size": 782511128,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/7659B4A0-E448-E311-99F3-02163E00CF73.root"
+  },
+  {
+    "checksum": "adler32:19a3a8f5",
+    "filename": "766B74D2-E048-E311-9655-003048D2BF2E.root",
+    "size": 329124062,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/766B74D2-E048-E311-9655-003048D2BF2E.root"
+  },
+  {
+    "checksum": "adler32:b869ea19",
+    "filename": "783122CA-E148-E311-B49C-02163E00BBFE.root",
+    "size": 794999917,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/783122CA-E148-E311-B49C-02163E00BBFE.root"
+  },
+  {
+    "checksum": "adler32:3a663e73",
+    "filename": "78506E98-E448-E311-8B9D-0025904B15C2.root",
+    "size": 664047513,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/78506E98-E448-E311-8B9D-0025904B15C2.root"
+  },
+  {
+    "checksum": "adler32:9b0b71d2",
+    "filename": "787A7EB9-E348-E311-91B0-02163E00B013.root",
+    "size": 202338351,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/787A7EB9-E348-E311-91B0-02163E00B013.root"
+  },
+  {
+    "checksum": "adler32:e2b35e5a",
+    "filename": "7A04F96A-E048-E311-B974-003048F02C56.root",
+    "size": 649392935,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/7A04F96A-E048-E311-B974-003048F02C56.root"
+  },
+  {
+    "checksum": "adler32:f06dbb67",
+    "filename": "7CAB7030-E148-E311-A054-0025901AF1D6.root",
+    "size": 319547442,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/7CAB7030-E148-E311-A054-0025901AF1D6.root"
+  },
+  {
+    "checksum": "adler32:18bcb14f",
+    "filename": "7E72DFEE-E048-E311-A3AD-0025904B57C8.root",
+    "size": 220119140,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/7E72DFEE-E048-E311-A3AD-0025904B57C8.root"
+  },
+  {
+    "checksum": "adler32:e869d1a9",
+    "filename": "7E84D0F0-E048-E311-B049-002590495244.root",
+    "size": 513519489,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/7E84D0F0-E048-E311-B049-002590495244.root"
+  },
+  {
+    "checksum": "adler32:97d83948",
+    "filename": "8065E3FF-E048-E311-BAA1-02163E00A4F2.root",
+    "size": 221283396,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/8065E3FF-E048-E311-BAA1-02163E00A4F2.root"
+  },
+  {
+    "checksum": "adler32:6b0bbd00",
+    "filename": "840BA25F-E148-E311-AD4A-C860001BD844.root",
+    "size": 317218287,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/840BA25F-E148-E311-AD4A-C860001BD844.root"
+  },
+  {
+    "checksum": "adler32:a82b81c7",
+    "filename": "84B3963B-E148-E311-950D-003048F02C56.root",
+    "size": 152868004,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/84B3963B-E148-E311-950D-003048F02C56.root"
+  },
+  {
+    "checksum": "adler32:50e0d66a",
+    "filename": "86C4581D-B248-E311-98A8-0025904B5F96.root",
+    "size": 309287983,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/86C4581D-B248-E311-98A8-0025904B5F96.root"
+  },
+  {
+    "checksum": "adler32:fe956934",
+    "filename": "8E54F948-E448-E311-90E3-02163E00BD02.root",
+    "size": 314969176,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/8E54F948-E448-E311-90E3-02163E00BD02.root"
+  },
+  {
+    "checksum": "adler32:7f00c570",
+    "filename": "90E3A42D-E148-E311-B62E-003048F17C90.root",
+    "size": 352161840,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/90E3A42D-E148-E311-B62E-003048F17C90.root"
+  },
+  {
+    "checksum": "adler32:cd0e5133",
+    "filename": "926C8D28-E148-E311-A0A1-0025B3203836.root",
+    "size": 512597397,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/926C8D28-E148-E311-A0A1-0025B3203836.root"
+  },
+  {
+    "checksum": "adler32:75bc3f20",
+    "filename": "92891E3F-E048-E311-9696-002590496FE2.root",
+    "size": 519354710,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/92891E3F-E048-E311-9696-002590496FE2.root"
+  },
+  {
+    "checksum": "adler32:6f21438c",
+    "filename": "92DF0254-E148-E311-BEF9-003048F1C7BE.root",
+    "size": 559951696,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/92DF0254-E148-E311-BEF9-003048F1C7BE.root"
+  },
+  {
+    "checksum": "adler32:97fbfcc9",
+    "filename": "942A3B29-E148-E311-A72A-003048F245C4.root",
+    "size": 318705448,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/942A3B29-E148-E311-A72A-003048F245C4.root"
+  },
+  {
+    "checksum": "adler32:199be120",
+    "filename": "96A43DF1-E048-E311-8201-002590494FAC.root",
+    "size": 102351946,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/96A43DF1-E048-E311-8201-002590494FAC.root"
+  },
+  {
+    "checksum": "adler32:58316d10",
+    "filename": "983843DC-E148-E311-BFD7-C86000151B8C.root",
+    "size": 74851426,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/983843DC-E148-E311-BFD7-C86000151B8C.root"
+  },
+  {
+    "checksum": "adler32:d14b9bb3",
+    "filename": "9A1BD970-E148-E311-8951-003048F118FE.root",
+    "size": 158426279,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/9A1BD970-E148-E311-8951-003048F118FE.root"
+  },
+  {
+    "checksum": "adler32:90b53c8b",
+    "filename": "9AEDB978-E048-E311-9539-002481E0D4B8.root",
+    "size": 689356632,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/9AEDB978-E048-E311-9539-002481E0D4B8.root"
+  },
+  {
+    "checksum": "adler32:8f1f6e8f",
+    "filename": "9C443DBF-E048-E311-9B4A-002590494FDA.root",
+    "size": 278918524,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/9C443DBF-E048-E311-9B4A-002590494FDA.root"
+  },
+  {
+    "checksum": "adler32:dc9456a9",
+    "filename": "9C62FA0B-E148-E311-8C4B-003048CFC628.root",
+    "size": 155040034,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/9C62FA0B-E148-E311-8C4B-003048CFC628.root"
+  },
+  {
+    "checksum": "adler32:7035f119",
+    "filename": "9C86496E-E348-E311-8881-02163E00C68E.root",
+    "size": 315402859,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/9C86496E-E348-E311-8881-02163E00C68E.root"
+  },
+  {
+    "checksum": "adler32:977b10d2",
+    "filename": "9EAE1D1D-E148-E311-94E5-003048CF9E98.root",
+    "size": 73247822,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/9EAE1D1D-E148-E311-94E5-003048CF9E98.root"
+  },
+  {
+    "checksum": "adler32:87314fa8",
+    "filename": "A02414B5-E448-E311-8396-02163E00A0F5.root",
+    "size": 618275417,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/A02414B5-E448-E311-8396-02163E00A0F5.root"
+  },
+  {
+    "checksum": "adler32:17e662f9",
+    "filename": "A06EE0CE-E148-E311-9F2D-02163E00ADF1.root",
+    "size": 616309043,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/A06EE0CE-E148-E311-9F2D-02163E00ADF1.root"
+  },
+  {
+    "checksum": "adler32:85795c61",
+    "filename": "A22CCF84-E148-E311-8AC5-003048F009CE.root",
+    "size": 230054266,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/A22CCF84-E148-E311-8AC5-003048F009CE.root"
+  },
+  {
+    "checksum": "adler32:9aecf61c",
+    "filename": "A2AF6A2F-E148-E311-94AB-003048F1C9F2.root",
+    "size": 289145588,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/A2AF6A2F-E148-E311-94AB-003048F1C9F2.root"
+  },
+  {
+    "checksum": "adler32:10fc8611",
+    "filename": "A2BE2951-E248-E311-99BB-02163E008F98.root",
+    "size": 717893291,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/A2BE2951-E248-E311-99BB-02163E008F98.root"
+  },
+  {
+    "checksum": "adler32:42bb443b",
+    "filename": "A2D3DE37-E148-E311-98C5-0025904B2C7A.root",
+    "size": 316762062,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/A2D3DE37-E148-E311-98C5-0025904B2C7A.root"
+  },
+  {
+    "checksum": "adler32:20ec1a5f",
+    "filename": "A2FFCC19-E048-E311-8B43-002590494FCC.root",
+    "size": 717047333,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/A2FFCC19-E048-E311-8B43-002590494FCC.root"
+  },
+  {
+    "checksum": "adler32:fad5ad1d",
+    "filename": "A4B190E2-E048-E311-84B4-003048F1C472.root",
+    "size": 232376176,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/A4B190E2-E048-E311-84B4-003048F1C472.root"
+  },
+  {
+    "checksum": "adler32:098413f7",
+    "filename": "A61722E4-E048-E311-A3FC-003048FEAED4.root",
+    "size": 260779214,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/A61722E4-E048-E311-A3FC-003048FEAED4.root"
+  },
+  {
+    "checksum": "adler32:b628571e",
+    "filename": "A6BACE58-E048-E311-AA3D-002590496FE2.root",
+    "size": 643235620,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/A6BACE58-E048-E311-AA3D-002590496FE2.root"
+  },
+  {
+    "checksum": "adler32:4965f754",
+    "filename": "A8210DCD-E248-E311-8DA0-02163E00BB5A.root",
+    "size": 336158795,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/A8210DCD-E248-E311-8DA0-02163E00BB5A.root"
+  },
+  {
+    "checksum": "adler32:5a97a035",
+    "filename": "A862CA1B-E148-E311-B12D-003048FE80DE.root",
+    "size": 227149447,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/A862CA1B-E148-E311-B12D-003048FE80DE.root"
+  },
+  {
+    "checksum": "adler32:1aa566be",
+    "filename": "A8ACB32E-E148-E311-9742-002590494E8C.root",
+    "size": 308987719,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/A8ACB32E-E148-E311-9742-002590494E8C.root"
+  },
+  {
+    "checksum": "adler32:d004d46a",
+    "filename": "AA1B10F3-E048-E311-90A8-002590494E26.root",
+    "size": 288678934,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/AA1B10F3-E048-E311-90A8-002590494E26.root"
+  },
+  {
+    "checksum": "adler32:dea80c96",
+    "filename": "AC3F7A2B-E148-E311-A226-003048CF4994.root",
+    "size": 273236567,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/AC3F7A2B-E148-E311-A226-003048CF4994.root"
+  },
+  {
+    "checksum": "adler32:dd585066",
+    "filename": "AC881416-E148-E311-BB02-003048F17272.root",
+    "size": 51348499,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/AC881416-E148-E311-BB02-003048F17272.root"
+  },
+  {
+    "checksum": "adler32:f6611ec3",
+    "filename": "B0504744-E148-E311-8B29-003048CFAFAC.root",
+    "size": 552860645,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/B0504744-E148-E311-8B29-003048CFAFAC.root"
+  },
+  {
+    "checksum": "adler32:3ca58631",
+    "filename": "B0F03660-E048-E311-B65A-003048CF99DE.root",
+    "size": 741573718,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/B0F03660-E048-E311-B65A-003048CF99DE.root"
+  },
+  {
+    "checksum": "adler32:7900171d",
+    "filename": "B240C1E2-E048-E311-8247-002590494F74.root",
+    "size": 216758987,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/B240C1E2-E048-E311-8247-002590494F74.root"
+  },
+  {
+    "checksum": "adler32:f379a168",
+    "filename": "B456BC2A-B348-E311-B731-0030487F926B.root",
+    "size": 310707775,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/B456BC2A-B348-E311-B731-0030487F926B.root"
+  },
+  {
+    "checksum": "adler32:4959277f",
+    "filename": "B4CBEA8A-E148-E311-AD74-00304894746A.root",
+    "size": 153116035,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/B4CBEA8A-E148-E311-AD74-00304894746A.root"
+  },
+  {
+    "checksum": "adler32:d3d15a47",
+    "filename": "B84F2FEC-E048-E311-A319-BCAEC53296F7.root",
+    "size": 294692546,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/B84F2FEC-E048-E311-A319-BCAEC53296F7.root"
+  },
+  {
+    "checksum": "adler32:67e7807e",
+    "filename": "B8691547-E048-E311-A8ED-003048F02C56.root",
+    "size": 528139526,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/B8691547-E048-E311-A8ED-003048F02C56.root"
+  },
+  {
+    "checksum": "adler32:92027150",
+    "filename": "B8FCC723-C348-E311-87E0-0025904B0FDC.root",
+    "size": 104427368,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/B8FCC723-C348-E311-87E0-0025904B0FDC.root"
+  },
+  {
+    "checksum": "adler32:ab73651a",
+    "filename": "BCCDC11D-E148-E311-B159-003048CFC644.root",
+    "size": 564845487,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/BCCDC11D-E148-E311-B159-003048CFC644.root"
+  },
+  {
+    "checksum": "adler32:d1b63f0c",
+    "filename": "BCF5F675-E048-E311-9895-002590494FCC.root",
+    "size": 868824754,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/BCF5F675-E048-E311-9895-002590494FCC.root"
+  },
+  {
+    "checksum": "adler32:a37d7ca7",
+    "filename": "BE485913-E148-E311-AB69-003048F1C7AA.root",
+    "size": 559353255,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/BE485913-E148-E311-AB69-003048F1C7AA.root"
+  },
+  {
+    "checksum": "adler32:3f3741f3",
+    "filename": "BE54353A-E148-E311-9C3D-02163E008DA3.root",
+    "size": 332185848,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/BE54353A-E148-E311-9C3D-02163E008DA3.root"
+  },
+  {
+    "checksum": "adler32:94625756",
+    "filename": "BEC638F7-E048-E311-9F11-001D09F2915A.root",
+    "size": 521074832,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/BEC638F7-E048-E311-9F11-001D09F2915A.root"
+  },
+  {
+    "checksum": "adler32:8a6f3d27",
+    "filename": "C094AF51-E048-E311-B40B-002590494FCC.root",
+    "size": 650128296,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/C094AF51-E048-E311-B40B-002590494FCC.root"
+  },
+  {
+    "checksum": "adler32:f1d21445",
+    "filename": "C43FC5DC-E048-E311-B3C1-002590494FD0.root",
+    "size": 219620337,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/C43FC5DC-E048-E311-B3C1-002590494FD0.root"
+  },
+  {
+    "checksum": "adler32:7e403105",
+    "filename": "C4DB690F-E148-E311-948F-003048F0113A.root",
+    "size": 220075980,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/C4DB690F-E148-E311-948F-003048F0113A.root"
+  },
+  {
+    "checksum": "adler32:be331da7",
+    "filename": "C832DB8F-E448-E311-8F78-003048D2BC20.root",
+    "size": 649945031,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/C832DB8F-E448-E311-8F78-003048D2BC20.root"
+  },
+  {
+    "checksum": "adler32:2b63d9c1",
+    "filename": "C84D3974-E148-E311-BF29-C860001BD858.root",
+    "size": 244376275,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/C84D3974-E148-E311-BF29-C860001BD858.root"
+  },
+  {
+    "checksum": "adler32:1cc1d1ea",
+    "filename": "CC4F2DDC-E348-E311-8F44-02163E00B1E5.root",
+    "size": 330180040,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/CC4F2DDC-E348-E311-8F44-02163E00B1E5.root"
+  },
+  {
+    "checksum": "adler32:7763266f",
+    "filename": "CEE68C97-E448-E311-A52F-02163E00CFE4.root",
+    "size": 669653989,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/CEE68C97-E448-E311-A52F-02163E00CFE4.root"
+  },
+  {
+    "checksum": "adler32:b6a2c28d",
+    "filename": "D44FF9F1-E048-E311-B86E-02163E00A196.root",
+    "size": 225383680,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/D44FF9F1-E048-E311-B86E-02163E00A196.root"
+  },
+  {
+    "checksum": "adler32:cae852a4",
+    "filename": "D6A9A304-E148-E311-BA6A-BCAEC5329720.root",
+    "size": 334693323,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/D6A9A304-E148-E311-BA6A-BCAEC5329720.root"
+  },
+  {
+    "checksum": "adler32:4d7b0ec7",
+    "filename": "D6B124DB-E048-E311-868E-002590494FCC.root",
+    "size": 335464024,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/D6B124DB-E048-E311-868E-002590494FCC.root"
+  },
+  {
+    "checksum": "adler32:e6ea1f98",
+    "filename": "D8A23441-E148-E311-BA31-003048F118FE.root",
+    "size": 149981953,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/D8A23441-E148-E311-BA31-003048F118FE.root"
+  },
+  {
+    "checksum": "adler32:a55048b1",
+    "filename": "DAE8D60C-B848-E311-9B5F-0025904B242A.root",
+    "size": 296852583,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/DAE8D60C-B848-E311-9B5F-0025904B242A.root"
+  },
+  {
+    "checksum": "adler32:8e2571bf",
+    "filename": "DE23058F-E148-E311-8CA5-003048CF5C56.root",
+    "size": 212757256,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/DE23058F-E148-E311-8CA5-003048CF5C56.root"
+  },
+  {
+    "checksum": "adler32:c5a2d7bb",
+    "filename": "DE3B2615-E148-E311-BCC6-0025904B3072.root",
+    "size": 216984836,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/DE3B2615-E148-E311-BCC6-0025904B3072.root"
+  },
+  {
+    "checksum": "adler32:b544543e",
+    "filename": "DEAE2331-E148-E311-A8EC-02163E009E6C.root",
+    "size": 238013572,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/DEAE2331-E148-E311-A8EC-02163E009E6C.root"
+  },
+  {
+    "checksum": "adler32:e1c1d28b",
+    "filename": "E0281046-E148-E311-98E7-003048F1C424.root",
+    "size": 551926154,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/E0281046-E148-E311-98E7-003048F1C424.root"
+  },
+  {
+    "checksum": "adler32:568bc43f",
+    "filename": "E0B02C8F-E448-E311-B12C-002481E0E040.root",
+    "size": 619717177,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/E0B02C8F-E448-E311-B12C-002481E0E040.root"
+  },
+  {
+    "checksum": "adler32:397c28d4",
+    "filename": "E2D89BC7-E048-E311-B135-BCAEC5364C62.root",
+    "size": 533459793,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/E2D89BC7-E048-E311-B135-BCAEC5364C62.root"
+  },
+  {
+    "checksum": "adler32:aca1b05a",
+    "filename": "E8C421FA-E048-E311-ADAB-0025904B0F50.root",
+    "size": 508267184,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/E8C421FA-E048-E311-ADAB-0025904B0F50.root"
+  },
+  {
+    "checksum": "adler32:662a7ccc",
+    "filename": "EA8B2EF2-E048-E311-A66D-0025904B15AC.root",
+    "size": 287702010,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/EA8B2EF2-E048-E311-A66D-0025904B15AC.root"
+  },
+  {
+    "checksum": "adler32:b708adc8",
+    "filename": "EAA96AA1-E148-E311-AC1B-02163E00B51B.root",
+    "size": 772144252,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/EAA96AA1-E148-E311-AC1B-02163E00B51B.root"
+  },
+  {
+    "checksum": "adler32:e66d12c9",
+    "filename": "EE4E5A22-E148-E311-B244-003048F00B8E.root",
+    "size": 219327708,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/EE4E5A22-E148-E311-B244-003048F00B8E.root"
+  },
+  {
+    "checksum": "adler32:e0a414eb",
+    "filename": "F043B511-E148-E311-8DD5-001D09F24EE3.root",
+    "size": 313723614,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/F043B511-E148-E311-8DD5-001D09F24EE3.root"
+  },
+  {
+    "checksum": "adler32:aeed4660",
+    "filename": "F668C323-C348-E311-ACB2-0025904B0FDC.root",
+    "size": 314085614,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/F668C323-C348-E311-ACB2-0025904B0FDC.root"
+  },
+  {
+    "checksum": "adler32:1df7ecce",
+    "filename": "F67EA91D-E148-E311-A6C9-002481E0DB94.root",
+    "size": 136097623,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/F67EA91D-E148-E311-A6C9-002481E0DB94.root"
+  },
+  {
+    "checksum": "adler32:2450a020",
+    "filename": "FC72FB96-E448-E311-A766-02163E008F21.root",
+    "size": 634056820,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/FC72FB96-E448-E311-A766-02163E008F21.root"
+  },
+  {
+    "checksum": "adler32:a9c0027a",
+    "filename": "FCA5E7AB-E248-E311-A852-02163E00B73F.root",
+    "size": 275906031,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/FCA5E7AB-E248-E311-A852-02163E00B73F.root"
+  },
+  {
+    "checksum": "adler32:b50080f0",
+    "filename": "FEED62C4-E148-E311-A13E-002481E0D0DE.root",
+    "size": 329658199,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/Run2011B/MultiJet/AOD/12Oct2013-v1/210000/FEED62C4-E148-E311-A13E-002481E0D0DE.root"
+  }
+]
