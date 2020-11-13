@@ -38,13 +38,13 @@ def main(input_file, source_path, target_path, delete_path, wrap_symbol):
 
     Saves processed file in ./output directory, which must be created before
     running script in the same directory.
-      \b
-      $ python ./merge_delete_fixtures.py \\
-                    -f ./input/cms-hlt-configuration-files-2012.json \\
-                    -sp "note&description" \\
-                    -tp "abstract&description" \\
-                    -dp "note" \\
-                    -ws "<p>&</p>" \\
+    \b
+    $ python ./merge_delete_fixtures.py \\
+                -f ./input/cms-hlt-configuration-files-2012.json \\
+                -sp "note&description" \\
+                -tp "abstract&description" \\
+                -dp "note" \\
+                -ws "<p>&</p>" \\
     """
     input_paths = input_file.split("/")
     source_paths = source_path.split("&")

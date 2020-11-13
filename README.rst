@@ -2,8 +2,8 @@
  data-curation
 ===============
 
-.. image:: https://img.shields.io/travis/cernopendata/data-curation.svg
-   :target: https://travis-ci.org/cernopendata/data-curation
+.. image:: https://github.com/cernopendata/data-curation/workflows/CI/badge.svg
+   :target: https://github.com/cernopendata/data-curation/actions
 
 .. image:: https://badges.gitter.im/Join%20Chat.svg
    :target: https://gitter.im/cernopendata/opendata.cern.ch?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge
