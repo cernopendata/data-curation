@@ -41,7 +41,7 @@ Specific data ingestion and curation campaigns:
 - `cms-2012-event-display-files <cms-2012-event-display-files>`_ -- helper scripts for the CMS 2012 open data release (event display files)
 - `cms-2012-simulated-datasets <cms-2012-simulated-datasets>`_ -- helper scripts for the CMS 2012 open data release (simulated datasets)
 - `cms-YYYY-simulated-datasets <cms-YYYY-simulated-datasets>`_ -- helper scripts for CMS simulated dataset records (any year)
-- `cod2-to-cod3 <cod2-to-cod3>`_ - record migration from version 2 to version 3
+- `cms-run2-hlt-triggers <cms-run2-hlt-triggers>`_ -- helper scripts for the CMS Run2 data release (HLT triggers)
 - `cod2-to-cod3 <cod2-to-cod3>`_ - record migration from version 2 to version 3
 - `opera-2017-multiplicity-studies <opera-2017-multiplicity-studies>`_ - helper scripts for the release of OPERA multiplicity studies
 - `opera-2019-neutrino-induced-charm <opera-2019-neutrino-induced-charm>`_ - helper scripts for the release of OPERA charm events
@@ -66,4 +66,5 @@ The list of contributors in alphabetical order:
 - `Heitor de Bittencourt <https://linkedin.com/in/heitorpb>`_
 - `Kati Lassila-Perini <https://orcid.org/0000-0002-5502-1795>`_
 - `Mantas Savaniakas <https://github.com/mantasavas>`_
+- `Miko Piitsalo <https://github.com/mokotus>`_
 - `Tibor Šimko <https://orcid.org/0000-0001-7202-5803>`_
