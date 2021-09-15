@@ -53,7 +53,7 @@ from utils import get_datasets_from_dir
               help='Create json file for conffiles')
 @click.option('--recid-file', default="./inputs/recid_info.py",
               show_default=True, type=click.Path(),
-              help='File with DOI information')
+              help='File with record IDs')
 @click.option('--doi-file', default='./inputs/doi-sim.txt',
               show_default=True, type=click.Path(),
               help='File with DOI information')
@@ -65,7 +65,7 @@ def main(dataset_list,
          print_categorisation, print_results,
          create_records,
          create_conffile_records,
-	 recid_file, doi_file):
+         recid_file, doi_file):
     """
     Interface for manipulation of dataset records for OpenData portal.
 
@@ -103,7 +103,7 @@ def main(dataset_list,
         $ python ./code/interface.py --create-mcm-store DATASET_LIST
 
         This will query McM to get the dict and setup scripts for each dataset.
-	It also queries the input_dataset (GEN-SIM).
+        It also queries the input_dataset (GEN-SIM).
 
     step 4) get the config files
 
@@ -121,7 +121,7 @@ def main(dataset_list,
 
         \b
         $ python ./code/interface.py --create-records DATASET_LIST
-        $ python ./code/interface.py --create-conffiles-records DATASET_LIST
+        $ python ./code/interface.py --create-conffile-records DATASET_LIST
 
     To get a markdown file with the results of the previous steps:
 
