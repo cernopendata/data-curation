@@ -41,6 +41,7 @@ Specific data ingestion and curation campaigns:
 - `cms-2012-collision-datasets <cms-2012-collision-datasets>`_ -- helper scripts for the CMS 2012 open data release (collision datasets)
 - `cms-2012-event-display-files <cms-2012-event-display-files>`_ -- helper scripts for the CMS 2012 open data release (event display files)
 - `cms-2012-simulated-datasets <cms-2012-simulated-datasets>`_ -- helper scripts for the CMS 2012 open data release (simulated datasets)
+- `cms-2015-collision-datasets <cms-2015-collision-datasets>`_ -- helper scripts for the CMS 2015 open data release (collision datasets)
 - `cms-YYYY-simulated-datasets <cms-YYYY-simulated-datasets>`_ -- helper scripts for CMS simulated dataset records (any year)
 - `cms-run2-hlt-triggers <cms-run2-hlt-triggers>`_ -- helper scripts for the CMS Run2 data release (HLT triggers)
 - `cod2-to-cod3 <cod2-to-cod3>`_ - record migration from version 2 to version 3
