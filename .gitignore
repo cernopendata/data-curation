@@ -23,6 +23,8 @@ cms-2012-simulated-datasets/inputs/das-json-store
 cms-2012-simulated-datasets/outputs/create-config-store.sh
 cms-2012-simulated-datasets/outputs/create-das-json-store.sh
 cms-2012-simulated-datasets/outputs/*.json
+cms-2015-collision-datasets/inputs/das-json-store
+cms-2015-collision-datasets/inputs/das-json-config-store
 cms-2015-collision-datasets/outputs/*.json
 cod2-to-cod3/outputs/*.json
 opera-2017-multiplicity-studies/outputs/opera-events.json
