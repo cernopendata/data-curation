@@ -1,20 +1,22 @@
-import os
-import sys
-import subprocess
 import json
-from utils import get_dataset_name, \
-                  get_from_deep_json
-from eos_store import  check_datasets_in_eos_dir
+import os
+import subprocess
+import sys
+import threading
+from time import sleep
+
+from eos_store import check_datasets_in_eos_dir
+from utils import get_dataset_name, get_from_deep_json
 
 
 def get_parent_dataset(dataset, das_dir):
     "Return parent dataset to the given dataset or an empty string if no parent found."
     parent_dataset = ''
-    try:
+
+    filepath = das_dir + '/parent/' + dataset.replace('/', '@') + '.json'
+
+    if os.path.exists(filepath) and os.stat(filepath).st_size != 0:
         parent_dataset = get_from_deep_json(get_das_store_json(dataset, 'parent', das_dir), 'parent_dataset')
-    except:
-        # troubles getting information about parent
-        pass
     return parent_dataset
 
 
@@ -38,7 +40,13 @@ def get_das_store_json(dataset, query='dataset', das_dir=''):
 
 def mydasgoclient(dataset, query, out_dir, out_file):
     "Interface to dasgoclient"
-
+   
+    out = out_dir + '/' + query + '/' + out_file
+    if  os.path.exists(out) and os.stat(out).st_size != 0:
+        print('==> {:<9} {}'.format(query, dataset) +
+            '\n==> File already exist, skipping...\n')
+        return
+   
     print('\t{:<9} {}'.format(query, dataset))
 
     cmd = 'dasgoclient -query "'
@@ -46,7 +54,6 @@ def mydasgoclient(dataset, query, out_dir, out_file):
         cmd += query + ' '
     cmd += 'dataset=' + dataset + '" -json'
 
-    out = out_dir + '/' + query + '/' + out_file
 
     das = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
@@ -62,6 +69,25 @@ def mydasgoclient(dataset, query, out_dir, out_file):
             print("[ERROR] Empty DAS {query} for {ds}".format(query=query, ds=dataset),
                   file=sys.stderr)
 
+
+def create(dataset, das_dir):
+    # is it necessary to only get the ones with eos information?
+
+    result_file = dataset.replace('/', '@') + ".json"
+    mydasgoclient(dataset, "dataset", das_dir, result_file)
+    mydasgoclient(dataset, "parent",  das_dir, result_file)
+    mydasgoclient(dataset, "config",  das_dir, result_file)
+    mydasgoclient(dataset, "release", das_dir, result_file)
+    #mydasgoclient(dataset, "mcm",     das_dir, result_file)
+
+    parent = get_parent_dataset(dataset, das_dir)
+    while parent != '' and parent:
+        mydasgoclient(parent, "dataset",  das_dir, parent.replace('/', '@') + ".json")
+        mydasgoclient(parent, "config",   das_dir, parent.replace('/', '@') + ".json")
+        mydasgoclient(parent, "release",   das_dir, parent.replace('/', '@') + ".json")
+        mydasgoclient(parent, "parent",   das_dir, parent.replace('/', '@') + ".json")
+        parent = get_parent_dataset(parent, das_dir)
+    
 
 def main(das_dir,
          eos_dir,
@@ -87,24 +113,11 @@ def main(das_dir,
     total = len(eos_datasets)
     i = 1
     for dataset in eos_datasets:
-        # is it necessary to only get the ones with eos information?
         print("dasgoclienting ({}/{})".format(i, total), dataset)
-
-        result_file = dataset.replace('/', '@') + ".json"
-        mydasgoclient(dataset, "dataset", das_dir, result_file)
-        mydasgoclient(dataset, "parent",  das_dir, result_file)
-        mydasgoclient(dataset, "config",  das_dir, result_file)
-        mydasgoclient(dataset, "release", das_dir, result_file)
-        mydasgoclient(dataset, "mcm",     das_dir, result_file)
-
-        parent = get_parent_dataset(dataset, das_dir)
-        while parent != '' and parent:
-            #mydasgoclient(parent, "dataset",  das_dir, parent.replace('/', '@') + ".json")
-            mydasgoclient(parent, "config",   das_dir, parent.replace('/', '@') + ".json")
-            mydasgoclient(parent, "release",   das_dir, parent.replace('/', '@') + ".json")
-            mydasgoclient(parent, "parent",   das_dir, parent.replace('/', '@') + ".json")
-            parent = get_parent_dataset(parent, das_dir)
-
+        t = threading.Thread(target=create, args=(dataset, das_dir))
+        t.start()
+        while threading.activeCount() >= 100 :
+            sleep(0.5)  # run 100 dasgoclient commands in parallel 
         i += 1
 
 
