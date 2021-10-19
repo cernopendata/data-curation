@@ -6,40 +6,31 @@ Create MC YYYY records.
 """
 
 import hashlib
-import zlib
 import json
-import re
 import os
+import re
 import subprocess
 import sys
+import threading
+import zlib
+from datetime import datetime as dt
+from time import sleep
 from urllib.request import urlopen
 
-from utils import get_from_deep_json, \
-                  populate_doiinfo, \
-                  get_dataset_format, \
-                  get_dataset_year, \
-                  get_author_list_recid, \
-                  get_recommended_global_tag_for_analysis, \
-                  get_recommended_cmssw_for_analysis, \
-                  get_doi
-from das_json_store import get_das_store_json, \
-                           get_generator_parameters, \
-                           get_parent_dataset, \
-                           get_cmssw_version_from_das
-from eos_store import XROOTD_URI_BASE, \
-                      get_dataset_index_file_base, \
-                      get_dataset_location
-from mcm_store import get_mcm_dict, \
-                      get_global_tag, \
-                      get_genfragment_url, \
-                      get_generator_name, \
-                      get_dataset_energy, \
-                      get_cmsDriver_script, \
-                      get_cmssw_version_from_mcm, \
-                      get_parent_dataset_from_mcm, \
-                      get_conffile_ids_from_mcm
 from categorisation import guess_title_category
-
+from das_json_store import (get_cmssw_version_from_das, get_das_store_json,
+                            get_parent_dataset)
+from eos_store import (XROOTD_URI_BASE, get_dataset_index_file_base,
+                       get_dataset_location)
+from mcm_store import (get_cmsDriver_script, get_cmssw_version_from_mcm,
+                       get_conffile_ids_from_mcm, get_dataset_energy,
+                       get_generator_name, get_generator_parameters_from_mcm,
+                       get_genfragment_url, get_global_tag, get_mcm_dict,
+                       get_parent_dataset_from_mcm)
+from utils import (get_author_list_recid, get_dataset_format, get_dataset_year,
+                   get_doi, get_from_deep_json,
+                   get_recommended_cmssw_for_analysis,
+                   get_recommended_global_tag_for_analysis, populate_doiinfo)
 
 # Hi Tibor, I commented these `exec` below to not screw the code.
 # I also moved some functions from this code to utils.py and das_json_store.py
@@ -125,7 +116,7 @@ def newer_dataset_version_exists(dataset_full_name, all_datasets):
 
 def get_conffile_ids(dataset, das_dir, mcm_dir):
     """Return location of the configuration files for the dataset from either McM or DAS."""
-    ids = get_conffile_ids_from_mcm(dataset, das_dir, mcm_dir)
+    ids = get_conffile_ids_from_mcm(dataset, mcm_dir)
     if not ids:
         ids = get_conffile_ids_from_das(dataset, das_dir, mcm_dir)
     if ids:
@@ -141,6 +132,8 @@ def get_conffile_ids_from_das(dataset, das_dir, mcm_dir):
     if output:
         for someid in output:
             ids[someid] = 1
+    else:
+        print("Error: No config id found from DAS config for " +dataset, file=sys.stderr )
     return list(ids.keys())
 
 
@@ -148,10 +141,10 @@ def get_process(afile, conf_dir):
     "Return suitable title of configuration file."
     content = ''
     try:
-        with open(conf_dir + afile, 'r') as myfile:
+        with open(conf_dir  + '/' + afile, 'r') as myfile:
             content = myfile.read()
     except FileNotFoundError:
-        pass
+        print ( "Error: '" + conf_dir  + '/' + afile + "' No such file")
     process = ''
     m = re.search(r"process = cms.Process\(\s?['\"]([A-Z0-9]+)['\"]\s?(\)|,)", content)
     if m:
@@ -173,10 +166,10 @@ def get_globaltag_from_conffile(afile, conf_dir):
     "Return global tag information from the configuration file."
     content = ''
     try:
-        with open(conf_dir + afile, 'r') as myfile:
+        with open(conf_dir + '/' + afile, 'r') as myfile:
             content = myfile.read()
     except FileNotFoundError:
-        pass
+        print ( "Error: '" + conf_dir  + '/' + afile + "' No such file")
     globaltag = ''
     m = re.search(r"globaltag = cms.string\(\s?['\"](.+)['\"]\s?\)", content)
     if m:
@@ -311,7 +304,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     dataset = get_dataset(dataset_full_name)
     dataset_format = get_dataset_format(dataset_full_name)
     year_created   = str(get_dataset_year(dataset_full_name))
-    year_published = '2018'  # FIXME get from somewhere, do not hardcode it!
+    year_published = '2021'  # FIXME get from somewhere, do not hardcode it!
     run_period = ['Run' + year_created + 'A', 'Run' + year_created + 'B']  # FIXME remove the 'A'!!
     global_tag = get_global_tag(dataset_full_name, mcm_dir)
     release    = get_cmssw_version(dataset_full_name, das_dir, mcm_dir)
@@ -337,7 +330,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
 
     # FIXME cross section not working
     # we should try to get the cross section from the parent, and the parent-parent, and so on...
-    generator_parameters = get_generator_parameters(dataset_full_name, das_dir)
+    generator_parameters = get_generator_parameters_from_mcm(dataset_full_name, mcm_dir)
     if generator_parameters:
         rec['cross_section'] = {}
         rec['cross_section']['value'] = generator_parameters.get('cross_section', None)
@@ -458,21 +451,43 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
 
     return rec
 
+def create(dataset, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir, records_dir):
+    filepath= records_dir  + "/" + dataset.replace('/', '@') + '.json'
+    if os.path.exists(filepath) and os.stat(filepath).st_size != 0:
+        print("==> " + dataset + "\n==> Already exist. Skipping...\n")
+        return
+        
+    Record= create_record(dataset, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir)
 
-def create_records(dataset_full_names, doi_file, recid_file, eos_dir, das_dir, mcm_dir, conffiles_dir):
+    with open(filepath, 'w') as file:
+        json.dump(Record, indent=2, sort_keys=True, ensure_ascii=True, fp=file)
+
+
+
+def create_records(dataset_full_names, doi_file, recid_file, eos_dir, das_dir, mcm_dir, conffiles_dir, records_dir):
     """Create records."""
 
     recid_info = {}
     _locals = locals()
     exec(open(recid_file, 'r').read(), globals(), _locals)
-    recid_info = _locals['RECID_INFO']
+    #recid_info = _locals['RECID_INFO']
+
+    i= 15200  # FIXME hardcoded: first recid to be inserted
+    for dataset_full_name in dataset_full_names:
+        recid_info[dataset_full_name]= i
+        i+=1
 
     doi_info = populate_doiinfo(doi_file)
 
     records = []
     for dataset_full_name in dataset_full_names:
-        records.append(create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir))
-    return records
+        t= threading.Thread(target=create, args=(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir, records_dir))
+        t.start()
+        while threading.activeCount() >= 500 :
+            sleep(0.5)  # run 500 parallel 
+        
+        #records.append(create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir))
+    #return records
 
 
 def print_records(records):
@@ -499,5 +514,10 @@ def main(datasets, eos_dir, das_dir, mcm_dir, conffiles_dir, doi_file, recid_fil
     #    else:
     #        dataset_full_names.append(dataset_full_name)
 
-    records = create_records(datasets, doi_file, recid_file, eos_dir, das_dir, mcm_dir, conffiles_dir)
-    json.dump(records, indent=2, sort_keys=True, ensure_ascii=True, fp=sys.stdout)
+    records_dir= "./outputs/records-" + dt.now().strftime("%Y-%m")
+    os.makedirs(records_dir, exist_ok=True)
+
+    create_records(datasets, doi_file, recid_file, eos_dir, das_dir, mcm_dir, conffiles_dir, records_dir)
+
+    #records = create_records(datasets, doi_file, recid_file, eos_dir, das_dir, mcm_dir, conffiles_dir)
+    #json.dump(records, indent=2, sort_keys=True, ensure_ascii=True, fp=sys.stdout)
