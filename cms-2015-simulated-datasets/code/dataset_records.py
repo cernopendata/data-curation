@@ -9,13 +9,13 @@ import hashlib
 import json
 import os
 import re
+import requests
 import subprocess
 import sys
 import threading
 import zlib
 from datetime import datetime as dt
 from time import sleep
-from urllib.request import urlopen
 
 from categorisation import guess_title_category
 from das_json_store import (get_cmssw_version_from_das, get_das_store_json,
@@ -26,7 +26,8 @@ from mcm_store import (get_cmsDriver_script, get_cmssw_version_from_mcm,
                        get_conffile_ids_from_mcm, get_dataset_energy,
                        get_generator_name, get_generator_parameters_from_mcm,
                        get_genfragment_url, get_global_tag, get_mcm_dict,
-                       get_parent_dataset_from_mcm)
+                       get_parent_dataset_from_mcm,
+                       get_pileup_from_mcm)
 from utils import (get_author_list_recid, get_dataset_format, get_dataset_year,
                    get_doi, get_from_deep_json,
                    get_recommended_cmssw_for_analysis,
@@ -220,8 +221,8 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir):
                 configuration_files['title'] = 'Generator parameters'
                 configuration_files['url'] = url
                 try:
-                    script = urlopen(url).read()
-                    configuration_files['script'] = script.decode("utf-8")
+                    script = requests.get(url, verify=False).text
+                    configuration_files['script'] = script
                 except:
                     pass
                 if configuration_files:
@@ -255,8 +256,8 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir):
                 process = 'SIM'
             elif input_dataset.endswith('/GEN-SIM'):
                 process = 'SIM'
-        if process == 'LHE':
-            step['note'] = "To get the exact generator parameters, please see <a href=\"/docs/cms-mc-production-overview#finding-the-generator-parameters\">Finding the generator parameters</a>."
+        #if process == 'LHE':
+        #    step['note'] = "To get the exact generator parameters, please see <a href=\"/docs/cms-mc-production-overview#finding-the-generator-parameters\">Finding the generator parameters</a>."
         step['type'] = process
         info["steps"].append(step)
 
@@ -292,7 +293,7 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir):
         else:
             if 'generators' in step:
                 generators_present = True
-
+                    
     return info
 
 
@@ -349,8 +350,8 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     rec['distribution']['number_files'] = get_number_files(dataset_full_name, das_dir)
     rec['distribution']['size'] = get_size(dataset_full_name, das_dir)
 
-    if not dataset_full_name in doi_info:
-        rec['distribution']['availability'] = 'ondemand'
+    #if not dataset_full_name in doi_info: FIXME
+    #    rec['distribution']['availability'] = 'ondemand'
 
     doi = get_doi(dataset_full_name, doi_info)
     if doi:
@@ -378,20 +379,36 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
 
     rec['methodology'] = get_all_generator_text(dataset_full_name, das_dir, mcm_dir, conffiles_dir)
 
-    pileup_dataset_title = {'2010': None,
-                            '2011': '/MinBias_TuneZ2_7TeV-pythia6/Summer11Leg-START53_LV4-v1/GEN-SIM',
-                            '2012': '/MinBias_TuneZ2star_8TeV-pythia6/Summer12-START50_V13-v3/GEN-SIM'}.get(year_created, 0)
-    pileup_dataset_recid = {'2010': None,
-                            '2011': 36,
-                            '2012': 37}.get(year_created, 0)
-    if pileup_dataset_recid:
+
+    pileup_dataset_name= ''
+    parent= dataset_full_name
+    while parent != '' and parent and not pileup_dataset_name:
+        pileup_dataset_name= get_pileup_from_mcm(parent, mcm_dir)
+        parent= get_parent_dataset(parent, das_dir) or get_parent_dataset_from_mcm(parent, das_dir, mcm_dir)
+    
+    pileup_dataset_recid = {
+        '/MinBias_TuneZ2_7TeV-pythia6/Summer11Leg-START53_LV4-v1/GEN-SIM': 36, # 2011
+        '/MinBias_TuneZ2star_8TeV-pythia6/Summer12-START50_V13-v3/GEN-SIM': 37, # 2012
+        '/MinBias_TuneCUETP8M1_13TeV-pythia8/RunIISummer15GS-MCRUN2_71_V1-v2/GEN-SIM': 22314, # 2015
+        #'/MinBias_TuneCUETP8M1_13TeV-pythia8/RunIISummer15GS-magnetOffBS0T_MCRUN2_71_V1-v1/GEN-SIM': {recid}, # 2015 TODO
+        '/MinBias_TuneCP5_13TeV-pythia8/RunIIFall18GS-IdealGeometry_102X_upgrade2018_design_v9-v1/GEN-SIM': 12302 # 2018
+    }.get(pileup_dataset_name, 0)
+
+
+    if pileup_dataset_name:
         rec['pileup'] = {}
-        rec['pileup']['description'] = '<p>To make these simulated data comparable with the collision data, <a href="/docs/cms-guide-pileup-simulation">pile-up events</a> are added to the simulated event in this step.</p>'
         if pileup_dataset_recid:
-            rec['pileup']['links'] = [
-                {'recid': str(pileup_dataset_recid),
-                 'title': pileup_dataset_title},
+            rec['pileup']['description'] = "<p>To make these simulated data comparable with the collision data, <a href=\"/docs/cms-guide-pileup-simulation\">pile-up events</a> are added to the simulated event in this step.</p>"
+            rec['pileup']['links'] = [ 
+                {
+                    "recid": str(pileup_dataset_recid),
+                    "title": pileup_dataset_name
+                }
             ]
+        else:
+            rec['pileup']['description'] = "<p>To make these simulated data comparable with the collision data, <a href=\"/docs/cms-guide-pileup-simulation\">pile-up events</a> from the dataset <code>"\
+                                            + pileup_dataset_name\
+                                            + "</code> are added to the simulated event in this step.</p>"
 
     rec['publisher'] = 'CERN Open Data Portal'
 
@@ -407,8 +424,8 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     recommended_gt = get_recommended_global_tag_for_analysis(dataset_full_name)
     recommended_cmssw = get_recommended_cmssw_for_analysis(dataset_full_name)
     rec['system_details'] = {}
-    rec['system_details']['global_tag'] = recommended_gt
-    rec['system_details']['release'] = recommended_cmssw
+    rec['system_details']['global_tag'] = "76X_mcRun2_asymptotic_RunIIFall15DR76_v1" # FIXME
+    rec['system_details']['release'] = "CMSSW_7_6_7" # FIXME
 
     rec['title'] = dataset_full_name
 
@@ -433,15 +450,19 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
                             '2011': 2011,
                             '2012': 2011}.get(year_created, 2011)
     rec['usage'] = {}
-    rec['usage']['description'] = 'You can access these data through the CMS Virtual Machine. See the instructions for setting up the Virtual Machine and getting started in'
-    rec['usage']['links'] = [
+    rec['usage']['description'] = "You can access these data through the CMS Open Data container or the CMS Virtual Machine. See the instructions for setting up one of the two alternative environments and getting started in" # FIXME
+    rec['usage']['links'] = [  # FIXME
         {
-            "description": "How to install the CMS Virtual Machine",
-            "url": "/docs/cms-virtual-machine-{}".format(year_created)
-        },
+          "description": "Running CMS analysis code using Docker", 
+          "url": "/docs/cms-guide-docker"
+        }, 
         {
-            "description": "Getting started with CMS open data",
-            "url": "/docs/cms-getting-started-{}".format(year_getting_started)
+          "description": "How to install the CMS Virtual Machine", 
+          "url": "/docs/cms-virtual-machine-2015"
+        }, 
+        {
+          "description": "Getting started with CMS open data", 
+          "url": "/docs/cms-getting-started-2015"
         }
     ]
 
