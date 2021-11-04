@@ -28,8 +28,8 @@ def mcm_downloader(dataset, mcm_dir, das_dir):
     if mcm_dict_out != '{"results": {}}\n' or mcm_dict_out != '{"results": {}}':
         # get prepid from mcm/dataset
         prepid= get_from_deep_json(json.loads(mcm_dict_out), "prepid")
-        if prepid == None:
-            prepid = get_from_deep_json(json.loads(mcm_dict_out), "prep_id")
+    if prepid == None:
+        prepid = get_from_deep_json(json.loads(mcm_dict_out), "prep_id")
 
     if prepid == None:
         prepid = get_prepId_from_das(dataset, das_dir)
@@ -38,13 +38,13 @@ def mcm_downloader(dataset, mcm_dir, das_dir):
         print("Error: prepid not found in mcm, das, and das/mcm for " + dataset + "\n==> Skipping dataset McM dict and script",file=sys.stderr )
         return
 
-    # check if McM dict is empty try to get it by das prepid ( /get/perpid instead of /produces/dataset)
-    if mcm_dict_out == '{"results": {}}\n' or mcm_dict_out == '{"results": {}}':
-        cmd = "curl -s -k https://cms-pdmv.cern.ch/mcm/public/restapi/requests/"
+     # check if McM dict is empty try to get it by das prepid ( /get/perpid instead of /produces/dataset)
+        if mcm_dict_out == '{"results": {}}\n' or mcm_dict_out == '{"results": {}}':
+            cmd = "curl -s -k https://cms-pdmv.cern.ch/mcm/public/restapi/requests/"
 
-        mcm_dict = subprocess.run(cmd + "get/" + prepid,
-                                shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-        mcm_dict_out = str(mcm_dict.stdout.decode("utf-8"))
+            mcm_dict = subprocess.run(cmd + "get/" + prepid,
+                                    shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+            mcm_dict_out = str(mcm_dict.stdout.decode("utf-8"))
 
     # check if it is still empty (then there is no way to get dataset McM dict)
     if mcm_dict_out == '{"results": {}}\n' or mcm_dict_out == '{"results": {}}':
@@ -54,13 +54,13 @@ def mcm_downloader(dataset, mcm_dir, das_dir):
         outfile = mcm_dir + "/dict/" + dataset.replace('/', '@') + ".json"
         with open(outfile, 'w') as dict_file:
                 dict_file.write(mcm_dict_out)
-
-    mcm_script = subprocess.run(cmd + "get_setup/" + prepid ,
+    
+    mcm_script = subprocess.run(cmd + "get_test/" + prepid ,
                                 shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     mcm_script_out = str(mcm_script.stdout.decode("utf-8"))
 
     if mcm_script_out == '' or mcm_script_out[0] == '{':
-        print("[ERROR] Empty McM script (get_setup) for {ds}".format(ds=dataset),
+        print("[ERROR] Empty McM script (get_test) for {ds}".format(ds=dataset),
             file=sys.stderr)
     else:
         outfile = mcm_dir + "/scripts/" + dataset.replace('/', '@') + ".sh"
@@ -252,3 +252,10 @@ def get_generator_parameters_from_mcm(dataset, mcm_dir):
         return out[0]
     else:
         return {}
+
+
+def get_pileup_from_mcm(dataset, mcm_dir):
+    """Return pileup_dataset_name for given dataset."""
+    mcm_dict = get_mcm_dict(dataset, mcm_dir)
+    pileup = get_from_deep_json(mcm_dict, 'pileup_dataset_name')
+    return pileup
