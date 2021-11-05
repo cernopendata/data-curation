@@ -28,8 +28,8 @@ def mcm_downloader(dataset, mcm_dir, das_dir):
     if mcm_dict_out != '{"results": {}}\n' or mcm_dict_out != '{"results": {}}':
         # get prepid from mcm/dataset
         prepid= get_from_deep_json(json.loads(mcm_dict_out), "prepid")
-    if prepid == None:
-        prepid = get_from_deep_json(json.loads(mcm_dict_out), "prep_id")
+        if prepid == None:
+            prepid = get_from_deep_json(json.loads(mcm_dict_out), "prep_id")
 
     if prepid == None:
         prepid = get_prepId_from_das(dataset, das_dir)
@@ -38,13 +38,13 @@ def mcm_downloader(dataset, mcm_dir, das_dir):
         print("Error: prepid not found in mcm, das, and das/mcm for " + dataset + "\n==> Skipping dataset McM dict and script",file=sys.stderr )
         return
 
-     # check if McM dict is empty try to get it by das prepid ( /get/perpid instead of /produces/dataset)
-        if mcm_dict_out == '{"results": {}}\n' or mcm_dict_out == '{"results": {}}':
-            cmd = "curl -s -k https://cms-pdmv.cern.ch/mcm/public/restapi/requests/"
+    # check if McM dict is empty try to get it by das prepid ( /get/perpid instead of /produces/dataset)
+    if mcm_dict_out == '{"results": {}}\n' or mcm_dict_out == '{"results": {}}':
+        cmd = "curl -s -k https://cms-pdmv.cern.ch/mcm/public/restapi/requests/"
 
-            mcm_dict = subprocess.run(cmd + "get/" + prepid,
-                                    shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-            mcm_dict_out = str(mcm_dict.stdout.decode("utf-8"))
+        mcm_dict = subprocess.run(cmd + "get/" + prepid,
+                                shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+        mcm_dict_out = str(mcm_dict.stdout.decode("utf-8"))
 
     # check if it is still empty (then there is no way to get dataset McM dict)
     if mcm_dict_out == '{"results": {}}\n' or mcm_dict_out == '{"results": {}}':
