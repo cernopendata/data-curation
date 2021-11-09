@@ -259,6 +259,14 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir):
         #if process == 'LHE':
         #    step['note'] = "To get the exact generator parameters, please see <a href=\"/docs/cms-mc-production-overview#finding-the-generator-parameters\">Finding the generator parameters</a>."
         step['type'] = process
+
+        # For cases where SIM and LHE steps are done together
+        datatier = get_from_deep_json(get_mcm_dict(input_dataset,mcm_dir),'datatier')
+        if datatier ==  ["GEN-SIM", "LHE"]:
+            step['type'] = "LHE SIM"
+            for i, configuration_files in enumerate(step['configuration_files']):
+                if configuration_files['title'] == 'Generator parameters':
+                    step['configuration_files'][i]['title']='Hadronizer parameters'
         info["steps"].append(step)
 
         # find parent dataset, first via DAS, then via McM
@@ -281,7 +289,7 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir):
             for configuration_file in step.get('configuration_files'):
                 if configuration_file['title'] == 'Generator parameters':
                     configuration_file['title'] = 'Hadronizer parameters'
-        if step['type'] == 'LHE':
+        if 'LHE' in step['type']:
             lhe_present = True
 
     # post-generation fix: keep generators only for the first step, remove from others:
