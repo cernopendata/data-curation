@@ -314,7 +314,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     dataset_format = get_dataset_format(dataset_full_name)
     year_created   = str(get_dataset_year(dataset_full_name))
     year_published = '2021'  # FIXME get from somewhere, do not hardcode it!
-    run_period = ['Run' + year_created + 'A', 'Run' + year_created + 'B']  # FIXME remove the 'A'!!
+    run_period = ['Run2015C', 'Run2015D']  # FIXME Hardcoded!!
     global_tag = get_global_tag(dataset_full_name, mcm_dir)
     release    = get_cmssw_version(dataset_full_name, das_dir, mcm_dir)
 
