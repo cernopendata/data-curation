@@ -1,4 +1,4 @@
-# cms-2012-simulated-datasets
+# cms-2015-simulated-datasets
 
 This directory contains helper scripts used to prepare CMS 2015 open data
 release regarding MC simulated datasets.
@@ -21,3 +21,10 @@ voms-proxy-init --voms cms --rfc --valid 190:00
 ```
 Warning: creating a local cache might take a long time!
 
+Here is how to run the record creation.
+
+First, create EOS file index cache:
+
+```console
+$ python3 ./code/interface.py --create-eos-indexes ../cms-YYYY-simulated-datasets/inputs/CMS-2015-mc-datasets.txt
+```

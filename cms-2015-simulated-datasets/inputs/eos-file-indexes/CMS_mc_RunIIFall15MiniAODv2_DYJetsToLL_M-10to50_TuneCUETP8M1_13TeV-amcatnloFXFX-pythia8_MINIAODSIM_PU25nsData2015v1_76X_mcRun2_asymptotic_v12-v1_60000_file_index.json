@@ -1,0 +1,656 @@
+[
+  {
+    "checksum": "adler32:7fe8ccb7",
+    "filename": "008ED67E-E5B8-E511-AA0F-3417EBE5264B.root",
+    "size": 742301374,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/008ED67E-E5B8-E511-AA0F-3417EBE5264B.root"
+  },
+  {
+    "checksum": "adler32:8964c7f7",
+    "filename": "02B30F85-E3B8-E511-A48F-3417EBE51E7D.root",
+    "size": 550658250,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/02B30F85-E3B8-E511-A48F-3417EBE51E7D.root"
+  },
+  {
+    "checksum": "adler32:11cd9e13",
+    "filename": "06E589C6-E2B8-E511-A8E6-848F69FD88BB.root",
+    "size": 606446253,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/06E589C6-E2B8-E511-A8E6-848F69FD88BB.root"
+  },
+  {
+    "checksum": "adler32:8591d153",
+    "filename": "08FED1A1-E5B8-E511-AD45-24B6FDFFBB8E.root",
+    "size": 771601371,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/08FED1A1-E5B8-E511-AD45-24B6FDFFBB8E.root"
+  },
+  {
+    "checksum": "adler32:466c64c1",
+    "filename": "0A17FCE0-E3B8-E511-9E74-3417EBE528F1.root",
+    "size": 596066527,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/0A17FCE0-E3B8-E511-9E74-3417EBE528F1.root"
+  },
+  {
+    "checksum": "adler32:6f708bc8",
+    "filename": "0C15C0D8-E6B8-E511-93CF-24B6FDFFBB8E.root",
+    "size": 720481138,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/0C15C0D8-E6B8-E511-93CF-24B6FDFFBB8E.root"
+  },
+  {
+    "checksum": "adler32:6afc6a5f",
+    "filename": "1025E657-E7B8-E511-B743-848F69FBC0FD.root",
+    "size": 629994739,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/1025E657-E7B8-E511-B743-848F69FBC0FD.root"
+  },
+  {
+    "checksum": "adler32:88c25919",
+    "filename": "129BB11E-E7B8-E511-948B-3417EBE52651.root",
+    "size": 642049898,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/129BB11E-E7B8-E511-948B-3417EBE52651.root"
+  },
+  {
+    "checksum": "adler32:f604591e",
+    "filename": "147B0E2F-E3B8-E511-8492-00266CFCCC38.root",
+    "size": 602064647,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/147B0E2F-E3B8-E511-8492-00266CFCCC38.root"
+  },
+  {
+    "checksum": "adler32:f3ef6ffa",
+    "filename": "160B1B22-E8B8-E511-BB80-3417EBE51E38.root",
+    "size": 640948120,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/160B1B22-E8B8-E511-BB80-3417EBE51E38.root"
+  },
+  {
+    "checksum": "adler32:a57ebd18",
+    "filename": "1A04E1E5-E3B8-E511-A7BA-3417EBE528EB.root",
+    "size": 603852849,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/1A04E1E5-E3B8-E511-A7BA-3417EBE528EB.root"
+  },
+  {
+    "checksum": "adler32:a92fe47a",
+    "filename": "1A1F6AFE-E0B8-E511-BE47-00266CFCCC38.root",
+    "size": 557142153,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/1A1F6AFE-E0B8-E511-BE47-00266CFCCC38.root"
+  },
+  {
+    "checksum": "adler32:03d1dc2d",
+    "filename": "1CE6E91C-E8B8-E511-BACA-3417EBE52468.root",
+    "size": 771842717,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/1CE6E91C-E8B8-E511-BACA-3417EBE52468.root"
+  },
+  {
+    "checksum": "adler32:4cf67e70",
+    "filename": "1E44CE3C-E3B8-E511-9269-003048CDCF6E.root",
+    "size": 491040071,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/1E44CE3C-E3B8-E511-9269-003048CDCF6E.root"
+  },
+  {
+    "checksum": "adler32:7a518f89",
+    "filename": "201DF05E-E7B8-E511-BB17-F04DA2757237.root",
+    "size": 774763577,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/201DF05E-E7B8-E511-BB17-F04DA2757237.root"
+  },
+  {
+    "checksum": "adler32:c0993d7f",
+    "filename": "204DEFF9-E0B8-E511-8D98-3417EBE52651.root",
+    "size": 603972656,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/204DEFF9-E0B8-E511-8D98-3417EBE52651.root"
+  },
+  {
+    "checksum": "adler32:595be19c",
+    "filename": "20BCBDD9-E6B8-E511-8544-24B6FDFFBC27.root",
+    "size": 780356824,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/20BCBDD9-E6B8-E511-8544-24B6FDFFBC27.root"
+  },
+  {
+    "checksum": "adler32:7b8195c9",
+    "filename": "22321EF8-E0B8-E511-BD81-3417EBE51E7D.root",
+    "size": 547193336,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/22321EF8-E0B8-E511-BD81-3417EBE51E7D.root"
+  },
+  {
+    "checksum": "adler32:fbb6f1b9",
+    "filename": "22A41F9F-E4B8-E511-956A-003048CB96F8.root",
+    "size": 790453426,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/22A41F9F-E4B8-E511-956A-003048CB96F8.root"
+  },
+  {
+    "checksum": "adler32:c8653d7e",
+    "filename": "248C2927-E1B8-E511-8EA4-5C260AFFFB72.root",
+    "size": 603116589,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/248C2927-E1B8-E511-8EA4-5C260AFFFB72.root"
+  },
+  {
+    "checksum": "adler32:3aacdce6",
+    "filename": "2C988056-E7B8-E511-9392-3417EBE528EB.root",
+    "size": 633766095,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/2C988056-E7B8-E511-9392-3417EBE528EB.root"
+  },
+  {
+    "checksum": "adler32:6a09a7d1",
+    "filename": "30FF6FEB-E3B8-E511-BCAD-00A0D1EC7318.root",
+    "size": 556935110,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/30FF6FEB-E3B8-E511-BCAD-00A0D1EC7318.root"
+  },
+  {
+    "checksum": "adler32:1da1252f",
+    "filename": "34384A82-E5B8-E511-92E0-848F69FD88BB.root",
+    "size": 567296944,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/34384A82-E5B8-E511-92E0-848F69FD88BB.root"
+  },
+  {
+    "checksum": "adler32:daca0f87",
+    "filename": "34645D01-E1B8-E511-BD55-3417EBE5297E.root",
+    "size": 545028305,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/34645D01-E1B8-E511-BD55-3417EBE5297E.root"
+  },
+  {
+    "checksum": "adler32:0e1c5124",
+    "filename": "36174AA6-E5B8-E511-8DC3-5C260AFFFCA1.root",
+    "size": 774857879,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/36174AA6-E5B8-E511-8DC3-5C260AFFFCA1.root"
+  },
+  {
+    "checksum": "adler32:3e1bc434",
+    "filename": "3C8B9091-E4B8-E511-9C3F-24B6FDFFBB8E.root",
+    "size": 717883716,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/3C8B9091-E4B8-E511-9C3F-24B6FDFFBB8E.root"
+  },
+  {
+    "checksum": "adler32:68eed05e",
+    "filename": "3C8E8891-E4B8-E511-AB3F-3417EBE52651.root",
+    "size": 791516039,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/3C8E8891-E4B8-E511-AB3F-3417EBE52651.root"
+  },
+  {
+    "checksum": "adler32:b4455a99",
+    "filename": "3C9C5109-E1B8-E511-9336-003048CDCDD2.root",
+    "size": 601134216,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/3C9C5109-E1B8-E511-9336-003048CDCDD2.root"
+  },
+  {
+    "checksum": "adler32:f459381c",
+    "filename": "408E642B-E8B8-E511-B7BB-3417EBE52651.root",
+    "size": 633731741,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/408E642B-E8B8-E511-B7BB-3417EBE52651.root"
+  },
+  {
+    "checksum": "adler32:63727651",
+    "filename": "409EA394-E4B8-E511-8855-3417EBE527B3.root",
+    "size": 642436862,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/409EA394-E4B8-E511-8855-3417EBE527B3.root"
+  },
+  {
+    "checksum": "adler32:ec17c29d",
+    "filename": "425E57A5-E5B8-E511-8CB9-00A0D1EC7318.root",
+    "size": 674769019,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/425E57A5-E5B8-E511-8CB9-00A0D1EC7318.root"
+  },
+  {
+    "checksum": "adler32:aa83f17c",
+    "filename": "4270D5CD-E1B8-E511-AD98-3417EBE51E7D.root",
+    "size": 499566451,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/4270D5CD-E1B8-E511-AD98-3417EBE51E7D.root"
+  },
+  {
+    "checksum": "adler32:f76e5109",
+    "filename": "42EBDBEB-E7B8-E511-BA43-24B6FDFFBB8E.root",
+    "size": 596351348,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/42EBDBEB-E7B8-E511-BA43-24B6FDFFBB8E.root"
+  },
+  {
+    "checksum": "adler32:009e10f2",
+    "filename": "44153592-E4B8-E511-8D5A-5C260AFFFCA1.root",
+    "size": 720386456,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/44153592-E4B8-E511-8D5A-5C260AFFFCA1.root"
+  },
+  {
+    "checksum": "adler32:18427bbb",
+    "filename": "462940FA-E7B8-E511-B4C7-003048CB96F8.root",
+    "size": 720846908,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/462940FA-E7B8-E511-B4C7-003048CB96F8.root"
+  },
+  {
+    "checksum": "adler32:cfe54cc7",
+    "filename": "46376FDC-E6B8-E511-9F80-3417EBE528F1.root",
+    "size": 602234372,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/46376FDC-E6B8-E511-9F80-3417EBE528F1.root"
+  },
+  {
+    "checksum": "adler32:fa9a93ed",
+    "filename": "465B7190-E4B8-E511-8111-848F69FD0BAE.root",
+    "size": 763915605,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/465B7190-E4B8-E511-8111-848F69FD0BAE.root"
+  },
+  {
+    "checksum": "adler32:3b8396ec",
+    "filename": "4A25CAE2-E3B8-E511-ABBE-00266CF8360C.root",
+    "size": 534811473,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/4A25CAE2-E3B8-E511-ABBE-00266CF8360C.root"
+  },
+  {
+    "checksum": "adler32:ade35b8c",
+    "filename": "50F59FA8-E5B8-E511-864F-3417EBE527B3.root",
+    "size": 650209034,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/50F59FA8-E5B8-E511-864F-3417EBE527B3.root"
+  },
+  {
+    "checksum": "adler32:8ed41bc8",
+    "filename": "520C27DA-E6B8-E511-BD8F-5C260AFFFCA1.root",
+    "size": 507268221,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/520C27DA-E6B8-E511-BD8F-5C260AFFFCA1.root"
+  },
+  {
+    "checksum": "adler32:c6f1f43c",
+    "filename": "5270CD02-E1B8-E511-8B57-00266CFE7884.root",
+    "size": 602645878,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/5270CD02-E1B8-E511-8B57-00266CFE7884.root"
+  },
+  {
+    "checksum": "adler32:1bb74896",
+    "filename": "546822FA-E0B8-E511-B942-3417EBE52855.root",
+    "size": 603488608,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/546822FA-E0B8-E511-B942-3417EBE52855.root"
+  },
+  {
+    "checksum": "adler32:1ae10327",
+    "filename": "54DD27B0-E7B8-E511-8584-5C260AFFFCA1.root",
+    "size": 733576884,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/54DD27B0-E7B8-E511-8584-5C260AFFFCA1.root"
+  },
+  {
+    "checksum": "adler32:f08cc3eb",
+    "filename": "5AED02D2-E8B8-E511-8AD9-5C260AFFFCA1.root",
+    "size": 684170823,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/5AED02D2-E8B8-E511-8AD9-5C260AFFFCA1.root"
+  },
+  {
+    "checksum": "adler32:189697eb",
+    "filename": "62E29190-E4B8-E511-AE42-3417EBE5264B.root",
+    "size": 764441428,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/62E29190-E4B8-E511-AE42-3417EBE5264B.root"
+  },
+  {
+    "checksum": "adler32:b93aa1be",
+    "filename": "6657DF92-E4B8-E511-B384-3417EBE51D1E.root",
+    "size": 761922453,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/6657DF92-E4B8-E511-B384-3417EBE51D1E.root"
+  },
+  {
+    "checksum": "adler32:e6bd06d2",
+    "filename": "6A47D1EC-E5B8-E511-B0BA-3417EBE52651.root",
+    "size": 649824535,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/6A47D1EC-E5B8-E511-B0BA-3417EBE52651.root"
+  },
+  {
+    "checksum": "adler32:4988cea6",
+    "filename": "6AD84D28-E8B8-E511-BE9D-3417EBE528EB.root",
+    "size": 508115825,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/6AD84D28-E8B8-E511-BE9D-3417EBE528EB.root"
+  },
+  {
+    "checksum": "adler32:e9d8c2bc",
+    "filename": "6C374301-E1B8-E511-9AAC-00266CF3283C.root",
+    "size": 600334260,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/6C374301-E1B8-E511-9AAC-00266CF3283C.root"
+  },
+  {
+    "checksum": "adler32:6371fa21",
+    "filename": "6CE917AB-E2B8-E511-B917-3417EBE51E7D.root",
+    "size": 540382139,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/6CE917AB-E2B8-E511-B917-3417EBE51E7D.root"
+  },
+  {
+    "checksum": "adler32:9d77ec21",
+    "filename": "6E954479-E9B8-E511-8B26-24B6FDFF17A7.root",
+    "size": 725263584,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/6E954479-E9B8-E511-8B26-24B6FDFF17A7.root"
+  },
+  {
+    "checksum": "adler32:26e9ea2c",
+    "filename": "7248C5A4-E5B8-E511-BEA3-848F69FD0BAE.root",
+    "size": 763978721,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/7248C5A4-E5B8-E511-BEA3-848F69FD0BAE.root"
+  },
+  {
+    "checksum": "adler32:c29e87d5",
+    "filename": "74C71A8D-E5B8-E511-8F6B-3417EBE528F1.root",
+    "size": 773388945,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/74C71A8D-E5B8-E511-8F6B-3417EBE528F1.root"
+  },
+  {
+    "checksum": "adler32:fe983d68",
+    "filename": "7A43B390-E5B8-E511-ADE6-00266CF32F08.root",
+    "size": 603867223,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/7A43B390-E5B8-E511-ADE6-00266CF32F08.root"
+  },
+  {
+    "checksum": "adler32:d9dfd333",
+    "filename": "7A494C30-E3B8-E511-B6F4-3417EBE528FD.root",
+    "size": 603098848,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/7A494C30-E3B8-E511-B6F4-3417EBE528FD.root"
+  },
+  {
+    "checksum": "adler32:2bbdf865",
+    "filename": "7C465C37-E1B8-E511-B9B3-003048CDCD7C.root",
+    "size": 606068931,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/7C465C37-E1B8-E511-B9B3-003048CDCD7C.root"
+  },
+  {
+    "checksum": "adler32:b3258366",
+    "filename": "7E87EF31-E3B8-E511-B614-00266CF831B4.root",
+    "size": 561087920,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/7E87EF31-E3B8-E511-B614-00266CF831B4.root"
+  },
+  {
+    "checksum": "adler32:2cc4e8cb",
+    "filename": "7EEAFE1E-E8B8-E511-9474-848F69FBC0FD.root",
+    "size": 634885420,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/7EEAFE1E-E8B8-E511-9474-848F69FBC0FD.root"
+  },
+  {
+    "checksum": "adler32:e71d97cf",
+    "filename": "84F75FF8-E0B8-E511-B497-3417EBE52468.root",
+    "size": 605189511,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/84F75FF8-E0B8-E511-B497-3417EBE52468.root"
+  },
+  {
+    "checksum": "adler32:a054fa33",
+    "filename": "869662E3-E3B8-E511-B176-3417EBE520BA.root",
+    "size": 723093927,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/869662E3-E3B8-E511-B176-3417EBE520BA.root"
+  },
+  {
+    "checksum": "adler32:c9e099f1",
+    "filename": "8E8F44ED-E7B8-E511-BBE1-3417EBE528F1.root",
+    "size": 635807125,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/8E8F44ED-E7B8-E511-BBE1-3417EBE528F1.root"
+  },
+  {
+    "checksum": "adler32:65d50e48",
+    "filename": "902BBA38-E3B8-E511-BB7C-003048CDC7D6.root",
+    "size": 601152179,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/902BBA38-E3B8-E511-BB7C-003048CDC7D6.root"
+  },
+  {
+    "checksum": "adler32:8ddc8168",
+    "filename": "90346A34-E3B8-E511-AE77-5C260AFFFC17.root",
+    "size": 762676785,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/90346A34-E3B8-E511-AE77-5C260AFFFC17.root"
+  },
+  {
+    "checksum": "adler32:be342121",
+    "filename": "9055AE4E-E1B8-E511-9183-003048CF66D0.root",
+    "size": 564340700,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/9055AE4E-E1B8-E511-9183-003048CF66D0.root"
+  },
+  {
+    "checksum": "adler32:aa814bc0",
+    "filename": "9247CC30-E3B8-E511-A7BF-00266CFC7800.root",
+    "size": 607192596,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/9247CC30-E3B8-E511-A7BF-00266CFC7800.root"
+  },
+  {
+    "checksum": "adler32:12a35f35",
+    "filename": "96953290-E4B8-E511-A2EE-000AE4883DDD.root",
+    "size": 545833476,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/96953290-E4B8-E511-A2EE-000AE4883DDD.root"
+  },
+  {
+    "checksum": "adler32:21e37598",
+    "filename": "96EFD40F-E1B8-E511-AD6E-3417EBE51E38.root",
+    "size": 606005026,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/96EFD40F-E1B8-E511-AD6E-3417EBE51E38.root"
+  },
+  {
+    "checksum": "adler32:dfdb86a1",
+    "filename": "98B5B978-E9B8-E511-AAFC-3417EBE52930.root",
+    "size": 759170436,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/98B5B978-E9B8-E511-AAFC-3417EBE52930.root"
+  },
+  {
+    "checksum": "adler32:26f0900b",
+    "filename": "9A38411D-E8B8-E511-91D5-848F69FD09D7.root",
+    "size": 712347359,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/9A38411D-E8B8-E511-91D5-848F69FD09D7.root"
+  },
+  {
+    "checksum": "adler32:15b48705",
+    "filename": "9C4B04E8-E0B8-E511-AB6F-3417EBE51E7D.root",
+    "size": 544835053,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/9C4B04E8-E0B8-E511-AB6F-3417EBE51E7D.root"
+  },
+  {
+    "checksum": "adler32:7836f63a",
+    "filename": "A09BB530-E3B8-E511-B347-3417EBE5264B.root",
+    "size": 743793013,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/A09BB530-E3B8-E511-B347-3417EBE5264B.root"
+  },
+  {
+    "checksum": "adler32:c31690a5",
+    "filename": "A275EE66-E8B8-E511-8FB7-F04DA2757237.root",
+    "size": 745772046,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/A275EE66-E8B8-E511-8FB7-F04DA2757237.root"
+  },
+  {
+    "checksum": "adler32:aff33873",
+    "filename": "A29C54A7-E3B8-E511-8696-848F69FD88BB.root",
+    "size": 603085777,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/A29C54A7-E3B8-E511-8696-848F69FD88BB.root"
+  },
+  {
+    "checksum": "adler32:473c0d78",
+    "filename": "A6383F7C-E8B8-E511-AF6B-848F69FBC0FD.root",
+    "size": 772757676,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/A6383F7C-E8B8-E511-AF6B-848F69FBC0FD.root"
+  },
+  {
+    "checksum": "adler32:75f8b793",
+    "filename": "A6A65E21-E8B8-E511-8B00-3417EBE52930.root",
+    "size": 761186312,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/A6A65E21-E8B8-E511-8B00-3417EBE52930.root"
+  },
+  {
+    "checksum": "adler32:50cb2851",
+    "filename": "A6E42291-E4B8-E511-9B10-3417EBE528F1.root",
+    "size": 639888583,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/A6E42291-E4B8-E511-9B10-3417EBE528F1.root"
+  },
+  {
+    "checksum": "adler32:063a5041",
+    "filename": "AC6D5D9A-E4B8-E511-8E3B-00266CF32F08.root",
+    "size": 576232025,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/AC6D5D9A-E4B8-E511-8E3B-00266CF32F08.root"
+  },
+  {
+    "checksum": "adler32:44901d5f",
+    "filename": "AEB7303B-E3B8-E511-92C7-00266CF85E64.root",
+    "size": 586382425,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/AEB7303B-E3B8-E511-92C7-00266CF85E64.root"
+  },
+  {
+    "checksum": "adler32:5738ded4",
+    "filename": "B0C38CE9-E3B8-E511-B251-3417EBE51901.root",
+    "size": 603513346,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/B0C38CE9-E3B8-E511-B251-3417EBE51901.root"
+  },
+  {
+    "checksum": "adler32:a2fa2d1d",
+    "filename": "B4DB3BDA-E6B8-E511-8559-003048CB96F8.root",
+    "size": 605377321,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/B4DB3BDA-E6B8-E511-8559-003048CB96F8.root"
+  },
+  {
+    "checksum": "adler32:3e74d4ec",
+    "filename": "BE7A49D8-E6B8-E511-8ACB-848F69FD0BAE.root",
+    "size": 604134566,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/BE7A49D8-E6B8-E511-8ACB-848F69FD0BAE.root"
+  },
+  {
+    "checksum": "adler32:8b533fc8",
+    "filename": "BE8F5DFB-E0B8-E511-BDBB-848F69FD88BB.root",
+    "size": 546565632,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/BE8F5DFB-E0B8-E511-BDBB-848F69FD88BB.root"
+  },
+  {
+    "checksum": "adler32:f9764d2c",
+    "filename": "BEF2F4FB-E0B8-E511-91A6-848F69FBC0F7.root",
+    "size": 602627354,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/BEF2F4FB-E0B8-E511-91A6-848F69FBC0F7.root"
+  },
+  {
+    "checksum": "adler32:ca14983e",
+    "filename": "C0EC01F8-E0B8-E511-9DBE-3417EBE51E7D.root",
+    "size": 562105328,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/C0EC01F8-E0B8-E511-9DBE-3417EBE51E7D.root"
+  },
+  {
+    "checksum": "adler32:118ad439",
+    "filename": "C0EE676A-E8B8-E511-9D4B-3417EBE52930.root",
+    "size": 701243826,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/C0EE676A-E8B8-E511-9D4B-3417EBE52930.root"
+  },
+  {
+    "checksum": "adler32:81fbaa7b",
+    "filename": "C2570E33-E1B8-E511-A103-00266CFE6910.root",
+    "size": 544449757,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/C2570E33-E1B8-E511-A103-00266CFE6910.root"
+  },
+  {
+    "checksum": "adler32:30c1a2ac",
+    "filename": "C4B26B05-E1B8-E511-AAD9-848F69FBC0FD.root",
+    "size": 555376014,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/C4B26B05-E1B8-E511-AAD9-848F69FBC0FD.root"
+  },
+  {
+    "checksum": "adler32:029e2f3d",
+    "filename": "C650DD77-E9B8-E511-B80F-00A0D1EEFD00.root",
+    "size": 371134736,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/C650DD77-E9B8-E511-B80F-00A0D1EEFD00.root"
+  },
+  {
+    "checksum": "adler32:8e7f139b",
+    "filename": "C6A0DF30-E3B8-E511-9D8F-3417EBE5048C.root",
+    "size": 580334342,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/C6A0DF30-E3B8-E511-9D8F-3417EBE5048C.root"
+  },
+  {
+    "checksum": "adler32:301ec5a1",
+    "filename": "C8A19E56-E7B8-E511-A364-3417EBE52930.root",
+    "size": 736227469,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/C8A19E56-E7B8-E511-A364-3417EBE52930.root"
+  },
+  {
+    "checksum": "adler32:bb95fe51",
+    "filename": "CCF73EEC-E3B8-E511-BD94-003048CB8652.root",
+    "size": 562622486,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/CCF73EEC-E3B8-E511-BD94-003048CB8652.root"
+  },
+  {
+    "checksum": "adler32:ba4761bb",
+    "filename": "CCFDA6AB-E8B8-E511-97AD-F04DA2757237.root",
+    "size": 667678428,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/CCFDA6AB-E8B8-E511-97AD-F04DA2757237.root"
+  },
+  {
+    "checksum": "adler32:6646e698",
+    "filename": "CE0FA030-E3B8-E511-B9F6-24B6FDFF18C4.root",
+    "size": 775123634,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/CE0FA030-E3B8-E511-B9F6-24B6FDFF18C4.root"
+  },
+  {
+    "checksum": "adler32:02ae3137",
+    "filename": "CE9CAA04-E1B8-E511-AB64-003048CDBB94.root",
+    "size": 605799560,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/CE9CAA04-E1B8-E511-AB64-003048CDBB94.root"
+  },
+  {
+    "checksum": "adler32:13a74ae4",
+    "filename": "D0C321FB-E0B8-E511-93A5-00266CF831A8.root",
+    "size": 604999605,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/D0C321FB-E0B8-E511-93A5-00266CF831A8.root"
+  },
+  {
+    "checksum": "adler32:603279c8",
+    "filename": "D2BC9E89-E4B8-E511-9432-848F69FD88BB.root",
+    "size": 601130210,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/D2BC9E89-E4B8-E511-9432-848F69FD88BB.root"
+  },
+  {
+    "checksum": "adler32:16393011",
+    "filename": "D47EC292-E4B8-E511-BCE2-24B6FDFFBC27.root",
+    "size": 748846770,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/D47EC292-E4B8-E511-BCE2-24B6FDFFBC27.root"
+  },
+  {
+    "checksum": "adler32:e406849f",
+    "filename": "DA482A2F-E3B8-E511-8265-3417EBE528B5.root",
+    "size": 604670307,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/DA482A2F-E3B8-E511-8265-3417EBE528B5.root"
+  },
+  {
+    "checksum": "adler32:c5dfee5c",
+    "filename": "DA98FAA3-E4B8-E511-8154-3417EBE52864.root",
+    "size": 753230742,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/DA98FAA3-E4B8-E511-8154-3417EBE52864.root"
+  },
+  {
+    "checksum": "adler32:307d608a",
+    "filename": "E0AFA13B-E3B8-E511-AFEF-003048CDCD7E.root",
+    "size": 573283778,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/E0AFA13B-E3B8-E511-AFEF-003048CDCD7E.root"
+  },
+  {
+    "checksum": "adler32:fefd3ed6",
+    "filename": "E4C81BA7-E5B8-E511-BDFB-24B6FDFFBC27.root",
+    "size": 687376935,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/E4C81BA7-E5B8-E511-BDFB-24B6FDFFBC27.root"
+  },
+  {
+    "checksum": "adler32:a7797b72",
+    "filename": "E86CFC3B-E1B8-E511-9631-003048CF3BDC.root",
+    "size": 581751147,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/E86CFC3B-E1B8-E511-9631-003048CF3BDC.root"
+  },
+  {
+    "checksum": "adler32:aa8e1d30",
+    "filename": "E8954391-E4B8-E511-831D-848F69FD0B51.root",
+    "size": 547441399,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/E8954391-E4B8-E511-831D-848F69FD0B51.root"
+  },
+  {
+    "checksum": "adler32:14d98fb9",
+    "filename": "EA2D1522-E8B8-E511-AD9A-24B6FDFFBC27.root",
+    "size": 634743579,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/EA2D1522-E8B8-E511-AD9A-24B6FDFFBC27.root"
+  },
+  {
+    "checksum": "adler32:71342609",
+    "filename": "EE96FFE3-E7B8-E511-BFE5-848F69FD0BAE.root",
+    "size": 758506170,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/EE96FFE3-E7B8-E511-BFE5-848F69FD0BAE.root"
+  },
+  {
+    "checksum": "adler32:8b6d1bb5",
+    "filename": "F2E179D3-E8B8-E511-A451-24B6FDFFBB8E.root",
+    "size": 794258317,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/F2E179D3-E8B8-E511-A451-24B6FDFFBB8E.root"
+  },
+  {
+    "checksum": "adler32:191a762b",
+    "filename": "F606D1FB-E0B8-E511-BD48-24B6FDFFBB8E.root",
+    "size": 600742349,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/F606D1FB-E0B8-E511-BD48-24B6FDFFBB8E.root"
+  },
+  {
+    "checksum": "adler32:9bbf092f",
+    "filename": "F69EE2FC-E0B8-E511-AE8D-00266CF33130.root",
+    "size": 543223130,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/F69EE2FC-E0B8-E511-AE8D-00266CF33130.root"
+  },
+  {
+    "checksum": "adler32:573e8853",
+    "filename": "FE836B5D-E7B8-E511-8724-F04DA2757237.root",
+    "size": 583810845,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIIFall15MiniAODv2/DYJetsToLL_M-10to50_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PU25nsData2015v1_76X_mcRun2_asymptotic_v12-v1/60000/FE836B5D-E7B8-E511-8724-F04DA2757237.root"
+  }
+]
