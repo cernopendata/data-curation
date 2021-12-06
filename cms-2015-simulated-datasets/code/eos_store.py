@@ -28,7 +28,7 @@ XROOTD_URI_BASE = 'root://eospublic.cern.ch/'
 
 XROOTD_DIR_BASE = '/eos/opendata/'
 
-MCDIR_BASE = 'MonteCarlo'
+MCDIR_BASE = 'mc'
 
 EXPERIMENT = 'cms'
 
@@ -53,7 +53,7 @@ def check_datasets_in_eos_dir(datasets, eos_dir):
 def get_dataset_index_file_base(dataset):
     "Return index file base for given dataset."
     filebase = EXPERIMENT.upper() + '_' + \
-               MCDIR_BASE + str(get_dataset_year(dataset)) + '_' + \
+               MCDIR_BASE + '_' + \
                get_dataset_runperiod(dataset) + '_' + \
                get_dataset_name(dataset) + '_' + \
                get_dataset_format(dataset) + '_' + \
@@ -64,7 +64,7 @@ def get_dataset_location(dataset):
     "Return EOS location of the dataset."
     return XROOTD_DIR_BASE + \
         EXPERIMENT + '/' + \
-        MCDIR_BASE + str(get_dataset_year(dataset)) + '/' + \
+        MCDIR_BASE + '/' + \
         get_dataset_runperiod(dataset) + '/' + \
         get_dataset_name(dataset) + '/' + \
         get_dataset_format(dataset) + '/' + \
