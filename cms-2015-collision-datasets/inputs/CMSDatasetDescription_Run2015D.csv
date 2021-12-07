@@ -1,34 +1,34 @@
-/Tau/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence
-/SinglePhoton/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence
-/SingleMuon/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence
-/SingleElectron/Run2015D-08Jun2016-v1/AOD:Events stored in this primary dataset were selected because of the presence
-/MuonEG/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence
-/MuOnia/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence
-/MET/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence
-/JetHT/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence
-/HTMHT/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence
-/DoubleMuonLowMass/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence
-/DoubleMuon/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence
-/DisplacedJet/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence
-/Charmonium/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence
-/BTagMu/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence
-/BTagCSV/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence
-/DoubleEG/Run2015D-08Jun2016-v1/AOD:Events stored in this primary dataset were selected because of the presence
-/ZeroBias/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence
-/Tau/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence
-/SinglePhoton/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence
-/SingleMuon/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence
-/SingleElectron/Run2015D-08Jun2016-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence
-/MuonEG/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence
-/MuOnia/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence
-/MET/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence
-/JetHT/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence
-/HTMHT/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence
-/DoubleMuonLowMass/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence
-/DoubleMuon/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence
-/DisplacedJet/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence
-/Charmonium/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence
-/BTagMu/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence
-/BTagCSV/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence
-/DoubleEG/Run2015D-08Jun2016-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence
-/ZeroBias/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence
+/Tau/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence of at least one isolated tau, or one isolated tau and high missing transverse momentum.
+/SinglePhoton/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence of one energetic photon, or one photon and high missing transverse momentum.
+/SingleMuon/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence of at least one energetic muon, or at least one muon and one or more central jets, tau or high missing transverse momentum.
+/SingleElectron/Run2015D-08Jun2016-v1/AOD:Events stored in this primary dataset were selected because of the presence of at least one high-energy electron in the event, or at least one high-energy electron and one or more central jets or tau.
+/MuonEG/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence of energetic one muon and electron or photon.
+/MuOnia/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence of at least two muons in the event requiring only very low energy and some requirements in the invariant mass for selecting low-mass resonances.
+/MET/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence of high missing transverse energy.
+/JetHT/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence of a high scalar sum of the jet transverse momenta (HT); or at  least one or two energetic jets.
+/HTMHT/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence of a combination of a high scalar sum of the jet transverse momenta (HT); one or more energetic jets; or high missing transverse energy.
+/DoubleMuonLowMass/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence of at least two muons with low invariant mass.
+/DoubleMuon/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence of at least two energetic muons in the event.
+/DisplacedJet/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence of one or more displaced jets, or a displaced jet and high scalar sum of the jet transverse momenta (HT).
+/Charmonium/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence of at least two muons, or a muon and a track with some requirements in the invariant mass for selecting low-mass resonances.
+/BTagMu/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence of a muon from the b-quark decay, and one or more jets.
+/BTagCSV/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset were selected because of the presence of at least two jets, tagged as b-quark jets with combined secondary vertex.
+/DoubleEG/Run2015D-08Jun2016-v1/AOD:Events stored in this primary dataset were selected because of the presence of different combinations of enegetic photons, electrons and/or jets.
+/ZeroBias/Run2015D-16Dec2015-v1/AOD:Events stored in this primary dataset is an unbiased sample of all collisions.
+/Tau/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence of at least one isolated tau, or one isolated tau and high missing transverse momentum.
+/SinglePhoton/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence of one energetic photon, or one photon and high missing transverse momentum.
+/SingleMuon/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence of at least one energetic muon, or at least one muon and one or more central jets, tau or high missing transverse momentum.
+/SingleElectron/Run2015D-08Jun2016-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence of at least one high-energy electron in the event, or at least one high-energy electron and one or more central jets or tau.
+/MuonEG/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence of the presence of one energetic muon and electron or photon.
+/MuOnia/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence of at least two muons in the event requiring only very low energy and some requirements in the invariant mass for selecting low-mass resonances.
+/MET/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence of high missing transverse energy.
+/JetHT/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence of a high scalar sum of the jet transverse momenta (HT); or at  least one or two energetic jets.
+/HTMHT/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence of a combination of a high scalar sum of the jet transverse momenta (HT); one or more energetic jets; or high missing transverse energy.
+/DoubleMuonLowMass/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence of at least two muons with low invariant mass.
+/DoubleMuon/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence of at least two energetic muons in the event.
+/DisplacedJet/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence of one or more displaced jets, or a displaced jet and high scalar sum of the jet transverse momenta (HT).
+/Charmonium/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence of at least two muons, or a muon and a track with some requirements in the invariant mass for selecting low-mass resonances.
+/BTagMu/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence of a muon from the b-quark decay, and one or more jets.
+/BTagCSV/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence of at least two jets, tagged as b-quark jets with combined secondary vertex.
+/DoubleEG/Run2015D-08Jun2016-v1/MINIAOD:Events stored in this primary dataset were selected because of the presence of different combinations of enegetic photons, electrons and/or jets.
+/ZeroBias/Run2015D-16Dec2015-v1/MINIAOD:Events stored in this primary dataset is an unbiased sample of all collisions.
