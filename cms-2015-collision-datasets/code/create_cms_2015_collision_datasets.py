@@ -362,8 +362,12 @@ def create_record(recid, run_period, version, dataset, aodformat):
     rec["usage"] = {}
     rec["usage"][
         "description"
-    ] = "You can access these data through the CMS Virtual Machine. See the instructions for setting up the Virtual Machine and getting started in"
+    ] = "You can access these data through the CMS Open Data container or the CMS Virtual Machine. See the instructions for setting up one of the two alternative environments and getting started in"
     rec["usage"]["links"] = [
+        {
+            "description": "Running CMS analysis code using Docker",
+            "url": "/docs/cms-guide-docker",
+        },
         {
             "description": "How to install the CMS Virtual Machine",
             "url": "/docs/cms-virtual-machine-2015",
