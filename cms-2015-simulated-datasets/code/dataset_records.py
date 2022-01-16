@@ -547,7 +547,7 @@ def get_step_generator_parameters(dataset, das_dir, mcm_dir, recid):
         mcdb_id= get_from_deep_json(get_mcm_dict(dataset,mcm_dir), "mcdb_id") or 0
         if mcdb_id > 1:
             configuration_files['title'] = 'Generator parameters'
-            configuration_files['url'] = "/eos/opendata/cms/lhe_generators/2015-sim/mcdb/{mcdb_id}_header".format(mcdb_id=mcdb_id)    
+            configuration_files['url'] = "/eos/opendata/cms/lhe_generators/2015-sim/mcdb/{mcdb_id}_header.txt".format(mcdb_id=mcdb_id)    
             return [configuration_files]        
         else:       
             dir='./lhe_generators/2015-sim/gridpacks/' + str(recid) + '/'  # FIXME localy

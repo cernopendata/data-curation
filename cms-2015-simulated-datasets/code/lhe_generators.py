@@ -46,7 +46,7 @@ def create_lhe_generator(dataset, recid, das_dir, mcm_dir, gen_store='./lhe_gene
         filepath = "{gen_store}/mcdb/{mcdb_id}".format(
             mcdb_id=mcdb_id, gen_store=gen_store)
         if os.path.exists(filepath):
-            size = get_file_size('{filepath}_header'.format(filepath=filepath))
+            size = get_file_size('{filepath}_header.txt'.format(filepath=filepath))
             if size > 1024:
                 print(str(mcdb_id) + ' mcdb Exist, Skipping')
                 return
@@ -73,26 +73,26 @@ def create_lhe_generator(dataset, recid, das_dir, mcm_dir, gen_store='./lhe_gene
                 mcdb_id=mcdb_id, filepath=filepath) if exts[0] == '.xz'
             else "cp /eos/cms/store/lhe/{mcdb_id}/*  {filepath} ".format(
                 mcdb_id=mcdb_id, filepath=filepath),
-            "awk '/<!--/,/-->/' {filepath} > {filepath}_header".format(
+            "awk '/<!--/,/-->/' {filepath} > {filepath}_header.txt".format(
                 mcdb_id=mcdb_id, filepath=filepath) if generators == ["MCFM701"]
-            else "awk '/<header>/,/<\/header>/' {filepath} > {filepath}_header".format(
+            else "awk '/<header>/,/<\/header>/' {filepath} > {filepath}_header.txt".format(
                 mcdb_id=mcdb_id, filepath=filepath)
         ]
         if cmd_run(cmds, dataset):
-            size = get_file_size('{filepath}_header'.format(filepath=filepath))
+            size = get_file_size('{filepath}_header.txt'.format(filepath=filepath))
             if size <= 1024:
                 # if empty, take comments (assume it is a MCFM701)
-                cmd_run(["awk '/<!--/,/-->/' {filepath} > {filepath}_header; \
-                           awk '/<init>/,/<\/init>/' {filepath} >> {filepath}_header;".format(
+                cmd_run(["awk '/<!--/,/-->/' {filepath} > {filepath}_header.txt; \
+                           awk '/<init>/,/<\/init>/' {filepath} >> {filepath}_header.txt;".format(
                     mcdb_id=mcdb_id, filepath=filepath)], dataset)
                 size = get_file_size(
-                    '{filepath}_header'.format(filepath=filepath))
+                    '{filepath}_header.txt'.format(filepath=filepath))
 
                 if size <= 1024:
                     print("<size>\n[Warning] in " + dataset + "\n mcdb_id: " + str(mcdb_id) +
                           "\n==>\t Header file size is only " + str(size) + ' Bytes\n</size>', file=sys.stderr)
 
-            # if we got the _header file then, there is no need to keep original files
+            # if we got the _header.txt file then, there is no need to keep original files
             cmd_run(['rm -rf {filepath}'.format(filepath=filepath)], dataset)
 
     else:
