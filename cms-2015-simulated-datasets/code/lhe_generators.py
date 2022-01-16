@@ -187,5 +187,5 @@ for dataset in dataset_full_names:
                          args=(lhe, recid, das_dir, mcm_dir))
     t.start()
     i += 1
-    while threading.activeCount() >= 50:
-        sleep(0.5)  # run 50 parallel
+    while threading.activeCount() >= 20:
+        sleep(0.5)  # run 20 parallel
