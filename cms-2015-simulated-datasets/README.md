@@ -28,3 +28,16 @@ First, create EOS file index cache:
 ```console
 $ python3 ./code/interface.py --create-eos-indexes ../cms-YYYY-simulated-datasets/inputs/CMS-2015-mc-datasets.txt
 ```
+
+
+## lhe_generators
+
+
+```console
+python3 code/lhe_generators.py 2> errors > output &
+```
+- This will get lhe generator parameters for datasets listed in `./inputs/CMS-2015-mc-datasets.txt`
+- This script must run this in lxplus or with mounted EOS
+- number of threads is set to 20 which is ideal for lxplus
+
+> :warning:  There are many cases with various steps to get generator parameters for LHE -see [#97](https://github.com/cernopendata/data-curation/issues/97)-. Thus, in some few cases, the script MIGHT not work as expected so make sure to read it, check errors, and make any necessary tweaks 
