@@ -9,7 +9,6 @@ import hashlib
 import json
 import os
 import re
-import requests
 import subprocess
 import sys
 import threading
@@ -17,21 +16,25 @@ import zlib
 from datetime import datetime as dt
 from time import sleep
 
+import requests
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
+
 from categorisation import guess_title_category
 from das_json_store import (get_cmssw_version_from_das, get_das_store_json,
-                            get_parent_dataset)
+                            get_generator_parameters, get_parent_dataset)
 from eos_store import (XROOTD_URI_BASE, get_dataset_index_file_base,
                        get_dataset_location)
 from mcm_store import (get_cmsDriver_script, get_cmssw_version_from_mcm,
                        get_conffile_ids_from_mcm, get_dataset_energy,
                        get_generator_name, get_generator_parameters_from_mcm,
                        get_genfragment_url, get_global_tag, get_mcm_dict,
-                       get_parent_dataset_from_mcm,
-                       get_pileup_from_mcm)
+                       get_parent_dataset_from_mcm, get_pileup_from_mcm)
 from utils import (get_author_list_recid, get_dataset_format, get_dataset_year,
                    get_doi, get_from_deep_json,
                    get_recommended_cmssw_for_analysis,
                    get_recommended_global_tag_for_analysis, populate_doiinfo)
+
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
 # Hi Tibor, I commented these `exec` below to not screw the code.
 # I also moved some functions from this code to utils.py and das_json_store.py
@@ -182,13 +185,12 @@ def get_globaltag_from_conffile(afile, conf_dir):
     return globaltag
 
 
-def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir):
+def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid):
     """Return DICT with all information about the generator steps."""
 
     info = {}
     info["description"] = "<p>These data were generated in several steps (see also <a href=\"/docs/cms-mc-production-overview\">CMS Monte Carlo production overview</a>):</p>"
     info["steps"] = []
-
     input_dataset = dataset
     while input_dataset:
         step = {}
@@ -214,19 +216,11 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir):
         generator_names = get_generator_name(input_dataset, das_dir, mcm_dir)
         if generator_names:
             step['generators'] = generator_names
-        gen_fragment = get_genfragment_url(input_dataset, mcm_dir, das_dir)
-        if gen_fragment:
-            for url in gen_fragment:
-                configuration_files = {}
-                configuration_files['title'] = 'Generator parameters'
-                configuration_files['url'] = url
-                try:
-                    script = requests.get(url, verify=False).text
-                    configuration_files['script'] = script
-                except:
-                    pass
-                if configuration_files:
-                    step['configuration_files'].append(configuration_files)
+        
+        if input_dataset.endswith('/LHE') or input_dataset.endswith('/SIM') or input_dataset.endswith('RAW') or input_dataset.endswith('/GEN-SIM'): # we get generator parameters for LHE and SIM datasets
+            step_generator_parameters= get_step_generator_parameters(input_dataset, das_dir, mcm_dir, recid)
+            if step_generator_parameters:
+                step['configuration_files'].extend(step_generator_parameters)
 
         config_ids = get_conffile_ids(input_dataset, das_dir, mcm_dir)
         if config_ids:
@@ -385,7 +379,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     rec['license'] = {}
     rec['license']['attribution'] = 'CC0'
 
-    rec['methodology'] = get_all_generator_text(dataset_full_name, das_dir, mcm_dir, conffiles_dir)
+    rec['methodology'] = get_all_generator_text(dataset_full_name, das_dir, mcm_dir, conffiles_dir, recid_info[dataset_full_name])
 
 
     pileup_dataset_name= ''
@@ -499,12 +493,7 @@ def create_records(dataset_full_names, doi_file, recid_file, eos_dir, das_dir, m
     recid_info = {}
     _locals = locals()
     exec(open(recid_file, 'r').read(), globals(), _locals)
-    #recid_info = _locals['RECID_INFO']
-
-    i= 15200  # FIXME hardcoded: first recid to be inserted
-    for dataset_full_name in dataset_full_names:
-        recid_info[dataset_full_name]= i
-        i+=1
+    recid_info = _locals['RECID_INFO']
 
     doi_info = populate_doiinfo(doi_file)
 
@@ -512,9 +501,9 @@ def create_records(dataset_full_names, doi_file, recid_file, eos_dir, das_dir, m
     for dataset_full_name in dataset_full_names:
         t= threading.Thread(target=create, args=(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir, records_dir))
         t.start()
-        while threading.activeCount() >= 500 :
-            sleep(0.5)  # run 500 parallel 
-        
+        while threading.activeCount() >= 20 :
+            sleep(0.5)  # run 20 parallel 
+            
         #records.append(create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir))
     #return records
 
@@ -550,3 +539,37 @@ def main(datasets, eos_dir, das_dir, mcm_dir, conffiles_dir, doi_file, recid_fil
 
     #records = create_records(datasets, doi_file, recid_file, eos_dir, das_dir, mcm_dir, conffiles_dir)
     #json.dump(records, indent=2, sort_keys=True, ensure_ascii=True, fp=sys.stdout)
+
+
+def get_step_generator_parameters(dataset, das_dir, mcm_dir, recid):
+    configuration_files = {}
+    if dataset[-4:] == '/LHE':
+        mcdb_id= get_from_deep_json(get_mcm_dict(dataset,mcm_dir), "mcdb_id") or 0
+        if mcdb_id > 1:
+            configuration_files['title'] = 'Generator parameters'
+            configuration_files['url'] = "/eos/opendata/cms/lhe_generators/2015-sim/mcdb/{mcdb_id}_header".format(mcdb_id=mcdb_id)    
+            return [configuration_files]        
+        else:       
+            dir='./lhe_generators/2015-sim/gridpacks/' + str(recid) + '/'  # FIXME localy
+            files = [f for f in os.listdir(dir) if os.path.isfile(os.path.join(dir, f))]
+            confarr=[]
+            for f in files:
+                configuration_files['title'] = 'Generator parameters: ' + f
+                configuration_files['url'] = '/eos/opendata/cms/lhe_generators/2015-sim/gridpacks/' + str(recid) + '/'  + f
+                confarr.append(configuration_files.copy())
+            return confarr
+    else:
+        gen_fragment = get_genfragment_url(dataset, mcm_dir, das_dir)
+        if gen_fragment:
+            for url in gen_fragment:
+                configuration_files = {}
+                configuration_files['title'] = 'Generator parameters'
+                configuration_files['url'] = url
+                try:
+                    script = requests.get(url, verify=False).text
+                    configuration_files['script'] = script
+                    if configuration_files:
+                        return [configuration_files]
+                except:
+                    pass
+
