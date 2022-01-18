@@ -38,14 +38,14 @@ def cmd_run(cmds, dataset):
     return True
 
 
-def create_lhe_generator(dataset, recid, das_dir, mcm_dir, gen_store='./lhe_generators'):
+def create_lhe_generator(dataset, recid, das_dir, mcm_dir, gen_store='./lhe_generators/2015-sim'):
     mcdb_id = get_from_deep_json(
         get_mcm_dict(dataset, mcm_dir), "mcdb_id") or 0
     if mcdb_id > 1:
 
         filepath = "{gen_store}/mcdb/{mcdb_id}".format(
             mcdb_id=mcdb_id, gen_store=gen_store)
-        if os.path.exists(filepath):
+        if os.path.exists(filepath + "_header.txt"):
             size = get_file_size('{filepath}_header.txt'.format(filepath=filepath))
             if size > 1024:
                 print(str(mcdb_id) + ' mcdb Exist, Skipping')
@@ -121,7 +121,7 @@ def create_lhe_generator(dataset, recid, das_dir, mcm_dir, gen_store='./lhe_gene
         outfilepath = "{gen_store}/gridpacks/{recid}".format(  # FIXME
             gen_store=gen_store, recid=recid)
 
-        if len(os.listdir(outfilepath)) != 0:
+        if os.path.exists(outfilepath) and len(os.listdir(outfilepath)) != 0:
             print(str(recid) + ' recid gridpack Exist, Skipping')
             return
 
