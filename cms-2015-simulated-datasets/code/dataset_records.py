@@ -261,6 +261,11 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid):
             for i, configuration_files in enumerate(step['configuration_files']):
                 if configuration_files['title'] == 'Generator parameters':
                     step['configuration_files'][i]['title']='Hadronizer parameters'
+            # extend its LHE generator paramters
+            step_generator_parameters= get_step_generator_parameters(input_dataset, das_dir, mcm_dir, recid, 1) # Force LHE
+            if step_generator_parameters:
+                step['configuration_files'].extend(step_generator_parameters)
+                
         info["steps"].append(step)
 
         # find parent dataset, first via DAS, then via McM
@@ -541,9 +546,9 @@ def main(datasets, eos_dir, das_dir, mcm_dir, conffiles_dir, doi_file, recid_fil
     #json.dump(records, indent=2, sort_keys=True, ensure_ascii=True, fp=sys.stdout)
 
 
-def get_step_generator_parameters(dataset, das_dir, mcm_dir, recid):
+def get_step_generator_parameters(dataset, das_dir, mcm_dir, recid, force_lhe=0):
     configuration_files = {}
-    if dataset[-4:] == '/LHE':
+    if dataset[-4:] == '/LHE' or force_lhe:
         mcdb_id= get_from_deep_json(get_mcm_dict(dataset,mcm_dir), "mcdb_id") or 0
         if mcdb_id > 1:
             configuration_files['title'] = 'Generator parameters'

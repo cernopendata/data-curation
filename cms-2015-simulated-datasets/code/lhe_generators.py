@@ -15,8 +15,15 @@ def get_lhe(dataset, das_dir, mcm_dir):
         input_dataset_das = get_parent_dataset(input_dataset, das_dir)
         input_dataset_mcm = get_parent_dataset_from_mcm(
             input_dataset, das_dir, mcm_dir)
+
+        if input_dataset.endswith('/SIM') or input_dataset.endswith('RAW') or input_dataset.endswith('/GEN-SIM'):
+            datatier = get_from_deep_json(get_mcm_dict(input_dataset,mcm_dir),'datatier')
+            if datatier ==  ["GEN-SIM", "LHE"]:
+                return input_dataset # We need to get its LHE generator paramters (i.e. Its gridpacks or mcdb headers)
+
         if input_dataset[-4:] == '/LHE':
             return input_dataset
+
         if input_dataset_mcm == 'Default':  # workaround McM bugs
             input_dataset_mcm = ''
         if input_dataset_das:
