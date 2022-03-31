@@ -1,5 +1,5 @@
-{
-  "2010": {
+[
+  {
     "year": 2010,
     "lumi_uncertainty": 11,
     "luminosity_reference": "https://cds.cern.ch/record/1279145",
@@ -22,7 +22,7 @@
     "image_gitlab": "gitlab-registry.cern.ch/cms-cloud/cmssw-docker-opendata/cmssw_4_2_8-slc5_amd64_gcc434",
     "image_dockerhub": "cmsopendata/cmssw_4_2_8-slc5_amd64_gcc434"
   },
-  "2011": {
+  {
     "year": 2011,
     "lumi_uncertainty": 2.2,
     "luminosity_reference": "https://cds.cern.ch/record/1434360",
@@ -45,7 +45,7 @@
     "image_gitlab": "gitlab-registry.cern.ch/cms-cloud/cmssw-docker-opendata/cmssw_5_3_32-slc6_amd64_gcc472",
     "image_dockerhub": "cmsopendata/cmssw_5_3_32-slc6_amd64_gcc472"
   },
-  "2012": {
+  {
     "year": 2012,
     "lumi_uncertainty": 2.6,
     "luminosity_reference": "https://cds.cern.ch/record/1598864",
@@ -68,7 +68,7 @@
     "image_gitlab": "gitlab-registry.cern.ch/cms-cloud/cmssw-docker-opendata/cmssw_5_3_32-slc6_amd64_gcc472",
     "image_dockerhub": "cmsopendata/cmssw_5_3_32-slc6_amd64_gcc472"
   },
- "2015": {
+  {
    "year": 2015,
    "lumi_uncertainty": 1.6,
    "luminosity_reference": "https://cds.cern.ch/record/2759951",
@@ -91,7 +91,7 @@
    "image_gitlab": "gitlab-registry.cern.ch/cms-cloud/cmssw-docker-opendata/cmssw_7_6_7-slc6_amd64_gcc493",
    "image_dockerhub": "cmsopendata/cmssw_7_6_7-slc6_amd64_gcc493"
  },
- "2016": {
+ {
    "year": 2016,
    "lumi_uncertainty": 1.2,
    "luminosity_reference": "https://cds.cern.ch/record/2759951",
@@ -114,7 +114,7 @@
    "image_gitlab": "",
    "image_dockerhub": ""
  },
- "2017": {
+ {
    "year": 2017,
    "lumi_uncertainty": 2.3,
    "luminosity_reference": "https://cds.cern.ch/record/2621960",
@@ -137,7 +137,7 @@
   "image_gitlab": "",
   "image_dockerhub": ""
  },
- "2018": {
+ {
    "year": 2018,
    "lumi_uncertainty": 2.5,
    "luminosity_reference": " https://cds.cern.ch/record/2676164",
@@ -160,4 +160,4 @@
   "image_gitlab": "",
   "image_dockerhub": ""
  }
-}
+]

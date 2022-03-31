@@ -1,0 +1,242 @@
+[
+ {
+   "run_era": "Run2015A",
+   "year": 2015,
+   "run_min": 247607,
+   "run_max": 250932,
+   "released": "no",
+   "type": "pp-0T",
+   "comments": "data taken at 0T including commissioning runs and low-PU runs for FSQ physics.",
+   "source": "https://twiki.cern.ch/twiki/bin/view/CMS/PdmV2015Analysis"
+ },
+ {
+   "run_era": "Run2015B",
+   "year": 2015,
+   "run_min": 250985,
+   "run_max": 253620,
+   "released": "no",
+   "type": "pp-0T",
+   "comments": "data taken at 0T and 3.8T. The first run with 3.8T magnetic field was 250985. The first run with trigger menu for 50 ns collisions was 251168.",
+   "source": "https://twiki.cern.ch/twiki/bin/view/CMS/PdmV2015Analysis"
+ },
+ {
+   "run_era": "Run2015C",
+   "year": 2015,
+   "run_min": 253659,
+   "run_max": 256464,
+   "released": "no",
+   "type": "pp-phys",
+   "comments": "range 254227-255031 excluding run 254833 that was taken with the 50ns condition.",
+   "source": "https://twiki.cern.ch/twiki/bin/view/CMS/PdmV2015Analysis"
+ },
+ {
+   "run_era": "Run2015D",
+   "year": 2015,
+   "run_min": 256630,
+   "run_max": 260627,
+   "released": "yes",
+   "type": "pp-phys",
+   "comments": "range 256630-260627. Run 259152-259431 are special runs taken for CMS/TOTEM",
+   "source": "https://twiki.cern.ch/twiki/bin/view/CMS/PdmV2015Analysis"
+ },
+ {
+   "run_era": "Run2016A",
+   "year": 2016,
+   "run_min": 271036,
+   "run_max": 271658,
+   "released": "no",
+   "type": "pp-0T",
+   "comments": "data taken at 0T including commissioning runs",
+   "source": "https://twiki.cern.ch/twiki/bin/view/CMS/PdmVDatasetsUL2016"
+ },
+ {
+   "run_era": "Run2016B",
+   "year": 2016,
+   "run_min": 272007,
+   "run_max": 275376,
+   "released": "no",
+   "type": "pp-phys",
+   "comments": "Run2016B has two sets of RAW data containing disjoint sets of runs. This is reflected in the strings ver1 and ver2. This means both should be included in the analysis.",
+   "source": "https://twiki.cern.ch/twiki/bin/view/CMS/PdmVDatasetsUL2016"
+ },
+ {
+   "run_era": "Run2016C",
+   "year": 2016,
+   "run_min": 275657,
+   "run_max": 276283,
+   "released": "no",
+   "type": "pp-phys",
+   "comments": "pre-VFP - reconstructed with a reconstruction including HIP mitigation",
+   "source": "https://twiki.cern.ch/twiki/bin/view/CMS/PdmVDatasetsUL2016"
+ },
+ {
+   "run_era": "Run2016D",
+   "year": 2016,
+   "run_min": 276315,
+   "run_max": 276811,
+   "released": "no",
+   "type": "pp-phys",
+   "comments": "pre-VFP - reconstructed with a reconstruction including HIP mitigation",
+   "source": "https://twiki.cern.ch/twiki/bin/view/CMS/PdmVDatasetsUL2016"
+ },
+ {
+   "run_era": "Run2016E",
+   "year": 2016,
+   "run_min": 276831,
+   "run_max": 277420,
+   "released": "no",
+   "type": "pp-phys",
+   "comments": "pre-VFP - reconstructed with a reconstruction including HIP mitigation",
+   "source": ""
+ },
+ {
+   "run_era": "Run2016F",
+   "year": 2016,
+   "run_min": 277772,
+   "run_max": 278808,
+   "released": "no",
+   "type": "pp-phys",
+   "comments": "pre-VFP - reconstructed with a reconstruction including HIP mitigation and post-VFP with the default track reconstruction runs 278769 278801 278802 278803 278804 278805 278808",
+   "source": "https://twiki.cern.ch/twiki/bin/view/CMS/PdmVDatasetsUL2016"
+ },
+ {
+   "run_era": "Run2016G",
+   "year": 2016,
+   "run_min": 278820,
+   "run_max": 280385,
+   "released": "no",
+   "type": "pp-phys",
+   "comments": "post-VFP with the default track reconstruction",
+   "source": "https://twiki.cern.ch/twiki/bin/view/CMS/PdmVDatasetsUL2016"
+ },
+ {
+   "run_era": "Run2016H",
+   "year": 2016,
+   "run_min": 280919,
+   "run_max": 284044,
+   "released": "no",
+   "type": "pp-phys",
+   "comments": "post-VFP with the default track reconstruction",
+   "source": "https://twiki.cern.ch/twiki/bin/view/CMS/PdmVDatasetsUL2016"
+ },
+ {
+   "run_era": "Run2017A",
+   "year": 2017,
+   "run_min": 294927,
+   "run_max": 297019,
+   "released": "no",
+   "type": "pp-0lum",
+   "comments": "",
+   "source": "https://twiki.cern.ch/twiki/bin/view/CMS/PdmVDataReprocessingUL2017"
+ },
+ {
+   "run_era": "Run2017B",
+   "year": 2017,
+   "run_min": 297046,
+   "run_max": 299329,
+   "released": "no",
+   "type": "pp-phys",
+   "comments": "",
+   "source": "https://twiki.cern.ch/twiki/bin/view/CMS/PdmVDataReprocessingUL2017"
+ },
+ {
+   "run_era": "Run2017C",
+   "year": 2017,
+   "run_min": 299368,
+   "run_max": 302029,
+   "released": "no",
+   "type": "pp-phys",
+   "comments": "Includes low PU runs 299996 300018 300027 300043 300088",
+   "source": "https://twiki.cern.ch/twiki/bin/view/CMS/PdmVDataReprocessingUL2017"
+ },
+ {
+   "run_era": "Run2017D",
+   "year": 2017,
+   "run_min": 302030,
+   "run_max": 303434,
+   "released": "no",
+   "type": "pp-phys",
+   "comments": "",
+   "source": "https://twiki.cern.ch/twiki/bin/view/CMS/PdmVDataReprocessingUL2017"
+ },
+ {
+   "run_era": "Run2017E",
+   "year": 2017,
+   "run_min": 303824,
+   "run_max": 304797,
+   "released": "no",
+   "type": "pp-phys",
+   "comments": "",
+   "source": "https://twiki.cern.ch/twiki/bin/view/CMS/PdmVDataReprocessingUL2017"
+ },
+ {
+   "run_era": "Run2017F",
+   "year": 2017,
+   "run_min": 305040,
+   "run_max": 306462,
+   "released": "no",
+   "type": "pp-phys",
+   "comments": "",
+   "source": "https://twiki.cern.ch/twiki/bin/view/CMS/PdmVDataReprocessingUL2017"
+ },
+ {
+   "run_era": "Run2017G",
+   "year": 2017,
+   "run_min": 306472,
+   "run_max": 306826,
+   "released": "no",
+   "type": "pp-5TeV",
+   "comments": "Era Run2017G is the 5 TeV Run",
+   "source": "https://twiki.cern.ch/twiki/bin/view/CMS/PdmVDataReprocessingUL2017"
+ },
+ {
+   "run_era": "Run2017H",
+   "year": 2017,
+   "run_min": 306896,
+   "run_max": 307082,
+   "released": "no",
+   "type": "pp-lowpu",
+   "comments": "Era Run2017H is low PU",
+   "source": "https://twiki.cern.ch/twiki/bin/view/CMS/PdmVDataReprocessingUL2017"
+ },
+ {
+   "run_era": "Run2018A",
+   "year": 2018,
+   "run_min": 315252,
+   "run_max": 316995,
+   "released": "no",
+   "type": "pp-phys",
+   "comments": "",
+   "source": "https://twiki.cern.ch/twiki/bin/viewauth/CMS/PdmVDataReprocessingUL2018"
+ },
+ {
+   "run_era": "Run2018B",
+   "year": 2018,
+   "run_min": 317080,
+   "run_max": 319310,
+   "released": "no",
+   "type": "pp-phys",
+   "comments": "",
+   "source": "https://twiki.cern.ch/twiki/bin/viewauth/CMS/PdmVDataReprocessingUL2018"
+ },
+ {
+   "run_era": "Run2018C",
+   "year": 2018,
+   "run_min": 319337,
+   "run_max": 320065,
+   "released": "no",
+   "type": "pp-phys",
+   "comments": "",
+   "source": "https://twiki.cern.ch/twiki/bin/viewauth/CMS/PdmVDataReprocessingUL2018"
+ },
+ {
+   "run_era": "Run2018D",
+   "year": 2018,
+   "run_min": 320673,
+   "run_max": 325175,
+   "released": "no",
+   "type": "pp-phys",
+   "comments": "",
+   "source": "https://twiki.cern.ch/twiki/bin/viewauth/CMS/PdmVDataReprocessingUL2018"
+ }
+]

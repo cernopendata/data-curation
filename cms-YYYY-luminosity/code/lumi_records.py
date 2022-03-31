@@ -32,11 +32,14 @@ def create_record(recid, year, uncertainty, lumi_ref, val_recid):
 
     rec["abstract"] = {}
 
+    url = 'http://api-server-cms-release-info.app.cern.ch/runeras/run_era?year='+year+'&released=yes'
+    od_runs = json.loads(requests.get(url).text.strip())
+
     rec["abstract"]["description"] = (
             "<p>CMS measures the luminosity using different luminometers (luminosity detectors) and algorithms. The luminometer giving the best value for each luminosity section is recorded in a 'normtag' file that is used in the luminosity calculation.</p>"
-            + "<p>The integrated luminosity for validated runs and luminosity sections of the %s public data (%s) is available in %slumi.txt (The integrated luminosity for validated runs and luminosity sections of all %s p-p data taking is available in %slumi.txt.)</p>" % (year, ",".join(read_run_periods(year, 'od')),  ",".join(read_run_periods(year, 'od')), year, year)
+            + "<p>The integrated luminosity for validated runs and luminosity sections of the %s public data (%s) is available in %slumi.txt (The integrated luminosity for validated runs and luminosity sections of all %s p-p data taking is available in %slumi.txt.)</p>" % (year, ",".join(od_runs),  ",".join(od_runs), year, year)
             + "<p> For luminosity calculation, a detailed list of luminosity by lumi section is provided in <a href=\"/record/%s/files/%slumibyls.csv\">%slumibyls.csv</a> for the <a href=\"/record/%s\">list of validated runs</a> and lumi sections.</p>" % (recid, year, year, val_recid)
-            + "<p>The uncertainty in the luminosity measurement of %s data should be considered as %s%%(reference <a href=\"%s\">%s</a>).</p>" % (year, uncertainty, lumi_ref, lumi_ref_title)
+            + "<p>The uncertainty in the luminosity measurement of %s data should be considered as %s%% (reference <a href=\"%s\">%s</a>).</p>" % (year, uncertainty, lumi_ref, lumi_ref_title)
             + "<p>In your estimate for the integrated luminosity, check for which runs the trigger you have selected is active and sum the values for those runs. If you are using prescaled triggers, you can find the trigger prescale factors as shown in <a href=\"/record/5004\">the trigger examples</a>. The change of prescales (run, lumi section, index of prescales) is recorded in <a href=\"/record/%s/files/prescale%s.csv\">prescale%s.csv</a></p>" % (recid, year, year)
             + "<p>Additional information on how to extract luminosity values using the <strong>brilcalc tool</strong> can be found in the <a href=\"/docs/cms-guide-luminosity-calculation\"> luminosity calculation guide</a>.</p>"
         )
@@ -76,8 +79,9 @@ def create_record(recid, year, uncertainty, lumi_ref, val_recid):
     rec["relations"]["recid"] = val_recid
     rec["relations"]["type"] = "isRelatedTo"
 
-
-    rec["run_period"] = read_run_periods(year, 'pp-phys')
+    url = 'http://api-server-cms-release-info.app.cern.ch/runeras/run_era?year='+year+'&type=pp-phys'
+    #rec["run_period"] = read_run_periods(year, 'pp-phys')
+    rec["run_period"] = json.loads(requests.get(url).text.strip())
 
     rec["title"] = (
         "CMS luminosity information, for %s CMS open data"
@@ -109,7 +113,7 @@ def main():
     # this_year = all_years[year]
 
     # this gets json from the api server
-    url = 'http://api-server-cms-release-info.app.cern.ch/years/'+year
+    url = 'http://api-server-cms-release-info.app.cern.ch/years?year='+year+'&output=plain'
     this_year = json.loads(requests.get(url).text.strip())
     
     records.append(

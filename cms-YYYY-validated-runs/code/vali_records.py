@@ -70,7 +70,8 @@ def create_record(recid, year, filename):
     rec["recid"] = str(recid)
 
     # Implement a check to see which run periods actually are in the json file 
-    rec["run_period"] = read_run_periods(year, 'pp-phys')
+    url = 'http://api-server-cms-release-info.app.cern.ch/runeras/run_era?year='+year+'&type=pp-phys'
+    rec["run_period"] = json.loads(requests.get(url).text.strip())    
 
     rec["title"] = (
         "CMS list of validated runs %s"
@@ -123,7 +124,7 @@ def main():
     # this_year = all_years[year]
 
     # this gets json from the api server
-    url = 'http://api-server-cms-release-info.app.cern.ch/years/'+year
+    url = 'http://api-server-cms-release-info.app.cern.ch/years?year='+year+'&output=plain'
     this_year = json.loads(requests.get(url).text.strip())
     
     for val in this_year["val_json"]:
