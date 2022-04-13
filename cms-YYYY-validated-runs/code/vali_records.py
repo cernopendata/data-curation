@@ -2,12 +2,11 @@
 
 import json
 import datetime
-import subprocess
 import requests
 
 import sys
 sys.path.insert(1, '../cms-release-info')
-from helpers import *
+from helpers import run_range_text
 
 """
 Create validated data records.

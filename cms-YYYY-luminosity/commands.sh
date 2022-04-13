@@ -10,7 +10,7 @@ set -e
 
 cert=$1
 style=$2
-if [ $3 == byls ]; then mode="--"$3; fi;
+if [ "$3" == "byls" ]; then mode="--"$3; fi;
 
 if [  -z "$4" ]
 then

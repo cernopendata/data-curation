@@ -43,7 +43,10 @@ Specific data ingestion and curation campaigns:
 - `cms-2012-simulated-datasets <cms-2012-simulated-datasets>`_ -- helper scripts for the CMS 2012 open data release (simulated datasets)
 - `cms-2015-collision-datasets <cms-2015-collision-datasets>`_ -- helper scripts for the CMS 2015 open data release (collision datasets)
 - `cms-2015-simulated-datasets <cms-2015-simulated-datasets>`_ -- helper scripts for the CMS 2015 open data release (simulated datasets)
+- `cms-release-info <cms-release-info>`_ -- CMS year-specific and run-era-specific information
+- `cms-YYYY-luminosity <cms-YYYY-luminosity>`_ -- helper scripts for the CMS luminosity information records (any year)
 - `cms-YYYY-simulated-datasets <cms-YYYY-simulated-datasets>`_ -- helper scripts for CMS simulated dataset records (any year)
+- `cms-YYYY-validated-runs <cms-YYYY-validated-runs>`_ -- helper scripts for the CMS validated runs records (any year)
 - `cms-run2-hlt-triggers <cms-run2-hlt-triggers>`_ -- helper scripts for the CMS Run2 data release (HLT triggers)
 - `cod2-to-cod3 <cod2-to-cod3>`_ - record migration from version 2 to version 3
 - `opera-2017-multiplicity-studies <opera-2017-multiplicity-studies>`_ - helper scripts for the release of OPERA multiplicity studies
