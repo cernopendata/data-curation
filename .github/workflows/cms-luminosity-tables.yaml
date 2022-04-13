@@ -22,7 +22,8 @@ jobs:
     - name: Get validated runs file
       run: |
         echo "Get validated runs for $YEAR"
-        url=$(jq '."'$YEAR'".val_json[0].url' ../cms-release-info/cms_release_info.json | tr -d '"')
+        curl http://api-server-cms-release-info.app.cern.ch/years/val_json?year=$YEAR > myjs.json
+        url=$(jq '.[0][0].url' myjs.json | tr -d '"')
         wget $url -O cert.txt
     # run the container with the script in the repository
     - name: Get luminosity summary listings
