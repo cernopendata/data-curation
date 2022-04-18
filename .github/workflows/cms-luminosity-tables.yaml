@@ -50,8 +50,9 @@ jobs:
         for era in ${ERAS[*]} 
         do 
           echo "doing " $era
-          runmin=$(python ../cms-release-info/read_run_values.py $era | cut -d , -f 1)
-          runmax=$(python ../cms-release-info/read_run_values.py $era | cut -d , -f 2)
+          curl http://api-server-cms-release-info.app.cern.ch/runeras?run_era=$era > myjs.json
+          runmin=$(cat myjs.json | jq -r '.[0].run_min')
+          runmax=$(cat myjs.json | jq -r '.[0].run_max')
           docker run -v $(pwd):/mnt/vol -w /home/brilws gitlab-registry.cern.ch/cms-cloud/brilws-docker /bin/bash /mnt/vol/commands.sh cert.txt tab summ $runmin $runmax > outputs/$era'lumi.txt'
         done        
         # Detailed csv per year
