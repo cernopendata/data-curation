@@ -18,12 +18,21 @@ jobs:
         mkdir outputs
         echo ls `ls`
         echo pwd `pwd`
+    # Get the part of the normtag file corresponding to validated runs (muons cert file as it has a wider range)
+    - name: Normtag file
+      run: |
+        echo "Get the normtag file for $YEAR"
+        curl http://api-server-cms-release-info.app.cern.ch/years/val_json?year=$YEAR > myjs.json
+        muonurl=$(jq -r '.[0][1].url' myjs.json)
+        wget $muonurl -O cert.txt
+        wget https://raw.githubusercontent.com/CMS-LUMI-POG/Normtags/master/normtag_PHYSICS.json -O normtag_PHYSICS.json
+        source normtag.sh > outputs/normtag_PHYSICS_$YEAR.json
     # Get the parameters for lumi listings
     - name: Get validated runs file
       run: |
         echo "Get validated runs for $YEAR"
         curl http://api-server-cms-release-info.app.cern.ch/years/val_json?year=$YEAR > myjs.json
-        url=$(jq '.[0][0].url' myjs.json | tr -d '"')
+        url=$(jq -r '.[0][0].url' myjs.json)
         wget $url -O cert.txt
     # run the container with the script in the repository
     - name: Get luminosity summary listings
