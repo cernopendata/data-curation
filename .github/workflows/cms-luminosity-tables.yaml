@@ -27,6 +27,7 @@ jobs:
         wget $muonurl -O cert.txt
         wget https://raw.githubusercontent.com/CMS-LUMI-POG/Normtags/master/normtag_PHYSICS.json -O normtag_PHYSICS.json
         source normtag.sh > outputs/normtag_PHYSICS_$YEAR.json
+        cp outputs/normtag_PHYSICS_$YEAR.json normtag_PHYSICS.json
     # Get the parameters for lumi listings
     - name: Get validated runs file
       run: |
