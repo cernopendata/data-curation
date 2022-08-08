@@ -74,6 +74,7 @@ def guess_title_category(title):
         re.search(r'/branon', title_lower) or  # extra-dimensions, brane models
         re.search(r'/stringball', title_lower) or
         re.search(r'/qbh', title_lower) or  # Quantum Black Hole
+        re.search(r'/unpart', title_lower) or
         re.search(r'blackhole', title_lower)):  # Quantum Black Hole also??
         return 'Exotica/Extra Dimensions'
 
@@ -83,6 +84,7 @@ def guess_title_category(title):
           re.search(r'/dmz', title_lower) or  # darkmatter Z?
           re.search(r'/dms', title_lower) or  # darkmatter scalar
           re.search(r'/dmv', title_lower) or  # darkmatter vector
+          re.search(r'/Monotop', title) or
           re.search(r'DMJets', title)):       # darkmatter Jets?
         return 'Exotica/Dark Matter'
 
@@ -134,7 +136,9 @@ def guess_title_category(title):
           re.search(r'/wrto',       title_lower) or
           re.search(r'/monolepton', title_lower) or
           re.search(r'/spin0plus',  title_lower) or
-          re.search(r'/spin2ph',    title_lower)):
+          re.search(r'/spin2ph',    title_lower) or
+          re.search(r'/extendedweakisospin',    title_lower) or
+          re.search(r'/hscp',    title_lower)):
         return 'Exotica/Miscellaneous'
 
     elif ('susy' in title_lower or
@@ -175,6 +179,8 @@ def guess_title_category(title):
           re.search(r'primejettoth', title_lower) or  # TprimeJetToTH FIXME: SM Higgs from T' is here?
           re.search(r'hminus', title_lower) or
           re.search(r'sms[-]?higgs', title_lower) or  # sms higgs
+          re.search(r'spin0to', title_lower) or
+          re.search(r'xxto', title_lower) or
           re.search(r'hplus', title_lower)):
         return 'Higgs Physics/Beyond Standard Model'
 
@@ -194,6 +200,12 @@ def guess_title_category(title):
             return 'Higgs Physics/Standard Model'
             # FIXME gravitino going to SM Higgs ctegory.
 
+    elif ('_HInt_' in title   or
+          'ttHJetTo' in title or
+          'Hincl' in title or
+          'GluGluHTo' in title):   
+        return 'Higgs Physics/Standard Model'
+
     elif (re.search('GammaGammaTo(E|Mu|Tau)*_(Inel|Elastic|SingleDiss)', title) or  # gamma gamma -> mu+ mu- etc reactions which involve elastically scattered protons
                                                                                     # SingleDiss, means Single Diffractive Dissociation
           re.search('/singlediffractive[zw]?', title_lower) or
@@ -205,7 +217,13 @@ def guess_title_category(title):
     elif (re.search('/minbias', title_lower)):
         return 'Standard Model Physics/Minimum Bias'
 
-    elif (re.search(r'gun', title_lower)):  # particle gun
+    elif (re.search(r'gun', title_lower) or # particle gun
+          re.search(r'/single', title_lower) or
+          re.search(r'/double', title_lower) or
+          re.search(r'/muminus', title_lower) or
+          re.search(r'/muplus', title_lower) or
+          re.search(r'/doubleelectron', title_lower) or  # Is this an electron gun?
+          re.search(r'/singlepi', title_lower)): 
         return 'Physics Modelling'
 
     elif re.search(r'/dy', title_lower):
@@ -241,6 +259,21 @@ def guess_title_category(title):
           re.search(r'/wminusto', title_lower) or  # W- to
           re.search(r'/wmto', title_lower) or      # W- to
           re.search(r'/z*to', title_lower) or      # ZZ To
+          re.search(r'/eeg', title_lower) or
+          re.search(r'/photonindbkg', title_lower) or
+          re.search(r'/wgjjto', title_lower) or
+          re.search(r'/wzjto', title_lower) or
+          re.search(r'/zzj', title_lower) or
+          re.search(r'/wlljjto', title_lower) or
+          re.search(r'/wzjj', title_lower) or
+          re.search(r'/glugluwwto', title_lower) or
+          re.search(r'/mumug', title_lower) or
+          re.search(r'/vvto', title_lower) or
+          re.search(r'/wpwp', title_lower) or
+          re.search(r'/wmwm', title_lower) or
+          re.search(r'/wbjets', title_lower) or
+          re.search(r'/zllg', title_lower) or
+          re.search(r'/znunug', title_lower) or
           re.search(r'/[wz]to[emunu]*', title_lower)):  #  W/Z to E,Mu,Nu
         return 'Standard Model Physics/ElectroWeak'
 
@@ -260,14 +293,14 @@ def guess_title_category(title):
           'tt_mtt-1000' in title_lower or
           'tt_mtt-700' in title_lower or
           re.search(r'/[tbar]*_.+_[stuw]+-channel', title_lower) or  # T_bla_s/t/u/w-channel
+          re.search(r'/ST_', title) or
+          re.search(r'/TTZTo', title) or
+          re.search(r'/tZq', title) or
+          re.search(r'/TTTo', title) or
+          re.search(r'/ttwjets', title_lower) or
+          re.search(r'/ttbb', title) or
           re.search(r'/t+_', title_lower)):
         return 'Standard Model Physics/Top physics'
-
-    elif (re.search(r'/muminus', title_lower) or
-          re.search(r'/muplus', title_lower) or
-          re.search(r'/doubleelectron', title_lower) or  # Is this an electron gun?
-          re.search(r'/singlepi', title_lower)):  # is this right? FIXME
-        return 'Standard Model Physics/Miscellaneous'
 
     elif ('Heavy-Ion Physics' in title or
           re.search('reggegribov_', title_lower)):
@@ -283,6 +316,10 @@ def guess_title_category(title):
           re.search(r'/bsto', title_lower) or
           re.search(r'/chib0', title_lower) or
           'etabto' in title_lower or  # Eta_b To
+          'InclusivebtoMu' in title or
+          'InclusivectoMu' in title or
+          'DsToTau' in title or
+          'DStar' in title or
           'xibstar0' in title_lower):
         return 'B physics and Quarkonia'
 
