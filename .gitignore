@@ -22,6 +22,10 @@ cms-2011-simulated-datasets/inputs/das-json-store
 cms-2011-simulated-datasets/outputs/*.xml
 cms-2012-collision-datasets/inputs/das-json-store
 cms-2012-collision-datasets/outputs/*.json
+cms-2012-collision-datasets-update/inputs/das-json-store
+cms-2012-collision-datasets-update/inputs/das-json-config-store
+cms-2012-collision-datasets-update/inputs/config-store
+cms-2012-collision-datasets-update/outputs/*.json
 cms-2012-event-display-files/inputs/ig/
 cms-2012-event-display-files/outputs/*.json
 cms-2012-simulated-datasets/inputs/config-store

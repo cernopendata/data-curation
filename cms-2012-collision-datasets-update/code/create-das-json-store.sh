@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 #
-# Note: to be run as cernapcms on LXPLUS.  Example:
+# Note: to be run as cernapcms on lxplus8.  Example:
 #
 # cernapcms@lxplus031> mkdir xxx
 # cernapcms@lxplus031> cd xxx
@@ -14,4 +14,4 @@ mkdir -p ./inputs/das-json-store
 while IFS= read -r dataset; do
     dataset_result_file=$(echo $dataset | tr '/' '@')
     dasgoclient -query "dataset=$dataset" -json > ./inputs/das-json-store/"${dataset_result_file}.json"
-done < ./inputs/cms-2012-collision-datasets.txt
+done < ./inputs/cms-2012-collision-datasets-update.txt

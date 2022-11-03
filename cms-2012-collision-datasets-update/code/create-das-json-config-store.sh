@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 #
-# Note: to be run as cernapcms on LXPLUS.  Example:
+# Note: to be run as cernapcms on lxplus8.  Example:
 #
-# cernapcms@lxplus031> mkdir xxx
-# cernapcms@lxplus031> cd xxx
-# cernapcms@lxplus031> voms-proxy-init --voms cms
-# cernapcms@lxplus031> ./create-das-json-config-store.sh
+# cernapcms@lxplus8> mkdir xxx
+# cernapcms@lxplus8> cd xxx
+# cernapcms@lxplus8> voms-proxy-init --voms cms
+# cernapcms@lxplus8> ./create-das-json-config-store.sh
 #
 # The resulting `*.json` files are to be copied to ../inputs/das-json-config-store/
 # directory on the working laptop.
@@ -22,12 +22,12 @@ while IFS= read -r dataset; do
 	    okay=1
 	fi
     done
-done < ./inputs/cms-2012-collision-datasets.txt
+done < ./inputs/cms-2012-collision-datasets-update.txt
 
 # extract configuration file URLs
 rm -f temp_urls
 for file in $(ls -1 inputs/das-json-config-store/*.json); do
-    cat $file | jq -S '.[].config [] | .urls | .output' | grep https >> temp_urls
+    cat $file | jq -S '.[].config [] | .urls' | grep https >> temp_urls
 done
 sed -i -e 's,",,g' temp_urls
 sed -i -e 's,configFile\,,configFile,g' temp_urls
