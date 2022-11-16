@@ -32,4 +32,6 @@ jsonlint -q ./outputs/*.json
 
 ## 7) now you can copy them to COD3 fixtures working directory
 #
-# \cp outputs/*.json ../../opendata.cern.ch/cernopendata/modules/fixtures/data/records
+#\cp outputs/*.json ../../opendata.cern.ch/cernopendata/modules/fixtures/data/records
+\cp outputs/cms-primary-datasets-Run2012B.json ../../opendata.cern.ch/cernopendata/modules/fixtures/data/records
+\cp outputs/cms-primary-datasets-Run2012C.json ../../opendata.cern.ch/cernopendata/modules/fixtures/data/records
