@@ -1,0 +1,938 @@
+[
+ 
+  {
+    "anchor": "PT",
+    "category": "generic",
+    "definition": "Transverse momentum.",
+    "links": [
+      {
+        "text": "Read more on Wikipedia, ",
+        "url": "https://en.wikipedia.org/wiki/Transverse_momentum_distributions"
+      }
+    ],
+    "term": ["PT"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "P",
+    "category": "generic",
+    "definition": "Momentum of a particle.",
+    "links": [
+      {
+        "text": "Read more on Wikipedia, ",
+        "url": "https://en.wikipedia.org/wiki/Transverse_momentum_distributions"
+      }
+    ],
+    "term": ["P"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },  
+  {
+    "anchor": "BPVIPCHI2",
+    "category": "generic",
+    "definition": "Computes the CHI2 of IP on the related PV",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["BPVIPCHI2"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "BPVDIRA",
+    "category": "generic",
+    "definition": "Computes the cosine of the angle between the momentum of the particle and the direction fo flight from the best PV to the decay vertex.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["BPVDIRA"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "AMINCHILD",
+    "category": "generic",
+    "definition": "Returns the minimum of a specific parameter in a child particle",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["AMINCHILD"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "AMAXCHILD",
+    "category": "generic",
+    "definition": "Returns the maximum of a specific parameter in a child particle",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["AMAXCHILD"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "ADPDGM",
+    "category": "generic",
+    "definition": "Returns the difference with the PDG value of a particle mass. Useful to compute the difference with the measured mass. ",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["ADMASS", "ADPDGMASS"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "ADMASS",
+    "category": "generic",
+    "definition": "Calculates the absolute difference between the measured mass and the PDG reference value. It takes the pid of the reference particle as argument.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["ADMASS"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "ACHILD",
+    "category": "generic",
+    "definition": "The functor ACHILD acts as \"meta-functor\", it gets the daughter particle number N (the second parameter of constructor), apply the functor (the first parameter of contructor) and return the result.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["ACHILD"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "ABSID",
+    "category": "generic",
+    "definition": "A functor which returns the absolute value of the PID",
+    "see_also": [
+      {
+        "term": "PID"
+      },
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["ABSID"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "CHI2",
+    "category": "generic",
+    "definition": "Sum of the squares of k independent standard normal random variables",
+    "links": [
+      {
+        "text": "Read more on Wikipedia, ",
+        "url": "https://en.wikipedia.org/wiki/Chi-squared_distribution"
+      }
+    ],
+    "see_also": [
+      {
+        "term": "CHI2"
+      }
+    ],
+    "term": ["CHI2"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "TRCHI2DOF",
+    "category": "generic",
+    "definition": "CHI2 per degree of freedom of the track fit",
+    "see_also": [
+      {
+        "term": "CHI2"
+      }
+    ],
+    "term": ["TRCHI2DOF"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "BPVLTIME",
+    "category": "generic",
+    "definition": "The functor evaluates the proper lifetime of the particle using ILifetimeFitter tool.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["BPVLTIME"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "BPVLTCHI2",
+    "category": "generic",
+    "definition": "The functor evaluates the CHI2-significance of the proper lifetime of the particle using ILifetimeFitter tool.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["BPVLTCHI2"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "BPVLTSIGNCHI2",
+    "category": "generic",
+    "definition": "The functor evaluates the CHI2-significance of the proper lifetime of the particle using ILifetimeFitter tool.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["BPVLTSIGNCHI2"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "BPVVDCHI2",
+    "category": "generic",
+    "definition": "Computes the CHI2-distance from the related PV: (Pos(bestPV) - Pos(EndVertex))^T ( cov_(bestPV) + cov(EndVertex) )^-1 (Pos(bestPV) - Pos(EndVertex))",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["BPVVDCHI2"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "BPVVDZ",
+    "category": "generic",
+    "definition": "The functor computes the DZ-distance from the end vertex of the particle and the related primary vertex.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["BPVVDZ"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "BPVVDR",
+    "category": "generic",
+    "definition": "The functor computes the rho-distance(cylindrical) from the end vertex of the particle and the related primary vertex.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["BPVVDR"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "BPVVDRHO",
+    "category": "generic",
+    "definition": "The functor computes the -distance(cylindrical) from the end vertex of the particle and the related primary vertex.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["BPVVDRHO"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "CHI2PDGM",
+    "category": "generic",
+    "definition": "Returns the difference with the PDG value of a particle mass.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["CHI2PDGM", "CHI2PDGMASS"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "CHI2M",
+    "category": "generic",
+    "definition": "Returns the difference with the PDG value of a particle mass.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["CHI2M", "CHI2MASS"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "CHILDCUT",
+    "category": "generic",
+    "definition": "Applies a cut to a given child particle.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["CHILDCUT"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "DECTREE",
+    "category": "generic",
+    "definition": "Checks if a particle satisfies a certain decay descriptor.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["DECTREE"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "DMASS",
+    "category": "generic",
+    "definition": "Calculates the difference between the measured mass and the PDG reference value. It takes the pid of the reference particle as argument.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["DMASS"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "DPDGM",
+    "category": "generic",
+    "definition": "Returns the difference with the PDG value of a particle mass. Useful to compute the difference with the measured mass.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["DPDGM", "DPDGMASS"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "INGENERATION",
+    "category": "generic",
+    "definition": "The predicate which checks the existence of the particle satisfying the requirements in the decay tree at the given depth.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["INGENERATION"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "INTREE",
+    "category": "generic",
+    "definition": "Requires there is a particle in the decay tree satisfying the requirements.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["INTREE"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "MAXTREE",
+    "category": "generic",
+    "definition": "Returns the maximum value of some functor in the decay tree. Useful to apply cuts on all particles, or to extract some value from the tree.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["MAXTREE"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "MINTREE",
+    "category": "generic",
+    "definition": "Takes a functor as agrument and returns its minimal value searching through the decay tree.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["MINTREE"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "MINVDDV",
+    "category": "generic",
+    "definition": "The functor evaluates the minimal 3D-distance between the particle's end-vertex and the vertices form list",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["MINVDDV"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "MINVDSOURCE",
+    "category": "generic",
+    "definition": "The functor evaluates the minimal 3D-distance between the particle's end-vertex and the vertices form list",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["MINVDSOURCE"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "MINVDTES",
+    "category": "generic",
+    "definition": "The functor evaluates the minimal 3D-distance between the particle's end-vertex and the vertices form list",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["MINVDTES"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "MIPCHI2DV",
+    "category": "generic",
+    "definition": "Returns the minimum CHI2 distance of a particles's trajectory to any set of vertices.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["MIPCHI2DV"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "MIPDV",
+    "category": "generic",
+    "definition": "Returns the minimum distance of a particles's trajectory to any set of vertices.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["MIPDV"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "MM",
+    "category": "generic",
+    "definition": "Returns the measured mass of the particle.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["MM"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "NINGENERATION",
+    "category": "generic",
+    "definition": "The function which counts the particles satisfying the requirements in the decay tree at the given depth",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["NINGENERATION"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "NINTREE",
+    "category": "generic",
+    "definition": "Returns the number of particles in a tree satisfying some selection criteria.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["NINTREE"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "NMASS",
+    "category": "generic",
+    "definition": "Returns the PDG value of a particle mass. Useful to compute the difference with the measured mass.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["NMASS"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "PIDe",
+    "category": "generic",
+    "definition": "Gets the combined delta-log-likelihood for the given hypothesis (wrt the pion)",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["PIDe, PIDmu, PIDK, PIDp, PIDpi"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "TRCHI2",
+    "category": "generic",
+    "definition": "Gets the CHI2 of the track fit.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["TRCHI2"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "TRPCHI2",
+    "category": "generic",
+    "definition": "Gets the CHI2-probability of the track fit.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["TRPCHI2"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "VDMIN",
+    "category": "generic",
+    "definition": "Distance of two vertices.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["VDMIN"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "VFASPF",
+    "category": "generic",
+    "definition": "Allows to apply vertex functors to the particle's endVertex().",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["VFASPF"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "AHASCHILD",
+    "category": "generic",
+    "definition": "This functor checks if there is a particle in the array that matches the requirements.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["AHASCHILD"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "ADAMASS",
+    "category": "generic",
+    "definition": "Calculates the absolute difference between the measured mass and the PDG reference value. It takes the pid of the reference particle as argument.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["ADAMASS"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "AM",
+    "category": "generic",
+    "definition": "Mass of the combination sqrt(E^2 - p^2)",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["AM"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "AMAXCHILD",
+    "category": "generic",
+    "definition": "Maximal value in array",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["AMAXCHILD"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "AMINCHILD",
+    "category": "generic",
+    "definition": "Minimal value in array",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["AMINCHILD"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "AMAXDOCA",
+    "category": "generic",
+    "definition": "Maximal value of the distance of closest approach cut.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["AMAXDOCA"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "AMINDOCA",
+    "category": "generic",
+    "definition": "Minimal value of the distance of closest approach cut.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["AMINDOCA"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "AMAXDOCACHI2",
+    "category": "generic",
+    "definition": "Maximal value of the distance of closest approach significance cut.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["AMAXDOCACHI2"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "AMINDOCACHI2",
+    "category": "generic",
+    "definition": "Minimal value of the distance of closest approach significance cut.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["AMINDOCACHI2"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "ANUM",
+    "category": "generic",
+    "definition": "Number of particles in the array meeting a requirement.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["ANUM"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "AP",
+    "category": "generic",
+    "definition": "Sum momentum of the array.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["AP"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "APT",
+    "category": "generic",
+    "definition": "Sum transverse momentum of the array.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["AP"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "VX",
+    "category": "generic",
+    "definition": "X coordinate of the vertex position.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["VX"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "VY",
+    "category": "generic",
+    "definition": "Y coordinate of the vertex position.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["VY"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "VZ",
+    "category": "generic",
+    "definition": "Z coordinate of the vertex position.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["VZ"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "VCHI2",
+    "category": "generic",
+    "definition": "Vertex CHI2.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["VCHI2"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "VDOF",
+    "category": "generic",
+    "definition": "Vertex fit number of degrees of freedom.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["VDOF"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "VMINVDDV",
+    "category": "generic",
+    "definition": "The functor evaluates the minimal 3D-distance between the vertex and the vertices from list.",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["VMINVDDV"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "VMINVDSOURCE",
+    "category": "generic",
+    "definition": "The functor evaluates the minimal 3D-distance between the vertex and the vertices form list. The list of vertices is extracted from the source",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["VMINVDSOURCE"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "VMINVDTES",
+    "category": "generic",
+    "definition": "The functor evaluates the minimal 3D-distance between the vertex and the vertices form list. The list of vertices is extracted from the TES",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["VMINVDTES"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "VPCHI2",
+    "category": "generic",
+    "definition": "The functor evaluates the CHI2-probability of the vertex, taking into account the number of degrees of freedom. ",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": ["VPCHI2"],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "",
+    "category": "generic",
+    "definition": "",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": [""],
+    "type": {
+      "primary": "Glossary"
+    }
+  },
+  {
+    "anchor": "",
+    "category": "generic",
+    "definition": "",
+    "see_also": [
+      {
+        "term": "functor"
+      }
+    ],
+    "term": [""],
+    "type": {
+      "primary": "Glossary"
+    }
+  }
+]
