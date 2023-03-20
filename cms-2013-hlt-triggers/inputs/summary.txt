@@ -1,0 +1,981 @@
+* Physics menus
+ 
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1                                      (run 210498)
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PA/72Bunches/v1/HLT/V2                                      (run 210534)
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PA/202Bunches/HLT/V2                                        (run 210614)
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PA/202Bunches/v1.1/HLT/V2                                   (runs 210634 - 210635)
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PA/202BunchesEndOfFill/v1.1/HLT/V1                          (run 210638)
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PA/296Bunches/v1.1LowerLumi/HLT/V2                          (run 210658)
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PA/296Bunches/v2.1LowerLumi/HLT/V1                          (run 210676)
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PA/296Bunches/v2.1LowerLumi/HLT/V2                          (runs 210737 - 210885)
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PA/296Bunches/v2.2LowerLumi/HLT/V1                          (runs 210906 - 210909)
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PA/202Bunches/VdMScan/v1.1/HLT/V2                           (runs 210986 - 211001)
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PA/296Bunches/v3.0LowerLumi/HLT/V2                          (runs 211032 - 211193)
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PA/296Bunches/v3.1LowerLumi/HLT/V2                          (run 211256)
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PA/72Bunches/v2/HLT/V1                                      (run 211313)
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PA/LHCPlays/170Bunches/HLT/V1                               (run 211328)
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PA/LHCPlays/170Bunches/v2/HLT/V1                            (runs 211347 - 211363)
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PA/296Bunches/v3.2LowerLumi/HLT/V1                          (runs 211371 - 211631)
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PA/202Bunches/VdMScan/v1.2/HLT/V3                           (runs 211561 - 211587)
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PP/RampUp/80x80VdM/HLT/V10                                  (runs 211739 - 211740)
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PP/RampUp/500x500/HLT/V5                                    (run 211752)
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PP/Nominal/v1.0/HLT/V10                                     (run 211760)
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PP/Nominal/v1.0/HLT/V13                                     (run 211765)
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PP/Nominal/v1.0/HLT/V17                                     (run 211792)
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PP/Nominal/v1.0/HLT/V18                                     (run 211797)
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PP/RampUp/29x92VdM/HLT/V2                                   (runs 211812 - 211823)
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2                             (run 211831)
+ 
+* Special menus
+ 
+CMSSW_5_2_7_onlpatch3_ONLINE     /cdaq/special/SeparatedBeams/v1.0/HLT/V3                                         (runs 211568 - 211571)
+
+
+Path ALCALUMIPIXELSOutput:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - unversioned: (runs 210498 - 211831)
+
+Path ALCAP0Output:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - unversioned: (runs 210498 - 211831)
+
+Path ALCAPHISYMOutput:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - unversioned: (runs 210498 - 211831)
+
+Path AOutput:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - unversioned: (runs 210498 - 211831)
+
+Path AlCa_EcalPhiSym:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V13: (runs 210498 - 211831) seeded by: L1_ZeroBias
+
+Path AlCa_LumiPixels:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V8: (runs 210498 - 211831) seeded by: L1_AlwaysTrue
+
+Path AlCa_LumiPixels_Random:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831)
+
+Path AlCa_LumiPixels_ZeroBias:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V4: (runs 210498 - 211831) seeded by: L1_ZeroBias
+
+Path AlCa_PAEcalEtaEBonly:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleEG5_BptxAND OR L1_SingleEG7 OR L1_SingleEG12 OR L1_SingleEG20 OR L1_SingleEG22 OR L1_SingleEG24 OR L1_SingleEG30 OR L1_DoubleEG_13_7 OR L1_TripleEG7 OR L1_TripleEG_12_7_5 OR L1_DoubleEG5 OR L1_TripleJet_64_44_24_VBF OR L1_TripleJet_64_48_28_VBF OR L1_TripleJetC_52_28_28 OR L1_QuadJetC32 OR L1_QuadJetC36 OR L1_QuadJetC40  OR L1_DoubleEG6_HTT100 OR L1_DoubleEG6_HTT125 OR L1_EG8_DoubleJetC20 OR L1_Mu12_EG7 OR L1_MuOpen_EG12 OR L1_DoubleMu3p5_EG5 OR L1_DoubleMu5_EG5 OR L1_Mu12_EG7 OR L1_Mu5_DoubleEG5 OR L1_Mu5_DoubleEG6 OR L1_MuOpen_EG5
+
+Path AlCa_PAEcalEtaEEonly:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleEG5_BptxAND OR L1_SingleEG7 OR L1_SingleEG12 OR L1_SingleEG20 OR L1_SingleEG22 OR L1_SingleEG24 OR L1_SingleEG30 OR L1_DoubleEG_13_7 OR L1_TripleEG7 OR L1_TripleEG_12_7_5 OR L1_DoubleEG5 OR L1_TripleJet_64_44_24_VBF OR L1_TripleJet_64_48_28_VBF OR L1_TripleJetC_52_28_28 OR L1_QuadJetC32 OR L1_QuadJetC36 OR L1_QuadJetC40  OR L1_DoubleEG6_HTT100 OR L1_DoubleEG6_HTT125 OR L1_EG8_DoubleJetC20 OR L1_Mu12_EG7 OR L1_MuOpen_EG12 OR L1_DoubleMu3p5_EG5 OR L1_DoubleMu5_EG5 OR L1_Mu12_EG7 OR L1_Mu5_DoubleEG5 OR L1_Mu5_DoubleEG6 OR L1_MuOpen_EG5
+
+Path AlCa_PAEcalPi0EBonly:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleEG5_BptxAND OR L1_SingleEG7 OR L1_SingleEG12 OR L1_SingleEG20 OR L1_SingleEG22 OR L1_SingleEG24 OR L1_SingleEG30 OR L1_DoubleEG_13_7 OR L1_TripleEG7 OR L1_TripleEG_12_7_5 OR L1_DoubleEG5 OR L1_TripleJet_64_44_24_VBF OR L1_TripleJet_64_48_28_VBF OR L1_TripleJetC_52_28_28 OR L1_QuadJetC32 OR L1_QuadJetC36 OR L1_QuadJetC40  OR L1_DoubleEG6_HTT100 OR L1_DoubleEG6_HTT125 OR L1_EG8_DoubleJetC20 OR L1_Mu12_EG7 OR L1_MuOpen_EG12 OR L1_DoubleMu3p5_EG5 OR L1_DoubleMu5_EG5 OR L1_Mu12_EG7 OR L1_Mu5_DoubleEG5 OR L1_Mu5_DoubleEG6 OR L1_MuOpen_EG5
+
+Path AlCa_PAEcalPi0EEonly:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleEG5_BptxAND OR L1_SingleEG7 OR L1_SingleEG12 OR L1_SingleEG20 OR L1_SingleEG22 OR L1_SingleEG24 OR L1_SingleEG30 OR L1_DoubleEG_13_7 OR L1_TripleEG7 OR L1_TripleEG_12_7_5 OR L1_DoubleEG5 OR L1_TripleJet_64_44_24_VBF OR L1_TripleJet_64_48_28_VBF OR L1_TripleJetC_52_28_28 OR L1_QuadJetC32 OR L1_QuadJetC36 OR L1_QuadJetC40  OR L1_DoubleEG6_HTT100 OR L1_DoubleEG6_HTT125 OR L1_EG8_DoubleJetC20 OR L1_Mu12_EG7 OR L1_MuOpen_EG12 OR L1_DoubleMu3p5_EG5 OR L1_DoubleMu5_EG5 OR L1_Mu12_EG7 OR L1_Mu5_DoubleEG5 OR L1_Mu5_DoubleEG6 OR L1_MuOpen_EG5
+
+Path AlCa_RPCMuonNoHits:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V9: (runs 210498 - 211831) seeded by: L1_SingleMu7 OR L1_SingleMu14er OR L1_SingleMu16er
+
+Path AlCa_RPCMuonNoTriggers:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V9: (runs 210498 - 211831) seeded by: L1_SingleMu7 OR L1_SingleMu14er OR L1_SingleMu16er
+
+Path AlCa_RPCMuonNormalisation:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V9: (runs 210498 - 211831) seeded by: L1_SingleMu7 OR L1_SingleMu14er OR L1_SingleMu16er
+
+Path CalibrationOutput:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - unversioned: (runs 210498 - 211831)
+
+Path DQMOutput:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - unversioned: (runs 210498 - 211831)
+
+Path DQM_FEDIntegrity:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V11: (runs 210498 - 211831)
+
+Path DST_Physics:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V5: (runs 210498 - 211831)
+
+Path EcalCalibrationOutput:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - unversioned: (runs 210498 - 211831)
+
+Path ExpressOutput:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - unversioned: (runs 210498 - 211831)
+
+Path HLTDQMOutput:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - unversioned: (runs 210498 - 211831)
+
+Path HLT_Activity_Ecal_SC7 (Commissioning dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V13: (runs 210498 - 211831) seeded by: L1_ZeroBias
+
+Path HLT_BeamGas_HF_Beam1 (Commissioning dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V5: (runs 210498 - 211831) seeded by: L1_BeamGas_Hf_BptxPlusPostQuiet
+
+Path HLT_BeamGas_HF_Beam2 (Commissioning dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V5: (runs 210498 - 211831) seeded by: L1_BeamGas_Hf_BptxMinusPostQuiet
+
+Path HLT_BeamHalo (Cosmics dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V13: (runs 210498 - 211831) seeded by: L1_BeamHalo
+
+Path HLT_DTCalibration:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V2: (runs 210498 - 211831)
+
+Path HLT_EcalCalibration:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V3: (runs 210498 - 211831)
+
+Path HLT_Ele22_CaloIdL_CaloIsoVL (PPPhoton dataset)
+ - first seen online on run 211739 (/cdaq/physics/Run2013PP/RampUp/80x80VdM/HLT/V10)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V6: (runs 211739 - 211831) seeded by: L1_SingleEG12
+
+Path HLT_GlobalRunHPDNoise (HcalHPDNoise dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V8: (runs 210498 - 211831) seeded by: L1_SingleJetC20_NotBptxOR
+
+Path HLT_HcalCalibration:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V3: (runs 210498 - 211831)
+
+Path HLT_L1SingleMuOpen_AntiBPTX (Cosmics dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V7: (runs 210498 - 211831) seeded by: L1_SingleMuOpen
+
+Path HLT_L1TrackerCosmics (Cosmics dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V7: (runs 210498 - 211831) seeded by: technical bits: 25
+
+Path HLT_LogMonitor (LogMonitor dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V4: (runs 210498 - 211831)
+
+Path HLT_Mu15_eta2p1 (PPMuon dataset)
+ - first seen online on run 211739 (/cdaq/physics/Run2013PP/RampUp/80x80VdM/HLT/V10)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V5: (runs 211739 - 211831) seeded by: L1_SingleMu7
+
+Path HLT_PABTagMu_Jet20_Mu4 (PAMuon dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_Mu3_JetC16_WdEtaPhi2
+
+Path HLT_PABptxMinusNotBptxPlus (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_BptxMinus_NotBptxPlus
+
+Path HLT_PABptxPlusNotBptxMinus (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_BptxPlus_NotBptxMinus
+
+Path HLT_PACastorEmNotHfCoincidencePm (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_CastorEm_NotHcalHfCoincidencePm
+
+Path HLT_PACastorEmNotHfSingleChannel (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_CastorEm_NotHcalHfSingleChannel
+
+Path HLT_PACastorEmTotemLowMultiplicity (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_CastorEm_TotemLowMultiplicity
+
+Path HLT_PADimuon0_NoVertexing (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_DoubleMu0er_HighQ
+
+Path HLT_PADoubleEle6_CaloIdT_TrkIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211631 (/cdaq/physics/Run2013PA/296Bunches/v3.2LowerLumi/HLT/V1)
+ - V1: (runs 210498 - 211631) seeded by: L1_SingleEG5_BptxAND
+
+Path HLT_PADoubleEle8_CaloIdT_TrkIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211631 (/cdaq/physics/Run2013PA/296Bunches/v3.2LowerLumi/HLT/V1)
+ - V1: (runs 210498 - 211631) seeded by: L1_SingleEG7
+
+Path HLT_PADoubleJet20_ForwardBackward (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_DoubleForJet16_EtaOpp
+
+Path HLT_PADoubleMu4_Acoplanarity03 (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_DoubleMu0
+
+Path HLT_PAExclDijet35_HFAND (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet16_FwdVeto5
+
+Path HLT_PAExclDijet35_HFOR (PPFSQ dataset)
+ - first seen online on run 211739 (/cdaq/physics/Run2013PP/RampUp/80x80VdM/HLT/V10)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 211739 - 211831) seeded by: L1_SingleJet16_BptxAND
+
+Path HLT_PAForJet100Eta2 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet36
+
+Path HLT_PAForJet100Eta3 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet36
+
+Path HLT_PAForJet20Eta2 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet16_BptxAND
+
+Path HLT_PAForJet20Eta3 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet16_BptxAND
+
+Path HLT_PAForJet40Eta2 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet36
+
+Path HLT_PAForJet40Eta3 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet36
+
+Path HLT_PAForJet60Eta2 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet36
+
+Path HLT_PAForJet60Eta3 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet36
+
+Path HLT_PAForJet80Eta2 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet36
+
+Path HLT_PAForJet80Eta3 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet36
+
+Path HLT_PAFullTrack12 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211001) seeded by: L1_SingleJet12_BptxAND
+ - V2: (runs 211032 - 211831) seeded by: L1_SingleJet12_BptxAND
+
+Path HLT_PAFullTrack20 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211001) seeded by: L1_SingleJet16_BptxAND
+ - V2: (runs 211032 - 211831) seeded by: L1_SingleJet16_BptxAND
+
+Path HLT_PAFullTrack30 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211001) seeded by: L1_SingleJet16_BptxAND
+ - V2: (runs 211032 - 211831) seeded by: L1_SingleJet16_BptxAND
+
+Path HLT_PAFullTrack50 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211001) seeded by: L1_SingleJet36
+ - V2: (runs 211032 - 211831) seeded by: L1_SingleJet36
+
+Path HLT_PAHFOR_SingleTrack (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_HcalHfSingleChannel_BptxAND
+
+Path HLT_PAHFSumET100 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 210658) seeded by: L1_ETT20_BptxAND
+ - V2: (runs 210676 - 211001) seeded by: L1_ETT20_BptxAND
+ - V3: (runs 211032 - 211831) seeded by: L1_ETT20_BptxAND
+
+Path HLT_PAHFSumET140 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 210658) seeded by: L1_ETT20_BptxAND
+ - V2: (runs 210676 - 211001) seeded by: L1_ETT20_BptxAND
+ - V3: (runs 211032 - 211831) seeded by: L1_ETT20_BptxAND
+
+Path HLT_PAHFSumET170 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 210658) seeded by: L1_ETT20_BptxAND
+ - V2: (runs 210676 - 211001) seeded by: L1_ETT20_BptxAND
+ - V3: (runs 211032 - 211831) seeded by: L1_ETT20_BptxAND
+
+Path HLT_PAHFSumET210 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 210658) seeded by: L1_ETT40
+ - V2: (runs 210676 - 211001) seeded by: L1_ETT40
+ - V3: (runs 211032 - 211831) seeded by: L1_ETT40
+
+Path HLT_PAHcalNZS (HcalNZS dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleEG5_BptxAND OR L1_SingleEG7 OR L1_SingleEG12 OR L1_SingleEG18er OR L1_SingleEG20 OR L1_SingleEG22 OR L1_SingleEG24 OR L1_SingleEG30 OR L1_SingleJet16_BptxAND OR L1_SingleJet36 OR L1_SingleJet52 OR L1_SingleJet68 OR L1_SingleJet92 OR L1_SingleJet128 OR L1_SingleMu7 OR L1_SingleMu12 OR L1_SingleMu16 OR L1_SingleMu20 OR L1_SingleMu14er OR L1_SingleMu16er OR L1_SingleMu20er OR L1_SingleMu25er OR L1_ZeroBias
+
+Path HLT_PAHcalPhiSym (HcalNZS dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_DoubleEG_13_7 OR L1_TripleEG7 OR L1_TripleEG_12_7_5 OR L1_SingleEG5_BptxAND OR L1_SingleEG7 OR L1_SingleEG12 OR L1_SingleEG18er OR L1_SingleIsoEG18er OR L1_SingleEG20 OR L1_SingleIsoEG20er OR L1_SingleEG22 OR L1_SingleEG24 OR L1_SingleEG30 OR L1_SingleMu3 OR L1_SingleMu7 OR L1_SingleMu12 OR L1_SingleMu16 OR L1_SingleMu20 OR L1_SingleMu14er OR L1_SingleMu16er OR L1_SingleMu20er OR L1_SingleMu25er OR L1_DoubleMu0 OR L1_DoubleMu5 OR L1_DoubleMu_12_5 OR L1_DoubleMu_10_Open
+
+Path HLT_PAHcalUTCA (HcalNZS dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831)
+
+Path HLT_PAJet100_NoJetID (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet36
+
+Path HLT_PAJet120_NoJetID (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet36
+
+Path HLT_PAJet20_NoJetID (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet16_BptxAND
+
+Path HLT_PAJet40ETM30 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet16_BptxAND AND L1_ETM30
+
+Path HLT_PAJet40_NoJetID (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet16_BptxAND
+
+Path HLT_PAJet60ETM30 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet36 AND L1_ETM30
+
+Path HLT_PAJet60_NoJetID (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet36
+
+Path HLT_PAJet80_NoJetID (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet36
+
+Path HLT_PAL1CastorTotalTotemLowMultiplicity (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_CastorTotalEnergy_TotemLowMultiplicity
+
+Path HLT_PAL1DoubleEG3_FwdVeto (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_DoubleEG3_FwdVeto
+
+Path HLT_PAL1DoubleEG5DoubleEle6_CaloIdT_TrkIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211631 (/cdaq/physics/Run2013PA/296Bunches/v3.2LowerLumi/HLT/V1)
+ - V1: (runs 210498 - 211631) seeded by: L1_DoubleEG5
+
+Path HLT_PAL1DoubleEG5_TotemDiffractive (PAMinBiasUPC dataset)
+ - first seen online on run 211313 (/cdaq/physics/Run2013PA/72Bunches/v2/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 211313 - 211831) seeded by: L1_DoubleEG5_TotemDiffractive
+
+Path HLT_PAL1DoubleJet20_TotemDiffractive (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_DoubleJet20_TotemDiffractive
+
+Path HLT_PAL1DoubleJetC36_TotemDiffractive (PAMinBiasUPC dataset)
+ - first seen online on run 211313 (/cdaq/physics/Run2013PA/72Bunches/v2/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 211313 - 211831) seeded by: L1_DoubleJetC36_TotemDiffractive
+
+Path HLT_PAL1DoubleMu0 (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_DoubleMu0
+
+Path HLT_PAL1DoubleMu0_HighQ (PAMuon dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_DoubleMuOpen_BptxAND
+
+Path HLT_PAL1DoubleMu5_TotemDiffractive (PAMinBiasUPC dataset)
+ - first seen online on run 211313 (/cdaq/physics/Run2013PA/72Bunches/v2/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 211313 - 211831) seeded by: L1_DoubleMu5_TotemDiffractive
+
+Path HLT_PAL1DoubleMuOpen (PAMuon dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_DoubleMuOpen_BptxAND
+
+Path HLT_PAL1SingleEG20_TotemDiffractive (PAMinBiasUPC dataset)
+ - first seen online on run 211313 (/cdaq/physics/Run2013PA/72Bunches/v2/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 211313 - 211831) seeded by: L1_SingleEG20_TotemDiffractive
+
+Path HLT_PAL1SingleJet16 (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet16_BptxAND
+
+Path HLT_PAL1SingleJet36 (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet36
+
+Path HLT_PAL1SingleJet52_TotemDiffractive (PAMinBiasUPC dataset)
+ - first seen online on run 211313 (/cdaq/physics/Run2013PA/72Bunches/v2/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 211313 - 211831) seeded by: L1_SingleJet52_TotemDiffractive
+
+Path HLT_PAL1SingleMu20_TotemDiffractive (PAMinBiasUPC dataset)
+ - first seen online on run 211313 (/cdaq/physics/Run2013PA/72Bunches/v2/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 211313 - 211831) seeded by: L1_SingleMu20_TotemDiffractive
+
+Path HLT_PAL1Tech53_MB (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: technical bits: 53
+
+Path HLT_PAL1Tech53_MB_SingleTrack (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: technical bits: 53
+
+Path HLT_PAL1Tech54_ZeroBias (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: technical bits: 54
+
+Path HLT_PAL1Tech63_CASTORHaloMuon (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: technical bits: 63
+
+Path HLT_PAL1Tech_HBHEHO_totalOR (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: technical bits: 11 OR 12
+
+Path HLT_PAL2DoubleMu3 (PAMuon dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_DoubleMuOpen_BptxAND
+
+Path HLT_PAMinBiasBHC (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_BscMinBiasThreshold1_BptxAND
+
+Path HLT_PAMinBiasBHC_OR (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_BscMinBiasOR_BptxAND
+
+Path HLT_PAMinBiasHF (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_HcalHfCoincidencePm_BptxAND
+
+Path HLT_PAMinBiasHF_OR (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_HcalHfSingleChannel_BptxAND
+
+Path HLT_PAMinBiasHfOrBHC (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_HcalHfCoincidencePm_BptxAND OR L1_BscMinBiasThreshold1_BptxAND
+
+Path HLT_PAMu12 (PAMuon dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleMu12
+
+Path HLT_PAMu3 (PAMuon dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleMu3
+
+Path HLT_PAMu3PFJet20 (PAMuon dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_Mu3_Jet16
+
+Path HLT_PAMu3PFJet40 (PAMuon dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_Mu3_Jet36
+
+Path HLT_PAMu7 (PAMuon dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleMu7
+
+Path HLT_PAMu7PFJet20 (PAMuon dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_Mu7_Jet16
+
+Path HLT_PAMu7_Ele7_CaloIdT_CaloIsoVL (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_MuOpen_EG5
+
+Path HLT_PAPhoton10_NoCaloIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleEG5_BptxAND
+
+Path HLT_PAPhoton10_Photon10_NoCaloIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_DoubleEG5
+
+Path HLT_PAPhoton10_Photon10_TightCaloIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_DoubleEG5
+
+Path HLT_PAPhoton10_Photon10_TightCaloIdVL_Iso50 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211631 (/cdaq/physics/Run2013PA/296Bunches/v3.2LowerLumi/HLT/V1)
+ - V1: (runs 210498 - 211631) seeded by: L1_DoubleEG5
+
+Path HLT_PAPhoton10_TightCaloIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleEG5_BptxAND
+
+Path HLT_PAPhoton10_TightCaloIdVL_Iso50 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211631 (/cdaq/physics/Run2013PA/296Bunches/v3.2LowerLumi/HLT/V1)
+ - V1: (runs 210498 - 211631) seeded by: L1_SingleEG5_BptxAND
+
+Path HLT_PAPhoton15_NoCaloIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleEG5_BptxAND
+
+Path HLT_PAPhoton15_Photon10_NoCaloIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_DoubleEG5
+
+Path HLT_PAPhoton15_Photon10_TightCaloIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_DoubleEG5
+
+Path HLT_PAPhoton15_TightCaloIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleEG5_BptxAND
+
+Path HLT_PAPhoton15_TightCaloIdVL_Iso50 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211631 (/cdaq/physics/Run2013PA/296Bunches/v3.2LowerLumi/HLT/V1)
+ - V1: (runs 210498 - 211631) seeded by: L1_SingleEG5_BptxAND
+
+Path HLT_PAPhoton20_NoCaloIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleEG5_BptxAND
+
+Path HLT_PAPhoton20_Photon15_NoCaloIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_DoubleEG5
+
+Path HLT_PAPhoton20_Photon15_TightCaloIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_DoubleEG5
+
+Path HLT_PAPhoton20_Photon20_NoCaloIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_DoubleEG5
+
+Path HLT_PAPhoton20_TightCaloIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleEG5_BptxAND
+
+Path HLT_PAPhoton20_TightCaloIdVL_Iso50 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211631 (/cdaq/physics/Run2013PA/296Bunches/v3.2LowerLumi/HLT/V1)
+ - V1: (runs 210498 - 211631) seeded by: L1_SingleEG5_BptxAND
+
+Path HLT_PAPhoton30_NoCaloIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleEG12
+
+Path HLT_PAPhoton30_Photon30_NoCaloIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_DoubleEG5
+
+Path HLT_PAPhoton30_TightCaloIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleEG12
+
+Path HLT_PAPhoton30_TightCaloIdVL_Iso50 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211631 (/cdaq/physics/Run2013PA/296Bunches/v3.2LowerLumi/HLT/V1)
+ - V1: (runs 210498 - 211631) seeded by: L1_SingleEG12
+
+Path HLT_PAPhoton40_NoCaloIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleEG20
+
+Path HLT_PAPhoton40_TightCaloIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleEG20
+
+Path HLT_PAPhoton60_NoCaloIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleEG24
+
+Path HLT_PAPixelTrackMultiplicity100_FullTrack12 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211001) seeded by: L1_ETT20_BptxAND
+ - V2: (runs 211032 - 211831) seeded by: L1_ETT20_BptxAND
+
+Path HLT_PAPixelTrackMultiplicity100_L2DoubleMu3 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_DoubleMuOpen_BptxAND
+
+Path HLT_PAPixelTrackMultiplicity130_FullTrack12 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211001) seeded by: L1_ETT20_BptxAND
+ - V2: (runs 211032 - 211831) seeded by: L1_ETT20_BptxAND
+
+Path HLT_PAPixelTrackMultiplicity140_Jet80_NoJetID (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211001) seeded by: L1_SingleJet36
+ - V2: (runs 211032 - 211831) seeded by: L1_SingleJet36
+
+Path HLT_PAPixelTrackMultiplicity160_FullTrack12 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211001) seeded by: L1_ETT40
+ - V2: (runs 211032 - 211831) seeded by: L1_ETT40
+
+Path HLT_PAPixelTracks_Multiplicity100 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211001) seeded by: L1_ETT20_BptxAND
+ - V2: (runs 211032 - 211831) seeded by: L1_ETT20_BptxAND
+
+Path HLT_PAPixelTracks_Multiplicity130 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211001) seeded by: L1_ETT20_BptxAND
+ - V2: (runs 211032 - 211831) seeded by: L1_ETT20_BptxAND
+
+Path HLT_PAPixelTracks_Multiplicity160 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211001) seeded by: L1_ETT40
+ - V2: (runs 211032 - 211831) seeded by: L1_ETT40
+
+Path HLT_PAPixelTracks_Multiplicity190 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211001) seeded by: L1_ETT40
+ - V2: (runs 211032 - 211831) seeded by: L1_ETT40
+
+Path HLT_PAPixelTracks_Multiplicity220 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211001) seeded by: L1_ETT60
+ - V2: (runs 211032 - 211831) seeded by: L1_ETT60
+
+Path HLT_PARandom (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831)
+
+Path HLT_PARomanPots_Tech52 (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: technical bits: 52
+
+Path HLT_PASingleEle6_CaloIdNone_TrkIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211631 (/cdaq/physics/Run2013PA/296Bunches/v3.2LowerLumi/HLT/V1)
+ - V1: (runs 210498 - 211631) seeded by: L1_SingleEG5_BptxAND
+
+Path HLT_PASingleEle6_CaloIdT_TrkIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211631 (/cdaq/physics/Run2013PA/296Bunches/v3.2LowerLumi/HLT/V1)
+ - V1: (runs 210498 - 211631) seeded by: L1_SingleEG5_BptxAND
+
+Path HLT_PASingleEle8_CaloIdNone_TrkIdVL (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211631 (/cdaq/physics/Run2013PA/296Bunches/v3.2LowerLumi/HLT/V1)
+ - V1: (runs 210498 - 211631) seeded by: L1_SingleEG7
+
+Path HLT_PASingleForJet15 (JetMon, PAMinBiasUPC datasets)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_ZeroBias
+
+Path HLT_PASingleForJet25 (JetMon, PAMinBiasUPC datasets)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleForJet16
+
+Path HLT_PAT1minbias_Tech55 (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: technical bits: 55
+
+Path HLT_PATech35 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: technical bits: 35
+
+Path HLT_PATech35_HFSumET100 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 210658) seeded by: technical bits: 35
+ - V2: (runs 210676 - 211001) seeded by: technical bits: 35
+ - V3: (runs 211032 - 211831) seeded by: technical bits: 35
+
+Path HLT_PATripleJet100_20_20 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet36
+
+Path HLT_PATripleJet20_20_20 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet16_BptxAND
+
+Path HLT_PATripleJet40_20_20 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet36
+
+Path HLT_PATripleJet60_20_20 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet36
+
+Path HLT_PATripleJet80_20_20 (PAHighPt dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_SingleJet36
+
+Path HLT_PAUpcSingleEG5Full_TrackVeto7 (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211631 (/cdaq/physics/Run2013PA/296Bunches/v3.2LowerLumi/HLT/V1)
+ - V1: (runs 210498 - 211631) seeded by: L1_SingleEG5_BptxAND
+
+Path HLT_PAUpcSingleEG5Pixel_TrackVeto (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211631 (/cdaq/physics/Run2013PA/296Bunches/v3.2LowerLumi/HLT/V1)
+ - V1: (runs 210498 - 211631) seeded by: L1_SingleEG5_BptxAND
+
+Path HLT_PAUpcSingleMuOpenFull_TrackVeto7 (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211631 (/cdaq/physics/Run2013PA/296Bunches/v3.2LowerLumi/HLT/V1)
+ - V1: (runs 210498 - 211631) seeded by: L1_SingleMuOpen
+
+Path HLT_PAUpcSingleMuOpenPixel_TrackVeto (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211631 (/cdaq/physics/Run2013PA/296Bunches/v3.2LowerLumi/HLT/V1)
+ - V1: (runs 210498 - 211631) seeded by: L1_SingleMuOpen
+
+Path HLT_PAUpcSingleMuOpenTkMu_Onia (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211631 (/cdaq/physics/Run2013PA/296Bunches/v3.2LowerLumi/HLT/V1)
+ - V1: (runs 210498 - 211631) seeded by: L1_SingleMuOpen
+
+Path HLT_PAZeroBias (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_ZeroBias
+
+Path HLT_PAZeroBiasPixel_DoubleTrack (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_ZeroBias
+
+Path HLT_PAZeroBiasPixel_SingleTrack (PAMinBiasUPC dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 210498 - 211831) seeded by: L1_ZeroBias
+
+Path HLT_PPL1DoubleJetC36 (PPFSQ dataset)
+ - first seen online on run 211739 (/cdaq/physics/Run2013PP/RampUp/80x80VdM/HLT/V10)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 211739 - 211831) seeded by: L1_DoubleJetC36
+
+Path HLT_PPPixelTrackMultiplicity55_FullTrack12 (PPJet dataset)
+ - first seen online on run 211739 (/cdaq/physics/Run2013PP/RampUp/80x80VdM/HLT/V10)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 211739 - 211831) seeded by: L1_ETT20_BptxAND
+
+Path HLT_PPPixelTrackMultiplicity70_FullTrack12 (PPJet dataset)
+ - first seen online on run 211739 (/cdaq/physics/Run2013PP/RampUp/80x80VdM/HLT/V10)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 211739 - 211831) seeded by: L1_ETT20_BptxAND
+
+Path HLT_PPPixelTracks_Multiplicity55 (PPJet dataset)
+ - first seen online on run 211739 (/cdaq/physics/Run2013PP/RampUp/80x80VdM/HLT/V10)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 211739 - 211831) seeded by: L1_ETT20_BptxAND
+
+Path HLT_PPPixelTracks_Multiplicity70 (PPJet dataset)
+ - first seen online on run 211739 (/cdaq/physics/Run2013PP/RampUp/80x80VdM/HLT/V10)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 211739 - 211831) seeded by: L1_ETT20_BptxAND
+
+Path HLT_PPPixelTracks_Multiplicity85 (PPJet dataset)
+ - first seen online on run 211739 (/cdaq/physics/Run2013PP/RampUp/80x80VdM/HLT/V10)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V1: (runs 211739 - 211831) seeded by: L1_ETT20_BptxAND
+
+Path HLT_Physics (MinimumBias dataset)
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V5: (runs 210498 - 211831)
+
+Path HLT_TrackerCalibration:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - V3: (runs 210498 - 211831)
+
+Path HLT_ZeroBias_part1 (ZeroBias1 dataset)
+ - first seen online on run 210986 (/cdaq/physics/Run2013PA/202Bunches/VdMScan/v1.1/HLT/V2)
+ - last  seen online on run 211823 (/cdaq/physics/Run2013PP/RampUp/29x92VdM/HLT/V2)
+ - V1: (runs 210986 - 211823) seeded by: L1_AlwaysTrue
+
+Path HLT_ZeroBias_part2 (ZeroBias2 dataset)
+ - first seen online on run 210986 (/cdaq/physics/Run2013PA/202Bunches/VdMScan/v1.1/HLT/V2)
+ - last  seen online on run 211823 (/cdaq/physics/Run2013PP/RampUp/29x92VdM/HLT/V2)
+ - V1: (runs 210986 - 211823) seeded by: L1_AlwaysTrue
+
+Path HLT_ZeroBias_part3 (ZeroBias3 dataset)
+ - first seen online on run 210986 (/cdaq/physics/Run2013PA/202Bunches/VdMScan/v1.1/HLT/V2)
+ - last  seen online on run 211823 (/cdaq/physics/Run2013PP/RampUp/29x92VdM/HLT/V2)
+ - V1: (runs 210986 - 211823) seeded by: L1_AlwaysTrue
+
+Path HLT_ZeroBias_part4 (ZeroBias4 dataset)
+ - first seen online on run 210986 (/cdaq/physics/Run2013PA/202Bunches/VdMScan/v1.1/HLT/V2)
+ - last  seen online on run 211823 (/cdaq/physics/Run2013PP/RampUp/29x92VdM/HLT/V2)
+ - V1: (runs 210986 - 211823) seeded by: L1_AlwaysTrue
+
+Path HLTriggerFinalPath:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - unversioned: (runs 210498 - 211831)
+
+Path HLTriggerFirstPath:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - unversioned: (runs 210498 - 211831)
+
+Path NanoDSTOutput:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - unversioned: (runs 210498 - 211831)
+
+Path RPCMONOutput:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - unversioned: (runs 210498 - 211831)
+
+Path TrackerCalibrationOutput:
+ - first seen online on run 210498 (/cdaq/physics/Run2013PA/LowLumi/v2.5/HLT/V1)
+ - last  seen online on run 211831 (/cdaq/physics/Run2013PP/Nominal/WithRomanPots/HLT/V2)
+ - unversioned: (runs 210498 - 211831)
+
