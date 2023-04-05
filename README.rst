@@ -45,6 +45,7 @@ Specific data ingestion and curation campaigns:
 - `cms-2013-simulated-datasets-hi <cms-2013-simulated-datasets-hi>`_ -- helper scripts for the CMS 2013 HI open data release (simulated datasets)
 - `cms-2015-collision-datasets <cms-2015-collision-datasets>`_ -- helper scripts for the CMS 2015 open data release (collision datasets)
 - `cms-2015-simulated-datasets <cms-2015-simulated-datasets>`_ -- helper scripts for the CMS 2015 open data release (simulated datasets)
+- `cms-2016-simulated-datasets <cms-2016-simulated-datasets>`_ -- helper scripts for the CMS 2016 open data release (simulated datasets)
 - `cms-release-info <cms-release-info>`_ -- CMS year-specific and run-era-specific information
 - `cms-YYYY-luminosity <cms-YYYY-luminosity>`_ -- helper scripts for the CMS luminosity information records (any year)
 - `cms-YYYY-run-numbers <cms-YYYY-run-numbers>`_ -- helper scripts for enriching CMS dataset run numbers (any year)
@@ -73,6 +74,7 @@ The list of contributors in alphabetical order:
 - `Anna Trzcinska <https://github.com/annatrz>`_
 - `Artemis Lavasa <https://orcid.org/0000-0001-5633-2459>`_
 - `Heitor de Bittencourt <https://linkedin.com/in/heitorpb>`_
+- `Julie Hogan <https://orcid.org/0000-0002-8604-3452>`_
 - `Kati Lassila-Perini <https://orcid.org/0000-0002-5502-1795>`_
 - `Mantas Savaniakas <https://github.com/mantasavas>`_
 - `Miko Piitsalo <https://github.com/mokotus>`_
