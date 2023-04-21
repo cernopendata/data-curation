@@ -54,7 +54,7 @@ def mcm_downloader(dataset, mcm_dir, das_dir):
         outfile = mcm_dir + "/dict/" + dataset.replace('/', '@') + ".json"
         with open(outfile, 'w') as dict_file:
                 dict_file.write(mcm_dict_out)
-    
+
     mcm_script = subprocess.run(cmd + "get_test/" + prepid ,
                                 shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     mcm_script_out = str(mcm_script.stdout.decode("utf-8"))
@@ -80,23 +80,23 @@ def create(datasets, mcm_dir, das_dir, eos_dir, ignore_eos_store=False):
         eos_datasets = datasets.copy()
     else:
         eos_datasets = check_datasets_in_eos_dir(datasets, eos_dir)
-   
+
     # get datasets' parents from DAS
     for dataset in eos_datasets:
         parent = get_parent_dataset(dataset, das_dir)
         while parent:
-            if parent not in eos_datasets: 
+            if parent not in eos_datasets:
                 eos_datasets.append(parent)
             parent = get_parent_dataset(parent, das_dir)
 
     total = len(eos_datasets)
     i = 1
-    for dataset in eos_datasets: 
+    for dataset in eos_datasets:
         print("McM Storing ({i}/{N}) {ds}".format(i=i, N=total, ds=dataset))
         t = threading.Thread(target=mcm_downloader, args=(dataset, mcm_dir, das_dir))
         t.start()
         while threading.activeCount() >= 100 :
-            sleep(0.5)  # run 100 curl commands in parallel 
+            sleep(0.5)  # run 100 curl commands in parallel
         i += 1
 
 
@@ -123,7 +123,7 @@ def get_prepId_from_das(dataset, das_dir):
         # try to get from das/mcm:
         prepid = get_from_deep_json(get_das_store_json(dataset, 'mcm', das_dir), 'prepid')
         # todo also try different queries from the json. prep_id?
-    
+
     return prepid
 
 

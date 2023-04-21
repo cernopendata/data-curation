@@ -42,6 +42,7 @@ Specific data ingestion and curation campaigns:
 - `cms-2012-collision-datasets-update <cms-2012-collision-datasets-update>`_ -- helper scripts for the CMS 2012 RunA RunD open data release (collision datasets)
 - `cms-2012-event-display-files <cms-2012-event-display-files>`_ -- helper scripts for the CMS 2012 open data release (event display files)
 - `cms-2012-simulated-datasets <cms-2012-simulated-datasets>`_ -- helper scripts for the CMS 2012 open data release (simulated datasets)
+- `cms-2013-simulated-datasets-hi <cms-2013-simulated-datasets-hi>`_ -- helper scripts for the CMS 2013 HI open data release (simulated datasets)
 - `cms-2015-collision-datasets <cms-2015-collision-datasets>`_ -- helper scripts for the CMS 2015 open data release (collision datasets)
 - `cms-2015-simulated-datasets <cms-2015-simulated-datasets>`_ -- helper scripts for the CMS 2015 open data release (simulated datasets)
 - `cms-release-info <cms-release-info>`_ -- CMS year-specific and run-era-specific information

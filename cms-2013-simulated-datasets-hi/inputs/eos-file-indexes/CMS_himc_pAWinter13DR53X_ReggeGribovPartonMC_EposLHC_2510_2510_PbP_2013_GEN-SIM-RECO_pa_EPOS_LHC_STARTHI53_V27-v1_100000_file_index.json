@@ -1,0 +1,2336 @@
+[
+  {
+    "checksum": "adler32:2061de92",
+    "filename": "0008458A-6D2C-E711-B5B9-0025905AC97A.root",
+    "size": 4194185651,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/0008458A-6D2C-E711-B5B9-0025905AC97A.root"
+  },
+  {
+    "checksum": "adler32:2fda4b96",
+    "filename": "001606B1-772C-E711-A3AA-FA163E6B4573.root",
+    "size": 3451939540,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/001606B1-772C-E711-A3AA-FA163E6B4573.root"
+  },
+  {
+    "checksum": "adler32:0022086a",
+    "filename": "022FE452-732C-E711-BC55-0CC47A01CAEA.root",
+    "size": 2515290900,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/022FE452-732C-E711-BC55-0CC47A01CAEA.root"
+  },
+  {
+    "checksum": "adler32:ff31f9e6",
+    "filename": "0238375E-6B2C-E711-81AB-0CC47A706CD6.root",
+    "size": 4018981061,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/0238375E-6B2C-E711-81AB-0CC47A706CD6.root"
+  },
+  {
+    "checksum": "adler32:392cca07",
+    "filename": "045B542F-802C-E711-8730-02163E013DB2.root",
+    "size": 3939218142,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/045B542F-802C-E711-8730-02163E013DB2.root"
+  },
+  {
+    "checksum": "adler32:51974639",
+    "filename": "04A18E56-AB2C-E711-B452-FA163E5FF5E8.root",
+    "size": 2405797826,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/04A18E56-AB2C-E711-B452-FA163E5FF5E8.root"
+  },
+  {
+    "checksum": "adler32:0caeadca",
+    "filename": "04DDA3FD-B72C-E711-9D37-02163E013DB2.root",
+    "size": 2497588829,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/04DDA3FD-B72C-E711-9D37-02163E013DB2.root"
+  },
+  {
+    "checksum": "adler32:aac93dc4",
+    "filename": "04F71EE9-872C-E711-99A0-842B2B7682B8.root",
+    "size": 4233753165,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/04F71EE9-872C-E711-99A0-842B2B7682B8.root"
+  },
+  {
+    "checksum": "adler32:39351439",
+    "filename": "0622A544-8D2C-E711-A853-002590D0B0CA.root",
+    "size": 2919397942,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/0622A544-8D2C-E711-A853-002590D0B0CA.root"
+  },
+  {
+    "checksum": "adler32:81a81212",
+    "filename": "06B2E920-962C-E711-A073-FA163EC4935A.root",
+    "size": 2501257834,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/06B2E920-962C-E711-A073-FA163EC4935A.root"
+  },
+  {
+    "checksum": "adler32:922e2e58",
+    "filename": "06E1D197-852C-E711-889E-A0369F836280.root",
+    "size": 3761918670,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/06E1D197-852C-E711-889E-A0369F836280.root"
+  },
+  {
+    "checksum": "adler32:e9cc69b8",
+    "filename": "06E5DB83-862C-E711-A54A-1866DA890A68.root",
+    "size": 4191732077,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/06E5DB83-862C-E711-A54A-1866DA890A68.root"
+  },
+  {
+    "checksum": "adler32:f3e12bf0",
+    "filename": "08199F70-9B2C-E711-B7D4-A0369F8362E8.root",
+    "size": 2582827279,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/08199F70-9B2C-E711-B7D4-A0369F8362E8.root"
+  },
+  {
+    "checksum": "adler32:ac1d0f42",
+    "filename": "0860A404-7F2C-E711-B18F-F02FA768CCC8.root",
+    "size": 3823245865,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/0860A404-7F2C-E711-B18F-F02FA768CCC8.root"
+  },
+  {
+    "checksum": "adler32:7c6a6ff8",
+    "filename": "08B47754-7B2C-E711-B5B7-FA163E6DA493.root",
+    "size": 2190268062,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/08B47754-7B2C-E711-B5B7-FA163E6DA493.root"
+  },
+  {
+    "checksum": "adler32:4f6828c5",
+    "filename": "08C0E24D-7E2C-E711-8E61-6CC2173BB830.root",
+    "size": 3684496836,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/08C0E24D-7E2C-E711-8E61-6CC2173BB830.root"
+  },
+  {
+    "checksum": "adler32:dd4d263a",
+    "filename": "08E614F1-692C-E711-AB93-901B0E542962.root",
+    "size": 2196507424,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/08E614F1-692C-E711-AB93-901B0E542962.root"
+  },
+  {
+    "checksum": "adler32:cdcf9611",
+    "filename": "0A231914-682C-E711-A14D-3417EBE527B3.root",
+    "size": 2144652746,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/0A231914-682C-E711-A14D-3417EBE527B3.root"
+  },
+  {
+    "checksum": "adler32:72465126",
+    "filename": "0AF26CD8-802C-E711-B26B-0025901D0BA4.root",
+    "size": 2343608342,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/0AF26CD8-802C-E711-B26B-0025901D0BA4.root"
+  },
+  {
+    "checksum": "adler32:ff55784b",
+    "filename": "0C3A5D04-8E2C-E711-9E10-C4346BC8D568.root",
+    "size": 3720994377,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/0C3A5D04-8E2C-E711-9E10-C4346BC8D568.root"
+  },
+  {
+    "checksum": "adler32:bcfdddce",
+    "filename": "0C4BB029-8C2C-E711-8FE5-00266CFFCCB4.root",
+    "size": 2710635365,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/0C4BB029-8C2C-E711-8FE5-00266CFFCCB4.root"
+  },
+  {
+    "checksum": "adler32:e4a8a91f",
+    "filename": "0C82D3E6-792C-E711-AB3C-6CC2173BBF60.root",
+    "size": 4212356746,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/0C82D3E6-792C-E711-AB3C-6CC2173BBF60.root"
+  },
+  {
+    "checksum": "adler32:9fdabab0",
+    "filename": "0C924F11-8C2C-E711-9E26-02163E015D6D.root",
+    "size": 3450380656,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/0C924F11-8C2C-E711-9E26-02163E015D6D.root"
+  },
+  {
+    "checksum": "adler32:5c15799b",
+    "filename": "0E6DB7FF-672C-E711-9AC3-0025904C7DF6.root",
+    "size": 4227895607,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/0E6DB7FF-672C-E711-9AC3-0025904C7DF6.root"
+  },
+  {
+    "checksum": "adler32:0d0f5f83",
+    "filename": "103128B8-6E2C-E711-9EF6-FA163E6DA493.root",
+    "size": 2196310071,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/103128B8-6E2C-E711-9EF6-FA163E6DA493.root"
+  },
+  {
+    "checksum": "adler32:8a83aa12",
+    "filename": "106A33A9-752C-E711-8379-001EC9ADC361.root",
+    "size": 4215378306,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/106A33A9-752C-E711-8379-001EC9ADC361.root"
+  },
+  {
+    "checksum": "adler32:9218583e",
+    "filename": "1230CE68-6C2C-E711-A9D9-FA163E684F75.root",
+    "size": 3414538657,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/1230CE68-6C2C-E711-A9D9-FA163E684F75.root"
+  },
+  {
+    "checksum": "adler32:c1c27b73",
+    "filename": "12335107-7F2C-E711-9F41-1866DA87BB03.root",
+    "size": 2447211455,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/12335107-7F2C-E711-9F41-1866DA87BB03.root"
+  },
+  {
+    "checksum": "adler32:9f2c2db6",
+    "filename": "1291F876-732C-E711-8A00-FA163E44A4FF.root",
+    "size": 3538398805,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/1291F876-732C-E711-8A00-FA163E44A4FF.root"
+  },
+  {
+    "checksum": "adler32:c33b91b7",
+    "filename": "12A58FE6-672C-E711-962B-008CFAF75356.root",
+    "size": 4206530959,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/12A58FE6-672C-E711-962B-008CFAF75356.root"
+  },
+  {
+    "checksum": "adler32:6cd29a50",
+    "filename": "141BE70A-882C-E711-887C-A0369F8362E8.root",
+    "size": 4157539351,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/141BE70A-882C-E711-887C-A0369F8362E8.root"
+  },
+  {
+    "checksum": "adler32:d9e971ee",
+    "filename": "143B4927-8A2C-E711-8C1E-002590D0B0CA.root",
+    "size": 2924700122,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/143B4927-8A2C-E711-8C1E-002590D0B0CA.root"
+  },
+  {
+    "checksum": "adler32:7810ccc5",
+    "filename": "14ABF31F-AE2C-E711-B6EC-48D539D33367.root",
+    "size": 2849918306,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/14ABF31F-AE2C-E711-B6EC-48D539D33367.root"
+  },
+  {
+    "checksum": "adler32:d7a2287e",
+    "filename": "14ED8A7B-A62C-E711-9593-48D539F3888C.root",
+    "size": 2317536899,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/14ED8A7B-A62C-E711-9593-48D539F3888C.root"
+  },
+  {
+    "checksum": "adler32:982b959b",
+    "filename": "1680CA7D-702C-E711-9299-3417EBE7446B.root",
+    "size": 2403999566,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/1680CA7D-702C-E711-9299-3417EBE7446B.root"
+  },
+  {
+    "checksum": "adler32:4e7d7b13",
+    "filename": "169A9E84-B22C-E711-8680-FA163E77BA17.root",
+    "size": 2296855647,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/169A9E84-B22C-E711-8680-FA163E77BA17.root"
+  },
+  {
+    "checksum": "adler32:3d77fa8e",
+    "filename": "1855AE79-6E2C-E711-B5D9-1866DA879B33.root",
+    "size": 3026880592,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/1855AE79-6E2C-E711-B5D9-1866DA879B33.root"
+  },
+  {
+    "checksum": "adler32:681e2b0c",
+    "filename": "18FAFE9C-9B2C-E711-B698-0CC47A07FA1E.root",
+    "size": 2930776993,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/18FAFE9C-9B2C-E711-B698-0CC47A07FA1E.root"
+  },
+  {
+    "checksum": "adler32:e4a12446",
+    "filename": "1A1EE78E-912C-E711-BE98-F02FA768CF7C.root",
+    "size": 3671348431,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/1A1EE78E-912C-E711-BE98-F02FA768CF7C.root"
+  },
+  {
+    "checksum": "adler32:44ac1bfa",
+    "filename": "1A721DE7-A92C-E711-9898-02163E014890.root",
+    "size": 2239967223,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/1A721DE7-A92C-E711-9898-02163E014890.root"
+  },
+  {
+    "checksum": "adler32:d3ec7aa0",
+    "filename": "1C18767B-832C-E711-B6A6-FA163E111E2F.root",
+    "size": 2162000534,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/1C18767B-832C-E711-B6A6-FA163E111E2F.root"
+  },
+  {
+    "checksum": "adler32:c91193a7",
+    "filename": "1C8263AB-6F2C-E711-B2DD-FA163EAFE3BE.root",
+    "size": 4187175502,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/1C8263AB-6F2C-E711-B2DD-FA163EAFE3BE.root"
+  },
+  {
+    "checksum": "adler32:3cfd887f",
+    "filename": "1CC31CC8-8A2C-E711-8F5C-141877410B4D.root",
+    "size": 3263862757,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/1CC31CC8-8A2C-E711-8F5C-141877410B4D.root"
+  },
+  {
+    "checksum": "adler32:b29cc052",
+    "filename": "204661E8-672C-E711-AF6A-0025900EB198.root",
+    "size": 2776323441,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/204661E8-672C-E711-AF6A-0025900EB198.root"
+  },
+  {
+    "checksum": "adler32:b57998b6",
+    "filename": "223407CB-8F2C-E711-A574-90B11C0BCE26.root",
+    "size": 2831420770,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/223407CB-8F2C-E711-A574-90B11C0BCE26.root"
+  },
+  {
+    "checksum": "adler32:d0d213fd",
+    "filename": "2284914E-A02C-E711-BEFE-FA163EB76681.root",
+    "size": 2407739232,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/2284914E-A02C-E711-BEFE-FA163EB76681.root"
+  },
+  {
+    "checksum": "adler32:dba9898b",
+    "filename": "22A6AB97-752C-E711-98F9-6CC2173AB870.root",
+    "size": 3172104325,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/22A6AB97-752C-E711-98F9-6CC2173AB870.root"
+  },
+  {
+    "checksum": "adler32:a10f2170",
+    "filename": "24671912-932C-E711-96A1-D4AE526DF5FB.root",
+    "size": 2611836558,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/24671912-932C-E711-96A1-D4AE526DF5FB.root"
+  },
+  {
+    "checksum": "adler32:2c57580e",
+    "filename": "24713ED6-D12C-E711-9DE5-001EC9ADEA9B.root",
+    "size": 598196338,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/24713ED6-D12C-E711-9DE5-001EC9ADEA9B.root"
+  },
+  {
+    "checksum": "adler32:e6cfc386",
+    "filename": "24C61034-AC2C-E711-A235-002590D0AF54.root",
+    "size": 2483315303,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/24C61034-AC2C-E711-A235-002590D0AF54.root"
+  },
+  {
+    "checksum": "adler32:6f4462b3",
+    "filename": "261861CF-8F2C-E711-9DA0-1866DAEECF18.root",
+    "size": 4230030455,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/261861CF-8F2C-E711-9DA0-1866DAEECF18.root"
+  },
+  {
+    "checksum": "adler32:88545656",
+    "filename": "26B40375-6A2C-E711-AED9-FA163E38DEFD.root",
+    "size": 3975037647,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/26B40375-6A2C-E711-AED9-FA163E38DEFD.root"
+  },
+  {
+    "checksum": "adler32:cc2f9c06",
+    "filename": "26DAC817-962C-E711-A2B1-C4346BC076D0.root",
+    "size": 2203032790,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/26DAC817-962C-E711-A2B1-C4346BC076D0.root"
+  },
+  {
+    "checksum": "adler32:120e6c90",
+    "filename": "26F3F21E-652C-E711-90D3-FA163EA9184F.root",
+    "size": 2331134595,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/26F3F21E-652C-E711-90D3-FA163EA9184F.root"
+  },
+  {
+    "checksum": "adler32:6483254e",
+    "filename": "2867F30C-B52C-E711-B8A6-48FD8E2824A1.root",
+    "size": 3068936635,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/2867F30C-B52C-E711-B8A6-48FD8E2824A1.root"
+  },
+  {
+    "checksum": "adler32:746be0e7",
+    "filename": "286F165F-7E2C-E711-8FD6-6CC2173BBF40.root",
+    "size": 4205018716,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/286F165F-7E2C-E711-8FD6-6CC2173BBF40.root"
+  },
+  {
+    "checksum": "adler32:5963af78",
+    "filename": "286FCFA7-812C-E711-BCAD-00259021A3D2.root",
+    "size": 3306678901,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/286FCFA7-812C-E711-BCAD-00259021A3D2.root"
+  },
+  {
+    "checksum": "adler32:11826b8d",
+    "filename": "28C268A8-8F2C-E711-82F3-002590494FDA.root",
+    "size": 3450078609,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/28C268A8-8F2C-E711-82F3-002590494FDA.root"
+  },
+  {
+    "checksum": "adler32:210c3889",
+    "filename": "2A789D9D-8F2C-E711-9B28-C4346BC78A40.root",
+    "size": 3645841800,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/2A789D9D-8F2C-E711-9B28-C4346BC78A40.root"
+  },
+  {
+    "checksum": "adler32:b2f32e66",
+    "filename": "2C36C792-922C-E711-9ABB-02163E00CEBA.root",
+    "size": 3480542932,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/2C36C792-922C-E711-9ABB-02163E00CEBA.root"
+  },
+  {
+    "checksum": "adler32:eadeaaf0",
+    "filename": "2C3CD419-852C-E711-A573-C4346BC80410.root",
+    "size": 3261478056,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/2C3CD419-852C-E711-A573-C4346BC80410.root"
+  },
+  {
+    "checksum": "adler32:1eb7cb91",
+    "filename": "2CEF9DB6-842C-E711-86EE-FA163E4FF8AD.root",
+    "size": 3827970822,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/2CEF9DB6-842C-E711-86EE-FA163E4FF8AD.root"
+  },
+  {
+    "checksum": "adler32:98403106",
+    "filename": "2EF81D34-B82C-E711-9F48-F02FA768CB6A.root",
+    "size": 3107938183,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/2EF81D34-B82C-E711-9F48-F02FA768CB6A.root"
+  },
+  {
+    "checksum": "adler32:127b720f",
+    "filename": "3024684C-AA2C-E711-BF2F-002590D0B04A.root",
+    "size": 2731458703,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/3024684C-AA2C-E711-BF2F-002590D0B04A.root"
+  },
+  {
+    "checksum": "adler32:64cc60c6",
+    "filename": "302E2CCA-7C2C-E711-844F-FA163E6DA493.root",
+    "size": 3759220134,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/302E2CCA-7C2C-E711-844F-FA163E6DA493.root"
+  },
+  {
+    "checksum": "adler32:1dff6c13",
+    "filename": "3040EE6A-992C-E711-8040-A0369F836334.root",
+    "size": 3903791208,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/3040EE6A-992C-E711-8040-A0369F836334.root"
+  },
+  {
+    "checksum": "adler32:893bd6a7",
+    "filename": "306BABA2-B02C-E711-9E5D-48FD8E2824AB.root",
+    "size": 2560591916,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/306BABA2-B02C-E711-9E5D-48FD8E2824AB.root"
+  },
+  {
+    "checksum": "adler32:f1860570",
+    "filename": "307AB567-AA2C-E711-B13C-FA163E35CF77.root",
+    "size": 3200879836,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/307AB567-AA2C-E711-B13C-FA163E35CF77.root"
+  },
+  {
+    "checksum": "adler32:7489d628",
+    "filename": "30DB0C4D-AD2C-E711-A1CB-FA163EA9184F.root",
+    "size": 3481190203,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/30DB0C4D-AD2C-E711-A1CB-FA163EA9184F.root"
+  },
+  {
+    "checksum": "adler32:9202fc90",
+    "filename": "30E72A3E-882C-E711-8474-FA163E836D48.root",
+    "size": 3058267995,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/30E72A3E-882C-E711-8474-FA163E836D48.root"
+  },
+  {
+    "checksum": "adler32:01ac1989",
+    "filename": "320A341A-A62C-E711-9A2A-FA163E3661B2.root",
+    "size": 2443177316,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/320A341A-A62C-E711-9A2A-FA163E3661B2.root"
+  },
+  {
+    "checksum": "adler32:b437b911",
+    "filename": "3224A053-A02C-E711-BC89-78E7D1651098.root",
+    "size": 4128841105,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/3224A053-A02C-E711-BC89-78E7D1651098.root"
+  },
+  {
+    "checksum": "adler32:1e492488",
+    "filename": "32474BCD-6C2C-E711-AF5B-3417EBE528A6.root",
+    "size": 4224261953,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/32474BCD-6C2C-E711-AF5B-3417EBE528A6.root"
+  },
+  {
+    "checksum": "adler32:6baba606",
+    "filename": "32474CDA-D12C-E711-9FAB-1866DA87AFB4.root",
+    "size": 1679875820,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/32474CDA-D12C-E711-9FAB-1866DA87AFB4.root"
+  },
+  {
+    "checksum": "adler32:16c4c76b",
+    "filename": "324C340A-B52C-E711-BD26-002590D0B0B0.root",
+    "size": 2432986897,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/324C340A-B52C-E711-BD26-002590D0B0B0.root"
+  },
+  {
+    "checksum": "adler32:e80bba90",
+    "filename": "3281D433-842C-E711-8920-C4346BC80410.root",
+    "size": 3939505596,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/3281D433-842C-E711-8920-C4346BC80410.root"
+  },
+  {
+    "checksum": "adler32:fb6d685f",
+    "filename": "32AF5350-882C-E711-A79D-F02FA768CB74.root",
+    "size": 3215831951,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/32AF5350-882C-E711-A79D-F02FA768CB74.root"
+  },
+  {
+    "checksum": "adler32:ccbc0aa6",
+    "filename": "32BADD5D-722C-E711-B057-20CF3027A570.root",
+    "size": 3923035953,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/32BADD5D-722C-E711-B057-20CF3027A570.root"
+  },
+  {
+    "checksum": "adler32:8b6c29c5",
+    "filename": "342718F7-7A2C-E711-B06A-6CC2173BC350.root",
+    "size": 2296726511,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/342718F7-7A2C-E711-B06A-6CC2173BC350.root"
+  },
+  {
+    "checksum": "adler32:676b36a4",
+    "filename": "36F8A61A-6E2C-E711-8928-FA163E6DA493.root",
+    "size": 3775461923,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/36F8A61A-6E2C-E711-8928-FA163E6DA493.root"
+  },
+  {
+    "checksum": "adler32:c5be2cf1",
+    "filename": "38573636-802C-E711-8364-0CC47A7EEE32.root",
+    "size": 3835828640,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/38573636-802C-E711-8364-0CC47A7EEE32.root"
+  },
+  {
+    "checksum": "adler32:cd825567",
+    "filename": "38B3C579-9C2C-E711-BFF4-FA163E053E84.root",
+    "size": 2699538822,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/38B3C579-9C2C-E711-BFF4-FA163E053E84.root"
+  },
+  {
+    "checksum": "adler32:dcc6e51b",
+    "filename": "3A48816F-B32C-E711-9992-48FD8E282971.root",
+    "size": 2331573225,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/3A48816F-B32C-E711-9992-48FD8E282971.root"
+  },
+  {
+    "checksum": "adler32:3e735444",
+    "filename": "3A7C7D1D-762C-E711-B3DA-FA163E94F9EB.root",
+    "size": 2345112389,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/3A7C7D1D-762C-E711-B3DA-FA163E94F9EB.root"
+  },
+  {
+    "checksum": "adler32:3ad0ce7f",
+    "filename": "3C14BBAF-A72C-E711-97E2-48FD8EE7398B.root",
+    "size": 2228180271,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/3C14BBAF-A72C-E711-97E2-48FD8EE7398B.root"
+  },
+  {
+    "checksum": "adler32:b570f562",
+    "filename": "3C329FFD-7F2C-E711-85F5-FA163E4FF8AD.root",
+    "size": 4063141510,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/3C329FFD-7F2C-E711-85F5-FA163E4FF8AD.root"
+  },
+  {
+    "checksum": "adler32:68a329ae",
+    "filename": "3C5CC763-902C-E711-B002-FA163E12B13B.root",
+    "size": 3003983131,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/3C5CC763-902C-E711-B002-FA163E12B13B.root"
+  },
+  {
+    "checksum": "adler32:bbcdbc28",
+    "filename": "3C6C2388-6E2C-E711-B5D3-0025904B8ABC.root",
+    "size": 4234699207,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/3C6C2388-6E2C-E711-B5D3-0025904B8ABC.root"
+  },
+  {
+    "checksum": "adler32:3e534a5b",
+    "filename": "3CC30668-722C-E711-BD84-308D99304920.root",
+    "size": 2708047109,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/3CC30668-722C-E711-BD84-308D99304920.root"
+  },
+  {
+    "checksum": "adler32:2e309fa5",
+    "filename": "3CF809F8-D12C-E711-8883-3417EBE52651.root",
+    "size": 1733719337,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/3CF809F8-D12C-E711-8883-3417EBE52651.root"
+  },
+  {
+    "checksum": "adler32:06d2f58d",
+    "filename": "3E25F7C2-862C-E711-A64C-D4AE526DF5FB.root",
+    "size": 3216768490,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/3E25F7C2-862C-E711-A64C-D4AE526DF5FB.root"
+  },
+  {
+    "checksum": "adler32:abc18c6f",
+    "filename": "3E8073F0-722C-E711-B235-901B0E5427AE.root",
+    "size": 2644515163,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/3E8073F0-722C-E711-B235-901B0E5427AE.root"
+  },
+  {
+    "checksum": "adler32:6c616393",
+    "filename": "3E845407-682C-E711-8FB0-3417EBE649FF.root",
+    "size": 4009512742,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/3E845407-682C-E711-8FB0-3417EBE649FF.root"
+  },
+  {
+    "checksum": "adler32:1db89904",
+    "filename": "3EC1A2F4-7B2C-E711-AA08-C4346BC78A40.root",
+    "size": 4180625167,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/3EC1A2F4-7B2C-E711-AA08-C4346BC78A40.root"
+  },
+  {
+    "checksum": "adler32:5e3daaf2",
+    "filename": "40746E4D-892C-E711-9D62-1866DAEA8218.root",
+    "size": 4202383089,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/40746E4D-892C-E711-9D62-1866DAEA8218.root"
+  },
+  {
+    "checksum": "adler32:9bce8529",
+    "filename": "40B99370-6A2C-E711-B855-0026B92785E9.root",
+    "size": 2226416385,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/40B99370-6A2C-E711-B855-0026B92785E9.root"
+  },
+  {
+    "checksum": "adler32:3326cba3",
+    "filename": "4255EA0D-832C-E711-95F3-FA163E95C5AE.root",
+    "size": 3190835012,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/4255EA0D-832C-E711-95F3-FA163E95C5AE.root"
+  },
+  {
+    "checksum": "adler32:75c8da81",
+    "filename": "426BD796-792C-E711-B0DF-FA163EDE340F.root",
+    "size": 2483875175,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/426BD796-792C-E711-B0DF-FA163EDE340F.root"
+  },
+  {
+    "checksum": "adler32:805907e9",
+    "filename": "42A8E682-822C-E711-AAC6-0CC47A01CAEA.root",
+    "size": 3212103633,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/42A8E682-822C-E711-AAC6-0CC47A01CAEA.root"
+  },
+  {
+    "checksum": "adler32:1be5dcd4",
+    "filename": "42AB7AED-672C-E711-A19D-008CFAFBEEE6.root",
+    "size": 4178331148,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/42AB7AED-672C-E711-A19D-008CFAFBEEE6.root"
+  },
+  {
+    "checksum": "adler32:91145c0e",
+    "filename": "42F0143A-962C-E711-B9A0-FA163E35CF77.root",
+    "size": 2208294305,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/42F0143A-962C-E711-B9A0-FA163E35CF77.root"
+  },
+  {
+    "checksum": "adler32:58f9c92a",
+    "filename": "44232BB2-AF2C-E711-8A2E-48FD8EE73AF5.root",
+    "size": 2843942396,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/44232BB2-AF2C-E711-8A2E-48FD8EE73AF5.root"
+  },
+  {
+    "checksum": "adler32:5bb1534b",
+    "filename": "44337CF2-682C-E711-913C-008CFAF3543C.root",
+    "size": 3090788683,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/44337CF2-682C-E711-913C-008CFAF3543C.root"
+  },
+  {
+    "checksum": "adler32:89825dc5",
+    "filename": "445496B6-692C-E711-A15D-001E672480E3.root",
+    "size": 3507352351,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/445496B6-692C-E711-A15D-001E672480E3.root"
+  },
+  {
+    "checksum": "adler32:544d677b",
+    "filename": "44B16679-742C-E711-BDBD-002590800C6C.root",
+    "size": 2804197121,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/44B16679-742C-E711-BDBD-002590800C6C.root"
+  },
+  {
+    "checksum": "adler32:c45d7e69",
+    "filename": "44D912D4-682C-E711-B611-008CFAF228FA.root",
+    "size": 4220358707,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/44D912D4-682C-E711-B611-008CFAF228FA.root"
+  },
+  {
+    "checksum": "adler32:50e5e560",
+    "filename": "461C2F13-692C-E711-864E-0025904B577E.root",
+    "size": 2549552699,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/461C2F13-692C-E711-864E-0025904B577E.root"
+  },
+  {
+    "checksum": "adler32:85b06d35",
+    "filename": "469BF728-702C-E711-BAF2-0CC47AC08904.root",
+    "size": 3307952558,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/469BF728-702C-E711-BAF2-0CC47AC08904.root"
+  },
+  {
+    "checksum": "adler32:5ab241e6",
+    "filename": "486F0070-A42C-E711-B5F3-C4346BC80410.root",
+    "size": 4051515632,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/486F0070-A42C-E711-B5F3-C4346BC80410.root"
+  },
+  {
+    "checksum": "adler32:48b3f00a",
+    "filename": "48B9B92F-912C-E711-90B9-00266CFFB7D0.root",
+    "size": 2405671899,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/48B9B92F-912C-E711-90B9-00266CFFB7D0.root"
+  },
+  {
+    "checksum": "adler32:a171a118",
+    "filename": "48D68224-842C-E711-BFAE-48D539F38872.root",
+    "size": 2947156408,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/48D68224-842C-E711-BFAE-48D539F38872.root"
+  },
+  {
+    "checksum": "adler32:aab32497",
+    "filename": "48E7B34A-8A2C-E711-AEF3-FA163EC186C5.root",
+    "size": 2356322241,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/48E7B34A-8A2C-E711-AEF3-FA163EC186C5.root"
+  },
+  {
+    "checksum": "adler32:36d4249f",
+    "filename": "48EDD9B1-B52C-E711-A41D-FA163EC4935A.root",
+    "size": 2641772137,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/48EDD9B1-B52C-E711-A41D-FA163EC4935A.root"
+  },
+  {
+    "checksum": "adler32:9888ec9d",
+    "filename": "4A50E166-7B2C-E711-8AB3-001E675050FD.root",
+    "size": 3521241475,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/4A50E166-7B2C-E711-8AB3-001E675050FD.root"
+  },
+  {
+    "checksum": "adler32:f21e24cf",
+    "filename": "4C0D4AA5-6F2C-E711-B8A3-FA163E1511C6.root",
+    "size": 3110554295,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/4C0D4AA5-6F2C-E711-B8A3-FA163E1511C6.root"
+  },
+  {
+    "checksum": "adler32:ffd1d685",
+    "filename": "4E408912-932C-E711-99C4-B083FED045ED.root",
+    "size": 3121451009,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/4E408912-932C-E711-99C4-B083FED045ED.root"
+  },
+  {
+    "checksum": "adler32:c14feadf",
+    "filename": "4E7F0A1D-732C-E711-8ABC-6CC2173BC120.root",
+    "size": 2121440985,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/4E7F0A1D-732C-E711-8ABC-6CC2173BC120.root"
+  },
+  {
+    "checksum": "adler32:a2293957",
+    "filename": "4E9E80AD-842C-E711-B6F7-0025901C1B7E.root",
+    "size": 2476147186,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/4E9E80AD-842C-E711-B6F7-0025901C1B7E.root"
+  },
+  {
+    "checksum": "adler32:2b8bdaac",
+    "filename": "4EAE7782-942C-E711-9430-1866DAEB1FC8.root",
+    "size": 4227863169,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/4EAE7782-942C-E711-9430-1866DAEB1FC8.root"
+  },
+  {
+    "checksum": "adler32:60558c71",
+    "filename": "5022D125-682C-E711-9004-00259021A342.root",
+    "size": 4173227013,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/5022D125-682C-E711-9004-00259021A342.root"
+  },
+  {
+    "checksum": "adler32:163315a6",
+    "filename": "50353A0B-982C-E711-8380-FA163E3E638F.root",
+    "size": 2376835155,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/50353A0B-982C-E711-8380-FA163E3E638F.root"
+  },
+  {
+    "checksum": "adler32:2afbbee1",
+    "filename": "503B0D59-A82C-E711-8975-48FD8E2824AF.root",
+    "size": 4107877522,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/503B0D59-A82C-E711-8975-48FD8E2824AF.root"
+  },
+  {
+    "checksum": "adler32:48796739",
+    "filename": "50A734CA-8F2C-E711-B60F-B083FED3F2E9.root",
+    "size": 4186575563,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/50A734CA-8F2C-E711-B60F-B083FED3F2E9.root"
+  },
+  {
+    "checksum": "adler32:697f38ae",
+    "filename": "52287A35-842C-E711-BD03-FA163E1511C6.root",
+    "size": 3546043991,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/52287A35-842C-E711-BD03-FA163E1511C6.root"
+  },
+  {
+    "checksum": "adler32:f3cbf424",
+    "filename": "522B7876-792C-E711-BD98-FA163E836D48.root",
+    "size": 4230482159,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/522B7876-792C-E711-BD98-FA163E836D48.root"
+  },
+  {
+    "checksum": "adler32:d69e588e",
+    "filename": "525C7085-AF2C-E711-94EC-FA163E1511C6.root",
+    "size": 2855504233,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/525C7085-AF2C-E711-94EC-FA163E1511C6.root"
+  },
+  {
+    "checksum": "adler32:942cc635",
+    "filename": "52A93038-A42C-E711-8EB8-FA163E8C0837.root",
+    "size": 2786511454,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/52A93038-A42C-E711-8EB8-FA163E8C0837.root"
+  },
+  {
+    "checksum": "adler32:d8f07e69",
+    "filename": "52FB8CBC-802C-E711-B78F-FA163E4FF8AD.root",
+    "size": 4175548796,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/52FB8CBC-802C-E711-B78F-FA163E4FF8AD.root"
+  },
+  {
+    "checksum": "adler32:a030ee27",
+    "filename": "5402E166-652C-E711-8612-0025904C7E04.root",
+    "size": 4064004286,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/5402E166-652C-E711-8612-0025904C7E04.root"
+  },
+  {
+    "checksum": "adler32:3c855411",
+    "filename": "54211C04-D22C-E711-BD40-0025904B11CC.root",
+    "size": 742996926,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/54211C04-D22C-E711-BD40-0025904B11CC.root"
+  },
+  {
+    "checksum": "adler32:c9d8e47a",
+    "filename": "54658020-AE2C-E711-A4CC-48FD8E2824A1.root",
+    "size": 2229909988,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/54658020-AE2C-E711-A4CC-48FD8E2824A1.root"
+  },
+  {
+    "checksum": "adler32:4d9b29f6",
+    "filename": "54857B80-A62C-E711-BFE4-FA163E3661B2.root",
+    "size": 2411046491,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/54857B80-A62C-E711-BFE4-FA163E3661B2.root"
+  },
+  {
+    "checksum": "adler32:5a536edb",
+    "filename": "54ECE608-652C-E711-B0C4-0CC47A124234.root",
+    "size": 2168286859,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/54ECE608-652C-E711-B0C4-0CC47A124234.root"
+  },
+  {
+    "checksum": "adler32:86548a3c",
+    "filename": "56BEF191-842C-E711-96FC-FA163E796EE8.root",
+    "size": 2829031592,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/56BEF191-842C-E711-96FC-FA163E796EE8.root"
+  },
+  {
+    "checksum": "adler32:63d7b9e2",
+    "filename": "58035DCA-8F2C-E711-9A1F-1866DAEA812C.root",
+    "size": 4233366708,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/58035DCA-8F2C-E711-9A1F-1866DAEA812C.root"
+  },
+  {
+    "checksum": "adler32:9852bd4e",
+    "filename": "58237E86-8D2C-E711-8375-782BCB21110D.root",
+    "size": 3826539713,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/58237E86-8D2C-E711-8375-782BCB21110D.root"
+  },
+  {
+    "checksum": "adler32:940aeeb6",
+    "filename": "5835B38E-662C-E711-9775-008CFAF75356.root",
+    "size": 3789956548,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/5835B38E-662C-E711-9775-008CFAF75356.root"
+  },
+  {
+    "checksum": "adler32:3bd7365b",
+    "filename": "58707C14-822C-E711-8BC6-48D539D3336D.root",
+    "size": 2190343353,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/58707C14-822C-E711-8BC6-48D539D3336D.root"
+  },
+  {
+    "checksum": "adler32:90abf8e1",
+    "filename": "589BB8FD-682C-E711-8026-008CFAF75356.root",
+    "size": 4236438245,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/589BB8FD-682C-E711-8026-008CFAF75356.root"
+  },
+  {
+    "checksum": "adler32:8fe89c76",
+    "filename": "58C10990-912C-E711-8765-782BCB536C90.root",
+    "size": 2312468393,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/58C10990-912C-E711-8765-782BCB536C90.root"
+  },
+  {
+    "checksum": "adler32:71939de8",
+    "filename": "58DB85CD-8B2C-E711-A70D-FA163ECC8A3E.root",
+    "size": 2982475767,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/58DB85CD-8B2C-E711-A70D-FA163ECC8A3E.root"
+  },
+  {
+    "checksum": "adler32:2d21cd60",
+    "filename": "5A16800C-892C-E711-B334-FA163E836D48.root",
+    "size": 3009743563,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/5A16800C-892C-E711-B334-FA163E836D48.root"
+  },
+  {
+    "checksum": "adler32:4397c0ff",
+    "filename": "5AA9024B-8A2C-E711-BC68-FA163E3661B2.root",
+    "size": 4210264438,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/5AA9024B-8A2C-E711-BC68-FA163E3661B2.root"
+  },
+  {
+    "checksum": "adler32:71fed443",
+    "filename": "5C9D48F9-D12C-E711-B53E-141877FC2C20.root",
+    "size": 1001738131,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/5C9D48F9-D12C-E711-B53E-141877FC2C20.root"
+  },
+  {
+    "checksum": "adler32:165a7ad1",
+    "filename": "5CE3F523-D22C-E711-A71B-0CC47A1E046E.root",
+    "size": 307301365,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/5CE3F523-D22C-E711-A71B-0CC47A1E046E.root"
+  },
+  {
+    "checksum": "adler32:d4f2ce59",
+    "filename": "5CFC0198-752C-E711-9A52-FA163EB8D83F.root",
+    "size": 3458168702,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/5CFC0198-752C-E711-9A52-FA163EB8D83F.root"
+  },
+  {
+    "checksum": "adler32:51c528ae",
+    "filename": "5E2918B5-862C-E711-8235-48D539F38872.root",
+    "size": 2963844410,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/5E2918B5-862C-E711-8235-48D539F38872.root"
+  },
+  {
+    "checksum": "adler32:21dc4241",
+    "filename": "5E334D50-662C-E711-87D4-A0000220FE80.root",
+    "size": 4234179362,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/5E334D50-662C-E711-87D4-A0000220FE80.root"
+  },
+  {
+    "checksum": "adler32:892fc282",
+    "filename": "5EF08E64-B22C-E711-84F9-FA163E3661B2.root",
+    "size": 2619997691,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/5EF08E64-B22C-E711-84F9-FA163E3661B2.root"
+  },
+  {
+    "checksum": "adler32:f92b2aa5",
+    "filename": "603ECF8C-9F2C-E711-B7BE-48D539D33367.root",
+    "size": 3887124936,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/603ECF8C-9F2C-E711-B7BE-48D539D33367.root"
+  },
+  {
+    "checksum": "adler32:7ae71e84",
+    "filename": "60AAA06D-862C-E711-A4A9-FA163EBE4767.root",
+    "size": 2952509642,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/60AAA06D-862C-E711-A4A9-FA163EBE4767.root"
+  },
+  {
+    "checksum": "adler32:3b4513e9",
+    "filename": "60EFBD9A-792C-E711-84B0-D4AE526A0D2E.root",
+    "size": 3236078035,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/60EFBD9A-792C-E711-84B0-D4AE526A0D2E.root"
+  },
+  {
+    "checksum": "adler32:99f34f10",
+    "filename": "6290CE9B-7E2C-E711-B916-00266CFFC4E0.root",
+    "size": 3542359180,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/6290CE9B-7E2C-E711-B916-00266CFFC4E0.root"
+  },
+  {
+    "checksum": "adler32:7bf38999",
+    "filename": "62DBE85D-6B2C-E711-B3DE-0CC47A545096.root",
+    "size": 2328368427,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/62DBE85D-6B2C-E711-B3DE-0CC47A545096.root"
+  },
+  {
+    "checksum": "adler32:67d6e599",
+    "filename": "642FECE3-812C-E711-8F78-FA163E1511C6.root",
+    "size": 4172444487,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/642FECE3-812C-E711-8F78-FA163E1511C6.root"
+  },
+  {
+    "checksum": "adler32:fe4607b2",
+    "filename": "64389038-B22C-E711-AA63-48FD8EE739FB.root",
+    "size": 3172208226,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/64389038-B22C-E711-AA63-48FD8EE739FB.root"
+  },
+  {
+    "checksum": "adler32:5b706f97",
+    "filename": "64592AB6-6A2C-E711-ABFC-3417EBE52852.root",
+    "size": 3919859368,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/64592AB6-6A2C-E711-ABFC-3417EBE52852.root"
+  },
+  {
+    "checksum": "adler32:d4d65118",
+    "filename": "64B67686-6E2C-E711-9E09-0CC47A7E6A88.root",
+    "size": 3845160121,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/64B67686-6E2C-E711-9E09-0CC47A7E6A88.root"
+  },
+  {
+    "checksum": "adler32:bb17cb16",
+    "filename": "64BE5BEB-7B2C-E711-8339-48D539F3886E.root",
+    "size": 2136403195,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/64BE5BEB-7B2C-E711-8339-48D539F3886E.root"
+  },
+  {
+    "checksum": "adler32:d12618b8",
+    "filename": "660E3DE8-AA2C-E711-BCE9-FA163E35CF77.root",
+    "size": 2495462231,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/660E3DE8-AA2C-E711-BCE9-FA163E35CF77.root"
+  },
+  {
+    "checksum": "adler32:b40c1d93",
+    "filename": "6629B722-772C-E711-B8C7-1CC1DE192736.root",
+    "size": 3329913538,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/6629B722-772C-E711-B8C7-1CC1DE192736.root"
+  },
+  {
+    "checksum": "adler32:5db85ae3",
+    "filename": "665101E3-942C-E711-9E43-B083FED045ED.root",
+    "size": 4219161273,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/665101E3-942C-E711-9E43-B083FED045ED.root"
+  },
+  {
+    "checksum": "adler32:4136951d",
+    "filename": "665B27C3-A72C-E711-9B84-48D539F3888C.root",
+    "size": 3735905907,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/665B27C3-A72C-E711-9B84-48D539F3888C.root"
+  },
+  {
+    "checksum": "adler32:3c1479da",
+    "filename": "66680F9A-6D2C-E711-8B2B-0025905AC876.root",
+    "size": 2658011699,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/66680F9A-6D2C-E711-8B2B-0025905AC876.root"
+  },
+  {
+    "checksum": "adler32:6eccb6c7",
+    "filename": "66EFD1FF-D12C-E711-BC6B-001E673D0041.root",
+    "size": 1595178689,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/66EFD1FF-D12C-E711-BC6B-001E673D0041.root"
+  },
+  {
+    "checksum": "adler32:87a8f26e",
+    "filename": "68447806-B52C-E711-9A43-049FCA10119C.root",
+    "size": 2667952544,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/68447806-B52C-E711-9A43-049FCA10119C.root"
+  },
+  {
+    "checksum": "adler32:111fb3b9",
+    "filename": "6878867D-742C-E711-9A2D-0025905AC982.root",
+    "size": 3346208822,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/6878867D-742C-E711-9A2D-0025905AC982.root"
+  },
+  {
+    "checksum": "adler32:7bf18663",
+    "filename": "68A765D5-772C-E711-92D0-D4AE526A0D2E.root",
+    "size": 2625659301,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/68A765D5-772C-E711-92D0-D4AE526A0D2E.root"
+  },
+  {
+    "checksum": "adler32:bd3a00c5",
+    "filename": "68B7BBA9-B52C-E711-A9AF-48FD8E2824A1.root",
+    "size": 3185264571,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/68B7BBA9-B52C-E711-A9AF-48FD8E2824A1.root"
+  },
+  {
+    "checksum": "adler32:1dc23eff",
+    "filename": "68D876CE-9B2C-E711-8CA2-C4346BC8C310.root",
+    "size": 2152663268,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/68D876CE-9B2C-E711-8CA2-C4346BC8C310.root"
+  },
+  {
+    "checksum": "adler32:3a7c50aa",
+    "filename": "6AF9FDFC-682C-E711-8FA1-008CFAFBE6E8.root",
+    "size": 4175410385,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/6AF9FDFC-682C-E711-8FA1-008CFAFBE6E8.root"
+  },
+  {
+    "checksum": "adler32:8038b3e1",
+    "filename": "6C0729A9-A92C-E711-AF88-F02FA768CB44.root",
+    "size": 3422661003,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/6C0729A9-A92C-E711-AF88-F02FA768CB44.root"
+  },
+  {
+    "checksum": "adler32:38d38c6c",
+    "filename": "6C0967F0-632C-E711-9EDD-0025904C7F62.root",
+    "size": 4199071072,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/6C0967F0-632C-E711-9EDD-0025904C7F62.root"
+  },
+  {
+    "checksum": "adler32:a3363252",
+    "filename": "6C73F5A8-852C-E711-9052-842B2B760921.root",
+    "size": 4206414760,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/6C73F5A8-852C-E711-9052-842B2B760921.root"
+  },
+  {
+    "checksum": "adler32:562eade9",
+    "filename": "6E7F4461-7F2C-E711-BE3A-00266CFFBF38.root",
+    "size": 2805846913,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/6E7F4461-7F2C-E711-BE3A-00266CFFBF38.root"
+  },
+  {
+    "checksum": "adler32:4c01bec6",
+    "filename": "6E801A8B-882C-E711-9F64-001EC94BA3B3.root",
+    "size": 4179169917,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/6E801A8B-882C-E711-9F64-001EC94BA3B3.root"
+  },
+  {
+    "checksum": "adler32:5aff7837",
+    "filename": "6E8D12F7-712C-E711-B5FE-0CC47A5450FA.root",
+    "size": 2911995704,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/6E8D12F7-712C-E711-B5FE-0CC47A5450FA.root"
+  },
+  {
+    "checksum": "adler32:0f283396",
+    "filename": "70071B85-692C-E711-A3C0-0CC47AC08BD4.root",
+    "size": 4213051340,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/70071B85-692C-E711-A3C0-0CC47AC08BD4.root"
+  },
+  {
+    "checksum": "adler32:3c188a58",
+    "filename": "703EDFCF-782C-E711-A923-0090FAA58084.root",
+    "size": 3165745727,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/703EDFCF-782C-E711-A923-0090FAA58084.root"
+  },
+  {
+    "checksum": "adler32:9cd63d2b",
+    "filename": "704993AF-6B2C-E711-94A6-0025905C4300.root",
+    "size": 2190512389,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/704993AF-6B2C-E711-94A6-0025905C4300.root"
+  },
+  {
+    "checksum": "adler32:878e59e7",
+    "filename": "7081C407-D22C-E711-BC26-001E67247BCF.root",
+    "size": 796687672,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/7081C407-D22C-E711-BC26-001E67247BCF.root"
+  },
+  {
+    "checksum": "adler32:4663726d",
+    "filename": "7221AB4A-8E2C-E711-8D6C-1866DAEB5D80.root",
+    "size": 4207447217,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/7221AB4A-8E2C-E711-8D6C-1866DAEB5D80.root"
+  },
+  {
+    "checksum": "adler32:47978a4f",
+    "filename": "726D6118-A52C-E711-848A-F02FA768CB44.root",
+    "size": 4050935968,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/726D6118-A52C-E711-848A-F02FA768CB44.root"
+  },
+  {
+    "checksum": "adler32:9d060032",
+    "filename": "7287D686-662C-E711-B975-FA163EAEFC98.root",
+    "size": 2901143875,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/7287D686-662C-E711-B975-FA163EAEFC98.root"
+  },
+  {
+    "checksum": "adler32:16a84cd0",
+    "filename": "740583C6-D12C-E711-9512-C4346BC8C638.root",
+    "size": 241951035,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/740583C6-D12C-E711-9512-C4346BC8C638.root"
+  },
+  {
+    "checksum": "adler32:1ccbad3d",
+    "filename": "74B2191E-732C-E711-A663-3417EBE70069.root",
+    "size": 4226407551,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/74B2191E-732C-E711-A663-3417EBE70069.root"
+  },
+  {
+    "checksum": "adler32:f4540eca",
+    "filename": "74D2F99E-742C-E711-80C5-FA163E94F9EB.root",
+    "size": 4199772053,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/74D2F99E-742C-E711-80C5-FA163E94F9EB.root"
+  },
+  {
+    "checksum": "adler32:75afe34e",
+    "filename": "76981D1C-702C-E711-8608-0CC47A5450DA.root",
+    "size": 2270739970,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/76981D1C-702C-E711-8608-0CC47A5450DA.root"
+  },
+  {
+    "checksum": "adler32:64a68bce",
+    "filename": "76D6DEEB-AA2C-E711-BA2A-48FD8EE73AD7.root",
+    "size": 3047437395,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/76D6DEEB-AA2C-E711-BA2A-48FD8EE73AD7.root"
+  },
+  {
+    "checksum": "adler32:08597d59",
+    "filename": "7812A735-B52C-E711-A746-0CC47A07FA1E.root",
+    "size": 3388004032,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/7812A735-B52C-E711-A746-0CC47A07FA1E.root"
+  },
+  {
+    "checksum": "adler32:282736ac",
+    "filename": "78338C24-A72C-E711-ABEB-0CC47A07FA1E.root",
+    "size": 2738787169,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/78338C24-A72C-E711-ABEB-0CC47A07FA1E.root"
+  },
+  {
+    "checksum": "adler32:2ecb0378",
+    "filename": "78807146-712C-E711-964A-FA163E39BAB1.root",
+    "size": 2483711405,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/78807146-712C-E711-964A-FA163E39BAB1.root"
+  },
+  {
+    "checksum": "adler32:1be18b43",
+    "filename": "78A7652D-7E2C-E711-94BB-001EC9ADFCE3.root",
+    "size": 2718208656,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/78A7652D-7E2C-E711-94BB-001EC9ADFCE3.root"
+  },
+  {
+    "checksum": "adler32:1e03d30e",
+    "filename": "78B14618-852C-E711-91B8-1866DAEA7F94.root",
+    "size": 2382162354,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/78B14618-852C-E711-91B8-1866DAEA7F94.root"
+  },
+  {
+    "checksum": "adler32:57e040da",
+    "filename": "7A31637C-692C-E711-AE39-7845C4FC3665.root",
+    "size": 4181938071,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/7A31637C-692C-E711-AE39-7845C4FC3665.root"
+  },
+  {
+    "checksum": "adler32:c01dcc9c",
+    "filename": "7A5A759D-A32C-E711-BA52-F02FA768CCC8.root",
+    "size": 3896792918,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/7A5A759D-A32C-E711-BA52-F02FA768CCC8.root"
+  },
+  {
+    "checksum": "adler32:55dbbeb5",
+    "filename": "7A8FB76B-902C-E711-9177-008CFA105EFC.root",
+    "size": 2574045839,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/7A8FB76B-902C-E711-9177-008CFA105EFC.root"
+  },
+  {
+    "checksum": "adler32:c584211f",
+    "filename": "7AD8554E-8A2C-E711-A778-FA163E3661B2.root",
+    "size": 2505277369,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/7AD8554E-8A2C-E711-A778-FA163E3661B2.root"
+  },
+  {
+    "checksum": "adler32:c9f145e4",
+    "filename": "7AE42AAD-A92C-E711-9F4E-002590D0B04A.root",
+    "size": 3267020873,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/7AE42AAD-A92C-E711-9F4E-002590D0B04A.root"
+  },
+  {
+    "checksum": "adler32:46bb8aca",
+    "filename": "7AEE2B68-6B2C-E711-B853-002590D425C0.root",
+    "size": 4116950083,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/7AEE2B68-6B2C-E711-B853-002590D425C0.root"
+  },
+  {
+    "checksum": "adler32:2cad3e77",
+    "filename": "7C439C43-912C-E711-8371-549F3525DEFC.root",
+    "size": 4230525926,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/7C439C43-912C-E711-8371-549F3525DEFC.root"
+  },
+  {
+    "checksum": "adler32:f97479d2",
+    "filename": "7CD6D28C-AB2C-E711-8C1C-48FD8E2824A5.root",
+    "size": 2655391980,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/7CD6D28C-AB2C-E711-8C1C-48FD8E2824A5.root"
+  },
+  {
+    "checksum": "adler32:fd1cb5bb",
+    "filename": "7E2472CC-6D2C-E711-B219-FA163E053E84.root",
+    "size": 2581530945,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/7E2472CC-6D2C-E711-B219-FA163E053E84.root"
+  },
+  {
+    "checksum": "adler32:5f132851",
+    "filename": "7EC7BEA6-852C-E711-83AD-001EC9ADCB45.root",
+    "size": 2311306568,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/7EC7BEA6-852C-E711-83AD-001EC9ADCB45.root"
+  },
+  {
+    "checksum": "adler32:20f4e91c",
+    "filename": "80022FDF-D12C-E711-BAFE-3464A9B95F50.root",
+    "size": 720772932,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/80022FDF-D12C-E711-BAFE-3464A9B95F50.root"
+  },
+  {
+    "checksum": "adler32:c7a73954",
+    "filename": "802D8A73-672C-E711-828D-848F69FD45CB.root",
+    "size": 4210752702,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/802D8A73-672C-E711-828D-848F69FD45CB.root"
+  },
+  {
+    "checksum": "adler32:25d1642b",
+    "filename": "80657574-932C-E711-84AD-02163E00CEBA.root",
+    "size": 2633783509,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/80657574-932C-E711-84AD-02163E00CEBA.root"
+  },
+  {
+    "checksum": "adler32:742f153a",
+    "filename": "8206020E-932C-E711-BE02-1866DAEA7EA8.root",
+    "size": 4210140708,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/8206020E-932C-E711-BE02-1866DAEA7EA8.root"
+  },
+  {
+    "checksum": "adler32:7e01acac",
+    "filename": "82193B37-732C-E711-BF28-C45444922988.root",
+    "size": 2523163650,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/82193B37-732C-E711-BF28-C45444922988.root"
+  },
+  {
+    "checksum": "adler32:e02c514c",
+    "filename": "821B6A85-672C-E711-9031-9CB65404EEF0.root",
+    "size": 3012627846,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/821B6A85-672C-E711-9031-9CB65404EEF0.root"
+  },
+  {
+    "checksum": "adler32:599790bf",
+    "filename": "84016656-7B2C-E711-8F02-FA163E4F4AD2.root",
+    "size": 2959878725,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/84016656-7B2C-E711-8F02-FA163E4F4AD2.root"
+  },
+  {
+    "checksum": "adler32:a825c235",
+    "filename": "841F927B-702C-E711-B0D5-0025905AC960.root",
+    "size": 2715054031,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/841F927B-702C-E711-B0D5-0025905AC960.root"
+  },
+  {
+    "checksum": "adler32:3d4edf36",
+    "filename": "8430687F-B72C-E711-9904-346AC29F11B0.root",
+    "size": 2530106852,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/8430687F-B72C-E711-9904-346AC29F11B0.root"
+  },
+  {
+    "checksum": "adler32:fe30cd6a",
+    "filename": "844E20D6-762C-E711-81FE-0025904C7F5E.root",
+    "size": 4231022143,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/844E20D6-762C-E711-81FE-0025904C7F5E.root"
+  },
+  {
+    "checksum": "adler32:62453c4e",
+    "filename": "8662263C-682C-E711-9059-308D99304920.root",
+    "size": 2307378744,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/8662263C-682C-E711-9059-308D99304920.root"
+  },
+  {
+    "checksum": "adler32:060e0d0b",
+    "filename": "867638E7-962C-E711-8B71-00266CFFBCFC.root",
+    "size": 3141927166,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/867638E7-962C-E711-8B71-00266CFFBCFC.root"
+  },
+  {
+    "checksum": "adler32:c02f8748",
+    "filename": "869E9542-B62C-E711-86E2-48FD8E2824AF.root",
+    "size": 2740548349,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/869E9542-B62C-E711-86E2-48FD8E2824AF.root"
+  },
+  {
+    "checksum": "adler32:21e7f960",
+    "filename": "8821020A-712C-E711-8082-0025904B5ABC.root",
+    "size": 2435238724,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/8821020A-712C-E711-8082-0025904B5ABC.root"
+  },
+  {
+    "checksum": "adler32:2e614490",
+    "filename": "8885D2F6-D12C-E711-9423-001E677926C2.root",
+    "size": 783464541,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/8885D2F6-D12C-E711-9423-001E677926C2.root"
+  },
+  {
+    "checksum": "adler32:add6ef9c",
+    "filename": "88D1CCD4-A32C-E711-9B76-6CC2173AB870.root",
+    "size": 2176181061,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/88D1CCD4-A32C-E711-9B76-6CC2173AB870.root"
+  },
+  {
+    "checksum": "adler32:c688b56f",
+    "filename": "88EBBF74-792C-E711-BF7D-00266CFFBF38.root",
+    "size": 3700873995,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/88EBBF74-792C-E711-BF7D-00266CFFBF38.root"
+  },
+  {
+    "checksum": "adler32:cac4d4ac",
+    "filename": "8A19598A-9A2C-E711-AE22-346AC29F11B0.root",
+    "size": 3632280233,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/8A19598A-9A2C-E711-AE22-346AC29F11B0.root"
+  },
+  {
+    "checksum": "adler32:058523d5",
+    "filename": "8A3A236A-932C-E711-85C5-FA163E35CF77.root",
+    "size": 2194512865,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/8A3A236A-932C-E711-85C5-FA163E35CF77.root"
+  },
+  {
+    "checksum": "adler32:311028c0",
+    "filename": "8C06290F-7F2C-E711-B2AE-FA163EC186C5.root",
+    "size": 3482643274,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/8C06290F-7F2C-E711-B2AE-FA163EC186C5.root"
+  },
+  {
+    "checksum": "adler32:b624ae86",
+    "filename": "8C0BAF0E-722C-E711-8EDA-FA163E4FF8AD.root",
+    "size": 3127873775,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/8C0BAF0E-722C-E711-8EDA-FA163E4FF8AD.root"
+  },
+  {
+    "checksum": "adler32:cac515fa",
+    "filename": "8C1C304B-8A2C-E711-82DB-A0369F83628A.root",
+    "size": 4170549308,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/8C1C304B-8A2C-E711-82DB-A0369F83628A.root"
+  },
+  {
+    "checksum": "adler32:a16fe228",
+    "filename": "8C759396-822C-E711-88F0-FA163E1511C6.root",
+    "size": 4100196912,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/8C759396-822C-E711-88F0-FA163E1511C6.root"
+  },
+  {
+    "checksum": "adler32:7c41137c",
+    "filename": "8CB81E52-712C-E711-B4C5-0CC47A01CAEA.root",
+    "size": 4235070253,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/8CB81E52-712C-E711-B4C5-0CC47A01CAEA.root"
+  },
+  {
+    "checksum": "adler32:626ec61a",
+    "filename": "8E4D35D5-A42C-E711-97F2-A0369F83633E.root",
+    "size": 3775454799,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/8E4D35D5-A42C-E711-97F2-A0369F83633E.root"
+  },
+  {
+    "checksum": "adler32:8d500024",
+    "filename": "8EC2B6B5-782C-E711-B801-6CC2173BBF60.root",
+    "size": 4198697486,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/8EC2B6B5-782C-E711-B801-6CC2173BBF60.root"
+  },
+  {
+    "checksum": "adler32:4d514db0",
+    "filename": "9028F14E-8D2C-E711-BAEA-FA163ECC8A3E.root",
+    "size": 2675923820,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/9028F14E-8D2C-E711-BAEA-FA163ECC8A3E.root"
+  },
+  {
+    "checksum": "adler32:b7f1e8e4",
+    "filename": "904ABBB2-6A2C-E711-8ACF-3417EBE528F4.root",
+    "size": 2849446929,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/904ABBB2-6A2C-E711-8ACF-3417EBE528F4.root"
+  },
+  {
+    "checksum": "adler32:fc01c1f3",
+    "filename": "90B652B1-9F2C-E711-8EFD-6CC2173AB870.root",
+    "size": 4236467063,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/90B652B1-9F2C-E711-8EFD-6CC2173AB870.root"
+  },
+  {
+    "checksum": "adler32:02b8ad75",
+    "filename": "90F44C9E-6B2C-E711-891F-FA163E51D101.root",
+    "size": 3291017926,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/90F44C9E-6B2C-E711-891F-FA163E51D101.root"
+  },
+  {
+    "checksum": "adler32:9b42b391",
+    "filename": "925534E7-782C-E711-B5B6-FA163E4F4AD2.root",
+    "size": 4186905093,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/925534E7-782C-E711-B5B6-FA163E4F4AD2.root"
+  },
+  {
+    "checksum": "adler32:92c8fbf3",
+    "filename": "928F6740-802C-E711-9AA3-0022195C1B09.root",
+    "size": 3404274166,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/928F6740-802C-E711-9AA3-0022195C1B09.root"
+  },
+  {
+    "checksum": "adler32:1f20dd09",
+    "filename": "92EE1462-6B2C-E711-A336-1866DA879444.root",
+    "size": 3581021033,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/92EE1462-6B2C-E711-A336-1866DA879444.root"
+  },
+  {
+    "checksum": "adler32:0cff7fcb",
+    "filename": "9404FAE9-682C-E711-BF54-00259021A342.root",
+    "size": 3108176131,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/9404FAE9-682C-E711-BF54-00259021A342.root"
+  },
+  {
+    "checksum": "adler32:71c4418b",
+    "filename": "946B80B0-B42C-E711-9349-002590494FDA.root",
+    "size": 2708675288,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/946B80B0-B42C-E711-9349-002590494FDA.root"
+  },
+  {
+    "checksum": "adler32:61b05454",
+    "filename": "962667F4-D12C-E711-8BB0-0025901C1B7E.root",
+    "size": 71937518,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/962667F4-D12C-E711-8BB0-0025901C1B7E.root"
+  },
+  {
+    "checksum": "adler32:830e4110",
+    "filename": "96C098C2-9C2C-E711-875C-48D539F3886E.root",
+    "size": 3188612612,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/96C098C2-9C2C-E711-875C-48D539F3886E.root"
+  },
+  {
+    "checksum": "adler32:595aa504",
+    "filename": "985450A4-6D2C-E711-A7E5-0025904C7F80.root",
+    "size": 2486959155,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/985450A4-6D2C-E711-A7E5-0025904C7F80.root"
+  },
+  {
+    "checksum": "adler32:186a3bd8",
+    "filename": "9C081D81-752C-E711-AF5B-FA163E94F9EB.root",
+    "size": 3640303893,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/9C081D81-752C-E711-AF5B-FA163E94F9EB.root"
+  },
+  {
+    "checksum": "adler32:609d229c",
+    "filename": "9C644D91-742C-E711-BA82-FA163EB8D83F.root",
+    "size": 3056366651,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/9C644D91-742C-E711-BA82-FA163EB8D83F.root"
+  },
+  {
+    "checksum": "adler32:3bd2d357",
+    "filename": "9C8787DE-6A2C-E711-A7B7-0025905AC97A.root",
+    "size": 4040674056,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/9C8787DE-6A2C-E711-A7B7-0025905AC97A.root"
+  },
+  {
+    "checksum": "adler32:38fb3d87",
+    "filename": "9C9A23C8-D12C-E711-8619-008CFA197EB0.root",
+    "size": 315579456,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/9C9A23C8-D12C-E711-8619-008CFA197EB0.root"
+  },
+  {
+    "checksum": "adler32:cd006025",
+    "filename": "9CB7F8F8-812C-E711-9EAC-FA163EC50238.root",
+    "size": 2825357654,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/9CB7F8F8-812C-E711-9EAC-FA163EC50238.root"
+  },
+  {
+    "checksum": "adler32:cdf54009",
+    "filename": "9CBF29C1-9E2C-E711-A20D-A0369F83633E.root",
+    "size": 3311463852,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/9CBF29C1-9E2C-E711-A20D-A0369F83633E.root"
+  },
+  {
+    "checksum": "adler32:43597473",
+    "filename": "9CE77854-672C-E711-AB42-008CFAFBF618.root",
+    "size": 2876035895,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/9CE77854-672C-E711-AB42-008CFAFBF618.root"
+  },
+  {
+    "checksum": "adler32:f380d8d6",
+    "filename": "9CF37BA8-B32C-E711-B31E-FA163E860097.root",
+    "size": 2464600759,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/9CF37BA8-B32C-E711-B31E-FA163E860097.root"
+  },
+  {
+    "checksum": "adler32:6e67dd75",
+    "filename": "9E747570-832C-E711-9C28-001EC9ADFCE3.root",
+    "size": 2124511029,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/9E747570-832C-E711-9C28-001EC9ADFCE3.root"
+  },
+  {
+    "checksum": "adler32:f18c2572",
+    "filename": "A0959E86-672C-E711-AAAE-001E6739B969.root",
+    "size": 4196478856,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/A0959E86-672C-E711-AAAE-001E6739B969.root"
+  },
+  {
+    "checksum": "adler32:b00c52f7",
+    "filename": "A0ADAB77-6F2C-E711-914B-002590DD61E0.root",
+    "size": 4199908752,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/A0ADAB77-6F2C-E711-914B-002590DD61E0.root"
+  },
+  {
+    "checksum": "adler32:cb15868d",
+    "filename": "A0E36DCB-6E2C-E711-A347-1CC1DE19285A.root",
+    "size": 2127641410,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/A0E36DCB-6E2C-E711-A347-1CC1DE19285A.root"
+  },
+  {
+    "checksum": "adler32:04a9f849",
+    "filename": "A4B1E3BB-D12C-E711-94A3-002590495076.root",
+    "size": 1435168448,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/A4B1E3BB-D12C-E711-94A3-002590495076.root"
+  },
+  {
+    "checksum": "adler32:c5350938",
+    "filename": "A4CCB4CB-8F2C-E711-82B7-14187733AD89.root",
+    "size": 3727073026,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/A4CCB4CB-8F2C-E711-82B7-14187733AD89.root"
+  },
+  {
+    "checksum": "adler32:2d8f33f5",
+    "filename": "A61938CC-8A2C-E711-B405-90B11C0BD685.root",
+    "size": 2617600365,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/A61938CC-8A2C-E711-B405-90B11C0BD685.root"
+  },
+  {
+    "checksum": "adler32:71eb7211",
+    "filename": "A633834C-A02C-E711-9872-FA163E8C0837.root",
+    "size": 2417988781,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/A633834C-A02C-E711-9872-FA163E8C0837.root"
+  },
+  {
+    "checksum": "adler32:0aa5238d",
+    "filename": "A6358D93-A22C-E711-B3C5-78E7D1651098.root",
+    "size": 3958288658,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/A6358D93-A22C-E711-B3C5-78E7D1651098.root"
+  },
+  {
+    "checksum": "adler32:afb5bc97",
+    "filename": "A65BEE0C-7F2C-E711-BA93-FA163E339C91.root",
+    "size": 4040462676,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/A65BEE0C-7F2C-E711-BA93-FA163E339C91.root"
+  },
+  {
+    "checksum": "adler32:5f711445",
+    "filename": "A6BB8F9C-662C-E711-88EB-008CFAFBE6E8.root",
+    "size": 4192501300,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/A6BB8F9C-662C-E711-88EB-008CFAFBE6E8.root"
+  },
+  {
+    "checksum": "adler32:abdae5ab",
+    "filename": "A6EF6A9D-792C-E711-8560-00259021A4A2.root",
+    "size": 4117604313,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/A6EF6A9D-792C-E711-8560-00259021A4A2.root"
+  },
+  {
+    "checksum": "adler32:018cc93e",
+    "filename": "A8BD0905-8F2C-E711-A191-02163E00CEBA.root",
+    "size": 2590380948,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/A8BD0905-8F2C-E711-A191-02163E00CEBA.root"
+  },
+  {
+    "checksum": "adler32:0a5a4e05",
+    "filename": "AAB89866-6A2C-E711-8281-F46D042E833B.root",
+    "size": 3596050051,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/AAB89866-6A2C-E711-8281-F46D042E833B.root"
+  },
+  {
+    "checksum": "adler32:3cd532a3",
+    "filename": "AAF19234-7D2C-E711-BDB2-6CC2173BC1D0.root",
+    "size": 2224273980,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/AAF19234-7D2C-E711-BDB2-6CC2173BC1D0.root"
+  },
+  {
+    "checksum": "adler32:ecc161f5",
+    "filename": "AC3EFC44-7D2C-E711-A123-842B2B7680D5.root",
+    "size": 3304593872,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/AC3EFC44-7D2C-E711-A123-842B2B7680D5.root"
+  },
+  {
+    "checksum": "adler32:2ef78826",
+    "filename": "ACAE4F04-D22C-E711-8989-F832E4CC4EB1.root",
+    "size": 135555469,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/ACAE4F04-D22C-E711-8989-F832E4CC4EB1.root"
+  },
+  {
+    "checksum": "adler32:976c79b4",
+    "filename": "ACCEA899-AF2C-E711-80D8-02163E00CEBA.root",
+    "size": 2785164591,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/ACCEA899-AF2C-E711-80D8-02163E00CEBA.root"
+  },
+  {
+    "checksum": "adler32:1242060f",
+    "filename": "ACE00CC5-7C2C-E711-A1E0-00266CFFCCB4.root",
+    "size": 3145798489,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/ACE00CC5-7C2C-E711-A1E0-00266CFFCCB4.root"
+  },
+  {
+    "checksum": "adler32:d7ceb78d",
+    "filename": "AE381512-692C-E711-A109-FA163EAE7B3F.root",
+    "size": 3477524651,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/AE381512-692C-E711-A109-FA163EAE7B3F.root"
+  },
+  {
+    "checksum": "adler32:f15f7b4b",
+    "filename": "AE7FA19E-772C-E711-A75C-C45444922988.root",
+    "size": 2874077390,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/AE7FA19E-772C-E711-A75C-C45444922988.root"
+  },
+  {
+    "checksum": "adler32:ff22d883",
+    "filename": "AE887E0A-B72C-E711-9553-FA163EC4935A.root",
+    "size": 3023292191,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/AE887E0A-B72C-E711-9553-FA163EC4935A.root"
+  },
+  {
+    "checksum": "adler32:5412a98d",
+    "filename": "AE8FAF73-702C-E711-966C-0CC47A7FC72C.root",
+    "size": 4197091355,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/AE8FAF73-702C-E711-966C-0CC47A7FC72C.root"
+  },
+  {
+    "checksum": "adler32:9ce1e69b",
+    "filename": "AEA41417-712C-E711-84CC-0CC47AC087AE.root",
+    "size": 3091546427,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/AEA41417-712C-E711-84CC-0CC47AC087AE.root"
+  },
+  {
+    "checksum": "adler32:a01a01f3",
+    "filename": "AEB51793-862C-E711-8C9B-A0369F8362E8.root",
+    "size": 3008601769,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/AEB51793-862C-E711-8C9B-A0369F8362E8.root"
+  },
+  {
+    "checksum": "adler32:5e2845b0",
+    "filename": "AEE5EE64-7B2C-E711-A55E-0025901C1B7E.root",
+    "size": 2172422237,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/AEE5EE64-7B2C-E711-A55E-0025901C1B7E.root"
+  },
+  {
+    "checksum": "adler32:d26f5348",
+    "filename": "AEF5A069-B42C-E711-B9AB-48FD8E2824A5.root",
+    "size": 2840937596,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/AEF5A069-B42C-E711-B9AB-48FD8E2824A5.root"
+  },
+  {
+    "checksum": "adler32:c75c3f63",
+    "filename": "B058489F-812C-E711-B35C-6CC2173BC350.root",
+    "size": 3202251287,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/B058489F-812C-E711-B35C-6CC2173BC350.root"
+  },
+  {
+    "checksum": "adler32:a16924ea",
+    "filename": "B0A20F3F-7B2C-E711-8457-48D539D3336D.root",
+    "size": 3666567053,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/B0A20F3F-7B2C-E711-8457-48D539D3336D.root"
+  },
+  {
+    "checksum": "adler32:d396ce6f",
+    "filename": "B0ADCDC0-802C-E711-9F08-0CC47A07FA1E.root",
+    "size": 2492726780,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/B0ADCDC0-802C-E711-9F08-0CC47A07FA1E.root"
+  },
+  {
+    "checksum": "adler32:06119e2d",
+    "filename": "B0EC8C79-6A2C-E711-9102-002590DE6E36.root",
+    "size": 4229459750,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/B0EC8C79-6A2C-E711-9102-002590DE6E36.root"
+  },
+  {
+    "checksum": "adler32:afa30da7",
+    "filename": "B255CDBB-632C-E711-8550-008CFAF3543C.root",
+    "size": 4195734501,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/B255CDBB-632C-E711-8550-008CFAF3543C.root"
+  },
+  {
+    "checksum": "adler32:cab32867",
+    "filename": "B268737C-AD2C-E711-9A35-48FD8E282491.root",
+    "size": 2711605692,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/B268737C-AD2C-E711-9A35-48FD8E282491.root"
+  },
+  {
+    "checksum": "adler32:593ead8e",
+    "filename": "B4037DC7-752C-E711-88AC-308D99304920.root",
+    "size": 3363421023,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/B4037DC7-752C-E711-88AC-308D99304920.root"
+  },
+  {
+    "checksum": "adler32:436cc1e4",
+    "filename": "B48A315F-662C-E711-805E-0CC47A124314.root",
+    "size": 2879814310,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/B48A315F-662C-E711-805E-0CC47A124314.root"
+  },
+  {
+    "checksum": "adler32:9ce92280",
+    "filename": "B4B8D3A6-672C-E711-B4BA-9CB654AD72F8.root",
+    "size": 4171685059,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/B4B8D3A6-672C-E711-B4BA-9CB654AD72F8.root"
+  },
+  {
+    "checksum": "adler32:8f37cca5",
+    "filename": "B4F91B97-842C-E711-B1A3-1866DA87B230.root",
+    "size": 3471761595,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/B4F91B97-842C-E711-B1A3-1866DA87B230.root"
+  },
+  {
+    "checksum": "adler32:9d02288e",
+    "filename": "B607BF22-872C-E711-AE1F-FA163E5327A3.root",
+    "size": 3625831212,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/B607BF22-872C-E711-AE1F-FA163E5327A3.root"
+  },
+  {
+    "checksum": "adler32:e5820a24",
+    "filename": "B626ED96-7A2C-E711-9EC4-FA163E339C91.root",
+    "size": 3193331166,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/B626ED96-7A2C-E711-9EC4-FA163E339C91.root"
+  },
+  {
+    "checksum": "adler32:186e0e0e",
+    "filename": "B8C4F9CF-802C-E711-B927-C4346BC076D0.root",
+    "size": 3808332494,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/B8C4F9CF-802C-E711-B927-C4346BC076D0.root"
+  },
+  {
+    "checksum": "adler32:854336e0",
+    "filename": "B8C8B226-682C-E711-8010-F0795920ED74.root",
+    "size": 3193215593,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/B8C8B226-682C-E711-8010-F0795920ED74.root"
+  },
+  {
+    "checksum": "adler32:ae2b1d2d",
+    "filename": "B8FF13C0-D12C-E711-9AD8-48FD8E282491.root",
+    "size": 2004482941,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/B8FF13C0-D12C-E711-9AD8-48FD8E282491.root"
+  },
+  {
+    "checksum": "adler32:36c0f9fb",
+    "filename": "BA042A0B-652C-E711-8367-001E673C842D.root",
+    "size": 4220436417,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/BA042A0B-652C-E711-8367-001E673C842D.root"
+  },
+  {
+    "checksum": "adler32:baaf8f58",
+    "filename": "BAB7694F-7E2C-E711-8946-FA163E836D48.root",
+    "size": 4233161911,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/BAB7694F-7E2C-E711-8946-FA163E836D48.root"
+  },
+  {
+    "checksum": "adler32:d077bdf3",
+    "filename": "BE01D50D-982C-E711-9A29-0CC47A07FA1E.root",
+    "size": 2996524712,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/BE01D50D-982C-E711-9A29-0CC47A07FA1E.root"
+  },
+  {
+    "checksum": "adler32:abfc04f6",
+    "filename": "BE07CC8E-A12C-E711-A46D-78E7D1651098.root",
+    "size": 4205241980,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/BE07CC8E-A12C-E711-A46D-78E7D1651098.root"
+  },
+  {
+    "checksum": "adler32:15062481",
+    "filename": "BEC028B9-7A2C-E711-970F-FA163EAF0F18.root",
+    "size": 2666795954,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/BEC028B9-7A2C-E711-970F-FA163EAF0F18.root"
+  },
+  {
+    "checksum": "adler32:b426077c",
+    "filename": "BECBB195-692C-E711-AEF6-48FD8E2824A1.root",
+    "size": 2288989804,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/BECBB195-692C-E711-AEF6-48FD8E2824A1.root"
+  },
+  {
+    "checksum": "adler32:3ea31d78",
+    "filename": "C009F60A-9D2C-E711-B1B8-6CC2173BC060.root",
+    "size": 2386298102,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/C009F60A-9D2C-E711-B1B8-6CC2173BC060.root"
+  },
+  {
+    "checksum": "adler32:4a6922a9",
+    "filename": "C22C39A3-B52C-E711-A055-48D539F3888C.root",
+    "size": 2722291816,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/C22C39A3-B52C-E711-A055-48D539F3888C.root"
+  },
+  {
+    "checksum": "adler32:926afd3f",
+    "filename": "C2390AF9-D12C-E711-BD88-0CC47AB6503E.root",
+    "size": 597235034,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/C2390AF9-D12C-E711-BD88-0CC47AB6503E.root"
+  },
+  {
+    "checksum": "adler32:bc818ddb",
+    "filename": "C24D196C-822C-E711-B9B2-6CC2173AB870.root",
+    "size": 2865589758,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/C24D196C-822C-E711-B9B2-6CC2173AB870.root"
+  },
+  {
+    "checksum": "adler32:fb019a27",
+    "filename": "C41B03BD-D12C-E711-89C8-0CC47A703326.root",
+    "size": 335980529,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/C41B03BD-D12C-E711-89C8-0CC47A703326.root"
+  },
+  {
+    "checksum": "adler32:477c13c8",
+    "filename": "C425C016-B12C-E711-8792-FA163E3E638F.root",
+    "size": 2726175394,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/C425C016-B12C-E711-8792-FA163E3E638F.root"
+  },
+  {
+    "checksum": "adler32:8ea742e8",
+    "filename": "C4410101-882C-E711-9DEA-0025901DDE0E.root",
+    "size": 2647220590,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/C4410101-882C-E711-9DEA-0025901DDE0E.root"
+  },
+  {
+    "checksum": "adler32:73248f84",
+    "filename": "C4FF8DFE-B72C-E711-862E-001E675053A5.root",
+    "size": 2961253102,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/C4FF8DFE-B72C-E711-862E-001E675053A5.root"
+  },
+  {
+    "checksum": "adler32:cc0e262f",
+    "filename": "C625EAC9-9A2C-E711-9D4B-C4346BC8F6D0.root",
+    "size": 4136437050,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/C625EAC9-9A2C-E711-9D4B-C4346BC8F6D0.root"
+  },
+  {
+    "checksum": "adler32:4b11750b",
+    "filename": "C6313202-912C-E711-81AD-FA163E12B13B.root",
+    "size": 2757789924,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/C6313202-912C-E711-81AD-FA163E12B13B.root"
+  },
+  {
+    "checksum": "adler32:816933ef",
+    "filename": "C6403B8A-6E2C-E711-BC4D-0023AEEEB6CD.root",
+    "size": 2250862414,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/C6403B8A-6E2C-E711-BC4D-0023AEEEB6CD.root"
+  },
+  {
+    "checksum": "adler32:9a084500",
+    "filename": "CA5525E2-682C-E711-A9BE-001E673D2EB9.root",
+    "size": 4224944171,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/CA5525E2-682C-E711-A9BE-001E673D2EB9.root"
+  },
+  {
+    "checksum": "adler32:e8e2a4f8",
+    "filename": "CA5F5EF6-662C-E711-8FA7-0025904C7FC2.root",
+    "size": 4224976482,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/CA5F5EF6-662C-E711-8FA7-0025904C7FC2.root"
+  },
+  {
+    "checksum": "adler32:137e8806",
+    "filename": "CCE9FD66-A22C-E711-9834-02163E0147AB.root",
+    "size": 2975671837,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/CCE9FD66-A22C-E711-9834-02163E0147AB.root"
+  },
+  {
+    "checksum": "adler32:abea5522",
+    "filename": "CE08D044-A42C-E711-AE7C-02163E00CEBA.root",
+    "size": 2264713573,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/CE08D044-A42C-E711-AE7C-02163E00CEBA.root"
+  },
+  {
+    "checksum": "adler32:dfdc9940",
+    "filename": "CE1048BF-D12C-E711-B32A-3417EBE644F2.root",
+    "size": 441656215,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/CE1048BF-D12C-E711-B32A-3417EBE644F2.root"
+  },
+  {
+    "checksum": "adler32:2da69d2c",
+    "filename": "D052EEA8-6C2C-E711-999A-00259022516E.root",
+    "size": 2951600534,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/D052EEA8-6C2C-E711-999A-00259022516E.root"
+  },
+  {
+    "checksum": "adler32:7ff93fa0",
+    "filename": "D083320A-D22C-E711-8830-BCAEC54E98B4.root",
+    "size": 1759240117,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/D083320A-D22C-E711-8830-BCAEC54E98B4.root"
+  },
+  {
+    "checksum": "adler32:8998c35a",
+    "filename": "D2112D8F-632C-E711-8E66-A0000220FE80.root",
+    "size": 3083477893,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/D2112D8F-632C-E711-8E66-A0000220FE80.root"
+  },
+  {
+    "checksum": "adler32:3f39ca81",
+    "filename": "D2BDDBA0-742C-E711-96F2-D4AE526A0D2E.root",
+    "size": 3092752607,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/D2BDDBA0-742C-E711-96F2-D4AE526A0D2E.root"
+  },
+  {
+    "checksum": "adler32:78835c8c",
+    "filename": "D2D61225-872C-E711-94CE-FA163E12B13B.root",
+    "size": 3081073610,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/D2D61225-872C-E711-94CE-FA163E12B13B.root"
+  },
+  {
+    "checksum": "adler32:096bd65e",
+    "filename": "D2D7E4FD-762C-E711-AE17-FA163E6B4573.root",
+    "size": 3110087196,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/D2D7E4FD-762C-E711-AE17-FA163E6B4573.root"
+  },
+  {
+    "checksum": "adler32:b4fd73f2",
+    "filename": "D41C24E2-B62C-E711-B5EC-F02FA768CF32.root",
+    "size": 3023143318,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/D41C24E2-B62C-E711-B5EC-F02FA768CF32.root"
+  },
+  {
+    "checksum": "adler32:08c5c156",
+    "filename": "D49FC0CE-9B2C-E711-8656-48FD8EE739EB.root",
+    "size": 3198032543,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/D49FC0CE-9B2C-E711-8656-48FD8EE739EB.root"
+  },
+  {
+    "checksum": "adler32:1db7e730",
+    "filename": "D6183842-6D2C-E711-8B0A-0CC47AC08816.root",
+    "size": 3414892626,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/D6183842-6D2C-E711-8B0A-0CC47AC08816.root"
+  },
+  {
+    "checksum": "adler32:6d3def66",
+    "filename": "D6911AF7-9D2C-E711-BABA-A0369F8362E8.root",
+    "size": 2345739392,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/D6911AF7-9D2C-E711-BABA-A0369F8362E8.root"
+  },
+  {
+    "checksum": "adler32:a2dd5003",
+    "filename": "D6A72BD4-A82C-E711-8338-FA163E684F75.root",
+    "size": 2385437551,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/D6A72BD4-A82C-E711-8338-FA163E684F75.root"
+  },
+  {
+    "checksum": "adler32:471a6343",
+    "filename": "D6F65BD6-8B2C-E711-9567-48FD8E2824AB.root",
+    "size": 3076626663,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/D6F65BD6-8B2C-E711-9567-48FD8E2824AB.root"
+  },
+  {
+    "checksum": "adler32:9d288990",
+    "filename": "D8841FC4-AE2C-E711-8E72-48D539F3886E.root",
+    "size": 2474412254,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/D8841FC4-AE2C-E711-8E72-48D539F3886E.root"
+  },
+  {
+    "checksum": "adler32:724623a4",
+    "filename": "D8937998-852C-E711-8265-FA163E1511C6.root",
+    "size": 3706744666,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/D8937998-852C-E711-8265-FA163E1511C6.root"
+  },
+  {
+    "checksum": "adler32:80e03315",
+    "filename": "D8AF8039-9E2C-E711-AACE-02163E00CEBA.root",
+    "size": 2551696649,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/D8AF8039-9E2C-E711-AACE-02163E00CEBA.root"
+  },
+  {
+    "checksum": "adler32:a7a25478",
+    "filename": "D8E6CC09-962C-E711-A794-48D539D33367.root",
+    "size": 3314651736,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/D8E6CC09-962C-E711-A794-48D539D33367.root"
+  },
+  {
+    "checksum": "adler32:8c37bbfb",
+    "filename": "D8F82721-852C-E711-B935-48D539D33367.root",
+    "size": 3774139164,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/D8F82721-852C-E711-B935-48D539D33367.root"
+  },
+  {
+    "checksum": "adler32:95f232b0",
+    "filename": "DA10F7A7-6F2C-E711-B17C-001E6750507D.root",
+    "size": 4235326009,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/DA10F7A7-6F2C-E711-B17C-001E6750507D.root"
+  },
+  {
+    "checksum": "adler32:21691d75",
+    "filename": "DA4ED9E2-872C-E711-9DE9-0CC47A009E10.root",
+    "size": 2347234020,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/DA4ED9E2-872C-E711-9DE9-0CC47A009E10.root"
+  },
+  {
+    "checksum": "adler32:34ced3a3",
+    "filename": "DA70D89A-6D2C-E711-8FFF-002590DD61E0.root",
+    "size": 4222741842,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/DA70D89A-6D2C-E711-8FFF-002590DD61E0.root"
+  },
+  {
+    "checksum": "adler32:9c58cc20",
+    "filename": "DC181CFA-9D2C-E711-A113-F02FA768CB74.root",
+    "size": 3324136831,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/DC181CFA-9D2C-E711-A113-F02FA768CB74.root"
+  },
+  {
+    "checksum": "adler32:242be037",
+    "filename": "DC79B9CF-8D2C-E711-ADB1-1866DAEB5D80.root",
+    "size": 4204526383,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/DC79B9CF-8D2C-E711-ADB1-1866DAEB5D80.root"
+  },
+  {
+    "checksum": "adler32:188e9b57",
+    "filename": "DEB1CB6F-6A2C-E711-808E-0CC47AB64A5A.root",
+    "size": 2521792168,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/DEB1CB6F-6A2C-E711-808E-0CC47AB64A5A.root"
+  },
+  {
+    "checksum": "adler32:f040c0ea",
+    "filename": "E052CC3B-732C-E711-9BA7-B05ADA036C60.root",
+    "size": 4216803448,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/E052CC3B-732C-E711-9BA7-B05ADA036C60.root"
+  },
+  {
+    "checksum": "adler32:f6ebbffe",
+    "filename": "E06746C2-9E2C-E711-AA32-FA163E684F75.root",
+    "size": 2751237556,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/E06746C2-9E2C-E711-AA32-FA163E684F75.root"
+  },
+  {
+    "checksum": "adler32:91617cff",
+    "filename": "E0845C7B-8A2C-E711-8CEE-C4346BC78A40.root",
+    "size": 2429968014,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/E0845C7B-8A2C-E711-8CEE-C4346BC78A40.root"
+  },
+  {
+    "checksum": "adler32:5aef1671",
+    "filename": "E0A66481-692C-E711-B541-002590182DBA.root",
+    "size": 3560938955,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/E0A66481-692C-E711-B541-002590182DBA.root"
+  },
+  {
+    "checksum": "adler32:b9167c1e",
+    "filename": "E0B55938-AE2C-E711-9EE5-02163E0160D2.root",
+    "size": 2304804142,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/E0B55938-AE2C-E711-9EE5-02163E0160D2.root"
+  },
+  {
+    "checksum": "adler32:79c9e357",
+    "filename": "E20574F5-662C-E711-AB6A-842B2B7680D5.root",
+    "size": 2732374641,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/E20574F5-662C-E711-AB6A-842B2B7680D5.root"
+  },
+  {
+    "checksum": "adler32:9eb278ec",
+    "filename": "E21EA3A9-B02C-E711-A7D6-48FD8EE739AF.root",
+    "size": 2916577338,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/E21EA3A9-B02C-E711-A7D6-48FD8EE739AF.root"
+  },
+  {
+    "checksum": "adler32:92f4d3ac",
+    "filename": "E465232D-822C-E711-A2A3-1866DA87A870.root",
+    "size": 2217799817,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/E465232D-822C-E711-A2A3-1866DA87A870.root"
+  },
+  {
+    "checksum": "adler32:69874607",
+    "filename": "E47484B7-782C-E711-A9C0-FA163E4FF8AD.root",
+    "size": 2797796957,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/E47484B7-782C-E711-A9C0-FA163E4FF8AD.root"
+  },
+  {
+    "checksum": "adler32:7d3e91b7",
+    "filename": "E496824A-8E2C-E711-9CCA-1866DAEB1FC8.root",
+    "size": 4201674200,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/E496824A-8E2C-E711-9CCA-1866DAEB1FC8.root"
+  },
+  {
+    "checksum": "adler32:6ebbab3d",
+    "filename": "E4B570BD-D12C-E711-9F16-FA163E056376.root",
+    "size": 1063508740,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/E4B570BD-D12C-E711-9F16-FA163E056376.root"
+  },
+  {
+    "checksum": "adler32:1dc94615",
+    "filename": "E4C8F829-A22C-E711-953A-6CC2173BC120.root",
+    "size": 4236038529,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/E4C8F829-A22C-E711-953A-6CC2173BC120.root"
+  },
+  {
+    "checksum": "adler32:dff34edf",
+    "filename": "E6328168-8D2C-E711-863A-FA163E51D101.root",
+    "size": 2328926200,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/E6328168-8D2C-E711-863A-FA163E51D101.root"
+  },
+  {
+    "checksum": "adler32:a6f979b6",
+    "filename": "E6342CAA-762C-E711-9872-001E67579498.root",
+    "size": 2577993163,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/E6342CAA-762C-E711-9872-001E67579498.root"
+  },
+  {
+    "checksum": "adler32:cc866b54",
+    "filename": "E67ECA3F-A82C-E711-9027-0CC47A07FA1E.root",
+    "size": 2628774978,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/E67ECA3F-A82C-E711-9027-0CC47A07FA1E.root"
+  },
+  {
+    "checksum": "adler32:12500605",
+    "filename": "E689938F-662C-E711-B0B2-008CFAFBEEE6.root",
+    "size": 4198766535,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/E689938F-662C-E711-B0B2-008CFAFBEEE6.root"
+  },
+  {
+    "checksum": "adler32:a790a13a",
+    "filename": "E689A619-652C-E711-9C0E-001E6739C8B9.root",
+    "size": 4182646377,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/E689A619-652C-E711-9C0E-001E6739C8B9.root"
+  },
+  {
+    "checksum": "adler32:1b3831ac",
+    "filename": "E6D87621-A22C-E711-B94F-0CC47A07FA1E.root",
+    "size": 2176688541,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/E6D87621-A22C-E711-B94F-0CC47A07FA1E.root"
+  },
+  {
+    "checksum": "adler32:5d917043",
+    "filename": "E6FEAB4B-722C-E711-B450-C45444922988.root",
+    "size": 2296182396,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/E6FEAB4B-722C-E711-B450-C45444922988.root"
+  },
+  {
+    "checksum": "adler32:424c1f0e",
+    "filename": "E80E94E7-6D2C-E711-AEC8-001EC9ADFCE3.root",
+    "size": 2984455061,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/E80E94E7-6D2C-E711-AEC8-001EC9ADFCE3.root"
+  },
+  {
+    "checksum": "adler32:9823cc72",
+    "filename": "E88B137A-6B2C-E711-9FA0-001E673C842D.root",
+    "size": 4194382400,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/E88B137A-6B2C-E711-9FA0-001E673C842D.root"
+  },
+  {
+    "checksum": "adler32:d0f5d0c4",
+    "filename": "EA1D97B4-8C2C-E711-8231-00266CFFB7D0.root",
+    "size": 2705031873,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/EA1D97B4-8C2C-E711-8231-00266CFFB7D0.root"
+  },
+  {
+    "checksum": "adler32:a1cd392b",
+    "filename": "EA6348F1-672C-E711-AD83-FA163EB8D83F.root",
+    "size": 3887870409,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/EA6348F1-672C-E711-AD83-FA163EB8D83F.root"
+  },
+  {
+    "checksum": "adler32:b2a541cd",
+    "filename": "EC726F1D-722C-E711-9B61-0CC47AC33AB2.root",
+    "size": 4220608150,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/EC726F1D-722C-E711-9B61-0CC47AC33AB2.root"
+  },
+  {
+    "checksum": "adler32:3566c0fa",
+    "filename": "ECCAD2D5-8F2C-E711-AD1A-F02FA768CF32.root",
+    "size": 3325363767,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/ECCAD2D5-8F2C-E711-AD1A-F02FA768CF32.root"
+  },
+  {
+    "checksum": "adler32:71d85618",
+    "filename": "EE1D4982-862C-E711-A034-1866DA87931C.root",
+    "size": 3590916899,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/EE1D4982-862C-E711-A034-1866DA87931C.root"
+  },
+  {
+    "checksum": "adler32:5d5aba0b",
+    "filename": "EE27FAF9-762C-E711-81CF-346AC29F11B0.root",
+    "size": 2487080040,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/EE27FAF9-762C-E711-81CF-346AC29F11B0.root"
+  },
+  {
+    "checksum": "adler32:2aa6bb05",
+    "filename": "EE793E68-9A2C-E711-AD72-02163E00CEBA.root",
+    "size": 2709731520,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/EE793E68-9A2C-E711-AD72-02163E00CEBA.root"
+  },
+  {
+    "checksum": "adler32:cd6f46e8",
+    "filename": "EE7F65B4-762C-E711-8515-A0369F8363EE.root",
+    "size": 3653268995,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/EE7F65B4-762C-E711-8515-A0369F8363EE.root"
+  },
+  {
+    "checksum": "adler32:4e166435",
+    "filename": "EE9DD28D-672C-E711-A4DD-5CB901C39220.root",
+    "size": 4043072690,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/EE9DD28D-672C-E711-A4DD-5CB901C39220.root"
+  },
+  {
+    "checksum": "adler32:98f98506",
+    "filename": "F0EF9FCA-772C-E711-B777-001E6757CD34.root",
+    "size": 3355238276,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/F0EF9FCA-772C-E711-B777-001E6757CD34.root"
+  },
+  {
+    "checksum": "adler32:695b4408",
+    "filename": "F2EE6DFD-7F2C-E711-BAB1-002590D0B04A.root",
+    "size": 3795977472,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/F2EE6DFD-7F2C-E711-BAB1-002590D0B04A.root"
+  },
+  {
+    "checksum": "adler32:4bda62bb",
+    "filename": "F41CC959-982C-E711-A819-346AC29F11B0.root",
+    "size": 3306542065,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/F41CC959-982C-E711-A819-346AC29F11B0.root"
+  },
+  {
+    "checksum": "adler32:6b511af4",
+    "filename": "F4C9A3A6-6E2C-E711-8F85-0025904C7F62.root",
+    "size": 2532902263,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/F4C9A3A6-6E2C-E711-8F85-0025904C7F62.root"
+  },
+  {
+    "checksum": "adler32:00dc8eea",
+    "filename": "F4CB0083-7E2C-E711-BBEE-002590495076.root",
+    "size": 4206061526,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/F4CB0083-7E2C-E711-BBEE-002590495076.root"
+  },
+  {
+    "checksum": "adler32:e9b224e1",
+    "filename": "F4F08061-732C-E711-8EDE-0CC47AC33AB2.root",
+    "size": 4221974275,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/F4F08061-732C-E711-8EDE-0CC47AC33AB2.root"
+  },
+  {
+    "checksum": "adler32:60aebd10",
+    "filename": "F6385EA5-852C-E711-8334-FA163E1C9A52.root",
+    "size": 2877237469,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/F6385EA5-852C-E711-8334-FA163E1C9A52.root"
+  },
+  {
+    "checksum": "adler32:f2338af2",
+    "filename": "F63BCD96-B32C-E711-B2CA-FA163E1511C6.root",
+    "size": 2873756199,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/F63BCD96-B32C-E711-B2CA-FA163E1511C6.root"
+  },
+  {
+    "checksum": "adler32:83e4212f",
+    "filename": "F6C85D42-AE2C-E711-93CD-0CC47A07FA1E.root",
+    "size": 2253174552,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/F6C85D42-AE2C-E711-93CD-0CC47A07FA1E.root"
+  },
+  {
+    "checksum": "adler32:45f87ac6",
+    "filename": "F8254CD9-B02C-E711-8C42-02163E00CEBA.root",
+    "size": 2629586782,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/F8254CD9-B02C-E711-8C42-02163E00CEBA.root"
+  },
+  {
+    "checksum": "adler32:6c559b8a",
+    "filename": "F826D7DB-8B2C-E711-B910-90B11C0BCF43.root",
+    "size": 4106923070,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/F826D7DB-8B2C-E711-B910-90B11C0BCF43.root"
+  },
+  {
+    "checksum": "adler32:11da66da",
+    "filename": "F888B94D-712C-E711-957D-FA163E1C9A52.root",
+    "size": 2388288699,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/F888B94D-712C-E711-957D-FA163E1C9A52.root"
+  },
+  {
+    "checksum": "adler32:b9f5dee0",
+    "filename": "FA111AB8-B62C-E711-9AD5-0CC47A07FA1E.root",
+    "size": 2415606001,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/FA111AB8-B62C-E711-9AD5-0CC47A07FA1E.root"
+  },
+  {
+    "checksum": "adler32:c17adaa7",
+    "filename": "FA47BE52-652C-E711-B641-0022195C1B09.root",
+    "size": 2229978272,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/FA47BE52-652C-E711-B641-0022195C1B09.root"
+  },
+  {
+    "checksum": "adler32:2d846e15",
+    "filename": "FA5CC7E4-6E2C-E711-9B63-0025905AC960.root",
+    "size": 2477791482,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/FA5CC7E4-6E2C-E711-9B63-0025905AC960.root"
+  },
+  {
+    "checksum": "adler32:7c4beb2b",
+    "filename": "FAD29FBC-752C-E711-9FD6-0025907B4F72.root",
+    "size": 2196456115,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/FAD29FBC-752C-E711-9FD6-0025907B4F72.root"
+  },
+  {
+    "checksum": "adler32:0916f88b",
+    "filename": "FAD9717B-A62C-E711-ACFC-0CC47A4DED58.root",
+    "size": 2783832910,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/FAD9717B-A62C-E711-ACFC-0CC47A4DED58.root"
+  },
+  {
+    "checksum": "adler32:c7d9a65d",
+    "filename": "FCABB1AE-692C-E711-8E12-1866DA879B33.root",
+    "size": 3475278733,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/FCABB1AE-692C-E711-8E12-1866DA879B33.root"
+  },
+  {
+    "checksum": "adler32:04186b83",
+    "filename": "FCD50DC7-6B2C-E711-9C52-A0369FC52350.root",
+    "size": 2768101692,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/FCD50DC7-6B2C-E711-9C52-A0369FC52350.root"
+  },
+  {
+    "checksum": "adler32:f7ec2b16",
+    "filename": "FE3B5A58-AD2C-E711-80A7-FA163EB76681.root",
+    "size": 2824232250,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/FE3B5A58-AD2C-E711-80A7-FA163EB76681.root"
+  },
+  {
+    "checksum": "adler32:e28bb772",
+    "filename": "FE3BFDEB-6C2C-E711-9F25-0CC47A54529A.root",
+    "size": 2552777432,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/FE3BFDEB-6C2C-E711-9F25-0CC47A54529A.root"
+  },
+  {
+    "checksum": "adler32:cfc12cbc",
+    "filename": "FEC07440-7B2C-E711-B209-1866DA87EE25.root",
+    "size": 2152920400,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/pAWinter13DR53X/ReggeGribovPartonMC_EposLHC_2510_2510_PbP_2013/GEN-SIM-RECO/pa_EPOS_LHC_STARTHI53_V27-v1/100000/FEC07440-7B2C-E711-B209-1866DA87EE25.root"
+  }
+]
