@@ -5,17 +5,53 @@ import datetime
 import requests
 
 import sys
-sys.path.insert(1, '../cms-release-info')
+#sys.path.insert(1, '../cms-release-info')
+sys.path.insert(1, '../../Github/data-curation/cms-release-info')
 from helpers import run_range_text
 
 """
 Create validated data records.
 """
 
-RECID_START = 14212
-YEAR_RELEASED = 2015
+# current vali records up to 14211, 14210 (2015) - 14212 is the next free
+# YEAR_RELEASED is the year of data taking
+### input for 2015 pphiref
+#
+#RECID_START = 14212
+#YEAR_RELEASED = 2015
+#RUN_ERA = "Run2015E"
+#TYPE = "pphiref"
+#
+### input for 2013 PbPb
+#
+#RECID_START = 14216
+#YEAR_RELEASED = 2013
+#RUN_ERA = "HIRun2013"
+#TYPE = "pPb"
+#
+### input for 2013 PbPb
+#
+RECID_START = 14218
+YEAR_RELEASED = 2013
+RUN_ERA = "Run2013A"
+TYPE = "pphiref"
+#
+### input for 2016 vali record building
+#
+#RECID_START = 14120
+#YEAR_RELEASED = 2016
+#RUN_ERA = "Run2016H" # single era defined only to get the collision energy, stored per era
+#TYPE = "pp"
+#
+### input used for 2015 for vali record building
+### (if Run2015C gets released, update the record to add its run range to the description, the rest is OK as such)
+#
+#RECID_START = 14210
+#YEAR_RELEASED = 2015
+#RUN_ERA = "Run2015D" # single era defined only only to get the collision energy
+#TYPE = "pp"
 
-def create_record(recid, year, filename):
+def create_record(recid, year, era, runtype, filename):
     """Create record for the given year."""
 
     rec = {}
@@ -23,6 +59,23 @@ def create_record(recid, year, filename):
     year_created = year
     year = str(year)
     year_published = datetime.date.today().strftime("%Y")
+    runtype = str(runtype)
+    # print(year)
+    # print(runtype)
+    # print(era)
+    if "pphiref" in runtype :
+        display_runtype = 'pp'
+    else:
+        display_runtype = runtype
+
+    # Get the energy
+    # Using the run_era, for pp it is needed only here
+    # Could be done differently but this is good enough
+    url = 'http://api-server-cms-release-info.app.cern.ch/runeras/?run_era='+era
+    this_json=json.loads(requests.get(url).text.strip())
+    energy=this_json[0]["energy"]
+
+    #print(energy)
 
     if "Muon" in filename:
         muon_text = ', only valid muons'
@@ -31,11 +84,26 @@ def create_record(recid, year, filename):
         muon_text = ''
         muon_desc = ''
 
-    
+    run_range_input = era
+    if "pphiref" in runtype:
+        collision_text = energy+' proton-proton collision data, needed as reference data for heavy-ion data analysis,'
+    elif "PbPb" in runtype:
+        collision_text = energy+' PbPb heavy-ion collision data'
+    elif "pPb" in runtype:
+        collision_text = energy+' proton-Pb heavy-ion collision data'
+    elif "pp" in runtype:
+        collision_text = energy+' proton-proton collision data'
+        run_range_input = year
+    else:
+        print('Runtype unknown!')
+
+    # The input to run_range_text depends on runtype, defined above
+    # Usage: era for HI, HI pp ref, year for normal pp
+    # run_range_text takes care of taking only released runs when year as input 
     rec["abstract"] = {}
     rec["abstract"]["description"] = (
-            "<p>This file describes which luminosity sections in which runs are considered good and should be processed%s.</p>" % muon_desc
-            + "<p>This list covers proton-proton data taking in %s.%s</p>" % (year, run_range_text(year))
+            "<p>This file describes which luminosity sections in which runs are considered good and should be processed"+muon_desc+".</p><p>This list covers "+collision_text+
+            " taken in "+year+"."+run_range_text(run_range_input)+"</p>"
         )
 
     rec["accelerator"] = "CERN-LHC"
@@ -49,8 +117,9 @@ def create_record(recid, year, filename):
     ]
 
     rec["collision_information"] = {}
-    rec["collision_information"]["energy"] = "13TeV"
-    rec["collision_information"]["type"] = "pp"
+    rec["collision_information"]["energy"] = energy
+
+    rec["collision_information"]["type"] = display_runtype
 
     rec["date_created"] = [
         year_created,
@@ -68,18 +137,16 @@ def create_record(recid, year, filename):
 
     rec["recid"] = str(recid)
 
-    # Implement a check to see which run periods actually are in the json file 
-    url = 'http://api-server-cms-release-info.app.cern.ch/runeras/run_era?year='+year+'&type=pp-phys'
+    # Get run periods from the json file server (takes also not released)
+    url = 'http://api-server-cms-release-info.app.cern.ch/runeras/run_era?year='+year+'&type='+runtype+'-phys'
     rec["run_period"] = json.loads(requests.get(url).text.strip())    
 
     rec["title"] = (
-        "CMS list of validated runs %s"
-        % filename
+        "CMS list of validated runs "+filename
         )
     
     rec["title_additional"] = (
-        "CMS list of validated runs for primary datasets of %s data taking%s"
-        % (year, muon_text)
+        "CMS list of validated runs for "+collision_text+" taken in "+year+muon_text
         )
 
     rec["type"] = {}
@@ -90,7 +157,7 @@ def create_record(recid, year, filename):
 
     rec["usage"] = {}
     rec["usage"]["description"] = (
-            "<p>Add the following lines in the configuration file for a cmsRun job: <br /> <pre>   import FWCore.ParameterSet.Config as cms</pre><pre>   import FWCore.PythonUtilities.LumiList as LumiList</pre><pre>   goodJSON = '%s'</pre><pre>   myLumis = LumiList.LumiList(filename = goodJSON).getCMSSWString().split(',') </pre></p><p> Add the file path if needed in the file name.</p><p> Add the following statements after the <code>process.source</code> input file definition: <br /><pre>   process.source.lumisToProcess = cms.untracked.VLuminosityBlockRange()</pre><pre>   process.source.lumisToProcess.extend(myLumis)</pre></p><p>Note that the two last statements must be placed after the <code>process.source</code> statement defining the input files.</p>" % (filename)
+            "<p>Add the following lines in the configuration file for a cmsRun job: <br /> <pre>   import FWCore.ParameterSet.Config as cms</pre><pre>   import FWCore.PythonUtilities.LumiList as LumiList</pre><pre>   goodJSON = '"+filename+"'</pre><pre>   myLumis = LumiList.LumiList(filename = goodJSON).getCMSSWString().split(',') </pre></p><p> Add the file path if needed in the file name.</p><p> Add the following statements after the <code>process.source</code> input file definition: <br /><pre>   process.source.lumisToProcess = cms.untracked.VLuminosityBlockRange()</pre><pre>   process.source.lumisToProcess.extend(myLumis)</pre></p><p>Note that the two last statements must be placed after the <code>process.source</code> statement defining the input files.</p>"
         )
 
     rec["validation"] = {}
@@ -112,7 +179,9 @@ def main():
 
     records = []
     recid = RECID_START
-    year = str(YEAR_RELEASED) 
+    year = str(YEAR_RELEASED)
+    era = str(RUN_ERA)
+    runtype = str(TYPE)
 
     # this would read from a local file
     # with open('./inputs/cms_release_info.json') as f:
@@ -123,14 +192,16 @@ def main():
     # this_year = all_years[year]
 
     # this gets json from the api server
-    url = 'http://api-server-cms-release-info.app.cern.ch/years?year='+year+'&output=plain'
-    this_year = json.loads(requests.get(url).text.strip())
+    url = 'http://api-server-cms-release-info.app.cern.ch/years?year='+year+'&type='+runtype+'&output=plain'
+    this_json = json.loads(requests.get(url).text.strip())
     
-    for val in this_year["val_json"]:
+    for val in this_json["val_json"]:
         records.append(
             create_record(
                 recid,
-                this_year["year"],
+                this_json["year"],
+                era,
+                runtype,
                 val["url"].split("/")[-1].strip())
                 #row["val_json_golden"].split("/")[-1].strip())
         )
