@@ -5,8 +5,7 @@ import datetime
 import requests
 
 import sys
-#sys.path.insert(1, '../cms-release-info')
-sys.path.insert(1, '../../Github/data-curation/cms-release-info')
+sys.path.insert(1, '../cms-release-info')
 from helpers import run_range_text
 
 """
