@@ -10,53 +10,28 @@ from helpers import run_range_text
 
 """
 Create validated data records.
-"""
 
-# current vali records up to 14211, 14210 (2015) - 14212 is the next free
-# YEAR_RELEASED is the year of data taking
-### input for 2015 pphiref
-#
-#RECID_START = 14212
-#YEAR_RELEASED = 2015
-#RUN_ERA = "Run2015E"
-#TYPE = "pphiref"
-#
-### input for 2013 PbPb
-#
-#RECID_START = 14216
-#YEAR_RELEASED = 2013
-#RUN_ERA = "HIRun2013"
-#TYPE = "pPb"
-#
-### input for 2013 PbPb
-#
-RECID_START = 14218
-YEAR_RELEASED = 2013
-RUN_ERA = "Run2013A"
-TYPE = "pphiref"
-#
-### input for 2016 vali record building
-#
-#RECID_START = 14120
-#YEAR_RELEASED = 2016
-#RUN_ERA = "Run2016H" # single era defined only to get the collision energy, stored per era
-#TYPE = "pp"
-#
-### input used for 2015 for vali record building
-### (if Run2015C gets released, update the record to add its run range to the description, the rest is OK as such)
-#
-#RECID_START = 14210
-#YEAR_RELEASED = 2015
-#RUN_ERA = "Run2015D" # single era defined only only to get the collision energy
-#TYPE = "pp"
+Input arguments
+- recid (May 2023, the last used recid was 14210 for 2015 pp)
+- year to be released
+- run era (for pp, give one of the released eras, it is needed to get the collision energy, stored per era)
+- type (pp, pPb, pphiref, PbPb)
+
+Inputs:
+- 2013 pPb: 14216 2013 HIRun2013 pPb
+- 2013 ppref: 14218 2013 Run2013A pphiref
+- 2015 ppref: 14212 2015 Run2015E pphiref
+- 2015 pp:  14210 2015 Run2015D pp (not used to build the current record, but tested to produce the same files)
+
+"""
 
 def create_record(recid, year, era, runtype, filename):
     """Create record for the given year."""
 
     rec = {}
 
+    year=str(year)
     year_created = year
-    year = str(year)
     year_published = datetime.date.today().strftime("%Y")
     runtype = str(runtype)
     # print(year)
@@ -177,10 +152,10 @@ def main():
     "Do the job."
 
     records = []
-    recid = RECID_START
-    year = str(YEAR_RELEASED)
-    era = str(RUN_ERA)
-    runtype = str(TYPE)
+    recid = sys.argv[1]
+    year = sys.argv[2]
+    era = sys.argv[3]
+    runtype = sys.argv[4]
 
     # this would read from a local file
     # with open('./inputs/cms_release_info.json') as f:
@@ -194,10 +169,11 @@ def main():
     url = 'http://api-server-cms-release-info.app.cern.ch/years?year='+year+'&type='+runtype+'&output=plain'
     this_json = json.loads(requests.get(url).text.strip())
     
+    recid=int(recid)
     for val in this_json["val_json"]:
         records.append(
             create_record(
-                recid,
+                str(recid),
                 this_json["year"],
                 era,
                 runtype,
