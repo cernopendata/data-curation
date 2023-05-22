@@ -2,8 +2,16 @@ name: Build listings and records
 on:
   workflow_dispatch
 env:
+  RECID: 1058
   YEAR: 2015
-  ERAS: Run2015D
+  ERAS: Run2015E
+  TYPE: pphiref
+  # Inputs:
+  # - 2013 pPb: 1056 2013 HIRun2013 pPb
+  # - 2013 ppref: 1057 2013 Run2013A pphiref
+  # - 2015 ppref: 1058 2015 Run2015E pphiref
+  # - 2015 pp: 1055 2015 Run2015D pp (not used to build the current record, but tested to produce the same files)
+  # - 2016 pp: 1059 2016 Run2016G Run2016H pp
 defaults:
   run: 
     working-directory: cms-YYYY-luminosity
@@ -12,27 +20,35 @@ jobs:
     runs-on: ubuntu-latest
     name: create lumi tables
     steps:
-    - uses: actions/checkout@v2    
+    - uses: actions/checkout@v3    
     - name: Prepare
       run: |
         mkdir outputs
         echo ls `ls`
         echo pwd `pwd`
+        RECID=${{env.RECID}}
+        YEAR=${{env.YEAR}}
+        TYPE=${{env.TYPE}}
     # Get the part of the normtag file corresponding to validated runs (muons cert file as it has a wider range)
     - name: Normtag file
       run: |
-        echo "Get the normtag file for $YEAR"
-        curl http://api-server-cms-release-info.app.cern.ch/years/val_json?year=$YEAR > myjs.json
-        muonurl=$(jq -r '.[0][1].url' myjs.json)
-        wget $muonurl -O cert.txt
-        wget https://raw.githubusercontent.com/CMS-LUMI-POG/Normtags/master/normtag_PHYSICS.json -O normtag_PHYSICS.json
-        source normtag.sh > outputs/normtag_PHYSICS_$YEAR.json
-        cp outputs/normtag_PHYSICS_$YEAR.json normtag_PHYSICS.json
+        if (( $YEAR > 2013 ))
+        then
+          echo "Get the normtag file for $TYPE of $YEAR"
+          curl 'http://api-server-cms-release-info.app.cern.ch/years/val_json?year='"$YEAR"'&type='"$TYPE"'' > myjs.json
+          ls -l myjs.json
+          muonurl=$(jq -r '.[0][1].url' myjs.json)
+          echo $muonurl
+          wget $muonurl -O cert.txt
+          wget https://raw.githubusercontent.com/CMS-LUMI-POG/Normtags/master/normtag_PHYSICS.json -O normtag_PHYSICS.json
+          source normtag.sh > outputs/normtag_PHYSICS_$TYPE'_'$YEAR.json 
+          cp outputs/normtag_PHYSICS_$TYPE'_'$YEAR.json normtag_PHYSICS.json
+        fi
     # Get the parameters for lumi listings
     - name: Get validated runs file
       run: |
-        echo "Get validated runs for $YEAR"
-        curl http://api-server-cms-release-info.app.cern.ch/years/val_json?year=$YEAR > myjs.json
+        echo "Get validated runs for $TYPE of $YEAR"
+        curl 'http://api-server-cms-release-info.app.cern.ch/years/val_json?year='"$YEAR"'&type='"$TYPE"'' > myjs.json
         url=$(jq -r '.[0][0].url' myjs.json)
         wget $url -O cert.txt
     # run the container with the script in the repository
@@ -41,36 +57,40 @@ jobs:
       run: | 
         # Summary txt table per year
         echo "Create summary table for $YEAR"
-        docker run -v $(pwd):/mnt/vol -w /home/brilws gitlab-registry.cern.ch/cms-cloud/brilws-docker /bin/bash /mnt/vol/commands.sh cert.txt tab summ > outputs/$YEAR'lumi.txt'
+        # Use normtag file for Run-2 values 
+        # and hfoc (the only available option) for Run-1 HI and pp ref
+        if (( $YEAR > 2014 )); then option="normtag"; else option="hfoc"; fi;
+        echo "From workflow, type is $TYPE, value of option is $option"
+        [ $TYPE == "pp" ] && docker run -v $(pwd):/mnt/vol -w /home/brilws gitlab-registry.cern.ch/cms-cloud/brilws-docker /bin/bash /mnt/vol/commands.sh cert.txt tab $option summ > outputs/$YEAR'lumi.txt'
         # Prescale listing for each run in a single csv file
         echo "Get prescale listing for all run numbers"
-        docker run -v $(pwd):/mnt/vol -w /home/brilws gitlab-registry.cern.ch/cms-cloud/brilws-docker /bin/bash /mnt/vol/commands.sh cert.txt csv summ | grep -v "#" | awk '{ print $1 }' FS=':' > run_numbers.txt
-        docker run -v $(pwd):/mnt/vol -w /home/brilws gitlab-registry.cern.ch/cms-cloud/brilws-docker /bin/bash /mnt/vol/prescale.sh > outputs/'prescale'$YEAR'.csv'
+        docker run -v $(pwd):/mnt/vol -w /home/brilws gitlab-registry.cern.ch/cms-cloud/brilws-docker /bin/bash /mnt/vol/commands.sh cert.txt csv $option summ | grep -v "#" |  grep  "/" | awk '{ print $1 }' FS=':' > run_numbers.txt
+        docker run -v $(pwd):/mnt/vol -w /home/brilws gitlab-registry.cern.ch/cms-cloud/brilws-docker /bin/bash /mnt/vol/prescale.sh > outputs/'prescale_'$TYPE$YEAR'.csv'
         # Summary txt table per era, for all listed eras
+        ERAS=${{env.ERAS}}
         echo "Create summary tables for $ERAS"
         for era in ${ERAS[*]} 
         do 
           echo "doing " $era
-          curl http://api-server-cms-release-info.app.cern.ch/runeras?run_era=$era > myjs.json
+          curl 'http://api-server-cms-release-info.app.cern.ch/runeras?run_era='"$era"'' > myjs.json
           runmin=$(cat myjs.json | jq -r '.[0].run_min')
           runmax=$(cat myjs.json | jq -r '.[0].run_max')
-          docker run -v $(pwd):/mnt/vol -w /home/brilws gitlab-registry.cern.ch/cms-cloud/brilws-docker /bin/bash /mnt/vol/commands.sh cert.txt tab summ $runmin $runmax > outputs/$era'lumi.txt'
+          docker run -v $(pwd):/mnt/vol -w /home/brilws gitlab-registry.cern.ch/cms-cloud/brilws-docker /bin/bash /mnt/vol/commands.sh cert.txt tab $option summ $runmin $runmax > outputs/$era'lumi.txt'
         done        
         # Detailed csv per year
         echo "Create full csv for $YEAR"
-        docker run -v $(pwd):/mnt/vol -w /home/brilws gitlab-registry.cern.ch/cms-cloud/brilws-docker /bin/bash /mnt/vol/commands.sh cert.txt csv byls > outputs/$YEAR'lumibyls.csv'
+        docker run -v $(pwd):/mnt/vol -w /home/brilws gitlab-registry.cern.ch/cms-cloud/brilws-docker /bin/bash /mnt/vol/commands.sh cert.txt csv $option byls > outputs/$TYPE'_'$YEAR'lumibyls.csv'
         echo ls -l outputs `ls -l outputs`
         echo pwd `pwd`
     # Build the luminosity record
     - name: Build the luminosity records
       id: record
       run: |
-        python code/lumi_records.py > outputs/lumi_records.json
+        python code/lumi_records.py $RECID $YEAR ${ERAS[0]} $TYPE > outputs/lumi_records.json
         #python code/vali_records.py > outputs/vali_records.json
     # upload output file NB bug: https://github.com/actions/upload-artifact/issues/294
     - name: Upload artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: output
         path: cms-YYYY-luminosity/outputs/
-   
