@@ -72,6 +72,17 @@ def create_record(recid, year, era, runtype, uncertainty, lumi_ref, val_recid):
     else:
         print("Runtype unknown!")
 
+    # additional text for pPb reverse luminosity
+    inverse_text = ""
+    if "pPb" in runtype:
+        url = "http://api-server-cms-release-info.app.cern.ch/years/lumi_uncertainty_reverse?year=2013&type=pPb"
+        reverse_lumi = json.loads(requests.get(url).text.strip())[0]
+        inverse_text = (
+            "("
+            + str(reverse_lumi)
+            + "% for the reverse beam direction) "
+        )
+
     # normtag file only after Run-1
     normtag_text = ""
     if int(year) > 2014:
@@ -110,8 +121,8 @@ def create_record(recid, year, era, runtype, uncertainty, lumi_ref, val_recid):
         % (collision_text, year, ",".join(od_runs), ",".join(od_runs), pp_text)
         + '<p> For luminosity calculation, a detailed list of luminosity by lumi section is provided in <a href="/record/%s/files/%s_%slumibyls.csv">%s_%slumibyls.csv</a> for the <a href="/record/%s">list of validated runs</a> and lumi sections.</p>'
         % (recid, runtype, year, runtype, year, val_recid)
-        + '<p>The uncertainty in the luminosity measurement of %s data should be considered as %s%% (reference <a href="%s">%s</a>).</p>'
-        % (year, uncertainty, lumi_ref, lumi_ref_title)
+        + '<p>The uncertainty in the luminosity measurement of %s data should be considered as %s%% %s(reference <a href="%s">%s</a>).</p>'
+        % (year, uncertainty, inverse_text, lumi_ref, lumi_ref_title)
         + '<p>In your estimate for the integrated luminosity, check for which runs the trigger you have selected is active and sum the values for those runs. For prescaled triggers, the change of prescales (run, lumi section, index of prescales referring to the PrescaleService module in the High-Level Trigger configuration files) is recorded in <a href="/record/%s/files/prescale_%s%s.csv">prescale_%s%s.csv</a>.</p>'
         % (recid, runtype, year, runtype, year)
         + '<p>Additional information on how to extract luminosity values using the <strong>brilcalc tool</strong> can be found in the <a href="/docs/cms-guide-luminosity-calculation"> luminosity calculation guide</a>.</p>'
