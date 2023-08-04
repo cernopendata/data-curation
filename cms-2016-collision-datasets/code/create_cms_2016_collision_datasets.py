@@ -154,6 +154,40 @@ def get_global_tag_for_system_details(dataset_full_name):
     return "106X_dataRun2_v37"
 
 
+def get_date_reprocessed(dataset_full_name):
+    """Return the reprocessing date for the given dataset."""
+    p = subprocess.run(
+            ['dasgoclient', '-query', f'dataset={dataset_full_name}', '-json'], 
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE
+        )
+    json_object = json.loads(p.stdout.decode())
+    all_creation_dates = []
+    for obj in json_object:
+        dataset = obj['dataset'][0]
+        if 'creation_date' in dataset.keys():
+            date = dataset['creation_date']
+            all_creation_dates.append(date)    
+    date_reprocessed_timestamp = all_creation_dates[0]
+    isUnique = len(set(all_creation_dates)) == 1
+    if not isUnique:
+        print(f"{dataset_full_name} has multiple reprocessing dates associated with it!")
+    date_reprocessed = datetime.date.fromtimestamp(date_reprocessed_timestamp).year
+    return date_reprocessed
+
+
+def get_run_range(dataset_full_name):
+    """Return the min and max run numbers for the given dataset."""
+    p = subprocess.run(
+            ['dasgoclient', '-query', f'run dataset={dataset_full_name}'], 
+            stdout=subprocess.PIPE,
+            stderr=subprocess.PIPE
+        )
+    run_numbers = p.stdout.decode().strip().split('\n')
+    run_numbers.sort()
+    return run_numbers[0], run_numbers[-1]
+
+
 def create_selection_information(dataset, dataset_full_name):
     """Create box with selection information."""
     if "MINIAOD" in dataset_full_name:
@@ -229,13 +263,6 @@ def get_dataset_index_files(dataset_full_name):
 def get_doi(dataset_full_name):
     "Return DOI for the given dataset."
     return DOI_INFO.get(dataset_full_name, "")
-
-
-def get_run_range(dataset_full_name):
-    pass
-
-def get_date_reprocessed(dataset_full_name):
-    pass
 
 
 def create_record(recid, run_period, version, dataset, aodformat):
