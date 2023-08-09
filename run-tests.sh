@@ -10,6 +10,7 @@ check_script() {
 check_black() {
 	black --check \
 		cms-YYYY-run-numbers/code/*.py \
+		cms-2013-collision-datasets-hi-ppref/code/*.py \
 		cms-2015-collision-datasets-hi-ppref/code/*.py \
 		utils/*.py
 }
