@@ -42,6 +42,10 @@ cms-2013-collision-datasets-hi-ppref/inputs/config-store
 cms-2013-collision-datasets-hi-ppref/inputs/das-json-config-store
 cms-2013-collision-datasets-hi-ppref/inputs/das-json-store
 cms-2013-collision-datasets-hi-ppref/outputs/*.json
+cms-2013-collision-datasets-hi/inputs/config-store
+cms-2013-collision-datasets-hi/inputs/das-json-config-store
+cms-2013-collision-datasets-hi/inputs/das-json-store
+cms-2013-collision-datasets-hi/outputs/*.json
 cms-2015-collision-datasets/inputs/das-json-store
 cms-2015-collision-datasets/inputs/das-json-config-store
 cms-2015-collision-datasets/outputs/*.json
