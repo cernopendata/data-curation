@@ -1,0 +1,72 @@
+{
+    "CMSSW_7_6_7": [
+        {
+            "registry": "docker",
+            "name": "cmsopendata/cmssw_7_6_7-slc6_amd64_gcc493"
+        },
+        {
+            "registry": "gitlab",
+            "name": "gitlab-registry.cern.ch/cms-cloud/cmssw-docker-opendata/cmssw_7_6_7-slc6_amd64_gcc493"
+        }
+    ],
+    "CMSSW_5_3_32": [
+        {
+            "registry": "docker",
+            "name": "cmsopendata/cmssw_5_3_32-slc6_amd64_gcc472"
+        },
+        {
+            "registry": "gitlab",
+            "name": "gitlab-registry.cern.ch/cms-cloud/cmssw-docker-opendata/cmssw_5_3_32-slc6_amd64_gcc472"
+        }
+    ],
+    "CMSSW_4_4_7": [
+        {
+            "registry": "docker",
+            "name": "cmsopendata/cmssw_4_4_7-slc5_amd64_gcc434"
+        },
+        {
+            "registry": "gitlab",
+            "name": "gitlab-registry.cern.ch/cms-cloud/cmssw-docker-opendata/cmssw_4_4_7-slc5_amd64_gcc434"
+        }
+    ],
+    "CMSSW_4_2_8": [
+        {
+            "registry": "docker",
+            "name": "cmsopendata/cmssw_4_2_8-slc5_amd64_gcc434"
+        },
+        {
+            "registry": "gitlab",
+            "name": "gitlab-registry.cern.ch/cms-cloud/cmssw-docker-opendata/cmssw_4_2_8-slc5_amd64_gcc434"
+        }
+    ],
+    "CMSSW_4_2_8_lowpupatch1": [
+        {
+            "registry": "docker",
+            "name": "cmsopendata/cmssw_4_2_8_lowpupatch1-slc5_amd64_gcc434"
+        },
+        {
+            "registry": "gitlab",
+            "name": "gitlab-registry.cern.ch/cms-cloud/cmssw-docker-opendata/cmssw_4_2_8_lowpupatch1-slc5_amd64_gcc434"
+        }
+    ],
+    "CMSSW_3_9_2_patch5": [
+        {
+            "registry": "docker",
+            "name": "cmsopendata/cmssw_3_9_2_patch5-slc5_amd64_gcc434"
+        },
+        {
+            "registry": "gitlab",
+            "name": "gitlab-registry.cern.ch/cms-cloud/cmssw-docker-opendata/cmssw_3_9_2_patch5-slc5_amd64_gcc434"
+        }
+    ],
+    "CMSSW_10_6_30": [
+        {
+            "registry": "docker",
+            "name": "cmsopendata/cmssw_10_6_30-slc7_amd64_gcc700:latest"
+        },
+        {
+            "registry": "gitlab",
+            "name": "gitlab-registry.cern.ch/cms-cloud/cmssw-docker-opendata/cmssw_10_6_30-slc7_amd64_gcc700"
+        }
+    ]
+}
