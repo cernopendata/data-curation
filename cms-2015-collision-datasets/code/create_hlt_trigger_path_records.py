@@ -67,14 +67,6 @@ def main():
                     "CMS-Trigger-Information",
                 ]
 
-                rec["collision_information"] = {}
-                if "Run2015HI" in rec["abstract"]["description"]:
-                    rec["collision_information"]["energy"] = "13TeV"
-                    rec["collision_information"]["type"] = "PbPb"
-                else:
-                    rec["collision_information"]["energy"] = "13TeV"
-                    rec["collision_information"]["type"] = "pp"
-
                 rec["date_created"] = [
                     year_created,
                 ]
@@ -85,15 +77,6 @@ def main():
                 rec["publisher"] = "CERN Open Data Portal"
 
                 rec["recid"] = str(recid)
-
-                if "Run2015HI" in rec["abstract"]["description"]:
-                    rec["run_period"] = [
-                        "Run2015HI",
-                    ]
-                else:
-                    rec["run_period"] = [
-                        "Run2015",
-                    ]
 
                 rec["title"] = "High-Level Trigger path information " + title
 
@@ -116,18 +99,9 @@ def main():
         else:
             pass
 
-    # Filter away HeavyIon records for now. We have created them and reserved
-    # record IDs, but we don't want to show them up in the web interface just
-    # yet.
-    filtered_records = []
-    for record in records:
-        if record["collision_information"]["type"] == "PbPb":
-            continue
-        filtered_records.append(record)
-
     print(
         json.dumps(
-            filtered_records,
+            records,
             indent=2,
             sort_keys=True,
             ensure_ascii=False,
