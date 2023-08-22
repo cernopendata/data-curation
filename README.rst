@@ -47,6 +47,7 @@ Specific data ingestion and curation campaigns:
 - `cms-2015-simulated-datasets <cms-2015-simulated-datasets>`_ -- helper scripts for the CMS 2015 open data release (simulated datasets)
 - `cms-release-info <cms-release-info>`_ -- CMS year-specific and run-era-specific information
 - `cms-YYYY-luminosity <cms-YYYY-luminosity>`_ -- helper scripts for the CMS luminosity information records (any year)
+- `cms-YYYY-run-numbers <cms-YYYY-run-numbers>`_ -- helper scripts for enriching CMS dataset run numbers (any year)
 - `cms-YYYY-simulated-datasets <cms-YYYY-simulated-datasets>`_ -- helper scripts for CMS simulated dataset records (any year)
 - `cms-YYYY-validated-runs <cms-YYYY-validated-runs>`_ -- helper scripts for the CMS validated runs records (any year)
 - `cms-run2-hlt-triggers <cms-run2-hlt-triggers>`_ -- helper scripts for the CMS Run2 data release (HLT triggers)
