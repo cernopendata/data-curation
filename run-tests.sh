@@ -7,8 +7,8 @@ check_script () {
     shellcheck run-tests.sh utils/*.sh
 }
 
-check_pycodestyle () {
-    pycodestyle utils/*.py
+check_black () {
+    black --check utils/*.py
 }
 
 check_pydocstyle () {
@@ -17,7 +17,7 @@ check_pydocstyle () {
 
 check_all () {
     check_script
-    check_pycodestyle
+    check_black
     check_pydocstyle
 }
 
@@ -30,7 +30,7 @@ for arg in "$@"
 do
     case $arg in
         --check-shellscript) check_script;;
-        --check-pycodestyle) check_pycodestyle;;
+        --check-black) check_black;;
         --check-pydocstyle) check_pydocstyle;;
         *)
     esac

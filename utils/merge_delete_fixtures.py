@@ -20,19 +20,34 @@ import os
 
 
 @click.command()
-@click.option('--input_file', '-f', required=True,
-              help='File to read data from')
-@click.option('--source_path', '-sp', required=True,
-              help='Source path to the node you want to copy \
-              from (ex. "note&description")')
-@click.option('--target_path', '-tp', required=True,
-              help='Target path to the node you want to concatenates \
-              source to (ex. "abstract&description")')
-@click.option('--delete_path', '-dp', required=True,
-              help='Path to the node you want to delete (ex. "note")')
-@click.option('--wrap_symbol', '-ws', required=True,
-              help='Symbol you want wrap source text arround \
-              (ex. "<p>&</p>" will result in "<p>Some text in source</p>)"')
+@click.option("--input_file", "-f", required=True, help="File to read data from")
+@click.option(
+    "--source_path",
+    "-sp",
+    required=True,
+    help='Source path to the node you want to copy \
+              from (ex. "note&description")',
+)
+@click.option(
+    "--target_path",
+    "-tp",
+    required=True,
+    help='Target path to the node you want to concatenates \
+              source to (ex. "abstract&description")',
+)
+@click.option(
+    "--delete_path",
+    "-dp",
+    required=True,
+    help='Path to the node you want to delete (ex. "note")',
+)
+@click.option(
+    "--wrap_symbol",
+    "-ws",
+    required=True,
+    help='Symbol you want wrap source text arround \
+              (ex. "<p>&</p>" will result in "<p>Some text in source</p>)"',
+)
 def main(input_file, source_path, target_path, delete_path, wrap_symbol):
     r"""Merge and delete record fixtures.
 
@@ -53,7 +68,7 @@ def main(input_file, source_path, target_path, delete_path, wrap_symbol):
     delete_paths = delete_path.split("&")
 
     # read input file
-    content = open(input_file, 'r').read()
+    content = open(input_file, "r").read()
     records = json.loads(content)
 
     # concatenate and delete records
@@ -64,8 +79,10 @@ def main(input_file, source_path, target_path, delete_path, wrap_symbol):
             record = concat_nested_value(record, target_paths, wraped_value)
             record = delete_nested_value(record, delete_paths)
         except KeyError:
-            logging.error("Path you specified not found! Will continue to \
-            the next record...")
+            logging.error(
+                "Path you specified not found! Will continue to \
+            the next record..."
+            )
 
     write_file(records, input_paths[-1])
 
@@ -85,11 +102,12 @@ def get_nested_value(records, source_paths):
 def concat_nested_value(records, target_paths, value):
     """Concatenate given path to target_path with specified value."""
     if len(target_paths) == 1:
-        records[target_paths[0]] = ' '.join([records[target_paths[0]], value])
+        records[target_paths[0]] = " ".join([records[target_paths[0]], value])
         return records
     else:
         records[target_paths[0]] = concat_nested_value(
-          records[target_paths[0]], target_paths[1:], value)
+            records[target_paths[0]], target_paths[1:], value
+        )
         return records
 
 
@@ -104,14 +122,16 @@ def delete_nested_value(records, delete_paths):
 def write_file(records, file_name):
     """Save JSON to file."""
     full_path = os.path.abspath(os.path.join("outputs", file_name))
-    with codecs.open(full_path, 'w', encoding='utf-8') as f:
-        json.dump(records,
-                  f,
-                  ensure_ascii=False,
-                  indent=2,
-                  sort_keys=True,
-                  separators=(',', ': '))
+    with codecs.open(full_path, "w", encoding="utf-8") as f:
+        json.dump(
+            records,
+            f,
+            ensure_ascii=False,
+            indent=2,
+            sort_keys=True,
+            separators=(",", ": "),
+        )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
