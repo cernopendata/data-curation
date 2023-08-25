@@ -302,7 +302,7 @@ def create_record(recid, run_period, version, dataset, aodformat):
                     + str(file_number + 1)
                     + " of "
                     + str(len(index_files))
-                    + ") for access to data via CMS virtual machine",
+                    + ") for access to data",
                     "size": file_size,
                     "type": "index" + index_type,
                     "uri": file_uri,
@@ -321,7 +321,7 @@ def create_record(recid, run_period, version, dataset, aodformat):
     if run_period == "Run2015D":
         rec["note"][
             "description"
-        ] = "This dataset contains all runs from 2015 RunD. The list of validated runs, which must be applied to all analyses, can be found in"
+        ] = "The list of validated runs, which must be applied to all analyses, can be found in"
     rec["note"]["links"] = [
         {"recid": recid_validated_runs},
     ]
