@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""
-Create CMS Trigger Information records.
+"""Create CMS Trigger Information helper snippet.
+
+The generated HTML snippet will be used later when creating trigger information record.
 """
 
 import glob
