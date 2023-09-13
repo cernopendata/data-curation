@@ -23,23 +23,25 @@ import json
 @click.option(
     "--output_path", "-o", required=True, help="Relative path to the output directory"
 )
-def main(input_path, output_path):
-    r"""Update datasets to include the container_images JSON field.
+def main(input_path, output_path):  # noqa: D301,D412
+    """Update datasets to include the container_images JSON field.
 
     Update datasets found at input_path to include the container_images JSON field
     and store the updated datasets at output_path.
 
     Example:
+
     \b
-    $ ./utils/update_fixtures_container_images.py -i ../opendata.cern.ch/cernopendata/modules/fixtures/data/records \\
-                                                  -o ../opendata.cern.ch/cernopendata/modules/fixtures/data/records
+    $ ./utils/update_fixtures_container_images.py \\
+         -i ../opendata.cern.ch/cernopendata/modules/fixtures/data/records \\
+         -o ../opendata.cern.ch/cernopendata/modules/fixtures/data/records
     """
     # find paths to all datasets that need to be updated
     find_datasets_cmd = f'find {input_path} -type f -name "cms-*-datasets*.json"'
     target_datasets_paths = subprocess.getoutput(find_datasets_cmd).split("\n")
 
     # make a temporary directory to hold source records
-    tmp_source_records_dir = "./tmp-source-records"
+    tmp_source_records_dir = "/tmp/source-records"
     isExist = os.path.exists(tmp_source_records_dir)
     if not isExist:
         os.mkdir(tmp_source_records_dir)
@@ -53,7 +55,9 @@ def main(input_path, output_path):
     for target_dataset_path in target_datasets_paths:
         # read target records
         target_dataset_basename = os.path.basename(target_dataset_path)[: -len(".json")]
-        target_dataset_content = open(target_dataset_path, "r").read()
+        target_dataset_file = open(target_dataset_path, "r")
+        target_dataset_content = target_dataset_file.read()
+        target_dataset_file.close()
         target_records = json.loads(target_dataset_content)
 
         # prepare source records
@@ -95,7 +99,7 @@ def main(input_path, output_path):
 
         # amend taregt records using update_fixtures.py
         updated_dataset_path = f"{output_path}/{target_dataset_basename}.json"
-        update_dataset_cmd = f"python3 ./utils/update_fixtures.py -s {source_records_path} -t {target_dataset_path} -m title -u system_details  > {updated_dataset_path}"
+        update_dataset_cmd = f"python3 ./utils/update_fixtures.py -s {source_records_path} -t {target_dataset_path} -m title -u system_details  > {updated_dataset_path}.NEW"
         p = subprocess.run(
             update_dataset_cmd,
             shell=True,
@@ -105,6 +109,7 @@ def main(input_path, output_path):
         if p.stderr:
             print(f"Error processing: {target_dataset_basename}.json")
             print(p.stderr.decode())
+        os.rename(updated_dataset_path + ".NEW", updated_dataset_path)
 
     # remove temporary directory
     shutil.rmtree(tmp_source_records_dir)
