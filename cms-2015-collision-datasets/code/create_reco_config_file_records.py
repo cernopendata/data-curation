@@ -32,10 +32,10 @@ def get_content(afile):
 
 def get_run_period(afile):
     "Return run period for configuration file."
-    if "2015HI" in afile:
+    if "2015HI" in get_content(afile):
         return "Run2015HI"
-    if "2015" in afile:
-        return "Run2015"
+    if "2015D" in get_content(afile):
+        return "Run2015D"
     return "FIXME"
 
 
@@ -183,7 +183,7 @@ def main():
             rec["recid"] = str(recid)
 
             rec["run_period"] = [
-                get_run_period(os.path.splitext(os.path.basename(afile))[0]),
+                get_run_period(afile)
             ]
 
             rec["title"] = get_title(afile)
