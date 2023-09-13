@@ -111,6 +111,12 @@ def main(input_path, output_path):  # noqa: D301,D412
             print(p.stderr.decode())
         os.rename(updated_dataset_path + ".NEW", updated_dataset_path)
 
+        # clean resulting JSON file
+        if os.path.exists("../opendata.cern.ch/scripts/clean_json_file.py"):
+            os.system(
+                f"../opendata.cern.ch/scripts/clean_json_file.py {updated_dataset_path}"
+            )
+
     # remove temporary directory
     shutil.rmtree(tmp_source_records_dir)
 
