@@ -61,7 +61,6 @@ def main():
 
     year_created = '2012'
     year_published = '2017'
-    run_period = 'Run2012B-Run2012C'
 
     records = []
     recid = RECID_START
@@ -84,11 +83,7 @@ def main():
 
                 rec['collections'] = ['CMS-Trigger-Information', ]
 
-                rec['collision_information'] = {}
-                rec['collision_information']['energy'] = '8TeV'
-                rec['collision_information']['type'] = 'pp'
-
-                rec['date_created'] = year_created
+                rec['date_created'] = [year_created, ]
                 rec['date_published'] = year_published
 
                 rec['experiment'] = 'CMS'
@@ -96,8 +91,6 @@ def main():
                 rec['publisher'] = 'CERN Open Data Portal'
 
                 rec['recid'] = str(recid)
-
-                rec['run_period'] = run_period
 
                 rec['title'] = 'High-Level Trigger path information ' + title
 
