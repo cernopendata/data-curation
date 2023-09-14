@@ -1,11 +1,11 @@
 /DoubleMu/Run2015E-PromptReco-v1/AOD:Events stored in this primary dataset were selected because of the presence of two high-pt muons.
-/FullTrack/Run2015E-PromptReco-v1/AOD: Events stored in this primary dataset were selected because FIXME, check HLT.
+/FullTrack/Run2015E-PromptReco-v1/AOD: Events stored in this primary dataset were selected because based on analysis of tracks at the HLT level.
 /HeavyFlavor/Run2015E-PromptReco-v1/AOD: Events stored in this primary dataset were selected because of the presence of signs for heavy-flavor mesons.
 /HighMultiplicity/Run2015E-PromptReco-v1/AOD: Events stored in this primary dataset were selected because of high track multiplicity.
 /HighPtJet80/Run2015E-PromptReco-v1/AOD:Events stored in this primary dataset were selected because of the presence jet with a pt above 80 GeV. 
 /HighPtLowerJets/Run2015E-PromptReco-v1/AOD:Events stored in this primary dataset were selected because of the presence of a jet with a pt above 80 GeV.
 /HighPtLowerPhotons/Run2015E-PromptReco-v1/AOD:Events stored in this primary dataset were selected because of the presence of a jet with a pt above 40 or 60 GeV.
-/HighPtPhoton30AndZ/Run2015E-PromptReco-v1/AOD:Events stored in this primary dataset were selected because of the presence of one or more high-pt photons and/or a Z boson (FIXME).
+/HighPtPhoton30AndZ/Run2015E-PromptReco-v1/AOD:Events stored in this primary dataset were selected because of the presence of one high-pt photon or two photons/electrons with the invariant mass compatible with a Z boson.
 /MinimumBias1/Run2015E-PromptReco-v1/AOD:Events stored in this primary dataset are a sample of all events. They are directed in several primary datasets for data processing purposes.
 /MinimumBias10/Run2015E-PromptReco-v1/AOD:Events stored in this primary dataset are a sample of all events. They are directed in several primary datasets for data processing purposes.
 /MinimumBias11/Run2015E-PromptReco-v1/AOD:Events stored in this primary dataset are a sample of all events. They are directed in several primary datasets for data processing purposes.
