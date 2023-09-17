@@ -477,11 +477,11 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
         },
         {
           "description": "How to install the CMS Virtual Machine",
-          "url": "/docs/cms-virtual-machine-2015"
+          "url": "/docs/cms-virtual-machine-2013"
         },
         {
           "description": "Getting started with CMS open data",
-          "url": "/docs/cms-getting-started-2015"
+          "url": "/docs/cms-getting-started-hi-2013-2015"
         }
     ]
 
