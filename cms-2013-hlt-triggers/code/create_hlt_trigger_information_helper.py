@@ -10,7 +10,7 @@ import os
 import json
 
 TEMPLATE_TOC = """\
-      <tr><td>{runs}</td><td><a href="https://github.com/cms-sw/cmssw/tree/{cmssw}">{cmssw}</a></td><td><a href="files/{filename}">{title}</a></td></tr>"""
+      <tr><td>{runs}</td><td><a href="https://github.com/cms-sw/cmssw-cvs/releases/tag/{cmssw}">{cmssw}</a></td><td><a href="files/{filename}">{title}</a></td></tr>"""
 
 def main():
     """Do the main job."""
@@ -22,7 +22,8 @@ def main():
     # for every configuration line:
     for line in filtered_lines:
         cmssw, title, runs = line.split(None, 2)
-        
+        if cmssw.endswith("_ONLINE"):
+            cmssw = cmssw[:-7]
         runs = runs.strip()
         runs = runs.replace('(run ', '')
         runs = runs.replace('(runs ', '')
