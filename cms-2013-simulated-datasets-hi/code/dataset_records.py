@@ -46,6 +46,9 @@ LINK_INFO = {}
 #exec(open('./outputs/config_files_link_info.py', 'r').read())
 
 
+CONTAINERIMAGES_CACHE = {}
+
+
 def get_number_events(dataset, das_dir):
     """Return number of events for the dataset."""
     number_events = get_from_deep_json(get_das_store_json(dataset, 'dataset', das_dir), 'nevents')
@@ -305,6 +308,14 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid):
     return info
 
 
+def populate_containerimages_cache():
+    """Populate CONTAINERIMAGES cache (dataset -> system_details.container_images)"""
+    with open("../cms-release-info/cms_release_container_images_info.json") as f:
+        content = json.loads(f.read())
+        for key in content.keys():
+            CONTAINERIMAGES_CACHE[key] = content[key]
+
+
 def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir):
     """Create record for the given dataset."""
 
@@ -452,6 +463,8 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     rec['system_details'] = {}
     rec['system_details']['global_tag'] = recommended_gt
     rec['system_details']['release'] = recommended_cmssw
+    if recommended_cmssw in CONTAINERIMAGES_CACHE.keys():
+        rec["system_details"]["container_images"] = CONTAINERIMAGES_CACHE[recommended_cmssw]
 
     rec['title'] = dataset_full_name
 
@@ -540,6 +553,8 @@ def print_records(records):
 
 def main(datasets, eos_dir, das_dir, mcm_dir, conffiles_dir, doi_file, recid_file):
     "Do the job."
+
+    populate_containerimages_cache()
 
     #dataset_full_names = []
     #for dataset_full_name in datasets:
