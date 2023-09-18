@@ -30,7 +30,7 @@ exec(open("./outputs/reco_config_files_link_info.py", "r").read())
 
 DOI_INFO = {}
 
-RECID_START = 28500
+RECID_START = 30500
 RECID_VALIDATED_RUNS = "14220"
 YEAR_PUBLISHED = "2023"
 YEAR_CREATED = "2016"
@@ -146,7 +146,14 @@ def get_release_for_system_details(dataset_full_name):
 
 def get_global_tag_for_processing(dataset_full_name):
     """Return global tag info for the given dataset for the processing steps."""
-    pass
+    config_file_name = get_dataset_config_file_name(dataset_full_name)
+    content = open("./outputs/" + f"{config_file_name}.py", "r").read()
+    processing_global_tag = ""
+    pattern = r"process\.GlobalTag = GlobalTag\(process\.GlobalTag, '([^']*)'"
+    m = re.search(pattern, content)
+    if m:
+        processing_global_tag = m.group(1)
+    return processing_global_tag
 
 
 def get_global_tag_for_system_details(dataset_full_name):
@@ -173,7 +180,7 @@ def get_date_reprocessed(dataset_full_name):
     if not isUnique:
         print(f"{dataset_full_name} has multiple reprocessing dates associated with it!")
     date_reprocessed = datetime.date.fromtimestamp(date_reprocessed_timestamp).year
-    return date_reprocessed
+    return str(date_reprocessed)
 
 
 def get_run_range(dataset_full_name):
@@ -186,6 +193,14 @@ def get_run_range(dataset_full_name):
     run_numbers = p.stdout.decode().strip().split('\n')
     run_numbers.sort()
     return run_numbers[0], run_numbers[-1]
+
+
+def get_dataset_config_file_name(dataset_full_name):
+    dataset = dataset_full_name.split("/")[1]
+    run_period = dataset_full_name.split("/")[2].split("-", 1)[0]
+    version = dataset_full_name.split("/")[2].split("-")[1]    
+    config_file = f"ReReco-{run_period}-{dataset}-{version}"
+    return config_file
 
 
 def create_selection_information(dataset, dataset_full_name):
@@ -201,18 +216,26 @@ def create_selection_information(dataset, dataset_full_name):
     out += "</p>"
     # data taking / HLT:
     out += "<p><strong>Data taking / HLT</strong>"
-    out += '<br/>The collision data were assigned to different RAW datasets using the following <a href="/record/28300">HLT configuration</a>.</p>'
+    out += '<br/>The collision data were assigned to different RAW datasets using the following <a href="/record/30300">HLT configuration</a>.</p>'
     # data processing / RECO:
     run_period = re.search(r"(Run[0-9]+.)", dataset_full_name).groups()[0]
-    afile = "reco_" + run_period[3:] + "_" + dataset
-    process = "RECO"
+    afile = get_dataset_config_file_name(dataset_full_name)
+    aodformat = dataset_full_name.split("/")[3]
+    process = "PAT"
+    processing_source = "RAW"
+    if aodformat == "NANOAOD":
+        process = "NANO"
+        processing_source = "MINIAOD"
     generator_text = "Configuration file for " + process + " step " + afile
     release = get_release_for_processing(dataset_full_name)
     global_tag = get_global_tag_for_processing(dataset_full_name)
-    out += "<p><strong>Data processing / RECO</strong>"
+    out += f"<p><strong>Data processing / {process}</strong>"
     out += (
-        "<br/>This primary %s dataset was processed from the RAW dataset by the following step: "
-        % aodformat
+        "<br/>This primary %s dataset was processed from the %s dataset by the following step: "
+        % (
+         aodformat,
+         processing_source
+         )
     )
     out += "<br/>Step: %s" % process
     out += "<br/>Release: %s" % release

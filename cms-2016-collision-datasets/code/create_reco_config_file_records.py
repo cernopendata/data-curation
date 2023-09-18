@@ -22,7 +22,7 @@ NOTE = (
 )
 
 
-RECID_START = 28400
+RECID_START = 30400
 YEAR_CREATED = "2016"
 YEAR_PUBLISHED = "2023"
 COLLISION_ENERGY = "13Tev"
@@ -72,6 +72,9 @@ def get_python_filename(afile):
     if m:
         python_filename = m.groups(1)[0]
         python_filename = os.path.basename(python_filename)
+
+        pattern = r"-000\d+_0_cfg\.py$" # remove not needed trailing numbers from file name
+        python_filename = re.sub(pattern, ".py", python_filename)
     return python_filename
 
 
@@ -89,9 +92,9 @@ def get_process(afile):
     "Return suitable title of configuration file."
     content = get_content(afile)
     process = "UNKNOWN"
-    m = re.search(r"process = cms.Process\(\s?['\"]([A-Z]+)['\"]\s?\)", content)
+    m = re.search(r"process = cms\.Process\('([^']*)'", content)
     if m:
-        process = m.groups(1)[0]
+        process = m.group(1)
     return process
 
 
@@ -115,7 +118,7 @@ def main():
     fdesc.write("LINK_INFO = {\n")
 
     records = []
-
+    files_seen = []
     for root, dirs, files in os.walk("./inputs/config-store/"):
 
         for afile in files:
@@ -125,6 +128,11 @@ def main():
 
             if not afile_python_filename.startswith("ReReco"):
                 continue
+            
+            if afile_python_filename in files_seen:
+                continue
+            
+            files_seen.append(afile_python_filename)
 
             # Create nice reco_*.py files for copying them over to EOSPUBLIC
             shutil.copyfile(
