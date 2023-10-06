@@ -2,10 +2,10 @@ name: Build listings and records
 on:
   workflow_dispatch
 env:
-  RECID: 1058
-  YEAR: 2015
-  ERAS: Run2015E
-  TYPE: pphiref
+  RECID: 1059
+  YEAR: 2016
+  ERAS: Run2016G Run2016H
+  TYPE: pp
   # Inputs:
   # - 2013 pPb: 1056 2013 HIRun2013 pPb
   # - 2013 ppref: 1057 2013 Run2013A pphiref
