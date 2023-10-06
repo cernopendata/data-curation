@@ -6,13 +6,14 @@ The python3 script `vali_records.py` can be used to build the records for standa
 
 Inputs arguments:
 
-- recid (May 2023, the last used recid was 14210 for 2015 pp)
+- recid (Oct 2023, using recid was 14220, 14221 for 2016 pp)
 - year to be released
 - run era (for pp, give one of the released eras, it is needed to get the collision energy, stored per era)
 - type (pp, pPb, pphiref, PbPb)
 
 Input values:
 
+- 2016 pp: 14220 2016 Run2016G pp
 - 2013 pPb: 14216 2013 HIRun2013 pPb
 - 2013 ppref: 14218 2013 Run2013A pphiref
 - 2015 ppref: 14212 2015 Run2015E pphiref
