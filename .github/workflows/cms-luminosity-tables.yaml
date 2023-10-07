@@ -67,9 +67,9 @@ jobs:
         docker run -v $(pwd):/mnt/vol -w /home/brilws gitlab-registry.cern.ch/cms-cloud/brilws-docker /bin/bash /mnt/vol/commands.sh cert.txt csv $option summ | grep -v "#" |  grep  "/" | awk '{ print $1 }' FS=':' > run_numbers.txt
         docker run -v $(pwd):/mnt/vol -w /home/brilws gitlab-registry.cern.ch/cms-cloud/brilws-docker /bin/bash /mnt/vol/prescale.sh > outputs/'prescale_'$TYPE$YEAR'.csv'
         # Summary txt table per era, for all listed eras
-        ERAS=${{env.ERAS}}
-        echo "Create summary tables for $ERAS"
-        for era in ${ERAS[*]} 
+        # ERAS=${{env.ERAS}}
+        echo "Create summary tables for " ${{env.ERAS}}
+        for era in ${{env.ERAS}}
         do 
           echo "doing " $era
           curl 'http://api-server-cms-release-info.app.cern.ch/runeras?run_era='"$era"'' > myjs.json
@@ -86,7 +86,9 @@ jobs:
     - name: Build the luminosity records
       id: record
       run: |
-        python code/lumi_records.py $RECID $YEAR ${ERAS[0]} $TYPE > outputs/lumi_records.json
+        # just take one of the eras to a variable era, no matter which
+        for era in $ERAS; do echo $era; done 
+        python code/lumi_records.py $RECID $YEAR $era $TYPE > outputs/lumi_records.json
         #python code/vali_records.py > outputs/vali_records.json
     # upload output file NB bug: https://github.com/actions/upload-artifact/issues/294
     - name: Upload artifact
