@@ -159,13 +159,13 @@ def main(dataset_list,
 
     if create_mcm_store:
         import mcm_store
-        mcm_store.create(datasets, mcm_dir, das_dir, eos_dir, ignore_eos_store)
+        mcm_store.create(datasets, mcm_dir, eos_dir, ignore_eos_store)
 
     if get_conf_files:
         # check if user has key and cert
         if os.path.isfile(os.environ.get("HOME") + "/.globus/usercert.pem") and os.path.isfile(os.environ.get("HOME") + "/.globus/userkey.nodes.pem"):
             import config_store
-            config_store.main(eos_dir, das_dir, conf_dir, datasets, ignore_eos_store)
+            config_store.main(eos_dir, mcm_dir, conf_dir, datasets, ignore_eos_store)
         else:
             print("Error in key and certificate pairs (~/.globus/usercert.pem, ~/.globus/userkey.nodes.pem).")
             print('Did you forget to ')
@@ -174,8 +174,8 @@ def main(dataset_list,
             print('in the ~/.globus dir?')
 
     if print_categorisation or print_results:
-        import printer
         import categorisation
+        import printer
 
         categorised = categorisation.categorise_titles(datasets)
         printer.print_results(categorised, das_dir, mcm_dir, recid_file, doi_file, print_results)
