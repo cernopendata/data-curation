@@ -75,7 +75,6 @@ def create(dataset, das_dir):
     result_file = dataset.replace('/', '@') + ".json"
     mydasgoclient(dataset, "dataset", das_dir, result_file)
     mydasgoclient(dataset, "parent",  das_dir, result_file)
-    mydasgoclient(dataset, "config",  das_dir, result_file)
     mydasgoclient(dataset, "release", das_dir, result_file)
 
 
@@ -88,7 +87,6 @@ def main(das_dir,
     # create dirs for dataset and release
     for path in [das_dir + '/dataset',
                  das_dir + '/parent',
-                 das_dir + '/config',
                  das_dir + '/release']:
         if not os.path.exists(path):
             os.makedirs(path)
@@ -112,8 +110,6 @@ def main(das_dir,
 
 def get_generator_parameters(dataset, das_dir):
     """Return generator parameters dictionary for given dataset. Not used in 2016"""
-    # TODO get from mcm store instead?
-    # and/or from xsecDB
     out = get_from_deep_json(get_das_store_json(dataset, 'mcm', das_dir),
                              'generator_parameters')
     if out:

@@ -20,8 +20,7 @@ import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 from categorisation import guess_title_category
-from das_json_store import (get_cmssw_version_from_das, get_das_store_json,
-                            get_generator_parameters, get_parent_dataset)
+from das_json_store import (get_das_store_json, get_parent_dataset)
 from eos_store import (XROOTD_URI_BASE, get_dataset_index_file_base,
                        get_dataset_location)
 from mcm_store import (get_cmsDriver_script, get_cmssw_version_from_mcm,
@@ -37,9 +36,16 @@ from utils import (get_author_list_recid, get_dataset_format, get_dataset_year,
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
+recid_freerange_start = 30000 #FIXME not in use, using inputs/recid_info.py for now
+recommended_gt = "106X_mcRun2_asymptotic_v17"
+recommended_cmssw = "CMSSW_10_6_30"
+collision_energy = "13TeV"
+collision_type = "pp"
+year_published = "2023"
 
 LINK_INFO = {}
 
+CONTAINERIMAGES_CACHE = {}
 
 def get_number_events(dataset, das_dir):
     """Return number of events for the dataset."""
@@ -190,7 +196,7 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid_info):
         output_dataset = get_output_dataset_from_mcm(dataset, mcm_step_dir)
         if output_dataset:        
             step['output_dataset'] = output_dataset
-        release = get_cmssw_version(dataset, das_dir, mcm_step_dir)
+        release = get_cmssw_version_from_mcm(dataset, mcm_step_dir)
         if release:
             step['release'] = release
         global_tag = get_global_tag(dataset, mcm_step_dir)
@@ -253,9 +259,6 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid_info):
 
         info["steps"].append(step)
 
-    # reverse order of steps for provenance FIXME: order should be LHEGEN/GEN, SIM, DIGI2RAW, HLT, RECO, PAT, NANO
-    info['steps'].reverse()
-
     # post-generation fix: if we have LHE step, let's modify the configuration file titles for other steps
     # FIXME: is this now dublicate of the condition above?
     lhe_present = False
@@ -280,6 +283,12 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid_info):
                     
     return info
 
+def populate_containerimages_cache():
+    """Populate CONTAINERIMAGES cache (dataset -> system_details.container_images)"""
+    with open("../cms-release-info/cms_release_container_images_info.json") as f:
+        content = json.loads(f.read())
+        for key in content.keys():
+            CONTAINERIMAGES_CACHE[key] = content[key]
 
 def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir):
     """Create record for the given dataset."""
@@ -291,8 +300,6 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     year_created = '2016'
     year_published = '2023'  # 
     run_period = ['Run2016G', 'Run2016H']  #
-    global_tag = get_global_tag(dataset_full_name, mcm_dir)
-    release    = get_cmssw_version(dataset_full_name, das_dir, mcm_dir)
 
     additional_title = 'Simulated dataset ' + dataset + ' in ' + dataset_format + ' format for ' + year_created + ' collision data'
 
@@ -422,11 +429,11 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     rec['run_period'] = run_period
 
     # recomended global tag and cmssw release recommended for analysis
-    recommended_gt = get_recommended_global_tag_for_analysis(dataset_full_name)
-    recommended_cmssw = get_recommended_cmssw_for_analysis(dataset_full_name)
     rec['system_details'] = {}
-    rec['system_details']['global_tag'] = "106X_dataRun2_v37"
-    rec['system_details']['release'] = "CMSSW_10_6_30" 
+    rec['system_details']['global_tag'] = recommended_gt
+    rec['system_details']['release'] = recommended_cmssw 
+    if recommended_cmssw in CONTAINERIMAGES_CACHE.keys():
+        rec["system_details"]["container_images"] = CONTAINERIMAGES_CACHE[recommended_cmssw]
 
     rec['title'] = dataset_full_name
 
@@ -523,6 +530,8 @@ def print_records(records):
 
 def main(datasets, eos_dir, das_dir, mcm_dir, conffiles_dir, doi_file, recid_file):
     "Do the job."
+
+    populate_containerimages_cache()
 
     records_dir= "./outputs/records-" + dt.now().strftime("%Y-%m")
     os.makedirs(records_dir, exist_ok=True)
