@@ -75,8 +75,8 @@ def mcm_downloader(dataset, mcm_dir):
                                 shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     mcm_chain_prepids_out = str(mcm_chain_prepids.stdout.decode("utf-8"))
     json_object = json.loads(mcm_chain_prepids_out)
-    for step in json_object:
-        step_path = mcm_dir + "/chain/" + dataset.replace('/', '@') + "/" + step
+    for idx,step in enumerate(json_object):
+        step_path = mcm_dir + "/chain/" + dataset.replace('/', '@') + "/" + str(idx) + step
         for path in [step_path, step_path + "/dict", step_path + "/scripts"]:
             os.makedirs(path, exist_ok=True)
         
