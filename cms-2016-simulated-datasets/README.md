@@ -45,7 +45,7 @@ To build sample records (with a limited number of datasets in the input file) do
 $ python3 ./code/interface.py --create-das-json-store --ignore-eos-store DATASET_LIST
 
 $ auth-get-sso-cookie -u  https://cms-pdmv.cern.ch/mcm -o cookies.txt
-$ python3 ./code/interface.py --create-mcm-json-store --ignore-eos-store DATASET_LIST
+$ python3 ./code/interface.py --create-mcm-store --ignore-eos-store DATASET_LIST
 
 $ openssl pkcs12 -in myCert.p12 -nocerts -nodes -out userkey.nodes.pem # if not present
 $ python3 ./code/interface.py --get-conf-files --ignore-eos-store DATASET_LIST

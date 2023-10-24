@@ -37,9 +37,10 @@ def main(eos_dir,
 
     conffile_ids = []
     for dataset_full_name in eos_datasets:
-        for conffile_id in get_conffile_ids_all_chain_steps(dataset_full_name, mcm_dir):
-            if conffile_id not in conffile_ids:
-                conffile_ids.append(conffile_id)
+        if dataset_full_name.endswith('MINIAODSIM') == 0:
+            for conffile_id in get_conffile_ids_all_chain_steps(dataset_full_name, mcm_dir):
+                if conffile_id not in conffile_ids:
+                    conffile_ids.append(conffile_id)
 
     if not os.path.exists(conf_dir):
         os.makedirs(conf_dir, exist_ok=True)
