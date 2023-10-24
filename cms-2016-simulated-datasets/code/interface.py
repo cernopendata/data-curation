@@ -91,8 +91,8 @@ def main(dataset_list,
         $ python ./code/interface.py --create-das-json-store DATASET_LIST
 
         This creates a local cache. It queries DAS (Data Aggregation Service)
-        for the dataset, parent, config and mcm information and store it in
-        DAS_DIR/{dataset/,parent/,config/,mcm/}.
+        for the dataset, parent, and release information and store it in
+        DAS_DIR/{dataset/,parent/,release/}.
 
         \b
         (It takes a lot of time to run, up to ~30 seconds / dataset)
