@@ -10,7 +10,7 @@ from utils import get_dataset_name, get_from_deep_json
 
 
 def get_parent_dataset(dataset, das_dir):
-    "Return parent dataset to the given dataset or an empty string if no parent found. Not used for 2016"
+    "Return parent dataset to the given dataset or an empty string if no parent found."
     parent_dataset = ''
 
     filepath = das_dir + '/parent/' + dataset.replace('/', '@') + '.json'
@@ -74,6 +74,7 @@ def create(dataset, das_dir):
 
     result_file = dataset.replace('/', '@') + ".json"
     mydasgoclient(dataset, "dataset", das_dir, result_file)
+    mydasgoclient(dataset, "parent",  das_dir, result_file)
     mydasgoclient(dataset, "config",  das_dir, result_file)
     mydasgoclient(dataset, "release", das_dir, result_file)
 
@@ -86,6 +87,7 @@ def main(das_dir,
 
     # create dirs for dataset and release
     for path in [das_dir + '/dataset',
+                 das_dir + '/parent',
                  das_dir + '/config',
                  das_dir + '/release']:
         if not os.path.exists(path):

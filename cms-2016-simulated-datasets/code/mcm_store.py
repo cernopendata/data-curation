@@ -19,7 +19,8 @@ def mcm_downloader(dataset, mcm_dir):
         print("==> " + dataset + "\n==> Already exist. Skipping...")
         return
 
-    cmd = "curl -s -k https://cms-pdmv.cern.ch/mcm/public/restapi/requests/"
+    #cmd = "curl -s -k https://cms-pdmv.cern.ch/mcm/public/restapi/requests/"
+    cmd = "curl -s -k https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/"
 
     mcm_dict = subprocess.run(cmd + "produces" + dataset,
                               shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -52,6 +53,8 @@ def mcm_downloader(dataset, mcm_dir):
     ### New 2016
     # create a directory with the dataset name under mcm_dir + "/chain"
     # create dirs
+    if dataset.endswith('MINIAODSIM'):
+        return
     path = mcm_dir + "/chain/" + dataset.replace('/', '@')
     os.makedirs(path, exist_ok=True)
 
@@ -66,7 +69,8 @@ def mcm_downloader(dataset, mcm_dir):
     # commands line: curl -L -s -b cookies.txt https://cms-pdmv.cern.ch/mcm/restapi/chained_requests/get/<chain_prepid> | jq .results.chain
     # FIXME: change shell jq to deep json query
     # REQUIRES: run on command line first: auth-get-sso-cookie -u  https://cms-pdmv.cern.ch/mcm -o cookies.txt
-    chaincmd = "curl -L -s -b cookies.txt https://cms-pdmv.cern.ch/mcm/restapi/chained_requests/"
+    # chaincmd = "curl -L -s -b cookies.txt https://cms-pdmv.cern.ch/mcm/restapi/chained_requests/"
+    chaincmd = "curl -L -s -b cookies.txt https://cms-pdmv-prod.web.cern.ch/mcm/restapi/chained_requests/"
     mcm_chain_prepids = subprocess.run(chaincmd + "get/" + chain_prepid  + " | jq .results.chain",
                                 shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     mcm_chain_prepids_out = str(mcm_chain_prepids.stdout.decode("utf-8"))

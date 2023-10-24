@@ -158,9 +158,25 @@ def get_globaltag_from_conffile(afile, conf_dir):
     return globaltag
 
 
-def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid):
+#def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid):
+def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid_info):
     """Return DICT with all information about the generator steps."""
 
+    # For MiniAODSIM, find the corresponding Nano and use that information
+    # Might be best done at the when querying the McM
+   
+    if dataset.endswith('MINIAODSIM'): 
+        nano_found=0
+        dataset_first_name = get_from_deep_json(get_mcm_dict(dataset, mcm_dir), 'dataset_name')
+        for x in os.listdir(mcm_dir + '/chain'):
+            if x.startswith('@'+dataset_first_name):
+                dataset = x.replace('@', '/')
+                nano_found=1
+
+        if nano_found==0: 
+            print("A corresponding NANOAODSIM was not found for dataset: " + dataset)
+
+    recid = recid_info[dataset]
     info = {}
     info["description"] = "<p>These data were generated in several steps (see also <a href=\"/docs/cms-mc-production-overview\">CMS Monte Carlo production overview</a>):</p>"
     info["steps"] = []
@@ -341,11 +357,18 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     rec['license'] = {}
     rec['license']['attribution'] = 'CC0'
 
-    rec['methodology'] = get_all_generator_text(dataset_full_name, das_dir, mcm_dir, conffiles_dir, recid_info[dataset_full_name])
+    rec['methodology'] = get_all_generator_text(dataset_full_name, das_dir, mcm_dir, conffiles_dir, recid_info)
 
+    # For Mini, get the pileup from the corresponding Nano
+    dataset_name_for_nano = dataset_full_name
+    if dataset_full_name.endswith('MINIAODSIM'):
+        dataset_first_name = get_from_deep_json(get_mcm_dict(dataset_full_name, mcm_dir), 'dataset_name')
+        for x in os.listdir(mcm_dir + '/chain'):
+            if x.startswith('@'+dataset_first_name):
+                dataset_name_for_nano = x.replace('@', '/')
 
     pileup_dataset_name= ''
-    pileup_dataset_name= get_pileup_from_mcm(dataset_full_name, mcm_dir)
+    pileup_dataset_name= get_pileup_from_mcm(dataset_name_for_nano, mcm_dir)
     
     pileup_dataset_recid = {
         '/MinBias_TuneZ2_7TeV-pythia6/Summer11Leg-START53_LV4-v1/GEN-SIM': 36, # 2011
@@ -375,9 +398,26 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
 
     rec['recid'] = str(recid_info[dataset_full_name])
 
-    # rec['relations'] = []
-    # rec['relations']['title'] = ''  # FIXME, 2016 Nano are childs of 2016 Mini
-    # rec['relations']['type'] = 'isChildOf'
+    if dataset_full_name.endswith('NANOAODSIM'):
+        # Query from mcm dict fails for an example dataset because Mini is v1 in mcm and v2 in dataset list
+        # Get it from das instead 
+        #dataset_name_for_mini = get_from_deep_json(get_mcm_dict(dataset_full_name, mcm_dir), 'input_dataset')
+        dataset_name_for_mini = get_parent_dataset(dataset_full_name, das_dir)
+        relations_description = 'The corresponding MINIAODSIM dataset:'
+        relations_recid = str(recid_info[dataset_name_for_mini])
+        relations_type = 'isParentOf'
+    else:
+        relations_description = 'The corresponding NANOAODSIM dataset:'
+        relations_recid = str(recid_info[dataset_name_for_nano])
+        relations_type = 'isChildOf'
+    
+    rec['relations'] = [
+        {
+            'description': relations_description,
+            'recid': relations_recid,
+            'type': relations_type
+        }
+    ]
 
     rec['run_period'] = run_period
 
