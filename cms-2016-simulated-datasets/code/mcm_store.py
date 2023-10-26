@@ -242,6 +242,17 @@ def get_dataset_energy(dataset, mcm_dir):
                2016: '13TeV',
                }.get(year, 0)
 
+def get_data_processing_year(dataset, mcm_dir):
+    "Return year of the processing from McM"
+    mcm_dict = get_mcm_dict(dataset, mcm_dir)
+    date = get_from_deep_json(mcm_dict, 'pdmv_submission_date')
+    if len(date) == 6:
+        year='20' + date[:2]
+        return year
+    else:
+        print("In get_data_processing_year, unexpected format for date: expecting yymmdd, got :" + date)
+        return '0000'
+ 
 
 def get_generator_name(dataset, mcm_dir):
     "Return list of generators used for that dataset"
