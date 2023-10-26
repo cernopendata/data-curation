@@ -25,6 +25,7 @@ from eos_store import (XROOTD_URI_BASE, get_dataset_index_file_base,
                        get_dataset_location)
 from mcm_store import (get_cmsDriver_script, get_cmssw_version_from_mcm,
                        get_conffile_ids_from_mcm, get_dataset_energy,
+                       get_data_processing_year,
                        get_generator_name, get_generator_parameters_from_mcm,
                        get_genfragment_url, get_global_tag, get_mcm_dict,
                        get_parent_dataset_from_mcm, get_pileup_from_mcm,
@@ -46,6 +47,8 @@ year_published = "2023"
 LINK_INFO = {}
 
 CONTAINERIMAGES_CACHE = {}
+
+MININANORELATION_CACHE = {}
 
 def get_number_events(dataset, das_dir):
     """Return number of events for the dataset."""
@@ -164,23 +167,12 @@ def get_globaltag_from_conffile(afile, conf_dir):
     return globaltag
 
 
-#def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid):
 def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid_info):
     """Return DICT with all information about the generator steps."""
 
     # For MiniAODSIM, find the corresponding Nano and use that information
-    # Might be best done at the when querying the McM
-   
-    if dataset.endswith('MINIAODSIM'): 
-        nano_found=0
-        dataset_first_name = get_from_deep_json(get_mcm_dict(dataset, mcm_dir), 'dataset_name')
-        for x in os.listdir(mcm_dir + '/chain'):
-            if x.startswith('@'+dataset_first_name):
-                dataset = x.replace('@', '/')
-                nano_found=1
-
-        if nano_found==0: 
-            print("A corresponding NANOAODSIM was not found for dataset: " + dataset)
+    if dataset.endswith('MINIAODSIM'):
+        dataset = MININANORELATION_CACHE[dataset]
 
     recid = recid_info[dataset]
     info = {}
@@ -259,18 +251,6 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid_info):
 
         info["steps"].append(step)
 
-    # post-generation fix: if we have LHE step, let's modify the configuration file titles for other steps
-    # FIXME: is this now dublicate of the condition above?
-    lhe_present = False
-    for step in info['steps']:
-        if lhe_present:
-            for configuration_file in step.get('configuration_files'):
-                if configuration_file['title'] == 'Generator parameters':
-                    print("in the lhe_present condition with title Generator parameters not yet changed")
-                    configuration_file['title'] = 'Hadronizer parameters'
-        if 'LHE' in step['type']:
-            lhe_present = True
-
     # post-generation fix: keep generators only for the first step, remove from others:
     generators_present = False
     for step in info['steps']:
@@ -289,6 +269,21 @@ def populate_containerimages_cache():
         content = json.loads(f.read())
         for key in content.keys():
             CONTAINERIMAGES_CACHE[key] = content[key]
+
+def populate_mininanorelation_cache(dataset_full_names, mcm_dir):
+    """Populate MININANORELATION cache (to find the corresponding NANO for provenance, and for dataset -> relations)"""
+    for dataset_full_name in dataset_full_names:
+        if dataset_full_name.endswith('MINIAODSIM'):
+            nano_found = 0
+            dataset_first_name = get_from_deep_json(get_mcm_dict(dataset_full_name, mcm_dir), 'dataset_name')
+            for x in os.listdir(mcm_dir + '/chain'):
+                if x.startswith('@'+dataset_first_name):
+                    dataset_name_for_nano = x.replace('@', '/')
+                    nano_found = 1
+                    MININANORELATION_CACHE[dataset_full_name] = dataset_name_for_nano
+            if nano_found==0:
+                print("A corresponding NANOAODSIM was not found for dataset: " + dataset_full_name)   
+
 
 def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir):
     """Create record for the given dataset."""
@@ -317,8 +312,8 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     rec['collections'] = ['CMS-Simulated-Datasets', ]
 
     rec['collision_information'] = {}
-    rec['collision_information']['energy'] = get_dataset_energy(dataset_full_name, mcm_dir)
-    rec['collision_information']['type'] = 'pp'  # FIXME do not hardcode
+    rec['collision_information']['energy'] = collision_energy
+    rec['collision_information']['type'] = collision_type
 
     # FIXME cross section will be read in separately
     generator_parameters = get_generator_parameters_from_mcm(dataset_full_name, mcm_dir)
@@ -332,8 +327,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
 
     rec['date_created'] = [year_created]
     rec['date_published'] = year_published
-    rec['date_reprocessed'] = year_created # FIXME, this is not correct
-         # for year_reprocessed: could use the year from "pdmv_submission_date": "220201", or "pdmv_monitor_time": "Sun Feb 06 13:24:33 2022", reqmgr_name etc in dict
+    rec['date_reprocessed'] = get_data_processing_year(dataset_full_name, mcm_dir)
     rec['distribution'] = {}
     rec['distribution']['formats'] = [dataset_format.lower(), 'root']
     rec['distribution']['number_events'] = get_number_events(dataset_full_name, das_dir)
@@ -369,10 +363,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     # For Mini, get the pileup from the corresponding Nano
     dataset_name_for_nano = dataset_full_name
     if dataset_full_name.endswith('MINIAODSIM'):
-        dataset_first_name = get_from_deep_json(get_mcm_dict(dataset_full_name, mcm_dir), 'dataset_name')
-        for x in os.listdir(mcm_dir + '/chain'):
-            if x.startswith('@'+dataset_first_name):
-                dataset_name_for_nano = x.replace('@', '/')
+        dataset_name_for_nano = MININANORELATION_CACHE[dataset_full_name]
 
     pileup_dataset_name= ''
     pileup_dataset_name= get_pileup_from_mcm(dataset_name_for_nano, mcm_dir)
@@ -458,8 +449,8 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
                             '2011': 2011,
                             '2012': 2011}.get(year_created, 2011)
     rec['usage'] = {}
-    rec['usage']['description'] = "You can access these data through the CMS Open Data container or the CMS Virtual Machine. See the instructions for setting up one of the two alternative environments and getting started in" # FIXME
-    rec['usage']['links'] = [  # FIXME
+    rec['usage']['description'] = "You can access these data through the CMS Open Data container or the CMS Virtual Machine. See the instructions for setting up one of the two alternative environments and getting started in"
+    rec['usage']['links'] = [
         {
           "description": "Running CMS analysis code using Docker", 
           "url": "/docs/cms-guide-docker"
@@ -532,6 +523,7 @@ def main(datasets, eos_dir, das_dir, mcm_dir, conffiles_dir, doi_file, recid_fil
     "Do the job."
 
     populate_containerimages_cache()
+    populate_mininanorelation_cache(datasets, mcm_dir)
 
     records_dir= "./outputs/records-" + dt.now().strftime("%Y-%m")
     os.makedirs(records_dir, exist_ok=True)
