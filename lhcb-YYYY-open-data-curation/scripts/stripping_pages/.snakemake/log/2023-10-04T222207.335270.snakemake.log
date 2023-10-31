@@ -1,0 +1,167 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count
+------------------  -------
+list_raw_stripping       12
+prepare_stripping         1
+total                    13
+
+Select jobs to execute...
+
+[Wed Oct  4 22:22:07 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_['ew', 'leptonic', 'radiative', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+    jobid: 9
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_['ew', 'leptonic', 'radiative', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+    wildcards: version=stripping21r1p1, streams=['ew', 'leptonic', 'radiative', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles']
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:22:07 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p2_['ew', 'leptonic', 'radiative', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+    jobid: 11
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p2_['ew', 'leptonic', 'radiative', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+    wildcards: version=stripping21r1p2, streams=['ew', 'leptonic', 'radiative', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles']
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:22:07 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_['ew', 'leptonic', 'radiative', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+    jobid: 1
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_['ew', 'leptonic', 'radiative', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+    wildcards: version=stripping21, streams=['ew', 'leptonic', 'radiative', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles']
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:22:07 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+    jobid: 4
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+    wildcards: version=stripping21r0p1, streams=['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles']
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:22:07 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+    jobid: 6
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+    wildcards: version=stripping21r0p2, streams=['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles']
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:22:07 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1_['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+    jobid: 8
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1_['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+    wildcards: version=stripping21r1, streams=['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles']
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:22:07 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+    jobid: 10
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+    wildcards: version=stripping21r1p1, streams=['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles']
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:22:07 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p2_['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+    jobid: 12
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p2_['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+    wildcards: version=stripping21r1p2, streams=['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles']
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Wed Oct  4 22:22:07 2023]
+Error in rule list_raw_stripping:
+    jobid: 9
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_['ew', 'leptonic', 'radiative', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+    shell:
+        
+        xrdfs root://eosuser.cern.ch ls /eos/project/l/lhcbwebsites/www/projects/stripping/config/stripping21r1p1/['ew', 'leptonic', 'radiative', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'] | grep -v '\.sys\.v#' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_['ew', 'leptonic', 'radiative', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Oct  4 22:22:07 2023]
+Error in rule list_raw_stripping:
+    jobid: 11
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p2_['ew', 'leptonic', 'radiative', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+    shell:
+        
+        xrdfs root://eosuser.cern.ch ls /eos/project/l/lhcbwebsites/www/projects/stripping/config/stripping21r1p2/['ew', 'leptonic', 'radiative', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'] | grep -v '\.sys\.v#' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p2_['ew', 'leptonic', 'radiative', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Oct  4 22:22:07 2023]
+Error in rule list_raw_stripping:
+    jobid: 1
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_['ew', 'leptonic', 'radiative', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+    shell:
+        
+        xrdfs root://eosuser.cern.ch ls /eos/project/l/lhcbwebsites/www/projects/stripping/config/stripping21/['ew', 'leptonic', 'radiative', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'] | grep -v '\.sys\.v#' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_['ew', 'leptonic', 'radiative', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Oct  4 22:22:07 2023]
+Error in rule list_raw_stripping:
+    jobid: 4
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+    shell:
+        
+        xrdfs root://eosuser.cern.ch ls /eos/project/l/lhcbwebsites/www/projects/stripping/config/stripping21r0p1/['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'] | grep -v '\.sys\.v#' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Oct  4 22:22:07 2023]
+Error in rule list_raw_stripping:
+    jobid: 6
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+    shell:
+        
+        xrdfs root://eosuser.cern.ch ls /eos/project/l/lhcbwebsites/www/projects/stripping/config/stripping21r0p2/['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'] | grep -v '\.sys\.v#' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Oct  4 22:22:07 2023]
+Error in rule list_raw_stripping:
+    jobid: 8
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1_['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+    shell:
+        
+        xrdfs root://eosuser.cern.ch ls /eos/project/l/lhcbwebsites/www/projects/stripping/config/stripping21r1/['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'] | grep -v '\.sys\.v#' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1_['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Oct  4 22:22:07 2023]
+Error in rule list_raw_stripping:
+    jobid: 10
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+    shell:
+        
+        xrdfs root://eosuser.cern.ch ls /eos/project/l/lhcbwebsites/www/projects/stripping/config/stripping21r1p1/['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'] | grep -v '\.sys\.v#' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Oct  4 22:22:07 2023]
+Error in rule list_raw_stripping:
+    jobid: 12
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p2_['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+    shell:
+        
+        xrdfs root://eosuser.cern.ch ls /eos/project/l/lhcbwebsites/www/projects/stripping/config/stripping21r1p2/['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'] | grep -v '\.sys\.v#' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p2_['ew', 'leptonic', 'bhadron', 'bhadroncompleteevent', 'charm', 'charmcompleteevent', 'dimuon', 'semileptonic', 'commonparticles'].txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-04T222207.335270.snakemake.log

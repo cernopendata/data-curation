@@ -1,0 +1,61 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+convert_index            2
+prepare_stripping        1
+total                    3
+
+Select jobs to execute...
+
+[Thu Sep 28 11:56:41 2023]
+rule convert_index:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21_html/index_clean.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/stripping21_index.md
+    jobid: 7
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/stripping21_index.md
+    wildcards: version=stripping21
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Sep 28 11:56:41 2023]
+rule convert_index:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1_html/index_clean.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/stripping21r1_index.md
+    jobid: 8
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/stripping21r1_index.md
+    wildcards: version=stripping21r1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Sep 28 11:56:41 2023]
+Error in rule convert_index:
+    jobid: 7
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21_html/index_clean.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/stripping21_index.md
+    shell:
+        
+        pandoc /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21_html/index_clean.html --from html --to gfm --lua-filter=links-to-md.lua | sed 's/\\[/[/g' | sed 's/\\]/]/g' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/stripping21_index.md;
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job convert_index since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/stripping21_index.md
+[Thu Sep 28 11:56:41 2023]
+Error in rule convert_index:
+    jobid: 8
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1_html/index_clean.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/stripping21r1_index.md
+    shell:
+        
+        pandoc /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1_html/index_clean.html --from html --to gfm --lua-filter=links-to-md.lua | sed 's/\\[/[/g' | sed 's/\\]/]/g' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/stripping21r1_index.md;
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job convert_index since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/stripping21r1_index.md
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-09-28T115641.314460.snakemake.log

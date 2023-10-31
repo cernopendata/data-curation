@@ -1,0 +1,27 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+create_temp_line_files        3
+prepare_stripping             1
+total                         4
+
+Select jobs to execute...
+
+[Fri Oct 13 15:23:22 2023]
+rule create_temp_line_files:
+    input: create_temp_line_files.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21_leptonic.txt
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/listed/stripping21/leptonic
+    jobid: 4
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/listed/stripping21/leptonic
+    wildcards: version=stripping21, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+RuleException in rule create_temp_line_files in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 56:
+AttributeError: 'Params' object has no attribute 'outdir', when formatting the following:
+
+        python3 {input.script} --inputfile {input.line_list} --outdir {params.outdir}
+        

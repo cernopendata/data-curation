@@ -1,0 +1,4 @@
+KeyError in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 23:
+('stripping21', 'radiative')
+  File "/Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile", line 21, in <module>
+  File "/Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile", line 23, in <listcomp>

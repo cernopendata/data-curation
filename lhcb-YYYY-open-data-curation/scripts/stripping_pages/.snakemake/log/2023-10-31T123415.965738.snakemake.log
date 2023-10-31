@@ -1,0 +1,188 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+clean_index              6
+convert_index            6
+prepare_stripping        1
+total                   13
+
+Select jobs to execute...
+
+[Tue Oct 31 12:34:17 2023]
+rule clean_index:
+    input: ../../config.yaml, clean_index.py, /Users/mindaugassarpis/Work/StrippingPages/stripping21r1p1/index.html
+    output: ../../release/stripping_pages/temp/stripping21r1p1/clean_index.html
+    jobid: 5
+    reason: Updated input files: clean_index.py
+    wildcards: version=stripping21r1p1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Tue Oct 31 12:34:17 2023]
+rule clean_index:
+    input: ../../config.yaml, clean_index.py, /Users/mindaugassarpis/Work/StrippingPages/stripping21r1p2/index.html
+    output: ../../release/stripping_pages/temp/stripping21r1p2/clean_index.html
+    jobid: 6
+    reason: Updated input files: clean_index.py
+    wildcards: version=stripping21r1p2
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Tue Oct 31 12:34:17 2023]
+rule clean_index:
+    input: ../../config.yaml, clean_index.py, /Users/mindaugassarpis/Work/StrippingPages/stripping21/index.html
+    output: ../../release/stripping_pages/temp/stripping21/clean_index.html
+    jobid: 1
+    reason: Updated input files: clean_index.py
+    wildcards: version=stripping21
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Tue Oct 31 12:34:17 2023]
+rule clean_index:
+    input: ../../config.yaml, clean_index.py, /Users/mindaugassarpis/Work/StrippingPages/stripping21r0p1/index.html
+    output: ../../release/stripping_pages/temp/stripping21r0p1/clean_index.html
+    jobid: 2
+    reason: Updated input files: clean_index.py
+    wildcards: version=stripping21r0p1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Tue Oct 31 12:34:17 2023]
+rule clean_index:
+    input: ../../config.yaml, clean_index.py, /Users/mindaugassarpis/Work/StrippingPages/stripping21r0p2/index.html
+    output: ../../release/stripping_pages/temp/stripping21r0p2/clean_index.html
+    jobid: 3
+    reason: Updated input files: clean_index.py
+    wildcards: version=stripping21r0p2
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Tue Oct 31 12:34:17 2023]
+rule clean_index:
+    input: ../../config.yaml, clean_index.py, /Users/mindaugassarpis/Work/StrippingPages/stripping21r1/index.html
+    output: ../../release/stripping_pages/temp/stripping21r1/clean_index.html
+    jobid: 4
+    reason: Updated input files: clean_index.py
+    wildcards: version=stripping21r1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 31 12:34:17 2023]
+Finished job 2.
+1 of 13 steps (8%) done
+Select jobs to execute...
+
+[Tue Oct 31 12:34:17 2023]
+rule convert_index:
+    input: ../../release/stripping_pages/temp/stripping21r0p1/clean_index.html
+    output: ../../release/stripping_pages/processed/stripping21r0p1/stripping21r0p1-index.md
+    jobid: 8
+    reason: Input files updated by another job: ../../release/stripping_pages/temp/stripping21r0p1/clean_index.html
+    wildcards: version=stripping21r0p1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 31 12:34:17 2023]
+Finished job 5.
+2 of 13 steps (15%) done
+Select jobs to execute...
+
+[Tue Oct 31 12:34:17 2023]
+rule convert_index:
+    input: ../../release/stripping_pages/temp/stripping21r1p1/clean_index.html
+    output: ../../release/stripping_pages/processed/stripping21r1p1/stripping21r1p1-index.md
+    jobid: 11
+    reason: Input files updated by another job: ../../release/stripping_pages/temp/stripping21r1p1/clean_index.html
+    wildcards: version=stripping21r1p1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 31 12:34:17 2023]
+Finished job 6.
+3 of 13 steps (23%) done
+Select jobs to execute...
+
+[Tue Oct 31 12:34:17 2023]
+rule convert_index:
+    input: ../../release/stripping_pages/temp/stripping21r1p2/clean_index.html
+    output: ../../release/stripping_pages/processed/stripping21r1p2/stripping21r1p2-index.md
+    jobid: 12
+    reason: Input files updated by another job: ../../release/stripping_pages/temp/stripping21r1p2/clean_index.html
+    wildcards: version=stripping21r1p2
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 31 12:34:18 2023]
+Finished job 3.
+4 of 13 steps (31%) done
+Select jobs to execute...
+
+[Tue Oct 31 12:34:18 2023]
+rule convert_index:
+    input: ../../release/stripping_pages/temp/stripping21r0p2/clean_index.html
+    output: ../../release/stripping_pages/processed/stripping21r0p2/stripping21r0p2-index.md
+    jobid: 9
+    reason: Input files updated by another job: ../../release/stripping_pages/temp/stripping21r0p2/clean_index.html
+    wildcards: version=stripping21r0p2
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 31 12:34:18 2023]
+Finished job 4.
+5 of 13 steps (38%) done
+Select jobs to execute...
+
+[Tue Oct 31 12:34:18 2023]
+rule convert_index:
+    input: ../../release/stripping_pages/temp/stripping21r1/clean_index.html
+    output: ../../release/stripping_pages/processed/stripping21r1/stripping21r1-index.md
+    jobid: 10
+    reason: Input files updated by another job: ../../release/stripping_pages/temp/stripping21r1/clean_index.html
+    wildcards: version=stripping21r1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 31 12:34:18 2023]
+Finished job 1.
+6 of 13 steps (46%) done
+Select jobs to execute...
+
+[Tue Oct 31 12:34:18 2023]
+rule convert_index:
+    input: ../../release/stripping_pages/temp/stripping21/clean_index.html
+    output: ../../release/stripping_pages/processed/stripping21/stripping21-index.md
+    jobid: 7
+    reason: Input files updated by another job: ../../release/stripping_pages/temp/stripping21/clean_index.html
+    wildcards: version=stripping21
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 31 12:34:18 2023]
+Finished job 11.
+7 of 13 steps (54%) done
+[Tue Oct 31 12:34:18 2023]
+Finished job 8.
+8 of 13 steps (62%) done
+[Tue Oct 31 12:34:18 2023]
+Finished job 12.
+9 of 13 steps (69%) done
+[Tue Oct 31 12:34:18 2023]
+Finished job 9.
+10 of 13 steps (77%) done
+[Tue Oct 31 12:34:19 2023]
+Finished job 7.
+11 of 13 steps (85%) done
+[Tue Oct 31 12:34:19 2023]
+Finished job 10.
+12 of 13 steps (92%) done
+Select jobs to execute...
+
+[Tue Oct 31 12:34:19 2023]
+localrule prepare_stripping:
+    input: ../../release/stripping_pages/temp/stripping21/clean_index.html, ../../release/stripping_pages/temp/stripping21r0p1/clean_index.html, ../../release/stripping_pages/temp/stripping21r0p2/clean_index.html, ../../release/stripping_pages/temp/stripping21r1/clean_index.html, ../../release/stripping_pages/temp/stripping21r1p1/clean_index.html, ../../release/stripping_pages/temp/stripping21r1p2/clean_index.html, ../../release/stripping_pages/processed/stripping21/stripping21-index.md, ../../release/stripping_pages/processed/stripping21r0p1/stripping21r0p1-index.md, ../../release/stripping_pages/processed/stripping21r0p2/stripping21r0p2-index.md, ../../release/stripping_pages/processed/stripping21r1/stripping21r1-index.md, ../../release/stripping_pages/processed/stripping21r1p1/stripping21r1p1-index.md, ../../release/stripping_pages/processed/stripping21r1p2/stripping21r1p2-index.md, ../../release/stripping_pages/temp/stripping21/ew/success.txt, ../../release/stripping_pages/temp/stripping21/leptonic/success.txt, ../../release/stripping_pages/temp/stripping21/radiative/success.txt, ../../release/stripping_pages/temp/stripping21/bhadron/success.txt, ../../release/stripping_pages/temp/stripping21/bhadroncompleteevent/success.txt, ../../release/stripping_pages/temp/stripping21/charm/success.txt, ../../release/stripping_pages/temp/stripping21/charmcompleteevent/success.txt, ../../release/stripping_pages/temp/stripping21/dimuon/success.txt, ../../release/stripping_pages/temp/stripping21/semileptonic/success.txt, ../../release/stripping_pages/temp/stripping21/commonparticles/success.txt, ../../release/stripping_pages/temp/stripping21r0p1/ew/success.txt, ../../release/stripping_pages/temp/stripping21r0p1/leptonic/success.txt, ../../release/stripping_pages/temp/stripping21r0p1/bhadron/success.txt, ../../release/stripping_pages/temp/stripping21r0p1/bhadroncompleteevent/success.txt, ../../release/stripping_pages/temp/stripping21r0p1/charm/success.txt, ../../release/stripping_pages/temp/stripping21r0p1/charmcompleteevent/success.txt, ../../release/stripping_pages/temp/stripping21r0p1/dimuon/success.txt, ../../release/stripping_pages/temp/stripping21r0p1/semileptonic/success.txt, ../../release/stripping_pages/temp/stripping21r0p1/commonparticles/success.txt, ../../release/stripping_pages/temp/stripping21r0p2/ew/success.txt, ../../release/stripping_pages/temp/stripping21r0p2/leptonic/success.txt, ../../release/stripping_pages/temp/stripping21r0p2/bhadron/success.txt, ../../release/stripping_pages/temp/stripping21r0p2/bhadroncompleteevent/success.txt, ../../release/stripping_pages/temp/stripping21r0p2/charm/success.txt, ../../release/stripping_pages/temp/stripping21r0p2/charmcompleteevent/success.txt, ../../release/stripping_pages/temp/stripping21r0p2/dimuon/success.txt, ../../release/stripping_pages/temp/stripping21r0p2/semileptonic/success.txt, ../../release/stripping_pages/temp/stripping21r0p2/commonparticles/success.txt, ../../release/stripping_pages/temp/stripping21r1/ew/success.txt, ../../release/stripping_pages/temp/stripping21r1/leptonic/success.txt, ../../release/stripping_pages/temp/stripping21r1/radiative/success.txt, ../../release/stripping_pages/temp/stripping21r1/bhadron/success.txt, ../../release/stripping_pages/temp/stripping21r1/bhadroncompleteevent/success.txt, ../../release/stripping_pages/temp/stripping21r1/charm/success.txt, ../../release/stripping_pages/temp/stripping21r1/charmcompleteevent/success.txt, ../../release/stripping_pages/temp/stripping21r1/dimuon/success.txt, ../../release/stripping_pages/temp/stripping21r1/semileptonic/success.txt, ../../release/stripping_pages/temp/stripping21r1/commonparticles/success.txt, ../../release/stripping_pages/temp/stripping21r1p1/ew/success.txt, ../../release/stripping_pages/temp/stripping21r1p1/leptonic/success.txt, ../../release/stripping_pages/temp/stripping21r1p1/bhadron/success.txt, ../../release/stripping_pages/temp/stripping21r1p1/bhadroncompleteevent/success.txt, ../../release/stripping_pages/temp/stripping21r1p1/charm/success.txt, ../../release/stripping_pages/temp/stripping21r1p1/charmcompleteevent/success.txt, ../../release/stripping_pages/temp/stripping21r1p1/dimuon/success.txt, ../../release/stripping_pages/temp/stripping21r1p1/semileptonic/success.txt, ../../release/stripping_pages/temp/stripping21r1p1/commonparticles/success.txt, ../../release/stripping_pages/temp/stripping21r1p2/ew/success.txt, ../../release/stripping_pages/temp/stripping21r1p2/leptonic/success.txt, ../../release/stripping_pages/temp/stripping21r1p2/bhadron/success.txt, ../../release/stripping_pages/temp/stripping21r1p2/bhadroncompleteevent/success.txt, ../../release/stripping_pages/temp/stripping21r1p2/charm/success.txt, ../../release/stripping_pages/temp/stripping21r1p2/charmcompleteevent/success.txt, ../../release/stripping_pages/temp/stripping21r1p2/dimuon/success.txt, ../../release/stripping_pages/temp/stripping21r1p2/semileptonic/success.txt, ../../release/stripping_pages/temp/stripping21r1p2/commonparticles/success.txt, ../../release/stripping_pages/temp/json_success_stripping21_ew.txt, ../../release/stripping_pages/temp/json_success_stripping21_leptonic.txt, ../../release/stripping_pages/temp/json_success_stripping21_radiative.txt, ../../release/stripping_pages/temp/json_success_stripping21_bhadron.txt, ../../release/stripping_pages/temp/json_success_stripping21_bhadroncompleteevent.txt, ../../release/stripping_pages/temp/json_success_stripping21_charm.txt, ../../release/stripping_pages/temp/json_success_stripping21_charmcompleteevent.txt, ../../release/stripping_pages/temp/json_success_stripping21_dimuon.txt, ../../release/stripping_pages/temp/json_success_stripping21_semileptonic.txt, ../../release/stripping_pages/temp/json_success_stripping21_commonparticles.txt, ../../release/stripping_pages/temp/json_success_stripping21r0p1_ew.txt, ../../release/stripping_pages/temp/json_success_stripping21r0p1_leptonic.txt, ../../release/stripping_pages/temp/json_success_stripping21r0p1_bhadron.txt, ../../release/stripping_pages/temp/json_success_stripping21r0p1_bhadroncompleteevent.txt, ../../release/stripping_pages/temp/json_success_stripping21r0p1_charm.txt, ../../release/stripping_pages/temp/json_success_stripping21r0p1_charmcompleteevent.txt, ../../release/stripping_pages/temp/json_success_stripping21r0p1_dimuon.txt, ../../release/stripping_pages/temp/json_success_stripping21r0p1_semileptonic.txt, ../../release/stripping_pages/temp/json_success_stripping21r0p1_commonparticles.txt, ../../release/stripping_pages/temp/json_success_stripping21r0p2_ew.txt, ../../release/stripping_pages/temp/json_success_stripping21r0p2_leptonic.txt, ../../release/stripping_pages/temp/json_success_stripping21r0p2_bhadron.txt, ../../release/stripping_pages/temp/json_success_stripping21r0p2_bhadroncompleteevent.txt, ../../release/stripping_pages/temp/json_success_stripping21r0p2_charm.txt, ../../release/stripping_pages/temp/json_success_stripping21r0p2_charmcompleteevent.txt, ../../release/stripping_pages/temp/json_success_stripping21r0p2_dimuon.txt, ../../release/stripping_pages/temp/json_success_stripping21r0p2_semileptonic.txt, ../../release/stripping_pages/temp/json_success_stripping21r0p2_commonparticles.txt, ../../release/stripping_pages/temp/json_success_stripping21r1_ew.txt, ../../release/stripping_pages/temp/json_success_stripping21r1_leptonic.txt, ../../release/stripping_pages/temp/json_success_stripping21r1_radiative.txt, ../../release/stripping_pages/temp/json_success_stripping21r1_bhadron.txt, ../../release/stripping_pages/temp/json_success_stripping21r1_bhadroncompleteevent.txt, ../../release/stripping_pages/temp/json_success_stripping21r1_charm.txt, ../../release/stripping_pages/temp/json_success_stripping21r1_charmcompleteevent.txt, ../../release/stripping_pages/temp/json_success_stripping21r1_dimuon.txt, ../../release/stripping_pages/temp/json_success_stripping21r1_semileptonic.txt, ../../release/stripping_pages/temp/json_success_stripping21r1_commonparticles.txt, ../../release/stripping_pages/temp/json_success_stripping21r1p1_ew.txt, ../../release/stripping_pages/temp/json_success_stripping21r1p1_leptonic.txt, ../../release/stripping_pages/temp/json_success_stripping21r1p1_bhadron.txt, ../../release/stripping_pages/temp/json_success_stripping21r1p1_bhadroncompleteevent.txt, ../../release/stripping_pages/temp/json_success_stripping21r1p1_charm.txt, ../../release/stripping_pages/temp/json_success_stripping21r1p1_charmcompleteevent.txt, ../../release/stripping_pages/temp/json_success_stripping21r1p1_dimuon.txt, ../../release/stripping_pages/temp/json_success_stripping21r1p1_semileptonic.txt, ../../release/stripping_pages/temp/json_success_stripping21r1p1_commonparticles.txt, ../../release/stripping_pages/temp/json_success_stripping21r1p2_ew.txt, ../../release/stripping_pages/temp/json_success_stripping21r1p2_leptonic.txt, ../../release/stripping_pages/temp/json_success_stripping21r1p2_bhadron.txt, ../../release/stripping_pages/temp/json_success_stripping21r1p2_bhadroncompleteevent.txt, ../../release/stripping_pages/temp/json_success_stripping21r1p2_charm.txt, ../../release/stripping_pages/temp/json_success_stripping21r1p2_charmcompleteevent.txt, ../../release/stripping_pages/temp/json_success_stripping21r1p2_dimuon.txt, ../../release/stripping_pages/temp/json_success_stripping21r1p2_semileptonic.txt, ../../release/stripping_pages/temp/json_success_stripping21r1p2_commonparticles.txt
+    jobid: 0
+    reason: Input files updated by another job: ../../release/stripping_pages/processed/stripping21r1p1/stripping21r1p1-index.md, ../../release/stripping_pages/temp/stripping21r0p1/clean_index.html, ../../release/stripping_pages/processed/stripping21/stripping21-index.md, ../../release/stripping_pages/temp/stripping21r1/clean_index.html, ../../release/stripping_pages/processed/stripping21r0p2/stripping21r0p2-index.md, ../../release/stripping_pages/temp/stripping21r1p2/clean_index.html, ../../release/stripping_pages/processed/stripping21r0p1/stripping21r0p1-index.md, ../../release/stripping_pages/processed/stripping21r1p2/stripping21r1p2-index.md, ../../release/stripping_pages/temp/stripping21/clean_index.html, ../../release/stripping_pages/processed/stripping21r1/stripping21r1-index.md, ../../release/stripping_pages/temp/stripping21r1p1/clean_index.html, ../../release/stripping_pages/temp/stripping21r0p2/clean_index.html
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 31 12:34:19 2023]
+Finished job 0.
+13 of 13 steps (100%) done
+Complete log: .snakemake/log/2023-10-31T123415.965738.snakemake.log

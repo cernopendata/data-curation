@@ -1,0 +1,173 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+download_raw_stripping       48
+prepare_stripping             1
+total                        49
+
+Select jobs to execute...
+
+[Fri Sep 29 16:44:34 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p2/charm
+    jobid: 45
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p2/charm
+    wildcards: version=stripping21r1p2, stream=charm
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:44:34 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/charmcompleteevent
+    jobid: 30
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/charmcompleteevent
+    wildcards: version=stripping21r1, stream=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:44:34 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/dimuon
+    jobid: 15
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/dimuon
+    wildcards: version=stripping21r0p1, stream=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:44:34 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/charmcompleteevent
+    jobid: 38
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/charmcompleteevent
+    wildcards: version=stripping21r1p1, stream=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:44:34 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p2/dimuon
+    jobid: 23
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p2/dimuon
+    wildcards: version=stripping21r0p2, stream=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:44:34 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/semileptonic
+    jobid: 8
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/semileptonic
+    wildcards: version=stripping21, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:44:34 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p2/charmcompleteevent
+    jobid: 46
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p2/charmcompleteevent
+    wildcards: version=stripping21r1p2, stream=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:44:34 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/dimuon
+    jobid: 31
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/dimuon
+    wildcards: version=stripping21r1, stream=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:45:49 2023]
+[Fri Sep 29 16:45:49 2023]
+Error in rule download_raw_stripping:
+    jobid: 23
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p2/dimuon
+    shell:
+        
+        python3 raw_stripping_downloader.py
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error in rule download_raw_stripping:
+    jobid: 31
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/dimuon
+    shell:
+        
+        python3 raw_stripping_downloader.py
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Sep 29 16:45:50 2023]
+Error in rule download_raw_stripping:
+    jobid: 38
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/charmcompleteevent
+    shell:
+        
+        python3 raw_stripping_downloader.py
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+ImproperOutputException in rule download_raw_stripping in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 39:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule download_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/charmcompleteevent
+    wildcards: version=stripping21r1, stream=charmcompleteevent
+    affected files:
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/charmcompleteevent
+Removing output files of failed job download_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/charmcompleteevent
+[Errno 66] Directory not empty: '/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/charmcompleteevent'
+ImproperOutputException in rule download_raw_stripping in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 39:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule download_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/semileptonic
+    wildcards: version=stripping21, stream=semileptonic
+    affected files:
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/semileptonic
+Removing output files of failed job download_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/semileptonic
+[Errno 66] Directory not empty: '/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/semileptonic'
+ImproperOutputException in rule download_raw_stripping in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 39:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule download_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/dimuon
+    wildcards: version=stripping21r0p1, stream=dimuon
+    affected files:
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/dimuon
+Removing output files of failed job download_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/dimuon
+[Errno 66] Directory not empty: '/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/dimuon'
+ImproperOutputException in rule download_raw_stripping in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 39:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule download_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p2/charmcompleteevent
+    wildcards: version=stripping21r1p2, stream=charmcompleteevent
+    affected files:
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p2/charmcompleteevent
+Removing output files of failed job download_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p2/charmcompleteevent
+[Errno 66] Directory not empty: '/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p2/charmcompleteevent'
+ImproperOutputException in rule download_raw_stripping in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 39:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule download_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p2/charm
+    wildcards: version=stripping21r1p2, stream=charm
+    affected files:
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p2/charm
+Removing output files of failed job download_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p2/charm
+[Errno 66] Directory not empty: '/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p2/charm'
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-09-29T164434.500009.snakemake.log

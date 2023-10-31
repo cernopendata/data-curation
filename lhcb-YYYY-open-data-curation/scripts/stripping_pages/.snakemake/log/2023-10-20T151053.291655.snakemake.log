@@ -1,0 +1,90 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count
+---------------------  -------
+clean_stripping_pages        3
+convert_index                2
+prepare_stripping            1
+total                        6
+
+Select jobs to execute...
+
+[Fri Oct 20 15:10:53 2023]
+rule clean_stripping_pages:
+    input: /Users/mindaugassarpis/Work/StrippingPages/stripping21/radiative, single_clean_stripping_page.py
+    output: ../../release/stripping_pages/processed/stripping21/radiative, ../../release/stripping_pages/temp/stripping21/radiative, ../../release/stripping_pages/temp/stripping21/radiative/success.txt
+    jobid: 5
+    reason: Missing output files: ../../release/stripping_pages/temp/stripping21/radiative/success.txt
+    wildcards: version=stripping21, stream=radiative
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Oct 20 15:10:53 2023]
+rule clean_stripping_pages:
+    input: /Users/mindaugassarpis/Work/StrippingPages/stripping21r0p1/commonparticles, single_clean_stripping_page.py
+    output: ../../release/stripping_pages/processed/stripping21r0p1/commonparticles, ../../release/stripping_pages/temp/stripping21r0p1/commonparticles, ../../release/stripping_pages/temp/stripping21r0p1/commonparticles/success.txt
+    jobid: 7
+    reason: Missing output files: ../../release/stripping_pages/temp/stripping21r0p1/commonparticles/success.txt
+    wildcards: version=stripping21r0p1, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Oct 20 15:10:53 2023]
+rule convert_index:
+    input: ../../release/stripping_pages/temp/stripping21/clean_index.html
+    output: ../../release/stripping_pages/processed/stripping21/stripping21-index.md
+    jobid: 3
+    reason: Missing output files: ../../release/stripping_pages/processed/stripping21/stripping21-index.md
+    wildcards: version=stripping21
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Oct 20 15:10:53 2023]
+rule convert_index:
+    input: ../../release/stripping_pages/temp/stripping21r0p1/clean_index.html
+    output: ../../release/stripping_pages/processed/stripping21r0p1/stripping21r0p1-index.md
+    jobid: 4
+    reason: Missing output files: ../../release/stripping_pages/processed/stripping21r0p1/stripping21r0p1-index.md
+    wildcards: version=stripping21r0p1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Oct 20 15:10:53 2023]
+rule clean_stripping_pages:
+    input: /Users/mindaugassarpis/Work/StrippingPages/stripping21/commonparticles, single_clean_stripping_page.py
+    output: ../../release/stripping_pages/processed/stripping21/commonparticles, ../../release/stripping_pages/temp/stripping21/commonparticles, ../../release/stripping_pages/temp/stripping21/commonparticles/success.txt
+    jobid: 6
+    reason: Missing output files: ../../release/stripping_pages/temp/stripping21/commonparticles/success.txt
+    wildcards: version=stripping21, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Oct 20 15:10:53 2023]
+Finished job 4.
+1 of 6 steps (17%) done
+[Fri Oct 20 15:10:53 2023]
+Finished job 3.
+2 of 6 steps (33%) done
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule clean_stripping_pages in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 75:
+Job 5  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+../../release/stripping_pages/processed/stripping21/radiative
+Removing output files of failed job clean_stripping_pages since they might be corrupted:
+../../release/stripping_pages/temp/stripping21/radiative, ../../release/stripping_pages/temp/stripping21/radiative/success.txt
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule clean_stripping_pages in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 75:
+Job 6  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+../../release/stripping_pages/processed/stripping21/commonparticles
+Removing output files of failed job clean_stripping_pages since they might be corrupted:
+../../release/stripping_pages/temp/stripping21/commonparticles, ../../release/stripping_pages/temp/stripping21/commonparticles/success.txt
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule clean_stripping_pages in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 75:
+Job 7  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+../../release/stripping_pages/processed/stripping21r0p1/commonparticles
+Removing output files of failed job clean_stripping_pages since they might be corrupted:
+../../release/stripping_pages/temp/stripping21r0p1/commonparticles, ../../release/stripping_pages/temp/stripping21r0p1/commonparticles/success.txt
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-20T151053.291655.snakemake.log
