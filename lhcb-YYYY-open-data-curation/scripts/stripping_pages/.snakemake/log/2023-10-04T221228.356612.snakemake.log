@@ -1,0 +1,330 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count
+------------------  -------
+list_raw_stripping       60
+prepare_stripping         1
+total                    61
+
+Select jobs to execute...
+
+[Wed Oct  4 22:12:28 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_ew.txt
+    jobid: 41
+    reason: Code has changed since last execution
+    wildcards: version=stripping21r1p1, streams=ew
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:12:28 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_charm.txt
+    jobid: 26
+    reason: Code has changed since last execution
+    wildcards: version=stripping21r0p2, streams=charm
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:12:28 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_ew.txt
+    jobid: 11
+    reason: Code has changed since last execution
+    wildcards: version=stripping21r0p1, streams=ew
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:12:28 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p2_charm.txt
+    jobid: 56
+    reason: Code has changed since last execution
+    wildcards: version=stripping21r1p2, streams=charm
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:12:28 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_semileptonic.txt
+    jobid: 49
+    reason: Code has changed since last execution
+    wildcards: version=stripping21r1p1, streams=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:12:28 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1_bhadron.txt
+    jobid: 34
+    reason: Code has changed since last execution
+    wildcards: version=stripping21r1, streams=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:12:28 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_semileptonic.txt
+    jobid: 19
+    reason: Code has changed since last execution
+    wildcards: version=stripping21r0p1, streams=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:12:28 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_bhadron.txt
+    jobid: 4
+    reason: Code has changed since last execution
+    wildcards: version=stripping21, streams=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Wed Oct  4 22:12:29 2023]
+Finished job 41.
+1 of 61 steps (2%) done
+[Wed Oct  4 22:12:29 2023]
+Finished job 11.
+2 of 61 steps (3%) done
+[Wed Oct  4 22:12:29 2023]
+Finished job 19.
+3 of 61 steps (5%) done
+[Wed Oct  4 22:12:29 2023]
+Finished job 26.
+4 of 61 steps (7%) done
+[Wed Oct  4 22:12:29 2023]
+Finished job 56.
+5 of 61 steps (8%) done
+Select jobs to execute...
+
+[Wed Oct  4 22:12:29 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_leptonic.txt
+    jobid: 42
+    reason: Code has changed since last execution
+    wildcards: version=stripping21r1p1, streams=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:12:29 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_charmcompleteevent.txt
+    jobid: 27
+    reason: Code has changed since last execution
+    wildcards: version=stripping21r0p2, streams=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:12:29 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_leptonic.txt
+    jobid: 12
+    reason: Code has changed since last execution
+    wildcards: version=stripping21r0p1, streams=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:12:29 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p2_charmcompleteevent.txt
+    jobid: 57
+    reason: Code has changed since last execution
+    wildcards: version=stripping21r1p2, streams=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:12:29 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_commonparticles.txt
+    jobid: 50
+    reason: Code has changed since last execution
+    wildcards: version=stripping21r1p1, streams=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Wed Oct  4 22:12:29 2023]
+Finished job 49.
+6 of 61 steps (10%) done
+Select jobs to execute...
+
+[Wed Oct  4 22:12:29 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1_bhadroncompleteevent.txt
+    jobid: 35
+    reason: Code has changed since last execution
+    wildcards: version=stripping21r1, streams=bhadroncompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Select jobs to execute...
+[Wed Oct  4 22:12:30 2023]
+Finished job 34.
+7 of 61 steps (11%) done
+[Wed Oct  4 22:12:30 2023]
+Finished job 4.
+8 of 61 steps (13%) done
+
+[Wed Oct  4 22:12:30 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_commonparticles.txt
+    jobid: 20
+    reason: Code has changed since last execution
+    wildcards: version=stripping21r0p1, streams=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:12:30 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_bhadroncompleteevent.txt
+    jobid: 5
+    reason: Code has changed since last execution
+    wildcards: version=stripping21, streams=bhadroncompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Select jobs to execute...
+[Wed Oct  4 22:12:30 2023]
+Finished job 27.
+9 of 61 steps (15%) done
+[Wed Oct  4 22:12:30 2023]
+Finished job 57.
+10 of 61 steps (16%) done
+
+[Wed Oct  4 22:12:30 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_radiative.txt
+    jobid: 43
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_radiative.txt
+    wildcards: version=stripping21r1p1, streams=radiative
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:12:30 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_dimuon.txt
+    jobid: 28
+    reason: Code has changed since last execution
+    wildcards: version=stripping21r0p2, streams=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Wed Oct  4 22:12:30 2023]
+Finished job 12.
+11 of 61 steps (18%) done
+[Wed Oct  4 22:12:30 2023]
+Finished job 42.
+12 of 61 steps (20%) done
+Select jobs to execute...
+
+[Wed Oct  4 22:12:30 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_radiative.txt
+    jobid: 13
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_radiative.txt
+    wildcards: version=stripping21r0p1, streams=radiative
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:12:30 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p2_dimuon.txt
+    jobid: 58
+    reason: Code has changed since last execution
+    wildcards: version=stripping21r1p2, streams=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Select jobs to execute...
+[Wed Oct  4 22:12:30 2023]
+Finished job 35.
+13 of 61 steps (21%) done
+
+[Wed Oct  4 22:12:30 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p2_ew.txt
+    jobid: 51
+    reason: Code has changed since last execution
+    wildcards: version=stripping21r1p2, streams=ew
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Wed Oct  4 22:12:30 2023]
+Finished job 50.
+14 of 61 steps (23%) done
+Select jobs to execute...
+
+[Wed Oct  4 22:12:30 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1_charm.txt
+    jobid: 36
+    reason: Code has changed since last execution
+    wildcards: version=stripping21r1, streams=charm
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Wed Oct  4 22:12:31 2023]
+Finished job 5.
+15 of 61 steps (25%) done
+Select jobs to execute...
+
+[Wed Oct  4 22:12:31 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_ew.txt
+    jobid: 21
+    reason: Code has changed since last execution
+    wildcards: version=stripping21r0p2, streams=ew
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Wed Oct  4 22:12:31 2023]
+Finished job 20.
+16 of 61 steps (26%) done
+Select jobs to execute...
+
+[Wed Oct  4 22:12:31 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_charm.txt
+    jobid: 6
+    reason: Code has changed since last execution
+    wildcards: version=stripping21, streams=charm
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Wed Oct  4 22:12:31 2023]
+Error in rule list_raw_stripping:
+    jobid: 43
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_radiative.txt
+    shell:
+        
+        xrdfs root://eosuser.cern.ch ls /eos/project/l/lhcbwebsites/www/projects/stripping/config/stripping21r1p1/radiative | grep -v '\.sys\.v#' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_radiative.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Oct  4 22:12:31 2023]
+Error in rule list_raw_stripping:
+    jobid: 13
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_radiative.txt
+    shell:
+        
+        xrdfs root://eosuser.cern.ch ls /eos/project/l/lhcbwebsites/www/projects/stripping/config/stripping21r0p1/radiative | grep -v '\.sys\.v#' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_radiative.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job list_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_radiative.txt
+Removing output files of failed job list_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_radiative.txt
+[Wed Oct  4 22:12:31 2023]
+Finished job 28.
+17 of 61 steps (28%) done
+[Wed Oct  4 22:12:31 2023]
+Finished job 58.
+18 of 61 steps (30%) done
+[Wed Oct  4 22:12:31 2023]
+Finished job 51.
+19 of 61 steps (31%) done
+[Wed Oct  4 22:12:31 2023]
+Finished job 36.
+20 of 61 steps (33%) done
+[Wed Oct  4 22:12:32 2023]
+Finished job 21.
+21 of 61 steps (34%) done
+[Wed Oct  4 22:12:32 2023]
+Finished job 6.
+22 of 61 steps (36%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-04T221228.356612.snakemake.log

@@ -1,0 +1,95 @@
+configfile: "../../config.yaml"
+
+# Check the config file. At least one stripping version has to be selected. 
+if config["stripping_version"] == None:
+    raise Exception("Error: No versions are selected in the config. Please specify at least one version.")
+
+# Add commonparticles
+if config["stream"] == None: 
+    streamlist = ["commonparticles"]
+    print("No streams identified, writing only commonparticles")
+else:
+    streamlist = config["stream"]
+    streamlist.append("commonparticles")
+
+# Define dict of versions / streams to avoid conflicts ... (related to radiative stream)
+stripping_dict = {}
+for version in config["stripping_version"]:
+    stripping_dict[version] = []
+    for stream in streamlist:
+        stream = stream.split(".")[0].lower()
+        if stream == "radiative" and version in ("stripping21r0p1", "stripping21r0p2", "stripping21r1p1", "stripping21r1p2"):
+            continue
+        else: 
+            stripping_dict[version].append(stream)
+
+rule prepare_stripping: 
+    input:
+        expand(config["release_dir"] + "stripping_pages/temp/{version}/clean_index.html",        version = config["stripping_version"]),
+        expand(config["release_dir"] + "stripping_pages/processed/{version}/{version}-index.md", version = config["stripping_version"]),
+        [config["release_dir"] + f"stripping_pages/temp/{version}/{stream}/success.txt" for version, streams in stripping_dict.items() for stream in streams],
+        [config["release_dir"] + f"stripping_pages/temp/json_success_{version}_{stream}.txt" for version, streams in stripping_dict.items() for stream in streams],
+
+# Remove html artifacts and transform pages before converting to md
+rule clean_index:
+    input: 
+        config     = "../../config.yaml", 
+        script     = "clean_index.py",
+        html_index = config["stripping_input_dir"] + "{version}/index.html"
+    output: 
+        config["release_dir"] + "stripping_pages/temp/{version}/clean_index.html"
+    shell:
+        """
+        python3 {input.script}         \
+        --inputfile {input.html_index} \
+        --outputfile {output} 
+        """
+
+# Convert html to md and change extension of links
+rule convert_index:
+    input:
+        config["release_dir"] + "stripping_pages/temp/{version}/clean_index.html"
+    output: 
+      config["release_dir"] + "stripping_pages/processed/{version}/{version}-index.md"
+    shell: 
+        """
+        pandoc {input} --from html --to gfm --lua-filter=extension_change_html_md.lua | sed \'s/\\\\/[/g\' | sed \'s/\\\]/]/g\' > {output}
+        """
+
+rule clean_stripping_pages:
+    input:
+        input_path = config["stripping_input_dir"] + "{version}/{stream}/",
+        script = "single_clean_stripping_page.py"
+    output:
+        output_path = directory(config["release_dir"] + "stripping_pages/processed/{version}/{stream}/"),
+        temp_out_path = directory(config["release_dir"] + "stripping_pages/temp/{version}/{stream}/"),
+        success_flag = config["release_dir"] + "stripping_pages/temp/{version}/{stream}/success.txt"
+    shell:
+        """
+        python3 {input.script}             \
+        --input_path {input.input_path}    \
+        --output_path {output.output_path} \
+        --temp_path {output.temp_out_path} \
+        --version {wildcards.version}      \
+        --stream {wildcards.stream}        \
+        && touch {output.success_flag}
+        """
+
+rule create_json_files:
+    input:
+        script = "create_json_files.py",
+        success_cleaning = config["release_dir"] + "stripping_pages/temp/{version}/{stream}/success.txt"
+    output:
+        success_flag = config["release_dir"] + "stripping_pages/temp/json_success_{version}_{stream}.txt"
+    params: 
+        input_path = config["release_dir"] + "stripping_pages/processed/",
+    log: 
+        config["release_dir"] + "stripping_pages/temp/logs/json_{version}_{stream}.log"
+    shell:
+        """
+        python3 {input.script}             \
+        --input_path {params.input_path}    \
+        --version {wildcards.version}      \
+        --stream {wildcards.stream} &> {log} \
+        && touch {output.success_flag}
+        """

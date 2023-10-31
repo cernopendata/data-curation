@@ -1,0 +1,216 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+download_raw_stripping       50
+list_raw_stripping           48
+prepare_stripping             1
+total                        99
+
+Select jobs to execute...
+
+[Thu Oct  5 19:59:08 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/bhadron
+    jobid: 86
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1p1, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Errno 66] Directory not empty: '/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/bhadron'
+
+[Thu Oct  5 19:59:08 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/charmcompleteevent
+    jobid: 56
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21, stream=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Errno 66] Directory not empty: '/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/charmcompleteevent'
+
+[Thu Oct  5 19:59:08 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/charm
+    jobid: 88
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1p1, stream=charm
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Errno 66] Directory not empty: '/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/charm'
+
+[Thu Oct  5 19:59:08 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/semileptonic
+    jobid: 58
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Errno 66] Directory not empty: '/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/semileptonic'
+
+[Thu Oct  5 19:59:08 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/bhadroncompleteevent
+    jobid: 87
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1p1, stream=bhadroncompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Errno 66] Directory not empty: '/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/bhadroncompleteevent'
+
+[Thu Oct  5 19:59:08 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/dimuon
+    jobid: 57
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21, stream=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Errno 66] Directory not empty: '/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/dimuon'
+
+[Thu Oct  5 19:59:08 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/charmcompleteevent
+    jobid: 89
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1p1, stream=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Errno 66] Directory not empty: '/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/charmcompleteevent'
+
+[Thu Oct  5 19:59:08 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/commonparticles
+    jobid: 59
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Errno 66] Directory not empty: '/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/commonparticles'
+[Thu Oct  5 19:59:08 2023]
+Error in rule download_raw_stripping:
+    jobid: 86
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/bhadron
+    shell:
+        
+        python3 raw_stripping_downloader.py
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job download_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/bhadron
+[Errno 66] Directory not empty: '/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/bhadron'
+[Thu Oct  5 19:59:09 2023]
+Error in rule download_raw_stripping:
+    jobid: 88
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/charm
+    shell:
+        
+        python3 raw_stripping_downloader.py
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job download_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/charm
+[Thu Oct  5 19:59:09 2023]
+[Errno 66] Directory not empty: '/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/charm'
+Error in rule download_raw_stripping:
+    jobid: 56
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/charmcompleteevent
+    shell:
+        
+        python3 raw_stripping_downloader.py
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job download_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/charmcompleteevent
+[Errno 66] Directory not empty: '/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/charmcompleteevent'
+[Thu Oct  5 19:59:09 2023]
+Error in rule download_raw_stripping:
+    jobid: 58
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/semileptonic
+    shell:
+        
+        python3 raw_stripping_downloader.py
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job download_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/semileptonic
+[Errno 66] Directory not empty: '/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/semileptonic'
+[Thu Oct  5 19:59:09 2023]
+Error in rule download_raw_stripping:
+    jobid: 87
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/bhadroncompleteevent
+    shell:
+        
+        python3 raw_stripping_downloader.py
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job download_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/bhadroncompleteevent
+[Errno 66] Directory not empty: '/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/bhadroncompleteevent'
+[Thu Oct  5 19:59:09 2023]
+Error in rule download_raw_stripping:
+    jobid: 57
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/dimuon
+    shell:
+        
+        python3 raw_stripping_downloader.py
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job download_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/dimuon
+[Errno 66] Directory not empty: '/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/dimuon'
+[Thu Oct  5 19:59:09 2023]
+Error in rule download_raw_stripping:
+    jobid: 89
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/charmcompleteevent
+    shell:
+        
+        python3 raw_stripping_downloader.py
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job download_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/charmcompleteevent
+[Errno 66] Directory not empty: '/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/charmcompleteevent'
+[Thu Oct  5 19:59:09 2023]
+Error in rule download_raw_stripping:
+    jobid: 59
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/commonparticles
+    shell:
+        
+        python3 raw_stripping_downloader.py
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job download_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/commonparticles
+[Errno 66] Directory not empty: '/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/commonparticles'
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-05T195908.513653.snakemake.log

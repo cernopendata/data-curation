@@ -1,0 +1,4 @@
+AttributeError in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 21:
+'str' object has no attribute 'remove_suffix'
+  File "/Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile", line 21, in <module>
+  File "/Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile", line 21, in <listcomp>

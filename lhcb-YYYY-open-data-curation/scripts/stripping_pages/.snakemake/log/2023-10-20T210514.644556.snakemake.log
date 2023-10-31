@@ -1,0 +1,37 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+clean_index              1
+convert_index            1
+prepare_stripping        1
+total                    3
+
+Select jobs to execute...
+
+[Fri Oct 20 21:05:14 2023]
+rule clean_index:
+    input: ../../config.yaml, clean_index.py, /Users/mindaugassarpis/Work/StrippingPages/stripping21r0p1/index.html
+    output: ../../release/stripping_pages/temp/stripping21r0p1/clean_index.html
+    jobid: 1
+    reason: Updated input files: ../../config.yaml
+    wildcards: version=stripping21r0p1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Oct 20 21:05:14 2023]
+Error in rule clean_index:
+    jobid: 1
+    input: ../../config.yaml, clean_index.py, /Users/mindaugassarpis/Work/StrippingPages/stripping21r0p1/index.html
+    output: ../../release/stripping_pages/temp/stripping21r0p1/clean_index.html
+    shell:
+        
+        python3 clean_index.py                 --inputfile /Users/mindaugassarpis/Work/StrippingPages/stripping21r0p1/index.html         --outputfile ../../release/stripping_pages/temp/stripping21r0p1/clean_index.html 
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-20T210514.644556.snakemake.log

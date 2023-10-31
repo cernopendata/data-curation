@@ -1,0 +1,85 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+download_raw_stripping        5
+prepare_stripping             1
+total                         6
+
+Select jobs to execute...
+
+[Mon Oct  9 14:33:26 2023]
+rule download_raw_stripping:
+    input: lines_downloader.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p1_leptonic.txt
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/leptonic
+    jobid: 9
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/leptonic
+    wildcards: version=stripping21r0p1, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Mon Oct  9 14:33:26 2023]
+rule download_raw_stripping:
+    input: lines_downloader.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21_leptonic.txt
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/leptonic
+    jobid: 6
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/leptonic
+    wildcards: version=stripping21, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Mon Oct  9 14:33:26 2023]
+rule download_raw_stripping:
+    input: lines_downloader.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21_commonparticles.txt
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/commonparticles
+    jobid: 8
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/commonparticles
+    wildcards: version=stripping21, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Mon Oct  9 14:33:26 2023]
+rule download_raw_stripping:
+    input: lines_downloader.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p1_commonparticles.txt
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles
+    jobid: 10
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles
+    wildcards: version=stripping21r0p1, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Mon Oct  9 14:33:26 2023]
+rule download_raw_stripping:
+    input: lines_downloader.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21_radiative.txt
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/radiative
+    jobid: 7
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/radiative
+    wildcards: version=stripping21, stream=radiative
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule download_raw_stripping in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 55:
+Job 9  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/leptonic
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule download_raw_stripping in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 55:
+Job 6  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/leptonic
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule download_raw_stripping in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 55:
+Job 8  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/commonparticles
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule download_raw_stripping in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 55:
+Job 10  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule download_raw_stripping in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 55:
+Job 7  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/radiative
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-09T143326.683578.snakemake.log

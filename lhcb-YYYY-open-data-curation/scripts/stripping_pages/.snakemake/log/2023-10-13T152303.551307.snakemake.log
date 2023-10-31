@@ -1,0 +1,3 @@
+TypeError in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 61:
+directory() got an unexpected keyword argument 'outdir'
+  File "/Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile", line 61, in <module>

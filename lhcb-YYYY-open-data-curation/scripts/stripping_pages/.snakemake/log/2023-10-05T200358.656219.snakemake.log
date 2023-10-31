@@ -1,0 +1,636 @@
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+download_raw_stripping       49
+list_raw_stripping           48
+prepare_stripping             1
+total                        98
+
+Select jobs to execute...
+
+[Thu Oct  5 20:03:58 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/bhadron
+    jobid: 86
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1p1, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Oct  5 20:03:58 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/charmcompleteevent
+    jobid: 56
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21, stream=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Oct  5 20:03:59 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/charm
+    jobid: 88
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1p1, stream=charm
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Oct  5 20:03:59 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/semileptonic
+    jobid: 58
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Oct  5 20:03:59 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/bhadroncompleteevent
+    jobid: 87
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1p1, stream=bhadroncompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Oct  5 20:03:59 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/dimuon
+    jobid: 57
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21, stream=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Oct  5 20:03:59 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/charmcompleteevent
+    jobid: 89
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1p1, stream=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Oct  5 20:03:59 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/commonparticles
+    jobid: 59
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:06:06 2023]
+Finished job 56.
+1 of 98 steps (1%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:06:06 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/dimuon
+    jobid: 90
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1p1, stream=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:06:07 2023]
+Finished job 58.
+2 of 98 steps (2%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:06:07 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/leptonic
+    jobid: 60
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r0p1, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:06:08 2023]
+Finished job 87.
+3 of 98 steps (3%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:06:08 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/semileptonic
+    jobid: 91
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1p1, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:06:09 2023]
+Finished job 59.
+4 of 98 steps (4%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:06:09 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/bhadron
+    jobid: 61
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r0p1, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:06:09 2023]
+Finished job 88.
+5 of 98 steps (5%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:06:09 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/commonparticles
+    jobid: 92
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1p1, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:06:09 2023]
+Finished job 86.
+6 of 98 steps (6%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:06:09 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/bhadroncompleteevent
+    jobid: 62
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r0p1, stream=bhadroncompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:06:10 2023]
+Finished job 89.
+7 of 98 steps (7%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:06:10 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p2/leptonic
+    jobid: 93
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1p2, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:06:10 2023]
+Finished job 57.
+8 of 98 steps (8%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:06:10 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/charm
+    jobid: 63
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r0p1, stream=charm
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:08:15 2023]
+Finished job 60.
+9 of 98 steps (9%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:08:15 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p2/bhadron
+    jobid: 94
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1p2, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:08:17 2023]
+Finished job 90.
+10 of 98 steps (10%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:08:17 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/charmcompleteevent
+    jobid: 64
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r0p1, stream=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:08:18 2023]
+Finished job 93.
+11 of 98 steps (11%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:08:18 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p2/bhadroncompleteevent
+    jobid: 95
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1p2, stream=bhadroncompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:08:18 2023]
+Finished job 92.
+12 of 98 steps (12%) done
+[Thu Oct  5 20:08:18 2023]
+Finished job 61.
+13 of 98 steps (13%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:08:18 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p2/charm
+    jobid: 96
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1p2, stream=charm
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Oct  5 20:08:18 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/dimuon
+    jobid: 65
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r0p1, stream=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Select jobs to execute...
+[Thu Oct  5 20:08:20 2023]
+Finished job 62.
+14 of 98 steps (14%) done
+
+[Thu Oct  5 20:08:20 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p2/charm
+    jobid: 71
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r0p2, stream=charm
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:08:20 2023]
+Finished job 91.
+15 of 98 steps (15%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:08:20 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/bhadroncompleteevent
+    jobid: 79
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1, stream=bhadroncompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:08:54 2023]
+Finished job 63.
+16 of 98 steps (16%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:08:54 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p2/charmcompleteevent
+    jobid: 72
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r0p2, stream=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:09:34 2023]
+Finished job 94.
+17 of 98 steps (17%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:09:34 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/charm
+    jobid: 80
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1, stream=charm
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:09:36 2023]
+Finished job 65.
+18 of 98 steps (18%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:09:36 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p2/dimuon
+    jobid: 73
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r0p2, stream=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:09:36 2023]
+Finished job 95.
+19 of 98 steps (19%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:09:36 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/leptonic
+    jobid: 51
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:09:36 2023]
+Finished job 64.
+20 of 98 steps (20%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:09:36 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/charmcompleteevent
+    jobid: 81
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1, stream=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:09:36 2023]
+Finished job 96.
+21 of 98 steps (21%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:09:36 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/semileptonic
+    jobid: 66
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r0p1, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:09:37 2023]
+Finished job 71.
+22 of 98 steps (22%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:09:37 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p2/semileptonic
+    jobid: 74
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r0p2, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:09:37 2023]
+Finished job 79.
+23 of 98 steps (23%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:09:37 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/radiative
+    jobid: 52
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21, stream=radiative
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:10:02 2023]
+Finished job 72.
+24 of 98 steps (24%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:10:02 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p2/charmcompleteevent
+    jobid: 97
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1p2, stream=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:11:07 2023]
+Finished job 52.
+25 of 98 steps (26%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:11:07 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/dimuon
+    jobid: 82
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1, stream=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:11:09 2023]
+Finished job 81.
+26 of 98 steps (27%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:11:09 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles
+    jobid: 67
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r0p1, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:11:10 2023]
+Finished job 66.
+27 of 98 steps (28%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:11:10 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p2/commonparticles
+    jobid: 75
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r0p2, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:11:12 2023]
+Finished job 73.
+28 of 98 steps (29%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:11:12 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p2/dimuon
+    jobid: 98
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1p2, stream=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:11:12 2023]
+Finished job 74.
+29 of 98 steps (30%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:11:12 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/semileptonic
+    jobid: 83
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:11:13 2023]
+Finished job 51.
+30 of 98 steps (31%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:11:13 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p2/leptonic
+    jobid: 68
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r0p2, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:11:14 2023]
+Finished job 80.
+31 of 98 steps (32%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:11:14 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/leptonic
+    jobid: 76
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:11:19 2023]
+Finished job 97.
+32 of 98 steps (33%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:11:19 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/bhadroncompleteevent
+    jobid: 54
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21, stream=bhadroncompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:12:24 2023]
+Finished job 67.
+33 of 98 steps (34%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:12:24 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p2/semileptonic
+    jobid: 99
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1p2, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+ImproperOutputException in rule download_raw_stripping in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 56:
+Outputs of incorrect type (directories when expecting files or vice versa). Output directories must be flagged with directory(). for rule download_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p2/dimuon
+    wildcards: version=stripping21r1p2, stream=dimuon
+    affected files:
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p2/dimuon
+Removing output files of failed job download_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p2/dimuon
+[Thu Oct  5 20:12:34 2023]
+Finished job 68.
+34 of 98 steps (35%) done
+[Thu Oct  5 20:12:34 2023]
+Finished job 75.
+35 of 98 steps (36%) done
+[Thu Oct  5 20:12:36 2023]
+Finished job 82.
+36 of 98 steps (37%) done
+[Thu Oct  5 20:12:37 2023]
+Finished job 83.
+37 of 98 steps (38%) done
+[Thu Oct  5 20:12:37 2023]
+Finished job 76.
+38 of 98 steps (39%) done
+[Thu Oct  5 20:12:47 2023]
+Finished job 54.
+39 of 98 steps (40%) done
+[Thu Oct  5 20:13:22 2023]
+Finished job 99.
+40 of 98 steps (41%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-05T200358.656219.snakemake.log

@@ -1,0 +1,49 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count
+------------------  -------
+list_raw_stripping        2
+prepare_stripping         1
+total                     3
+
+Select jobs to execute...
+
+[Wed Oct  4 22:12:56 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_leptonic.txt
+    jobid: 3
+    reason: Code has changed since last execution
+    wildcards: version=stripping21r0p2, streams=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:12:56 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_commonparticles.txt
+    jobid: 4
+    reason: Code has changed since last execution
+    wildcards: version=stripping21r0p2, streams=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Wed Oct  4 22:12:57 2023]
+Finished job 3.
+1 of 3 steps (33%) done
+[Wed Oct  4 22:12:57 2023]
+Finished job 4.
+2 of 3 steps (67%) done
+Select jobs to execute...
+
+[Wed Oct  4 22:12:57 2023]
+rule prepare_stripping:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_leptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_commonparticles.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_leptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_commonparticles.txt
+    jobid: 0
+    reason: Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_leptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_commonparticles.txt
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Wed Oct  4 22:12:57 2023]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2023-10-04T221256.565863.snakemake.log

@@ -1,0 +1,3 @@
+NameError in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 5:
+name 'lines_dict' is not defined
+  File "/Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile", line 5, in <module>

@@ -1,0 +1,38 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count
+---------------------  -------
+clean_stripping_pages        1
+prepare_stripping            1
+total                        2
+
+Select jobs to execute...
+
+[Fri Oct 20 22:34:09 2023]
+rule clean_stripping_pages:
+    input: /Users/mindaugassarpis/Work/StrippingPages/stripping21/ew, single_clean_stripping_page.py
+    output: ../../release/stripping_pages/processed/stripping21/ew, ../../release/stripping_pages/temp/stripping21/ew, ../../release/stripping_pages/temp/stripping21/ew/success.txt
+    jobid: 5
+    reason: Missing output files: ../../release/stripping_pages/temp/stripping21/ew/success.txt
+    wildcards: version=stripping21, stream=ew
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Oct 20 22:34:32 2023]
+Finished job 5.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Fri Oct 20 22:34:32 2023]
+localrule prepare_stripping:
+    input: ../../release/stripping_pages/temp/stripping21/clean_index.html, ../../release/stripping_pages/temp/stripping21r0p1/clean_index.html, ../../release/stripping_pages/processed/stripping21/stripping21-index.md, ../../release/stripping_pages/processed/stripping21r0p1/stripping21r0p1-index.md, ../../release/stripping_pages/temp/stripping21/ew/success.txt, ../../release/stripping_pages/temp/stripping21/radiative/success.txt, ../../release/stripping_pages/temp/stripping21/commonparticles/success.txt, ../../release/stripping_pages/temp/stripping21r0p1/ew/success.txt, ../../release/stripping_pages/temp/stripping21r0p1/commonparticles/success.txt
+    jobid: 0
+    reason: Input files updated by another job: ../../release/stripping_pages/temp/stripping21/ew/success.txt
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Oct 20 22:34:32 2023]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2023-10-20T223409.326837.snakemake.log

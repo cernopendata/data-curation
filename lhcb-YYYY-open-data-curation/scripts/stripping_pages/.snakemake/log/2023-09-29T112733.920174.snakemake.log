@@ -1,0 +1,238 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                        count
+-----------------------  -------
+convert_stripping_pages       16
+prepare_stripping              1
+total                         17
+
+Select jobs to execute...
+
+[Fri Sep 29 11:27:34 2023]
+rule convert_stripping_pages:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/clean_strippingbc2ds1gammaws_line.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbc2ds1gammaws_line.html.md
+    jobid: 28
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbc2ds1gammaws_line.html.md
+    wildcards: version=stripping21, stream=radiative, linename=strippingbc2ds1gammaws_line.html
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 11:27:34 2023]
+rule convert_stripping_pages:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/clean_strippingbetasbd2jpsieeksbd2jpsieeksprescaledline.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbd2jpsieeksbd2jpsieeksprescaledline.html.md
+    jobid: 34
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbd2jpsieeksbd2jpsieeksprescaledline.html.md
+    wildcards: version=stripping21r1, stream=radiative, linename=strippingbetasbd2jpsieeksbd2jpsieeksprescaledline.html
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 11:27:34 2023]
+rule convert_stripping_pages:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/clean_strippingbc2ds1gammaws_line.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbc2ds1gammaws_line.html.md
+    jobid: 36
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbc2ds1gammaws_line.html.md
+    wildcards: version=stripping21r1, stream=radiative, linename=strippingbc2ds1gammaws_line.html
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 11:27:34 2023]
+rule convert_stripping_pages:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/clean_strippingbc2ds1gamma_line.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbc2ds1gamma_line.html.md
+    jobid: 29
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbc2ds1gamma_line.html.md
+    wildcards: version=stripping21, stream=radiative, linename=strippingbc2ds1gamma_line.html
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 11:27:34 2023]
+rule convert_stripping_pages:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/clean_strippingbetasbd2jpsieeksbd2jpsieeksdetachedline.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbd2jpsieeksbd2jpsieeksdetachedline.html.md
+    jobid: 31
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbd2jpsieeksbd2jpsieeksdetachedline.html.md
+    wildcards: version=stripping21, stream=radiative, linename=strippingbetasbd2jpsieeksbd2jpsieeksdetachedline.html
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 11:27:34 2023]
+rule convert_stripping_pages:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/clean_strippingbc2ds1gamma_line.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbc2ds1gamma_line.html.md
+    jobid: 37
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbc2ds1gamma_line.html.md
+    wildcards: version=stripping21r1, stream=radiative, linename=strippingbc2ds1gamma_line.html
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 11:27:34 2023]
+rule convert_stripping_pages:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/clean_strippingbetasbd2jpsieeksbd2jpsieeksdetachedline.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbd2jpsieeksbd2jpsieeksdetachedline.html.md
+    jobid: 39
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbd2jpsieeksbd2jpsieeksdetachedline.html.md
+    wildcards: version=stripping21r1, stream=radiative, linename=strippingbetasbd2jpsieeksbd2jpsieeksdetachedline.html
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 11:27:34 2023]
+rule convert_stripping_pages:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/clean_strippingbetasbd2jpsieeksbd2jpsieeksprescaledline.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbd2jpsieeksbd2jpsieeksprescaledline.html.md
+    jobid: 26
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbd2jpsieeksbd2jpsieeksprescaledline.html.md
+    wildcards: version=stripping21, stream=radiative, linename=strippingbetasbd2jpsieeksbd2jpsieeksprescaledline.html
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 11:27:35 2023]
+Finished job 37.
+1 of 17 steps (6%) done
+Select jobs to execute...
+
+[Fri Sep 29 11:27:35 2023]
+rule convert_stripping_pages:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/clean_strippingbetasbs2jpsieephifromtracksline.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbs2jpsieephifromtracksline.html.md
+    jobid: 35
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbs2jpsieephifromtracksline.html.md
+    wildcards: version=stripping21r1, stream=radiative, linename=strippingbetasbs2jpsieephifromtracksline.html
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 11:27:35 2023]
+Finished job 29.
+2 of 17 steps (12%) done
+[Fri Sep 29 11:27:35 2023]
+Finished job 28.
+3 of 17 steps (18%) done
+[Fri Sep 29 11:27:35 2023]
+Finished job 36.
+4 of 17 steps (24%) done
+Select jobs to execute...
+
+[Fri Sep 29 11:27:35 2023]
+rule convert_stripping_pages:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/clean_strippingbetasbs2jpsieephidetachedline.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbs2jpsieephidetachedline.html.md
+    jobid: 38
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbs2jpsieephidetachedline.html.md
+    wildcards: version=stripping21r1, stream=radiative, linename=strippingbetasbs2jpsieephidetachedline.html
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 11:27:35 2023]
+rule convert_stripping_pages:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/clean_strippingbetasbs2jpsieephiline.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbs2jpsieephiline.html.md
+    jobid: 33
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbs2jpsieephiline.html.md
+    wildcards: version=stripping21r1, stream=radiative, linename=strippingbetasbs2jpsieephiline.html
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 11:27:35 2023]
+rule convert_stripping_pages:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/clean_strippingbetasbs2jpsieephifromtracksline.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbs2jpsieephifromtracksline.html.md
+    jobid: 27
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbs2jpsieephifromtracksline.html.md
+    wildcards: version=stripping21, stream=radiative, linename=strippingbetasbs2jpsieephifromtracksline.html
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Select jobs to execute...
+[Fri Sep 29 11:27:35 2023]
+Finished job 34.
+5 of 17 steps (29%) done
+
+[Fri Sep 29 11:27:35 2023]
+rule convert_stripping_pages:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/clean_strippingbetasbs2jpsieephidetachedline.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbs2jpsieephidetachedline.html.md
+    jobid: 30
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbs2jpsieephidetachedline.html.md
+    wildcards: version=stripping21, stream=radiative, linename=strippingbetasbs2jpsieephidetachedline.html
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 11:27:35 2023]
+Finished job 31.
+6 of 17 steps (35%) done
+Select jobs to execute...
+
+[Fri Sep 29 11:27:35 2023]
+rule convert_stripping_pages:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/clean_strippingbetasbs2jpsieephiline.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbs2jpsieephiline.html.md
+    jobid: 25
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbs2jpsieephiline.html.md
+    wildcards: version=stripping21, stream=radiative, linename=strippingbetasbs2jpsieephiline.html
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 11:27:35 2023]
+Finished job 26.
+7 of 17 steps (41%) done
+[Fri Sep 29 11:27:35 2023]
+Finished job 39.
+8 of 17 steps (47%) done
+Select jobs to execute...
+
+[Fri Sep 29 11:27:35 2023]
+rule convert_stripping_pages:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/clean_strippingb2xgammaexclbs2phigammaline.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingb2xgammaexclbs2phigammaline.html.md
+    jobid: 40
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingb2xgammaexclbs2phigammaline.html.md
+    wildcards: version=stripping21r1, stream=radiative, linename=strippingb2xgammaexclbs2phigammaline.html
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 11:27:35 2023]
+rule convert_stripping_pages:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/clean_strippingb2xgammaexclbs2phigammaline.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingb2xgammaexclbs2phigammaline.html.md
+    jobid: 32
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingb2xgammaexclbs2phigammaline.html.md
+    wildcards: version=stripping21, stream=radiative, linename=strippingb2xgammaexclbs2phigammaline.html
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 11:27:35 2023]
+Finished job 35.
+9 of 17 steps (53%) done
+[Fri Sep 29 11:27:35 2023]
+Finished job 33.
+10 of 17 steps (59%) done
+[Fri Sep 29 11:27:35 2023]
+Finished job 27.
+11 of 17 steps (65%) done
+[Fri Sep 29 11:27:35 2023]
+Finished job 38.
+12 of 17 steps (71%) done
+[Fri Sep 29 11:27:35 2023]
+Finished job 30.
+13 of 17 steps (76%) done
+[Fri Sep 29 11:27:35 2023]
+Finished job 25.
+14 of 17 steps (82%) done
+[Fri Sep 29 11:27:35 2023]
+Finished job 32.
+15 of 17 steps (88%) done
+[Fri Sep 29 11:27:35 2023]
+Finished job 40.
+16 of 17 steps (94%) done
+Select jobs to execute...
+
+[Fri Sep 29 11:27:35 2023]
+localrule prepare_stripping:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21_html/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1_html/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21_html/index_clean.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1_html/index_clean.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/stripping21-index.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/stripping21r1-index.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/clean_strippingbetasbs2jpsieephiline.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/clean_strippingbetasbd2jpsieeksbd2jpsieeksprescaledline.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/clean_strippingbetasbs2jpsieephifromtracksline.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/clean_strippingbc2ds1gammaws_line.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/clean_strippingbc2ds1gamma_line.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/clean_strippingbetasbs2jpsieephidetachedline.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/clean_strippingbetasbd2jpsieeksbd2jpsieeksdetachedline.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/clean_strippingb2xgammaexclbs2phigammaline.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/clean_strippingbetasbs2jpsieephiline.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/clean_strippingbetasbd2jpsieeksbd2jpsieeksprescaledline.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/clean_strippingbetasbs2jpsieephifromtracksline.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/clean_strippingbc2ds1gammaws_line.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/clean_strippingbc2ds1gamma_line.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/clean_strippingbetasbs2jpsieephidetachedline.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/clean_strippingbetasbd2jpsieeksbd2jpsieeksdetachedline.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/clean_strippingb2xgammaexclbs2phigammaline.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbs2jpsieephiline.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbd2jpsieeksbd2jpsieeksprescaledline.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbs2jpsieephifromtracksline.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbc2ds1gammaws_line.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbc2ds1gamma_line.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbs2jpsieephidetachedline.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbd2jpsieeksbd2jpsieeksdetachedline.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingb2xgammaexclbs2phigammaline.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbs2jpsieephiline.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbd2jpsieeksbd2jpsieeksprescaledline.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbs2jpsieephifromtracksline.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbc2ds1gammaws_line.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbc2ds1gamma_line.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbs2jpsieephidetachedline.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbd2jpsieeksbd2jpsieeksdetachedline.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingb2xgammaexclbs2phigammaline.html.md
+    jobid: 0
+    reason: Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbc2ds1gammaws_line.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbd2jpsieeksbd2jpsieeksdetachedline.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbc2ds1gamma_line.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbs2jpsieephifromtracksline.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbs2jpsieephiline.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbs2jpsieephiline.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbs2jpsieephidetachedline.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbd2jpsieeksbd2jpsieeksprescaledline.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbs2jpsieephifromtracksline.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingb2xgammaexclbs2phigammaline.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbs2jpsieephidetachedline.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbc2ds1gammaws_line.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbd2jpsieeksbd2jpsieeksdetachedline.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbd2jpsieeksbd2jpsieeksprescaledline.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbc2ds1gamma_line.html.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingb2xgammaexclbs2phigammaline.html.md
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 11:27:35 2023]
+Finished job 0.
+17 of 17 steps (100%) done
+Complete log: .snakemake/log/2023-09-29T112733.920174.snakemake.log

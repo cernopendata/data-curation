@@ -1,0 +1,61 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count
+------------------  -------
+list_raw_stripping        2
+prepare_stripping         1
+total                     3
+
+Select jobs to execute...
+
+[Wed Oct  4 21:55:08 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_radiative.txt
+    jobid: 4
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_radiative.txt
+    wildcards: version=stripping21r0p1, stream=radiative
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 21:55:08 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_radiative.txt
+    jobid: 7
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_radiative.txt
+    wildcards: version=stripping21r0p2, stream=radiative
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Wed Oct  4 21:55:08 2023]
+Error in rule list_raw_stripping:
+    jobid: 4
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_radiative.txt
+    shell:
+        
+        if [[ "stripping21r0p1" == "stripping21r0p1" || "stripping21r0p1" == "stripping21r0p2" ]] && [[ "radiative" == "radiative" ]]; then
+            echo "Version stripping21r0p1 does not support stream radiative" >&2
+            exit 1
+        fi
+        xrdfs root://eosuser.cern.ch ls /eos/project/l/lhcbwebsites/www/projects/stripping/config/stripping21r0p1/radiative | grep -v '\.sys\.v#' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_radiative.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Oct  4 21:55:08 2023]
+Error in rule list_raw_stripping:
+    jobid: 7
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_radiative.txt
+    shell:
+        
+        if [[ "stripping21r0p2" == "stripping21r0p1" || "stripping21r0p2" == "stripping21r0p2" ]] && [[ "radiative" == "radiative" ]]; then
+            echo "Version stripping21r0p2 does not support stream radiative" >&2
+            exit 1
+        fi
+        xrdfs root://eosuser.cern.ch ls /eos/project/l/lhcbwebsites/www/projects/stripping/config/stripping21r0p2/radiative | grep -v '\.sys\.v#' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_radiative.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-04T215507.911525.snakemake.log

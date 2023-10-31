@@ -1,0 +1,3 @@
+NameError in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 18:
+name 'PROJECTS' is not defined
+  File "/Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile", line 18, in <module>

@@ -1,0 +1,49 @@
+directory:
+ - "/LHCb/Collision11/Beam3500GeV-VeloClosed-MagDown/Real Data/Reco14/Stripping21r1/90000000/"
+ - "/LHCb/Collision11/Beam3500GeV-VeloClosed-MagUp/Real Data/Reco14/Stripping21r1/90000000/"
+ - "/LHCb/Collision12/Beam4000GeV-VeloClosed-MagDown/Real Data/Reco14/Stripping21/90000000/"
+ - "/LHCb/Collision12/Beam4000GeV-VeloClosed-MagUp/Real Data/Reco14/Stripping21/90000000/"
+ - "/LHCb/Collision11/Beam3500GeV-VeloClosed-MagDown/Real Data/Reco14/Stripping21r1p1a/90000000/"
+ - "/LHCb/Collision11/Beam3500GeV-VeloClosed-MagUp/Real Data/Reco14/Stripping21r1p1a/90000000/"
+ - "/LHCb/Collision11/Beam3500GeV-VeloClosed-MagDown/Real Data/Reco14/Stripping21r1p2/90000000/"
+ - "/LHCb/Collision11/Beam3500GeV-VeloClosed-MagUp/Real Data/Reco14/Stripping21r1p2/90000000/"
+ - "/LHCb/Collision12/Beam4000GeV-VeloClosed-MagDown/Real Data/Reco14/Stripping21r0p1a/90000000/"
+ - "/LHCb/Collision12/Beam4000GeV-VeloClosed-MagUp/Real Data/Reco14/Stripping21r0p1a/90000000/"
+ - "/LHCb/Collision12/Beam4000GeV-VeloClosed-MagDown/Real Data/Reco14/Stripping21r0p2/90000000/"
+ - "/LHCb/Collision12/Beam4000GeV-VeloClosed-MagUp/Real Data/Reco14/Stripping21r0p2/90000000/"
+
+stream: 
+  - "EW.DST"
+  - "LEPTONIC.MDST"
+  - "RADIATIVE.DST"
+  - "BHADRON.MDST"
+  - "BHADRONCOMPLETEEVENT.DST"
+  - "CHARM.MDST"
+  - "CHARMCOMPLETEEVENT.DST"
+  - "DIMUON.DST"
+  - "SEMILEPTONIC.DST"
+
+stripping_version:
+  - "stripping21"
+  - "stripping21r0p1" # Doesn't have RADIATIVE stream 
+  - "stripping21r0p2" # Doesn't have RADIATIVE stream 
+  - "stripping21r1"
+  - "stripping21r1p1"
+  - "stripping21r1p2"
+
+stripping_versions_year:
+    "2011":
+      - "stripping21r1"
+      - "stripping21r1p1"
+      - "stripping21r1p2"
+    "2012":
+      - "stripping21"
+      - "stripping21r0p1"
+      - "stripping21r0p2"
+
+release_dir: "../../release/"
+stripping_input_dir: "/Users/mindaugassarpis/Work/StrippingPages/"
+
+# Staging
+eos_existing: "./existing.txt"
+stage_frac: 0.16

@@ -1,0 +1,199 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+create_json_files       42
+prepare_stripping        1
+total                   43
+
+Select jobs to execute...
+
+[Mon Oct 30 17:31:43 2023]
+rule create_json_files:
+    input: create_json_files.py, ../../release/stripping_pages/temp/stripping21r1p1/commonparticles/success.txt
+    output: ../../release/stripping_pages/temp/json_success_stripping21r1p1_commonparticles.txt
+    log: ../../release/stripping_pages/temp/logs/json_stripping21r1p1_commonparticles.log
+    jobid: 89
+    reason: Updated input files: create_json_files.py
+    wildcards: version=stripping21r1p1, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Mon Oct 30 17:31:43 2023]
+rule create_json_files:
+    input: create_json_files.py, ../../release/stripping_pages/temp/stripping21r0p2/semileptonic/success.txt
+    output: ../../release/stripping_pages/temp/json_success_stripping21r0p2_semileptonic.txt
+    log: ../../release/stripping_pages/temp/logs/json_stripping21r0p2_semileptonic.log
+    jobid: 74
+    reason: Updated input files: create_json_files.py
+    wildcards: version=stripping21r0p2, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Mon Oct 30 17:31:43 2023]
+rule create_json_files:
+    input: create_json_files.py, ../../release/stripping_pages/temp/stripping21/dimuon/success.txt
+    output: ../../release/stripping_pages/temp/json_success_stripping21_dimuon.txt
+    log: ../../release/stripping_pages/temp/logs/json_stripping21_dimuon.log
+    jobid: 59
+    reason: Updated input files: create_json_files.py
+    wildcards: version=stripping21, stream=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Mon Oct 30 17:31:43 2023]
+rule create_json_files:
+    input: create_json_files.py, ../../release/stripping_pages/temp/stripping21r1/commonparticles/success.txt
+    output: ../../release/stripping_pages/temp/json_success_stripping21r1_commonparticles.txt
+    log: ../../release/stripping_pages/temp/logs/json_stripping21r1_commonparticles.log
+    jobid: 82
+    reason: Updated input files: create_json_files.py
+    wildcards: version=stripping21r1, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Mon Oct 30 17:31:43 2023]
+rule create_json_files:
+    input: create_json_files.py, ../../release/stripping_pages/temp/stripping21r0p1/semileptonic/success.txt
+    output: ../../release/stripping_pages/temp/json_success_stripping21r0p1_semileptonic.txt
+    log: ../../release/stripping_pages/temp/logs/json_stripping21r0p1_semileptonic.log
+    jobid: 67
+    reason: Updated input files: create_json_files.py
+    wildcards: version=stripping21r0p1, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Mon Oct 30 17:31:43 2023]
+rule create_json_files:
+    input: create_json_files.py, ../../release/stripping_pages/temp/stripping21r1p2/bhadron/success.txt
+    output: ../../release/stripping_pages/temp/json_success_stripping21r1p2_bhadron.txt
+    log: ../../release/stripping_pages/temp/logs/json_stripping21r1p2_bhadron.log
+    jobid: 90
+    reason: Updated input files: create_json_files.py
+    wildcards: version=stripping21r1p2, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Mon Oct 30 17:31:43 2023]
+rule create_json_files:
+    input: create_json_files.py, ../../release/stripping_pages/temp/stripping21r0p2/commonparticles/success.txt
+    output: ../../release/stripping_pages/temp/json_success_stripping21r0p2_commonparticles.txt
+    log: ../../release/stripping_pages/temp/logs/json_stripping21r0p2_commonparticles.log
+    jobid: 75
+    reason: Updated input files: create_json_files.py
+    wildcards: version=stripping21r0p2, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Mon Oct 30 17:31:43 2023]
+rule create_json_files:
+    input: create_json_files.py, ../../release/stripping_pages/temp/stripping21/semileptonic/success.txt
+    output: ../../release/stripping_pages/temp/json_success_stripping21_semileptonic.txt
+    log: ../../release/stripping_pages/temp/logs/json_stripping21_semileptonic.log
+    jobid: 60
+    reason: Updated input files: create_json_files.py
+    wildcards: version=stripping21, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Mon Oct 30 17:31:44 2023]
+Error in rule create_json_files:
+    jobid: 89
+    input: create_json_files.py, ../../release/stripping_pages/temp/stripping21r1p1/commonparticles/success.txt
+    output: ../../release/stripping_pages/temp/json_success_stripping21r1p1_commonparticles.txt
+    log: ../../release/stripping_pages/temp/logs/json_stripping21r1p1_commonparticles.log (check log file(s) for error details)
+    shell:
+        
+        python3 create_json_files.py                     --input_path ../../release/stripping_pages/processed/            --version stripping21r1p1              --stream commonparticles &> ../../release/stripping_pages/temp/logs/json_stripping21r1p1_commonparticles.log         && touch ../../release/stripping_pages/temp/json_success_stripping21r1p1_commonparticles.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Oct 30 17:31:44 2023]
+Error in rule create_json_files:
+    jobid: 59
+    input: create_json_files.py, ../../release/stripping_pages/temp/stripping21/dimuon/success.txt
+    output: ../../release/stripping_pages/temp/json_success_stripping21_dimuon.txt
+    log: ../../release/stripping_pages/temp/logs/json_stripping21_dimuon.log (check log file(s) for error details)
+    shell:
+        
+        python3 create_json_files.py                     --input_path ../../release/stripping_pages/processed/            --version stripping21              --stream dimuon &> ../../release/stripping_pages/temp/logs/json_stripping21_dimuon.log         && touch ../../release/stripping_pages/temp/json_success_stripping21_dimuon.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Oct 30 17:31:44 2023]
+Error in rule create_json_files:
+    jobid: 74
+    input: create_json_files.py, ../../release/stripping_pages/temp/stripping21r0p2/semileptonic/success.txt
+    output: ../../release/stripping_pages/temp/json_success_stripping21r0p2_semileptonic.txt
+    log: ../../release/stripping_pages/temp/logs/json_stripping21r0p2_semileptonic.log (check log file(s) for error details)
+    shell:
+        
+        python3 create_json_files.py                     --input_path ../../release/stripping_pages/processed/            --version stripping21r0p2              --stream semileptonic &> ../../release/stripping_pages/temp/logs/json_stripping21r0p2_semileptonic.log         && touch ../../release/stripping_pages/temp/json_success_stripping21r0p2_semileptonic.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Oct 30 17:31:44 2023]
+Error in rule create_json_files:
+    jobid: 82
+    input: create_json_files.py, ../../release/stripping_pages/temp/stripping21r1/commonparticles/success.txt
+    output: ../../release/stripping_pages/temp/json_success_stripping21r1_commonparticles.txt
+    log: ../../release/stripping_pages/temp/logs/json_stripping21r1_commonparticles.log (check log file(s) for error details)
+    shell:
+        
+        python3 create_json_files.py                     --input_path ../../release/stripping_pages/processed/            --version stripping21r1              --stream commonparticles &> ../../release/stripping_pages/temp/logs/json_stripping21r1_commonparticles.log         && touch ../../release/stripping_pages/temp/json_success_stripping21r1_commonparticles.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Oct 30 17:31:44 2023]
+Error in rule create_json_files:
+    jobid: 75
+    input: create_json_files.py, ../../release/stripping_pages/temp/stripping21r0p2/commonparticles/success.txt
+    output: ../../release/stripping_pages/temp/json_success_stripping21r0p2_commonparticles.txt
+    log: ../../release/stripping_pages/temp/logs/json_stripping21r0p2_commonparticles.log (check log file(s) for error details)
+    shell:
+        
+        python3 create_json_files.py                     --input_path ../../release/stripping_pages/processed/            --version stripping21r0p2              --stream commonparticles &> ../../release/stripping_pages/temp/logs/json_stripping21r0p2_commonparticles.log         && touch ../../release/stripping_pages/temp/json_success_stripping21r0p2_commonparticles.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Oct 30 17:31:44 2023]
+Error in rule create_json_files:
+    jobid: 60
+    input: create_json_files.py, ../../release/stripping_pages/temp/stripping21/semileptonic/success.txt
+    output: ../../release/stripping_pages/temp/json_success_stripping21_semileptonic.txt
+    log: ../../release/stripping_pages/temp/logs/json_stripping21_semileptonic.log (check log file(s) for error details)
+    shell:
+        
+        python3 create_json_files.py                     --input_path ../../release/stripping_pages/processed/            --version stripping21              --stream semileptonic &> ../../release/stripping_pages/temp/logs/json_stripping21_semileptonic.log         && touch ../../release/stripping_pages/temp/json_success_stripping21_semileptonic.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Oct 30 17:31:44 2023]
+Error in rule create_json_files:
+    jobid: 67
+    input: create_json_files.py, ../../release/stripping_pages/temp/stripping21r0p1/semileptonic/success.txt
+    output: ../../release/stripping_pages/temp/json_success_stripping21r0p1_semileptonic.txt
+    log: ../../release/stripping_pages/temp/logs/json_stripping21r0p1_semileptonic.log (check log file(s) for error details)
+    shell:
+        
+        python3 create_json_files.py                     --input_path ../../release/stripping_pages/processed/            --version stripping21r0p1              --stream semileptonic &> ../../release/stripping_pages/temp/logs/json_stripping21r0p1_semileptonic.log         && touch ../../release/stripping_pages/temp/json_success_stripping21r0p1_semileptonic.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Oct 30 17:31:44 2023]
+Error in rule create_json_files:
+    jobid: 90
+    input: create_json_files.py, ../../release/stripping_pages/temp/stripping21r1p2/bhadron/success.txt
+    output: ../../release/stripping_pages/temp/json_success_stripping21r1p2_bhadron.txt
+    log: ../../release/stripping_pages/temp/logs/json_stripping21r1p2_bhadron.log (check log file(s) for error details)
+    shell:
+        
+        python3 create_json_files.py                     --input_path ../../release/stripping_pages/processed/            --version stripping21r1p2              --stream bhadron &> ../../release/stripping_pages/temp/logs/json_stripping21r1p2_bhadron.log         && touch ../../release/stripping_pages/temp/json_success_stripping21r1p2_bhadron.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-30T173143.355553.snakemake.log

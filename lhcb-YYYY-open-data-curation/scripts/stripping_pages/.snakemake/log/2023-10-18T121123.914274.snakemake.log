@@ -1,0 +1,8 @@
+Building DAG of jobs...
+MissingInputException in rule prepare_stripping in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 26:
+Missing input files for rule prepare_stripping:
+    affected files:
+        ../../release/stripping_pages/temp/stripping21/ew
+        ../../release/stripping_pages/temp/stripping21/ew/*
+        ../../release/stripping_pages/temp/stripping21/commonparticles
+        ../../release/stripping_pages/temp/stripping21/commonparticles/*

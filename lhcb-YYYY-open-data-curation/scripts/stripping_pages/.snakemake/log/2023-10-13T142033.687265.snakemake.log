@@ -1,0 +1,55 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+download_raw_stripping        3
+prepare_stripping             1
+total                         4
+
+Select jobs to execute...
+
+[Fri Oct 13 14:20:34 2023]
+rule download_raw_stripping:
+    input: lines_downloader.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21_radiative.txt
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/radiative
+    jobid: 12
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/radiative
+    wildcards: version=stripping21, stream=radiative
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Oct 13 14:20:34 2023]
+rule download_raw_stripping:
+    input: lines_downloader.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21_bhadron.txt
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/bhadron
+    jobid: 13
+    reason: Forced execution
+    wildcards: version=stripping21, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Oct 13 14:20:34 2023]
+rule download_raw_stripping:
+    input: lines_downloader.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p1_leptonic.txt
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/leptonic
+    jobid: 15
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/leptonic
+    wildcards: version=stripping21r0p1, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Waiting at most 5 seconds for missing files.
+MissingOutputException in rule download_raw_stripping in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 55:
+Job 15  completed successfully, but some output files are missing. Missing files after 5 seconds. This might be due to filesystem latency. If that is the case, consider to increase the wait time with --latency-wait:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/leptonic
+[Fri Oct 13 14:20:40 2023]
+Finished job 12.
+1 of 4 steps (25%) done
+[Fri Oct 13 14:20:40 2023]
+Finished job 13.
+2 of 4 steps (50%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-13T142033.687265.snakemake.log

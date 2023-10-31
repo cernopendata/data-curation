@@ -1,0 +1,57 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count
+---------------------  -------
+clean_stripping_pages        2
+prepare_stripping            1
+total                        3
+
+Select jobs to execute...
+
+[Thu Sep 28 13:00:42 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/radiative/strippingbetasbs2jpsieephiline.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbs2jpsieephiline.html
+    jobid: 4
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbs2jpsieephiline.html
+    wildcards: version=stripping21r1, stream=radiative, line=strippingbetasbs2jpsieephiline
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Sep 28 13:00:42 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/radiative/strippingbetasbs2jpsieephiline.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbs2jpsieephiline.html
+    jobid: 3
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbs2jpsieephiline.html
+    wildcards: version=stripping21, stream=radiative, line=strippingbetasbs2jpsieephiline
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Sep 28 13:00:42 2023]
+Error in rule clean_stripping_pages:
+    jobid: 4
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/radiative/strippingbetasbs2jpsieephiline.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbs2jpsieephiline.html
+    shell:
+        
+            python3 clean_stripping_pages.py                    --inputfile /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/radiative/strippingbetasbs2jpsieephiline.html             --outfile /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbs2jpsieephiline.html                        --version stripping21r1   
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Thu Sep 28 13:00:42 2023]
+Error in rule clean_stripping_pages:
+    jobid: 3
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/radiative/strippingbetasbs2jpsieephiline.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbs2jpsieephiline.html
+    shell:
+        
+            python3 clean_stripping_pages.py                    --inputfile /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/radiative/strippingbetasbs2jpsieephiline.html             --outfile /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbs2jpsieephiline.html                        --version stripping21   
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-09-28T130042.434326.snakemake.log
