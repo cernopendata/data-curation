@@ -13,14 +13,12 @@ import json
 
 
 @click.command()
-@click.option('--source', '-s', required=True,
-              help='Source of information? [file1]')
-@click.option('--target', '-t', required=True,
-              help='Target to modify? [file2]')
-@click.option('--match', '-m', required=True,
-              help='Field to match? E.g. "recid".')
-@click.option('--update', '-u', required=True,
-              help='Field to update? E.g. "categories".')
+@click.option("--source", "-s", required=True, help="Source of information? [file1]")
+@click.option("--target", "-t", required=True, help="Target to modify? [file2]")
+@click.option("--match", "-m", required=True, help='Field to match? E.g. "recid".')
+@click.option(
+    "--update", "-u", required=True, help='Field to update? E.g. "categories".'
+)
 def main(source, target, match, update):  # noqa: D301,D412,D413
     """Alter TARGET file based on SOURCE file information.
 
@@ -54,11 +52,11 @@ def main(source, target, match, update):  # noqa: D301,D412,D413
      $ git commit -a -s -m 'records: CMS category updates'
     """
     # read source
-    source_content = open(source, 'r').read()
+    source_content = open(source, "r").read()
     source_records = json.loads(source_content)
 
     # read target
-    target_content = open(target, 'r').read()
+    target_content = open(target, "r").read()
     target_records = json.loads(target_content)
 
     # amend target records
@@ -69,10 +67,15 @@ def main(source, target, match, update):  # noqa: D301,D412,D413
                 target_record[update] = source_record[update]
 
     # print records
-    new_content = json.dumps(target_records, indent=2, sort_keys=True,
-                             ensure_ascii=False, separators=(',', ': '))
-    print(new_content + '\n')
+    new_content = json.dumps(
+        target_records,
+        indent=2,
+        sort_keys=True,
+        ensure_ascii=False,
+        separators=(",", ": "),
+    )
+    print(new_content + "\n")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

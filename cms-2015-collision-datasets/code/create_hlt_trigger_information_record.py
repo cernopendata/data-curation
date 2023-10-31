@@ -22,13 +22,13 @@ def main():
 
     rec["abstract"] = {}
 
-    abstract_description = "\n      The list of trigger configuration files for the CMS 2015 proton-proton collision data (Run2015D from run number 256630 to run number 260627):\n      <table class=\"table\">\n      <thead>"
+    abstract_description = "\n      The list of trigger configuration files for the CMS 2015 proton-proton collision data (Run2015D from run number 256630 to run number 260627, Run2015G from run number 261445 to run number 262328):\n      <table class=\"table\">\n      <thead>"
 
     with open("inputs/cms-trigger-information-run2-helper.html", "r") as fdesc:
 
         for line in fdesc.readlines():
-            if "2015HI" in line:
-                # Skip HI-related lines for now; releasing only pp data
+            if "cosmic" in line or "special" in line:
+                # Skip Cosmic and Special related triggers
                 continue
             abstract_description += "\n"
             match = re.match(r"^(.*)<a href=\"files/(.*)\">(.*)</a>(.*)$", line)
@@ -66,6 +66,7 @@ def main():
 
     rec["run_period"] = [
         "Run2015D",
+        "Run2015G",
     ]
 
     rec["title"] = "High-Level Trigger information for CMS 2015 open data"

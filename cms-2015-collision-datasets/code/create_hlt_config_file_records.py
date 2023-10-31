@@ -146,8 +146,8 @@ def main():
 
             rec["collision_information"] = {}
             if "Run2015HI" in afile:
-                rec["collision_information"]["energy"] = "13TeV"
-                rec["collision_information"]["type"] = "PbPb"
+                rec["collision_information"]["energy"] = "5.02TeV"
+                rec["collision_information"]["type"] = "pp"
             else:
                 rec["collision_information"]["energy"] = "13TeV"
                 rec["collision_information"]["type"] = "pp"
@@ -202,18 +202,9 @@ def main():
     fdesc.write("}\n")
     fdesc.close()
 
-    # Filter away HeavyIon records for now. We have created them and reserved
-    # record IDs, but we don't want to show them up in the web interface just
-    # yet.
-    filtered_records = []
-    for record in records:
-        if record["collision_information"]["type"] == "PbPb":
-            continue
-        filtered_records.append(record)
-
     print(
         json.dumps(
-            filtered_records,
+            records,
             indent=2,
             sort_keys=True,
             ensure_ascii=False,

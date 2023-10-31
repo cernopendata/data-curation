@@ -1,0 +1,986 @@
+[
+  {
+    "checksum": "adler32:68bebb3b",
+    "filename": "000985BF-C57A-E311-BFCA-00266CF25998.root",
+    "size": 3902689804,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/000985BF-C57A-E311-BFCA-00266CF25998.root"
+  },
+  {
+    "checksum": "adler32:9e5faba4",
+    "filename": "023E6579-907A-E311-822F-00A0D1EEE0E4.root",
+    "size": 3775351246,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/023E6579-907A-E311-822F-00A0D1EEE0E4.root"
+  },
+  {
+    "checksum": "adler32:a1eeaf02",
+    "filename": "02465187-C57A-E311-9BEC-00266CF268B8.root",
+    "size": 3046432868,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/02465187-C57A-E311-9BEC-00266CF268B8.root"
+  },
+  {
+    "checksum": "adler32:1c4a3cff",
+    "filename": "0404D922-E27A-E311-9484-7845C4FC364D.root",
+    "size": 3920505129,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/0404D922-E27A-E311-9484-7845C4FC364D.root"
+  },
+  {
+    "checksum": "adler32:48eb9447",
+    "filename": "065BC791-8B7A-E311-8266-7845C4FC35E1.root",
+    "size": 3529200640,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/065BC791-8B7A-E311-8266-7845C4FC35E1.root"
+  },
+  {
+    "checksum": "adler32:bd01580c",
+    "filename": "06EA0E25-8B7A-E311-A7EC-848F69FD2931.root",
+    "size": 3659149618,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/06EA0E25-8B7A-E311-A7EC-848F69FD2931.root"
+  },
+  {
+    "checksum": "adler32:b9beba65",
+    "filename": "0855EC0C-CC7A-E311-8551-848F69FD501B.root",
+    "size": 3182840060,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/0855EC0C-CC7A-E311-8551-848F69FD501B.root"
+  },
+  {
+    "checksum": "adler32:961a38e4",
+    "filename": "0A94C2E8-887A-E311-A7D6-7845C4FC3614.root",
+    "size": 3301646117,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/0A94C2E8-887A-E311-A7D6-7845C4FC3614.root"
+  },
+  {
+    "checksum": "adler32:982f6838",
+    "filename": "0C59B5BE-A37A-E311-985B-7845C4FC3A0D.root",
+    "size": 3899000859,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/0C59B5BE-A37A-E311-985B-7845C4FC3A0D.root"
+  },
+  {
+    "checksum": "adler32:7eb0a269",
+    "filename": "103D79D8-A17A-E311-9590-7845C4FC35A5.root",
+    "size": 3895014008,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/103D79D8-A17A-E311-9590-7845C4FC35A5.root"
+  },
+  {
+    "checksum": "adler32:cf1f8a94",
+    "filename": "10B6C0FA-917A-E311-B460-00266CFAE684.root",
+    "size": 3044540205,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/10B6C0FA-917A-E311-B460-00266CFAE684.root"
+  },
+  {
+    "checksum": "adler32:b29311e5",
+    "filename": "12CEDABE-A37A-E311-BEE5-7845C4FC364D.root",
+    "size": 3898716049,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/12CEDABE-A37A-E311-BEE5-7845C4FC364D.root"
+  },
+  {
+    "checksum": "adler32:59d4b699",
+    "filename": "146D05BC-A37A-E311-9107-7845C4FC3B48.root",
+    "size": 3538966260,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/146D05BC-A37A-E311-9107-7845C4FC3B48.root"
+  },
+  {
+    "checksum": "adler32:4f101349",
+    "filename": "16A531DA-A17A-E311-855B-00266CF2454C.root",
+    "size": 3904600439,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/16A531DA-A17A-E311-855B-00266CF2454C.root"
+  },
+  {
+    "checksum": "adler32:17566d2a",
+    "filename": "18EC3CE7-D17A-E311-BC9B-00A0D1EE8D7C.root",
+    "size": 3901545536,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/18EC3CE7-D17A-E311-BC9B-00A0D1EE8D7C.root"
+  },
+  {
+    "checksum": "adler32:c5be3282",
+    "filename": "1AA16124-877A-E311-89C0-7845C4FC3731.root",
+    "size": 2201174131,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/1AA16124-877A-E311-89C0-7845C4FC3731.root"
+  },
+  {
+    "checksum": "adler32:9b763a8b",
+    "filename": "1C6850F2-A17A-E311-9AA1-848F69FD3E2A.root",
+    "size": 3051698453,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/1C6850F2-A17A-E311-9AA1-848F69FD3E2A.root"
+  },
+  {
+    "checksum": "adler32:6ff8d4d3",
+    "filename": "1CDF6630-867A-E311-BBDA-7845C4FC39E3.root",
+    "size": 2201360873,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/1CDF6630-867A-E311-BBDA-7845C4FC39E3.root"
+  },
+  {
+    "checksum": "adler32:54d20c09",
+    "filename": "1E4EF08A-867A-E311-8F29-7845C4FC368F.root",
+    "size": 3283675005,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/1E4EF08A-867A-E311-8F29-7845C4FC368F.root"
+  },
+  {
+    "checksum": "adler32:46200518",
+    "filename": "202DBFB5-D87A-E311-91B7-008CFA002490.root",
+    "size": 3903906027,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/202DBFB5-D87A-E311-91B7-008CFA002490.root"
+  },
+  {
+    "checksum": "adler32:4aa7b1e6",
+    "filename": "203BED3B-A37A-E311-960F-848F69FD28E3.root",
+    "size": 3523324267,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/203BED3B-A37A-E311-960F-848F69FD28E3.root"
+  },
+  {
+    "checksum": "adler32:4d11c1f6",
+    "filename": "204465DA-A17A-E311-88B5-00266CFAE890.root",
+    "size": 3421802608,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/204465DA-A17A-E311-88B5-00266CFAE890.root"
+  },
+  {
+    "checksum": "adler32:8947c5f0",
+    "filename": "206F0BFF-A17A-E311-B845-00266CF258D8.root",
+    "size": 3907316378,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/206F0BFF-A17A-E311-B845-00266CF258D8.root"
+  },
+  {
+    "checksum": "adler32:661896c8",
+    "filename": "22344AB7-8E7A-E311-A391-008CFA007F18.root",
+    "size": 3664662538,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/22344AB7-8E7A-E311-A391-008CFA007F18.root"
+  },
+  {
+    "checksum": "adler32:1d0f4cea",
+    "filename": "24E08AD3-A17A-E311-8323-848F69FD45A7.root",
+    "size": 3889183064,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/24E08AD3-A17A-E311-8323-848F69FD45A7.root"
+  },
+  {
+    "checksum": "adler32:ada718df",
+    "filename": "26D6F5EF-D17A-E311-B31F-7845C4FC360B.root",
+    "size": 3904046410,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/26D6F5EF-D17A-E311-B31F-7845C4FC360B.root"
+  },
+  {
+    "checksum": "adler32:0b4e49d8",
+    "filename": "26DA54D1-DD7A-E311-BA66-7845C4FC3605.root",
+    "size": 3897145124,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/26DA54D1-DD7A-E311-BA66-7845C4FC3605.root"
+  },
+  {
+    "checksum": "adler32:fd186286",
+    "filename": "285709BB-8E7A-E311-A4CD-00266CFAE740.root",
+    "size": 4016643414,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/285709BB-8E7A-E311-A4CD-00266CFAE740.root"
+  },
+  {
+    "checksum": "adler32:50e0273f",
+    "filename": "2ADB8915-C47A-E311-BAFF-7845C4FC3A3D.root",
+    "size": 2919506664,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/2ADB8915-C47A-E311-BAFF-7845C4FC3A3D.root"
+  },
+  {
+    "checksum": "adler32:5ab625f3",
+    "filename": "2C2267EE-887A-E311-A581-00A0D1EEF5B4.root",
+    "size": 3528179883,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/2C2267EE-887A-E311-A581-00A0D1EEF5B4.root"
+  },
+  {
+    "checksum": "adler32:f0f59520",
+    "filename": "2EA28B27-8B7A-E311-81A4-848F69FD2892.root",
+    "size": 3659584889,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/2EA28B27-8B7A-E311-81A4-848F69FD2892.root"
+  },
+  {
+    "checksum": "adler32:c5d9bc6f",
+    "filename": "2EA3F421-8B7A-E311-8B3B-7845C4F914C5.root",
+    "size": 3302008691,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/2EA3F421-8B7A-E311-8B3B-7845C4F914C5.root"
+  },
+  {
+    "checksum": "adler32:03d000dd",
+    "filename": "2EC41A29-CE7A-E311-AC95-008CFA00317C.root",
+    "size": 3169950899,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/2EC41A29-CE7A-E311-AC95-008CFA00317C.root"
+  },
+  {
+    "checksum": "adler32:052b1002",
+    "filename": "2EEF06BF-A37A-E311-A295-848F69FD288F.root",
+    "size": 3881524069,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/2EEF06BF-A37A-E311-A295-848F69FD288F.root"
+  },
+  {
+    "checksum": "adler32:c04f8be7",
+    "filename": "30069BC8-A17A-E311-B74F-00266CFAE7D0.root",
+    "size": 3897340718,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/30069BC8-A17A-E311-B74F-00266CFAE7D0.root"
+  },
+  {
+    "checksum": "adler32:b9fcd1b4",
+    "filename": "30CA214A-8F7A-E311-9653-00266CF279F8.root",
+    "size": 3423349863,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/30CA214A-8F7A-E311-9653-00266CF279F8.root"
+  },
+  {
+    "checksum": "adler32:2d209fe2",
+    "filename": "3207A6A7-AF7A-E311-8159-848F69FD2853.root",
+    "size": 3922524104,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/3207A6A7-AF7A-E311-8159-848F69FD2853.root"
+  },
+  {
+    "checksum": "adler32:e3f8c311",
+    "filename": "3250CD93-AD7A-E311-9E97-008CFA000BB8.root",
+    "size": 2804852242,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/3250CD93-AD7A-E311-9E97-008CFA000BB8.root"
+  },
+  {
+    "checksum": "adler32:5eb76bca",
+    "filename": "325F7D0B-D17A-E311-A9D7-7845C4FC399E.root",
+    "size": 3898581528,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/325F7D0B-D17A-E311-A9D7-7845C4FC399E.root"
+  },
+  {
+    "checksum": "adler32:5e42eba9",
+    "filename": "32F1E7B3-D17A-E311-87A5-008CFA002EE0.root",
+    "size": 3652937910,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/32F1E7B3-D17A-E311-87A5-008CFA002EE0.root"
+  },
+  {
+    "checksum": "adler32:324ab759",
+    "filename": "3613E26B-9A7A-E311-AB8F-7845C4FC39DA.root",
+    "size": 2958157407,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/3613E26B-9A7A-E311-AB8F-7845C4FC39DA.root"
+  },
+  {
+    "checksum": "adler32:fdaf6333",
+    "filename": "368A37DE-A17A-E311-B502-00266CFAC810.root",
+    "size": 3647004574,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/368A37DE-A17A-E311-B502-00266CFAC810.root"
+  },
+  {
+    "checksum": "adler32:b1c770ae",
+    "filename": "36A9CDF3-867A-E311-A384-7845C4FC39E3.root",
+    "size": 3300032570,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/36A9CDF3-867A-E311-A384-7845C4FC39E3.root"
+  },
+  {
+    "checksum": "adler32:0b44398b",
+    "filename": "38F599BD-897A-E311-BE67-7845C4FC365C.root",
+    "size": 2305716685,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/38F599BD-897A-E311-BE67-7845C4FC365C.root"
+  },
+  {
+    "checksum": "adler32:41e20d61",
+    "filename": "3A53FDD5-9E7A-E311-B380-180373FF8DE0.root",
+    "size": 3887774226,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/3A53FDD5-9E7A-E311-B380-180373FF8DE0.root"
+  },
+  {
+    "checksum": "adler32:83ccebfc",
+    "filename": "3A768CDF-A17A-E311-B904-00266CF9BF5C.root",
+    "size": 4138824469,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/3A768CDF-A17A-E311-B904-00266CF9BF5C.root"
+  },
+  {
+    "checksum": "adler32:a9304763",
+    "filename": "3AD097C3-A37A-E311-87A7-848F69FD454D.root",
+    "size": 3897019219,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/3AD097C3-A37A-E311-87A7-848F69FD454D.root"
+  },
+  {
+    "checksum": "adler32:8a78c301",
+    "filename": "3C4E14E2-A17A-E311-AC9A-180373FFCED8.root",
+    "size": 3661377352,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/3C4E14E2-A17A-E311-AC9A-180373FFCED8.root"
+  },
+  {
+    "checksum": "adler32:64d1cde0",
+    "filename": "3C7200B2-8F7A-E311-B0C1-00A0D1EEFD70.root",
+    "size": 3176011357,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/3C7200B2-8F7A-E311-B0C1-00A0D1EEFD70.root"
+  },
+  {
+    "checksum": "adler32:762c4714",
+    "filename": "3C7D823E-8A7A-E311-A6EA-848F69FD501B.root",
+    "size": 3424656833,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/3C7D823E-8A7A-E311-A6EA-848F69FD501B.root"
+  },
+  {
+    "checksum": "adler32:aa88d0cc",
+    "filename": "3C82167C-8B7A-E311-B94D-00266CF9AB88.root",
+    "size": 2312147804,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/3C82167C-8B7A-E311-B94D-00266CF9AB88.root"
+  },
+  {
+    "checksum": "adler32:980d6224",
+    "filename": "3CBB82DE-A17A-E311-B6FC-7845C4FC39C8.root",
+    "size": 3758153944,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/3CBB82DE-A17A-E311-B6FC-7845C4FC39C8.root"
+  },
+  {
+    "checksum": "adler32:008fb60e",
+    "filename": "3EBFAEA3-E17A-E311-9AB2-848F69FD457A.root",
+    "size": 3922924274,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/3EBFAEA3-E17A-E311-9AB2-848F69FD457A.root"
+  },
+  {
+    "checksum": "adler32:a6d244c3",
+    "filename": "40227E0F-927A-E311-A1C1-848F69FD2955.root",
+    "size": 3915685975,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/40227E0F-927A-E311-A1C1-848F69FD2955.root"
+  },
+  {
+    "checksum": "adler32:33fcc561",
+    "filename": "402AEAFD-9D7A-E311-87BE-848F69FD4EDD.root",
+    "size": 3533051551,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/402AEAFD-9D7A-E311-87BE-848F69FD4EDD.root"
+  },
+  {
+    "checksum": "adler32:8f11cb21",
+    "filename": "40BF9E3B-A37A-E311-A4B1-00A0D1EE8D00.root",
+    "size": 3896313604,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/40BF9E3B-A37A-E311-A4B1-00A0D1EE8D00.root"
+  },
+  {
+    "checksum": "adler32:f018cf61",
+    "filename": "42833823-937A-E311-907E-00266CF24EEC.root",
+    "size": 2925911610,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/42833823-937A-E311-907E-00266CF24EEC.root"
+  },
+  {
+    "checksum": "adler32:737dee6e",
+    "filename": "4413CBC7-A17A-E311-9DF2-7845C4FC3B48.root",
+    "size": 3910493858,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/4413CBC7-A17A-E311-9DF2-7845C4FC3B48.root"
+  },
+  {
+    "checksum": "adler32:bc95776a",
+    "filename": "4A50717E-8E7A-E311-8C65-180373FF8DE0.root",
+    "size": 3634235481,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/4A50717E-8E7A-E311-8C65-180373FF8DE0.root"
+  },
+  {
+    "checksum": "adler32:2657f92f",
+    "filename": "4C02423C-8D7A-E311-8AE7-00A0D1EEF364.root",
+    "size": 2313447043,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/4C02423C-8D7A-E311-8AE7-00A0D1EEF364.root"
+  },
+  {
+    "checksum": "adler32:7be2e6aa",
+    "filename": "4C3220A3-D17A-E311-B805-00266CF275E0.root",
+    "size": 3665966602,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/4C3220A3-D17A-E311-B805-00266CF275E0.root"
+  },
+  {
+    "checksum": "adler32:e28feb54",
+    "filename": "4C71AA85-8A7A-E311-BA94-7845C4FC365C.root",
+    "size": 3293652585,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/4C71AA85-8A7A-E311-BA94-7845C4FC365C.root"
+  },
+  {
+    "checksum": "adler32:54f19842",
+    "filename": "4CAC1915-887A-E311-9C45-7845C4FC3B1B.root",
+    "size": 3423641657,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/4CAC1915-887A-E311-9C45-7845C4FC3B1B.root"
+  },
+  {
+    "checksum": "adler32:2c354cb0",
+    "filename": "4E6F238F-8A7A-E311-9407-848F69FD2910.root",
+    "size": 3548209544,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/4E6F238F-8A7A-E311-9407-848F69FD2910.root"
+  },
+  {
+    "checksum": "adler32:8b6bea1d",
+    "filename": "52D929B7-8E7A-E311-9E00-001D09FDD80D.root",
+    "size": 4033391542,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/52D929B7-8E7A-E311-9E00-001D09FDD80D.root"
+  },
+  {
+    "checksum": "adler32:5630bfa4",
+    "filename": "542A72D6-A17A-E311-A063-00266CF9BBE4.root",
+    "size": 3916790225,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/542A72D6-A17A-E311-A063-00266CF9BBE4.root"
+  },
+  {
+    "checksum": "adler32:cc0b3557",
+    "filename": "545D04CC-877A-E311-82EE-848F69FD4EFB.root",
+    "size": 3410514876,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/545D04CC-877A-E311-82EE-848F69FD4EFB.root"
+  },
+  {
+    "checksum": "adler32:6e5efe7e",
+    "filename": "56752829-CE7A-E311-B323-00266CF9B874.root",
+    "size": 3413734322,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/56752829-CE7A-E311-B323-00266CF9B874.root"
+  },
+  {
+    "checksum": "adler32:018f22b5",
+    "filename": "589AA3EB-917A-E311-B8F1-00266CF1027C.root",
+    "size": 3157694309,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/589AA3EB-917A-E311-B8F1-00266CF1027C.root"
+  },
+  {
+    "checksum": "adler32:b11f5790",
+    "filename": "589D3D7D-8B7A-E311-A87E-7845C4FC363E.root",
+    "size": 3420838813,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/589D3D7D-8B7A-E311-A87E-7845C4FC363E.root"
+  },
+  {
+    "checksum": "adler32:528d1153",
+    "filename": "5C50E781-857A-E311-BD05-00266CF9B8B0.root",
+    "size": 4286239123,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/5C50E781-857A-E311-BD05-00266CF9B8B0.root"
+  },
+  {
+    "checksum": "adler32:c551e6dd",
+    "filename": "5C718D9F-917A-E311-8755-848F69FD29E2.root",
+    "size": 4040690919,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/5C718D9F-917A-E311-8755-848F69FD29E2.root"
+  },
+  {
+    "checksum": "adler32:e75554c8",
+    "filename": "5EFCB45B-8F7A-E311-A0AA-7845C4FC3635.root",
+    "size": 3765191779,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/5EFCB45B-8F7A-E311-A0AA-7845C4FC3635.root"
+  },
+  {
+    "checksum": "adler32:f6001f17",
+    "filename": "600007F1-A17A-E311-A01B-848F69FD4565.root",
+    "size": 3900298778,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/600007F1-A17A-E311-A01B-848F69FD4565.root"
+  },
+  {
+    "checksum": "adler32:bac57bfc",
+    "filename": "609E2283-8D7A-E311-9506-848F69FD4E98.root",
+    "size": 3656783707,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/609E2283-8D7A-E311-9506-848F69FD4E98.root"
+  },
+  {
+    "checksum": "adler32:ad7de321",
+    "filename": "64B82303-9E7A-E311-847A-00266CF1027C.root",
+    "size": 3779452150,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/64B82303-9E7A-E311-847A-00266CF1027C.root"
+  },
+  {
+    "checksum": "adler32:323a0ffa",
+    "filename": "64FC43D7-A17A-E311-8A23-7845C4FC3A61.root",
+    "size": 3926630412,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/64FC43D7-A17A-E311-8A23-7845C4FC3A61.root"
+  },
+  {
+    "checksum": "adler32:70cea881",
+    "filename": "6676F37B-8B7A-E311-8418-7845C4FC3B48.root",
+    "size": 3666961523,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/6676F37B-8B7A-E311-8418-7845C4FC3B48.root"
+  },
+  {
+    "checksum": "adler32:aa6bea1e",
+    "filename": "68754151-A37A-E311-B52D-7845C4FC3A1C.root",
+    "size": 3911648294,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/68754151-A37A-E311-B52D-7845C4FC3A1C.root"
+  },
+  {
+    "checksum": "adler32:c512c672",
+    "filename": "6A0670BC-8F7A-E311-90EA-001D09FDD6A2.root",
+    "size": 4262762186,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/6A0670BC-8F7A-E311-90EA-001D09FDD6A2.root"
+  },
+  {
+    "checksum": "adler32:ecda11ea",
+    "filename": "6A259404-827A-E311-B457-848F69FD29BB.root",
+    "size": 2191901097,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/6A259404-827A-E311-B457-848F69FD29BB.root"
+  },
+  {
+    "checksum": "adler32:2e461240",
+    "filename": "6C932DBB-A37A-E311-941D-7845C4FC3B1B.root",
+    "size": 3656844693,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/6C932DBB-A37A-E311-941D-7845C4FC3B1B.root"
+  },
+  {
+    "checksum": "adler32:43152db3",
+    "filename": "6CAD9C9B-8A7A-E311-9B27-7845C4FC3665.root",
+    "size": 3297954738,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/6CAD9C9B-8A7A-E311-9B27-7845C4FC3665.root"
+  },
+  {
+    "checksum": "adler32:393c7722",
+    "filename": "70CEC761-DD7A-E311-9275-00266CF25878.root",
+    "size": 3889465570,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/70CEC761-DD7A-E311-9275-00266CF25878.root"
+  },
+  {
+    "checksum": "adler32:7ed5158c",
+    "filename": "7262F5BE-A37A-E311-A9C5-7845C4FC3A52.root",
+    "size": 3166890044,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/7262F5BE-A37A-E311-A9C5-7845C4FC3A52.root"
+  },
+  {
+    "checksum": "adler32:c87056cc",
+    "filename": "72DE7941-8A7A-E311-9525-7845C4FC35E1.root",
+    "size": 3414015806,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/72DE7941-8A7A-E311-9525-7845C4FC35E1.root"
+  },
+  {
+    "checksum": "adler32:1f41528b",
+    "filename": "744904C4-A17A-E311-A932-00266CF10934.root",
+    "size": 4156926317,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/744904C4-A17A-E311-A932-00266CF10934.root"
+  },
+  {
+    "checksum": "adler32:e6079776",
+    "filename": "74F8F392-8E7A-E311-AEE0-7845C4FC360B.root",
+    "size": 3668272833,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/74F8F392-8E7A-E311-AEE0-7845C4FC360B.root"
+  },
+  {
+    "checksum": "adler32:d6cae8cb",
+    "filename": "783C52ED-A17A-E311-BE05-00A0D1EE8E94.root",
+    "size": 3919619741,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/783C52ED-A17A-E311-BE05-00A0D1EE8E94.root"
+  },
+  {
+    "checksum": "adler32:b375a2f9",
+    "filename": "7AE3A19C-D17A-E311-859E-00266CF253C4.root",
+    "size": 3910552124,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/7AE3A19C-D17A-E311-859E-00266CF253C4.root"
+  },
+  {
+    "checksum": "adler32:edfa2de7",
+    "filename": "7C902DBC-D17A-E311-A62D-008CFA00018C.root",
+    "size": 3416220339,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/7C902DBC-D17A-E311-A62D-008CFA00018C.root"
+  },
+  {
+    "checksum": "adler32:29c5b809",
+    "filename": "7E5F5A07-A27A-E311-AEC7-848F69FD457A.root",
+    "size": 3929260587,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/7E5F5A07-A27A-E311-AEC7-848F69FD457A.root"
+  },
+  {
+    "checksum": "adler32:09e0c9df",
+    "filename": "7EC17FC1-8D7A-E311-90A4-7845C4FC36AD.root",
+    "size": 3518990910,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/7EC17FC1-8D7A-E311-90A4-7845C4FC36AD.root"
+  },
+  {
+    "checksum": "adler32:0f3fee7d",
+    "filename": "84768E3C-A37A-E311-85CE-7845C4FC39C8.root",
+    "size": 3899882101,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/84768E3C-A37A-E311-85CE-7845C4FC39C8.root"
+  },
+  {
+    "checksum": "adler32:beb4a1f1",
+    "filename": "882C6257-8C7A-E311-9910-00266CF9BE6C.root",
+    "size": 3668095045,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/882C6257-8C7A-E311-9910-00266CF9BE6C.root"
+  },
+  {
+    "checksum": "adler32:5851b432",
+    "filename": "8A47FFBC-A37A-E311-8D7E-00266CF9BF5C.root",
+    "size": 3789623094,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/8A47FFBC-A37A-E311-8D7E-00266CF9BF5C.root"
+  },
+  {
+    "checksum": "adler32:4523bda3",
+    "filename": "8C6231D9-A17A-E311-85AA-848F69FD4C76.root",
+    "size": 3523071440,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/8C6231D9-A17A-E311-85AA-848F69FD4C76.root"
+  },
+  {
+    "checksum": "adler32:39d66fa9",
+    "filename": "8EEBBE90-867A-E311-9A70-7845C4FC363E.root",
+    "size": 3314389890,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/8EEBBE90-867A-E311-9A70-7845C4FC363E.root"
+  },
+  {
+    "checksum": "adler32:2693a9c4",
+    "filename": "927B3516-887A-E311-B492-848F69FD4ED1.root",
+    "size": 2314124411,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/927B3516-887A-E311-B492-848F69FD4ED1.root"
+  },
+  {
+    "checksum": "adler32:46e5d398",
+    "filename": "92868499-8C7A-E311-8E95-7845C4FC363E.root",
+    "size": 3882151996,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/92868499-8C7A-E311-8E95-7845C4FC363E.root"
+  },
+  {
+    "checksum": "adler32:5b636bbd",
+    "filename": "92E05A1C-937A-E311-811D-7845C4FC378E.root",
+    "size": 4269116289,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/92E05A1C-937A-E311-811D-7845C4FC378E.root"
+  },
+  {
+    "checksum": "adler32:7dba88ee",
+    "filename": "9461E4B5-887A-E311-9C92-00A0D1EE25D0.root",
+    "size": 3285912175,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/9461E4B5-887A-E311-9C92-00A0D1EE25D0.root"
+  },
+  {
+    "checksum": "adler32:9840cc48",
+    "filename": "96A9E625-8B7A-E311-8B50-7845C4FBB60E.root",
+    "size": 3315986671,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/96A9E625-8B7A-E311-8B50-7845C4FBB60E.root"
+  },
+  {
+    "checksum": "adler32:57715d64",
+    "filename": "98614EC9-8E7A-E311-B0E1-180373FF94D6.root",
+    "size": 2437360257,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/98614EC9-8E7A-E311-B0E1-180373FF94D6.root"
+  },
+  {
+    "checksum": "adler32:4cb3fef1",
+    "filename": "9A804EE0-A17A-E311-AC1E-00266CFAE684.root",
+    "size": 2919980858,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/9A804EE0-A17A-E311-AC1E-00266CFAE684.root"
+  },
+  {
+    "checksum": "adler32:acbada08",
+    "filename": "9C30C658-8C7A-E311-AF12-848F69FD45A7.root",
+    "size": 3652868514,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/9C30C658-8C7A-E311-AF12-848F69FD45A7.root"
+  },
+  {
+    "checksum": "adler32:d8a84483",
+    "filename": "9C55B978-8B7A-E311-B328-7845C4FC3A16.root",
+    "size": 3540149062,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/9C55B978-8B7A-E311-B328-7845C4FC3A16.root"
+  },
+  {
+    "checksum": "adler32:dded8c11",
+    "filename": "9CBCEBDC-A17A-E311-9EB2-7845C4FBB6A4.root",
+    "size": 3300730775,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/9CBCEBDC-A17A-E311-9EB2-7845C4FBB6A4.root"
+  },
+  {
+    "checksum": "adler32:572d24db",
+    "filename": "9E052C3C-A37A-E311-87E1-008CFA00018C.root",
+    "size": 3916228062,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/9E052C3C-A37A-E311-87E1-008CFA00018C.root"
+  },
+  {
+    "checksum": "adler32:91cd04c2",
+    "filename": "9E6CA37B-8A7A-E311-83EF-00266CF9AB88.root",
+    "size": 3292268091,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/9E6CA37B-8A7A-E311-83EF-00266CF9AB88.root"
+  },
+  {
+    "checksum": "adler32:682121b7",
+    "filename": "9EA1CF41-817A-E311-8458-7845C4FC36E6.root",
+    "size": 2304769946,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/9EA1CF41-817A-E311-8458-7845C4FC36E6.root"
+  },
+  {
+    "checksum": "adler32:1b6572f9",
+    "filename": "A0BC776A-987A-E311-B275-7845C4FC3B3F.root",
+    "size": 4261234028,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/A0BC776A-987A-E311-B275-7845C4FC3B3F.root"
+  },
+  {
+    "checksum": "adler32:a6f6d11d",
+    "filename": "A228C58A-8A7A-E311-8857-7845C4FC3C11.root",
+    "size": 3277877771,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/A228C58A-8A7A-E311-8857-7845C4FC3C11.root"
+  },
+  {
+    "checksum": "adler32:54277dc8",
+    "filename": "A2ABDEFE-A17A-E311-A288-008CFA00018C.root",
+    "size": 3648542634,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/A2ABDEFE-A17A-E311-A288-008CFA00018C.root"
+  },
+  {
+    "checksum": "adler32:69eb8e41",
+    "filename": "A413CAE5-887A-E311-8258-00266CF9B8B0.root",
+    "size": 3402774609,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/A413CAE5-887A-E311-8258-00266CF9B8B0.root"
+  },
+  {
+    "checksum": "adler32:2504ee75",
+    "filename": "A4F441EF-D57A-E311-8370-7845C4FC370D.root",
+    "size": 3304457139,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/A4F441EF-D57A-E311-8370-7845C4FC370D.root"
+  },
+  {
+    "checksum": "adler32:dcfb5593",
+    "filename": "A62BC3E6-797A-E311-86AF-7845C4FC370A.root",
+    "size": 2181916370,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/A62BC3E6-797A-E311-86AF-7845C4FC370A.root"
+  },
+  {
+    "checksum": "adler32:8ec9bfc3",
+    "filename": "A69C27AE-877A-E311-A79A-848F69FD4592.root",
+    "size": 2312549220,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/A69C27AE-877A-E311-A79A-848F69FD4592.root"
+  },
+  {
+    "checksum": "adler32:a786ceb4",
+    "filename": "A8C033C4-A37A-E311-B8A1-00A0D1EE95AC.root",
+    "size": 3556878228,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/A8C033C4-A37A-E311-B8A1-00A0D1EE95AC.root"
+  },
+  {
+    "checksum": "adler32:7e4af16c",
+    "filename": "ACC6BE6F-817A-E311-890B-7845C4FC370D.root",
+    "size": 3904460188,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/ACC6BE6F-817A-E311-890B-7845C4FC370D.root"
+  },
+  {
+    "checksum": "adler32:dfdf3ad0",
+    "filename": "AEA49594-8C7A-E311-B886-848F69FD288F.root",
+    "size": 2448362167,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/AEA49594-8C7A-E311-B886-848F69FD288F.root"
+  },
+  {
+    "checksum": "adler32:890b460a",
+    "filename": "AEB62BC8-A17A-E311-9EDC-848F69FD294F.root",
+    "size": 3894302852,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/AEB62BC8-A17A-E311-9EDC-848F69FD294F.root"
+  },
+  {
+    "checksum": "adler32:82252acb",
+    "filename": "AEC5BDDC-877A-E311-AF3A-7845C4FC3614.root",
+    "size": 3287885074,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/AEC5BDDC-877A-E311-AF3A-7845C4FC3614.root"
+  },
+  {
+    "checksum": "adler32:08b85045",
+    "filename": "AEF7B864-917A-E311-889F-7845C4FC3B6F.root",
+    "size": 4017357096,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/AEF7B864-917A-E311-889F-7845C4FC3B6F.root"
+  },
+  {
+    "checksum": "adler32:b5f1e715",
+    "filename": "B0702D10-927A-E311-BAE6-00266CF9BCC4.root",
+    "size": 2930099665,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/B0702D10-927A-E311-BAE6-00266CF9BCC4.root"
+  },
+  {
+    "checksum": "adler32:a94d80d3",
+    "filename": "B2404162-D27A-E311-98DF-00A0D1EEE5CC.root",
+    "size": 3928300597,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/B2404162-D27A-E311-98DF-00A0D1EEE5CC.root"
+  },
+  {
+    "checksum": "adler32:06bdfd2c",
+    "filename": "B4260DDF-A17A-E311-AD30-00A0D1EE8D00.root",
+    "size": 3776078890,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/B4260DDF-A17A-E311-AD30-00A0D1EE8D00.root"
+  },
+  {
+    "checksum": "adler32:ab1c6b57",
+    "filename": "B43C70DE-A17A-E311-8237-7845C4FC3C11.root",
+    "size": 4137523740,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/B43C70DE-A17A-E311-8237-7845C4FC3C11.root"
+  },
+  {
+    "checksum": "adler32:23ba5c6b",
+    "filename": "B6A22F11-CF7A-E311-93EC-008CFA002E80.root",
+    "size": 3534523409,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/B6A22F11-CF7A-E311-93EC-008CFA002E80.root"
+  },
+  {
+    "checksum": "adler32:854e3886",
+    "filename": "B6A30A66-8F7A-E311-A345-7845C4FC3653.root",
+    "size": 2569392852,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/B6A30A66-8F7A-E311-A345-7845C4FC3653.root"
+  },
+  {
+    "checksum": "adler32:06e0718e",
+    "filename": "B6C7CD49-8D7A-E311-B06B-848F69FD45B6.root",
+    "size": 3667343202,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/B6C7CD49-8D7A-E311-B06B-848F69FD45B6.root"
+  },
+  {
+    "checksum": "adler32:517c1792",
+    "filename": "BA7371F1-917A-E311-BFE7-7845C4F92ECD.root",
+    "size": 4278423900,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/BA7371F1-917A-E311-BFE7-7845C4F92ECD.root"
+  },
+  {
+    "checksum": "adler32:1f38cfca",
+    "filename": "BE0B4FD0-937A-E311-A4A9-180373FF8456.root",
+    "size": 3184876977,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/BE0B4FD0-937A-E311-A4A9-180373FF8456.root"
+  },
+  {
+    "checksum": "adler32:db3ac000",
+    "filename": "BEA9A10A-8C7A-E311-A89D-00A0D1EE95AC.root",
+    "size": 3664760726,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/BEA9A10A-8C7A-E311-A89D-00A0D1EE95AC.root"
+  },
+  {
+    "checksum": "adler32:1099ace1",
+    "filename": "C255E2DD-907A-E311-8495-008CFA008C94.root",
+    "size": 2802742744,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/C255E2DD-907A-E311-8495-008CFA008C94.root"
+  },
+  {
+    "checksum": "adler32:7e477659",
+    "filename": "C8166A37-897A-E311-8A72-00266CFAE684.root",
+    "size": 3288684020,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/C8166A37-897A-E311-8A72-00266CFAE684.root"
+  },
+  {
+    "checksum": "adler32:1eae55c3",
+    "filename": "CA44632B-DA7A-E311-AA28-848F69FD2940.root",
+    "size": 3777484056,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/CA44632B-DA7A-E311-AA28-848F69FD2940.root"
+  },
+  {
+    "checksum": "adler32:3f6b70c3",
+    "filename": "CCBCD539-A37A-E311-BD84-008CFA008CC8.root",
+    "size": 3900974262,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/CCBCD539-A37A-E311-BD84-008CFA008CC8.root"
+  },
+  {
+    "checksum": "adler32:5b527ed1",
+    "filename": "CE86DDE9-A17A-E311-B04A-7845C4FC3767.root",
+    "size": 3908827086,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/CE86DDE9-A17A-E311-B04A-7845C4FC3767.root"
+  },
+  {
+    "checksum": "adler32:3e9cca39",
+    "filename": "D037B295-877A-E311-A0E2-7845C4FC368F.root",
+    "size": 3520696129,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/D037B295-877A-E311-A0E2-7845C4FC368F.root"
+  },
+  {
+    "checksum": "adler32:8a1f7b76",
+    "filename": "D4A20C95-8C7A-E311-A167-00A0D1EE9238.root",
+    "size": 3677037577,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/D4A20C95-8C7A-E311-A167-00A0D1EE9238.root"
+  },
+  {
+    "checksum": "adler32:7ea8b5f9",
+    "filename": "D68D4910-887A-E311-971F-7845C4FC39E3.root",
+    "size": 3549614402,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/D68D4910-887A-E311-971F-7845C4FC39E3.root"
+  },
+  {
+    "checksum": "adler32:0c558c87",
+    "filename": "D6C62AF0-A17A-E311-B0AB-848F69FD455F.root",
+    "size": 3198535738,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/D6C62AF0-A17A-E311-B0AB-848F69FD455F.root"
+  },
+  {
+    "checksum": "adler32:2296b4a9",
+    "filename": "D6CEA56C-847A-E311-B682-848F69FD454D.root",
+    "size": 3306454191,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/D6CEA56C-847A-E311-B682-848F69FD454D.root"
+  },
+  {
+    "checksum": "adler32:88da6d8b",
+    "filename": "D810B368-917A-E311-8BB9-848F69FD4508.root",
+    "size": 3037737948,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/D810B368-917A-E311-8BB9-848F69FD4508.root"
+  },
+  {
+    "checksum": "adler32:0f9162ad",
+    "filename": "D81FA5D4-8D7A-E311-9CA5-7845C4FC363E.root",
+    "size": 4125727307,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/D81FA5D4-8D7A-E311-9CA5-7845C4FC363E.root"
+  },
+  {
+    "checksum": "adler32:3af2d1b2",
+    "filename": "DA981AA7-897A-E311-9969-7845C4FC3731.root",
+    "size": 3417149910,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/DA981AA7-897A-E311-9969-7845C4FC3731.root"
+  },
+  {
+    "checksum": "adler32:8999e46f",
+    "filename": "DAA30AC4-D07A-E311-BBB9-00266CFAE6B0.root",
+    "size": 3316123886,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/DAA30AC4-D07A-E311-BBB9-00266CFAE6B0.root"
+  },
+  {
+    "checksum": "adler32:39b4834a",
+    "filename": "DABEB6F3-CF7A-E311-93D8-7845C4FC3C02.root",
+    "size": 3562746358,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/DABEB6F3-CF7A-E311-93D8-7845C4FC3C02.root"
+  },
+  {
+    "checksum": "adler32:72e587ce",
+    "filename": "DE550997-8A7A-E311-B42C-00A0D1EE8EB4.root",
+    "size": 3787907905,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/DE550997-8A7A-E311-B42C-00A0D1EE8EB4.root"
+  },
+  {
+    "checksum": "adler32:2cbf9d89",
+    "filename": "DEA891DF-937A-E311-822B-848F69FD291F.root",
+    "size": 3057287885,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/DEA891DF-937A-E311-822B-848F69FD291F.root"
+  },
+  {
+    "checksum": "adler32:35c0057d",
+    "filename": "E0752C0D-CF7A-E311-9A88-848F69FD2955.root",
+    "size": 3885661429,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/E0752C0D-CF7A-E311-9A88-848F69FD2955.root"
+  },
+  {
+    "checksum": "adler32:525216f2",
+    "filename": "E09B158E-AD7A-E311-A9EA-00266CFAE6B0.root",
+    "size": 3909978883,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/E09B158E-AD7A-E311-A9EA-00266CFAE6B0.root"
+  },
+  {
+    "checksum": "adler32:cc6a83d6",
+    "filename": "E47EC193-927A-E311-8721-7845C4FC39DA.root",
+    "size": 4249711875,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/E47EC193-927A-E311-8721-7845C4FC39DA.root"
+  },
+  {
+    "checksum": "adler32:78d1bb31",
+    "filename": "E6B83B50-847A-E311-80F2-848F69FD2910.root",
+    "size": 3037054580,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/E6B83B50-847A-E311-80F2-848F69FD2910.root"
+  },
+  {
+    "checksum": "adler32:cfd24565",
+    "filename": "E863AB67-877A-E311-A736-848F69FD457A.root",
+    "size": 3519310451,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/E863AB67-877A-E311-A736-848F69FD457A.root"
+  },
+  {
+    "checksum": "adler32:5f04995f",
+    "filename": "E8AD5CDB-D67A-E311-ACB7-00266CF2679C.root",
+    "size": 3663746708,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/E8AD5CDB-D67A-E311-ACB7-00266CF2679C.root"
+  },
+  {
+    "checksum": "adler32:b19fd251",
+    "filename": "EAC5DC3D-A37A-E311-BF13-848F69FD45A7.root",
+    "size": 3903192603,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/EAC5DC3D-A37A-E311-BF13-848F69FD45A7.root"
+  },
+  {
+    "checksum": "adler32:d298e854",
+    "filename": "ECC9EB71-877A-E311-A91F-180373FF8CD4.root",
+    "size": 3298736171,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/ECC9EB71-877A-E311-A91F-180373FF8CD4.root"
+  },
+  {
+    "checksum": "adler32:1526c84e",
+    "filename": "EE407B36-D37A-E311-A87A-7845C4FC360B.root",
+    "size": 3906703356,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/EE407B36-D37A-E311-A87A-7845C4FC360B.root"
+  },
+  {
+    "checksum": "adler32:0f10d8f1",
+    "filename": "EE5C70D9-A17A-E311-A892-848F69FF914E.root",
+    "size": 3893194485,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/EE5C70D9-A17A-E311-A892-848F69FF914E.root"
+  },
+  {
+    "checksum": "adler32:4dd129b4",
+    "filename": "F49AD696-997A-E311-934A-848F69FD2952.root",
+    "size": 3027817435,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/F49AD696-997A-E311-934A-848F69FD2952.root"
+  },
+  {
+    "checksum": "adler32:c79ef77c",
+    "filename": "F4F185DD-A17A-E311-ACB0-848F69FD28E3.root",
+    "size": 3882198042,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/F4F185DD-A17A-E311-ACB0-848F69FD28E3.root"
+  },
+  {
+    "checksum": "adler32:ccb20098",
+    "filename": "F88030C4-C87A-E311-87AC-848F69FD29D0.root",
+    "size": 2913359080,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/himc/HiWinter13/QCD_Pt_540_TuneZ2_2p76TeV_pythia6/GEN-SIM-RECO/STARTHI53_V28-v1/20000/F88030C4-C87A-E311-87AC-848F69FD29D0.root"
+  }
+]
