@@ -12,6 +12,7 @@ check_black() {
 		cms-YYYY-run-numbers/code/*.py \
 		cms-2013-collision-datasets-hi-ppref/code/*.py \
 		cms-2015-collision-datasets-hi-ppref/code/*.py \
+		jade-2023-raw-datasets/code/*.py \
 		utils/*.py
 }
 
