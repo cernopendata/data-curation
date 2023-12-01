@@ -19,7 +19,6 @@ def mcm_downloader(dataset, mcm_dir):
         print("==> " + dataset + "\n==> Already exist. Skipping...")
         return
 
-    #cmd = "curl -s -k https://cms-pdmv.cern.ch/mcm/public/restapi/requests/"
     cmd = "curl -s -k https://cms-pdmv-prod.web.cern.ch/mcm/public/restapi/requests/"
 
     mcm_dict = subprocess.run(cmd + "produces" + dataset,
@@ -30,7 +29,7 @@ def mcm_downloader(dataset, mcm_dir):
         # get prepid from mcm/dataset
         prepid= get_from_deep_json(json.loads(mcm_dict_out), "prepid")
 
-    if prepid == None:
+    if not prepid:
         print("Error: prepid not found in mcm for " + dataset + "\n==> Skipping dataset McM dict and script",file=sys.stderr )
         return
 
@@ -58,7 +57,6 @@ def mcm_downloader(dataset, mcm_dir):
     path = mcm_dir + "/chain/" + dataset.replace('/', '@')
     os.makedirs(path, exist_ok=True)
 
-    # command line: curl -s -k https://cms-pdmv.cern.ch/mcm/public/restapi/requests/get/<prepid> | jq .results.member_of_chain
     # FIXME: change shell jq to deep json query
     mcm_chain_prepid = subprocess.run(cmd + "get/" + prepid  + " | jq .results.member_of_chain",
                                 shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -66,10 +64,7 @@ def mcm_downloader(dataset, mcm_dir):
     chain_prepid = re.sub(r"[\[\]]", "", mcm_chain_prepid_out).strip()
 
     # now query for the full chain
-    # commands line: curl -L -s -b cookies.txt https://cms-pdmv.cern.ch/mcm/restapi/chained_requests/get/<chain_prepid> | jq .results.chain
     # FIXME: change shell jq to deep json query
-    # REQUIRES: run on command line first: auth-get-sso-cookie -u  https://cms-pdmv.cern.ch/mcm -o cookies.txt
-    # chaincmd = "curl -L -s -b cookies.txt https://cms-pdmv.cern.ch/mcm/restapi/chained_requests/"
     chaincmd = "curl -L -s -b cookies.txt https://cms-pdmv-prod.web.cern.ch/mcm/restapi/chained_requests/"
     mcm_chain_prepids = subprocess.run(chaincmd + "get/" + chain_prepid  + " | jq .results.chain",
                                 shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -105,7 +100,6 @@ def mcm_downloader(dataset, mcm_dir):
             with open(outfile, 'w') as dict_file:
                     dict_file.write(mcm_step_script_out)
 
-    ### End new
 
 
 def create(datasets, mcm_dir, eos_dir, ignore_eos_store=False):
@@ -151,10 +145,9 @@ def get_prepId_from_das(dataset, das_dir):
     # get prepid from das/dataset
     prepid = get_from_deep_json(get_das_store_json(dataset, 'dataset', das_dir), 'prep_id')
 
-    if prepid == None:
+    if not prepid:
         # try to get from das/mcm:
         prepid = get_from_deep_json(get_das_store_json(dataset, 'mcm', das_dir), 'prepid')
-        # todo also try different queries from the json. prep_id?
 
     return prepid
 
@@ -165,7 +158,7 @@ def get_prepid_from_mcm(dataset, mcm_dir):
     # get prepid from das/dataset
     prepid = get_from_deep_json(get_mcm_dict(dataset, mcm_dir), 'prep_id')
 
-    if prepid == None:
+    if not prepid:
         # try different queries from the json. prep_id?
         prepid = get_from_deep_json(get_mcm_dict(dataset, mcm_dir), 'prepid')
 
@@ -196,7 +189,7 @@ def get_cmssw_version_from_mcm(dataset, mcm_dir):
 
 def get_cmsDriver_script(dataset, mcm_dir):
     """Return path to cmsDriver script for that dataset"""
-    if dataset == None:
+    if not dataset:
         return None
 
     script = mcm_dir + '/scripts/' + dataset.replace('/', '@') + '.sh'
