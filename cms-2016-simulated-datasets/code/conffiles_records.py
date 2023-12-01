@@ -2,7 +2,7 @@
 
 
 """
-Create MC 2012 records.
+Create MC 2016 records.
 """
 
 import hashlib
@@ -30,7 +30,7 @@ from mcm_store import get_mcm_dict, \
                       get_generator_name, \
                       get_dataset_energy, \
                       get_cmsDriver_script
-from config_store import get_conffile_ids
+from config_store import get_conffile_ids_all_chain_steps
 from categorisation import guess_title_category
 from dataset_records import get_dataset, \
                             newer_dataset_version_exists
@@ -42,7 +42,6 @@ def create_record(conf_id, conffiles_dir):
     rec = {}
 
     with open(conffiles_dir + '/' + conf_id + '.configFile') as myfile:
-        #print(conf_id)
         rec['cms_confdb_id'] = conf_id
         rec['script'] = myfile.read()
 
@@ -71,9 +70,8 @@ def main(datasets, eos_dir, das_dir, mcm_dir, conffiles_dir):
 
     conffiles = []
     for ds in dataset_full_names:
-        #config_ids = get_conffile_ids(ds, das_dir, mcm_dir), using mcm for now, add the step loop, ds list is not enough
-        # get_conffile_ids in config_store has the loop inside, use that
-        config_ids = get_conffile_ids(ds, mcm_dir)
+        # this returns config_ids for all steps in the processing chain of the dataset
+        config_ids = get_conffile_ids_all_chain_steps(ds, mcm_dir)
         if config_ids:
             for config_id in config_ids:
                 if config_id not in conffiles:
