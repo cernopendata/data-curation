@@ -1,0 +1,96 @@
+---
+# all recid_start are placeholders, should be changed later to correct ones
+common_values:
+  accelerator: CERN-LHC
+  authors: 
+    - CMS Open Data Group
+  collections:
+    - CMS-Derived-Datasets
+  dataset_semantics:
+  date_published: 2023
+  experiment: CMS
+  license:
+    attribution: CC0
+  publisher: CERN Open Data Portal
+  type:
+    primary: Dataset
+    secondary:
+      - Derived
+
+NanoAODRun1:
+  recid_start: 40000
+  title: <dataset> dataset in Run1 NanoAOD-like format
+  abstract:
+    description: >
+      <p><dataset> dataset in a NanoAOD-like research-level Ntuple format for CMS Run1 data, readable with bare
+      <a href="https://root.cern/">ROOT</a> or other ROOT-compatible software, and containing the per-event information that is needed in most generic analyses. 
+      In contrast to the CMS NanoAOD format which is derived from MiniAOD, it is generated directly from the AOD format with completely 
+      independent code provided by the CMS open data group. Nevertheless, there is a large overlap in functionality and content between 
+      NanoAODRun1 and NanoAOD such that common analyses are possible. It is provided as a collection of root files under <dataset> directory, 
+      and in <dataset>_merged.root with the separate files in the <dataset> directory merged into one file. This dataset was derived from 
+      the primary dataset in MiniAOD format linked below.</p>
+  distribution:
+    formats:
+      - nanoaod-run1
+  methodology:
+    description: The datasets were produced with the software available in the record linked below.
+    links:
+      - recid: 12505 
+  use_with:
+    description: This dataset can be used with the following analysis
+    links:
+      - recid: 70001 # placeholder recid for SW record for NanoAODRun1 usage examples
+  validation:
+    description: >
+      <p>These data were derived from the primary datasets linked below using only the validated runs.</p>
+
+POET:
+  recid_start: 50000
+  title: <dataset> dataset in reduced NanoAOD-like format
+  abstract:
+    description: >
+      <p>This dataset contains information extracted from different physics objects from the 2015 MiniAOD parent <parent_dataset> dataset, 
+      readable with bare <a href="https://root.cern/">ROOT</a> or other ROOT-compatible software. It was produced for the CMS open data workshop tutorials. 
+      It is provided in three different structures: a collection of root files under <dataset> directory as a direct output of POET 
+      (separate trees for each object), <dataset>_flat directory with root files "flattened" to a single tree, as required when used as input to coffea with 
+      nanoevents schema, and in <dataset>_flat_merged.root with the separate files in the <dataset>_flat directory merged into one file. 
+      This dataset was derived from the primary dataset in MiniAOD format linked below.</p>
+  distribution:
+    formats:
+      - nanoaod-poet
+  methodology:
+    description: The datasets were produced with the software available in the record linked below.
+    links:
+      - recid: 12502
+  use_with:
+    description: The use of this dataset does not require any software specific to the CMS experiment. It can be read with the ROOT package
+    links:
+      - url: https://cms-opendata-workshop.github.io/workshop2022-lesson-ttbarljetsanalysis/
+  validation:
+    description: >
+      <p>These data were derived from the primary datasets linked below using only the validated runs. 
+       No further validation was done for the output.</p>
+
+PFNano:
+  recid_start: 60000
+  title: <dataset> dataset in NanoAOD format enhanced with Particle Flow candidates
+  abstract:
+    description: >
+      <p><dataset> dataset in NanoAOD format enhanced with Particle Flow candidates, readable with bare ROOT or 
+      other ROOT-compatible software. In addition to the default NanoAOD content, it contains the information. This dataset was derived from 
+      the primary dataset in MiniAOD format linked below.</p>
+  distribution:
+    formats:
+      - nanoaod-pf
+  methodology:
+    description: The datasets were produced with the software available in the record linked below.
+    links:
+      - recid: 12504
+  use_with:
+    description: This dataset can be used with the following analysis # have to point to standard NanoAOD docs
+    links:
+      - recid: 12361
+  validation:
+    description: >
+      <p>These data were derived from the primary datasets linked below.</p>
+...
