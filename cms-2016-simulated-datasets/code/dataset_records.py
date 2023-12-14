@@ -187,7 +187,7 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid_info):
         process = ''
         output_dataset = get_output_dataset_from_mcm(dataset, mcm_step_dir)
         if output_dataset:        
-            step['output_dataset'] = output_dataset
+            step['output_dataset'] = output_dataset[0]
         release = get_cmssw_version_from_mcm(dataset, mcm_step_dir)
         if release:
             step['release'] = release
