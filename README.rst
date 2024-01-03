@@ -49,16 +49,18 @@ Specific data ingestion and curation campaigns:
 - `cms-2015-collision-datasets <cms-2015-collision-datasets>`_ -- helper scripts for the CMS 2015 open data release (collision datasets)
 - `cms-2015-collision-datasets-hi-ppref <cms-2015-collision-datasets-hi-ppref>`_ - helper scripts for CMS 2015 heavy ion release (proton-proton reference collision datasets)
 - `cms-2015-simulated-datasets <cms-2015-simulated-datasets>`_ -- helper scripts for the CMS 2015 open data release (simulated datasets)
+- `cms-2016-collision-datasets <cms-2016-collision-datasets>`_ -- helper scripts for the CMS 2016 open data release (collision datasets)
 - `cms-2016-simulated-datasets <cms-2016-simulated-datasets>`_ -- helper scripts for the CMS 2016 open data release (simulated datasets)
 - `cms-YYYY-luminosity <cms-YYYY-luminosity>`_ -- helper scripts for the CMS luminosity information records (any year)
 - `cms-YYYY-run-numbers <cms-YYYY-run-numbers>`_ -- helper scripts for enriching CMS dataset run numbers (any year)
 - `cms-YYYY-simulated-datasets <cms-YYYY-simulated-datasets>`_ -- helper scripts for CMS simulated dataset records (any year)
 - `cms-YYYY-validated-runs <cms-YYYY-validated-runs>`_ -- helper scripts for the CMS validated runs records (any year)
+- `cms-derived-data <cms-derived-data>`_ -- helper scripts for the CMS derived datasets (NanoAODRun1, PFNano, POET)
 - `cms-release-info <cms-release-info>`_ -- CMS year-specific and run-era-specific information
 - `cms-run2-hlt-triggers <cms-run2-hlt-triggers>`_ -- helper scripts for the CMS Run2 data release (HLT triggers)
 - `cms-run2-ultra-legacy-production <cms-run2-ultra-legacy-production>`_ - helper scripts for CMS Run2 ultra-legacy production
 - `cod2-to-cod3 <cod2-to-cod3>`_ - record migration from version 2 to version 3
-- `jade-2023-first-release <jade-2023-first-release>`_ - helper scripts for the initial release of JADE data
+- `jade-2023-raw-datasets <jade-2023-raw-datasets>`_ - helper scripts for the initial release of JADE data
 - `opera-2017-multiplicity-studies <opera-2017-multiplicity-studies>`_ - helper scripts for the release of OPERA multiplicity studies
 - `opera-2019-electron-neutrinos <opera-2019-electron-neutrinos>`_ - helper scripts for the release of OPERA electron neutrino events
 - `opera-2019-neutrino-induced-charm <opera-2019-neutrino-induced-charm>`_ - helper scripts for the release of OPERA charm events
