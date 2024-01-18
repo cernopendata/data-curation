@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python3
 
 """
 Create EOS rich index files for CMS 2015 collision datasets.
@@ -27,8 +27,6 @@ EXPERIMENT = "cms"
 INPUT = "./inputs/cms-2016-collision-datasets.txt"
 
 OUTPUTDIR = "./inputs/eos-file-indexes"
-
-DEBUG = True
 
 
 def get_dataset_name(dataset):
@@ -88,6 +86,7 @@ def get_volumes(dataset):
     volumes = []
     dataset_location = get_dataset_location(dataset)
     output = subprocess.check_output("eos ls -1 " + dataset_location, shell=True)
+    output = output.decode('utf-8')
     for line in output.split("\n"):
         if line and line != "file-indexes":
             volumes.append(line)
@@ -101,6 +100,7 @@ def get_files(dataset, volume):
     output = subprocess.check_output(
         "eos find --size --checksum " + dataset_location + "/" + volume, shell=True
     )
+    output = output.decode('utf-8')
     for line in output.split("\n"):
         if line and line != "file-indexes":
             match = re.match(r"^path=(.*) size=(.*) checksum=(.*)$", line)
@@ -147,37 +147,36 @@ def create_index_file(dataset, volume, files, style="txt"):
     return filename
 
 
-def copy_index_file(dataset, volume, filename):
-    "Copy index file filename to its final destination on EOS."
+def create_copy_command(dataset, volume, filename):
+    "Create shell command to copy index file filename to its final destination on EOS."
     dataset_location = get_dataset_location(dataset)
     cmd = (
         "eos cp "
-        + OUTPUTDIR
-        + "/"
+        + "./"
         + filename
         + " "
         + dataset_location
         + "/file-indexes/"
         + filename
     )
-    if DEBUG:
-        print(cmd)
-    else:
-        os.system(cmd)
+    fdesc = open(OUTPUTDIR + "/" + filename + ".sh", "w")
+    fdesc.write(cmd + '\n')
+    fdesc.close()
 
 
 def create_index_files(dataset, volume):
     "Create index files for the given dataset and volumes."
     files = get_files(dataset, volume)
     filename = create_index_file(dataset, volume, files, "txt")
-    copy_index_file(dataset, volume, filename)
+    create_copy_command(dataset, volume, filename)
     filename = create_index_file(dataset, volume, files, "json")
-    copy_index_file(dataset, volume, filename)
+    create_copy_command(dataset, volume, filename)
 
 
 def main():
     "Do the job."
 
+    os.makedirs(OUTPUTDIR, exist_ok=True)
     for line in open(INPUT, "r").readlines():
         dataset = line.strip()
         volumes = get_volumes(dataset)
