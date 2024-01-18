@@ -43,7 +43,7 @@ Warning: Creating the full local cache might take a long time.
 First step is to create EOS file index cache:
 
 ```console
-$ time python3 ./code/interface.py --create-eos-indexes inputs/CMS-2016-mc-datasets.txt
+$ python3 ./code/interface.py --create-eos-indexes inputs/CMS-2016-mc-datasets.txt
 ```
 
 This requires the data files to be placed in their final location. However, for
@@ -53,17 +53,17 @@ by means of adding the command-line option `--ignore-eos-store` to the commands 
 We can now build sample records by doing:
 
 ```console
-$ time python3 ./code/interface.py --create-das-json-store --ignore-eos-store inputs/CMS-2016-mc-datasets.txt
+$ python3 ./code/interface.py --create-das-json-store --ignore-eos-store inputs/CMS-2016-mc-datasets.txt
 
 $ auth-get-sso-cookie -u  https://cms-pdmv.cern.ch/mcm -o cookies.txt
-$ time python3 ./code/interface.py --create-mcm-store --ignore-eos-store inputs/CMS-2016-mc-datasets.txt
+$ python3 ./code/interface.py --create-mcm-store --ignore-eos-store inputs/CMS-2016-mc-datasets.txt
 
-$ time python3 ./code/interface.py --get-conf-files --ignore-eos-store inputs/CMS-2016-mc-datasets.txt
+$ python3 ./code/interface.py --get-conf-files --ignore-eos-store inputs/CMS-2016-mc-datasets.txt
 
-$ time python3 code/lhe_generators.py
+$ python3 code/lhe_generators.py
 
-$ time python3 ./code/interface.py --create-records --ignore-eos-store inputs/CMS-2016-mc-datasets.txt
-$ time python3 ./code/interface.py --create-conffiles-records --ignore-eos-store inputs/CMS-2016-mc-datasets.txt
+$ python3 ./code/interface.py --create-records --ignore-eos-store inputs/CMS-2016-mc-datasets.txt
+$ python3 ./code/interface.py --create-conffiles-records --ignore-eos-store inputs/CMS-2016-mc-datasets.txt
 ```
 
 Note that to build the test records an (empty) input file for DOIs and a recid
@@ -80,7 +80,7 @@ The output JSON files for the dataset records will be generated in the
 
 
 ```console
-python3 code/lhe_generators.py 2> errors > output &
+$ python3 code/lhe_generators.py >& output
 ```
 
 - This will get lhe generator parameters from gridpacks for datasets listed in `./inputs/CMS-2016-mc-datasets.txt`.

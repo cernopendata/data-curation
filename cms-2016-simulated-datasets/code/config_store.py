@@ -11,12 +11,16 @@ def get_conffile_ids_all_chain_steps(dataset, mcm_dir):
     """Return location of the configuration files for the dataset."""
     ids = {}
     path = mcm_dir + '/chain/' + dataset.replace('/', '@')
-    step_dirs = os.listdir(path)
+    try:
+        step_dirs = os.listdir(path)
+    except FileNotFoundError:
+        return []
     for step in step_dirs:
         step_dir = path + '/' + step
         mcm_config_ids = get_conffile_ids_from_mcm(dataset, step_dir)
-       
-        for someid in mcm_config_ids:
+
+        if mcm_config_ids:
+            for someid in mcm_config_ids:
                 ids[someid] = 1
 
     return list(ids.keys())

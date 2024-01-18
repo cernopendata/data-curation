@@ -132,9 +132,12 @@ def get_mcm_dict(dataset, mcm_dir):
     filepath = mcm_dir + '/dict/' + dataset.replace('/', '@') + '.json'
     if os.path.exists(filepath) and os.stat(filepath).st_size != 0:
         with open(filepath, 'r') as filestream:
-            return json.load(filestream)
+            try:
+                return json.load(filestream)
+            except:
+                return json.loads('{}')
     else:
-        print('[ERROR] There is no McM JSON store dict for dataset ' + dataset,
+        print(f'[ERROR] There is no McM JSON store dict for dataset {dataset} in directory {mcm_dir}',
               file=sys.stderr)
         return json.loads('{}')
 
