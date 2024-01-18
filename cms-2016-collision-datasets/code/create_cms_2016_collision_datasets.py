@@ -30,12 +30,41 @@ exec(open("./outputs/reco_config_files_link_info.py", "r").read())
 
 DOI_INFO = {}
 
+CONTAINERIMAGES_CACHE = {}
+
+# FIXME add run numbers by direct DAS query:
+#     dasgoclient -query "run dataset=/DoubleMuon/Run2016H-UL2016_MiniAODv2-v2/MINIAOD"
+
 RECID_START = 30500
 RECID_VALIDATED_RUNS = "14220"
-YEAR_PUBLISHED = "2023"
+YEAR_PUBLISHED = "2024"
 YEAR_CREATED = "2016"
 COLLISION_TYPE = "pp"
 COLLISION_ENERGY = "13TeV"
+
+RECOMMENDED_IMAGES_FOR_NANOAOD_DESCRIPTION = """<p>NANOAOD datasets are in the <a href="https://root.cern.ch/">ROOT</a> tree format and their analysis does not require the use of CMSSW or CMS open data environments. They can be analysed with common ROOT and Python tools.<p>"""
+RECOMMENDED_IMAGES_FOR_NANOAOD = [
+    {
+        "name": "gitlab-registry.cern.ch/cms-cloud/root-vnc",
+        "registry": "gitlab",
+    },
+    {
+        "name": "gitlab-registry.cern.ch/cms-cloud/python-vnc",
+        "registry": "gitlab",
+    },
+]
+
+USAGE_FOR_NANOAOD_DESCRIPTION = """You can access these data through XRootD protocol or direct download, and they can be analysed with common ROOT and Python tools. See the instructions for getting started in"""
+USAGE_FOR_NANOAOD_LINKS = [
+    {
+        "description": "Using Docker containers",
+        "url": "/docs/cms-guide-docker#nanoaod",
+    },
+    {
+        "description": "Getting started with CMS NanoAOD",
+        "url": "/docs/cms-getting-started-nanoaod",
+    },
+]
 
 
 def get_from_deep_json(data, akey):
@@ -125,6 +154,14 @@ def populate_doiinfo():
         DOI_INFO[dataset] = doi
 
 
+def populate_containerimages_cache():
+    """Populate CONTAINERIMAGES cache (dataset -> system_details.container_images)"""
+    with open("../cms-release-info/cms_release_container_images_info.json") as f:
+        content = json.loads(f.read())
+        for key in content.keys():
+            CONTAINERIMAGES_CACHE[key] = content[key]
+
+
 def populate_selection_descriptions():
     """Populate SELECTION_DESCRIPTIONS dictionary (dataset -> selection description)."""
     for input_file in ["./inputs/CMSDatasetDescription_Run2016.csv"]:
@@ -164,41 +201,43 @@ def get_global_tag_for_system_details(dataset_full_name):
 def get_date_reprocessed(dataset_full_name):
     """Return the reprocessing date for the given dataset."""
     p = subprocess.run(
-            ['dasgoclient', '-query', f'dataset={dataset_full_name}', '-json'], 
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE
-        )
+        ["dasgoclient", "-query", f"dataset={dataset_full_name}", "-json"],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
     json_object = json.loads(p.stdout.decode())
     all_creation_dates = []
     for obj in json_object:
-        dataset = obj['dataset'][0]
-        if 'creation_date' in dataset.keys():
-            date = dataset['creation_date']
-            all_creation_dates.append(date)    
+        dataset = obj["dataset"][0]
+        if "creation_date" in dataset.keys():
+            date = dataset["creation_date"]
+            all_creation_dates.append(date)
     date_reprocessed_timestamp = all_creation_dates[0]
     isUnique = len(set(all_creation_dates)) == 1
     if not isUnique:
-        print(f"{dataset_full_name} has multiple reprocessing dates associated with it!")
+        print(
+            f"{dataset_full_name} has multiple reprocessing dates associated with it!"
+        )
     date_reprocessed = datetime.date.fromtimestamp(date_reprocessed_timestamp).year
     return str(date_reprocessed)
 
 
-def get_run_range(dataset_full_name):
-    """Return the min and max run numbers for the given dataset."""
+def get_run_numbers(dataset_full_name):
+    """Return the run numbers for the given dataset."""
     p = subprocess.run(
-            ['dasgoclient', '-query', f'run dataset={dataset_full_name}'], 
-            stdout=subprocess.PIPE,
-            stderr=subprocess.PIPE
-        )
-    run_numbers = p.stdout.decode().strip().split('\n')
+        ["dasgoclient", "-query", f"run dataset={dataset_full_name}"],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+    run_numbers = p.stdout.decode().strip().split("\n")
     run_numbers.sort()
-    return run_numbers[0], run_numbers[-1]
+    return run_numbers
 
 
 def get_dataset_config_file_name(dataset_full_name):
     dataset = dataset_full_name.split("/")[1]
     run_period = dataset_full_name.split("/")[2].split("-", 1)[0]
-    version = dataset_full_name.split("/")[2].split("-")[1]    
+    version = dataset_full_name.split("/")[2].split("-")[1]
     config_file = f"ReReco-{run_period}-{dataset}-{version}"
     return config_file
 
@@ -212,7 +251,7 @@ def create_selection_information(dataset, dataset_full_name):
     out = ""
     # description:
     out += "<p>"
-    out += SELECTION_DESCRIPTIONS[dataset_full_name]
+    out += SELECTION_DESCRIPTIONS.get(dataset_full_name, "")
     out += "</p>"
     # data taking / HLT:
     out += "<p><strong>Data taking / HLT</strong>"
@@ -232,10 +271,7 @@ def create_selection_information(dataset, dataset_full_name):
     out += f"<p><strong>Data processing / {process}</strong>"
     out += (
         "<br/>This primary %s dataset was processed from the %s dataset by the following step: "
-        % (
-         aodformat,
-         processing_source
-         )
+        % (aodformat, processing_source)
     )
     out += "<br/>Step: %s" % process
     out += "<br/>Release: %s" % release
@@ -297,11 +333,13 @@ def create_record(recid, run_period, version, dataset, aodformat):
         "/" + dataset + "/" + run_period + "-" + version + "/" + aodformat
     )
 
+    run_numbers = get_run_numbers(dataset_full_name)
+
     rec["abstract"] = {}
     rec["abstract"]["description"] = (
         "<p>"
         + dataset
-        + f" primary dataset in %s format from Run{run_period[-1]} of {YEAR_CREATED}. Run period from run number {get_run_range(dataset_full_name)[0]} to {get_run_range(dataset_full_name)[1]}."
+        + f" primary dataset in %s format from Run{run_period[-1]} of {YEAR_CREATED}. Run period from run number {run_numbers[0]} to {run_numbers[-1]}."
         % aodformat
         + "</p><p>The list of validated runs, which must be applied to all analyses, either with the full validation or for an analysis requiring only muons, can be found in:</p>"
     )
@@ -342,7 +380,7 @@ def create_record(recid, run_period, version, dataset, aodformat):
     rec["experiment"] = "CMS"
 
     rec["files"] = []
-    
+
     rec_files = get_dataset_index_files(dataset_full_name)
     for index_type in [".json", ".txt"]:
         index_files = [f for f in rec_files if f[0].endswith(index_type)]
@@ -382,15 +420,27 @@ def create_record(recid, run_period, version, dataset, aodformat):
 
     rec["recid"] = str(recid)
 
+    rec["run_numbers"] = run_numbers
+
     rec["run_period"] = [
         run_period,
     ]
 
     rec["system_details"] = {}
-    rec["system_details"]["global_tag"] = get_global_tag_for_system_details(
-        dataset_full_name
-    )
-    rec["system_details"]["release"] = get_release_for_system_details(dataset_full_name)
+    global_tag = get_global_tag_for_system_details(dataset_full_name)
+    cmssw_release = get_release_for_system_details(dataset_full_name)
+    if aodformat == "NANOAOD":
+        rec["system_details"][
+            "description"
+        ] = RECOMMENDED_IMAGES_FOR_NANOAOD_DESCRIPTION
+        rec["system_details"]["container_images"] = RECOMMENDED_IMAGES_FOR_NANOAOD
+    else:
+        rec["system_details"]["global_tag"] = global_tag
+        rec["system_details"]["release"] = cmssw_release
+        if cmssw_release in CONTAINERIMAGES_CACHE.keys():
+            rec["system_details"]["container_images"] = CONTAINERIMAGES_CACHE[
+                cmssw_release
+            ]
 
     rec["title"] = dataset_full_name
 
@@ -412,23 +462,27 @@ def create_record(recid, run_period, version, dataset, aodformat):
     ]
 
     rec["usage"] = {}
-    rec["usage"][
-        "description"
-    ] = "You can access these data through the CMS Open Data container or the CMS Virtual Machine. See the instructions for setting up one of the two alternative environments and getting started in"
-    rec["usage"]["links"] = [
-        {
-            "description": "Running CMS analysis code using Docker",
-            "url": "/docs/cms-guide-docker",
-        },
-        {
-            "description": "How to install the CMS Virtual Machine",
-            "url": "/docs/cms-virtual-machine-2016-2018",
-        },
-        {
-            "description": "Getting started with CMS open data",
-            "url": "/docs/cms-getting-started-2016-2018",
-        },
-    ]
+    if aodformat == "NANOAOD":
+        rec["usage"]["description"] = USAGE_FOR_NANOAOD_DESCRIPTION
+        rec["usage"]["links"] = USAGE_FOR_NANOAOD_LINKS
+    else:
+        rec["usage"][
+            "description"
+        ] = "You can access these data through the CMS Open Data container or the CMS Virtual Machine. See the instructions for setting up one of the two alternative environments and getting started in"
+        rec["usage"]["links"] = [
+            {
+                "description": "Running CMS analysis code using Docker",
+                "url": "/docs/cms-guide-docker",
+            },
+            {
+                "description": "How to install the CMS Virtual Machine",
+                "url": "/docs/cms-virtual-machine-2016-2018",
+            },
+            {
+                "description": "Getting started with CMS open data",
+                "url": "/docs/cms-getting-started-2016-2018",
+            },
+        ]
 
     rec["validation"] = {}
     rec["validation"][
@@ -461,6 +515,7 @@ def main():
     "Do the job."
     populate_fwyzard()
     populate_doiinfo()
+    populate_containerimages_cache()
     populate_selection_descriptions()
 
     records = []
@@ -490,7 +545,10 @@ def main():
         else:
             continue
         for other_record in records:
-            if org_title in other_record['title'] and record['title'] != other_record['title']:
+            if (
+                org_title in other_record["title"]
+                and record["title"] != other_record["title"]
+            ):
                 record["relations"] = [
                     {
                         "description": f"The corresponding {other_format} dataset:",

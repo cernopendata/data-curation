@@ -15,7 +15,7 @@ from helpers import run_range_text
 RECID_START = 30300
 RUN_PERIOD = ["Run2016G", "Run2016H",]
 YEAR_CREATED = "2016"
-YEAR_PUBLISHED = "2023"
+YEAR_PUBLISHED = "2024"
 
 
 LINK_INFO = {}
@@ -37,7 +37,7 @@ def main():
 
     rec["abstract"] = {}
 
-    abstract_description = f"\n      The list of trigger configuration files for the CMS {YEAR_CREATED} proton-proton collision data ({RUN_PERIOD[0]} from run numbers {get_run_range(RUN_PERIOD[0])[0]} and {get_run_range(RUN_PERIOD[0])[1]} & {RUN_PERIOD[1]} from run number {get_run_range(RUN_PERIOD[1])[0]} and {get_run_range(RUN_PERIOD[1])[1]}):\n      <table class=\"table\">\n      <thead>"
+    abstract_description = f"\n      The list of trigger configuration files for the CMS {YEAR_CREATED} proton-proton collision data ({RUN_PERIOD[0]} from run numbers {get_run_range(RUN_PERIOD[0])[0]} and {get_run_range(RUN_PERIOD[0])[1]} & {RUN_PERIOD[1]} from run number {get_run_range(RUN_PERIOD[1])[0]} and {get_run_range(RUN_PERIOD[1])[1]}):\n      <table class=\"ui table striped\">\n      <thead>"
 
 
     with open("inputs/cms-trigger-information-run2-helper.html", "r") as fdesc:

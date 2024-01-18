@@ -13,7 +13,7 @@ exec(open("./outputs/hlt_config_files_link_info.py", "r").read())
 
 RECID_START = 29200
 YEAR_CREATED = "2016"
-YEAR_PUBLISHED = "2023"
+YEAR_PUBLISHED = "2024"
 COLLISION_ENERGY = "13TeV"
 COLLISION_TYPE = "pp"
 RUN_PERIOD = "Run2016"
