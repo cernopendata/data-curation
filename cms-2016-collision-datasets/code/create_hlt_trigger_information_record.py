@@ -37,7 +37,7 @@ def main():
 
     rec["abstract"] = {}
 
-    abstract_description = f"\n      The list of trigger configuration files for the CMS {YEAR_CREATED} proton-proton collision data ({RUN_PERIOD[0]} from run numbers {get_run_range(RUN_PERIOD[0])[0]} and {get_run_range(RUN_PERIOD[0])[1]} & {RUN_PERIOD[1]} from run number {get_run_range(RUN_PERIOD[1])[0]} and {get_run_range(RUN_PERIOD[1])[1]}):\n      <table class=\"ui table striped\">\n      <thead>"
+    abstract_description = f"\n      The list of trigger configuration files for the CMS {YEAR_CREATED} proton-proton collision data ({RUN_PERIOD[0]} from run numbers {get_run_range(RUN_PERIOD[0])[0]} and {get_run_range(RUN_PERIOD[0])[1]} & {RUN_PERIOD[1]} from run number {get_run_range(RUN_PERIOD[1])[0]} and {get_run_range(RUN_PERIOD[1])[1]}):\n      <table class=\"ui table striped\">\n      <thead>\n     <tr><th>Run number</th><th>Software version</th><th>Trigger configuration</th></tr>\n      </thead>\n      <tbody>"
 
 
     with open("inputs/cms-trigger-information-run2-helper.html", "r") as fdesc:

@@ -22,8 +22,7 @@ def main():
 
     rec["abstract"] = {}
 
-    abstract_description = "\n      The list of trigger configuration files for the CMS 2015 proton-proton collision data (Run2015D from run number 256630 to run number 260627, Run2015G from run number 261445 to run number 262328):\n      <table class=\"table\">\n      <thead>"
-
+    abstract_description = "\n      The list of trigger configuration files for the CMS 2015 proton-proton collision data (Run2015D from run number 256630 to run number 260627, Run2015G from run number 261445 to run number 262328):\n      <table class=\"table\">\n      <thead>\n     <tr><th>Run number</th><th>Software version</th><th>Trigger configuration</th></tr>\n      </thead>\n      <tbody>"
     with open("inputs/cms-trigger-information-run2-helper.html", "r") as fdesc:
 
         for line in fdesc.readlines():
