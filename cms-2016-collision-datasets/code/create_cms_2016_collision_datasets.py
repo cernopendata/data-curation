@@ -8,12 +8,12 @@ Create CMS 2016 open data release collision datasets.
 
 import click
 import csv
+import datetime
 import json
 import os
 import re
 import subprocess
 import zlib
-import datetime
 
 from create_eos_file_indexes import (
     XROOTD_URI_BASE,
@@ -31,9 +31,6 @@ exec(open("./outputs/reco_config_files_link_info.py", "r").read())
 DOI_INFO = {}
 
 CONTAINERIMAGES_CACHE = {}
-
-# FIXME add run numbers by direct DAS query:
-#     dasgoclient -query "run dataset=/DoubleMuon/Run2016H-UL2016_MiniAODv2-v2/MINIAOD"
 
 RECID_START = 30500
 RECID_VALIDATED_RUNS = "14220"
@@ -283,10 +280,13 @@ def create_selection_information(dataset, dataset_full_name):
     out += "\n        </p>"
     # HLT trigger paths:
     out += "<p><strong>HLT trigger paths</strong>"
-    out += "<br/>The possible HLT trigger paths in this dataset are:"
+    out += '<br/>The possible <a href="/docs/cms-guide-trigger-system#hlt-trigger-path-definitions">HLT trigger paths</a> in this dataset are:'
     trigger_paths = get_trigger_paths_for_dataset(dataset)
     for trigger_path in trigger_paths:
-        out += '<br/><a href="/search?q=%s">%s</a>' % (trigger_path, trigger_path)
+        out += (
+            '<br/><a href="/search?q=%s&subtype=Trigger&type=Supplementaries&year=%s">%s</a>'
+            % (trigger_path, YEAR_CREATED, trigger_path)
+        )
     out += "</p>"
     return out
 
