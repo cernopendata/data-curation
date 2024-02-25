@@ -2,13 +2,14 @@
 # using: 
 # Revision: 1.19 
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: RECO --conditions 106X_dataRun2_v35 --datatier MINIAOD --era Run2_2016 --eventcontent MINIAOD --filein _placeholder_.root --fileout file:ReReco-Run2016G-MET-UL2016_MiniAODv2-00001.root --nThreads 2 --no_exec --python_filename ReReco-Run2016G-MET-UL2016_MiniAODv2-00001_0_cfg.py --scenario pp --step PAT --runUnscheduled --data --procModifiers run2_miniAOD_UL_preSummer20
+# with command line options: RECO --conditions 106X_dataRun2_v37 --customise Configuration/DataProcessing/Utils.addMonitoring,Configuration/DataProcessing/RecoTLR.customisePostEra_Run2_2016 --datatier MINIAOD --era Run2_2016,bParking --eventcontent MINIAOD --filein _placeholder_.root --fileout file:ReReco-Run2016H-DoubleMuonLowMass-UL2016_MiniAODv2_BParking-00001.root --nThreads 2 --no_exec --python_filename ReReco-Run2016H-DoubleMuonLowMass-UL2016_MiniAODv2_BParking-00001_0_cfg.py --scenario pp --step PAT --runUnscheduled --data --procModifiers run2_miniAOD_UL_preSummer20
 import FWCore.ParameterSet.Config as cms
 
 from Configuration.Eras.Era_Run2_2016_cff import Run2_2016
+from Configuration.Eras.Modifier_bParking_cff import bParking
 from Configuration.ProcessModifiers.run2_miniAOD_UL_preSummer20_cff import run2_miniAOD_UL_preSummer20
 
-process = cms.Process('PAT',Run2_2016,run2_miniAOD_UL_preSummer20)
+process = cms.Process('PAT',Run2_2016,bParking,run2_miniAOD_UL_preSummer20)
 
 # import of standard configurations
 process.load('Configuration.StandardSequences.Services_cff')
@@ -55,7 +56,7 @@ process.MINIAODoutput = cms.OutputModule("PoolOutputModule",
     dropMetaData = cms.untracked.string('ALL'),
     eventAutoFlushCompressedSize = cms.untracked.int32(-900),
     fastCloning = cms.untracked.bool(False),
-    fileName = cms.untracked.string('file:ReReco-Run2016G-MET-UL2016_MiniAODv2-00001.root'),
+    fileName = cms.untracked.string('file:ReReco-Run2016H-DoubleMuonLowMass-UL2016_MiniAODv2_BParking-00001.root'),
     outputCommands = process.MINIAODEventContent.outputCommands,
     overrideBranchesSplitLevel = cms.untracked.VPSet(
         cms.untracked.PSet(
@@ -105,6 +106,10 @@ process.MINIAODoutput = cms.OutputModule("PoolOutputModule",
         cms.untracked.PSet(
             branch = cms.untracked.string('EcalRecHitsSorted_reducedEgamma_reducedESRecHits_*'),
             splitLevel = cms.untracked.int32(99)
+        ), 
+        cms.untracked.PSet(
+            branch = cms.untracked.string('recoVertexs_offlineSlimmedPrimaryVerticesWithBS__*'),
+            splitLevel = cms.untracked.int32(99)
         )
     ),
     overrideInputFileSplitLevels = cms.untracked.bool(True),
@@ -115,7 +120,7 @@ process.MINIAODoutput = cms.OutputModule("PoolOutputModule",
 
 # Other statements
 from Configuration.AlCa.GlobalTag import GlobalTag
-process.GlobalTag = GlobalTag(process.GlobalTag, '106X_dataRun2_v35', '')
+process.GlobalTag = GlobalTag(process.GlobalTag, '106X_dataRun2_v37', '')
 
 # Path and EndPath definitions
 process.Flag_trackingFailureFilter = cms.Path(process.goodVertices+process.trackingFailureFilter)
@@ -161,6 +166,21 @@ process.options.numberOfThreads=cms.untracked.uint32(2)
 process.options.numberOfStreams=cms.untracked.uint32(0)
 process.options.numberOfConcurrentLuminosityBlocks=cms.untracked.uint32(1)
 
+# customisation of the process.
+
+# Automatic addition of the customisation function from Configuration.DataProcessing.Utils
+from Configuration.DataProcessing.Utils import addMonitoring 
+
+#call to customisation function addMonitoring imported from Configuration.DataProcessing.Utils
+process = addMonitoring(process)
+
+# Automatic addition of the customisation function from Configuration.DataProcessing.RecoTLR
+from Configuration.DataProcessing.RecoTLR import customisePostEra_Run2_2016 
+
+#call to customisation function customisePostEra_Run2_2016 imported from Configuration.DataProcessing.RecoTLR
+process = customisePostEra_Run2_2016(process)
+
+# End of customisation functions
 #do not add changes to your config after this point (unless you know what you are doing)
 from FWCore.ParameterSet.Utilities import convertToUnscheduled
 process=convertToUnscheduled(process)

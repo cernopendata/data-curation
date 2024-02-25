@@ -2,7 +2,7 @@
 # using: 
 # Revision: 1.19 
 # Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
-# with command line options: RECO --conditions 106X_dataRun2_v35 --datatier MINIAOD --era Run2_2016 --eventcontent MINIAOD --filein _placeholder_.root --fileout file:ReReco-Run2016H-MuonEG-UL2016_MiniAODv2-00002.root --nThreads 2 --no_exec --python_filename ReReco-Run2016H-MuonEG-UL2016_MiniAODv2-00002_0_cfg.py --scenario pp --step PAT --runUnscheduled --data --procModifiers run2_miniAOD_UL_preSummer20
+# with command line options: RECO --conditions 106X_dataRun2_v35 --datatier MINIAOD --era Run2_2016 --eventcontent MINIAOD --filein _placeholder_.root --fileout file:ReReco-Run2016H-MuonEG-UL2016_MiniAODv2-00001.root --nThreads 2 --no_exec --python_filename ReReco-Run2016H-MuonEG-UL2016_MiniAODv2-00001_0_cfg.py --scenario pp --step PAT --runUnscheduled --data --procModifiers run2_miniAOD_UL_preSummer20
 import FWCore.ParameterSet.Config as cms
 
 from Configuration.Eras.Era_Run2_2016_cff import Run2_2016
@@ -55,7 +55,7 @@ process.MINIAODoutput = cms.OutputModule("PoolOutputModule",
     dropMetaData = cms.untracked.string('ALL'),
     eventAutoFlushCompressedSize = cms.untracked.int32(-900),
     fastCloning = cms.untracked.bool(False),
-    fileName = cms.untracked.string('file:ReReco-Run2016H-MuonEG-UL2016_MiniAODv2-00002.root'),
+    fileName = cms.untracked.string('file:ReReco-Run2016H-MuonEG-UL2016_MiniAODv2-00001.root'),
     outputCommands = process.MINIAODEventContent.outputCommands,
     overrideBranchesSplitLevel = cms.untracked.VPSet(
         cms.untracked.PSet(

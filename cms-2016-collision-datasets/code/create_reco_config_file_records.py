@@ -126,7 +126,7 @@ def main():
             # Skip non-RECO files
             afile_python_filename = get_python_filename(afile)
 
-            if not afile_python_filename.startswith("ReReco"):
+            if not afile_python_filename.startswith("ReReco") and not afile_python_filename.startswith("recoskim"):
                 continue
             
             if afile_python_filename in files_seen:
@@ -170,7 +170,9 @@ def main():
             rec["distribution"]["number_files"] = 1
             rec["distribution"]["size"] = get_size(afile)
 
-            rec["experiment"] = "CMS"
+            rec["experiment"] = [
+                "CMS"
+            ]
 
             rec["files"] = [
                 {
