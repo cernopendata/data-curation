@@ -172,10 +172,11 @@ def create_record(metadata, data_type):
 
     rec["validation"] = {}
     rec["validation"]["description"] = config[data_type]["validation"]["description"]
-    # rec["validation"]["links"] = []
-    # rec["validation"]["links"].append({
-    #     "recid": str(metadata["parent_recid"])
-    # })
+    if data_type != "PFNano":
+        rec["validation"]["links"] = []
+        rec["validation"]["links"].append({
+            "recid": str(metadata["parent_recid"])
+        })
 
     return rec
 
