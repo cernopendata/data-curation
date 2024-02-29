@@ -41,7 +41,13 @@ def get_file_size(file_path):
     file_size = os.path.getsize(file_path)/1024.0
     return math.ceil(file_size)
 
+def get_collision_information(parent_title):
+    """Return collision information."""
+    cmd = f"cernopendata-client get-metadata --title={parent_title} --output-value collision_information"
+    collision_information = subprocess.getoutput(cmd)
+    return collision_information
 
+        
 def get_files(dataset_location):
     "Return file list with information about name, size, location for the given dataset and volume."
     files = []
@@ -97,18 +103,36 @@ def create_record(metadata, data_type):
    
     rec["accelerator"] = config["common_values"]["accelerator"]
     
-    rec["authors"] = config["common_values"]["authors"]
+    rec["authors"] = []
+    rec["authors"].append({
+        "name": config["common_values"]["authors"]
+    })
     
+    rec["collision_information"] = json.loads(metadata["collision_information"])
     rec["collections"] = config["common_values"]["collections"]
     
     #rec["dataset_semantics"] = config["common_values"]["dataset_semantics"]
-    rec["dataset_semantics"] = {}
-    if data_type == "NanoAODRun1":
-        rec["dataset_semantics"]["dataset_semantics_files"] = metadata["dataset_semantics_files"]
-    
+    #rec["dataset_semantics_files"] = []
+    #dataset_semantics_files = [ metadata["dataset_semantics_files"]["html_doc"],metadata["dataset_semantics_files"]["json_doc"] ]
+    #if data_type == "NanoAODRun1":
+    #    rec["dataset_semantics"].append({
+    #        "files": dataset_semantics_files
+    #    })
+    if data_type != "POET":
+        rec["dataset_semantics_files"] = {}
+        rec["dataset_semantics_files"]["html_doc"] =  metadata["dataset_semantics_files"]["html_doc"].rsplit('/',1)[1]
+        rec["dataset_semantics_files"]["json_doc"] =  metadata["dataset_semantics_files"]["json_doc"].rsplit('/',1)[1]
+        
     rec["date_published"] = config["common_values"]["date_published"]
     
     rec["distribution"] = {}
+    # changes format to nanoaodsim-NNN for MC - relies on having only one format (or nanoaod-NNN as the first)
+    if "Run201" not in metadata["dataset"]:
+        substr = "nanoaod"
+        repl = "nanoaodsim"
+        config[data_type]["distribution"]["formats"][0] = config[data_type]["distribution"]["formats"][0].replace(substr,repl)
+    config[data_type]["distribution"]["formats"].append("root")
+
     rec["distribution"]["formats"] = config[data_type]["distribution"]["formats"]
     rec["distribution"]["number_events"] = metadata["number_events"] 
     rec["distribution"]["number_files"] = metadata["number_files"]
@@ -117,7 +141,9 @@ def create_record(metadata, data_type):
     # uniqely generated for each record (?)
     rec["doi"] = ""
     
-    rec["experiment"] = config["common_values"]["experiment"]
+    rec["experiment"] = [
+        config["common_values"]["experiment"]
+    ]
 
     rec["files"] = metadata["files"]
     
@@ -129,12 +155,12 @@ def create_record(metadata, data_type):
     
     rec["publisher"] = config["common_values"]["publisher"]
     
-    rec["recid"] = metadata["recid"]
+    rec["recid"] = str(metadata["recid"])
     
     rec["relations"] = []
     rec["relations"].append({
         "description": "This dataset was derived from:",
-        "recid": metadata["parent_recid"],
+        "recid":str(metadata["parent_recid"]),
         "type": "isChildOf"
     })
 
@@ -146,10 +172,10 @@ def create_record(metadata, data_type):
 
     rec["validation"] = {}
     rec["validation"]["description"] = config[data_type]["validation"]["description"]
-    rec["validation"]["links"] = []
-    rec["validation"]["links"].append({
-        "recid": metadata["parent_recid"]
-    })
+    # rec["validation"]["links"] = []
+    # rec["validation"]["links"].append({
+    #     "recid": str(metadata["parent_recid"])
+    # })
 
     return rec
 
@@ -165,7 +191,7 @@ def print_records(records):
 @click.option('--data-type',
               '-t',
               required=True,
-              help='Data Type (NanoAODRun1, POET')
+              help='Data Type (NanoAODRun1, POET)')
 def main(data_type):
     "Do the job."
 
@@ -239,6 +265,7 @@ def main(data_type):
         
         # prepare metadata for creating the record
         metadata["parent_recid"] = get_parent_recid(metadata["parent"])
+        metadata["collision_information"] = get_collision_information(metadata["parent"])
         metadata["number_events"] = number_events
         metadata["number_files"] = number_files
         metadata["size"] = size
