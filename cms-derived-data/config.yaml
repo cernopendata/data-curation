@@ -18,21 +18,19 @@ common_values:
 
 NanoAODRun1:
   recid_start: 40000
-  title: <dataset> dataset in Run1 NanoAOD-like format
+  title: <dataset-title> dataset in Run1 NanoAOD-like format
   abstract:
     description: >
-      <p><dataset> dataset in a NanoAOD-like research-level Ntuple format for CMS Run1 data, readable with bare
-      <a href="https://root.cern/">ROOT</a> or other ROOT-compatible software, and containing the per-event information that is needed in most generic analyses. 
-      In contrast to the CMS NanoAOD format which is derived from MiniAOD, it is generated directly from the AOD format with completely 
-      independent code provided by the CMS open data group. Nevertheless, there is a large overlap in functionality and content between 
-      NanoAODRun1 and NanoAOD such that common analyses are possible.</p>
-      <p>The dataset is provided as a collection of root files and in <dataset>_merged.root with the separate files merged into one file. 
+      <p><dataset-title> dataset in a NanoAOD-like research-level Ntuple format for CMS Run1 data, readable with bare
+      <a href="https://root.cern/">ROOT</a> or other ROOT-compatible software, and containing the per-event information that is needed in most generic analyses.
+      In contrast to the CMS NanoAOD format which is derived from MiniAOD, it is generated directly from the AOD format with code provided by the CMS open data group. Nevertheless, there is a large overlap in functionality and content between NanoAODRun1 and NanoAOD such that common analyses are possible.</p>
+      <p>The dataset is provided as a collection of root files. <dataset>_merged.root contains the separate files merged into one file.
       This dataset was processsed from the primary dataset in AOD format linked below.</p>
   distribution:
     formats:
       - nanoaod-run1
   methodology:
-    description: The datasets were produced with the software available in the record linked below.
+    description: The dataset was produced with the software available in the record linked below.
     links:
       - recid: "12505" 
   use_with:
@@ -45,20 +43,17 @@ NanoAODRun1:
 
 POET:
   recid_start: 50000
-  title: <dataset> dataset in reduced NanoAOD-like format
+  title: <dataset-title> dataset in reduced NanoAOD-like format
   abstract:
     description: >
-      <p>This dataset contains information extracted from different physics objects from the 2015 MiniAOD parent <parent_dataset> dataset, 
-      readable with bare <a href="https://root.cern/">ROOT</a> or other ROOT-compatible software. It was produced for the CMS open data workshop tutorials.</p>
-      <p>It is provided in two different structures: a collection of root files as a direct output of POET 
-      (separate trees for each object), and "_flat.root" files "flattened" to a single tree, as required when used as input to coffea with 
-      nanoevents schema.  <dataset>_flat.root has the separate "_flat.root" files merged into one file. 
+      <p>This dataset contains information extracted from different physics objects from the 2015 MiniAOD <parent_dataset> dataset, readable with bare <a href="https://root.cern/">ROOT</a> or other ROOT-compatible software. It is part of the datasets produced for the CMS open data workshop tutorials, and not all events in the parent dataset were necessarily processed.</p>
+      <p>It is provided in two different structures: a collection of root files as a direct output of POET (separate trees for each object), and "_flat.root" files "flattened" to a single tree, as required when used in columnar analysis with e.g. <a href="https://awkward-array.org/doc/main/">awkward array</a> and <a href="https://uproot.readthedocs.io/en/latest/index.html">uproot</a>. <dataset>_flat.root has the separate "_flat.root" files merged into one file.
       This dataset was derived from the primary dataset in MiniAOD format linked below.</p>
   distribution:
     formats:
       - nanoaod-poet
   methodology:
-    description: The datasets were produced with the software available in the record linked below.
+    description: The dataset was produced with the software available in the record linked below.
     links:
       - recid: "12502"
   use_with:
@@ -67,22 +62,20 @@ POET:
       - url: https://cms-opendata-workshop.github.io/workshop2022-lesson-ttbarljetsanalysis/
   validation:
     description: >
-      <p>These data were processed from the primary dataset using only the validated runs. 
-       No further validation was done for the output.</p>
+      <p>These data were processed from the primary dataset using only the validated runs. No further validation was done for the output.</p>
 
 PFNano:
   recid_start: 60000
-  title: <dataset> dataset in NanoAOD format enhanced with Particle Flow candidates
+  title: <dataset-title> dataset in NanoAOD format enhanced with Particle Flow candidates from RunG of 2016
   abstract:
     description: >
-      <p><dataset> dataset in NanoAOD format enhanced with Particle Flow candidates, readable with bare ROOT or 
-      other ROOT-compatible software. In addition to the default NanoAOD content, it contains the information. This dataset was derived from 
-      the primary dataset in MiniAOD format linked below.</p>
+      <p><dataset> dataset in NanoAOD format enhanced with Particle Flow candidates, readable with bare ROOT or other ROOT-compatible software. In addition to the default NanoAOD content, it contains the list of Particle Flow candidates. This dataset was derived from the primary dataset in MiniAOD format linked below.</p>
+      <p>The list of validated runs, which must be applied to all analyses, either with the full validation or for an analysis requiring only muons, can be found in:</p>
   distribution:
     formats:
       - nanoaod-pf
   methodology:
-    description: The datasets were produced with the software available in the record linked below.
+    description: The dataset was produced with the software available in the record linked below.
     links:
       - recid: "12504"
   use_with:
@@ -91,5 +84,5 @@ PFNano:
       - recid: "12361"
   validation:
     description: >
-      <p>These data were processed from the primary dataset. The processed runs and lumi sections are in</p>
+      <p>These data were processed from the MiniAOD primary dataset. If not equal to the parent, the processed runs and lumi sections are available below.</p>
 ...
