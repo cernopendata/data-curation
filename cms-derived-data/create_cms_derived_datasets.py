@@ -22,7 +22,7 @@ def get_number_events(file_path, data_type):
     """Return number of events in root file."""
     myfile = ROOT.TFile.Open(file_path)
     number_events = 0
-    if data_type == "NanoAODRun1":
+    if data_type == "NanoAODRun1" or data_type == "PFNano":
         number_events = myfile.Events.GetEntries()
     elif data_type == "POET":
         number_events = myfile.events.GetEntries()
@@ -30,7 +30,7 @@ def get_number_events(file_path, data_type):
 
 
 def get_parent_recid(parent_title):
-    """Return parent dataset recid."""
+    """Return parent dataset recid."""   
     cmd = f"cernopendata-client get-metadata --title={parent_title} --output-value recid"
     recid = subprocess.getoutput(cmd)
     return recid
@@ -42,7 +42,7 @@ def get_file_size(file_path):
     return math.ceil(file_size)
 
 def get_collision_information(parent_title):
-    """Return collision information."""
+    """Return collision information.""" 
     cmd = f"cernopendata-client get-metadata --title={parent_title} --output-value collision_information"
     collision_information = subprocess.getoutput(cmd)
     return collision_information
@@ -75,7 +75,7 @@ def get_files(dataset_location):
 def get_dataset_semantics_doc(dataset_name, sample_file_path, data_type):
     """Return the paths to the html doc and json doc of the given dataset."""
     output_dir = "outputs/docs"
-    script = "documentation.py" # for NanoAODRun1
+    script = "documentation.py" # for NanoAODRun1 
     if data_type == "PFNano":
         script = "inspectNanoFile.py"
 
@@ -99,8 +99,14 @@ def create_record(metadata, data_type):
     rec = {}
 
     rec["abstract"] = {}
-    rec["abstract"]["description"] = config[data_type]["abstract"]["description"].replace("<dataset>", metadata["dataset"]).replace("<parent_dataset>", metadata["parent"])
-   
+    rec["abstract"]["description"] = config[data_type]["abstract"]["description"].replace("<dataset-title>", metadata["dataset-title"]).replace("<dataset>", metadata["dataset"]).replace("<parent_dataset>", metadata["parent"])
+    if data_type == "PFNano":
+        rec["abstract"]["links"] = []
+        for i in metadata["valid_recids"]:
+            rec["abstract"]["links"].append({
+                "recid": str(i)
+            })
+
     rec["accelerator"] = config["common_values"]["accelerator"]
     
     rec["authors"] = []
@@ -110,14 +116,7 @@ def create_record(metadata, data_type):
     
     rec["collision_information"] = json.loads(metadata["collision_information"])
     rec["collections"] = config["common_values"]["collections"]
-    
-    #rec["dataset_semantics"] = config["common_values"]["dataset_semantics"]
-    #rec["dataset_semantics_files"] = []
-    #dataset_semantics_files = [ metadata["dataset_semantics_files"]["html_doc"],metadata["dataset_semantics_files"]["json_doc"] ]
-    #if data_type == "NanoAODRun1":
-    #    rec["dataset_semantics"].append({
-    #        "files": dataset_semantics_files
-    #    })
+
     if data_type != "POET":
         rec["dataset_semantics_files"] = {}
         rec["dataset_semantics_files"]["html_doc"] =  metadata["dataset_semantics_files"]["html_doc"].rsplit('/',1)[1]
@@ -126,8 +125,8 @@ def create_record(metadata, data_type):
     rec["date_published"] = config["common_values"]["date_published"]
     
     rec["distribution"] = {}
-    # changes format to nanoaodsim-NNN for MC - relies on having only one format (or nanoaod-NNN as the first)
-    if "Run201" not in metadata["dataset"]:
+    # changes format to nanoaodsim-NNN for MC - to be modified for PFNano sim if we make some (PFNano names dataset names do not have Run2016 in them...)
+    if "Run201" not in metadata["dataset"] and data_type != "PFNano":
         substr = "nanoaod"
         repl = "nanoaodsim"
         config[data_type]["distribution"]["formats"][0] = config[data_type]["distribution"]["formats"][0].replace(substr,repl)
@@ -164,7 +163,7 @@ def create_record(metadata, data_type):
         "type": "isChildOf"
     })
 
-    rec["title"] =  config[data_type]["title"].replace("<dataset>", metadata["dataset"])
+    rec["title"] =  config[data_type]["title"].replace("<dataset-title>", metadata["dataset-title"])
 
     rec["type"] = config["common_values"]["type"]
 
@@ -172,11 +171,11 @@ def create_record(metadata, data_type):
 
     rec["validation"] = {}
     rec["validation"]["description"] = config[data_type]["validation"]["description"]
-    if data_type != "PFNano":
+    if data_type == "PFNano":
         rec["validation"]["links"] = []
         rec["validation"]["links"].append({
-            "recid": str(metadata["parent_recid"])
-        })
+                "url": "link to processedLumis.json"
+            })
 
     return rec
 
@@ -192,7 +191,7 @@ def print_records(records):
 @click.option('--data-type',
               '-t',
               required=True,
-              help='Data Type (NanoAODRun1, POET)')
+              help='Data Type (NanoAODRun1, POET, PFNano)')
 def main(data_type):
     "Do the job."
 
@@ -208,6 +207,12 @@ def main(data_type):
     elif data_type == "POET":
         date = "23-Jul-22"
         recid_start = config["POET"]["recid_start"]
+    elif data_type == "PFNano":
+        date = "29-Feb-24"
+        recid_start = config["PFNano"]["recid_start"]
+        parent_recid = 30500
+        valid_recids = [14220,14221]
+        process_path = "Run2016G-UL2016_MiniAODv2_PFNanoAODv1"
     
     records = []
     datasets_path = f"/eos/opendata/cms/derived-data/{data_type}/{date}"
@@ -218,10 +223,15 @@ def main(data_type):
             continue
         
         dataset_dir_path = f"{datasets_path}/{dataset}"
-        dataset_files = os.listdir(dataset_dir_path)
-
         metadata_yaml_file = open(f"{dataset_dir_path}/metadata.yaml", 'r')
         metadata = yaml.safe_load(metadata_yaml_file)
+        
+        if data_type == "PFNano":
+            dataset_dir_path = f"{dataset_dir_path}/{process_path}"
+            next = os.listdir(dataset_dir_path)[0]
+            dataset_dir_path = f"{dataset_dir_path}/{next}/0000"
+
+        dataset_files = os.listdir(dataset_dir_path)
 
         files = get_files(dataset_dir_path)
         number_events = 0
@@ -247,6 +257,7 @@ def main(data_type):
                     size += file_size
             dataset_all_flattened_file_path = dataset_dir_path + "_flat.root"
             files.extend(get_files(dataset_all_flattened_file_path))
+            number_files += 1 # for _flat.root in POET 
         # NanoAODRun1 datasets
         elif data_type == "NanoAODRun1":
             # for all root files under <dataset> directory
@@ -261,12 +272,37 @@ def main(data_type):
             files.extend(get_files(dataset_all_merged_path))  # adds the merged file to the list of dataset files
             sample_file_path = f"{dataset_dir_path}/{dataset_files[0]}"
             metadata["dataset_semantics_files"] = get_dataset_semantics_doc(dataset, sample_file_path, data_type)
+            number_files += 1 # for _merged.root in NanoAODRun1
+        elif data_type == "PFNano":
+            for file in dataset_files:
+                if file.endswith("root"):
+                    file_path = f"{dataset_dir_path}/{file}"
+                    number_events += get_number_events(file_path, data_type)
+                    number_files += 1
+                    file_size = get_file_size(file_path)
+                    size += file_size
+            files.extend(get_files(dataset_dir_path))
+            sample_file_path = f"{dataset_dir_path}/{dataset_files[0]}"
+            metadata["dataset_semantics_files"] = get_dataset_semantics_doc(dataset, sample_file_path, data_type)
         
-        number_files += 1 # for _flat.root in POET and _merged.root in NanoAODRun1
-        
-        # prepare metadata for creating the record
-        metadata["parent_recid"] = get_parent_recid(metadata["parent"])
-        metadata["collision_information"] = get_collision_information(metadata["parent"])
+        # prepare metadata for creating the record, for PFNano differently as cernopendata-client does not reach datasets that are not yet released
+        if data_type == "PFNano":
+            metadata["parent_recid"] = str(parent_recid)
+            parent_recid += 1 # this assumes loop in aplhabetical order
+            metadata["collision_information"] = '{"energy": "13TeV","type": "pp"}'
+            metadata["valid_recids"] = []
+            metadata["valid_recids"] = valid_recids
+        else:
+            metadata["parent_recid"] = get_parent_recid(metadata["parent"])
+            metadata["collision_information"] = get_collision_information(metadata["parent"])
+    
+        # For MC, remove the processing string from the name for the title
+        metadata["dataset-title"] = metadata["dataset"]
+        if "Run201" not in metadata["dataset"]:
+            if data_type == "NanoAODRun1":
+                metadata["dataset-title"] = metadata["dataset"].split('DR',1)[1].split('_',1)[1]
+            elif data_type == "POET":
+                metadata["dataset-title"] = metadata["dataset"].split('_',1)[1]
         metadata["number_events"] = number_events
         metadata["number_files"] = number_files
         metadata["size"] = size
