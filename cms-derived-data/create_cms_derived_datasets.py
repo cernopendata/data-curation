@@ -30,7 +30,7 @@ def get_number_events(file_path, data_type):
 
 
 def get_parent_recid(parent_title):
-    """Return parent dataset recid."""   
+    """Return parent dataset recid."""
     cmd = f"cernopendata-client get-metadata --title={parent_title} --output-value recid"
     recid = subprocess.getoutput(cmd)
     return recid
@@ -42,7 +42,7 @@ def get_file_size(file_path):
     return math.ceil(file_size)
 
 def get_collision_information(parent_title):
-    """Return collision information.""" 
+    """Return collision information."""
     cmd = f"cernopendata-client get-metadata --title={parent_title} --output-value collision_information"
     collision_information = subprocess.getoutput(cmd)
     return collision_information
@@ -72,9 +72,13 @@ def get_files(dataset_location):
     return files
 
 
-def get_dataset_semantics_doc(dataset_name, sample_file_path, data_type):
-    """Return the paths to the html doc and json doc of the given dataset."""
-    output_dir = "outputs/docs"
+def get_dataset_semantics_doc(dataset_name, sample_file_path, data_type, recid):
+    """Produce the dataset sematics file and return their data-curation paths for the given dataset."""
+    output_dir = f"outputs/docs/{data_type}/{recid}"
+    isExist = os.path.exists(output_dir)
+    if not isExist:
+        os.makedirs(output_dir)
+    
     script = "documentation.py" # for NanoAODRun1 
     if data_type == "PFNano":
         script = "inspectNanoFile.py"
@@ -87,7 +91,7 @@ def get_dataset_semantics_doc(dataset_name, sample_file_path, data_type):
     cmd = f"python3 external-scripts/{script} --json {json_doc_path} {sample_file_path}"
     output = subprocess.getoutput(cmd)
 
-    return {"html_doc": html_doc_path, "json_doc": json_doc_path}
+    return {"url": html_doc_path, "json": json_doc_path}
 
 
 def create_record(metadata, data_type):
@@ -118,9 +122,7 @@ def create_record(metadata, data_type):
     rec["collections"] = config["common_values"]["collections"]
 
     if data_type != "POET":
-        rec["dataset_semantics_files"] = {}
-        rec["dataset_semantics_files"]["html_doc"] =  metadata["dataset_semantics_files"]["html_doc"].rsplit('/',1)[1]
-        rec["dataset_semantics_files"]["json_doc"] =  metadata["dataset_semantics_files"]["json_doc"].rsplit('/',1)[1]
+        rec["dataset_semantics_files"] =  metadata["dataset_semantics_files"]
         
     rec["date_published"] = config["common_values"]["date_published"]
     
@@ -138,7 +140,7 @@ def create_record(metadata, data_type):
     rec["distribution"]["size"] = metadata["size"]
 
     # uniqely generated for each record (?)
-    rec["doi"] = ""
+    # rec["doi"] = ""
     
     rec["experiment"] = [
         config["common_values"]["experiment"]
@@ -166,15 +168,21 @@ def create_record(metadata, data_type):
     rec["title"] =  config[data_type]["title"].replace("<dataset-title>", metadata["dataset-title"])
 
     rec["type"] = config["common_values"]["type"]
-
-    rec["use_with"] = config[data_type]["use_with"]
+    
+    if data_type == "POET":
+        rec["use_with"] = config[data_type]["use_with"]
+    else:
+        rec["usage"] = config[data_type]["usage"]
 
     rec["validation"] = {}
     rec["validation"]["description"] = config[data_type]["validation"]["description"]
     if data_type == "PFNano":
-        rec["validation"]["links"] = []
-        rec["validation"]["links"].append({
-                "url": "link to processedLumis.json"
+        # if more PFNano is produced after the release, this conditional can be replaced 
+        # by a comparison of n events with the parent dataset (now checked "by hand")
+        if metadata["dataset-title"] == "JetHT" or metadata["dataset-title"] == "DoubleEG":
+            rec["validation"]["links"] = []
+            rec["validation"]["links"].append({
+                    "url": "link to processedLumis.json"
             })
 
     return rec
@@ -204,6 +212,7 @@ def main(data_type):
     if data_type == "NanoAODRun1":
         date = "01-Jul-22"
         recid_start = config["NanoAODRun1"]["recid_start"]
+        dataset_semantics_path = "/eos/opendata/cms/dataset-semantics/derived-data/NanoAODRun1/"
     elif data_type == "POET":
         date = "23-Jul-22"
         recid_start = config["POET"]["recid_start"]
@@ -213,6 +222,7 @@ def main(data_type):
         parent_recid = 30500
         valid_recids = [14220,14221]
         process_path = "Run2016G-UL2016_MiniAODv2_PFNanoAODv1"
+        dataset_semantics_path = "/eos/opendata/cms/dataset-semantics/derived-data/PFNano/"
     
     records = []
     datasets_path = f"/eos/opendata/cms/derived-data/{data_type}/{date}"
@@ -270,8 +280,6 @@ def main(data_type):
                     size += file_size
             dataset_all_merged_path = dataset_dir_path + "_merged.root"
             files.extend(get_files(dataset_all_merged_path))  # adds the merged file to the list of dataset files
-            sample_file_path = f"{dataset_dir_path}/{dataset_files[0]}"
-            metadata["dataset_semantics_files"] = get_dataset_semantics_doc(dataset, sample_file_path, data_type)
             number_files += 1 # for _merged.root in NanoAODRun1
         elif data_type == "PFNano":
             for file in dataset_files:
@@ -282,9 +290,16 @@ def main(data_type):
                     file_size = get_file_size(file_path)
                     size += file_size
             files.extend(get_files(dataset_dir_path))
-            sample_file_path = f"{dataset_dir_path}/{dataset_files[0]}"
-            metadata["dataset_semantics_files"] = get_dataset_semantics_doc(dataset, sample_file_path, data_type)
         
+        # prepare semantics file links for PFNano and NanoAODRun1
+        # takes the second ([1]) file for now to skip a superfluous directory in some NanoAODRun1 datasets
+        if data_type != "POET":
+            sample_file_path = f"{dataset_dir_path}/{dataset_files[1]}"
+            metadata["dataset_semantics_files"] = get_dataset_semantics_doc(dataset, sample_file_path, data_type, recid_start)
+            html_file_name = metadata["dataset_semantics_files"]["url"].rsplit('/',1)[1]
+            metadata["dataset_semantics_files"]["url"] = f"{dataset_semantics_path}{recid_start}/{html_file_name}"
+            metadata["dataset_semantics_files"]["json"] =  metadata["dataset_semantics_files"]["json"].rsplit('/',1)[1]
+    
         # prepare metadata for creating the record, for PFNano differently as cernopendata-client does not reach datasets that are not yet released
         if data_type == "PFNano":
             metadata["parent_recid"] = str(parent_recid)
