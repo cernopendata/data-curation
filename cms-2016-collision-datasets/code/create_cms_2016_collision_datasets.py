@@ -359,6 +359,27 @@ def get_dataset_index_files(dataset_full_name):
             files.append((afile_uri, afile_size, afile_checksum))
     return files
 
+def get_dataset_semantics_doc(dataset_name, sample_file_path, recid):
+    """Produce the dataset semantics files and return their data-curation paths for the given dataset."""
+    output_dir = f"outputs/docs/NanoAOD/{recid}"
+    eos_dir=f"/eos/opendata/cms/dataset-semantics/NanoAOD/{recid}"
+    isExist = os.path.exists(output_dir)
+    if not isExist:
+        os.makedirs(output_dir)
+    
+    script = "inspectNanoFile.py"
+
+    html_doc_path = f"{output_dir}/{dataset_name}_doc.html"
+    cmd = f"python3 external-scripts/{script} --doc {html_doc_path} {sample_file_path}"
+    output = subprocess.getoutput(cmd)
+    html_eos_path = f"{eos_dir}/{dataset_name}_doc.html"
+
+    json_doc_path = f"{output_dir}/{dataset_name}_doc.json"
+    cmd = f"python3 external-scripts/{script} --json {json_doc_path} {sample_file_path}"
+    output = subprocess.getoutput(cmd)
+    json_eos_path = f"{eos_dir}/{dataset_name}_doc.json"
+
+    return {"url": html_eos_path, "json": json_eos_path}
 
 def get_doi(dataset_full_name):
     "Return DOI for the given dataset."
@@ -384,6 +405,7 @@ def create_record(recid, run_period, version, dataset, aodformat):
         % aodformat
         + "</p><p>The list of validated runs, which must be applied to all analyses, either with the full validation or for an analysis requiring only muons, can be found in:</p>"
     )
+
     rec["abstract"]["links"] = [
         {"description": "Validated runs, full validation", "recid": "14220"},
         {"description": "Validated runs, muons only", "recid": "14221"},
@@ -402,6 +424,13 @@ def create_record(recid, run_period, version, dataset, aodformat):
     rec["collision_information"] = {}
     rec["collision_information"]["energy"] = COLLISION_ENERGY
     rec["collision_information"]["type"] = COLLISION_TYPE
+
+    if aodformat == "NANOAOD":
+        dataset_path = f"/eos/opendata/cms/{run_period}/{dataset}/NANOAOD/{version}"
+        intermediate_dir = os.listdir(dataset_path)
+        sample_file_path = f"{dataset_path}/{intermediate_dir[0]}"
+        sample_file_with_path = f"{sample_file_path}/{os.listdir(sample_file_path)[0]}"
+        rec["dataset_semantics_files"] = get_dataset_semantics_doc(dataset, sample_file_with_path, recid)
 
     rec["date_created"] = [
         YEAR_CREATED,
