@@ -47,6 +47,11 @@ def get_collision_information(parent_title):
     collision_information = subprocess.getoutput(cmd)
     return collision_information
 
+def get_date_created(parent_title):
+    """Return the data-taking year (date_created)."""
+    cmd = f"cernopendata-client get-metadata --title={parent_title} --output-value date_created"
+    date_created = subprocess.getoutput(cmd)
+    return date_created
         
 def get_files(dataset_location):
     "Return file list with information about name, size, location for the given dataset and volume."
@@ -78,6 +83,8 @@ def get_dataset_semantics_doc(dataset_name, sample_file_path, data_type, recid):
     isExist = os.path.exists(output_dir)
     if not isExist:
         os.makedirs(output_dir)
+
+    dataset_semantics_path = f"/eos/opendata/cms/dataset-semantics/derived-data/{data_type}/{recid}"
     
     script = "documentation.py" # for NanoAODRun1 
     if data_type == "PFNano":
@@ -86,12 +93,14 @@ def get_dataset_semantics_doc(dataset_name, sample_file_path, data_type, recid):
     html_doc_path = f"{output_dir}/{dataset_name}_doc.html"
     cmd = f"python3 external-scripts/{script} --doc {html_doc_path} {sample_file_path}"
     output = subprocess.getoutput(cmd)
+    html_eos_path = f"{dataset_semantics_path}/{dataset_name}_doc.html"
 
     json_doc_path = f"{output_dir}/{dataset_name}_doc.json"
     cmd = f"python3 external-scripts/{script} --json {json_doc_path} {sample_file_path}"
     output = subprocess.getoutput(cmd)
+    json_eos_path = f"{dataset_semantics_path}/{dataset_name}_doc.json"
 
-    return {"url": html_doc_path, "json": json_doc_path}
+    return {"url": html_eos_path, "json": json_eos_path}
 
 
 def create_record(metadata, data_type):
@@ -125,7 +134,8 @@ def create_record(metadata, data_type):
         rec["dataset_semantics_files"] =  metadata["dataset_semantics_files"]
         
     rec["date_published"] = config["common_values"]["date_published"]
-    
+    rec["date_created"] = json.loads(metadata["date_created"])
+
     rec["distribution"] = {}
     # changes format to nanoaodsim-NNN for MC - to be modified for PFNano sim if we make some (PFNano names dataset names do not have Run2016 in them...)
     if "Run201" not in metadata["dataset"] and data_type != "PFNano":
@@ -212,7 +222,6 @@ def main(data_type):
     if data_type == "NanoAODRun1":
         date = "01-Jul-22"
         recid_start = config["NanoAODRun1"]["recid_start"]
-        dataset_semantics_path = "/eos/opendata/cms/dataset-semantics/derived-data/NanoAODRun1/"
     elif data_type == "POET":
         date = "23-Jul-22"
         recid_start = config["POET"]["recid_start"]
@@ -222,7 +231,6 @@ def main(data_type):
         parent_recid = 30500
         valid_recids = [14220,14221]
         process_path = "Run2016G-UL2016_MiniAODv2_PFNanoAODv1"
-        dataset_semantics_path = "/eos/opendata/cms/dataset-semantics/derived-data/PFNano/"
     
     records = []
     datasets_path = f"/eos/opendata/cms/derived-data/{data_type}/{date}"
@@ -296,9 +304,6 @@ def main(data_type):
         if data_type != "POET":
             sample_file_path = f"{dataset_dir_path}/{dataset_files[1]}"
             metadata["dataset_semantics_files"] = get_dataset_semantics_doc(dataset, sample_file_path, data_type, recid_start)
-            html_file_name = metadata["dataset_semantics_files"]["url"].rsplit('/',1)[1]
-            metadata["dataset_semantics_files"]["url"] = f"{dataset_semantics_path}{recid_start}/{html_file_name}"
-            metadata["dataset_semantics_files"]["json"] =  metadata["dataset_semantics_files"]["json"].rsplit('/',1)[1]
     
         # prepare metadata for creating the record, for PFNano differently as cernopendata-client does not reach datasets that are not yet released
         if data_type == "PFNano":
@@ -307,9 +312,11 @@ def main(data_type):
             metadata["collision_information"] = '{"energy": "13TeV","type": "pp"}'
             metadata["valid_recids"] = []
             metadata["valid_recids"] = valid_recids
+            metadata["date_created"] = '[ "2016" ]'
         else:
             metadata["parent_recid"] = get_parent_recid(metadata["parent"])
             metadata["collision_information"] = get_collision_information(metadata["parent"])
+            metadata["date_created"] = get_date_created(metadata["parent"])
     
         # For MC, remove the processing string from the name for the title
         metadata["dataset-title"] = metadata["dataset"]
