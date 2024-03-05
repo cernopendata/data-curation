@@ -19,7 +19,8 @@ def get_conffile_ids_all_chain_steps(dataset, mcm_dir):
         step_dir = path + '/' + step
         mcm_config_ids = get_conffile_ids_from_mcm(dataset, step_dir)
 
-        for someid in mcm_config_ids:
+        if mcm_config_ids:
+            for someid in mcm_config_ids:
                 ids[someid] = 1
 
     return list(ids.keys())

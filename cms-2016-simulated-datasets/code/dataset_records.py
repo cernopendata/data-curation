@@ -166,6 +166,8 @@ def get_globaltag_from_conffile(afile, conf_dir):
             globaltag = m.groups(1)[0]
     return globaltag
 
+# TODO when we are doing MINI, then exclude the NANO step so that it does not appear
+# TODO move generator cards to the root and exclude LOG.txt when assembling list
 
 def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid_info):
     """Return DICT with all information about the generator steps."""
@@ -186,7 +188,7 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid_info):
         step = {}
         process = ''
         output_dataset = get_output_dataset_from_mcm(dataset, mcm_step_dir)
-        if output_dataset:        
+        if output_dataset:
             step['output_dataset'] = output_dataset[0]
         release = get_cmssw_version_from_mcm(dataset, mcm_step_dir)
         if release:
@@ -208,7 +210,7 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid_info):
         generator_names = get_generator_name(dataset, mcm_step_dir)
         if generator_names:
             step['generators'] = generator_names
-        
+
         m = re.search('-(.+?)-', step_dir)
         if m:
             step_name = m.group(1)
@@ -238,8 +240,8 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid_info):
 
         step['type'] = process
 
-        # Extend LHE steps 
-        if step_name.endswith('LHEGEN'):        
+        # Extend LHE steps
+        if step_name.endswith('LHEGEN'):
             step['type'] = "LHE GEN"
             for i, configuration_files in enumerate(step['configuration_files']):
                 if configuration_files['title'] == 'Generator parameters':
@@ -260,7 +262,7 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid_info):
         else:
             if 'generators' in step:
                 generators_present = True
-                    
+
     return info
 
 def populate_containerimages_cache():
@@ -276,13 +278,14 @@ def populate_mininanorelation_cache(dataset_full_names, mcm_dir):
         if dataset_full_name.endswith('MINIAODSIM'):
             nano_found = 0
             dataset_first_name = get_from_deep_json(get_mcm_dict(dataset_full_name, mcm_dir), 'dataset_name')
-            for x in os.listdir(mcm_dir + '/chain'):
-                if x.startswith('@'+dataset_first_name):
-                    dataset_name_for_nano = x.replace('@', '/')
-                    nano_found = 1
-                    MININANORELATION_CACHE[dataset_full_name] = dataset_name_for_nano
+            if dataset_first_name:
+                for x in os.listdir(mcm_dir + '/chain'):
+                    if x and x.startswith('@'+dataset_first_name):
+                        dataset_name_for_nano = x.replace('@', '/')
+                        nano_found = 1
+                        MININANORELATION_CACHE[dataset_full_name] = dataset_name_for_nano
             if nano_found==0:
-                print("A corresponding NANOAODSIM was not found for dataset: " + dataset_full_name)   
+                print("A corresponding NANOAODSIM was not found for dataset: " + dataset_full_name)
 
 
 def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir):
@@ -293,7 +296,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     dataset = get_dataset(dataset_full_name)
     dataset_format = get_dataset_format(dataset_full_name)
     year_created = '2016'
-    year_published = '2023'  # 
+    year_published = '2023'  #
     run_period = ['Run2016G', 'Run2016H']  #
 
     additional_title = 'Simulated dataset ' + dataset + ' in ' + dataset_format + ' format for ' + year_created + ' collision data'
@@ -338,7 +341,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     if doi:
         rec['doi'] = doi
 
-    rec['experiment'] = 'CMS'
+    rec['experiment'] = ['CMS', ]
 
     rec_files = get_dataset_index_files(dataset_full_name, eos_dir)
     if rec_files:
@@ -367,12 +370,13 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
 
     pileup_dataset_name= ''
     pileup_dataset_name= get_pileup_from_mcm(dataset_name_for_nano, mcm_dir)
-    
+
     pileup_dataset_recid = {
         '/MinBias_TuneZ2_7TeV-pythia6/Summer11Leg-START53_LV4-v1/GEN-SIM': 36, # 2011
         '/MinBias_TuneZ2star_8TeV-pythia6/Summer12-START50_V13-v3/GEN-SIM': 37, # 2012
         '/MinBias_TuneCUETP8M1_13TeV-pythia8/RunIISummer15GS-MCRUN2_71_V1-v2/GEN-SIM': 22314, # 2015
-        #'/MinBias_TuneCUETP8M1_13TeV-pythia8/RunIISummer15GS-magnetOffBS0T_MCRUN2_71_V1-v1/GEN-SIM': {recid}, # 2015 TODO
+        # TODO 2016 take from Kati's PR
+        #'/MinBias_TuneCUETP8M1_13TeV-pythia8/RunIISummer15GS-magnetOffBS0T_MCRUN2_71_V1-v1/GEN-SIM': {recid}, # 2015
         '/MinBias_TuneCP5_13TeV-pythia8/RunIIFall18GS-IdealGeometry_102X_upgrade2018_design_v9-v1/GEN-SIM': 12302 # 2018
     }.get(pileup_dataset_name, 0)
 
@@ -381,7 +385,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
         rec['pileup'] = {}
         if pileup_dataset_recid:
             rec['pileup']['description'] = "<p>To make these simulated data comparable with the collision data, <a href=\"/docs/cms-guide-pileup-simulation\">pile-up events</a> are added to the simulated event in the DIGI2RAW step.</p>"
-            rec['pileup']['links'] = [ 
+            rec['pileup']['links'] = [
                 {
                     "recid": str(pileup_dataset_recid),
                     "title": pileup_dataset_name
@@ -398,7 +402,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
 
     if dataset_full_name.endswith('NANOAODSIM'):
         # Query from mcm dict fails for an example dataset because Mini is v1 in mcm and v2 in dataset list
-        # Get it from das instead 
+        # Get it from das instead
         #dataset_name_for_mini = get_from_deep_json(get_mcm_dict(dataset_full_name, mcm_dir), 'input_dataset')
         dataset_name_for_mini = get_parent_dataset(dataset_full_name, das_dir)
         relations_description = 'The corresponding MINIAODSIM dataset:'
@@ -408,7 +412,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
         relations_description = 'The corresponding NANOAODSIM dataset:'
         relations_recid = str(recid_info[dataset_name_for_nano])
         relations_type = 'isChildOf'
-    
+
     rec['relations'] = [
         {
             'description': relations_description,
@@ -452,17 +456,18 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     rec['usage']['description'] = "You can access these data through the CMS Open Data container or the CMS Virtual Machine. See the instructions for setting up one of the two alternative environments and getting started in"
     rec['usage']['links'] = [
         {
-          "description": "Running CMS analysis code using Docker", 
+          "description": "Running CMS analysis code using Docker",
           "url": "/docs/cms-guide-docker"
-        }, 
+        },
         {
-          "description": "How to install the CMS Virtual Machine", 
+          "description": "How to install the CMS Virtual Machine",
           "url": "/docs/cms-virtual-machine-2016"
-        }, 
+        },
         {
-          "description": "Getting started with CMS open data", 
+          "description": "Getting started with CMS open data",
           "url": "/docs/cms-getting-started-2016"
         }
+        # TODO Amend links taking them from Kati's pile-up PR
     ]
 
     rec['validation'] = {}
@@ -476,7 +481,7 @@ def create(dataset, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_d
     if os.path.exists(filepath) and os.stat(filepath).st_size != 0:
         print("==> " + dataset + "\n==> Already exist. Skipping...\n")
         return
-        
+
     Record= create_record(dataset, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir)
 
     with open(filepath, 'w') as file:
@@ -500,8 +505,8 @@ def create_records(dataset_full_names, doi_file, recid_file, eos_dir, das_dir, m
         t= threading.Thread(target=create, args=(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir, records_dir))
         t.start()
         while threading.activeCount() >= 20 :
-            sleep(0.5)  # run 20 parallel 
-            
+            sleep(0.5)  # run 20 parallel
+
         #records.append(create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir))
     #return records
 
@@ -541,10 +546,10 @@ def get_step_generator_parameters(dataset, mcm_dir, recid, force_lhe=0):
         if mcdb_id > 1:
             print("Got mcdb > 1: " + str(mcdb_id))
             configuration_files['title'] = 'Generator parameters'
-            configuration_files['url'] = "/eos/opendata/cms/lhe_generators/2015-sim/mcdb/{mcdb_id}_header.txt".format(mcdb_id=mcdb_id)    
-            return [configuration_files]        
-        else:       
-            dir='./lhe_generators/2016-sim/gridpacks/' + str(recid) + '/' 
+            configuration_files['url'] = "/eos/opendata/cms/lhe_generators/2015-sim/mcdb/{mcdb_id}_header.txt".format(mcdb_id=mcdb_id)
+            return [configuration_files]
+        else:
+            dir='./lhe_generators/2016-sim/gridpacks/' + str(recid) + '/'
             files = []
             files = [f for f in os.listdir(dir) if os.path.isfile(os.path.join(dir, f))]
             confarr=[]

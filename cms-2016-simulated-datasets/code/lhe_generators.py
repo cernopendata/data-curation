@@ -31,7 +31,10 @@ def log(recid, logtype, logmessage):
 def get_lhe(dataset, mcm_dir):
     """Get LHE Parent or False"""
     path = mcm_dir + "/chain/" + dataset.replace("/", "@")
-    step_dirs = os.listdir(path)
+    try:
+        step_dirs = os.listdir(path)
+    except:
+        return False
     for step in step_dirs:
         step_dir = path + "/" + step
         datatier = get_from_deep_json(get_mcm_dict(dataset, step_dir), "datatier")
@@ -78,12 +81,12 @@ def create_lhe_generator(
         return
 
     # Find gridpack path
-    path = re.search(r"cms.vstring\(['\"](/cvmfs.*?)['\"]", fragment)
+    path = re.search(r"cms.vstring\(['\"\[]\s*(/cvmfs.*?)['\"]", fragment)
     if not path:
         log(
             recid,
             "ERROR",
-            f"No 'cms.vstring(['\"]/cvmfs' found in fragment; skipping.",
+            f"No 'cms.vstring(/cvmfs' found in fragment; skipping.",
         )
         return
 
