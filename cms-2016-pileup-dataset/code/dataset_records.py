@@ -408,13 +408,14 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
 
     rec['title_additional'] = additional_title
 
-    topic = guess_title_category(dataset_full_name)
-    category = topic.split('/')[0]
+    # For pileup dataset, force category to "Pileup"
+    #topic = guess_title_category(dataset_full_name)
+    #category = topic.split('/')[0]
     subcategory = None
-    if len(topic.split('/')) == 2:
-        subcategory = topic.split('/')[1]
+    #if len(topic.split('/')) == 2:
+    #    subcategory = topic.split('/')[1]
     rec['categories'] = {}
-    rec['categories']['primary'] = category
+    rec['categories']['primary'] = 'Pileup'
     if subcategory:
         rec['categories']['secondary'] = [subcategory]
     rec['categories']['source'] = 'CMS Collaboration'
