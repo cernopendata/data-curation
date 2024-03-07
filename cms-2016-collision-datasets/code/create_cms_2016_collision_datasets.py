@@ -239,7 +239,7 @@ def get_run_numbers(dataset_full_name):
 
 
 def get_dataset_config_file_name(dataset_full_name):
-    dataset = dataset_full_name.split("/")[1]    
+    dataset = dataset_full_name.split("/")[1]
     run_period = dataset_full_name.split("/")[2].split("-", 1)[0]
     version = dataset_full_name.split("/")[2].split("-")[1]
     config_file = f"ReReco-{run_period}-{dataset}-{version}"
@@ -276,7 +276,6 @@ def create_selection_information(dataset, dataset_full_name):
     out += "<p><strong>Data taking / HLT</strong>"
     out += '<br/>The collision data were assigned to different RAW datasets using the following <a href="/record/30300">HLT configuration</a>.</p>'
     # data processing / NANO/PAT/RECO:
-    run_period = re.search(r"(Run[0-9]+.)", dataset_full_name).groups()[0]
     aodformat = dataset_full_name.split("/")[3]
     step_dataset = dataset_full_name
     steps = []
@@ -291,8 +290,8 @@ def create_selection_information(dataset, dataset_full_name):
             {"process": "PAT"},
             {"process": "RECO"}
         ]
-    
-    out += f"<p><strong>Data processing </strong>"
+
+    out += "<p><strong>Data processing </strong>"
     out += (
         "<br/>This %s dataset was processed from the RAW dataset by the following steps: "
         % (aodformat)
@@ -305,7 +304,7 @@ def create_selection_information(dataset, dataset_full_name):
         generator_text = "Configuration file for " + steps[i]['process'] + " step " + afile
         release = get_release_for_processing(step_dataset)
         global_tag = get_global_tag_for_processing(step_dataset)
-    
+
         out += "<br/><strong>Step %s </strong>" % steps[i]['process']
         out += "<br/>Release: %s" % release
         out += "<br/>Global tag: %s" % global_tag
@@ -359,14 +358,15 @@ def get_dataset_index_files(dataset_full_name):
             files.append((afile_uri, afile_size, afile_checksum))
     return files
 
+
 def get_dataset_semantics_doc(dataset_name, sample_file_path, recid):
     """Produce the dataset semantics files and return their data-curation paths for the given dataset."""
     output_dir = f"outputs/docs/NanoAOD/{recid}"
-    eos_dir=f"/eos/opendata/cms/dataset-semantics/NanoAOD/{recid}"
+    eos_dir = f"/eos/opendata/cms/dataset-semantics/NanoAOD/{recid}"
     isExist = os.path.exists(output_dir)
     if not isExist:
         os.makedirs(output_dir)
-    
+
     script = "inspectNanoFile.py"
 
     html_doc_path = f"{output_dir}/{dataset_name}_doc.html"
@@ -380,6 +380,7 @@ def get_dataset_semantics_doc(dataset_name, sample_file_path, recid):
     json_eos_path = f"{eos_dir}/{dataset_name}_doc.json"
 
     return {"url": html_eos_path, "json": json_eos_path}
+
 
 def get_doi(dataset_full_name):
     "Return DOI for the given dataset."

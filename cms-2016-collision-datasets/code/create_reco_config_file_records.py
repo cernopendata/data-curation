@@ -23,6 +23,8 @@ NOTE = (
 
 
 RECID_START = 30400
+RECID_MAX = 30500   # when this record ID number is reached, continue from the "next" number
+RECID_NEXT = 30566  # next free record ID number
 YEAR_CREATED = "2016"
 YEAR_PUBLISHED = "2024"
 COLLISION_ENERGY = "13Tev"
@@ -128,10 +130,10 @@ def main():
 
             if not afile_python_filename.startswith("ReReco") and not afile_python_filename.startswith("recoskim"):
                 continue
-            
+
             if afile_python_filename in files_seen:
                 continue
-            
+
             files_seen.append(afile_python_filename)
 
             # Create nice reco_*.py files for copying them over to EOSPUBLIC
@@ -208,6 +210,10 @@ def main():
                 "  '%s': %d,\n" % (afile_python_filename.split(".", 1)[0], recid)
             )
             recid += 1
+
+            # jump over some record ID range which were already preselected for collision data
+            if recid == RECID_MAX:
+                recid = RECID_NEXT
 
     fdesc.write("}\n")
     fdesc.close()
