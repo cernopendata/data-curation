@@ -43,7 +43,7 @@ recommended_gt = "106X_mcRun2_asymptotic_v17"
 recommended_cmssw = "CMSSW_10_6_30"
 collision_energy = "13TeV"
 collision_type = "pp"
-year_published = "2023"
+year_published = "2024"
 
 LINK_INFO = {}
 
@@ -191,7 +191,7 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid_info):
         step = {}
         process = ''
         output_dataset = get_output_dataset_from_mcm(dataset, mcm_step_dir)
-        if output_dataset:        
+        if output_dataset:
             step['output_dataset'] = output_dataset[0]
         release = get_cmssw_version_from_mcm(dataset, mcm_step_dir)
         if release:
@@ -213,7 +213,7 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid_info):
         generator_names = get_generator_name(dataset, mcm_step_dir)
         if generator_names:
             step['generators'] = generator_names
-        
+
         m = re.search('-(.+?)-', step_dir)
         if m:
             step_name = m.group(1)
@@ -243,8 +243,8 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid_info):
 
         step['type'] = process
 
-        # Extend LHE steps 
-        if step_name.endswith('LHEGEN'):        
+        # Extend LHE steps
+        if step_name.endswith('LHEGEN'):
             step['type'] = "LHE GEN"
             for i, configuration_files in enumerate(step['configuration_files']):
                 if configuration_files['title'] == 'Generator parameters':
@@ -265,7 +265,7 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid_info):
         else:
             if 'generators' in step:
                 generators_present = True
-                    
+
     return info
 
 def populate_containerimages_cache():
@@ -283,7 +283,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     dataset = get_dataset(dataset_full_name)
     dataset_format = get_dataset_format(dataset_full_name)
     year_created = '2016'
-    year_published = '2023'  # 
+    year_published = '2024'  #
     run_period = ['Run2016G', 'Run2016H']  #
 
     additional_title = 'Simulated dataset ' + dataset + ' in ' + dataset_format + ' format for ' + year_created + ' collision data'
@@ -324,7 +324,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     rec['distribution']['formats'] = [dataset_format.lower(), 'root']
     rec['distribution']['number_events'] = 27646400 #  this is computed from the number of files (17279 * 1600 = 27646400) was: get_number_events(dataset_full_name, das_dir)
     rec['distribution']['number_files'] = 17279 # known but maybe get from eos - was: get_number_files(dataset_full_name, das_dir)
-    rec['distribution']['size'] = 0 # FIXME: check from eos - was: get_size(dataset_full_name, das_dir)
+    rec['distribution']['size'] = 55600743325296 # known via grep '"size"' inputs/eos-file-indexes/*.json | awk '{print $NF}' | tr ',' ' ' | paste -s -d+ | bc
 
     doi = get_doi(dataset_full_name, doi_info)
     if doi:
@@ -334,7 +334,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
 
     rec_files = get_dataset_index_files(dataset_full_name, eos_dir)
     if rec_files:
-        rec['files'] = [] 
+        rec['files'] = []
         for index_type in ['.json', '.txt']:
             index_files = [f for f in rec_files if f[0].endswith(index_type)]
             for file_number, (file_uri, file_size, file_checksum) in enumerate(index_files):
@@ -373,7 +373,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
         rec['pileup'] = {}
         if pileup_dataset_recid:
             rec['pileup']['description'] = "<p>To make these simulated data comparable with the collision data, <a href=\"/docs/cms-guide-pileup-simulation\">pile-up events</a> are added to the simulated event in the DIGI2RAW step.</p>"
-            rec['pileup']['links'] = [ 
+            rec['pileup']['links'] = [
                 {
                     "recid": str(pileup_dataset_recid),
                     "title": pileup_dataset_name
@@ -400,7 +400,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     # recomended global tag and cmssw release recommended for analysis
     rec['system_details'] = {}
     rec['system_details']['global_tag'] = recommended_gt
-    rec['system_details']['release'] = recommended_cmssw 
+    rec['system_details']['release'] = recommended_cmssw
     if recommended_cmssw in CONTAINERIMAGES_CACHE.keys():
         rec["system_details"]["container_images"] = CONTAINERIMAGES_CACHE[recommended_cmssw]
 
@@ -431,15 +431,15 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     rec['usage']['description'] = "These simulated data are not meant to be analysed on their own. The dataset can be used to add pile-up events to newly simulated event samples using CMS experiment software, available through the CMS Open Data container or the CMS Virtual Machine. See the instructions for setting up one of the two alternative environments and getting started in"
     rec['usage']['links'] = [
         {
-          "description": "Running CMS analysis code using Docker", 
-          "url": "/docs/cms-guide-docker"
-        }, 
+          "description": "Running CMS analysis code using Docker",
+          "url": "/docs/cms-guide-docker#images"
+        },
         {
-          "description": "How to install the CMS Virtual Machine", 
-          "url": "/docs/cms-virtual-machine-2016-2018"
-        }, 
+          "description": "How to install the CMS Virtual Machine",
+          "url": "/docs/cms-virtual-machine-cc7"
+        },
         {
-          "description": "Getting started with CMS open data", 
+          "description": "Getting started with CMS open data",
           "url": "/docs/cms-getting-started-miniaod"
         }
     ]
@@ -455,7 +455,7 @@ def create(dataset, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_d
     if os.path.exists(filepath) and os.stat(filepath).st_size != 0:
         print("==> " + dataset + "\n==> Already exist. Skipping...\n")
         return
-        
+
     Record= create_record(dataset, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir)
 
     with open(filepath, 'w') as file:
@@ -478,7 +478,7 @@ def create_records(dataset_full_names, doi_file, recid_file, eos_dir, das_dir, m
     #build the record only for the PREMIX dataset
         if 'PREMIX' in dataset_full_name:
             create(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir, records_dir)
-            
+
         #records.append(create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir))
     #return records
 
@@ -517,10 +517,10 @@ def get_step_generator_parameters(dataset, mcm_dir, recid, force_lhe=0):
         if mcdb_id > 1:
             print("Got mcdb > 1: " + str(mcdb_id))
             configuration_files['title'] = 'Generator parameters'
-            configuration_files['url'] = "/eos/opendata/cms/lhe_generators/2015-sim/mcdb/{mcdb_id}_header.txt".format(mcdb_id=mcdb_id)    
-            return [configuration_files]        
-        else:       
-            dir='./lhe_generators/2016-sim/gridpacks/' + str(recid) + '/' 
+            configuration_files['url'] = "/eos/opendata/cms/lhe_generators/2015-sim/mcdb/{mcdb_id}_header.txt".format(mcdb_id=mcdb_id)
+            return [configuration_files]
+        else:
+            dir='./lhe_generators/2016-sim/gridpacks/' + str(recid) + '/'
             files = []
             files = [f for f in os.listdir(dir) if os.path.isfile(os.path.join(dir, f))]
             confarr=[]
@@ -543,4 +543,3 @@ def get_step_generator_parameters(dataset, mcm_dir, recid, force_lhe=0):
                         return [configuration_files]
                 except:
                     pass
-

@@ -74,3 +74,8 @@ cms-2016-collision-datasets/inputs/hlt-config-store
 cms-2016-collision-datasets/inputs/das-json-store
 cms-2016-collision-datasets/inputs/das-json-config-store
 cms-2016-collision-datasets/outputs/*.json
+cms-2016-pileup-dataset/inputs/config-store
+cms-2016-pileup-dataset/inputs/das-json-store
+cms-2016-pileup-dataset/inputs/mcm-store
+cms-2016-pileup-dataset/outputs/
+cms-2016-pileup-dataset/cookies.txt

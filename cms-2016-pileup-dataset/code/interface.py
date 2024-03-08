@@ -15,7 +15,7 @@ from utils import get_datasets_from_dir
 @click.option('--create-eos-indexes/--no-create-eos-indexes', default=False,
               show_default=True,
               help="Create EOS rich index files")
-@click.option('--eos-dir', default='./inputs/eos-file-indexes',
+@click.option('--eos-dir', default='./inputs/eos-file-indexes/',
               show_default=True,
               help='Output directory for the EOS file indexes')
 @click.option('--ignore-eos-store/--no-ignore-eos-store',

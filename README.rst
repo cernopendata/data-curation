@@ -50,6 +50,7 @@ Specific data ingestion and curation campaigns:
 - `cms-2015-collision-datasets-hi-ppref <cms-2015-collision-datasets-hi-ppref>`_ - helper scripts for CMS 2015 heavy ion release (proton-proton reference collision datasets)
 - `cms-2015-simulated-datasets <cms-2015-simulated-datasets>`_ -- helper scripts for the CMS 2015 open data release (simulated datasets)
 - `cms-2016-collision-datasets <cms-2016-collision-datasets>`_ -- helper scripts for the CMS 2016 open data release (collision datasets)
+- `cms-2016-pileup-dataset <cms-2016-pileup-dataset>`_ -- helper scripts for the CMS 2016 open data release (pileup dataset)
 - `cms-2016-simulated-datasets <cms-2016-simulated-datasets>`_ -- helper scripts for the CMS 2016 open data release (simulated datasets)
 - `cms-YYYY-luminosity <cms-YYYY-luminosity>`_ -- helper scripts for the CMS luminosity information records (any year)
 - `cms-YYYY-run-numbers <cms-YYYY-run-numbers>`_ -- helper scripts for enriching CMS dataset run numbers (any year)
