@@ -545,11 +545,11 @@ def create_record(recid, run_period, version, dataset, aodformat):
         rec["usage"]["links"] = [
             {
                 "description": "Running CMS analysis code using Docker",
-                "url": "/docs/cms-guide-docker",
+                "url": "/docs/cms-guide-docker#nanoaod" if aodformat == "NANOAOD" else "/docs/cms-guide-docker#images",
             },
             {
                 "description": "How to install the CMS Virtual Machine",
-                "url": "/docs/cms-virtual-machine-2016-2018",
+                "url": "/docs/cms-virtual-machine-cc7",
             },
             {
                 "description": "Getting started with CMS open data",
