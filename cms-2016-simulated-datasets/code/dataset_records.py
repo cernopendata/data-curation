@@ -91,7 +91,7 @@ def get_dataset(dataset_full_name):
 
 def get_dataset_version(dataset_full_name):
     "Return dataset version from dataset full name."
-    return re.search(r'^.*Summer12_DR53X-(.*)/AODSIM$', dataset_full_name).groups()[0]
+    return re.search(r'^.*RunIISummer20UL16.*?-(.*)/(MINI|NANO)AODSIM$', dataset_full_name).groups()[0]
 
 
 def get_dataset_index_files(dataset_full_name, eos_dir):
@@ -288,6 +288,33 @@ def populate_mininanorelation_cache(dataset_full_names, mcm_dir):
                 print("A corresponding NANOAODSIM was not found for dataset: " + dataset_full_name)
 
 
+def get_dataset_semantics_doc(dataset_name, sample_file_path, recid):
+    """Produce the dataset semantics files and return their data-curation paths for the given dataset."""
+    if dataset_name.endswith('/NANOAODSIM'):
+        output_dir = f"outputs/docs/NanoAODSIM/{recid}"
+        eos_dir = f"/eos/opendata/cms/dataset-semantics/NanoAODSIM/{recid}"
+    elif dataset_name.endswith('/MINIAODSIM'):
+        output_dir = f"outputs/docs/MiniAODSIM/{recid}"
+        eos_dir = f"/eos/opendata/cms/dataset-semantics/MiniAODSIM/{recid}"
+    isExist = os.path.exists(output_dir)
+    if not isExist:
+        os.makedirs(output_dir)
+
+    script = "inspectNanoFile.py"
+
+    html_doc_path = f"{output_dir}/{dataset_name}_doc.html"
+    cmd = f"python3 external-scripts/{script} --doc {html_doc_path} {sample_file_path}"
+    output = subprocess.getoutput(cmd)
+    html_eos_path = f"{eos_dir}/{dataset_name}_doc.html"
+
+    json_doc_path = f"{output_dir}/{dataset_name}_doc.json"
+    cmd = f"python3 external-scripts/{script} --json {json_doc_path} {sample_file_path}"
+    output = subprocess.getoutput(cmd)
+    json_eos_path = f"{eos_dir}/{dataset_name}_doc.json"
+
+    return {"url": html_eos_path, "json": json_eos_path}
+
+
 def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir):
     """Create record for the given dataset."""
 
@@ -295,6 +322,8 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
 
     dataset = get_dataset(dataset_full_name)
     dataset_format = get_dataset_format(dataset_full_name)
+    dataset_version = get_dataset_version(dataset_full_name)
+
     year_created = '2016'
     year_published = '2023'  #
     run_period = ['Run2016G', 'Run2016H']  #
@@ -318,15 +347,12 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     rec['collision_information']['energy'] = collision_energy
     rec['collision_information']['type'] = collision_type
 
-    # FIXME cross section will be read in separately
-    generator_parameters = get_generator_parameters_from_mcm(dataset_full_name, mcm_dir)
-    # if generator_parameters:
-    #    rec['cross_section'] = {}
-    #    rec['cross_section']['value'] = generator_parameters.get('cross_section', None)
-    #    rec['cross_section']['filter_efficiency:'] = generator_parameters.get('filter_efficiency', None)
-    #    rec['cross_section']['filter_efficiency_error:'] = generator_parameters.get('filter_efficiency_error', None)
-    #    rec['cross_section']['match_efficiency:'] = generator_parameters.get('match_efficiency', None)
-    #    rec['cross_section']['match_efficiency error:'] = generator_parameters.get('match_efficiency_error', None)
+    if dataset_format == "NANOAODSIM":
+        dataset_path = f"/eos/opendata/cms//mc/{run_period}/{dataset}/NANOAODSIM/{dataset_version}"
+        intermediate_dir = os.listdir(dataset_path)
+        sample_file_path = f"{dataset_path}/{intermediate_dir[0]}"
+        sample_file_with_path = f"{sample_file_path}/{os.listdir(sample_file_path)[0]}"
+        rec["dataset_semantics_files"] = get_dataset_semantics_doc(dataset, sample_file_with_path, recid)
 
     rec['date_created'] = [year_created]
     rec['date_published'] = year_published

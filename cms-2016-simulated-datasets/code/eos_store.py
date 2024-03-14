@@ -90,7 +90,7 @@ def get_dataset_volume_files(dataset, volume):
     "Return file list with information about name, size, location for the given dataset and volume."
     files = []
     dataset_location = get_dataset_location(dataset)
-    output = subprocess.check_output('eos find --size --checksum ' + dataset_location + '/' + volume, shell=True)
+    output = subprocess.check_output('eos oldfind --size --checksum ' + dataset_location + '/' + volume, shell=True)
     output = str(output.decode("utf-8"))
     for line in output.split('\n'):
         if line and line != 'file-indexes':
@@ -141,7 +141,7 @@ def create_index_files(dataset, volume, eos_dir):
     copy_index_file(dataset, volume, filename, eos_dir)
 
 
-def main(datasets = [], eos_dir = './inputs/eos-file-indexes'):
+def main(datasets = [], eos_dir = './inputs/eos-file-indexes/'):
     "Do the job."
 
     if not os.path.exists(eos_dir):
