@@ -5,11 +5,11 @@
 Create RECO CMS Configuration Files records.
 """
 
-import hashlib
 import json
 import re
 import os
 import shutil
+import zlib
 
 
 NOTE = (
@@ -23,6 +23,8 @@ NOTE = (
 
 
 RECID_START = 30400
+RECID_MAX = 30500   # when this record ID number is reached, continue from the "next" number
+RECID_NEXT = 30566  # next free record ID number
 YEAR_CREATED = "2016"
 YEAR_PUBLISHED = "2024"
 COLLISION_ENERGY = "13Tev"
@@ -105,9 +107,9 @@ def get_size(afile):
 
 
 def get_checksum(afile):
-    """Return the SHA1 checksum of the configuration file."""
+    """Return the ADLER32 checksum of a file."""
     file_path = "./inputs/config-store/" + afile
-    return hashlib.sha1(open(file_path, "rb").read()).hexdigest()
+    return hex(zlib.adler32(open(file_path, "rb").read(), 1) & 0xFFFFFFFF)[2:]
 
 
 def main():
@@ -126,12 +128,12 @@ def main():
             # Skip non-RECO files
             afile_python_filename = get_python_filename(afile)
 
-            if not afile_python_filename.startswith("ReReco"):
+            if not afile_python_filename.startswith("ReReco") and not afile_python_filename.startswith("recoskim"):
                 continue
-            
+
             if afile_python_filename in files_seen:
                 continue
-            
+
             files_seen.append(afile_python_filename)
 
             # Create nice reco_*.py files for copying them over to EOSPUBLIC
@@ -170,7 +172,9 @@ def main():
             rec["distribution"]["number_files"] = 1
             rec["distribution"]["size"] = get_size(afile)
 
-            rec["experiment"] = "CMS"
+            rec["experiment"] = [
+                "CMS"
+            ]
 
             rec["files"] = [
                 {
@@ -206,6 +210,10 @@ def main():
                 "  '%s': %d,\n" % (afile_python_filename.split(".", 1)[0], recid)
             )
             recid += 1
+
+            # jump over some record ID range which were already preselected for collision data
+            if recid == RECID_MAX:
+                recid = RECID_NEXT
 
     fdesc.write("}\n")
     fdesc.close()

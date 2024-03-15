@@ -21,7 +21,7 @@ from create_eos_file_indexes import (
     get_dataset_location,
 )
 
-FWYZARD = {}
+DATASET_TRIGGER_LIST = {}
 
 SELECTION_DESCRIPTIONS = {}
 
@@ -129,17 +129,17 @@ def get_file_checksum(afile):
     return hex(zlib.adler32(open(afile, "rb").read(), 1) & 0xFFFFFFFF)[2:]
 
 
-def populate_fwyzard():
-    """Populate FWYZARD dictionary (dataset -> trigger list)."""
+def populate_dataset_trigger_list():
+    """Populate DATASET_TRIGGER_LIST dictionary (dataset -> trigger list)."""
     for line in open("./inputs/hlt-2016-dataset.txt", "r").readlines():
         line = line.strip()
         dataset, trigger = line.split(",")
         if trigger.endswith("_v"):
             trigger = trigger[:-2]
-        if dataset in FWYZARD.keys():
-            FWYZARD[dataset].append(trigger)
+        if dataset in DATASET_TRIGGER_LIST.keys():
+            DATASET_TRIGGER_LIST[dataset].append(trigger)
         else:
-            FWYZARD[dataset] = [
+            DATASET_TRIGGER_LIST[dataset] = [
                 trigger,
             ]
 
@@ -170,7 +170,13 @@ def populate_selection_descriptions():
 
 def get_release_for_processing(dataset_full_name):
     """Return CMSSW release info for the given dataset for the processing step."""
-    return "CMSSW_10_6_26"
+    p = subprocess.run(
+        ["dasgoclient", "-query", f"release dataset={dataset_full_name}"],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+    release = p.stdout.decode().strip()
+    return release
 
 
 def get_release_for_system_details(dataset_full_name):
@@ -187,6 +193,7 @@ def get_global_tag_for_processing(dataset_full_name):
     m = re.search(pattern, content)
     if m:
         processing_global_tag = m.group(1)
+    processing_global_tag = processing_global_tag.strip()
     return processing_global_tag
 
 
@@ -236,12 +243,27 @@ def get_dataset_config_file_name(dataset_full_name):
     run_period = dataset_full_name.split("/")[2].split("-", 1)[0]
     version = dataset_full_name.split("/")[2].split("-")[1]
     config_file = f"ReReco-{run_period}-{dataset}-{version}"
+    if "/AOD" in dataset_full_name:
+        config_file = f"recoskim_{run_period}_{dataset}"
+        if "DoubleMuonLowMass" in dataset_full_name:
+            config_file = f"ReReco-{run_period}-{dataset}-{version}"
     return config_file
+
+
+def get_parent_dataset(dataset_full_name):
+    """Return the parent dataset for the given dataset."""
+    p = subprocess.run(
+        ["dasgoclient", "-query", f"parent dataset={dataset_full_name}"],
+        stdout=subprocess.PIPE,
+        stderr=subprocess.PIPE,
+    )
+    parent = p.stdout.decode().strip()
+    return parent
 
 
 def create_selection_information(dataset, dataset_full_name):
     """Create box with selection information."""
-    if "MINIAOD" in dataset_full_name:
+    if "/MINIAOD" in dataset_full_name:
         aodformat = "MINIAOD"
     else:
         aodformat = "NANOAOD"
@@ -253,31 +275,49 @@ def create_selection_information(dataset, dataset_full_name):
     # data taking / HLT:
     out += "<p><strong>Data taking / HLT</strong>"
     out += '<br/>The collision data were assigned to different RAW datasets using the following <a href="/record/30300">HLT configuration</a>.</p>'
-    # data processing / RECO:
-    run_period = re.search(r"(Run[0-9]+.)", dataset_full_name).groups()[0]
-    afile = get_dataset_config_file_name(dataset_full_name)
+    # data processing / NANO/PAT/RECO:
     aodformat = dataset_full_name.split("/")[3]
-    process = "PAT"
-    processing_source = "RAW"
+    step_dataset = dataset_full_name
+    steps = []
     if aodformat == "NANOAOD":
-        process = "NANO"
-        processing_source = "MINIAOD"
-    generator_text = "Configuration file for " + process + " step " + afile
-    release = get_release_for_processing(dataset_full_name)
-    global_tag = get_global_tag_for_processing(dataset_full_name)
-    out += f"<p><strong>Data processing / {process}</strong>"
+        steps = [
+            {"process": "NANO"},
+            {"process": "PAT"},
+            {"process": "RECO"}
+        ]
+    else:
+        steps = [
+            {"process": "PAT"},
+            {"process": "RECO"}
+        ]
+
+    out += "<p><strong>Data processing </strong>"
     out += (
-        "<br/>This primary %s dataset was processed from the %s dataset by the following step: "
-        % (aodformat, processing_source)
+        "<br/>This %s dataset was processed from the RAW dataset by the following steps: "
+        % (aodformat)
     )
-    out += "<br/>Step: %s" % process
-    out += "<br/>Release: %s" % release
-    out += "<br/>Global tag: %s" % global_tag
-    out += '\n        <br/><a href="/record/%s">%s</a>' % (
-        LINK_INFO.get(afile, ""),
-        generator_text,
-    )
-    out += "\n        </p>"
+    out += "<br/>"
+
+    afile = get_dataset_config_file_name(dataset_full_name)
+    step_dataset = dataset_full_name
+    for i in range(len(steps)):
+        generator_text = "Configuration file for " + steps[i]['process'] + " step " + afile
+        release = get_release_for_processing(step_dataset)
+        global_tag = get_global_tag_for_processing(step_dataset)
+
+        out += "<br/><strong>Step %s </strong>" % steps[i]['process']
+        out += "<br/>Release: %s" % release
+        out += "<br/>Global tag: %s" % global_tag
+        out += '\n        <br/><a href="/record/%s">%s</a>' % (
+            LINK_INFO.get(afile, ""),
+            generator_text,
+        )
+        out += "<br/>Output dataset: %s" % step_dataset
+        out += "\n        </p>"
+        if steps[i]['process'] != "RECO":
+            step_dataset = get_parent_dataset(step_dataset)
+            afile = get_dataset_config_file_name(step_dataset)
+
     # HLT trigger paths:
     out += "<p><strong>HLT trigger paths</strong>"
     out += '<br/>The possible <a href="/docs/cms-guide-trigger-system#hlt-trigger-path-definitions">HLT trigger paths</a> in this dataset are:'
@@ -293,7 +333,7 @@ def create_selection_information(dataset, dataset_full_name):
 
 def get_trigger_paths_for_dataset(dataset):
     """Return list of trigger paths for given dataset."""
-    return FWYZARD.get(dataset, [])
+    return DATASET_TRIGGER_LIST.get(dataset, [])
 
 
 def get_dataset_index_files(dataset_full_name):
@@ -317,6 +357,29 @@ def get_dataset_index_files(dataset_full_name):
             afile_checksum = get_file_checksum("./inputs/eos-file-indexes/" + afile)
             files.append((afile_uri, afile_size, afile_checksum))
     return files
+
+
+def get_dataset_semantics_doc(dataset_name, sample_file_path, recid):
+    """Produce the dataset semantics files and return their data-curation paths for the given dataset."""
+    output_dir = f"outputs/docs/NanoAOD/{recid}"
+    eos_dir = f"/eos/opendata/cms/dataset-semantics/NanoAOD/{recid}"
+    isExist = os.path.exists(output_dir)
+    if not isExist:
+        os.makedirs(output_dir)
+
+    script = "inspectNanoFile.py"
+
+    html_doc_path = f"{output_dir}/{dataset_name}_doc.html"
+    cmd = f"python3 external-scripts/{script} --doc {html_doc_path} {sample_file_path}"
+    output = subprocess.getoutput(cmd)
+    html_eos_path = f"{eos_dir}/{dataset_name}_doc.html"
+
+    json_doc_path = f"{output_dir}/{dataset_name}_doc.json"
+    cmd = f"python3 external-scripts/{script} --json {json_doc_path} {sample_file_path}"
+    output = subprocess.getoutput(cmd)
+    json_eos_path = f"{eos_dir}/{dataset_name}_doc.json"
+
+    return {"url": html_eos_path, "json": json_eos_path}
 
 
 def get_doi(dataset_full_name):
@@ -343,6 +406,7 @@ def create_record(recid, run_period, version, dataset, aodformat):
         % aodformat
         + "</p><p>The list of validated runs, which must be applied to all analyses, either with the full validation or for an analysis requiring only muons, can be found in:</p>"
     )
+
     rec["abstract"]["links"] = [
         {"description": "Validated runs, full validation", "recid": "14220"},
         {"description": "Validated runs, muons only", "recid": "14221"},
@@ -362,6 +426,13 @@ def create_record(recid, run_period, version, dataset, aodformat):
     rec["collision_information"]["energy"] = COLLISION_ENERGY
     rec["collision_information"]["type"] = COLLISION_TYPE
 
+    if aodformat == "NANOAOD":
+        dataset_path = f"/eos/opendata/cms/{run_period}/{dataset}/NANOAOD/{version}"
+        intermediate_dir = os.listdir(dataset_path)
+        sample_file_path = f"{dataset_path}/{intermediate_dir[0]}"
+        sample_file_with_path = f"{sample_file_path}/{os.listdir(sample_file_path)[0]}"
+        rec["dataset_semantics_files"] = get_dataset_semantics_doc(dataset, sample_file_with_path, recid)
+
     rec["date_created"] = [
         YEAR_CREATED,
     ]
@@ -377,7 +448,9 @@ def create_record(recid, run_period, version, dataset, aodformat):
 
     rec["doi"] = get_doi(dataset_full_name)
 
-    rec["experiment"] = "CMS"
+    rec["experiment"] = [
+        "CMS"
+    ]
 
     rec["files"] = []
 
@@ -472,15 +545,15 @@ def create_record(recid, run_period, version, dataset, aodformat):
         rec["usage"]["links"] = [
             {
                 "description": "Running CMS analysis code using Docker",
-                "url": "/docs/cms-guide-docker",
+                "url": "/docs/cms-guide-docker#nanoaod" if aodformat == "NANOAOD" else "/docs/cms-guide-docker#images",
             },
             {
                 "description": "How to install the CMS Virtual Machine",
-                "url": "/docs/cms-virtual-machine-2016-2018",
+                "url": "/docs/cms-virtual-machine-cc7",
             },
             {
                 "description": "Getting started with CMS open data",
-                "url": "/docs/cms-getting-started-2016-2018",
+                "url": "/docs/cms-getting-started-miniaod",
             },
         ]
 
@@ -513,7 +586,7 @@ def print_records(records):
 @click.command()
 def main():
     "Do the job."
-    populate_fwyzard()
+    populate_dataset_trigger_list()
     populate_doiinfo()
     populate_containerimages_cache()
     populate_selection_descriptions()
