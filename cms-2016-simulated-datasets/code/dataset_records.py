@@ -31,7 +31,7 @@ from mcm_store import (get_cmsDriver_script, get_cmssw_version_from_mcm,
                        get_parent_dataset_from_mcm, get_pileup_from_mcm,
                        get_output_dataset_from_mcm)
 from utils import (get_author_list_recid, get_dataset_format, get_dataset_year,
-                   get_doi, get_from_deep_json,
+                   get_dataset_runperiod, get_doi, get_from_deep_json,
                    get_recommended_cmssw_for_analysis,
                    get_recommended_global_tag_for_analysis, populate_doiinfo)
 
@@ -42,7 +42,31 @@ recommended_gt = "106X_mcRun2_asymptotic_v17"
 recommended_cmssw = "CMSSW_10_6_30"
 collision_energy = "13TeV"
 collision_type = "pp"
-year_published = "2023"
+year_published = "2024"
+
+RECOMMENDED_IMAGES_FOR_NANOAOD_DESCRIPTION = """<p>NANOAODSIM datasets are in the <a href="https://root.cern.ch/">ROOT</a> tree format and their analysis does not require the use of CMSSW or CMS open data environments. They can be analysed with common ROOT and Python tools.<p>"""
+RECOMMENDED_IMAGES_FOR_NANOAOD = [
+    {
+        "name": "gitlab-registry.cern.ch/cms-cloud/root-vnc",
+        "registry": "gitlab",
+    },
+    {
+        "name": "gitlab-registry.cern.ch/cms-cloud/python-vnc",
+        "registry": "gitlab",
+    },
+]
+
+USAGE_FOR_NANOAOD_DESCRIPTION = """You can access these data through XRootD protocol or direct download, and they can be analysed with common ROOT and Python tools. See the instructions for getting started in"""
+USAGE_FOR_NANOAOD_LINKS = [
+    {
+        "description": "Using Docker containers",
+        "url": "/docs/cms-guide-docker#nanoaod",
+    },
+    {
+        "description": "Getting started with CMS NanoAOD",
+        "url": "/docs/cms-getting-started-nanoaod",
+    },
+]
 
 LINK_INFO = {}
 
@@ -290,12 +314,8 @@ def populate_mininanorelation_cache(dataset_full_names, mcm_dir):
 
 def get_dataset_semantics_doc(dataset_name, sample_file_path, recid):
     """Produce the dataset semantics files and return their data-curation paths for the given dataset."""
-    if dataset_name.endswith('/NANOAODSIM'):
-        output_dir = f"outputs/docs/NanoAODSIM/{recid}"
-        eos_dir = f"/eos/opendata/cms/dataset-semantics/NanoAODSIM/{recid}"
-    elif dataset_name.endswith('/MINIAODSIM'):
-        output_dir = f"outputs/docs/MiniAODSIM/{recid}"
-        eos_dir = f"/eos/opendata/cms/dataset-semantics/MiniAODSIM/{recid}"
+    output_dir = f"outputs/docs/NanoAODSIM/{recid}"
+    eos_dir = f"/eos/opendata/cms/dataset-semantics/NanoAODSIM/{recid}"
     isExist = os.path.exists(output_dir)
     if not isExist:
         os.makedirs(output_dir)
@@ -322,11 +342,12 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
 
     dataset = get_dataset(dataset_full_name)
     dataset_format = get_dataset_format(dataset_full_name)
+    dataset_runperiod = get_dataset_runperiod(dataset_full_name)
     dataset_version = get_dataset_version(dataset_full_name)
 
     year_created = '2016'
-    year_published = '2023'  #
-    run_period = ['Run2016G', 'Run2016H']  #
+    year_published = '2024'
+    run_period = ['Run2016G', 'Run2016H']
 
     additional_title = 'Simulated dataset ' + dataset + ' in ' + dataset_format + ' format for ' + year_created + ' collision data'
 
@@ -339,7 +360,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
 
     rec['collaboration'] = {}
     rec['collaboration']['name'] = 'CMS Collaboration'
-    rec['collaboration']['recid'] = get_author_list_recid(dataset_full_name)
+    # rec['collaboration']['recid'] = get_author_list_recid(dataset_full_name)
 
     rec['collections'] = ['CMS-Simulated-Datasets', ]
 
@@ -348,11 +369,11 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     rec['collision_information']['type'] = collision_type
 
     if dataset_format == "NANOAODSIM":
-        dataset_path = f"/eos/opendata/cms//mc/{run_period}/{dataset}/NANOAODSIM/{dataset_version}"
+        dataset_path = f"/eos/opendata/cms/mc/{dataset_runperiod}/{dataset}/NANOAODSIM/{dataset_version}"
         intermediate_dir = os.listdir(dataset_path)
         sample_file_path = f"{dataset_path}/{intermediate_dir[0]}"
         sample_file_with_path = f"{sample_file_path}/{os.listdir(sample_file_path)[0]}"
-        rec["dataset_semantics_files"] = get_dataset_semantics_doc(dataset, sample_file_with_path, recid)
+        rec["dataset_semantics_files"] = get_dataset_semantics_doc(dataset, sample_file_with_path, str(recid_info[dataset_full_name]))
 
     rec['date_created'] = [year_created]
     rec['date_published'] = year_published
@@ -401,8 +422,8 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
         '/MinBias_TuneZ2_7TeV-pythia6/Summer11Leg-START53_LV4-v1/GEN-SIM': 36, # 2011
         '/MinBias_TuneZ2star_8TeV-pythia6/Summer12-START50_V13-v3/GEN-SIM': 37, # 2012
         '/MinBias_TuneCUETP8M1_13TeV-pythia8/RunIISummer15GS-MCRUN2_71_V1-v2/GEN-SIM': 22314, # 2015
-        # TODO 2016 take from Kati's PR
         #'/MinBias_TuneCUETP8M1_13TeV-pythia8/RunIISummer15GS-magnetOffBS0T_MCRUN2_71_V1-v1/GEN-SIM': {recid}, # 2015
+        '/Neutrino_E-10_gun/RunIISummer20ULPrePremix-UL16_106X_mcRun2_asymptotic_v13-v1/PREMIX': 30595, # 2016
         '/MinBias_TuneCP5_13TeV-pythia8/RunIIFall18GS-IdealGeometry_102X_upgrade2018_design_v9-v1/GEN-SIM': 12302 # 2018
     }.get(pileup_dataset_name, 0)
 
@@ -451,10 +472,16 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
 
     # recomended global tag and cmssw release recommended for analysis
     rec['system_details'] = {}
-    rec['system_details']['global_tag'] = recommended_gt
-    rec['system_details']['release'] = recommended_cmssw 
-    if recommended_cmssw in CONTAINERIMAGES_CACHE.keys():
-        rec["system_details"]["container_images"] = CONTAINERIMAGES_CACHE[recommended_cmssw]
+    if dataset_full_name.endswith("NANOAODSIM"):
+        rec["system_details"][
+            "description"
+        ] = RECOMMENDED_IMAGES_FOR_NANOAOD_DESCRIPTION
+        rec["system_details"]["container_images"] = RECOMMENDED_IMAGES_FOR_NANOAOD
+    else:
+        rec['system_details']['global_tag'] = recommended_gt
+        rec['system_details']['release'] = recommended_cmssw
+        if recommended_cmssw in CONTAINERIMAGES_CACHE.keys():
+            rec["system_details"]["container_images"] = CONTAINERIMAGES_CACHE[recommended_cmssw]
 
     rec['title'] = dataset_full_name
 
@@ -479,22 +506,25 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
                             '2011': 2011,
                             '2012': 2011}.get(year_created, 2011)
     rec['usage'] = {}
-    rec['usage']['description'] = "You can access these data through the CMS Open Data container or the CMS Virtual Machine. See the instructions for setting up one of the two alternative environments and getting started in"
-    rec['usage']['links'] = [
-        {
-          "description": "Running CMS analysis code using Docker",
-          "url": "/docs/cms-guide-docker"
-        },
-        {
-          "description": "How to install the CMS Virtual Machine",
-          "url": "/docs/cms-virtual-machine-2016"
-        },
-        {
-          "description": "Getting started with CMS open data",
-          "url": "/docs/cms-getting-started-2016"
-        }
-        # TODO Amend links taking them from Kati's pile-up PR
-    ]
+    if dataset_full_name.endswith('NANOAODSIM'):
+        rec["usage"]["description"] = USAGE_FOR_NANOAOD_DESCRIPTION
+        rec["usage"]["links"] = USAGE_FOR_NANOAOD_LINKS
+    else:
+        rec['usage']['description'] = "You can access these data through the CMS Open Data container or the CMS Virtual Machine. See the instructions for setting up one of the two alternative environments and getting started in"
+        rec['usage']['links'] = [
+            {
+              "description": "Running CMS analysis code using Docker",
+              "url": "/docs/cms-guide-docker#images"
+            },
+            {
+              "description": "How to install the CMS Virtual Machine",
+              "url": "/docs/cms-virtual-machine-cc7"
+            },
+            {
+              "description": "Getting started with CMS open data",
+              "url": "/docs/cms-getting-started-miniaod"
+            }
+        ]
 
     rec['validation'] = {}
     rec['validation']['description'] = "The generation and simulation of Monte Carlo data has been validated through general CMS validation procedures."
