@@ -610,9 +610,10 @@ def get_step_generator_parameters(dataset, mcm_dir, recid, force_lhe=0):
             files = [f for f in os.listdir(dir) if os.path.isfile(os.path.join(dir, f))]
             confarr=[]
             for f in files:
-                configuration_files['title'] = 'Generator parameters: ' + f
-                configuration_files['url'] = '/eos/opendata/cms/lhe_generators/2016-sim/gridpacks/' + str(recid) + '/'  + f
-                confarr.append(configuration_files.copy())
+                if f != 'LOG.txt':
+                    configuration_files['title'] = 'Generator parameters: ' + f
+                    configuration_files['url'] = '/eos/opendata/cms/lhe_generators/2016-sim/gridpacks/' + str(recid) + '/'  + f
+                    confarr.append(configuration_files.copy())
             return confarr
     else:
         gen_fragment = get_genfragment_url(dataset, mcm_dir)
@@ -628,4 +629,3 @@ def get_step_generator_parameters(dataset, mcm_dir, recid, force_lhe=0):
                         return [configuration_files]
                 except:
                     pass
-
