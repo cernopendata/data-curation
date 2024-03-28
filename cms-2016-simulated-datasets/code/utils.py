@@ -70,6 +70,8 @@ def get_dataset_year(dataset):
            'RunIIFall15MiniAODv2-PU25nsData2015v1FSQ' : 2015,
            'RunIIFall15MiniAODv2-PU25nsData2015v1Raw' : 2015,
            'RunIISummer16MiniAODv2-PUMoriond17' : 2016,
+           'RunIISummer20UL16NanoAODv9' : 2016,
+           'RunIISummer20UL16MiniAODv2' : 2016
            }.get(second_name, 0)
 
 
@@ -128,24 +130,24 @@ def get_author_list_recid(dataset):
 
 
 def get_recommended_global_tag_for_analysis(dataset):
-    "Return recomended global tag for analysis."
+    "Return recommended global tag for analysis."
     year = get_dataset_year(dataset)
     return {
            2010: 'START42_V17B::All',
            2011: 'START53_LV6A1::All',
            2012: 'START53_V27::All',
-           2015: '',  # FIXME
-           2016: '',  # FIXME
+           2015: '76X_mcRun2_asymptotic_RunIIFall15DR76_v1',
+           2016: '106X_mcRun2_asymptotic_v17',
            }.get(year, '')
 
 
 def get_recommended_cmssw_for_analysis(dataset):
-    "Return recomended CMSSW release for analysis."
+    "Return recommended CMSSW release for analysis for the main pp data."
     year = get_dataset_year(dataset)
     return {
            2010: 'CMSSW_4_2_8',
            2011: 'CMSSW_5_3_32',
            2012: 'CMSSW_5_3_32',
-           2015: '',  # FIXME
-           2016: '',  # FIXME
+           2015: 'CMSSW_7_6_7',  
+           2016: 'CMSSW_10_6_30',  
            }.get(year, '')

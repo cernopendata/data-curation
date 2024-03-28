@@ -15,7 +15,7 @@ from utils import get_datasets_from_dir
 @click.option('--create-eos-indexes/--no-create-eos-indexes', default=False,
               show_default=True,
               help="Create EOS rich index files")
-@click.option('--eos-dir', default='./inputs/eos-file-indexes',
+@click.option('--eos-dir', default='./inputs/eos-file-indexes/',
               show_default=True,
               help='Output directory for the EOS file indexes')
 @click.option('--ignore-eos-store/--no-ignore-eos-store',
@@ -91,8 +91,8 @@ def main(dataset_list,
         $ python ./code/interface.py --create-das-json-store DATASET_LIST
 
         This creates a local cache. It queries DAS (Data Aggregation Service)
-        for the dataset, parent, config and mcm information and store it in
-        DAS_DIR/{dataset/,parent/,config/,mcm/}.
+        for the dataset, parent, and release information and store it in
+        DAS_DIR/{dataset/,parent/,release/}.
 
         \b
         (It takes a lot of time to run, up to ~30 seconds / dataset)
@@ -159,13 +159,13 @@ def main(dataset_list,
 
     if create_mcm_store:
         import mcm_store
-        mcm_store.create(datasets, mcm_dir, das_dir, eos_dir, ignore_eos_store)
+        mcm_store.create(datasets, mcm_dir, eos_dir, ignore_eos_store)
 
     if get_conf_files:
         # check if user has key and cert
         if os.path.isfile(os.environ.get("HOME") + "/.globus/usercert.pem") and os.path.isfile(os.environ.get("HOME") + "/.globus/userkey.nodes.pem"):
             import config_store
-            config_store.main(eos_dir, das_dir, conf_dir, datasets, ignore_eos_store)
+            config_store.main(eos_dir, mcm_dir, conf_dir, datasets, ignore_eos_store)
         else:
             print("Error in key and certificate pairs (~/.globus/usercert.pem, ~/.globus/userkey.nodes.pem).")
             print('Did you forget to ')
@@ -174,8 +174,8 @@ def main(dataset_list,
             print('in the ~/.globus dir?')
 
     if print_categorisation or print_results:
-        import printer
         import categorisation
+        import printer
 
         categorised = categorisation.categorise_titles(datasets)
         printer.print_results(categorised, das_dir, mcm_dir, recid_file, doi_file, print_results)
