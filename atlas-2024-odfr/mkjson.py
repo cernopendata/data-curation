@@ -30,8 +30,8 @@ import json
 
 # Get datasets
 dataset_files = {
-  'pp_2015_data.txt':'Run 2 2015 proton-proton collision data',
-  'pp_2016_data.txt':'Run 2 2016 proton-proton collision data',
+  'pp_2015_data_p6026_tids.txt':'Run 2 2015 proton-proton collision data',
+  'pp_2016_data_p6026_tids.txt':'Run 2 2016 proton-proton collision data',
   'mc_boson_nominal.txt':'MC simulation electroweak boson nominal samples',
   'mc_exotics_nominal.txt':'MC simulation exotic signal samples',
   'mc_higgs_nominal.txt':'MC simulation Higgs nominal samples',
@@ -97,14 +97,17 @@ evergreen_data = {
           "url": "https://atlassoftwaredocs.web.cern.ch/ASWTutorial/TutorialWeek/"
         }
       ]
-    }
+    },
+    # Information about (production) methodology
+    'methodology': {
+      'description':'<p>These data were created during LS2 as part of a major reprocessing campaign of the Run 2 data. All data were reprocessed using Athena Release 22, and new corresponding MC simulation samples were produced, in an MC simulation campaign called MC20a. These data and MC simulation datasets were processed into DAOD_PHSYLITE format files; this is a light-weight data format intended for general analysis use, sufficient to support a wide variety of ATLAS analyses.'},
 
 }
 
 # File with the mapping of file names for each dataset
-filename_mc_json_file = open('file_mapping_OpenData_v0_2024-02-28.json','r')
+filename_mc_json_file = open('mc_file_mapping_OpenData_v0_p6026_2024-04-16_with_metadata.json','r')
 filename_mc_json = json.load(filename_mc_json_file)
-filename_data_json_file = open('data_file_mapping_OpenData_v0_2024-04-03.json','r')
+filename_data_json_file = open('data_file_mapping_OpenData_v0_p6026_2024-04-15.json','r')
 filename_data_json = json.load(filename_data_json_file)
 
 for adataset in dataset_files:
@@ -123,11 +126,10 @@ for adataset in dataset_files:
         my_json['date_created'] = ['2015','2016']
         my_json['run_period'] = ['2015','2016']
     my_json['title'] = 'ATLAS DAOD_PHYSLITE format '+dataset_files[adataset]
-    my_json['methodology'] = {'description':'<p>These data were created during LS2 as part of a major reprocessing campaign of the Run 2 data. All data were reprocessed using Athena Release 22, and new corresponding MC simulation samples were produced, in an MC simulation campaign called MC20a. These data and MC simulation datasets were processed into DAOD_PHSYLITE format files; this is a light-weight data format intended for general analysis use, sufficient to support a wide variety of ATLAS analyses.'}
     # Do I need to specify a doi? Should be automatically added, I believe
     # Add a record of the files for this dataset
     my_json['files'] = []
-    # Make a text file with the files for this dataset
+    # Make a json file with the files for this dataset
     with open(adataset,'r') as dataset_list_file:
         for dataset_line in dataset_list_file:
             # Make up the name of the text file we'll use for the dataset based on the input lists
@@ -135,37 +137,61 @@ for adataset in dataset_files:
                 # This is a simple list of dataset names
                 # It is normal to sometimes not find files; this just indicates there was no
                 #  good data in that run, and it was still processed
-                filename = 'Run_'+dataset_line.split('.')[1].strip()+'_filelist.txt'
-                if dataset_line.strip() not in filename_data_json['file_dictionary']:
+                filename = 'Run_'+dataset_line.split('.')[1].strip()+'_filelist.json'
+                if dataset_line.strip() not in filename_data_json['file_locations']:
                     print(f'Did not find data dataset {dataset_line.strip()} in json file')
                     continue
-                my_files = filename_data_json['file_dictionary'][dataset_line.strip()]
+                # Grab the dictionary of file metadata from the json file
+                my_files_dict = filename_data_json['file_locations'][dataset_line.strip()]
+                # Convert the dictionary into the format we want for the open data portal
+                my_files = []
+                for afile in my_files_dict:
+                    my_files += [ {'filename':afile,
+                                   'checuksum':my_files_dict[afile]['checksum'],
+                                   'size':my_files_dict[afile]['size'],
+                                   'events':my_files_dict[afile]['events'],
+                                   'type':my_files_dict[afile]['type'],
+                                   'uri_root':my_files_dict[afile]['uri'] } ]
+                # Final check that we have at least one file
                 if len(my_files)==0:
                     print(f'No files identified for {dataset_line.strip()}')
                     continue
             else:
                 # This is a list of metadata for the MC samples
-                filename = 'MC_'+dataset_line.split()[2].strip().replace('\\','')+'_filelist.txt'
+                filename = 'MC_'+dataset_line.split()[2].strip().replace('\\','')+'_filelist.json'
                 # Get the list of files
                 my_did = dataset_line.split()[0].strip()
-                my_full_did_names = [ x for x in filename_mc_json['file_dictionary'] if '.'+my_did+'.' in x ]
+                my_full_did_names = [ x for x in filename_mc_json['file_locations'] if '.'+my_did+'.' in x ]
                 if len(my_full_did_names)>1:
                     print(f'Warning: Found multiple matching DIDs from {my_did} : {my_full_did_names}')
                 elif len(my_full_did_names)==0:
                     print(f'Found no matching DIDs from {my_did} : {my_full_did_names}')
                     continue
                 my_full_did_name = my_full_did_names[0]
-                my_files = filename_mc_json['file_dictionary'][my_full_did_name]
-            # Set the metadata in the json
-            my_json['files'] += [ { 'uri':filename } ]
+                # Grab the dictionary of file metadata from the json file
+                my_files_dict = filename_mc_json['file_locations'][my_full_did_name]
+                # Convert the dictionary into the format we want for the open data portal
+                my_files = []
+                for afile in my_files_dict:
+                    my_files += [ {'filename':afile,
+                                   'checuksum':my_files_dict[afile]['checksum'],
+                                   'size':my_files_dict[afile]['size'],
+                                   'events':my_files_dict[afile]['events'],
+                                   'type':my_files_dict[afile]['type'],
+                                   'uri_root':my_files_dict[afile]['uri'] } ]
+                # Final check that we have at least one file
+                if len(my_files)==0:
+                    print(f'No files identified for {my_full_did_name} from {my_did}')
+                    continue
+
+            # Set the metadata in the `super` (open data portal record) json
+            my_json['files'] += [ { 'filename':filename } ]
             # Now open that file and write the file names there
             with open(output_directory+'/'+filename,'w') as dataset_filelist_file:
-                for a_file in my_files:
-                    dataset_filelist_file.write(a_file+'\n')
+                json.dump( my_files , dataset_filelist_file )
 
     # Write myself a json file
     with open(output_directory+'/'+adataset.replace('.txt','.json'),'w') as outfile:
         json.dump( my_json , outfile )
 
-# Maybe we want to include something about sizes, checksums, whatever else for the files?
-# Not clear if for the individual files or the full datasets, or the lists, or ...
+# Not clear if I need to generate adler checksums for the index json files I'm creating here

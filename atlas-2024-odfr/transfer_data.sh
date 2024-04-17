@@ -1,7 +1,9 @@
+#!/usr/bin/bash
 
-for adataset in `cat pp_data.txt`
+# Transfer all the datasets in the p6026 GRL file to CERN-PROD_OPENDATA. We take the entire datasets. No lifetime is set for the transfers - they should be there forever.
+for adataset in `cat pp_data_p6026_GRL.txt`
 do
-  rucio add-rule --lifetime 5184000 --activity 'Data Consolidation' --notify N --comment 'Transfer for Open Data' --account zmarshal --skip-duplicates ${adataset} 1 CERN-PROD_OPENDATA
+  rucio add-rule --activity 'Data Consolidation' --notify N --comment 'Transfer for Open Data' --account zmarshal --skip-duplicates ${adataset} 1 CERN-PROD_OPENDATA
 done
 
 # Or --activity "User Subscriptions"
