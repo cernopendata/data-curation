@@ -104,11 +104,24 @@ evergreen_data = {
 
 }
 
-# File with the mapping of file names for each dataset
-filename_mc_json_file = open('mc_file_mapping_OpenData_v0_p6026_2024-04-16_with_metadata.json','r')
-filename_mc_json = json.load(filename_mc_json_file)
-filename_data_json_file = open('data_file_mapping_OpenData_v0_p6026_2024-04-15.json','r')
-filename_data_json = json.load(filename_data_json_file)
+# File with the mapping of file names for each dataset - merge these together for MC
+mc_json_filenames = ['mc_file_mapping_OpenData_v1_p6026_2024-04-23_with_metadata.json',
+                     'mc_file_mapping_OpenData_v0_p6026_2024-04-16_with_metadata.json']
+mc_json_files = [ open(x,'r') for x in mc_json_filenames ]
+mc_json_sets = [ json.load(x) for x in mc_json_files ]
+mc_json = None
+for json_set in mc_json_sets:
+    if mc_json is None:
+        mc_json = json_set
+        continue
+    for akey in mc_json:
+        if type(mc_json[akey])==dict: mc_json[akey].update( json_set[akey] )
+        elif type(mc_json[akey])==list: mc_json[akey] += json_set[akey]
+        else: print(f'Unidentified object {akey} {type(d1[akey])}')
+
+# Only one file for data
+data_json_file = open('data_file_mapping_OpenData_v0_p6026_2024-04-15.json','r')
+data_json = json.load(data_json_file)
 
 for adataset in dataset_files:
     my_json = {}
@@ -138,11 +151,11 @@ for adataset in dataset_files:
                 # It is normal to sometimes not find files; this just indicates there was no
                 #  good data in that run, and it was still processed
                 filename = 'Run_'+dataset_line.split('.')[1].strip()+'_filelist.json'
-                if dataset_line.strip() not in filename_data_json['file_locations']:
+                if dataset_line.strip() not in data_json['file_locations']:
                     print(f'Did not find data dataset {dataset_line.strip()} in json file')
                     continue
                 # Grab the dictionary of file metadata from the json file
-                my_files_dict = filename_data_json['file_locations'][dataset_line.strip()]
+                my_files_dict = data_json['file_locations'][dataset_line.strip()]
                 # Convert the dictionary into the format we want for the open data portal
                 my_files = []
                 for afile in my_files_dict:
@@ -161,7 +174,7 @@ for adataset in dataset_files:
                 filename = 'MC_'+dataset_line.split()[2].strip().replace('\\','')+'_filelist.json'
                 # Get the list of files
                 my_did = dataset_line.split()[0].strip()
-                my_full_did_names = [ x for x in filename_mc_json['file_locations'] if '.'+my_did+'.' in x ]
+                my_full_did_names = [ x for x in mc_json['file_locations'] if '.'+my_did+'.' in x ]
                 if len(my_full_did_names)>1:
                     print(f'Warning: Found multiple matching DIDs from {my_did} : {my_full_did_names}')
                 elif len(my_full_did_names)==0:
@@ -169,7 +182,7 @@ for adataset in dataset_files:
                     continue
                 my_full_did_name = my_full_did_names[0]
                 # Grab the dictionary of file metadata from the json file
-                my_files_dict = filename_mc_json['file_locations'][my_full_did_name]
+                my_files_dict = mc_json['file_locations'][my_full_did_name]
                 # Convert the dictionary into the format we want for the open data portal
                 my_files = []
                 for afile in my_files_dict:

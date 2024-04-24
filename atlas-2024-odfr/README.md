@@ -14,16 +14,16 @@ These scripts start from text file inputs, which are mostly lists of datasets an
 - `pp_data_p6026_GRL.txt`, the full list of collision data datasets in 2015 and 2016 processed with p-tag p6026
 - `pp_2015_data_p6026_tids.txt`, the list of collision data datasets for 2015 data only
 - `pp_2016_data_p6026_tids.txt`, the list of collision data datasets for 2016 data only
-- `pp_mc_physlite_p6026.txt` the list of MC simulation datasets processed with p-tag p6026
+- `pp_mc_physlite_p6026*.txt` the lists of MC simulation datasets processed with p-tag p6026
 - A series of metadata files describing the MC datasets, `mc_*`, made from blocks of `mc_sets.txt`
 
 From running the scripts and the transfers, a number of metadata json records are created:
 
-- `mc_file_mapping_OpenData_v0_p6026_2024-04-16.json`, a json file resulting from the `transfer_mc.py` script, containing three objects:
+- `mc_file_mapping_OpenData_*.json`, a json file resulting from the `transfer_mc.py` script, containing three objects:
     - A list of transfer rules (`rule_list`)
     - A map of the datasets to the files transferred to CERN within them (`file_dictionary`)
     - A map from the ATLAS dataset name to the name of the subset of data transferred to CERN
-- `mc_file_mapping_OpenData_v0_p6026_2024-04-16_with_metadata.json`, a json file that is an extended version of `mc_file_mapping_OpenData_v0_p6026_2024-04-16.json` also containing a dictionary (`file_locations`) keyed on datasets, with values that are also dictionaries, keyed on files. For each file, the dictionary contains:
+- `mc_file_mapping_OpenData_*_with_metadata.json`, a json file that is an extended version of `mc_file_mapping_OpenData_*.json` also containing a dictionary (`file_locations`) keyed on datasets, with values that are also dictionaries, keyed on files. For each file, the dictionary contains:
     - The adler 32 checksum for the file
     - The size of the file in bytes
     - The number of events in the file
