@@ -30,17 +30,28 @@ import json
 
 # Get datasets
 dataset_files = {
-  'pp_2015_data_p6026_tids.txt':['Run 2 2015 proton-proton collision data','80000','pp-2015-data'],
-  'pp_2016_data_p6026_tids.txt':['Run 2 2016 proton-proton collision data','80001','pp-2016-data'],
-  'mc_boson_nominal.txt':['MC simulation electroweak boson nominal samples','80010','mc-pp-boson-nominal'],
-  'mc_exotics_nominal.txt':['MC simulation exotic signal samples','80011','mc-pp-exotics-nominal'],
-  'mc_higgs_nominal.txt':['MC simulation Higgs nominal samples','80012','mc-pp-higgs-nominal'],
-  'mc_higgs_systematics.txt':['MC simulation Higgs systematic variation samples','80013','mc-pp-higgs-syst'],
-  'mc_jet_nominal.txt':['MC simulation QCD jet nominal samples','80014','mc-pp-jet-nominal'],
-  'mc_jet_systematics.txt':['MC simulation QCD jet systematic variation samples','80015','mc-pp-jet-syst'],
-  'mc_susy_nominal.txt':['MC simulation SUSY signal samples','80016','mc-pp-susy-nominal'],
-  'mc_top_nominal.txt':['MC simulation top nominal samples','80017','mc-pp-top-nominal'],
-  'mc_top_systematics.txt':['MC simulation top systematic variation samples','80018','mc-pp-top-syst'],
+  'pp_2015_data_p6026_tids.txt':{'name':'Run 2 2015 proton-proton collision data','recid':'80000','name_short':'pp-2015-data',
+              'categories':{'source':'ATLAS Collaboration'}},
+  'pp_2016_data_p6026_tids.txt':{'name':'Run 2 2016 proton-proton collision data','recid':'80001','name_short':'pp-2016-data',
+              'categories':{'source':'ATLAS Collaboration'}},
+  'mc_boson_nominal.txt':{'name':'MC simulation electroweak boson nominal samples','recid':'80010','name_short':'mc-pp-boson-nominal',
+              'categories':{'primary':'Standard Model Physics','secondary':['ElectroWeak','Drell-Yan'], 'source':'ATLAS Collaboration'}},
+  'mc_exotics_nominal.txt':{'name':'MC simulation exotic signal samples','recid':'80011','name_short':'mc-pp-exotics-nominal',
+              'categories':{'primary':'Exotica', 'secondary':['Miscellaneous'], 'source':'ATLAS Collaboration'}},
+  'mc_higgs_nominal.txt':{'name':'MC simulation Higgs nominal samples','recid':'80012','name_short':'mc-pp-higgs-nominal',
+              'categories':{'primary':'Higgs Physics','secondary':['Standard Model'], 'source':'ATLAS Collaboration'}},
+  'mc_higgs_systematics.txt':{'name':'MC simulation Higgs systematic variation samples','recid':'80013','name_short':'mc-pp-higgs-syst',
+              'categories':{'primary':'Higgs Physics','secondary':['Standard Model'], 'source':'ATLAS Collaboration'}},
+  'mc_jet_nominal.txt':{'name':'MC simulation QCD jet nominal samples','recid':'80014','name_short':'mc-pp-jet-nominal',
+              'categories':{'primary':'Standard Model Physics','secondary':['QCD'], 'source':'ATLAS Collaboration'}},
+  'mc_jet_systematics.txt':{'name':'MC simulation QCD jet systematic variation samples','recid':'80015','name_short':'mc-pp-jet-syst',
+              'categories':{'primary':'Standard Model Physics','secondary':['QCD'], 'source':'ATLAS Collaboration'}},
+  'mc_susy_nominal.txt':{'name':'MC simulation SUSY signal samples','recid':'80016','name_short':'mc-pp-susy-nominal',
+              'categories':{'primary':'Exotica','secondary':['Miscellaneous'], 'source':'ATLAS Collaboration'}},
+  'mc_top_nominal.txt':{'name':'MC simulation top nominal samples','recid':'80017','name_short':'mc-pp-top-nominal',
+              'categories':{'primary':'Standard Model Physics','secondary':['Top physics'], 'source':'ATLAS Collaboration'}},
+  'mc_top_systematics.txt':{'name':'MC simulation top systematic variation samples','recid':'80018','name_short':'mc-pp-top-syst',
+              'categories':{'primary':'Standard Model Physics','secondary':['Top physics'], 'source':'ATLAS Collaboration'}},
     }
 
 # Populate fields
@@ -128,7 +139,7 @@ for adataset in dataset_files:
     # Update with the stuff that's always good
     my_json.update(evergreen_data)
     # Simple abstract for the collection
-    my_json['abstract'] = {'description':dataset_files[adataset][0]+' from the ATLAS experiment'}
+    my_json['abstract'] = {'description':dataset_files[adataset]['name']+' from the ATLAS experiment'}
     # Name of the collections, systematically set
     my_json['collections'] = ['ATLAS-Simulated-Datasets' if 'mc_' in adataset else 'ATLAS-Primary-Datasets']
     # data-taking year during which the collision data or for which the simulated data, software and other assets were produced
@@ -140,9 +151,11 @@ for adataset in dataset_files:
         my_json['date_created'] = ['2015','2016']
         my_json['run_period'] = ['2015','2016']
         my_json['type']['secondary'] = ['Simulated']
-    my_json['title'] = 'ATLAS DAOD_PHYSLITE format '+dataset_files[adataset][0]
+    # Add categories, mostly for MC datasets
+    my_json['categories'] = dataset_files[adataset]['categories']
+    my_json['title'] = 'ATLAS DAOD_PHYSLITE format '+dataset_files[adataset]['name']
     # Add a record ID for CERN Open Data. Reserved range for this release
-    my_json['recid'] = dataset_files[adataset][1]
+    my_json['recid'] = dataset_files[adataset]['recid']
     # Do I need to specify a doi? Should be automatically added, I believe
     # Add a record of the files for this dataset
     my_json['files'] = []
@@ -208,7 +221,7 @@ for adataset in dataset_files:
                 json.dump( my_files , dataset_filelist_file )
 
     # Write myself a json file
-    summary_file_name = 'atlas-2024-'+dataset_files[adataset][2]+'.json'
+    summary_file_name = 'atlas-2024-'+dataset_files[adataset]['name_short']+'.json'
     with open(output_directory+'/'+summary_file_name,'w') as outfile:
         json.dump( my_json , outfile )
 
