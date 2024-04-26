@@ -30,17 +30,17 @@ import json
 
 # Get datasets
 dataset_files = {
-  'pp_2015_data_p6026_tids.txt':'Run 2 2015 proton-proton collision data',
-  'pp_2016_data_p6026_tids.txt':'Run 2 2016 proton-proton collision data',
-  'mc_boson_nominal.txt':'MC simulation electroweak boson nominal samples',
-  'mc_exotics_nominal.txt':'MC simulation exotic signal samples',
-  'mc_higgs_nominal.txt':'MC simulation Higgs nominal samples',
-  'mc_higgs_systematics.txt':'MC simulation Higgs systematic variation samples',
-  'mc_jet_nominal.txt':'MC simulation QCD jet nominal samples',
-  'mc_jet_systematics.txt':'MC simulation QCD jet systematic variation samples',
-  'mc_susy_nominal.txt':'MC simulation SUSY signal samples',
-  'mc_top_nominal.txt':'MC simulation top nominal samples',
-  'mc_top_systematics.txt':'MC simulation top systematic variation samples'
+  'pp_2015_data_p6026_tids.txt':['Run 2 2015 proton-proton collision data','80000','pp-2015-data'],
+  'pp_2016_data_p6026_tids.txt':['Run 2 2016 proton-proton collision data','80001','pp-2016-data'],
+  'mc_boson_nominal.txt':['MC simulation electroweak boson nominal samples','80010','mc-pp-boson-nominal'],
+  'mc_exotics_nominal.txt':['MC simulation exotic signal samples','80011','mc-pp-exotics-nominal'],
+  'mc_higgs_nominal.txt':['MC simulation Higgs nominal samples','80012','mc-pp-higgs-nominal'],
+  'mc_higgs_systematics.txt':['MC simulation Higgs systematic variation samples','80013','mc-pp-higgs-syst'],
+  'mc_jet_nominal.txt':['MC simulation QCD jet nominal samples','80014','mc-pp-jet-nominal'],
+  'mc_jet_systematics.txt':['MC simulation QCD jet systematic variation samples','80015','mc-pp-jet-syst'],
+  'mc_susy_nominal.txt':['MC simulation SUSY signal samples','80016','mc-pp-susy-nominal'],
+  'mc_top_nominal.txt':['MC simulation top nominal samples','80017','mc-pp-top-nominal'],
+  'mc_top_systematics.txt':['MC simulation top systematic variation samples','80018','mc-pp-top-syst'],
     }
 
 # Populate fields
@@ -70,15 +70,13 @@ evergreen_data = {
     "date_reprocessed": "2020",
     "distribution": {
       "formats": [
-        "DAOD_PHYSLITE"
+        "DAOD_PHYSLITE",
+        "ROOT"
       ],
     },
     # Dataset type information for Open Data Portal
     "type": {
       "primary": "Dataset",
-      "secondary": [
-        "Collision"
-      ]
     },
     # Information about usage
     "usage": {
@@ -101,7 +99,9 @@ evergreen_data = {
     # Information about (production) methodology
     'methodology': {
       'description':'<p>These data were created during LS2 as part of a major reprocessing campaign of the Run 2 data. All data were reprocessed using Athena Release 22, and new corresponding MC simulation samples were produced, in an MC simulation campaign called MC20a. These data and MC simulation datasets were processed into DAOD_PHSYLITE format files; this is a light-weight data format intended for general analysis use, sufficient to support a wide variety of ATLAS analyses.'},
-
+    "license": {
+      "attribution": "CC BY"
+    }
 }
 
 # File with the mapping of file names for each dataset - merge these together for MC
@@ -128,17 +128,21 @@ for adataset in dataset_files:
     # Update with the stuff that's always good
     my_json.update(evergreen_data)
     # Simple abstract for the collection
-    my_json['abstract'] = {'description':dataset_files[adataset]+' from the ATLAS experiment'}
+    my_json['abstract'] = {'description':dataset_files[adataset][0]+' from the ATLAS experiment'}
     # Name of the collections, systematically set
-    my_json['collections'] = ['ATLAS-MC-Simulation-Datasets' if 'mc_' in adataset else 'ATLAS-pp-Collision-Datasets']
+    my_json['collections'] = ['ATLAS-Simulated-Datasets' if 'mc_' in adataset else 'ATLAS-Primary-Datasets']
     # data-taking year during which the collision data or for which the simulated data, software and other assets were produced
     if 'data' in adataset:
         my_json['date_created'] = [adataset.split('_')[1]]
         my_json['run_period'] = [adataset.split('_')[1]]
+        my_json['type']['secondary'] = ['Collision']
     else:
         my_json['date_created'] = ['2015','2016']
         my_json['run_period'] = ['2015','2016']
-    my_json['title'] = 'ATLAS DAOD_PHYSLITE format '+dataset_files[adataset]
+        my_json['type']['secondary'] = ['Simulated']
+    my_json['title'] = 'ATLAS DAOD_PHYSLITE format '+dataset_files[adataset][0]
+    # Add a record ID for CERN Open Data. Reserved range for this release
+    my_json['recid'] = dataset_files[adataset][1]
     # Do I need to specify a doi? Should be automatically added, I believe
     # Add a record of the files for this dataset
     my_json['files'] = []
@@ -160,7 +164,7 @@ for adataset in dataset_files:
                 my_files = []
                 for afile in my_files_dict:
                     my_files += [ {'filename':afile,
-                                   'checuksum':my_files_dict[afile]['checksum'],
+                                   'checksum':my_files_dict[afile]['checksum'],
                                    'size':my_files_dict[afile]['size'],
                                    'events':my_files_dict[afile]['events'],
                                    'type':my_files_dict[afile]['type'],
@@ -187,7 +191,7 @@ for adataset in dataset_files:
                 my_files = []
                 for afile in my_files_dict:
                     my_files += [ {'filename':afile,
-                                   'checuksum':my_files_dict[afile]['checksum'],
+                                   'checksum':my_files_dict[afile]['checksum'],
                                    'size':my_files_dict[afile]['size'],
                                    'events':my_files_dict[afile]['events'],
                                    'type':my_files_dict[afile]['type'],
@@ -204,7 +208,8 @@ for adataset in dataset_files:
                 json.dump( my_files , dataset_filelist_file )
 
     # Write myself a json file
-    with open(output_directory+'/'+adataset.replace('.txt','.json'),'w') as outfile:
+    summary_file_name = 'atlas-2024-'+dataset_files[adataset][2]+'.json'
+    with open(output_directory+'/'+summary_file_name,'w') as outfile:
         json.dump( my_json , outfile )
 
 # Not clear if I need to generate adler checksums for the index json files I'm creating here
