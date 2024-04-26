@@ -228,7 +228,13 @@ for adataset in dataset_files:
             my_json['files'] += [ { 'filename':filename } ]
             # Now open that file and write the file names there
             with open(output_directory+'/'+filename,'w') as dataset_filelist_file:
-                json.dump( my_files , dataset_filelist_file )
+                json.dump( my_files ,
+                           dataset_filelist_file,
+                           indent=2,
+                           sort_keys=True,
+                           ensure_ascii=False,
+                           separators=(",", ": "),
+                         )
 
     # Add the file and event sums to the top-level record
     my_json['distribution']['number_events'] = total_events
@@ -237,6 +243,13 @@ for adataset in dataset_files:
     # Write myself a json file
     summary_file_name = 'atlas-2024-'+dataset_files[adataset]['name_short']+'.json'
     with open(output_directory+'/'+summary_file_name,'w') as outfile:
-        json.dump( my_json , outfile )
+        json.dump(
+            [ my_json ],
+            outfile,
+            indent=2,
+            sort_keys=True,
+            ensure_ascii=False,
+            separators=(",", ": "),
+        )
 
 # Not clear if I need to generate adler checksums for the index json files I'm creating here
