@@ -159,6 +159,10 @@ for adataset in dataset_files:
     # Do I need to specify a doi? Should be automatically added, I believe
     # Add a record of the files for this dataset
     my_json['files'] = []
+    # Counters to be used in updating the metadata for the overall record
+    total_files = 0
+    total_events = 0
+    total_size = 0
     # Make a json file with the files for this dataset
     with open(adataset,'r') as dataset_list_file:
         for dataset_line in dataset_list_file:
@@ -182,6 +186,9 @@ for adataset in dataset_files:
                                    'events':my_files_dict[afile]['events'],
                                    'type':my_files_dict[afile]['type'],
                                    'uri_root':my_files_dict[afile]['uri'] } ]
+                    total_files += 1
+                    total_events += int(my_files_dict[afile]['events'])
+                    total_size += int(my_files_dict[afile]['size'])
                 # Final check that we have at least one file
                 if len(my_files)==0:
                     print(f'No files identified for {dataset_line.strip()}')
@@ -209,6 +216,9 @@ for adataset in dataset_files:
                                    'events':my_files_dict[afile]['events'],
                                    'type':my_files_dict[afile]['type'],
                                    'uri_root':my_files_dict[afile]['uri'] } ]
+                    total_files += 1
+                    total_events += int(my_files_dict[afile]['events'])
+                    total_size += int(my_files_dict[afile]['size'])
                 # Final check that we have at least one file
                 if len(my_files)==0:
                     print(f'No files identified for {my_full_did_name} from {my_did}')
@@ -220,6 +230,10 @@ for adataset in dataset_files:
             with open(output_directory+'/'+filename,'w') as dataset_filelist_file:
                 json.dump( my_files , dataset_filelist_file )
 
+    # Add the file and event sums to the top-level record
+    my_json['distribution']['number_events'] = total_events
+    my_json['distribution']['number_files'] = total_files
+    my_json['distribution']['size'] = total_size
     # Write myself a json file
     summary_file_name = 'atlas-2024-'+dataset_files[adataset]['name_short']+'.json'
     with open(output_directory+'/'+summary_file_name,'w') as outfile:
