@@ -117,7 +117,8 @@ evergreen_data = {
 
 # File with the mapping of file names for each dataset - merge these together for MC
 mc_json_filenames = ['mc_file_mapping_OpenData_v1_p6026_2024-04-23_with_metadata.json',
-                     'mc_file_mapping_OpenData_v0_p6026_2024-04-16_with_metadata.json']
+                     'mc_file_mapping_OpenData_v0_p6026_2024-04-16_with_metadata.json',
+                     'mc_file_mapping_OpenData_v0_p6026_2024-04-30_with_metadata.json']
 mc_json_files = [ open(x,'r') for x in mc_json_filenames ]
 mc_json_sets = [ json.load(x) for x in mc_json_files ]
 mc_json = None
