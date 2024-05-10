@@ -31,28 +31,29 @@ import json
 # Get datasets
 dataset_files = {
   'pp_2015_data_p6026_tids.txt':{'name':'Run 2 2015 proton-proton collision data','recid':'80000','name_short':'pp-2015-data',
-              'categories':{'source':'ATLAS Collaboration'}},
+              'categories':{'source':'ATLAS Collaboration'},'doi':'10.7483/OPENDATA.ATLAS.AOQL.8TT3'},
   'pp_2016_data_p6026_tids.txt':{'name':'Run 2 2016 proton-proton collision data','recid':'80001','name_short':'pp-2016-data',
-              'categories':{'source':'ATLAS Collaboration'}},
+              'categories':{'source':'ATLAS Collaboration'},'doi':'10.7483/OPENDATA.ATLAS.4ZES.DJHA'},
   'mc_boson_nominal.txt':{'name':'MC simulation electroweak boson nominal samples','recid':'80010','name_short':'mc-pp-boson-nominal',
-              'categories':{'primary':'Standard Model Physics','secondary':['ElectroWeak','Drell-Yan'], 'source':'ATLAS Collaboration'}},
+              'categories':{'primary':'Standard Model Physics','secondary':['ElectroWeak','Drell-Yan'], 'source':'ATLAS Collaboration'},'doi':'10.7483/OPENDATA.ATLAS.K5SU.X65Y'},
   'mc_exotics_nominal.txt':{'name':'MC simulation exotic signal samples','recid':'80011','name_short':'mc-pp-exotics-nominal',
-              'categories':{'primary':'Exotica', 'secondary':['Miscellaneous'], 'source':'ATLAS Collaboration'}},
+              'categories':{'primary':'Exotica', 'secondary':['Miscellaneous'], 'source':'ATLAS Collaboration'},'doi':'10.7483/OPENDATA.ATLAS.SVB0.DLT1'},
   'mc_higgs_nominal.txt':{'name':'MC simulation Higgs nominal samples','recid':'80012','name_short':'mc-pp-higgs-nominal',
-              'categories':{'primary':'Higgs Physics','secondary':['Standard Model'], 'source':'ATLAS Collaboration'}},
+              'categories':{'primary':'Higgs Physics','secondary':['Standard Model'], 'source':'ATLAS Collaboration'},'doi':'10.7483/OPENDATA.ATLAS.Z2J9.709J'},
   'mc_higgs_systematics.txt':{'name':'MC simulation Higgs systematic variation samples','recid':'80013','name_short':'mc-pp-higgs-syst',
-              'categories':{'primary':'Higgs Physics','secondary':['Standard Model'], 'source':'ATLAS Collaboration'}},
+              'categories':{'primary':'Higgs Physics','secondary':['Standard Model'], 'source':'ATLAS Collaboration'},'doi':'10.7483/OPENDATA.ATLAS.J3U3.RIMC'},
   'mc_jet_nominal.txt':{'name':'MC simulation QCD jet nominal samples','recid':'80014','name_short':'mc-pp-jet-nominal',
-              'categories':{'primary':'Standard Model Physics','secondary':['QCD'], 'source':'ATLAS Collaboration'}},
+              'categories':{'primary':'Standard Model Physics','secondary':['QCD'], 'source':'ATLAS Collaboration'},'doi':'10.7483/OPENDATA.ATLAS.OXQR.DJQ3'},
   'mc_jet_systematics.txt':{'name':'MC simulation QCD jet systematic variation samples','recid':'80015','name_short':'mc-pp-jet-syst',
-              'categories':{'primary':'Standard Model Physics','secondary':['QCD'], 'source':'ATLAS Collaboration'}},
+              'categories':{'primary':'Standard Model Physics','secondary':['QCD'], 'source':'ATLAS Collaboration'},'doi':'10.7483/OPENDATA.ATLAS.BO71.CH27'},
   'mc_susy_nominal.txt':{'name':'MC simulation SUSY signal samples','recid':'80016','name_short':'mc-pp-susy-nominal',
-              'categories':{'primary':'Exotica','secondary':['Miscellaneous'], 'source':'ATLAS Collaboration'}},
+              'categories':{'primary':'Exotica','secondary':['Miscellaneous'], 'source':'ATLAS Collaboration'},'doi':'10.7483/OPENDATA.ATLAS.2764.CUL7'},
   'mc_top_nominal.txt':{'name':'MC simulation top nominal samples','recid':'80017','name_short':'mc-pp-top-nominal',
-              'categories':{'primary':'Standard Model Physics','secondary':['Top physics'], 'source':'ATLAS Collaboration'}},
+              'categories':{'primary':'Standard Model Physics','secondary':['Top physics'], 'source':'ATLAS Collaboration'},'doi':'10.7483/OPENDATA.ATLAS.MM1Y.O0PH'},
   'mc_top_systematics.txt':{'name':'MC simulation top systematic variation samples','recid':'80018','name_short':'mc-pp-top-syst',
-              'categories':{'primary':'Standard Model Physics','secondary':['Top physics'], 'source':'ATLAS Collaboration'}},
+              'categories':{'primary':'Standard Model Physics','secondary':['Top physics'], 'source':'ATLAS Collaboration'},'doi':'10.7483/OPENDATA.ATLAS.F7P0.VAST'},
     }
+
 
 # Populate fields
 
@@ -157,7 +158,8 @@ for adataset in dataset_files:
     my_json['title'] = 'ATLAS DAOD_PHYSLITE format '+dataset_files[adataset]['name']
     # Add a record ID for CERN Open Data. Reserved range for this release
     my_json['recid'] = dataset_files[adataset]['recid']
-    # Do I need to specify a doi? Should be automatically added, I believe
+    # Add the DOI - these are pre-reserved by the Open Data Portal team
+    my_json['doi'] = dataset_files[adataset]['doi']
     # Add a record of the files for this dataset
     my_json['files'] = []
     # Counters to be used in updating the metadata for the overall record
