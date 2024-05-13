@@ -8,22 +8,20 @@ except:
     pass
 
 '''
-Notes on the plan:
+This creates json files for the Open Data Portal with:
 
 -) One record for the 2015 data
 	- Structure in the record to represent the individual runs
 -) One record for the 2016 data
 	- Structure in the record to represent the individual runs
--) One record for each of the "blocks" of MC that we had in the note (https://cds.cern.ch/record/2875752)
+-) One record for each of the "blocks" of MC that we agreed upon
 	- 9 tables in total for the time being
 	- Structure in the record to represent the individual MC datasets
 
-You can see an example of this kind of structure in the "File Indexes" section of this record:
-https://opendata.cern.ch/record/24464
-
-I'd then write a draft _very short_ description for each of the 11 pages, linking to the main documentation
-and explaining in a few sentences what that particular record represents. We would give each record a DOI,
-and we could create a `meta record' containing links to all 11 pages that summarize the full release of Open Data.
+We have a _very short_ description for each of the 11 pages, linking to the main documentation
+and explaining in a few sentences what that particular record represents. Each record has a DOI,
+and we could at some point create a `meta record' containing links to all 11 pages that summarizes
+the full release of Open Data.
 '''
 
 import json
@@ -83,7 +81,7 @@ evergreen_data = {
     "distribution": {
       "formats": [
         "DAOD_PHYSLITE",
-        "ROOT"
+        "root"
       ],
     },
     # Dataset type information for Open Data Portal
@@ -92,15 +90,15 @@ evergreen_data = {
     },
     # Information about usage
     "usage": {
-      "description": "<p> The data and MC simulation provided by the ATLAS experiment in DAOD_PHYSLITE format is released under a CC0-BY license. This format can be used directly like a ROOT ntuple for simple studies or processed into secondary ntuples with systematic uncertainties included using the ATLAS AnalysisBase software. <p>Extensive instructions for interacting with the data, as well as documentation of the dataset naming conventions and their contents, are provided on the ATLAS Open Data website linked below.",
+      "description": "<p> The data and MC simulation provided by the ATLAS experiment in DAOD_PHYSLITE format is released under a CC BY license. This format can be used directly like a ROOT ntuple (or using uproot) for simple studies or processed into secondary ntuples with systematic uncertainties included using the ATLAS AnalysisBase software. <p>Extensive instructions for interacting with the data, as well as documentation of the dataset naming conventions and their contents, are provided on the ATLAS Open Data website linked below.",
       "links": [
         {
           "description": "ATLAS Open Data Website",
           "url": "http://opendata.atlas.cern"
         },
         {
-          "description": "Citation of ATLAS Open Data",
-          "url": "https://opendata.atlas.cern/docs/documentation/ethical_legal/citation_policy"
+          "description": "Resources to understand and use the open data for research",
+          "url": "https://opendata.atlas.cern/docs/userpath/researchers"
         },
         {
           "description": "ATLAS Analysis Software Tutorial",
@@ -112,14 +110,15 @@ evergreen_data = {
     'methodology': {
       'description':'<p>These data were created during LS2 as part of a major reprocessing campaign of the Run 2 data. All data were reprocessed using Athena Release 22, and new corresponding MC simulation samples were produced, in an MC simulation campaign called MC20a. These data and MC simulation datasets were processed into DAOD_PHSYLITE format files; this is a light-weight data format intended for general analysis use, sufficient to support a wide variety of ATLAS analyses.'},
     "license": {
-      "attribution": "CC BY"
+      "attribution": "These data are provided under the <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY</a> license. The citation policy can be <a href='https://opendata.atlas.cern/docs/documentation/ethical_legal/citation_policy'>found here</a>."
     }
 }
 
 # File with the mapping of file names for each dataset - merge these together for MC
 mc_json_filenames = ['mc_file_mapping_OpenData_v1_p6026_2024-04-23_with_metadata.json',
                      'mc_file_mapping_OpenData_v0_p6026_2024-04-16_with_metadata.json',
-                     'mc_file_mapping_OpenData_v0_p6026_2024-04-30_with_metadata.json']
+                     'mc_file_mapping_OpenData_v0_p6026_2024-04-30_with_metadata.json',
+                     'mc_file_mapping_OpenData_v0_p6026_2024-05-13_with_metadata.json']
 mc_json_files = [ open(x,'r') for x in mc_json_filenames ]
 mc_json_sets = [ json.load(x) for x in mc_json_files ]
 mc_json = None

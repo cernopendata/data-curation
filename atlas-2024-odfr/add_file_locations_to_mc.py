@@ -3,7 +3,8 @@ import datetime
 import json
 
 # Previous request json files created when rucio rules were set up
-previous_requests = ['mc_file_mapping_OpenData_v0_p6026_2024-04-30.json']
+previous_requests = ['mc_file_mapping_OpenData_v0_p6026_2024-05-13.json']
+# Already did: 'mc_file_mapping_OpenData_v0_p6026_2024-04-30.json']
 # Already did: 'mc_file_mapping_OpenData_v1_p6026_2024-04-23.json']
 # Already did: 'mc_file_mapping_OpenData_v0_p6026_2024-04-16.json']
 

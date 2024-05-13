@@ -3,7 +3,7 @@ import datetime
 import json
 
 # The file containing the datasets to be processed
-mc_dataset_input = 'pp_mc_physlite_p6026_v3.txt'
+mc_dataset_input = 'pp_mc_physlite_p6026_v4.txt'
 # Previous version: 'pp_mc_physlite_p6026.txt'
 
 # Scope for the rucio datasets I'll be creating
@@ -17,7 +17,8 @@ static_did_post = '_OpenData_v0_p6026_'+datetime.date.today().isoformat()
 
 # Previous request json files to ensure we don't bother processing duplicate datasets
 previous_requests = ['mc_file_mapping_OpenData_v0_p6026_2024-04-16_with_metadata.json',
-                     'mc_file_mapping_OpenData_v1_p6026_2024-04-23_with_metadata.json']
+                     'mc_file_mapping_OpenData_v1_p6026_2024-04-23_with_metadata.json',
+                     'mc_file_mapping_OpenData_v0_p6026_2024-04-30_with_metadata.json']
 already_processed_datasets = []
 for old_request_json in previous_requests:
     with open(old_request_json,'r') as old_request_file:
