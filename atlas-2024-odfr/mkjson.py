@@ -90,7 +90,7 @@ evergreen_data = {
     },
     # Information about usage
     "usage": {
-      "description": "<p> The data and MC simulation provided by the ATLAS experiment in DAOD_PHYSLITE format is released under a CC BY license. This format can be used directly like a ROOT ntuple (or using uproot) for simple studies or processed into secondary ntuples with systematic uncertainties included using the ATLAS AnalysisBase software. <p>Extensive instructions for interacting with the data, as well as documentation of the dataset naming conventions and their contents, are provided on the ATLAS Open Data website linked below.",
+      "description": "<p> The data and MC simulation provided by the ATLAS experiment in DAOD_PHYSLITE format is released under a CC0 license; citation of the data and acknowledgement of the collaboration is requested. This format can be used directly like a ROOT ntuple (or using uproot) for simple studies or processed into secondary ntuples with systematic uncertainties included using the ATLAS AnalysisBase software. <p>Extensive instructions for interacting with the data, as well as documentation of the dataset naming conventions and their contents, are provided on the ATLAS Open Data website linked below. Designing and implementing a research-quality data analysis is a complex process that requires an understanding of particle physics; for those new to the subject, the open data designed for education (also linked below) might be a good starting point. Please be sure to cite the Open Data that you use, in line with the policy below.",
       "links": [
         {
           "description": "ATLAS Open Data Website",
@@ -103,14 +103,23 @@ evergreen_data = {
         {
           "description": "ATLAS Analysis Software Tutorial",
           "url": "https://atlassoftwaredocs.web.cern.ch/ASWTutorial/TutorialWeek/"
+        },
+        {
+          "description": "More about the DAOD_PHYSLITE data format",
+          "url": "https://opendata.atlas.cern/docs/documentation/data_format/physlite/"
+        },
+        {
+          "description": "Citation policy",
+          "url": "https://opendata.atlas.cern/docs/documentation/ethical_legal/citation_policy"
         }
       ]
     },
     # Information about (production) methodology
     'methodology': {
-      'description':'<p>These data were created during LS2 as part of a major reprocessing campaign of the Run 2 data. All data were reprocessed using Athena Release 22, and new corresponding MC simulation samples were produced, in an MC simulation campaign called MC20a. These data and MC simulation datasets were processed into DAOD_PHSYLITE format files; this is a light-weight data format intended for general analysis use, sufficient to support a wide variety of ATLAS analyses.'},
+      'description':'<p>These data were created during LS2 as part of a major reprocessing campaign of the Run 2 data. All data were reprocessed using Athena Release 22, and new corresponding MC simulation samples were produced, in an MC simulation campaign called MC20a. These data and MC simulation datasets were processed into DAOD_PHSYLITE format files; this is a light-weight data format intended for general analysis use, sufficient to support a wide variety of ATLAS analyses.'
+    },
     "license": {
-      "attribution": "These data are provided under the <a href='https://creativecommons.org/licenses/by/4.0/'>CC BY</a> license. The citation policy can be <a href='https://opendata.atlas.cern/docs/documentation/ethical_legal/citation_policy'>found here</a>."
+      "attribution": "CC0-1.0"
     }
 }
 
@@ -134,6 +143,11 @@ for json_set in mc_json_sets:
 # Only one file for data
 data_json_file = open('data_file_mapping_OpenData_v0_p6026_2024-04-15.json','r')
 data_json = json.load(data_json_file)
+
+# Sums for use later on
+big_total_files = 0
+big_total_events = 0
+big_total_size = 0
 
 for adataset in dataset_files:
     my_json = {}
@@ -242,6 +256,17 @@ for adataset in dataset_files:
     my_json['distribution']['number_events'] = total_events
     my_json['distribution']['number_files'] = total_files
     my_json['distribution']['size'] = total_size
+    # Update the running sums
+    big_total_events += total_events
+    big_total_files += total_files
+    big_total_size += total_size
+    # Link to the top-level record
+    my_json['relations'] = [ {'description':'For citing all the Open Data for Research from this release, and to find other related datasets, please see',
+                              'doi':'10.7483/OPENDATA.ATLAS.9HK7.P5SI',
+                              'recid':'80020',
+                              'title':'DAOD_PHYSLITE format 2015-2016 Open Data for Research from the ATLAS experiment',
+                              'type':'isChildOf'
+                             } ]
     # Write myself a json file
     summary_file_name = 'atlas-2024-'+dataset_files[adataset]['name_short']+'.json'
     with open(output_directory+'/'+summary_file_name,'w') as outfile:
@@ -253,5 +278,50 @@ for adataset in dataset_files:
             ensure_ascii=False,
             separators=(",", ": "),
         )
+
+# Add the top-level json file
+my_json = {}
+# Update with the stuff that's always good
+my_json.update(evergreen_data)
+# Simple abstract for the collection
+my_json['abstract'] = {'description':'2015-2016 Open Data for Research from the ATLAS experiment'}
+# Name of the collections, systematically set
+my_json['collections'] = ['ATLAS-Simulated-Datasets','ATLAS-Primary-Datasets']
+# data-taking year during which the collision data or for which the simulated data, software and other assets were produced
+my_json['date_created'] = ['2015','2016']
+my_json['run_period'] = ['2015','2016']
+my_json['type']['secondary'] = ['Simulated','Collision']
+# Add categories, mostly for MC datasets
+my_json['categories'] = {'source':'ATLAS Collaboration'}
+my_json['title'] = 'DAOD_PHYSLITE format 2015-2016 Open Data for Research from the ATLAS experiment'
+# Add a record ID for CERN Open Data. Reserved range for this release
+my_json['recid'] = '80020'
+# Add the DOI - these are pre-reserved by the Open Data Portal team
+my_json['doi'] = '10.7483/OPENDATA.ATLAS.9HK7.P5SI'
+# Add the file and event sums to the top-level record
+my_json['distribution']['number_events'] = big_total_events
+my_json['distribution']['number_files'] = big_total_files
+my_json['distribution']['size'] = big_total_size
+# Link to the other datasets
+my_json['relations'] = []
+for adataset in dataset_files:
+    my_json['relations'] += [ {'description':dataset_files[adataset]['name'],
+                               'doi':dataset_files[adataset]['doi'],
+                               'recid':dataset_files[adataset]['recid'],
+                               'title':dataset_files[adataset]['name'],
+                               'type':'isChildOf'
+                              } ]
+
+# Write myself a json file
+summary_file_name = 'atlas-2024-summary.json'
+with open(output_directory+'/'+summary_file_name,'w') as outfile:
+    json.dump(
+        [ my_json ],
+        outfile,
+        indent=2,
+        sort_keys=True,
+        ensure_ascii=False,
+        separators=(",", ": "),
+    )
 
 # Not clear if I need to generate adler checksums for the index json files I'm creating here
