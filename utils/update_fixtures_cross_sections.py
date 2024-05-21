@@ -45,7 +45,7 @@ def main(cross_sections_path, input_path, output_path):  # noqa: D301,D412
     sub_categories = os.listdir(cross_sections_path)
 
     # amend target records of all target datasets
-    if "MC2015test/StandardModelPhysics" in cross_sections_path: # for 2015 SM only
+    if "MC2015/StandardModelPhysics" in cross_sections_path: # for 2015 SM only
         for categ in sub_categories:
             for json_file_name in os.listdir(f"{cross_sections_path}/{categ}"):
                 total_cross_section_files += 1
@@ -302,26 +302,26 @@ def main(cross_sections_path, input_path, output_path):  # noqa: D301,D412
                 record["cross_section"] = {}
 
                 # The following lists alll the columns availalbe in the xsec json files
-                # UNCOMMENT IF NEEDED
-                # record["cross_section"]["xsec_before_matching"] = cross_sections_json_data["xsec_before_matching"]
+                # UNCOMMENT AND ADD CONDITION IF NEEDED
+                if cross_sections_json_data["total_value"]!="-9": record["cross_section"]["total_value"] = cross_sections_json_data["total_value"]
+                if cross_sections_json_data["total_value_uncertainty"]!="-9": record["cross_section"]["total_value_uncertainty"] = cross_sections_json_data["total_value_uncertainty"]
+                if cross_sections_json_data["matching_efficiency"]!="-9": record["cross_section"]["matching_efficiency"] = cross_sections_json_data["matching_efficiency"]
+                if cross_sections_json_data["filter_efficiency"]!="-9": record["cross_section"]["filter_efficiency"] = cross_sections_json_data["filter_efficiency"]
+                if cross_sections_json_data["neg_weight_fraction"]!="-9": record["cross_section"]["neg_weight_fraction"] = cross_sections_json_data["neg_weight_fraction"]
+                #if cross_sections_json_data["xsec_before_matching"]!="-9": record["cross_section"]["xsec_before_matching"] = cross_sections_json_data["xsec_before_matching"]
                 # record["cross_section"]["xsec_before_matching_uncertainty"] = cross_sections_json_data["xsec_before_matching_uncertainty"]
                 # record["cross_section"]["xsec_after_matching"] = cross_sections_json_data[""]
                 # record["cross_section"]["xsec_after_matching_uncertainty"] = cross_sections_json_data[""]	
                 # record["cross_section"]["xsec_before_filter"] = cross_sections_json_data[""]
                 # record["cross_section"]["xsec_before_filter_uncertainty"] = cross_sections_json_data[""]
-                record["cross_section"]["total_value"] = cross_sections_json_data["total_value"]
-                record["cross_section"]["total_value_uncertainty"] = cross_sections_json_data["total_value_uncertainty"]
-                record["cross_section"]["matching_efficiency"] = cross_sections_json_data["matching_efficiency"]
                 #record["cross_section"]["matching_efficiency_uncertainty"] = cross_sections_json_data["matching_efficiency_uncertainty"]
-                record["cross_section"]["HepMC_filter_efficiency"] = cross_sections_json_data["HepMC_filter_efficiency"]
+                #record["cross_section"]["HepMC_filter_efficiency"] = cross_sections_json_data["HepMC_filter_efficiency"]
                 #record["cross_section"]["HepMC_filter_efficiency_uncertainty"] = cross_sections_json_data["HepMC_filter_efficiency_uncertainty"]
-                record["cross_section"]["HepMC_filter_efficiency_evt"] = cross_sections_json_data["HepMC_filter_efficiency_evt"]
+                #record["cross_section"]["HepMC_filter_efficiency_evt"] = cross_sections_json_data["HepMC_filter_efficiency_evt"]
                 #record["cross_section"]["HepMC_filter_efficiency_evt_uncertainty"] = cross_sections_json_data["HepMC_filter_efficiency_evt_uncertainty"]
-                record["cross_section"]["filter_efficiency"] = cross_sections_json_data["filter_efficiency"]
                 #record["cross_section"]["filter_efficiency_uncertainty"] = cross_sections_json_data["filter_efficiency_uncertainty"]
-                record["cross_section"]["filter_efficiency_evt"] = cross_sections_json_data["filter_efficiency_evt"]
+                #record["cross_section"]["filter_efficiency_evt"] = cross_sections_json_data["filter_efficiency_evt"]
                 #record["cross_section"]["filter_efficiency_evt_uncertainty"] = cross_sections_json_data["filter_efficiency_evt_uncertainty"]
-                record["cross_section"]["neg_weight_fraction"] = cross_sections_json_data["neg_weight_fraction"]
                 #record["cross_section"]["neg_weight_fraction_uncertainty"] = cross_sections_json_data["neg_weight_fraction_uncertainty"]
                 #record["cross_section"]["equivalent_lumi"] = cross_sections_json_data["equivalent_lumi"]
                 #record["cross_section"]["equivalent_lumi_uncertainty"] = cross_sections_json_data["equivalent_lumi_uncertainty"]
