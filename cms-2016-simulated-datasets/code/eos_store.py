@@ -110,42 +110,48 @@ def get_dataset_volume_files(fs, dataset, volume):
     return all_entries
 
 
-def create_index_file(filebase, files, eos_dir, style='txt'):
+def create_index_file(filebase, files, eos_dir, style, volume_dir):
     "Create index file in the given style format (text, json)."
     filename = filebase + '.' + style
-    fdesc = open(eos_dir + '/' + filename, 'w')
-    if style == 'txt':
-        for afile in files:
-            fdesc.write(afile['uri'])
+    try:
+        fdesc = open(f"{eos_dir}/{str(volume_dir)}/{filename}", 'w')
+        if style == 'txt':
+            for afile in files:
+                fdesc.write(afile['uri'])
+                fdesc.write('\n')
+        elif style == 'json':
+            fdesc.write(json.dumps(files, indent=2, sort_keys=True))
             fdesc.write('\n')
-    elif style == 'json':
-        fdesc.write(json.dumps(files, indent=2, sort_keys=True))
-        fdesc.write('\n')
-    fdesc.close()
+        fdesc.close()
+    except Exception as exc:
+        print("Error doing the file '", filename, "': ", exc)
+        return None
     return filename
 
 
-def copy_index_file(dataset, volume, filename, eos_dir):
+def copy_index_file(dataset, volume, filename, eos_dir, volume_dir):
     "Copy index file filename to its final destination on EOS."
     dataset_location = get_dataset_location(dataset)
-    cmd = 'eos cp ' + eos_dir + '/' + filename + ' ' + dataset_location + '/file-indexes/' + filename
+    cmd = 'eos cp ' + eos_dir + '/' + str(volume_dir) + '/' + filename + ' ' + dataset_location + '/file-indexes/' + filename
     if DEBUG:
         print(cmd)
     else:
         os.system(cmd)
 
 
-def create_index_files(fs, dataset, volume, eos_dir):
+def create_index_files(fs, dataset, volume, eos_dir, volume_dir):
     "Create index files for the given dataset and volumes."
     files = get_dataset_volume_files(fs, dataset, volume)
+
 
     filebase = get_dataset_index_file_base(dataset) + '_' + \
                volume + '_' + \
                'file_index'
 
     for output_type in ['txt', 'json']:
-        filename = create_index_file(filebase, files, eos_dir, output_type)
-        copy_index_file(dataset, volume, filename, eos_dir)
+        filename = create_index_file(filebase, files, eos_dir, output_type, volume_dir)
+        if filename:
+            copy_index_file(dataset, volume, filename, eos_dir, volume_dir)
 
 
 def main(datasets = [], eos_dir = './inputs/eos-file-indexes/'):
@@ -162,6 +168,11 @@ def main(datasets = [], eos_dir = './inputs/eos-file-indexes/'):
 
 
     dataset_counter=1
+    volume_dir = 0
+    volume_counter=0
+    if not os.path.isdir(f"{eos_dir}/{str(volume_dir)}"):
+        os.makedirs(f"{eos_dir}/{str(volume_dir)}")
+
     for dataset in datasets:
         print(f"Doing {dataset} ({dataset_counter}/{len(datasets)})")
         dataset_location = get_dataset_location(dataset)
@@ -171,7 +182,14 @@ def main(datasets = [], eos_dir = './inputs/eos-file-indexes/'):
             print(f"Error with the dataseti '{dataset}'!")
             return -1
         for volume in volumes:
-            create_index_files(fs, dataset, volume, eos_dir)
+            create_index_files(fs, dataset, volume, eos_dir, volume_dir)
+            volume_counter+=1
+            if volume_counter >999:
+                volume_counter =0
+                volume_dir +=1
+
+                if not os.path.isdir(f"{eos_dir}/{str(volume_dir)}"):
+                    os.makedirs(f"{eos_dir}/{str(volume_dir)}")
 
 
 if __name__ == '__main__':
