@@ -255,9 +255,17 @@ def create_lhe_generator(
         files.extend(
             [
                 "./jhugen.input",
+                "./JHUGen.input",
                 "./jhugen_decay.input",
+                "./JHUGen_decay.input",
+                "./*_JHUGen/JHUGen.input",
+                "./*_JHUGen/JHUGen_decay.input",
                 "jhugen.input",
+                "JHUGen.input",
                 "jhugen_decay.input",
+                "JHUGen_decay.input",
+                "*_JHUGen/JHUGen.input",
+                "*_JHUGen/JHUGen_decay.input",
             ]
         )
     elif gridpack_case == "phantom":
