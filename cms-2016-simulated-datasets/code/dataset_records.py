@@ -602,7 +602,7 @@ def get_step_generator_parameters(dataset, mcm_dir, recid, force_lhe=0):
         if mcdb_id > 1:
             print("Got mcdb > 1: " + str(mcdb_id))
             configuration_files['title'] = 'Generator parameters'
-            configuration_files['url'] = "/eos/opendata/cms/lhe_generators/2015-sim/mcdb/{mcdb_id}_header.txt".format(mcdb_id=mcdb_id)
+            configuration_files['url'] = "/eos/opendata/cms/lhe_generators/2016-sim/mcdb/{mcdb_id}_header.txt".format(mcdb_id=mcdb_id)
             return [configuration_files]
         else:
             dir='./lhe_generators/2016-sim/gridpacks/' + str(recid) + '/'
@@ -614,6 +614,18 @@ def get_step_generator_parameters(dataset, mcm_dir, recid, force_lhe=0):
                     configuration_files['title'] = 'Generator parameters: ' + f
                     configuration_files['url'] = '/eos/opendata/cms/lhe_generators/2016-sim/gridpacks/' + str(recid) + '/'  + f
                     confarr.append(configuration_files.copy())
+            dirs = [d for d in os.listdir(dir) if os.path.isdir(os.path.join(dir, d))]
+            subdir_contains = ['InputCards', '_JHUGen']
+            for d in dirs:
+                if any(subdir in d for subdir in subdir_contains):
+                    files = []
+                    newpath = os.path.join(dir, d)
+                    files = [f for f in os.listdir(newpath) if os.path.isfile(os.path.join(newpath, f))]
+                    for f in files:
+                        if f != 'LOG.txt':
+                            configuration_files['title'] = 'Generator parameters: ' + f
+                            configuration_files['url'] = '/eos/opendata/cms/lhe_generators/2016-sim/gridpacks/' + str(recid) + '/' + d + '/'  + f
+                            confarr.append(configuration_files.copy())
             return confarr
     else:
         gen_fragment = get_genfragment_url(dataset, mcm_dir)
