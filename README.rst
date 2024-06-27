@@ -83,9 +83,10 @@ The list of contributors in alphabetical order:
 
 - `Anna Trzcinska <https://github.com/annatrz>`_
 - `Artemis Lavasa <https://orcid.org/0000-0001-5633-2459>`_
-- `Audrius Mecionis <>`_
+- `Audrius Mecionis <https://orcid.org/0000-0002-3759-1663>`_
 - `Heitor de Bittencourt <https://linkedin.com/in/heitorpb>`_
-- `Jan Okraska <>`_
+- `Dana Alsharif <danaalsharif03@gmail.com>`_
+- `Jan Okraska <https://orcid.org/0000-0002-1416-3244>`_
 - `Julie Hogan <https://orcid.org/0000-0002-8604-3452>`_
 - `Joud Masoud <joud003@gmail.com>`_
 - `Kati Lassila-Perini <https://orcid.org/0000-0002-5502-1795>`_
@@ -94,4 +95,5 @@ The list of contributors in alphabetical order:
 - `Nancy Hamdan <nancyehamdan@gmail.com>`_
 - `Osama Sh. Almomani <https://github.com/OsamaMomani>`_
 - `Tibor Šimko <https://orcid.org/0000-0001-7202-5803>`_
+- `Xiaohe Shen <https://github.com/Ari-mu-l>`_
 - `Zach Marshall <https://github.com/zlmarshall>`_
