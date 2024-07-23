@@ -21,8 +21,6 @@ exec(open("inputs/recid_info.py", "r").read())  # import RECID_INFO
 def log(recid, logtype, logmessage):
     """Store a log message of a certain type to record-ID-based log file system."""
     recid_rounded = int(recid)//1000 * 1000
-    print("recid:", recid)
-    print("rounded:" recid_rounded)
     dir = f'./lhe_generators/2017-sim/gridpacks/{recid_rounded}'
     logdir = f'./lhe_generators/2017-sim/gridpacks/{recid_rounded}/{recid}'
 
@@ -183,7 +181,10 @@ def create_lhe_generator(
 
     path = path.groups()[0]
     log(recid, "INFO", f"Found path {path}")
-    outfilepath = "{gen_store}/gridpacks/{recid}".format(
+
+    recid_rounded = int(recid)//1000 * 1000
+
+    outfilepath = f"{gen_store}/gridpacks/{recid_rounded}/{recid}".format(
         gen_store=gen_store, recid=recid
     )
     if os.path.exists(outfilepath) and len(os.listdir(outfilepath)) > 1:
