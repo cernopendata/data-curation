@@ -1,3 +1,4 @@
+#mcm store
 import json
 import os
 import re
@@ -74,7 +75,7 @@ def mcm_downloader(dataset, mcm_dir):
         step_path = mcm_dir + "/chain/" + dataset.replace('/', '@') + "/" + str(idx) + step
         for path in [step_path, step_path + "/dict", step_path + "/scripts"]:
             os.makedirs(path, exist_ok=True)
-        
+
         mcm_step_dict = subprocess.run(cmd + "get/" + step,
                                 shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         mcm_step_dict_out = str(mcm_step_dict.stdout.decode("utf-8"))
@@ -102,7 +103,7 @@ def mcm_downloader(dataset, mcm_dir):
 
 
 
-def create(datasets, mcm_dir, eos_dir, ignore_eos_store=False):
+def create(datasets, mcm_dir, eos_dir, threads, ignore_eos_store=False):
     "Get information from McM about each dataset"
 
     # create dirs
@@ -116,12 +117,14 @@ def create(datasets, mcm_dir, eos_dir, ignore_eos_store=False):
         eos_datasets = check_datasets_in_eos_dir(datasets, eos_dir)
 
     total = len(eos_datasets)
+    if threads > total: # if threads is less than total datasets, make threads = total
+        threads = total
     i = 1
     for dataset in eos_datasets:
         print("McM Storing ({i}/{N}) {ds}".format(i=i, N=total, ds=dataset))
         t = threading.Thread(target=mcm_downloader, args=(dataset, mcm_dir))
         t.start()
-        while threading.activeCount() >= 100 :
+        while threading.activeCount() >= threads :
             sleep(0.5)  # run 100 curl commands in parallel
         i += 1
 
@@ -248,7 +251,7 @@ def get_data_processing_year(dataset, mcm_dir):
     else:
         print("In get_data_processing_year, unexpected format for date: expecting yymmdd, got :" + date)
         return '0000'
- 
+
 
 def get_generator_name(dataset, mcm_dir):
     "Return list of generators used for that dataset"

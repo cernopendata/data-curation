@@ -1,3 +1,4 @@
+#dataset records
 #!/usr/bin/env python
 
 
@@ -115,7 +116,7 @@ def get_dataset(dataset_full_name):
 
 def get_dataset_version(dataset_full_name):
     "Return dataset version from dataset full name."
-    return re.search(r'^.*RunIISummer20UL16.*?-(.*)/(MINI|NANO)AODSIM$', dataset_full_name).groups()[0]
+    return re.search(r'^.*RunIISummer20UL17.*?-(.*)/(MINI|NANO)AODSIM$', dataset_full_name).groups()[0]
 
 
 def get_dataset_index_files(dataset_full_name, eos_dir):
@@ -314,8 +315,9 @@ def populate_mininanorelation_cache(dataset_full_names, mcm_dir):
 
 def get_dataset_semantics_doc(dataset_name, sample_file_path, recid):
     """Produce the dataset semantics files and return their data-curation paths for the given dataset."""
-    output_dir = f"outputs/docs/NanoAODSIM/{recid}"
-    eos_dir = f"/eos/opendata/cms/dataset-semantics/NanoAODSIM/{recid}"
+    recid_rounded = int(recid)//1000 * 1000
+    output_dir = f"outputs/docs/NanoAODSIM/{recid_rounded}/{recid}"
+    eos_dir = f"/eos/opendata/cms/dataset-semantics/NanoAODSIM/{recid_rounded}/{recid}"
     isExist = os.path.exists(output_dir)
     if not isExist:
         os.makedirs(output_dir)
@@ -392,7 +394,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
 
     rec_files = get_dataset_index_files(dataset_full_name, eos_dir)
     if rec_files:
-        rec['files'] = [] 
+        rec['files'] = []
         for index_type in ['.json', '.txt']:
             index_files = [f for f in rec_files if f[0].endswith(index_type)]
             for file_number, (file_uri, file_size, file_checksum) in enumerate(index_files):
@@ -545,7 +547,7 @@ def create(dataset, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_d
 
 
 
-def create_records(dataset_full_names, doi_file, recid_file, eos_dir, das_dir, mcm_dir, conffiles_dir, records_dir):
+def create_records(dataset_full_names, doi_file, recid_file, eos_dir, das_dir, mcm_dir, conffiles_dir, records_dir, threads):
     """Create records."""
 
     recid_info = {}
@@ -555,13 +557,16 @@ def create_records(dataset_full_names, doi_file, recid_file, eos_dir, das_dir, m
 
     doi_info = populate_doiinfo(doi_file)
 
+    if threads > len(dataset_full_names): # if threads is less than the number of datasets, make threads = number of datasets
+        threads = len(dataset_full_names)
     records = []
     for dataset_full_name in dataset_full_names:
+
         #2016: comment out threading for debugging
         t= threading.Thread(target=create, args=(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir, records_dir))
         t.start()
-        while threading.activeCount() >= 20 :
-            sleep(0.5)  # run 20 parallel
+        while threading.activeCount() >= threads :
+            sleep(0.5)  # run threads parallel
 
         #records.append(create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir))
     #return records
@@ -580,7 +585,7 @@ def print_records(records):
     print(']')
 
 
-def main(datasets, eos_dir, das_dir, mcm_dir, conffiles_dir, doi_file, recid_file):
+def main(datasets, eos_dir, das_dir, mcm_dir, conffiles_dir, doi_file, recid_file, threads):
     "Do the job."
 
     populate_containerimages_cache()
@@ -589,7 +594,7 @@ def main(datasets, eos_dir, das_dir, mcm_dir, conffiles_dir, doi_file, recid_fil
     records_dir= "./outputs/records-" + dt.now().strftime("%Y-%m")
     os.makedirs(records_dir, exist_ok=True)
 
-    create_records(datasets, doi_file, recid_file, eos_dir, das_dir, mcm_dir, conffiles_dir, records_dir)
+    create_records(datasets, doi_file, recid_file, eos_dir, das_dir, mcm_dir, conffiles_dir, records_dir, threads)
 
     #records = create_records(datasets, doi_file, recid_file, eos_dir, das_dir, mcm_dir, conffiles_dir)
     #json.dump(records, indent=2, sort_keys=True, ensure_ascii=True, fp=sys.stdout)
@@ -602,17 +607,17 @@ def get_step_generator_parameters(dataset, mcm_dir, recid, force_lhe=0):
         if mcdb_id > 1:
             print("Got mcdb > 1: " + str(mcdb_id))
             configuration_files['title'] = 'Generator parameters'
-            configuration_files['url'] = "/eos/opendata/cms/lhe_generators/2016-sim/mcdb/{mcdb_id}_header.txt".format(mcdb_id=mcdb_id)
+            configuration_files['url'] = "/eos/opendata/cms/lhe_generators/2017-sim/mcdb/{mcdb_id}_header.txt".format(mcdb_id=mcdb_id)
             return [configuration_files]
         else:
-            dir='./lhe_generators/2016-sim/gridpacks/' + str(recid) + '/'
+            dir='./lhe_generators/2017-sim/gridpacks/' + str(recid) + '/'
             files = []
             files = [f for f in os.listdir(dir) if os.path.isfile(os.path.join(dir, f))]
             confarr=[]
             for f in files:
                 if f != 'LOG.txt':
                     configuration_files['title'] = 'Generator parameters: ' + f
-                    configuration_files['url'] = '/eos/opendata/cms/lhe_generators/2016-sim/gridpacks/' + str(recid) + '/'  + f
+                    configuration_files['url'] = '/eos/opendata/cms/lhe_generators/2017-sim/gridpacks/' + str(recid) + '/'  + f
                     confarr.append(configuration_files.copy())
             dirs = [d for d in os.listdir(dir) if os.path.isdir(os.path.join(dir, d))]
             subdir_contains = ['InputCards', '_JHUGen']
@@ -624,7 +629,7 @@ def get_step_generator_parameters(dataset, mcm_dir, recid, force_lhe=0):
                     for f in files:
                         if f != 'LOG.txt':
                             configuration_files['title'] = 'Generator parameters: ' + f
-                            configuration_files['url'] = '/eos/opendata/cms/lhe_generators/2016-sim/gridpacks/' + str(recid) + '/' + d + '/'  + f
+                            configuration_files['url'] = '/eos/opendata/cms/lhe_generators/2017-sim/gridpacks/' + str(recid) + '/' + d + '/'  + f
                             confarr.append(configuration_files.copy())
             return confarr
     else:

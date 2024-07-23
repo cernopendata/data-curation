@@ -1,3 +1,4 @@
+#das json
 import json
 import os
 import subprocess
@@ -40,13 +41,13 @@ def get_das_store_json(dataset, query='dataset', das_dir=''):
 
 def mydasgoclient(dataset, query, out_dir, out_file):
     "Interface to dasgoclient"
-   
+
     out = out_dir + '/' + query + '/' + out_file
     if  os.path.exists(out) and os.stat(out).st_size != 0:
         print('==> {:<9} {}'.format(query, dataset) +
             '\n==> File already exist, skipping...\n')
         return
-   
+
     print('\t{:<9} {}'.format(query, dataset))
 
     cmd = 'dasgoclient -query "'
@@ -81,7 +82,8 @@ def create(dataset, das_dir):
 def main(das_dir,
          eos_dir,
          datasets,
-         ignore_eos_store):
+         ignore_eos_store,
+         threads):
     "Do the job."
 
     # create dirs for dataset and release
@@ -98,13 +100,15 @@ def main(das_dir,
         eos_datasets = check_datasets_in_eos_dir(datasets, eos_dir)
 
     total = len(eos_datasets)
+    if threads < total: # if threads is less than total datasets, use threads
+        threads = total
     i = 1
     for dataset in eos_datasets:
         print("dasgoclienting ({}/{})".format(i, total), dataset)
         t = threading.Thread(target=create, args=(dataset, das_dir))
         t.start()
-        while threading.activeCount() >= 100 :
-            sleep(0.5)  # run 100 dasgoclient commands in parallel 
+        while threading.activeCount() >= threads :
+            sleep(0.5)  # run 100 dasgoclient commands in parallel
         i += 1
 
 

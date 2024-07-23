@@ -1,3 +1,4 @@
+# interface
 #!/usr/bin/env python
 
 """
@@ -57,6 +58,12 @@ from utils import get_datasets_from_dir
 @click.option('--doi-file', default='./inputs/doi-sim.txt',
               show_default=True, type=click.Path(),
               help='File with DOI information')
+@click.option('--threads', default=20, show_default=True,
+              help='Number of threads to use')
+@click.option('--lhe-generators', default=False,
+              show_default=True, is_flag=True,
+              help='Create LHE generators.')
+
 def main(dataset_list,
          create_eos_indexes, eos_dir, ignore_eos_store,
          create_das_json_store, das_dir,
@@ -65,7 +72,9 @@ def main(dataset_list,
          print_categorisation, print_results,
          create_records,
          create_conffile_records,
-         recid_file, doi_file):
+         recid_file, doi_file, threads,
+         lhe_generators
+         ):
     """
     Interface for manipulation of dataset records for OpenData portal.
 
@@ -136,6 +145,16 @@ def main(dataset_list,
 
         $ python ./code/interface.py --print-categorisation DATASET_LIST > categorisation.md
     """
+
+    if threads > 1000:
+        print("Thread number cannot exceed 1000. To modify this limit, change the code of interface.py.")
+        exit()
+
+    if threads > 100:
+        proceed = input("Thread number exceeds 100. Do you want to proceed? (y/n): ")
+        if proceed.lower() != 'y':
+            exit()
+
     datasets = get_datasets_from_dir(dataset_list)
 
     if create_eos_indexes:
@@ -155,11 +174,11 @@ def main(dataset_list,
             print('Did you forget to "voms-proxy-init -voms cms -rfc"?')
         else:
             import das_json_store
-            das_json_store.main(das_dir, eos_dir, datasets, ignore_eos_store)
+            das_json_store.main(das_dir, eos_dir, datasets, ignore_eos_store, threads)
 
     if create_mcm_store:
         import mcm_store
-        mcm_store.create(datasets, mcm_dir, eos_dir, ignore_eos_store)
+        mcm_store.create(datasets, mcm_dir, eos_dir, threads, ignore_eos_store)
 
     if get_conf_files:
         # check if user has key and cert
@@ -182,11 +201,15 @@ def main(dataset_list,
 
     if create_records:
         import dataset_records
-        dataset_records.main(datasets, eos_dir, das_dir, mcm_dir, conf_dir, doi_file, recid_file)
+        dataset_records.main(datasets, eos_dir, das_dir, mcm_dir, conf_dir, doi_file, recid_file, threads)
 
     if create_conffile_records:
         import conffiles_records
         conffiles_records.main(datasets, eos_dir, das_dir, mcm_dir, conf_dir)
+
+    if lhe_generators:
+        import lhe_generators
+        lhe_generators.main(threads)
 
 
 if __name__ == '__main__':

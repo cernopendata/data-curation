@@ -1,3 +1,4 @@
+#lhe generators
 #!/usr/bin/env python3
 
 import datetime
@@ -17,11 +18,16 @@ urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 RECID_INFO = {}
 exec(open("inputs/recid_info.py", "r").read())  # import RECID_INFO
 
-
 def log(recid, logtype, logmessage):
     """Store a log message of a certain type to record-ID-based log file system."""
-    logdir = f'./lhe_generators/2016-sim/gridpacks/{recid}'
-    
+    recid_rounded = int(recid)//1000 * 1000
+    print("recid:", recid)
+    print("rounded:" recid_rounded)
+    dir = f'./lhe_generators/2017-sim/gridpacks/{recid_rounded}'
+    logdir = f'./lhe_generators/2017-sim/gridpacks/{recid_rounded}/{recid}'
+
+    if not os.path.exists(dir):
+        os.makedirs(dir)
     if not os.path.exists(logdir):
         os.makedirs(logdir)
     with open(f"{logdir}/LOG.txt", "a") as fdesc:
@@ -53,26 +59,25 @@ def cmd_run(cmds, recid):
             stderr=subprocess.PIPE,
             stdout=subprocess.PIPE
         ).stderr.decode()
-        
+
         if err:
             log(recid, "ERROR", f"Error {err}")
             return False
 
     return True
 
-    
+
 def create_lhe_generator(
-    dataset, recid, mcm_dir, gen_store="./lhe_generators/2016-sim"
-):
+    dataset, recid, mcm_dir, gen_store="./lhe_generators/2017-sim"):
     '''
     mcm_dir is the directory of the LHE step
     '''
     mcdb_id = get_from_deep_json(get_mcm_dict(dataset, mcm_dir), "mcdb_id") or 0
-    
+
     if mcdb_id > 1:
 
         parent_dir = f'{gen_store}/mcdb'
-        
+
         '''
         Make dir if it doesn't already exist
         '''
@@ -90,14 +95,14 @@ def create_lhe_generator(
                 f'{mcdb_id} mcdb id exists, skipping'
             )
             return
-    
+
         #We only want .xz or .lhe extensions.
         files = [
             f for f in os.listdir(f'/eos/cms/store/lhe/{mcdb_id}') if os.path.isfile(os.path.join(f'/eos/cms/store/lhe/{mcdb_id}', f)) and
-            (os.path.splitext(f)[1] == '.xz' or os.path.splitext(f)[1] == '.lhe') 
+            (os.path.splitext(f)[1] == '.xz' or os.path.splitext(f)[1] == '.lhe')
         ]
-        
-        
+
+
         #If we have no files then return.
         if len(files) == 0:
             print(
@@ -122,12 +127,12 @@ def create_lhe_generator(
             f"awk '/<!--/,/-->/' {filepath} > {filepath}_header.txt" if generators == ["MCFM701"]
             else f"awk '/<header>/,/<\/header>/' {filepath} > {filepath}_header.txt"
         ]
-        
+
         if cmd_run(cmds, dataset):
             size = get_file_size(f'{filepath}_header.txt')
 
             if size <= 1024:
-                
+
                 #If empty, take comments (assume it is a MCFM701)
                 cmd_run(
                     [
@@ -136,7 +141,7 @@ def create_lhe_generator(
                     ],
                     dataset
                 )
-                
+
                 size = get_file_size(
                     f'{filepath}_header.txt'
                 )
@@ -153,8 +158,8 @@ def create_lhe_generator(
                     f'rm -rf {filepath}'
                 ],
                 dataset
-            )    
-            
+            )
+
     # Find fragment
     fragment = get_from_deep_json(get_mcm_dict(dataset, mcm_dir), "fragment")
     if not fragment:
@@ -314,36 +319,39 @@ def create_lhe_generator(
     for afile in files_all:
         log(recid, "DEBUG", f"- {afile}")
 
+def main(threads):
 
-das_dir = "./inputs/das-json-store"
-mcm_dir = "./inputs/mcm-store"
-with open("./inputs/CMS-2016-mc-datasets.txt", "r") as file:
-    dataset_full_names = file.readlines()
+    das_dir = "./inputs/das-json-store"
+    mcm_dir = "./inputs/mcm-store"
+    with open("./inputs/cms-2017.txt", "r") as file:
+        dataset_full_names = file.readlines()
 
-dataset_nanoaod = [
-    name[:-1] for name in dataset_full_names if name[:-1].endswith("NANOAODSIM")
-]
+    dataset_nanoaod = [
+        name[:-1] for name in dataset_full_names if name[:-1].endswith("NANOAODSIM")
+    ]
 
-i = 1
-l = len(dataset_nanoaod)
+    i = 1
+    l = len(dataset_nanoaod)
 
-for dataset in dataset_nanoaod:
-    recid = RECID_INFO[dataset]
+    for dataset in dataset_nanoaod:
+        recid = RECID_INFO[dataset]
 
-    #print(f"Getting LHE {i}/{l}")
-    log(recid, "INFO", f"Getting LHE {i}/{l}")
-    log(recid, "INFO", f"Found record ID {recid}")
-    log(recid, "INFO", f"Found dataset {dataset}")
+        print(recid)
 
-    lhe_dir = get_lhe(dataset, mcm_dir)
-    if not lhe_dir:
-        log(recid, "WARNING", f"There is no LHE directory. Skipping.")
-        continue
+        #print(f"Getting LHE {i}/{l}")
+        log(recid, "INFO", f"Getting LHE {i}/{l}")
+        log(recid, "INFO", f"Found record ID {recid}")
+        log(recid, "INFO", f"Found dataset {dataset}")
 
-    log(recid, "INFO", f"Found LHE directory {lhe_dir}")
+        lhe_dir = get_lhe(dataset, mcm_dir)
+        if not lhe_dir:
+            log(recid, "WARNING", f"There is no LHE directory. Skipping.")
+            continue
 
-    t = threading.Thread(target=create_lhe_generator, args=(dataset, recid, lhe_dir))
-    t.start()
-    i += 1
-    while threading.activeCount() >= 20:
-        sleep(0.5)  # run 20 parallel
+        log(recid, "INFO", f"Found LHE directory {lhe_dir}")
+
+        t = threading.Thread(target=create_lhe_generator, args=(dataset, recid, lhe_dir))
+        t.start()
+        i += 1
+        while threading.activeCount() >= threads:
+            sleep(0.5)  # run 20 parallel
