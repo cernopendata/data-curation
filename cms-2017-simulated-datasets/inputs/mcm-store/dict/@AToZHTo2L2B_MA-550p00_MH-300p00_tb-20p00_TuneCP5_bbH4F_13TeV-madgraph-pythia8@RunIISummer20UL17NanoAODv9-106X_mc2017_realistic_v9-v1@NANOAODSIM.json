@@ -1,0 +1,273 @@
+{
+ "results": {
+  "total_events": 30000, 
+  "config_id": [
+   "2b2cbd75f9bbe4d1c8a51835b2511c31"
+  ], 
+  "events_per_lumi": 0, 
+  "cmssw_release": "CMSSW_10_6_26", 
+  "mcdb_id": 0, 
+  "transient_output_modules": [
+   []
+  ], 
+  "sequences": [
+   {
+    "eventcontent": [
+     "NANOEDMAODSIM"
+    ], 
+    "runsScenarioForMC": "", 
+    "donotDropOnInput": "", 
+    "extra": "", 
+    "slhc": "", 
+    "runsAndWeightsForMC": "", 
+    "outputCommand": "", 
+    "dropDescendant": false, 
+    "pileup": "", 
+    "hltProcess": "", 
+    "index": -1, 
+    "customise": "", 
+    "custom_conditions": "", 
+    "datatier": [
+     "NANOAODSIM"
+    ], 
+    "processName": "", 
+    "inputCommands": "", 
+    "particle_table": "", 
+    "conditions": "106X_mc2017_realistic_v9", 
+    "harvesting": "", 
+    "triggerResultsProcess": "", 
+    "inputEventContent": "", 
+    "beamspot": "", 
+    "restoreRNDSeeds": "", 
+    "filtername": "", 
+    "repacked": "", 
+    "customise_commands": "", 
+    "step": [
+     "NANO"
+    ], 
+    "gflash": "", 
+    "procModifiers": "", 
+    "magField": "", 
+    "himix": false, 
+    "nThreads": "2", 
+    "scenario": "", 
+    "geometry": "", 
+    "nStreams": 0, 
+    "datamix": "", 
+    "inline_custom": false, 
+    "era": "Run2_2017,run2_nanoAOD_106Xv2"
+   }
+  ], 
+  "block_black_list": [], 
+  "block_white_list": [], 
+  "interested_pwg": [
+   "HIG"
+  ], 
+  "process_string": "", 
+  "ppd_tags": [], 
+  "fragment_tag": "", 
+  "generator_parameters": [], 
+  "flown_with": "flowRunIISummer20UL17NanoAODv9", 
+  "priority": 110085, 
+  "version": 0, 
+  "generators": [
+   "Madgraph_2.6.5", 
+   "", 
+   "Pythia8"
+  ], 
+  "analysis_id": [], 
+  "memory": 3000, 
+  "type": "MCReproc", 
+  "_rev": "19-a6c43632706b2dd3fa3c7a4d1282d313", 
+  "status": "done", 
+  "keep_output": [
+   true
+  ], 
+  "energy": 13, 
+  "tags": [], 
+  "fragment": "", 
+  "_id": "HIG-RunIISummer20UL17NanoAODv9-02982", 
+  "time_event": [
+   0.1796
+  ], 
+  "pwg": "HIG", 
+  "member_of_chain": [
+   "HIG-chain_RunIISummer20UL17wmLHEGEN_flowRunIISummer20UL17SIM_flowRunIISummer20UL17DIGIPremix_flowRunIISummer20UL17HLT_flowRunIISummer20UL17RECO_flowRunIISummer20UL17MiniAODv2_flowRunIISummer20UL17NanoAODv9-02633"
+  ], 
+  "approval": "submit", 
+  "name_of_fragment": "", 
+  "pileup_dataset_name": "", 
+  "pilot": false, 
+  "input_dataset": "/AToZHTo2L2B_MA-550p00_MH-300p00_tb-20p00_TuneCP5_bbH4F_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM", 
+  "reqmgr_name": [
+   {
+    "content": {
+     "pdmv_type": "TaskChain", 
+     "pdmv_status_from_reqmngr": "normal-archived", 
+     "pdmv_prep_id": "task_HIG-RunIISummer20UL17NanoAODv9-02982", 
+     "pdmv_dataset_statuses": {
+      "/AToZHTo2L2B_MA-550p00_MH-300p00_tb-20p00_TuneCP5_bbH4F_13TeV-madgraph-pythia8/RunIISummer20UL17NanoAODv9-106X_mc2017_realistic_v9-v1/NANOAODSIM": {
+       "pdmv_evts_in_DAS": 30000, 
+       "pdmv_status_in_DAS": "VALID", 
+       "pdmv_open_evts_in_DAS": 0
+      }
+     }, 
+     "pdmv_status_history_from_reqmngr": [
+      "new", 
+      "assignment-approved", 
+      "assigned", 
+      "staging", 
+      "staged", 
+      "acquired", 
+      "running-open", 
+      "running-closed", 
+      "completed", 
+      "closed-out", 
+      "announced", 
+      "normal-archived"
+     ], 
+     "pdmv_dataset_list": [
+      "/AToZHTo2L2B_MA-550p00_MH-300p00_tb-20p00_TuneCP5_bbH4F_13TeV-madgraph-pythia8/RunIISummer20UL17NanoAODv9-106X_mc2017_realistic_v9-v1/NANOAODSIM"
+     ], 
+     "pdmv_submission_date": "220327", 
+     "pdmv_evts_in_DAS": 30000, 
+     "pdmv_status_in_DAS": "VALID", 
+     "pdmv_dataset_name": "/AToZHTo2L2B_MA-550p00_MH-300p00_tb-20p00_TuneCP5_bbH4F_13TeV-madgraph-pythia8/RunIISummer20UL17NanoAODv9-106X_mc2017_realistic_v9-v1/NANOAODSIM", 
+     "pdmv_monitor_time": "Wed Mar 30 18:14:58 2022", 
+     "pdmv_present_priority": 110085, 
+     "pdmv_submission_time": "235014", 
+     "pdmv_open_evts_in_DAS": 0
+    }, 
+    "name": "pdmvserv_task_HIG-RunIISummer20UL17NanoAODv9-02982__v1_T_220328_015014_5283"
+   }
+  ], 
+  "prepid": "HIG-RunIISummer20UL17NanoAODv9-02982", 
+  "extension": 0, 
+  "size_event": [
+   33.1848
+  ], 
+  "notes": "AToZHTo2L2B MA-550p00 MH-300p00 tb-20p00 TuneCP5 bbH4F 13TeV-madgraph-pythia8", 
+  "completed_events": 30000, 
+  "history": [
+   {
+    "action": "created", 
+    "updater": {
+     "submission_date": "2022-03-28-01-49", 
+     "author_email": "pdmv.service@cern.ch", 
+     "author_username": "pdmvserv", 
+     "author_name": "PdmV Service"
+    }
+   }, 
+   {
+    "action": "join chain", 
+    "step": "HIG-chain_RunIISummer20UL17wmLHEGEN_flowRunIISummer20UL17SIM_flowRunIISummer20UL17DIGIPremix_flowRunIISummer20UL17HLT_flowRunIISummer20UL17RECO_flowRunIISummer20UL17MiniAODv2_flowRunIISummer20UL17NanoAODv9-02633", 
+    "updater": {
+     "submission_date": "2022-03-28-01-49", 
+     "author_email": "pdmv.service@cern.ch", 
+     "author_username": "pdmvserv", 
+     "author_name": "PdmV Service"
+    }
+   }, 
+   {
+    "action": "flow", 
+    "step": "HIG-chain_RunIISummer20UL17wmLHEGEN_flowRunIISummer20UL17SIM_flowRunIISummer20UL17DIGIPremix_flowRunIISummer20UL17HLT_flowRunIISummer20UL17RECO_flowRunIISummer20UL17MiniAODv2_flowRunIISummer20UL17NanoAODv9-02633", 
+    "updater": {
+     "submission_date": "2022-03-28-01-49", 
+     "author_email": "pdmv.service@cern.ch", 
+     "author_username": "pdmvserv", 
+     "author_name": "PdmV Service"
+    }
+   }, 
+   {
+    "action": "priority", 
+    "step": 85000, 
+    "updater": {
+     "submission_date": "2022-03-28-01-49", 
+     "author_email": "pdmv.service@cern.ch", 
+     "author_username": "pdmvserv", 
+     "author_name": "PdmV Service"
+    }
+   }, 
+   {
+    "action": "approve", 
+    "step": "approve", 
+    "updater": {
+     "submission_date": "2022-03-28-01-49", 
+     "author_email": "pdmv.service@cern.ch", 
+     "author_username": "pdmvserv", 
+     "author_name": "PdmV Service"
+    }
+   }, 
+   {
+    "action": "set status", 
+    "step": "approved", 
+    "updater": {
+     "submission_date": "2022-03-28-01-49", 
+     "author_email": "pdmv.service@cern.ch", 
+     "author_username": "pdmvserv", 
+     "author_name": "PdmV Service"
+    }
+   }, 
+   {
+    "action": "approve", 
+    "step": "submit", 
+    "updater": {
+     "submission_date": "2022-03-28-01-49", 
+     "author_email": "pdmv.service@cern.ch", 
+     "author_username": "pdmvserv", 
+     "author_name": "PdmV Service"
+    }
+   }, 
+   {
+    "action": "inject", 
+    "step": "Task_RunIISummer20UL17NanoAODv9-00135", 
+    "updater": {
+     "submission_date": "2022-03-28-01-50", 
+     "author_email": "", 
+     "author_username": "automatic", 
+     "author_name": ""
+    }
+   }, 
+   {
+    "action": "set status", 
+    "step": "submitted", 
+    "updater": {
+     "submission_date": "2022-03-28-01-50", 
+     "author_email": "", 
+     "author_username": "automatic", 
+     "author_name": ""
+    }
+   }, 
+   {
+    "action": "priority", 
+    "step": 110085, 
+    "updater": {
+     "submission_date": "2022-03-28-09-53", 
+     "author_email": "jordan.martins@cern.ch", 
+     "author_username": "jordanm", 
+     "author_name": "Jordan Martins"
+    }
+   }, 
+   {
+    "action": "set status", 
+    "step": "done", 
+    "updater": {
+     "submission_date": "2022-03-29-01-48", 
+     "author_email": "pdmv.service@cern.ch", 
+     "author_username": "pdmvserv", 
+     "author_name": "PdmV Service"
+    }
+   }
+  ], 
+  "output_dataset": [
+   "/AToZHTo2L2B_MA-550p00_MH-300p00_tb-20p00_TuneCP5_bbH4F_13TeV-madgraph-pythia8/RunIISummer20UL17NanoAODv9-106X_mc2017_realistic_v9-v1/NANOAODSIM"
+  ], 
+  "member_of_campaign": "RunIISummer20UL17NanoAODv9", 
+  "validation": {
+   "content": "all", 
+   "valid": false
+  }, 
+  "dataset_name": "AToZHTo2L2B_MA-550p00_MH-300p00_tb-20p00_TuneCP5_bbH4F_13TeV-madgraph-pythia8", 
+  "cadi_line": ""
+ }
+}

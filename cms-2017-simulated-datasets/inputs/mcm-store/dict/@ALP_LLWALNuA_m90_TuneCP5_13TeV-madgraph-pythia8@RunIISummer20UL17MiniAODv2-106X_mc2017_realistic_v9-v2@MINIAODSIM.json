@@ -1,0 +1,261 @@
+{
+ "results": {
+  "total_events": 1000000, 
+  "config_id": [
+   "05f79b143bd015d83d3a6670ba49ffe7"
+  ], 
+  "events_per_lumi": 0, 
+  "cmssw_release": "CMSSW_10_6_20", 
+  "mcdb_id": 0, 
+  "transient_output_modules": [
+   []
+  ], 
+  "sequences": [
+   {
+    "eventcontent": [
+     "MINIAODSIM"
+    ], 
+    "runsScenarioForMC": "", 
+    "donotDropOnInput": "", 
+    "extra": "--runUnscheduled", 
+    "slhc": "", 
+    "runsAndWeightsForMC": "", 
+    "outputCommand": "", 
+    "dropDescendant": false, 
+    "pileup": "", 
+    "hltProcess": "", 
+    "index": -1, 
+    "customise": "", 
+    "custom_conditions": "", 
+    "datatier": [
+     "MINIAODSIM"
+    ], 
+    "processName": "", 
+    "inputCommands": "", 
+    "particle_table": "", 
+    "conditions": "106X_mc2017_realistic_v9", 
+    "harvesting": "", 
+    "triggerResultsProcess": "", 
+    "inputEventContent": "", 
+    "beamspot": "", 
+    "restoreRNDSeeds": "", 
+    "filtername": "", 
+    "repacked": "", 
+    "customise_commands": "", 
+    "step": [
+     "PAT"
+    ], 
+    "gflash": "", 
+    "procModifiers": "run2_miniAOD_UL", 
+    "magField": "", 
+    "himix": false, 
+    "nThreads": "4", 
+    "scenario": "", 
+    "geometry": "DB:Extended", 
+    "nStreams": 0, 
+    "datamix": "", 
+    "inline_custom": false, 
+    "era": "Run2_2017"
+   }
+  ], 
+  "block_black_list": [], 
+  "block_white_list": [], 
+  "interested_pwg": [
+   "SMP"
+  ], 
+  "process_string": "", 
+  "ppd_tags": [], 
+  "fragment_tag": "", 
+  "generator_parameters": [], 
+  "flown_with": "flowRunIISummer20UL17MiniAODv2", 
+  "priority": 85001, 
+  "version": 0, 
+  "generators": [
+   "MadGraph"
+  ], 
+  "analysis_id": [], 
+  "memory": 7800, 
+  "type": "MCReproc", 
+  "_rev": "20-892c81b55125ababdc8ddcbf2c195aaa", 
+  "status": "done", 
+  "keep_output": [
+   true
+  ], 
+  "energy": 13, 
+  "tags": [], 
+  "fragment": "", 
+  "_id": "SMP-RunIISummer20UL17MiniAODv2-00267", 
+  "time_event": [
+   0.3391
+  ], 
+  "pwg": "SMP", 
+  "member_of_chain": [
+   "SMP-chain_RunIISummer20UL17wmLHEGEN_flowRunIISummer20UL17SIM_flowRunIISummer20UL17DIGIPremix_flowRunIISummer20UL17HLT_flowRunIISummer20UL17RECO_flowRunIISummer20UL17MiniAODv2_flowRunIISummer20UL17NanoAODv9-00259"
+  ], 
+  "approval": "submit", 
+  "name_of_fragment": "", 
+  "pileup_dataset_name": "", 
+  "pilot": false, 
+  "input_dataset": "/ALP_LLWALNuA_m90_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17RECO-106X_mc2017_realistic_v6-v2/AODSIM", 
+  "reqmgr_name": [
+   {
+    "content": {}, 
+    "name": "pdmvserv_task_SMP-RunIISummer20UL17wmLHEGEN-00587__v1_T_230118_131300_4905"
+   }, 
+   {
+    "content": {
+     "pdmv_type": "StepChain", 
+     "pdmv_status_from_reqmngr": "normal-archived", 
+     "pdmv_prep_id": "task_SMP-RunIISummer20UL17wmLHEGEN-00587", 
+     "pdmv_dataset_statuses": {
+      "/ALP_LLWALNuA_m90_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17RECO-106X_mc2017_realistic_v6-v2/AODSIM": {
+       "pdmv_evts_in_DAS": 992000, 
+       "pdmv_status_in_DAS": "VALID", 
+       "pdmv_open_evts_in_DAS": 0
+      }, 
+      "/ALP_LLWALNuA_m90_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM": {
+       "pdmv_evts_in_DAS": 979000, 
+       "pdmv_status_in_DAS": "VALID", 
+       "pdmv_open_evts_in_DAS": 0
+      }
+     }, 
+     "pdmv_status_history_from_reqmngr": [
+      "new", 
+      "assignment-approved", 
+      "assigned", 
+      "staging", 
+      "staged", 
+      "acquired", 
+      "running-open", 
+      "running-closed", 
+      "completed", 
+      "closed-out", 
+      "announced", 
+      "normal-archived"
+     ], 
+     "pdmv_dataset_list": [
+      "/ALP_LLWALNuA_m90_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17RECO-106X_mc2017_realistic_v6-v2/AODSIM", 
+      "/ALP_LLWALNuA_m90_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM"
+     ], 
+     "pdmv_submission_date": "230118", 
+     "pdmv_evts_in_DAS": 992000, 
+     "pdmv_status_in_DAS": "VALID", 
+     "pdmv_dataset_name": "/ALP_LLWALNuA_m90_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17RECO-106X_mc2017_realistic_v6-v2/AODSIM", 
+     "pdmv_monitor_time": "Tue Jan 31 19:21:33 2023", 
+     "pdmv_present_priority": 85001, 
+     "pdmv_submission_time": "131914", 
+     "pdmv_open_evts_in_DAS": 0
+    }, 
+    "name": "cmsunified_task_SMP-RunIISummer20UL17wmLHEGEN-00587__v1_T_230118_131914_8978"
+   }
+  ], 
+  "prepid": "SMP-RunIISummer20UL17MiniAODv2-00267", 
+  "extension": 0, 
+  "size_event": [
+   95.9685
+  ], 
+  "notes": "", 
+  "completed_events": 979000, 
+  "history": [
+   {
+    "action": "created", 
+    "updater": {
+     "submission_date": "2023-01-18-14-11", 
+     "author_email": "ozgun.kara@cern.ch", 
+     "author_username": "okara", 
+     "author_name": "Ozgun Kara"
+    }
+   }, 
+   {
+    "action": "join chain", 
+    "step": "SMP-chain_RunIISummer20UL17wmLHEGEN_flowRunIISummer20UL17SIM_flowRunIISummer20UL17DIGIPremix_flowRunIISummer20UL17HLT_flowRunIISummer20UL17RECO_flowRunIISummer20UL17MiniAODv2_flowRunIISummer20UL17NanoAODv9-00259", 
+    "updater": {
+     "submission_date": "2023-01-18-14-11", 
+     "author_email": "ozgun.kara@cern.ch", 
+     "author_username": "okara", 
+     "author_name": "Ozgun Kara"
+    }
+   }, 
+   {
+    "action": "priority", 
+    "step": 85000, 
+    "updater": {
+     "submission_date": "2023-01-18-14-11", 
+     "author_email": "ozgun.kara@cern.ch", 
+     "author_username": "okara", 
+     "author_name": "Ozgun Kara"
+    }
+   }, 
+   {
+    "action": "approve", 
+    "step": "approve", 
+    "updater": {
+     "submission_date": "2023-01-18-14-11", 
+     "author_email": "ozgun.kara@cern.ch", 
+     "author_username": "okara", 
+     "author_name": "Ozgun Kara"
+    }
+   }, 
+   {
+    "action": "set status", 
+    "step": "approved", 
+    "updater": {
+     "submission_date": "2023-01-18-14-11", 
+     "author_email": "ozgun.kara@cern.ch", 
+     "author_username": "okara", 
+     "author_name": "Ozgun Kara"
+    }
+   }, 
+   {
+    "action": "inject", 
+    "step": "Task_RunIISummer20UL17wmLHEGEN-02438", 
+    "updater": {
+     "submission_date": "2023-01-18-14-13", 
+     "author_email": "", 
+     "author_username": "automatic", 
+     "author_name": ""
+    }
+   }, 
+   {
+    "action": "set status", 
+    "step": "submitted", 
+    "updater": {
+     "submission_date": "2023-01-18-14-13", 
+     "author_email": "", 
+     "author_username": "automatic", 
+     "author_name": ""
+    }
+   }, 
+   {
+    "action": "priority", 
+    "step": 85001, 
+    "updater": {
+     "submission_date": "2023-01-25-20-34", 
+     "author_email": "pdmv.service@cern.ch", 
+     "author_username": "pdmvserv", 
+     "author_name": "PdmV Service"
+    }
+   }, 
+   {
+    "action": "set status", 
+    "step": "done", 
+    "updater": {
+     "submission_date": "2023-01-29-02-55", 
+     "author_email": "pdmv.service@cern.ch", 
+     "author_username": "pdmvserv", 
+     "author_name": "PdmV Service"
+    }
+   }
+  ], 
+  "output_dataset": [
+   "/ALP_LLWALNuA_m90_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM"
+  ], 
+  "member_of_campaign": "RunIISummer20UL17MiniAODv2", 
+  "validation": {
+   "content": "all", 
+   "valid": false
+  }, 
+  "dataset_name": "ALP_LLWALNuA_m90_TuneCP5_13TeV-madgraph-pythia8", 
+  "cadi_line": ""
+ }
+}

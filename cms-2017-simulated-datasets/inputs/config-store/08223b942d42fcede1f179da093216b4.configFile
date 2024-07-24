@@ -1,0 +1,108 @@
+# Auto generated configuration file
+# using: 
+# Revision: 1.19 
+# Source: /local/reps/CMSSW/CMSSW/Configuration/Applications/python/ConfigBuilder.py,v 
+# with command line options: --python_filename HIG-RunIISummer20UL17NanoAODv9-01986_1_cfg.py --eventcontent NANOEDMAODSIM --customise Configuration/DataProcessing/Utils.addMonitoring --datatier NANOAODSIM --fileout file:HIG-RunIISummer20UL17NanoAODv9-01986.root --conditions 106X_mc2017_realistic_v9 --step NANO --nThreads 2 --filein dbs:/MSSMGluGluToBBHToMuMu_MA-150_Tanb-20_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM --era Run2_2017,run2_nanoAOD_106Xv2 --no_exec --mc -n 10000
+import FWCore.ParameterSet.Config as cms
+
+from Configuration.Eras.Era_Run2_2017_cff import Run2_2017
+from Configuration.Eras.Modifier_run2_nanoAOD_106Xv2_cff import run2_nanoAOD_106Xv2
+
+process = cms.Process('NANO',Run2_2017,run2_nanoAOD_106Xv2)
+
+# import of standard configurations
+process.load('Configuration.StandardSequences.Services_cff')
+process.load('SimGeneral.HepPDTESSource.pythiapdt_cfi')
+process.load('FWCore.MessageService.MessageLogger_cfi')
+process.load('Configuration.EventContent.EventContent_cff')
+process.load('SimGeneral.MixingModule.mixNoPU_cfi')
+process.load('Configuration.StandardSequences.GeometryRecoDB_cff')
+process.load('Configuration.StandardSequences.MagneticField_cff')
+process.load('PhysicsTools.NanoAOD.nano_cff')
+process.load('Configuration.StandardSequences.EndOfProcess_cff')
+process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
+
+process.maxEvents = cms.untracked.PSet(
+    input = cms.untracked.int32(10000)
+)
+
+# Input source
+process.source = cms.Source("PoolSource",
+    fileNames = cms.untracked.vstring(
+        '/store/mc/RunIISummer20UL17MiniAODv2/MSSMGluGluToBBHToMuMu_MA-150_Tanb-20_TuneCP5_13TeV-powheg-pythia8/MINIAODSIM/106X_mc2017_realistic_v9-v1/2530000/3A1E11C4-63A4-1F46-9E7E-B6AD3ED8EFC2.root', 
+        '/store/mc/RunIISummer20UL17MiniAODv2/MSSMGluGluToBBHToMuMu_MA-150_Tanb-20_TuneCP5_13TeV-powheg-pythia8/MINIAODSIM/106X_mc2017_realistic_v9-v1/2530000/4F5411AA-A490-9447-AEE7-8F2EC469CA2C.root', 
+        '/store/mc/RunIISummer20UL17MiniAODv2/MSSMGluGluToBBHToMuMu_MA-150_Tanb-20_TuneCP5_13TeV-powheg-pythia8/MINIAODSIM/106X_mc2017_realistic_v9-v1/2530000/99B2EF6B-F3BF-F44D-9CA0-F3F3B2994462.root', 
+        '/store/mc/RunIISummer20UL17MiniAODv2/MSSMGluGluToBBHToMuMu_MA-150_Tanb-20_TuneCP5_13TeV-powheg-pythia8/MINIAODSIM/106X_mc2017_realistic_v9-v1/2530000/9BF72BA6-4A8F-3044-AD29-D2F2BF21311D.root', 
+        '/store/mc/RunIISummer20UL17MiniAODv2/MSSMGluGluToBBHToMuMu_MA-150_Tanb-20_TuneCP5_13TeV-powheg-pythia8/MINIAODSIM/106X_mc2017_realistic_v9-v1/2530000/DE79DA4D-0768-7549-9BEA-861615BF75D4.root', 
+        '/store/mc/RunIISummer20UL17MiniAODv2/MSSMGluGluToBBHToMuMu_MA-150_Tanb-20_TuneCP5_13TeV-powheg-pythia8/MINIAODSIM/106X_mc2017_realistic_v9-v1/2530000/FCB0B00C-EA87-FE4B-8362-ED11B21F9953.root'
+    ),
+    secondaryFileNames = cms.untracked.vstring()
+)
+
+process.options = cms.untracked.PSet(
+
+)
+
+# Production Info
+process.configurationMetadata = cms.untracked.PSet(
+    annotation = cms.untracked.string('--python_filename nevts:10000'),
+    name = cms.untracked.string('Applications'),
+    version = cms.untracked.string('$Revision: 1.19 $')
+)
+
+# Output definition
+
+process.NANOEDMAODSIMoutput = cms.OutputModule("PoolOutputModule",
+    compressionAlgorithm = cms.untracked.string('LZMA'),
+    compressionLevel = cms.untracked.int32(9),
+    dataset = cms.untracked.PSet(
+        dataTier = cms.untracked.string('NANOAODSIM'),
+        filterName = cms.untracked.string('')
+    ),
+    fileName = cms.untracked.string('file:HIG-RunIISummer20UL17NanoAODv9-01986.root'),
+    outputCommands = process.NANOAODSIMEventContent.outputCommands
+)
+
+# Additional output definition
+
+# Other statements
+from Configuration.AlCa.GlobalTag import GlobalTag
+process.GlobalTag = GlobalTag(process.GlobalTag, '106X_mc2017_realistic_v9', '')
+
+# Path and EndPath definitions
+process.nanoAOD_step = cms.Path(process.nanoSequenceMC)
+process.endjob_step = cms.EndPath(process.endOfProcess)
+process.NANOEDMAODSIMoutput_step = cms.EndPath(process.NANOEDMAODSIMoutput)
+
+# Schedule definition
+process.schedule = cms.Schedule(process.nanoAOD_step,process.endjob_step,process.NANOEDMAODSIMoutput_step)
+from PhysicsTools.PatAlgos.tools.helpers import associatePatAlgosToolsTask
+associatePatAlgosToolsTask(process)
+
+#Setup FWK for multithreaded
+process.options.numberOfThreads=cms.untracked.uint32(2)
+process.options.numberOfStreams=cms.untracked.uint32(0)
+process.options.numberOfConcurrentLuminosityBlocks=cms.untracked.uint32(1)
+
+# customisation of the process.
+
+# Automatic addition of the customisation function from PhysicsTools.NanoAOD.nano_cff
+from PhysicsTools.NanoAOD.nano_cff import nanoAOD_customizeMC 
+
+#call to customisation function nanoAOD_customizeMC imported from PhysicsTools.NanoAOD.nano_cff
+process = nanoAOD_customizeMC(process)
+
+# Automatic addition of the customisation function from Configuration.DataProcessing.Utils
+from Configuration.DataProcessing.Utils import addMonitoring 
+
+#call to customisation function addMonitoring imported from Configuration.DataProcessing.Utils
+process = addMonitoring(process)
+
+# End of customisation functions
+
+# Customisation from command line
+
+# Add early deletion of temporary data products to reduce peak memory need
+from Configuration.StandardSequences.earlyDeleteSettings_cff import customiseEarlyDelete
+process = customiseEarlyDelete(process)
+# End adding early deletion

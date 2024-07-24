@@ -1,0 +1,3 @@
+[
+{"das":{"expire":1721747312,"instance":"prod/global","primary_key":"parent.name","record":1,"services":["dbs3:datasetparents"]},"parent":[{"name":"/AToTauTau_ALP_M-25_HT-100to400_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17RECO-106X_mc2017_realistic_v6-v2/AODSIM","parent_dataset":"/AToTauTau_ALP_M-25_HT-100to400_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17RECO-106X_mc2017_realistic_v6-v2/AODSIM","parent_dataset_id":14747979,"this_dataset":"/AToTauTau_ALP_M-25_HT-100to400_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM"}],"qhash":"15a69ed42e3cea09f2114ee9fb155026"}
+]

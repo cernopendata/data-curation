@@ -1,0 +1,3 @@
+[
+{"das":{"expire":1721747316,"instance":"prod/global","primary_key":"parent.name","record":1,"services":["dbs3:datasetparents"]},"parent":[{"name":"/ALP_LLWALNuA_m110_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM","parent_dataset":"/ALP_LLWALNuA_m110_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM","parent_dataset_id":14606552,"this_dataset":"/ALP_LLWALNuA_m110_TuneCP5_13TeV-madgraph-pythia8/RunIISummer20UL17NanoAODv9-106X_mc2017_realistic_v9-v1/NANOAODSIM"}],"qhash":"ecbf986a68fc1267afc98fb7e04d0ecd"}
+]

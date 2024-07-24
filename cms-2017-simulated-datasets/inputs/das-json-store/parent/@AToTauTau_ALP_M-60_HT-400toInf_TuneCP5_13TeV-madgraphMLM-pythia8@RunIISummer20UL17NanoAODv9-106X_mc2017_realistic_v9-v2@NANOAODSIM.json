@@ -1,0 +1,3 @@
+[
+{"das":{"expire":1721747317,"instance":"prod/global","primary_key":"parent.name","record":1,"services":["dbs3:datasetparents"]},"parent":[{"name":"/AToTauTau_ALP_M-60_HT-400toInf_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM","parent_dataset":"/AToTauTau_ALP_M-60_HT-400toInf_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM","parent_dataset_id":14745777,"this_dataset":"/AToTauTau_ALP_M-60_HT-400toInf_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL17NanoAODv9-106X_mc2017_realistic_v9-v2/NANOAODSIM"}],"qhash":"5f3f2f21f3c33540abbe48603e2f11e9"}
+]

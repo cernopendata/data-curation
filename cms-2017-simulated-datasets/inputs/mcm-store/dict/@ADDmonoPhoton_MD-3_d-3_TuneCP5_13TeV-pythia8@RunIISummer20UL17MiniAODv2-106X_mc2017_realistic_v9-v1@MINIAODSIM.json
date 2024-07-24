@@ -1,0 +1,331 @@
+{
+ "results": {
+  "total_events": 50000, 
+  "config_id": [
+   "a842d64c90dce4329c49a9806293794d"
+  ], 
+  "events_per_lumi": 0, 
+  "cmssw_release": "CMSSW_10_6_20", 
+  "mcdb_id": -1, 
+  "transient_output_modules": [
+   []
+  ], 
+  "sequences": [
+   {
+    "eventcontent": [
+     "MINIAODSIM"
+    ], 
+    "runsScenarioForMC": "", 
+    "donotDropOnInput": "", 
+    "extra": "--runUnscheduled", 
+    "slhc": "", 
+    "runsAndWeightsForMC": "", 
+    "outputCommand": "", 
+    "dropDescendant": false, 
+    "pileup": "", 
+    "hltProcess": "", 
+    "index": -1, 
+    "customise": "", 
+    "custom_conditions": "", 
+    "datatier": [
+     "MINIAODSIM"
+    ], 
+    "processName": "", 
+    "inputCommands": "", 
+    "particle_table": "", 
+    "conditions": "106X_mc2017_realistic_v9", 
+    "harvesting": "", 
+    "triggerResultsProcess": "", 
+    "inputEventContent": "", 
+    "beamspot": "", 
+    "restoreRNDSeeds": "", 
+    "filtername": "", 
+    "repacked": "", 
+    "customise_commands": "", 
+    "step": [
+     "PAT"
+    ], 
+    "gflash": "", 
+    "procModifiers": "run2_miniAOD_UL", 
+    "magField": "", 
+    "himix": false, 
+    "nThreads": "8", 
+    "scenario": "", 
+    "geometry": "DB:Extended", 
+    "nStreams": 0, 
+    "datamix": "", 
+    "inline_custom": false, 
+    "era": "Run2_2017"
+   }
+  ], 
+  "block_black_list": [], 
+  "block_white_list": [], 
+  "interested_pwg": [
+   "EXO"
+  ], 
+  "process_string": "", 
+  "ppd_tags": [], 
+  "fragment_tag": "", 
+  "generator_parameters": [], 
+  "flown_with": "flowRunIISummer20UL17MiniAODv2", 
+  "priority": 110001, 
+  "version": 0, 
+  "generators": [
+   "Pythia"
+  ], 
+  "analysis_id": [], 
+  "memory": 15900, 
+  "type": "MCReproc", 
+  "_rev": "64-2686c03ae0e56cf7afc99e38f9eaa506", 
+  "status": "done", 
+  "keep_output": [
+   true
+  ], 
+  "energy": 13, 
+  "tags": [], 
+  "fragment": "", 
+  "_id": "EXO-RunIISummer20UL17MiniAODv2-00092", 
+  "time_event": [
+   0.3391
+  ], 
+  "pwg": "EXO", 
+  "member_of_chain": [
+   "EXO-chain_RunIISummer20UL17GEN_flowRunIISummer20UL17SIM_flowRunIISummer20UL17DIGIPremix_flowRunIISummer20UL17HLT_flowRunIISummer20UL17RECO_flowRunIISummer20UL17MiniAODv2_flowRunIISummer20UL17NanoAODv9-00022"
+  ], 
+  "approval": "submit", 
+  "name_of_fragment": "", 
+  "pileup_dataset_name": "", 
+  "pilot": false, 
+  "input_dataset": "/ADDmonoPhoton_MD-3_d-3_TuneCP5_13TeV-pythia8/RunIISummer20UL17RECO-106X_mc2017_realistic_v6-v2/AODSIM", 
+  "reqmgr_name": [
+   {
+    "content": {
+     "pdmv_type": "TaskChain", 
+     "pdmv_status_from_reqmngr": "normal-archived", 
+     "pdmv_prep_id": "task_EXO-RunIISummer20UL17MiniAODv2-00092", 
+     "pdmv_dataset_statuses": {
+      "/ADDmonoPhoton_MD-3_d-3_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM": {
+       "pdmv_evts_in_DAS": 50000, 
+       "pdmv_status_in_DAS": "VALID", 
+       "pdmv_open_evts_in_DAS": 0
+      }
+     }, 
+     "pdmv_status_history_from_reqmngr": [
+      "new", 
+      "assignment-approved", 
+      "assigned", 
+      "staging", 
+      "staged", 
+      "acquired", 
+      "running-open", 
+      "running-closed", 
+      "completed", 
+      "closed-out", 
+      "announced", 
+      "normal-archived"
+     ], 
+     "pdmv_dataset_list": [
+      "/ADDmonoPhoton_MD-3_d-3_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM"
+     ], 
+     "pdmv_submission_date": "210302", 
+     "pdmv_evts_in_DAS": 50000, 
+     "pdmv_status_in_DAS": "VALID", 
+     "pdmv_dataset_name": "/ADDmonoPhoton_MD-3_d-3_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM", 
+     "pdmv_monitor_time": "Sat Mar 13 23:16:11 2021", 
+     "pdmv_present_priority": 110001, 
+     "pdmv_submission_time": "091252", 
+     "pdmv_open_evts_in_DAS": 0
+    }, 
+    "name": "pdmvserv_task_EXO-RunIISummer20UL17MiniAODv2-00092__v1_T_210302_101252_9236"
+   }
+  ], 
+  "prepid": "EXO-RunIISummer20UL17MiniAODv2-00092", 
+  "extension": 0, 
+  "size_event": [
+   95.9685
+  ], 
+  "notes": "Request EXO-RunIISummer20UL17MiniAODv2-00092 is pronounced stuck at 2021-03-07 16:21:02 as last status of pdmvserv_task_EXO-RunIISummer20UL17MiniAODv2-00092__v1_T_210302_101252_9236 is new at 2021-03-02 10:12:52. Request is still new. Threshold is 5 days.", 
+  "completed_events": 50000, 
+  "history": [
+   {
+    "action": "created", 
+    "updater": {
+     "submission_date": "2020-12-17-20-14", 
+     "author_email": "jordan.martins@cern.ch", 
+     "author_username": "jordanm", 
+     "author_name": "Jordan Martins"
+    }
+   }, 
+   {
+    "action": "join chain", 
+    "step": "EXO-chain_RunIISummer20UL17GEN_flowRunIISummer20UL17SIM_flowRunIISummer20UL17DIGIPremix_flowRunIISummer20UL17HLT_flowRunIISummer20UL17RECO_flowRunIISummer20UL17MiniAODv2-00035", 
+    "updater": {
+     "submission_date": "2020-12-17-20-14", 
+     "author_email": "jordan.martins@cern.ch", 
+     "author_username": "jordanm", 
+     "author_name": "Jordan Martins"
+    }
+   }, 
+   {
+    "action": "priority", 
+    "step": 110000, 
+    "updater": {
+     "submission_date": "2020-12-17-20-14", 
+     "author_email": "jordan.martins@cern.ch", 
+     "author_username": "jordanm", 
+     "author_name": "Jordan Martins"
+    }
+   }, 
+   {
+    "action": "flow", 
+    "step": "EXO-chain_RunIISummer20UL17GEN_flowRunIISummer20UL17SIM_flowRunIISummer20UL17DIGIPremix_flowRunIISummer20UL17HLT_flowRunIISummer20UL17RECO_flowRunIISummer20UL17MiniAODv2-00035", 
+    "updater": {
+     "submission_date": "2021-03-02-10-12", 
+     "author_email": "pdmv.service@cern.ch", 
+     "author_username": "pdmvserv", 
+     "author_name": "PdmV Service"
+    }
+   }, 
+   {
+    "action": "approve", 
+    "step": "approve", 
+    "updater": {
+     "submission_date": "2021-03-02-10-12", 
+     "author_email": "pdmv.service@cern.ch", 
+     "author_username": "pdmvserv", 
+     "author_name": "PdmV Service"
+    }
+   }, 
+   {
+    "action": "set status", 
+    "step": "approved", 
+    "updater": {
+     "submission_date": "2021-03-02-10-12", 
+     "author_email": "pdmv.service@cern.ch", 
+     "author_username": "pdmvserv", 
+     "author_name": "PdmV Service"
+    }
+   }, 
+   {
+    "action": "approve", 
+    "step": "submit", 
+    "updater": {
+     "submission_date": "2021-03-02-10-12", 
+     "author_email": "pdmv.service@cern.ch", 
+     "author_username": "pdmvserv", 
+     "author_name": "PdmV Service"
+    }
+   }, 
+   {
+    "action": "inject", 
+    "step": "RunIISummer20UL17MiniAODv2-00021", 
+    "updater": {
+     "submission_date": "2021-03-02-10-12", 
+     "author_email": "", 
+     "author_username": "automatic", 
+     "author_name": ""
+    }
+   }, 
+   {
+    "action": "set status", 
+    "step": "submitted", 
+    "updater": {
+     "submission_date": "2021-03-02-10-12", 
+     "author_email": "", 
+     "author_username": "automatic", 
+     "author_name": ""
+    }
+   }, 
+   {
+    "action": "update", 
+    "step": "notes, tags", 
+    "updater": {
+     "submission_date": "2021-03-07-16-21", 
+     "author_email": "pdmv.service@cern.ch", 
+     "author_username": "pdmvserv", 
+     "author_name": "PdmV Service"
+    }
+   }, 
+   {
+    "action": "update", 
+    "step": "tags", 
+    "updater": {
+     "submission_date": "2021-03-09-16-21", 
+     "author_email": "pdmv.service@cern.ch", 
+     "author_username": "pdmvserv", 
+     "author_name": "PdmV Service"
+    }
+   }, 
+   {
+    "action": "priority", 
+    "step": 110001, 
+    "updater": {
+     "submission_date": "2021-03-09-20-36", 
+     "author_email": "pdmv.service@cern.ch", 
+     "author_username": "pdmvserv", 
+     "author_name": "PdmV Service"
+    }
+   }, 
+   {
+    "action": "wm priority", 
+    "step": 110000, 
+    "updater": {
+     "submission_date": "2021-03-09-20-51", 
+     "author_email": "pdmv.service@cern.ch", 
+     "author_username": "pdmvserv", 
+     "author_name": "PdmV Service"
+    }
+   }, 
+   {
+    "action": "wm priority", 
+    "step": 110001, 
+    "updater": {
+     "submission_date": "2021-03-09-22-17", 
+     "author_email": "pdmv.service@cern.ch", 
+     "author_username": "pdmvserv", 
+     "author_name": "PdmV Service"
+    }
+   }, 
+   {
+    "action": "set status", 
+    "step": "done", 
+    "updater": {
+     "submission_date": "2021-03-12-03-45", 
+     "author_email": "pdmv.service@cern.ch", 
+     "author_username": "pdmvserv", 
+     "author_name": "PdmV Service"
+    }
+   }, 
+   {
+    "action": "join chain", 
+    "step": "EXO-chain_RunIISummer20UL17GEN_flowRunIISummer20UL17SIM_flowRunIISummer20UL17DIGIPremix_flowRunIISummer20UL17HLT_flowRunIISummer20UL17RECO_flowRunIISummer20UL17MiniAODv2_flowRunIISummer20UL17NanoAODv9-00022", 
+    "updater": {
+     "submission_date": "2021-07-17-12-40", 
+     "author_email": "jordan.martins@cern.ch", 
+     "author_username": "jordanm", 
+     "author_name": "Jordan Martins"
+    }
+   }, 
+   {
+    "action": "leave", 
+    "step": "EXO-chain_RunIISummer20UL17GEN_flowRunIISummer20UL17SIM_flowRunIISummer20UL17DIGIPremix_flowRunIISummer20UL17HLT_flowRunIISummer20UL17RECO_flowRunIISummer20UL17MiniAODv2-00035", 
+    "updater": {
+     "submission_date": "2022-02-10-21-35", 
+     "author_email": "justinas.rumsevicius@cern.ch", 
+     "author_username": "jrumsevi", 
+     "author_name": "Justinas Rumsevicius"
+    }
+   }
+  ], 
+  "output_dataset": [
+   "/ADDmonoPhoton_MD-3_d-3_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM"
+  ], 
+  "member_of_campaign": "RunIISummer20UL17MiniAODv2", 
+  "validation": {
+   "content": "all", 
+   "valid": false
+  }, 
+  "dataset_name": "ADDmonoPhoton_MD-3_d-3_TuneCP5_13TeV-pythia8", 
+  "cadi_line": ""
+ }
+}

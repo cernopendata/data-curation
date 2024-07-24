@@ -1,0 +1,12 @@
+set param_card frblock 1 1.00e+00  
+set param_card frblock 2 1.00e+00
+set param_card higgs 3 0.00e+00
+set param_card mass 25 125.0
+set param_card mass 35 550.0
+set param_card mass 36 1000.0
+set param_card mass 37 1000.0
+set param_card width 35 16.50 
+set param_card width 36 30.00 
+set param_card width 37 30.00 
+set param_card higgs 1 0.257734
+set param_card higgs 2 23.2682 

@@ -1,0 +1,3 @@
+[
+{"das":{"expire":1721747317,"instance":"prod/global","primary_key":"parent.name","record":1,"services":["dbs3:datasetparents"]},"parent":[{"name":"/AToZHTo2L2B_MA-510p00_MH-130p00_tb-20p00_TuneCP5_bbH4F_13TeV-amcatnlo-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM","parent_dataset":"/AToZHTo2L2B_MA-510p00_MH-130p00_tb-20p00_TuneCP5_bbH4F_13TeV-amcatnlo-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM","parent_dataset_id":14299923,"this_dataset":"/AToZHTo2L2B_MA-510p00_MH-130p00_tb-20p00_TuneCP5_bbH4F_13TeV-amcatnlo-pythia8/RunIISummer20UL17NanoAODv9-106X_mc2017_realistic_v9-v2/NANOAODSIM"}],"qhash":"dda04769beefef8f5ac8e08ed601a22c"}
+]
