@@ -1,6 +1,6 @@
 {
   "abstract": {
-    "description": "<p>Simulated dataset ADDmonoPhoton_MD-6_d-8_TuneCP5_13TeV-pythia8 in MINIAODSIM format for 2016 collision data.</p><p>See the description of the simulated dataset names in: <a href=\"/about/CMS-Simulated-Dataset-Names\">About CMS simulated dataset names</a>.</p><p>These simulated datasets correspond to the collision data collected by the CMS experiment in 2016.</p>"
+    "description": "<p>Simulated dataset ADDmonoPhoton_MD-6_d-8_TuneCP5_13TeV-pythia8 in MINIAODSIM format for 2017 collision data.</p><p>See the description of the simulated dataset names in: <a href=\"/about/CMS-Simulated-Dataset-Names\">About CMS simulated dataset names</a>.</p><p>These simulated datasets correspond to the collision data collected by the CMS experiment in 2017.</p>"
   },
   "accelerator": "CERN-LHC",
   "categories": {
@@ -21,7 +21,7 @@
     "type": "pp"
   },
   "date_created": [
-    "2016"
+    "2017"
   ],
   "date_published": "2024",
   "date_reprocessed": "2021",
@@ -181,8 +181,8 @@
     }
   ],
   "run_period": [
-    "Run2016G",
-    "Run2016H"
+    "Run2017G",
+    "Run2017H"
   ],
   "system_details": {
     "container_images": [
@@ -199,7 +199,7 @@
     "release": "CMSSW_10_6_30"
   },
   "title": "/ADDmonoPhoton_MD-6_d-8_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM",
-  "title_additional": "Simulated dataset ADDmonoPhoton_MD-6_d-8_TuneCP5_13TeV-pythia8 in MINIAODSIM format for 2016 collision data",
+  "title_additional": "Simulated dataset ADDmonoPhoton_MD-6_d-8_TuneCP5_13TeV-pythia8 in MINIAODSIM format for 2017 collision data",
   "type": {
     "primary": "Dataset",
     "secondary": [

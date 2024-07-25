@@ -369,12 +369,12 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     rec['collision_information']['energy'] = collision_energy
     rec['collision_information']['type'] = collision_type
 
-    if dataset_format == "NANOAODSIM":
-        dataset_path = f"/eos/opendata/cms/mc/{dataset_runperiod}/{dataset}/NANOAODSIM/{dataset_version}"
-        intermediate_dir = os.listdir(dataset_path)
-        sample_file_path = f"{dataset_path}/{intermediate_dir[0]}"
-        sample_file_with_path = f"{sample_file_path}/{os.listdir(sample_file_path)[0]}"
-        rec["dataset_semantics_files"] = get_dataset_semantics_doc(dataset, sample_file_with_path, str(recid_info[dataset_full_name]))
+    # if dataset_format == "NANOAODSIM":
+        # dataset_path = f"/eos/opendata/cms/mc/{dataset_runperiod}/{dataset}/NANOAODSIM/{dataset_version}"
+        # intermediate_dir = os.listdir(dataset_path)
+        # sample_file_path = f"{dataset_path}/{intermediate_dir[0]}"
+        # sample_file_with_path = f"{sample_file_path}/{os.listdir(sample_file_path)[0]}"
+        #rec["dataset_semantics_files"] = get_dataset_semantics_doc(dataset, sample_file_with_path, str(recid_info[dataset_full_name]))
 
     rec['date_created'] = [year_created]
     rec['date_published'] = year_published

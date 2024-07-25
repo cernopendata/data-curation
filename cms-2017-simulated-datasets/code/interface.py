@@ -146,7 +146,9 @@ def main(dataset_list,
 
         $ python ./code/interface.py --print-categorisation DATASET_LIST > categorisation.md
     """
+
     start_time = time.time()
+
     if threads > 1000:
         print("Thread number cannot exceed 1000. To modify this limit, change the code of interface.py.")
         exit()

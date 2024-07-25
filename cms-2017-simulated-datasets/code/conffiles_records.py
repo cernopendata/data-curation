@@ -78,4 +78,8 @@ def main(datasets, eos_dir, das_dir, mcm_dir, conffiles_dir):
                     conffiles.append(config_id)
 
     records = create_records(conffiles, conffiles_dir)
-    json.dump(records, indent=2, sort_keys=True, ensure_ascii=True, fp=sys.stdout)
+
+    output_file = 'records.json'
+
+    with open(output_file, 'w', encoding='utf-8') as f:
+        json.dump(records, f, indent=2, sort_keys=True, ensure_ascii=True)
