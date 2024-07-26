@@ -1,7 +1,0 @@
-
-import model SM_alp_UFO
-
-generate p p > alp j , alp > ta+ ta-
-add process p p > alp j j , alp > ta+ ta-
-
-output TCP_m40_ht_400toInf -nojpeg
