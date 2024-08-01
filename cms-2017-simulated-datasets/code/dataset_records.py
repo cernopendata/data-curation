@@ -452,7 +452,10 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
         # Query from mcm dict fails for an example dataset because Mini is v1 in mcm and v2 in dataset list
         # Get it from das instead
         #dataset_name_for_mini = get_from_deep_json(get_mcm_dict(dataset_full_name, mcm_dir), 'input_dataset')
-        dataset_name_for_mini = get_parent_dataset(dataset_full_name, das_dir)
+        # dataset_name_for_mini = get_parent_dataset(dataset_full_name, das_dir)
+        nano_to_mini = {}
+        exec(open("inputs/parent_dicts.py", "r").read())
+        dataset_name_for_mini = nano_to_mini[dataset_full_name]
         relations_description = 'The corresponding MINIAODSIM dataset:'
         relations_recid = str(recid_info[dataset_name_for_mini])
         relations_type = 'isParentOf'
