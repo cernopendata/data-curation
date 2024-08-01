@@ -71,7 +71,7 @@ $ python3 ./code/interface.py --get-conf-files --ignore-eos-store inputs/CMS-201
 $ python3 ./code/interface.py --lhe-generators --ignore-eos-store code/lhe_generators.py
 
 $ python3 ./code/interface.py --create-records --ignore-eos-store inputs/CMS-2017-mc-datasets.txt
-$ python3 ./code/interface.py --create-conffiles-records --ignore-eos-store inputs/CMS-2017-mc-datasets.txt
+$ python3 ./code/interface.py --create-conffile-records --ignore-eos-store inputs/CMS-2017-mc-datasets.txt
 ```
 
 Note that to build the test records an (empty) input file for DOIs and a recid
