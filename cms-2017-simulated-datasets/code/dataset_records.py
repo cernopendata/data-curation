@@ -20,7 +20,7 @@ import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 from categorisation import guess_title_category
-from das_json_store import (get_das_store_json, get_parent_dataset)
+from das_json_store import (get_das_store_json, get_parent_dataset, get_cmssw_version_from_das)
 from eos_store import (XROOTD_URI_BASE, get_dataset_index_file_base,
                        get_dataset_location)
 from mcm_store import (get_cmsDriver_script, get_cmssw_version_from_mcm,
@@ -348,7 +348,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
 
     year_created = '2017'
     year_published = '2024'
-    run_period = ['Run2017G', 'Run2017H']
+    run_period = ['Run2017B', 'Run2017C','Run2017D', 'Run2017E','Run2017F']
 
     additional_title = 'Simulated dataset ' + dataset + ' in ' + dataset_format + ' format for ' + year_created + ' collision data'
 

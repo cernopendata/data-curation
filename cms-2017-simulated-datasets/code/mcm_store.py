@@ -1,4 +1,3 @@
-#mcm store
 import json
 import os
 import re
@@ -272,9 +271,10 @@ def get_generator_name(dataset, mcm_dir):
 
 def get_parent_dataset_from_mcm(dataset, mcm_dir):
     "Return parent dataset to given DATASET from McM."
-    parent_dataset = ''
+    nano_to_mini = {}
+    exec(open("inputs/parent_dicts.py", "r").read())
     mcm_dict = get_mcm_dict(dataset, mcm_dir)
-    parent_dataset = get_from_deep_json(mcm_dict, 'input_dataset')
+    parent_dataset = nano_to_mini[mcm_dict]
     return parent_dataset
 
 def get_output_dataset_from_mcm(dataset, mcm_dir):

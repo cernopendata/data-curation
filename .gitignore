@@ -82,3 +82,11 @@ jade-2023-raw-datasets/outputs/*.json
 opera-2017-multiplicity-studies/outputs/opera-events.json
 opera-2019-electron-neutrinos/outputs/opera-events.json
 opera-2019-neutrino-induced-charm/outputs/opera-events.json
+cms-2017-simulated-datasets/cookies.txt
+cms-2017-simulated-datasets/records.json
+cms-2017-simulated-datasets/outputs
+cms-2017-simulated-datasets/lhe_generators
+cms-2017-simulated-datasets/inputs/config-store
+cms-2017-simulated-datasets/inputs/mcm-store
+cms-2017-simulated-datasets/inputs/das-json-store
+cms-2017-simulated-datasets/inputs/parent_dicts.py

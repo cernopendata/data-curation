@@ -1,4 +1,3 @@
-#das json
 import json
 import os
 import subprocess
@@ -12,12 +11,13 @@ from utils import get_dataset_name, get_from_deep_json
 
 def get_parent_dataset(dataset, das_dir):
     "Return parent dataset to the given dataset or an empty string if no parent found."
-    parent_dataset = ''
+    nano_to_mini = {}
+    exec(open("inputs/parent_dicts.py", "r").read())
 
     filepath = das_dir + '/parent/' + dataset.replace('/', '@') + '.json'
 
     if os.path.exists(filepath) and os.stat(filepath).st_size != 0:
-        parent_dataset = get_from_deep_json(get_das_store_json(dataset, 'parent', das_dir), 'parent_dataset')
+        parent_dataset = nano_to_mini[dataset]
     return parent_dataset
 
 

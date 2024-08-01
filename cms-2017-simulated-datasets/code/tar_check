@@ -1,0 +1,76 @@
+import os
+import tarfile
+import re
+import sys
+
+def check_tar_file(file_path):
+    """
+    Check the integrity of a tar file.
+
+    Parameters:
+    file_path (str): The path to the tar file.
+
+    Returns:
+    bool: True if the file is not corrupted, False otherwise.
+    """
+    try:
+        with tarfile.open(file_path, 'r') as tar:
+            tar.getmembers()  # Try to list all members
+        return True
+    except tarfile.TarError as e:
+        print(f"Error with {file_path}: {e}")
+        return False
+
+def get_paths_from_dataset(dataset, fragment):
+    """
+    Extract path from dataset fragment.
+
+    Parameters:
+    dataset (str): The dataset string.
+    fragment (str): The fragment string.
+
+    Returns:
+    str: The extracted path or None if not found.
+    """
+    path_match = re.search(r"(/cvmfs/cms.cern.ch/phys_generator/gridpacks[^']*)", fragment)
+    return path_match.groups()[0] if path_match else None
+
+def main(datasets_file):
+    mcm_dir = "./inputs/mcm-store"
+    
+    with open(datasets_file, "r") as file:
+        dataset_full_names = file.readlines()
+
+    corrupted_files = []
+
+    for dataset in dataset_full_names:
+        dataset = dataset.strip()
+        fragment = get_fragment_from_mcm(dataset, mcm_dir)  # This function should get the fragment for a dataset
+        path = get_paths_from_dataset(dataset, fragment)
+
+        if not path:
+            print(f"No path found for dataset {dataset}")
+            continue
+
+        if not check_tar_file(path):
+            corrupted_files.append(path)
+
+    if corrupted_files:
+        print("Corrupted tar files found:")
+        for file in corrupted_files:
+            print(file)
+    else:
+        print("No corrupted tar files found.")
+
+def get_fragment_from_mcm(dataset, mcm_dir):
+    # This function should retrieve the fragment from the mcm dictionary.
+    # You will need to implement this based on your existing codebase.
+    pass
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print(f"Usage: {sys.argv[0]} <datasets_file>")
+        sys.exit(1)
+
+    datasets_file = sys.argv[1]
+    main(datasets_file)

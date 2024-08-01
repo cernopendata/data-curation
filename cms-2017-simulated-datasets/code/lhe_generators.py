@@ -1,4 +1,3 @@
-#lhe generators
 #!/usr/bin/env python3
 
 import datetime
@@ -48,25 +47,31 @@ def get_lhe(dataset, mcm_dir):
     return False
 
 
-def cmd_run(cmds, recid):
+def cmd_run(cmds, recid, timeout=300):
 
     for cmd in cmds:
-        err = subprocess.run(
-            cmd,
-            shell=True,
-            stderr=subprocess.PIPE,
-            stdout=subprocess.PIPE
-        ).stderr.decode()
+        # try:
+            err = subprocess.run(
+                cmd,
+                shell=True,
+                stderr=subprocess.PIPE,
+                stdout=subprocess.PIPE,
+                # timeout=timeout
+            ).stderr.decode()
 
-        if err:
-            log(recid, "ERROR", f"Error {err}")
-            return False
+            if err:
+                log(recid, "ERROR", f"Error {err}")
+                return False
+            
+        # except subprocess.TimeoutExpired:
+        #     log(recid, "ERROR", f"Command '{cmd}' timed out after {timeout} seconds.")
+        #     return False
 
     return True
 
 
 def create_lhe_generator(
-    dataset, recid, mcm_dir, gen_store="./lhe_generators/2017-sim"):
+    dataset, recid, mcm_dir, gen_store="./lhe_generators/2017-sim", timeout=300):
     '''
     mcm_dir is the directory of the LHE step
     '''
@@ -212,7 +217,18 @@ def create_lhe_generator(
 
     # List content if all files in gridpack tarball
     files_all = []
-    res = subprocess.check_output(f"tar tf {path}", shell=True)
+    try:
+        res = subprocess.check_output(f"tar tf {path}", shell=True, stderr=subprocess.PIPE, 
+                                    #   timeout=timeout
+                                      )
+    except subprocess.CalledProcessError as e:
+        log(recid, "ERROR", f"Error listing tar content: {e.stderr.decode()}")
+        print('file is corrupted:', path)
+        return
+    # except subprocess.TimeoutExpired:
+    #     log(recid, "ERROR", f"Listing tar content timed out for path {path}")
+    #     return
+
     for line in res.splitlines():
         files_all.append(line.decode())
 
@@ -320,10 +336,10 @@ def create_lhe_generator(
     for afile in files_all:
         log(recid, "DEBUG", f"- {afile}")
 
-def main(threads):
+def main(threads, mcm_dir="./inputs/mcm-store"):
 
     das_dir = "./inputs/das-json-store"
-    mcm_dir = "./inputs/mcm-store"
+    # mcm_dir = "./inputs/mcm-store"
     with open("./inputs/cms-2017.txt", "r") as file:
         dataset_full_names = file.readlines()
 
@@ -339,7 +355,7 @@ def main(threads):
 
         print(recid)
 
-        #print(f"Getting LHE {i}/{l}")
+        print(f"Getting LHE {i}/{l}")
         log(recid, "INFO", f"Getting LHE {i}/{l}")
         log(recid, "INFO", f"Found record ID {recid}")
         log(recid, "INFO", f"Found dataset {dataset}")
