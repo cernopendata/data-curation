@@ -16,6 +16,9 @@ import zlib
 from datetime import datetime as dt
 from time import sleep
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'inputs')))
+import parent_dicts
+
 import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
@@ -71,8 +74,6 @@ USAGE_FOR_NANOAOD_LINKS = [
 LINK_INFO = {}
 
 CONTAINERIMAGES_CACHE = {}
-
-MININANORELATION_CACHE = {}
 
 def get_number_events(dataset, das_dir):
     """Return number of events for the dataset."""
@@ -198,7 +199,8 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid_info):
 
     # For MiniAODSIM, find the corresponding Nano and use that information
     if dataset.endswith('MINIAODSIM'):
-        dataset = MININANORELATION_CACHE[dataset]
+        # dataset = MININANORELATION_CACHE[dataset]
+        dataset = mini_to_nano[dataset]
 
     recid = recid_info[dataset]
     info = {}
@@ -296,20 +298,21 @@ def populate_containerimages_cache():
         for key in content.keys():
             CONTAINERIMAGES_CACHE[key] = content[key]
 
-def populate_mininanorelation_cache(dataset_full_names, mcm_dir):
-    """Populate MININANORELATION cache (to find the corresponding NANO for provenance, and for dataset -> relations)"""
-    for dataset_full_name in dataset_full_names:
-        if dataset_full_name.endswith('MINIAODSIM'):
-            nano_found = 0
-            dataset_first_name = get_from_deep_json(get_mcm_dict(dataset_full_name, mcm_dir), 'dataset_name')
-            if dataset_first_name:
-                for x in os.listdir(mcm_dir + '/chain'):
-                    if x and x.startswith('@'+dataset_first_name):
-                        dataset_name_for_nano = x.replace('@', '/')
-                        nano_found = 1
-                        MININANORELATION_CACHE[dataset_full_name] = dataset_name_for_nano
-            if nano_found==0:
-                print("A corresponding NANOAODSIM was not found for dataset: " + dataset_full_name)
+# remove function?
+# def populate_mininanorelation_cache(dataset_full_names, mcm_dir):
+#     """Populate MININANORELATION cache (to find the corresponding NANO for provenance, and for dataset -> relations)"""
+#     for dataset_full_name in dataset_full_names:
+#         if dataset_full_name.endswith('MINIAODSIM'):
+#             nano_found = 0
+#             dataset_first_name = get_from_deep_json(get_mcm_dict(dataset_full_name, mcm_dir), 'dataset_name')
+#             if dataset_first_name:
+#                 for x in os.listdir(mcm_dir + '/chain'):
+#                     if x and x.startswith('@'+dataset_first_name):
+#                         dataset_name_for_nano = x.replace('@', '/')
+#                         nano_found = 1
+#                         MININANORELATION_CACHE[dataset_full_name] = dataset_name_for_nano
+#             if nano_found==0:
+#                 print("A corresponding NANOAODSIM was not found for dataset: " + dataset_full_name)
 
 
 def get_dataset_semantics_doc(dataset_name, sample_file_path, recid):
@@ -414,7 +417,9 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     # For Mini, get the pileup from the corresponding Nano
     dataset_name_for_nano = dataset_full_name
     if dataset_full_name.endswith('MINIAODSIM'):
-        dataset_name_for_nano = MININANORELATION_CACHE[dataset_full_name]
+        # dataset_name_for_nano = MININANORELATION_CACHE[dataset_full_name]
+        dataset_name_for_nano = mini_to_nano[dataset_full_name]
+
 
     pileup_dataset_name= ''
     pileup_dataset_name= get_pileup_from_mcm(dataset_name_for_nano, mcm_dir)
@@ -453,8 +458,6 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
         # Get it from das instead
         #dataset_name_for_mini = get_from_deep_json(get_mcm_dict(dataset_full_name, mcm_dir), 'input_dataset')
         # dataset_name_for_mini = get_parent_dataset(dataset_full_name, das_dir)
-        nano_to_mini = {}
-        exec(open("inputs/parent_dicts.py", "r").read())
         dataset_name_for_mini = nano_to_mini[dataset_full_name]
         relations_description = 'The corresponding MINIAODSIM dataset:'
         relations_recid = str(recid_info[dataset_name_for_mini])
