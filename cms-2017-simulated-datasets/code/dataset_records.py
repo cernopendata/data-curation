@@ -200,7 +200,7 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid_info):
     # For MiniAODSIM, find the corresponding Nano and use that information
     if dataset.endswith('MINIAODSIM'):
         # dataset = MININANORELATION_CACHE[dataset]
-        dataset = mini_to_nano[dataset]
+        dataset = parent_dicts.mini_to_nano[dataset]
 
     recid = recid_info[dataset]
     info = {}
@@ -418,7 +418,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     dataset_name_for_nano = dataset_full_name
     if dataset_full_name.endswith('MINIAODSIM'):
         # dataset_name_for_nano = MININANORELATION_CACHE[dataset_full_name]
-        dataset_name_for_nano = mini_to_nano[dataset_full_name]
+        dataset_name_for_nano = parent_dicts.mini_to_nano[dataset_full_name]
 
 
     pileup_dataset_name= ''
@@ -458,7 +458,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
         # Get it from das instead
         #dataset_name_for_mini = get_from_deep_json(get_mcm_dict(dataset_full_name, mcm_dir), 'input_dataset')
         # dataset_name_for_mini = get_parent_dataset(dataset_full_name, das_dir)
-        dataset_name_for_mini = nano_to_mini[dataset_full_name]
+        dataset_name_for_mini = parent_dicts.nano_to_mini[dataset_full_name]
         relations_description = 'The corresponding MINIAODSIM dataset:'
         relations_recid = str(recid_info[dataset_name_for_mini])
         relations_type = 'isParentOf'
