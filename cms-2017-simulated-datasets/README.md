@@ -2,12 +2,6 @@ This directory contains helper scripts used to prepare CMS 2017 open data
 release regarding MC simulated datasets.
 
 - `code/` folder contains the python code;
-- `inputs/` folder contains input text files with the list of datasets for # cms-2017-simulated-datasets
-
-This directory contains helper scripts used to prepare CMS 2017 open data
-release regarding MC simulated datasets.
-
-- `code/` folder contains the python code;
 - `inputs/` folder contains input text files with the list of datasets for each
   year and input files;
 - `outputs/` folder contains generated JSON records to be included as the CERN
