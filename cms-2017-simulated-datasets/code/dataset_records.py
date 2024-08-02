@@ -594,7 +594,7 @@ def main(datasets, eos_dir, das_dir, mcm_dir, conffiles_dir, doi_file, recid_fil
     "Do the job."
 
     populate_containerimages_cache()
-    populate_mininanorelation_cache(datasets, mcm_dir)
+    # populate_mininanorelation_cache(datasets, mcm_dir)
 
     records_dir= "./outputs/records-" + dt.now().strftime("%Y-%m")
     os.makedirs(records_dir, exist_ok=True)
