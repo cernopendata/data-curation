@@ -6,6 +6,8 @@ import sys
 import threading
 from time import sleep
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'inputs')))
+import parent_dicts
 from das_json_store import get_das_store_json, get_parent_dataset
 from eos_store import check_datasets_in_eos_dir
 from utils import get_dataset_format, get_dataset_year, get_from_deep_json
@@ -52,7 +54,7 @@ def mcm_downloader(dataset, mcm_dir):
     ### New 2016
     # create a directory with the dataset name under mcm_dir + "/chain"
     # create dirs
-    if dataset.endswith('MINIAODSIM'):
+    if dataset.endswith('MINIAODSIM') and dataset in parent_dicts.mini_to_nano.keys():
         return
     path = mcm_dir + "/chain/" + dataset.replace('/', '@')
     os.makedirs(path, exist_ok=True)
@@ -274,7 +276,7 @@ def get_parent_dataset_from_mcm(dataset, mcm_dir):
     nano_to_mini = {}
     exec(open("inputs/parent_dicts.py", "r").read())
     mcm_dict = get_mcm_dict(dataset, mcm_dir)
-    parent_dataset = nano_to_mini[mcm_dict]
+    parent_dataset = nano_to_mini[dataset]
     return parent_dataset
 
 def get_output_dataset_from_mcm(dataset, mcm_dir):
