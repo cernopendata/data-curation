@@ -62,13 +62,14 @@ We can now build sample records by doing:
 
 ```console
 $ python3 ./code/interface.py --create-das-json-store --ignore-eos-store inputs/CMS-2017-mc-datasets.txt
+$ python3 ./code/interface.py --create-parent-dicts --ignore-eos-store inputs/CMS-2017-mc-datasets.txt
 
 $ auth-get-sso-cookie -u  https://cms-pdmv.cern.ch/mcm -o cookies.txt
-$ python3 ./code/interface.py --create-mcm-store --ignore-eos-store --threads 100 inputs/CMS-2017-mc-datasets.txt
+$ python3 ./code/interface.py --create-mcm-store --ignore-eos-store --threads 96 inputs/CMS-2017-mc-datasets.txt
 
 $ python3 ./code/interface.py --get-conf-files --ignore-eos-store inputs/CMS-2017-mc-datasets.txt
 
-$ python3 ./code/interface.py --lhe-generators --ignore-eos-store code/lhe_generators.py
+$ python3 ./code/interface.py --lhe-generators --ignore-eos-store inputs/CMS-2017-mc-datasets.txt
 
 $ python3 ./code/interface.py --create-records --ignore-eos-store inputs/CMS-2017-mc-datasets.txt
 $ python3 ./code/interface.py --create-conffile-records --ignore-eos-store inputs/CMS-2017-mc-datasets.txt
