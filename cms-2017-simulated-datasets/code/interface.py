@@ -99,11 +99,10 @@ def main(dataset_list,
         This will populate EOS_DIR with a txt and json file for each dataset.
         The files contain list of root files of that dataset.
 
-    step 2) run create_parent_dicts.py
+    step 2) create MINI-NANO map
 
         \b
-        $ export EOS_MGM_URL=root://eospublic.cern.ch
-````````$ python3 code/interface.py --create-parent-dicts DATASET_LIST
+        $ python3 code/interface.py --create-parent-dicts DATASET_LIST
         
         This will create two dictionaries, nano_to_mini and mini_to_nano,
         in parent_dicts.py.
