@@ -414,6 +414,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
         '/MinBias_TuneCUETP8M1_13TeV-pythia8/RunIISummer15GS-MCRUN2_71_V1-v2/GEN-SIM': 22314, # 2015
         #'/MinBias_TuneCUETP8M1_13TeV-pythia8/RunIISummer15GS-magnetOffBS0T_MCRUN2_71_V1-v1/GEN-SIM': {recid}, # 2015
         '/Neutrino_E-10_gun/RunIISummer20ULPrePremix-UL16_106X_mcRun2_asymptotic_v13-v1/PREMIX': 30595, # 2016
+        #'/Neutrino_E-10_gun/RunIISummer20ULPrePremix-UL17_106X_mc2017_realistic_v6-v3/PREMIX': {recid}, # 2017
         '/MinBias_TuneCP5_13TeV-pythia8/RunIIFall18GS-IdealGeometry_102X_upgrade2018_design_v9-v1/GEN-SIM': 12302 # 2018
     }.get(pileup_dataset_name, 0)
 
