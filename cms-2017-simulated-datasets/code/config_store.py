@@ -5,7 +5,7 @@ import sys
 from eos_store import check_datasets_in_eos_dir
 from mcm_store import get_conffile_ids_from_mcm
 from utils import get_from_deep_json
-
+import parent_dicts
 
 def get_conffile_ids_all_chain_steps(dataset, mcm_dir):
     """Return location of the configuration files for the dataset."""
@@ -41,7 +41,7 @@ def main(eos_dir,
 
     conffile_ids = []
     for dataset_full_name in eos_datasets:
-        if dataset_full_name.endswith('MINIAODSIM') == 0:
+        if (not dataset_full_name.endswith('MINIAODSIM')) or (dataset_full_name.endswith('MINIAODSIM') and dataset_full_name not in parent_dicts.mini_to_nano.keys()):
             for conffile_id in get_conffile_ids_all_chain_steps(dataset_full_name, mcm_dir):
                 if conffile_id not in conffile_ids:
                     conffile_ids.append(conffile_id)
