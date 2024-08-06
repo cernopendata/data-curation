@@ -4,6 +4,8 @@ release regarding MC simulated datasets.
 - `code/` folder contains the python code;
 - `inputs/` folder contains input text files with the list of datasets for each
   year and input files;
+
+  (In the `inputs/CMS-2017-simulated-datasets.txt` file, `NANOAODSIM` files should be listed first, followed by `MINIAODSIM` files, as they are processed in that order by the scripts.)
 - `outputs/` folder contains generated JSON records to be included as the CERN
   Open Data portal fixtures.
 
