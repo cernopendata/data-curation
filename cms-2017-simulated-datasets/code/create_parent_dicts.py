@@ -9,10 +9,7 @@ import subprocess
 import urllib3
 
 from dataset_records import *
-from mcm_store import get_mcm_dict
-from utils import get_from_deep_json
 from das_json_store import get_parent_dataset
-from eos_store import check_datasets_in_eos_dir
 
 def main(datasets):
     nano_to_mini = dict()

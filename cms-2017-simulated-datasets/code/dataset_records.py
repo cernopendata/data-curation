@@ -23,20 +23,18 @@ import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 from categorisation import guess_title_category
-from das_json_store import (get_das_store_json, get_parent_dataset, get_cmssw_version_from_das)
+from das_json_store import (get_das_store_json, get_cmssw_version_from_das)
 from eos_store import (XROOTD_URI_BASE, get_dataset_index_file_base,
                        get_dataset_location)
 from mcm_store import (get_cmsDriver_script, get_cmssw_version_from_mcm,
-                       get_conffile_ids_from_mcm, get_dataset_energy,
+                       get_conffile_ids_from_mcm,
                        get_data_processing_year,
-                       get_generator_name, get_generator_parameters_from_mcm,
+                       get_generator_name,
                        get_genfragment_url, get_global_tag, get_mcm_dict,
-                       get_parent_dataset_from_mcm, get_pileup_from_mcm,
+                       get_pileup_from_mcm,
                        get_output_dataset_from_mcm)
-from utils import (get_author_list_recid, get_dataset_format, get_dataset_year,
-                   get_dataset_runperiod, get_doi, get_from_deep_json,
-                   get_recommended_cmssw_for_analysis,
-                   get_recommended_global_tag_for_analysis, populate_doiinfo)
+from utils import (get_dataset_format,
+                   get_dataset_runperiod, get_doi, get_from_deep_json, populate_doiinfo)
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
@@ -297,23 +295,6 @@ def populate_containerimages_cache():
         content = json.loads(f.read())
         for key in content.keys():
             CONTAINERIMAGES_CACHE[key] = content[key]
-
-# remove function?
-# def populate_mininanorelation_cache(dataset_full_names, mcm_dir):
-#     """Populate MININANORELATION cache (to find the corresponding NANO for provenance, and for dataset -> relations)"""
-#     for dataset_full_name in dataset_full_names:
-#         if dataset_full_name.endswith('MINIAODSIM'):
-#             nano_found = 0
-#             dataset_first_name = get_from_deep_json(get_mcm_dict(dataset_full_name, mcm_dir), 'dataset_name')
-#             if dataset_first_name:
-#                 for x in os.listdir(mcm_dir + '/chain'):
-#                     if x and x.startswith('@'+dataset_first_name):
-#                         dataset_name_for_nano = x.replace('@', '/')
-#                         nano_found = 1
-#                         MININANORELATION_CACHE[dataset_full_name] = dataset_name_for_nano
-#             if nano_found==0:
-#                 print("A corresponding NANOAODSIM was not found for dataset: " + dataset_full_name)
-
 
 def get_dataset_semantics_doc(dataset_name, sample_file_path, recid):
     """Produce the dataset semantics files and return their data-curation paths for the given dataset."""
@@ -576,26 +557,11 @@ def create_records(dataset_full_names, doi_file, recid_file, eos_dir, das_dir, m
         #records.append(create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir))
     #return records
 
-
-def print_records(records):
-    """Print records."""
-    print('[')
-    for (idx, rec) in enumerate(records):
-        #print(json.dumps(rec, indent=2, sort_keys=True, ensure_ascii=True))
-        print(rec)
-        if idx == len(records) - 1:
-            pass
-        else:
-            print(',')
-    print(']')
-
-
 def main(datasets, eos_dir, das_dir, mcm_dir, conffiles_dir, doi_file, recid_file, threads):
     "Do the job."
 
     populate_containerimages_cache()
-    # populate_mininanorelation_cache(datasets, mcm_dir)
-
+    
     records_dir= "./outputs/records-" + dt.now().strftime("%Y-%m")
     os.makedirs(records_dir, exist_ok=True)
 

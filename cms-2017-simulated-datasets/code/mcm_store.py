@@ -8,9 +8,9 @@ from time import sleep
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'inputs')))
 import parent_dicts
-from das_json_store import get_das_store_json, get_parent_dataset
+from das_json_store import get_das_store_json
 from eos_store import check_datasets_in_eos_dir
-from utils import get_dataset_format, get_dataset_year, get_from_deep_json
+from utils import get_dataset_year, get_from_deep_json
 
 
 def mcm_downloader(dataset, mcm_dir):
@@ -271,15 +271,6 @@ def get_generator_name(dataset, mcm_dir):
 
     return generator_names
 
-
-def get_parent_dataset_from_mcm(dataset, mcm_dir):
-    "Return parent dataset to given DATASET from McM."
-    nano_to_mini = {}
-    exec(open("inputs/parent_dicts.py", "r").read())
-    mcm_dict = get_mcm_dict(dataset, mcm_dir)
-    parent_dataset = nano_to_mini[dataset]
-    return parent_dataset
-
 def get_output_dataset_from_mcm(dataset, mcm_dir):
     "Return output dataset to given production step of a DATASET from McM."
     mcm_dict = get_mcm_dict(dataset, mcm_dir)
@@ -292,17 +283,6 @@ def get_conffile_ids_from_mcm(dataset, mcm_dir):
     mcm_dict = get_mcm_dict(dataset, mcm_dir)
     config_ids = get_from_deep_json(mcm_dict, 'config_id')
     return config_ids
-
-
-def get_generator_parameters_from_mcm(dataset, mcm_dir):
-    """Return generator parameters dictionary for given dataset."""
-    mcm_dict = get_mcm_dict(dataset, mcm_dir)
-    out = get_from_deep_json(mcm_dict, 'generator_parameters')
-    if out:
-        return out[0]
-    else:
-        return {}
-
 
 def get_pileup_from_mcm(dataset, mcm_dir):
     """Return pileup_dataset_name from the DIGIPremix step of a given dataset."""

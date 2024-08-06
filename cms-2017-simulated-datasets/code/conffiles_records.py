@@ -13,27 +13,9 @@ import subprocess
 import sys
 from urllib.request import urlopen
 
-from utils import get_from_deep_json, \
-                  populate_doiinfo, \
-                  get_dataset_format, \
-                  get_dataset_year, \
-                  get_author_list_recid, \
-                  get_doi
-from das_json_store import get_das_store_json, \
-                           get_parent_dataset
-from eos_store import XROOTD_URI_BASE, \
-                      get_dataset_index_file_base, \
-                      get_dataset_location
-from mcm_store import get_mcm_dict, \
-                      get_global_tag, \
-                      get_genfragment_url, \
-                      get_generator_name, \
-                      get_dataset_energy, \
-                      get_cmsDriver_script
+from eos_store import XROOTD_URI_BASE
 from config_store import get_conffile_ids_all_chain_steps
-from categorisation import guess_title_category
-from dataset_records import get_dataset, \
-                            newer_dataset_version_exists
+from dataset_records import newer_dataset_version_exists
 
 
 def create_record(conf_id, conffiles_dir):

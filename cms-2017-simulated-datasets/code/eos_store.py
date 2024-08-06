@@ -21,8 +21,7 @@ import subprocess
 from utils import get_dataset_name, \
                   get_dataset_runperiod, \
                   get_dataset_version, \
-                  get_dataset_format, \
-                  get_dataset_year
+                  get_dataset_format
 
 XROOTD_URI_BASE = 'root://eospublic.cern.ch/'
 

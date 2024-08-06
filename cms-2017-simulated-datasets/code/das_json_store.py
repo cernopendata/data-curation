@@ -6,7 +6,7 @@ import threading
 from time import sleep
 
 from eos_store import check_datasets_in_eos_dir
-from utils import get_dataset_name, get_from_deep_json
+from utils import get_from_deep_json
 
 
 def get_parent_dataset(dataset, das_dir):
@@ -107,7 +107,7 @@ def main(das_dir,
         t = threading.Thread(target=create, args=(dataset, das_dir))
         t.start()
         while threading.activeCount() >= threads :
-            sleep(0.5)  # run 100 dasgoclient commands in parallel
+            sleep(0.5)  # run threads dasgoclient commands in parallel
         i += 1
 
 
