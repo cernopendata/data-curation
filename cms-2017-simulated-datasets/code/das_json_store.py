@@ -57,7 +57,7 @@ def mydasgoclient(dataset, query, out_dir, out_file):
 
     das = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
-    if das.returncode == 16:  # ????
+    if das.returncode == 16:
         print("[Error] in ", cmd, file=sys.stderr)
         print(das.stderr.decode("utf-8"), "\n", file=sys.stderr)
     else:
@@ -112,7 +112,7 @@ def main(das_dir,
 
 
 def get_generator_parameters(dataset, das_dir):
-    """Return generator parameters dictionary for given dataset. Not used in 2016"""
+    """Return generator parameters dictionary for given dataset."""
     out = get_from_deep_json(get_das_store_json(dataset, 'mcm', das_dir),
                              'generator_parameters')
     if out:
@@ -122,7 +122,7 @@ def get_generator_parameters(dataset, das_dir):
 
 
 def get_cmssw_version_from_das(dataset, das_dir):
-    """Return CMSSW release version from DAS JSON. Not used in 2016"""
+    """Return CMSSW release version from DAS JSON."""
     out = get_from_deep_json(get_das_store_json(dataset, 'release', das_dir),
                              'name')
     if out:

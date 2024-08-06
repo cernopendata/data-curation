@@ -2,7 +2,7 @@
 
 
 """
-Create MC 2016 records.
+Create MC 2017 records.
 """
 
 import hashlib

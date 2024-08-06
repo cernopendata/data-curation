@@ -38,7 +38,6 @@ from utils import (get_dataset_format,
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
-recid_freerange_start = 30000 #FIXME not in use, using inputs/recid_info.py for now
 recommended_gt = "106X_mcRun2_asymptotic_v17"
 recommended_cmssw = "CMSSW_10_6_30"
 collision_energy = "13TeV"
@@ -158,8 +157,6 @@ def get_process(afile, conf_dir):
     m = re.search(r"process = cms.Process\(\s?['\"]([A-Z0-9]+)['\"]\s?(\)|,)", content)
     if m:
         process = m.groups(1)[0]
-    #if process == 'PAT':
-    #    process = "MINIAODSIM"
     return process
 
 
@@ -197,7 +194,6 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid_info):
 
     # For MiniAODSIM, find the corresponding Nano and use that information
     if dataset.endswith('MINIAODSIM'):
-        # dataset = MININANORELATION_CACHE[dataset]
         dataset = parent_dicts.mini_to_nano[dataset]
 
     recid = recid_info[dataset]
@@ -345,7 +341,6 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
 
     rec['collaboration'] = {}
     rec['collaboration']['name'] = 'CMS Collaboration'
-    # rec['collaboration']['recid'] = get_author_list_recid(dataset_full_name)
 
     rec['collections'] = ['CMS-Simulated-Datasets', ]
 
@@ -398,7 +393,6 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     # For Mini, get the pileup from the corresponding Nano
     dataset_name_for_nano = dataset_full_name
     if dataset_full_name.endswith('MINIAODSIM'):
-        # dataset_name_for_nano = MININANORELATION_CACHE[dataset_full_name]
         dataset_name_for_nano = parent_dicts.mini_to_nano[dataset_full_name]
 
 
@@ -435,10 +429,6 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     rec['recid'] = str(recid_info[dataset_full_name])
 
     if dataset_full_name.endswith('NANOAODSIM'):
-        # Query from mcm dict fails for an example dataset because Mini is v1 in mcm and v2 in dataset list
-        # Get it from das instead
-        #dataset_name_for_mini = get_from_deep_json(get_mcm_dict(dataset_full_name, mcm_dir), 'input_dataset')
-        # dataset_name_for_mini = get_parent_dataset(dataset_full_name, das_dir)
         dataset_name_for_mini = parent_dicts.nano_to_mini[dataset_full_name]
         relations_description = 'The corresponding MINIAODSIM dataset:'
         relations_recid = str(recid_info[dataset_name_for_mini])
@@ -543,33 +533,25 @@ def create_records(dataset_full_names, doi_file, recid_file, eos_dir, das_dir, m
 
     doi_info = populate_doiinfo(doi_file)
 
-    if threads > len(dataset_full_names): # if threads is less than the number of datasets, make threads = number of datasets
+    if threads > len(dataset_full_names): # if threads is more than the number of datasets, make threads = number of datasets
         threads = len(dataset_full_names)
     records = []
     for dataset_full_name in dataset_full_names:
         
-        #2016: comment out threading for debugging
         t= threading.Thread(target=create, args=(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir, records_dir))
         t.start()
         while threading.activeCount() >= threads :
-            sleep(0.5)  # run 20 parallel
-
-        #records.append(create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir))
-    #return records
+            sleep(0.5)  # run threads parallel
 
 def main(datasets, eos_dir, das_dir, mcm_dir, conffiles_dir, doi_file, recid_file, threads):
     "Do the job."
 
     populate_containerimages_cache()
-    
+
     records_dir= "./outputs/records-" + dt.now().strftime("%Y-%m")
     os.makedirs(records_dir, exist_ok=True)
 
     create_records(datasets, doi_file, recid_file, eos_dir, das_dir, mcm_dir, conffiles_dir, records_dir, threads)
-
-    #records = create_records(datasets, doi_file, recid_file, eos_dir, das_dir, mcm_dir, conffiles_dir)
-    #json.dump(records, indent=2, sort_keys=True, ensure_ascii=True, fp=sys.stdout)
-
 
 def get_step_generator_parameters(dataset, mcm_dir, recid, force_lhe=0):
     configuration_files = {}

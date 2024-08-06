@@ -51,7 +51,7 @@ def mcm_downloader(dataset, mcm_dir):
         with open(outfile, 'w') as dict_file:
                 dict_file.write(mcm_script_out)
 
-    ### New 2016
+    ### New 2017
     # create a directory with the dataset name under mcm_dir + "/chain"
     # create dirs
     if dataset.endswith('MINIAODSIM') and dataset in parent_dicts.mini_to_nano.keys():
@@ -118,7 +118,7 @@ def create(datasets, mcm_dir, eos_dir, threads, ignore_eos_store=False):
         eos_datasets = check_datasets_in_eos_dir(datasets, eos_dir)
 
     total = len(eos_datasets)
-    if threads > total: # if threads is less than total datasets, make threads = total
+    if threads > total: # if threads is more than total datasets, make threads = total
         threads = total
     i = 1
     for dataset in eos_datasets:
@@ -126,7 +126,7 @@ def create(datasets, mcm_dir, eos_dir, threads, ignore_eos_store=False):
         t = threading.Thread(target=mcm_downloader, args=(dataset, mcm_dir))
         t.start()
         while threading.activeCount() >= threads :
-            sleep(0.5)  # run 100 curl commands in parallel
+            sleep(0.5)  # run threads curl commands in parallel
         i += 1
 
 
@@ -160,7 +160,7 @@ def get_prepId_from_das(dataset, das_dir):
 
 
 def get_prepid_from_mcm(dataset, mcm_dir):
-    "get prepid for dataset from McM store. Not used in 2016"
+    "get prepid for dataset from McM store."
 
     # get prepid from das/dataset
     prepid = get_from_deep_json(get_mcm_dict(dataset, mcm_dir), 'prep_id')

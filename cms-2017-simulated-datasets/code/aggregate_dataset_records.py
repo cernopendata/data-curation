@@ -36,7 +36,7 @@ for afile in files:
             ensure_ascii=False,
             separators=(",", ": "),
         )
-        with open(f"cms-simulated-datasets-2016-part_{part:02}.json", "w") as fdw:
+        with open(f"cms-simulated-datasets-2017-part_{part:02}.json", "w") as fdw:
             fdw.write(part_content + "\n")
         i = 0
         records = []
@@ -45,5 +45,5 @@ part = part + 1
 part_content = json.dumps(
     records, indent=2, sort_keys=True, ensure_ascii=False, separators=(",", ": ")
 )
-with open(f"cms-simulated-datasets-2016-part_{part:02}.json", "w") as fdw:
+with open(f"cms-simulated-datasets-2017-part_{part:02}.json", "w") as fdw:
     fdw.write(part_content + "\n")
