@@ -25,6 +25,7 @@ def main(datasets):
             try:
                 
                 if mini.endswith('/AODSIM'):
+                    print('AODSIM parent dataset found for', dataset)
                     result = subprocess.run(f'dasgoclient -query="parent dataset={nano}"', capture_output= True, shell= True, text= True).stdout.split('\n')
                     for line in result:
                         if line.endswith('MINIAODSIM'):
