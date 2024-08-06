@@ -479,10 +479,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     rec['type'] = {}
     rec['type']['primary'] = 'Dataset'
     rec['type']['secondary'] = ['Simulated', ]
-
-    year_getting_started = {'2010': 2010,
-                            '2011': 2011,
-                            '2012': 2011}.get(year_created, 2011)
+    
     rec['usage'] = {}
     if dataset_full_name.endswith('NANOAODSIM'):
         rec["usage"]["description"] = USAGE_FOR_NANOAOD_DESCRIPTION
