@@ -44,6 +44,8 @@ collision_energy = "13TeV"
 collision_type = "pp"
 year_published = "2024"
 
+parent_methodology = dict()
+
 RECOMMENDED_IMAGES_FOR_NANOAOD_DESCRIPTION = """<p>NANOAODSIM datasets are in the <a href="https://root.cern.ch/">ROOT</a> tree format and their analysis does not require the use of CMSSW or CMS open data environments. They can be analysed with common ROOT and Python tools.<p>"""
 RECOMMENDED_IMAGES_FOR_NANOAOD = [
     {
@@ -387,8 +389,15 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
 
     rec['license'] = {}
     rec['license']['attribution'] = 'CC0'
-
-    rec['methodology'] = get_all_generator_text(dataset_full_name, das_dir, mcm_dir, conffiles_dir, recid_info)
+    
+    if dataset_full_name.endswith('NANOAODSIM'):
+        rec['methodology'] = get_all_generator_text(dataset_full_name, das_dir, mcm_dir, conffiles_dir, recid_info)
+        parent_methodology[dataset_full_name] = rec['methodology']
+    else:
+        try:
+            rec['methodology'] = parent_methodology[parent_dicts.mini_to_nano[dataset_full_name]]
+        except:
+            rec['methodology'] = get_all_generator_text(dataset_full_name, das_dir, mcm_dir, conffiles_dir, recid_info)
 
     # For Mini, get the pileup from the corresponding Nano
     dataset_name_for_nano = dataset_full_name
