@@ -174,14 +174,9 @@ def main(dataset_list,
         if proceed.lower() == 'y':
             threads = 20
 
-    elif threads > 1000:
-        print("Thread number cannot exceed 1000. To modify this limit, change the code of interface.py.")
-        exit()
-
     elif threads > 100:
-        proceed = input("Thread number exceeds 100. Do you want to proceed? (y/n): ")
-        if proceed.lower() != 'y':
-            exit()
+        print("Thread number cannot exceed 100. To modify this limit, change the code of interface.py.")
+        exit()
 
     datasets = get_datasets_from_dir(dataset_list)
 
