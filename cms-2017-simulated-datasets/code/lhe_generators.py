@@ -340,7 +340,7 @@ def main(threads, mcm_dir="./inputs/mcm-store"):
 
     das_dir = "./inputs/das-json-store"
     # mcm_dir = "./inputs/mcm-store"
-    with open("./inputs/cms-2017.txt", "r") as file:
+    with open("./inputs/CMS-2017-mc-datasets.txt", "r") as file:
         dataset_full_names = file.readlines()
 
     dataset_nanoaod = [
