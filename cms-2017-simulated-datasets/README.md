@@ -63,9 +63,22 @@ $ auth-get-sso-cookie -u  https://cms-pdmv.cern.ch/mcm -o cookies.txt
 $ python3 ./code/interface.py --create-mcm-store --ignore-eos-store inputs/CMS-2017-mc-datasets.txt
 
 $ python3 ./code/interface.py --get-conf-files --ignore-eos-store inputs/CMS-2017-mc-datasets.txt
+```
 
-$ python3 ./code/interface.py --lhe-generators --ignore-eos-store --threads 20 inputs/CMS-2017-mc-datasets.txt
+## lhe_generators
 
+
+```console
+$ python3 ./code/interface.py --lhe-generators --ignore-eos-store --threads 20 inputs/CMS-2017-mc-datasets.txt >& output
+```
+
+- This will get lhe generator parameters from gridpacks for datasets listed in `./inputs/CMS-2017-mc-datasets.txt`.
+- It works on LXPLUS or with mounted EOS.
+- Number of threads is set to 20 which is ideal for LXPLUS.
+
+> :warning:  There are many cases with various steps to get generator parameters for LHE -see [#97](https://github.com/cernopendata/data-curation/issues/97)-. Thus, in some few cases, the script MIGHT not work as expected so make sure to read it, check errors, and make any necessary tweaks
+
+```console
 $ python3 ./code/interface.py --create-records --ignore-eos-store inputs/CMS-2017-mc-datasets.txt
 $ python3 ./code/interface.py --create-conffile-records --ignore-eos-store inputs/CMS-2017-mc-datasets.txt
 ```
@@ -80,15 +93,3 @@ the `.gitignore`.
 The output JSON files for the dataset records will be generated in the
 `outputs` directory.
 
-## lhe_generators
-
-
-```console
-$ python3 code/lhe_generators.py >& output
-```
-
-- This will get lhe generator parameters from gridpacks for datasets listed in `./inputs/CMS-2017-mc-datasets.txt`.
-- It works on LXPLUS or with mounted EOS.
-- Number of threads is set to 20 which is ideal for LXPLUS.
-
-> :warning:  There are many cases with various steps to get generator parameters for LHE -see [#97](https://github.com/cernopendata/data-curation/issues/97)-. Thus, in some few cases, the script MIGHT not work as expected so make sure to read it, check errors, and make any necessary tweaks
