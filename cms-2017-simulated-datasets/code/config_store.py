@@ -5,6 +5,8 @@ import sys
 from eos_store import check_datasets_in_eos_dir
 from mcm_store import get_conffile_ids_from_mcm
 from utils import get_from_deep_json
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'inputs')))
 import parent_dicts
 
 def get_conffile_ids_all_chain_steps(dataset, mcm_dir):
