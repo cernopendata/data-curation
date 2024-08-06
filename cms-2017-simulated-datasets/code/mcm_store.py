@@ -240,6 +240,7 @@ def get_dataset_energy(dataset, mcm_dir):
                2012:  '8TeV',
                2015: '13TeV',
                2016: '13TeV',
+               2017: '13Tev'
                }.get(year, 0)
 
 def get_data_processing_year(dataset, mcm_dir):
