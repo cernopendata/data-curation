@@ -58,7 +58,7 @@ from utils import get_datasets_from_dir
 @click.option('--doi-file', default='./inputs/doi-sim.txt',
               show_default=True, type=click.Path(),
               help='File with DOI information')
-@click.option('--threads', default=20, show_default=True,
+@click.option('--threads', default=32, show_default=True,
               help='Number of threads to use')
 @click.option('--lhe-generators', default=False,
               show_default=True, is_flag=True,
