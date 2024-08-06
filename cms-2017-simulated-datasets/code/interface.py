@@ -168,11 +168,17 @@ def main(dataset_list,
 
     start_time = time.time()
 
-    if threads > 1000:
+    if lhe_generators and threads != 20:
+        print("LHE generators is recommended to be run with 20 threads.")
+        proceed = input("Do you want to proceed with 20 threads? (y/n): ")
+        if proceed.lower() == 'y':
+            threads = 20
+
+    elif threads > 1000:
         print("Thread number cannot exceed 1000. To modify this limit, change the code of interface.py.")
         exit()
 
-    if threads > 100:
+    elif threads > 100:
         proceed = input("Thread number exceeds 100. Do you want to proceed? (y/n): ")
         if proceed.lower() != 'y':
             exit()
