@@ -64,7 +64,7 @@ $ python3 ./code/interface.py --create-mcm-store --ignore-eos-store --threads 96
 
 $ python3 ./code/interface.py --get-conf-files --ignore-eos-store inputs/CMS-2017-mc-datasets.txt
 
-$ python3 ./code/interface.py --lhe-generators --ignore-eos-store inputs/CMS-2017-mc-datasets.txt
+$ python3 ./code/interface.py --lhe-generators --ignore-eos-store --threads 20 inputs/CMS-2017-mc-datasets.txt
 
 $ python3 ./code/interface.py --create-records --ignore-eos-store inputs/CMS-2017-mc-datasets.txt
 $ python3 ./code/interface.py --create-conffile-records --ignore-eos-store inputs/CMS-2017-mc-datasets.txt
