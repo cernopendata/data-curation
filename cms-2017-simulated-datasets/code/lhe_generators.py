@@ -47,31 +47,25 @@ def get_lhe(dataset, mcm_dir):
     return False
 
 
-def cmd_run(cmds, recid, timeout=300):
+def cmd_run(cmds, recid):
 
     for cmd in cmds:
-        # try:
-            err = subprocess.run(
-                cmd,
-                shell=True,
-                stderr=subprocess.PIPE,
-                stdout=subprocess.PIPE,
-                # timeout=timeout
-            ).stderr.decode()
+        err = subprocess.run(
+            cmd,
+            shell=True,
+            stderr=subprocess.PIPE,
+            stdout=subprocess.PIPE,
+        ).stderr.decode()
 
-            if err:
-                log(recid, "ERROR", f"Error {err}")
-                return False
+        if err:
+            log(recid, "ERROR", f"Error {err}")
+            return False
             
-        # except subprocess.TimeoutExpired:
-        #     log(recid, "ERROR", f"Command '{cmd}' timed out after {timeout} seconds.")
-        #     return False
-
     return True
 
 
 def create_lhe_generator(
-    dataset, recid, mcm_dir, gen_store="./lhe_generators/2017-sim", timeout=300):
+    dataset, recid, mcm_dir, gen_store="./lhe_generators/2017-sim"):
     '''
     mcm_dir is the directory of the LHE step
     '''
@@ -174,7 +168,6 @@ def create_lhe_generator(
         return
 
     # Find gridpack path
-    # path = re.search(r"cms.vstring\(['\"\[]\s*(/cvmfs.*?)['\"]", fragment)
     path = re.search(r"(/cvmfs/cms.cern.ch/phys_generator/gridpacks[^']*)", fragment)
     if not path:
         log(
@@ -218,16 +211,11 @@ def create_lhe_generator(
     # List content if all files in gridpack tarball
     files_all = []
     try:
-        res = subprocess.check_output(f"tar tf {path}", shell=True, stderr=subprocess.PIPE, 
-                                    #   timeout=timeout
-                                      )
+        res = subprocess.check_output(f"tar tf {path}", shell=True, stderr=subprocess.PIPE)
     except subprocess.CalledProcessError as e:
         log(recid, "ERROR", f"Error listing tar content: {e.stderr.decode()}")
         print('file is corrupted:', path)
         return
-    # except subprocess.TimeoutExpired:
-    #     log(recid, "ERROR", f"Listing tar content timed out for path {path}")
-    #     return
 
     for line in res.splitlines():
         files_all.append(line.decode())
@@ -339,7 +327,6 @@ def create_lhe_generator(
 def main(threads, mcm_dir="./inputs/mcm-store"):
 
     das_dir = "./inputs/das-json-store"
-    # mcm_dir = "./inputs/mcm-store"
     with open("./inputs/CMS-2017-mc-datasets.txt", "r") as file:
         dataset_full_names = file.readlines()
 
@@ -371,4 +358,4 @@ def main(threads, mcm_dir="./inputs/mcm-store"):
         t.start()
         i += 1
         while threading.activeCount() >= threads:
-            sleep(0.5)  # run 20 parallel
+            sleep(0.5)  # run threads parallel
