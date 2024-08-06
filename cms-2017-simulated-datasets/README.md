@@ -49,6 +49,7 @@ early testing on LXPLUS, all steps can be run without the EOS file index cache
 by means of adding the command-line option `--ignore-eos-store` to the commands below.
 
 You can specify the number of threads to use in these commands by adding the --threads option.
+It is recommended to use a multiple of 32 when choosing the number of threads in Lxplus.
 The thread number option can be specified for these options:
 `--create-das-json-store`, `--create-mcm-store`, `--create-records`, `--lhe-generators`
 
