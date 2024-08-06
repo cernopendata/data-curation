@@ -214,7 +214,7 @@ def create_lhe_generator(
         res = subprocess.check_output(f"tar tf {path}", shell=True, stderr=subprocess.PIPE)
     except subprocess.CalledProcessError as e:
         log(recid, "ERROR", f"Error listing tar content: {e.stderr.decode()}")
-        print('file is corrupted:', path)
+        print('Error listing tar content:', path)
         return
 
     for line in res.splitlines():
