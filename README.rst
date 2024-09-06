@@ -31,6 +31,7 @@ Specific data ingestion and curation campaigns:
 
 - `atlas-2016-masterclasses <atlas-2016-masterclasses>`_ -- helper scripts for the ATLAS 2016 masterclasses release
 - `atlas-2016-outreach <atlas-2016-outreach>`_ -- helper scripts for the ATLAS 2016 outreach release
+- `atlas-2024-odfr <atlas-2024-odfr>`_ -- helper scripts for the ATLAS 2024 Open Data For Research release
 - `cms-2010-collision-datasets <cms-2010-collision-datasets>`_ -- helper scripts for the CMS 2010 open data release (collision datasets)
 - `cms-2010-simulated-datasets <cms-2010-simulated-datasets>`_ -- helper scripts for the CMS 2010 open data release (simulated datasets)
 - `cms-2011-collision-datasets <cms-2011-collision-datasets>`_ -- helper scripts for the CMS 2011 open data release (collision datasets)
@@ -82,10 +83,15 @@ The list of contributors in alphabetical order:
 
 - `Anna Trzcinska <https://github.com/annatrz>`_
 - `Artemis Lavasa <https://orcid.org/0000-0001-5633-2459>`_
+- `Audrius Mecionis <>`_
 - `Heitor de Bittencourt <https://linkedin.com/in/heitorpb>`_
+- `Jan Okraska <>`_
 - `Julie Hogan <https://orcid.org/0000-0002-8604-3452>`_
+- `Joud Masoud <joud003@gmail.com>`_
 - `Kati Lassila-Perini <https://orcid.org/0000-0002-5502-1795>`_
 - `Mantas Savaniakas <https://github.com/mantasavas>`_
 - `Miko Piitsalo <https://github.com/mokotus>`_
+- `Nancy Hamdan <nancyehamdan@gmail.com>`_
 - `Osama Sh. Almomani <https://github.com/OsamaMomani>`_
 - `Tibor Šimko <https://orcid.org/0000-0001-7202-5803>`_
+- `Zach Marshall <https://github.com/zlmarshall>`_
