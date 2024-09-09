@@ -1,0 +1,129 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count
+------------------  -------
+list_raw_stripping       23
+prepare_stripping         1
+total                    24
+
+Select jobs to execute...
+
+[Wed Oct  4 22:15:50 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_ew.txt
+    jobid: 41
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_ew.txt
+    wildcards: version=stripping21r1p1, streams=ew
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:15:50 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_radiative.txt
+    jobid: 43
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_radiative.txt
+    wildcards: version=stripping21r1p1, streams=radiative
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:15:50 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_radiative.txt
+    jobid: 13
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_radiative.txt
+    wildcards: version=stripping21r0p1, streams=radiative
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:15:50 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_semileptonic.txt
+    jobid: 49
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_semileptonic.txt
+    wildcards: version=stripping21r1p1, streams=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:15:50 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1_bhadron.txt
+    jobid: 34
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1_bhadron.txt
+    wildcards: version=stripping21r1, streams=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:15:50 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_leptonic.txt
+    jobid: 42
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_leptonic.txt
+    wildcards: version=stripping21r1p1, streams=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:15:50 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_commonparticles.txt
+    jobid: 50
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_commonparticles.txt
+    wildcards: version=stripping21r1p1, streams=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:15:50 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1_bhadroncompleteevent.txt
+    jobid: 35
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1_bhadroncompleteevent.txt
+    wildcards: version=stripping21r1, streams=bhadroncompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Wed Oct  4 22:15:51 2023]
+[Wed Oct  4 22:15:51 2023]
+Error in rule list_raw_stripping:
+    jobid: 43
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_radiative.txt
+    shell:
+        
+        xrdfs root://eosuser.cern.ch ls /eos/project/l/lhcbwebsites/www/projects/stripping/config/stripping21r1p1/radiative | grep -v '\.sys\.v#' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_radiative.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error in rule list_raw_stripping:
+    jobid: 13
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_radiative.txt
+    shell:
+        
+        xrdfs root://eosuser.cern.ch ls /eos/project/l/lhcbwebsites/www/projects/stripping/config/stripping21r0p1/radiative | grep -v '\.sys\.v#' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_radiative.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job list_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r1p1_radiative.txt
+Removing output files of failed job list_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_radiative.txt
+[Wed Oct  4 22:15:52 2023]
+Finished job 41.
+1 of 24 steps (4%) done
+[Wed Oct  4 22:15:52 2023]
+Finished job 49.
+2 of 24 steps (8%) done
+[Wed Oct  4 22:15:52 2023]
+Finished job 35.
+3 of 24 steps (12%) done
+[Wed Oct  4 22:15:52 2023]
+Finished job 42.
+4 of 24 steps (17%) done
+[Wed Oct  4 22:15:52 2023]
+Finished job 50.
+5 of 24 steps (21%) done
+[Wed Oct  4 22:15:52 2023]
+Finished job 34.
+6 of 24 steps (25%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-04T221550.650320.snakemake.log

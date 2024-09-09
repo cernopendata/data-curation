@@ -1,0 +1,3 @@
+WorkflowError in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 1:
+Workflow defines configfile ../../../config.yaml but it is not present or accessible (full checked path: /Users/mindaugassarpis/Work/config.yaml).
+  File "/Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile", line 1, in <module>

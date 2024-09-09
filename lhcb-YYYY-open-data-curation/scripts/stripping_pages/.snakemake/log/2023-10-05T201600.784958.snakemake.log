@@ -1,0 +1,192 @@
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+The flag 'directory' used in rule prepare_stripping is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+download_raw_stripping        8
+list_raw_stripping           48
+prepare_stripping             1
+total                        57
+
+Select jobs to execute...
+
+[Thu Oct  5 20:16:01 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/commonparticles
+    jobid: 84
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Oct  5 20:16:01 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p2/bhadron
+    jobid: 69
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r0p2, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Oct  5 20:16:01 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/radiative
+    jobid: 77
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1, stream=radiative
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Oct  5 20:16:01 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/charm
+    jobid: 55
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21, stream=charm
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Oct  5 20:16:01 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p2/commonparticles
+    jobid: 100
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1p2, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Oct  5 20:16:01 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/leptonic
+    jobid: 85
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1p1, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Oct  5 20:16:01 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p2/bhadroncompleteevent
+    jobid: 70
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r0p2, stream=bhadroncompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Oct  5 20:16:01 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/bhadron
+    jobid: 78
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:19:10 2023]
+Finished job 69.
+1 of 57 steps (2%) done
+Select jobs to execute...
+
+[Thu Oct  5 20:19:10 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p1_bhadron.txt
+    jobid: 11
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p1_bhadron.txt
+    wildcards: version=stripping21r0p1, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 20:19:11 2023]
+Error in rule list_raw_stripping:
+    jobid: 11
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p1_bhadron.txt
+    shell:
+        
+        xrdfs root://eosuser.cern.ch ls /eos/project/l/lhcbwebsites/www/projects/stripping/config/stripping21r0p1/bhadron | grep -v '\.sys\.v#' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p1_bhadron.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job list_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p1_bhadron.txt
+[Thu Oct  5 20:19:44 2023]
+Finished job 100.
+2 of 57 steps (4%) done
+[Thu Oct  5 20:19:45 2023]
+Finished job 55.
+3 of 57 steps (5%) done
+[Thu Oct  5 20:19:45 2023]
+Finished job 70.
+4 of 57 steps (7%) done
+[Thu Oct  5 20:19:46 2023]
+Finished job 78.
+5 of 57 steps (9%) done
+[Thu Oct  5 20:19:47 2023]
+Finished job 84.
+6 of 57 steps (11%) done
+[Thu Oct  5 20:19:47 2023]
+Finished job 77.
+7 of 57 steps (12%) done
+[Thu Oct  5 20:19:51 2023]
+Finished job 85.
+8 of 57 steps (14%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-05T201600.784958.snakemake.log

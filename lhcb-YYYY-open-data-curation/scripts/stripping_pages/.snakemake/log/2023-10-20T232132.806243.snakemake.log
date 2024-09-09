@@ -1,0 +1,27 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+create_json_files        5
+prepare_stripping        1
+total                    6
+
+Select jobs to execute...
+
+[Fri Oct 20 23:21:32 2023]
+rule create_json_files:
+    input: ../../release/stripping_pages/processed/stripping21/radiative, create_json_files.py
+    output: ../../release/stripping_pages/temp/json_success_stripping21_radiative.txt
+    jobid: 11
+    reason: Missing output files: ../../release/stripping_pages/temp/json_success_stripping21_radiative.txt
+    wildcards: version=stripping21, stream=radiative
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+RuleException in rule create_json_files in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 79:
+AttributeError: 'OutputFiles' object has no attribute 'output_path', when formatting the following:
+
+        python3 {input.script}                     --input_path {input.input_path}            --output_path {output.output_path}         --version {wildcards.version}              --stream {wildcards.stream}                && touch {output.success_flag}
+        

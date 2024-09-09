@@ -1,0 +1,13 @@
+Building DAG of jobs...
+AmbiguousRuleException:
+Rules download_raw_stripping and list_raw_stripping are ambiguous for the file /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_semileptonic.txt.
+Consider starting rule output with a unique prefix, constrain your wildcards, or use the ruleorder directive.
+Wildcards:
+	download_raw_stripping: stream=lines_list_stripping21_semileptonic.txt,version=lists
+	list_raw_stripping: stream=semileptonic,version=stripping21
+Expected input files:
+	download_raw_stripping: raw_stripping_downloader.py
+	list_raw_stripping: 
+Expected output files:
+	download_raw_stripping: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_semileptonic.txt
+	list_raw_stripping: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_semileptonic.txt

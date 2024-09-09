@@ -1,0 +1,183 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count
+------------------  -------
+list_raw_stripping        9
+prepare_stripping         1
+total                    10
+
+Select jobs to execute...
+
+[Wed Oct  4 22:01:59 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_stripping21r0p2.txt
+    jobid: 9
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_stripping21r0p2.txt
+    wildcards: version=stripping21r0p2, stream=stripping21r0p2
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:01:59 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_stripping21.txt
+    jobid: 1
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_stripping21.txt
+    wildcards: version=stripping21, stream=stripping21
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:01:59 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_stripping21.txt
+    jobid: 4
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_stripping21.txt
+    wildcards: version=stripping21r0p1, stream=stripping21
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:01:59 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_stripping21r0p2.txt
+    jobid: 6
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_stripping21r0p2.txt
+    wildcards: version=stripping21r0p1, stream=stripping21r0p2
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:01:59 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_stripping21r0p1.txt
+    jobid: 8
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_stripping21r0p1.txt
+    wildcards: version=stripping21r0p2, stream=stripping21r0p1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:01:59 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_stripping21r0p1.txt
+    jobid: 2
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_stripping21r0p1.txt
+    wildcards: version=stripping21, stream=stripping21r0p1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:01:59 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_stripping21r0p2.txt
+    jobid: 3
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_stripping21r0p2.txt
+    wildcards: version=stripping21, stream=stripping21r0p2
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Oct  4 22:01:59 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_stripping21r0p1.txt
+    jobid: 5
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_stripping21r0p1.txt
+    wildcards: version=stripping21r0p1, stream=stripping21r0p1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Wed Oct  4 22:02:01 2023]
+Error in rule list_raw_stripping:
+    jobid: 1
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_stripping21.txt
+    shell:
+        
+        xrdfs root://eosuser.cern.ch ls /eos/project/l/lhcbwebsites/www/projects/stripping/config/stripping21/stripping21 | grep -v '\.sys\.v#' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_stripping21.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job list_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_stripping21.txt
+[Wed Oct  4 22:02:01 2023]
+Error in rule list_raw_stripping:
+    jobid: 2
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_stripping21r0p1.txt
+    shell:
+        
+        xrdfs root://eosuser.cern.ch ls /eos/project/l/lhcbwebsites/www/projects/stripping/config/stripping21/stripping21r0p1 | grep -v '\.sys\.v#' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_stripping21r0p1.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job list_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_stripping21r0p1.txt
+[Wed Oct  4 22:02:01 2023]
+Error in rule list_raw_stripping:
+    jobid: 9
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_stripping21r0p2.txt
+    shell:
+        
+        xrdfs root://eosuser.cern.ch ls /eos/project/l/lhcbwebsites/www/projects/stripping/config/stripping21r0p2/stripping21r0p2 | grep -v '\.sys\.v#' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_stripping21r0p2.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job list_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_stripping21r0p2.txt
+[Wed Oct  4 22:02:01 2023]
+Error in rule list_raw_stripping:
+    jobid: 8
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_stripping21r0p1.txt
+    shell:
+        
+        xrdfs root://eosuser.cern.ch ls /eos/project/l/lhcbwebsites/www/projects/stripping/config/stripping21r0p2/stripping21r0p1 | grep -v '\.sys\.v#' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_stripping21r0p1.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Oct  4 22:02:01 2023]
+[Wed Oct  4 22:02:01 2023]
+[Wed Oct  4 22:02:01 2023]
+Removing output files of failed job list_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p2_stripping21r0p1.txt
+Error in rule list_raw_stripping:
+    jobid: 6
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_stripping21r0p2.txt
+    shell:
+        
+        xrdfs root://eosuser.cern.ch ls /eos/project/l/lhcbwebsites/www/projects/stripping/config/stripping21r0p1/stripping21r0p2 | grep -v '\.sys\.v#' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_stripping21r0p2.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error in rule list_raw_stripping:
+    jobid: 4
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_stripping21.txt
+    shell:
+        
+        xrdfs root://eosuser.cern.ch ls /eos/project/l/lhcbwebsites/www/projects/stripping/config/stripping21r0p1/stripping21 | grep -v '\.sys\.v#' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_stripping21.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Error in rule list_raw_stripping:
+    jobid: 5
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_stripping21r0p1.txt
+    shell:
+        
+        xrdfs root://eosuser.cern.ch ls /eos/project/l/lhcbwebsites/www/projects/stripping/config/stripping21r0p1/stripping21r0p1 | grep -v '\.sys\.v#' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_stripping21r0p1.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Wed Oct  4 22:02:01 2023]
+Error in rule list_raw_stripping:
+    jobid: 3
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_stripping21r0p2.txt
+    shell:
+        
+        xrdfs root://eosuser.cern.ch ls /eos/project/l/lhcbwebsites/www/projects/stripping/config/stripping21/stripping21r0p2 | grep -v '\.sys\.v#' > /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_stripping21r0p2.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job list_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_stripping21r0p2.txt
+Removing output files of failed job list_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_stripping21.txt
+Removing output files of failed job list_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21r0p1_stripping21r0p1.txt
+Removing output files of failed job list_raw_stripping since they might be corrupted:
+/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/lines_list_stripping21_stripping21r0p2.txt
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-04T220159.737752.snakemake.log

@@ -1,0 +1,108 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+clean_index              2
+convert_index            2
+prepare_stripping        1
+strip_index              2
+total                    7
+
+Select jobs to execute...
+
+[Fri Sep 29 11:53:13 2023]
+rule strip_index:
+    input: strip_index_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/index.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/index.html
+    jobid: 4
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/index.html
+    wildcards: version=stripping21r1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 11:53:13 2023]
+rule strip_index:
+    input: strip_index_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/index.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/index.html
+    jobid: 3
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/index.html
+    wildcards: version=stripping21
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 11:53:13 2023]
+Finished job 3.
+1 of 7 steps (14%) done
+Select jobs to execute...
+
+[Fri Sep 29 11:53:13 2023]
+rule clean_index:
+    input: clean_index_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/index.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/index_clean.html
+    jobid: 5
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/index_clean.html; Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/index.html
+    wildcards: version=stripping21
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 11:53:13 2023]
+Finished job 4.
+2 of 7 steps (29%) done
+Select jobs to execute...
+
+[Fri Sep 29 11:53:14 2023]
+rule clean_index:
+    input: clean_index_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/index.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/index_clean.html
+    jobid: 6
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/index_clean.html; Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/index.html
+    wildcards: version=stripping21r1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 11:53:14 2023]
+Finished job 5.
+3 of 7 steps (43%) done
+[Fri Sep 29 11:53:14 2023]
+Finished job 6.
+4 of 7 steps (57%) done
+Select jobs to execute...
+
+[Fri Sep 29 11:53:14 2023]
+rule convert_index:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/index_clean.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/stripping21-index.md
+    jobid: 7
+    reason: Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/index_clean.html; Set of input files has changed since last execution
+    wildcards: version=stripping21
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 11:53:14 2023]
+rule convert_index:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/index_clean.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/stripping21r1-index.md
+    jobid: 8
+    reason: Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/index_clean.html; Set of input files has changed since last execution
+    wildcards: version=stripping21r1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 11:53:14 2023]
+Finished job 8.
+5 of 7 steps (71%) done
+[Fri Sep 29 11:53:14 2023]
+Finished job 7.
+6 of 7 steps (86%) done
+Select jobs to execute...
+
+[Fri Sep 29 11:53:14 2023]
+localrule prepare_stripping:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/index_clean.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/index_clean.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/stripping21-index.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/stripping21r1-index.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/radiative/clean-strippingbetasbs2jpsieephiline.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/radiative/clean-strippingbetasbd2jpsieeksbd2jpsieeksprescaledline.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/radiative/clean-strippingbetasbs2jpsieephifromtracksline.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/radiative/clean-strippingbc2ds1gammaws_line.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/radiative/clean-strippingbc2ds1gamma_line.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/radiative/clean-strippingbetasbs2jpsieephidetachedline.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/radiative/clean-strippingbetasbd2jpsieeksbd2jpsieeksdetachedline.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/radiative/clean-strippingb2xgammaexclbs2phigammaline.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/radiative/clean-strippingbetasbs2jpsieephiline.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/radiative/clean-strippingbetasbd2jpsieeksbd2jpsieeksprescaledline.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/radiative/clean-strippingbetasbs2jpsieephifromtracksline.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/radiative/clean-strippingbc2ds1gammaws_line.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/radiative/clean-strippingbc2ds1gamma_line.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/radiative/clean-strippingbetasbs2jpsieephidetachedline.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/radiative/clean-strippingbetasbd2jpsieeksbd2jpsieeksdetachedline.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/radiative/clean-strippingb2xgammaexclbs2phigammaline.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbs2jpsieephiline.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbd2jpsieeksbd2jpsieeksprescaledline.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbs2jpsieephifromtracksline.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbc2ds1gammaws_line.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbc2ds1gamma_line.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbs2jpsieephidetachedline.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingbetasbd2jpsieeksbd2jpsieeksdetachedline.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/radiative/strippingb2xgammaexclbs2phigammaline.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbs2jpsieephiline.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbd2jpsieeksbd2jpsieeksprescaledline.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbs2jpsieephifromtracksline.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbc2ds1gammaws_line.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbc2ds1gamma_line.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbs2jpsieephidetachedline.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingbetasbd2jpsieeksbd2jpsieeksdetachedline.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/radiative/strippingb2xgammaexclbs2phigammaline.md
+    jobid: 0
+    reason: Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/index_clean.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/stripping21-index.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/stripping21r1-index.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/index_clean.html
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 11:53:14 2023]
+Finished job 0.
+7 of 7 steps (100%) done
+Complete log: .snakemake/log/2023-09-29T115313.337029.snakemake.log

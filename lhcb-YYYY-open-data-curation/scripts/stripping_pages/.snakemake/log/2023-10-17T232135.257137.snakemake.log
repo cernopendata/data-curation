@@ -1,0 +1,914 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count
+------------------  -------
+clean_index               6
+convert_index             6
+list_raw_stripping       56
+prepare_stripping         1
+total                    69
+
+Select jobs to execute...
+
+[Tue Oct 17 23:21:35 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_bhadron.txt
+    jobid: 41
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_bhadron.txt
+    wildcards: version=stripping21r1p1, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Tue Oct 17 23:21:35 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_dimuon.txt
+    jobid: 26
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_dimuon.txt
+    wildcards: version=stripping21r0p2, stream=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Tue Oct 17 23:21:35 2023]
+rule clean_index:
+    input: ../../config.yaml, clean_index.py, /Users/mindaugassarpis/Work/StrippingPages/stripping21r0p1/index.html
+    output: ../../release/stripping_pages/temp/stripping21r0p1/clean_index.html
+    jobid: 58
+    reason: Updated input files: clean_index.py
+    wildcards: version=stripping21r0p1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Tue Oct 17 23:21:35 2023]
+rule clean_index:
+    input: ../../config.yaml, clean_index.py, /Users/mindaugassarpis/Work/StrippingPages/stripping21r1/index.html
+    output: ../../release/stripping_pages/temp/stripping21r1/clean_index.html
+    jobid: 60
+    reason: Updated input files: clean_index.py
+    wildcards: version=stripping21r1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Tue Oct 17 23:21:35 2023]
+rule clean_index:
+    input: ../../config.yaml, clean_index.py, /Users/mindaugassarpis/Work/StrippingPages/stripping21r1p2/index.html
+    output: ../../release/stripping_pages/temp/stripping21r1p2/clean_index.html
+    jobid: 62
+    reason: Updated input files: clean_index.py
+    wildcards: version=stripping21r1p2
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Tue Oct 17 23:21:35 2023]
+rule clean_index:
+    input: ../../config.yaml, clean_index.py, /Users/mindaugassarpis/Work/StrippingPages/stripping21/index.html
+    output: ../../release/stripping_pages/temp/stripping21/clean_index.html
+    jobid: 57
+    reason: Updated input files: clean_index.py
+    wildcards: version=stripping21
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Tue Oct 17 23:21:35 2023]
+rule clean_index:
+    input: ../../config.yaml, clean_index.py, /Users/mindaugassarpis/Work/StrippingPages/stripping21r0p2/index.html
+    output: ../../release/stripping_pages/temp/stripping21r0p2/clean_index.html
+    jobid: 59
+    reason: Updated input files: clean_index.py
+    wildcards: version=stripping21r0p2
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Tue Oct 17 23:21:35 2023]
+rule clean_index:
+    input: ../../config.yaml, clean_index.py, /Users/mindaugassarpis/Work/StrippingPages/stripping21r1p1/index.html
+    output: ../../release/stripping_pages/temp/stripping21r1p1/clean_index.html
+    jobid: 61
+    reason: Updated input files: clean_index.py
+    wildcards: version=stripping21r1p1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:36 2023]
+Finished job 58.
+1 of 69 steps (1%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:36 2023]
+rule convert_index:
+    input: ../../release/stripping_pages/temp/stripping21r0p1/clean_index.html
+    output: ../../release/stripping_pages/processed/stripping21r0p1/stripping21r0p1-index.md
+    jobid: 64
+    reason: Input files updated by another job: ../../release/stripping_pages/temp/stripping21r0p1/clean_index.html
+    wildcards: version=stripping21r0p1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:36 2023]
+Finished job 61.
+2 of 69 steps (3%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:36 2023]
+rule convert_index:
+    input: ../../release/stripping_pages/temp/stripping21r1p1/clean_index.html
+    output: ../../release/stripping_pages/processed/stripping21r1p1/stripping21r1p1-index.md
+    jobid: 67
+    reason: Input files updated by another job: ../../release/stripping_pages/temp/stripping21r1p1/clean_index.html
+    wildcards: version=stripping21r1p1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:36 2023]
+Finished job 62.
+3 of 69 steps (4%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:36 2023]
+rule convert_index:
+    input: ../../release/stripping_pages/temp/stripping21r1p2/clean_index.html
+    output: ../../release/stripping_pages/processed/stripping21r1p2/stripping21r1p2-index.md
+    jobid: 68
+    reason: Input files updated by another job: ../../release/stripping_pages/temp/stripping21r1p2/clean_index.html
+    wildcards: version=stripping21r1p2
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:36 2023]
+Finished job 59.
+4 of 69 steps (6%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:36 2023]
+rule convert_index:
+    input: ../../release/stripping_pages/temp/stripping21r0p2/clean_index.html
+    output: ../../release/stripping_pages/processed/stripping21r0p2/stripping21r0p2-index.md
+    jobid: 65
+    reason: Input files updated by another job: ../../release/stripping_pages/temp/stripping21r0p2/clean_index.html
+    wildcards: version=stripping21r0p2
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:36 2023]
+Finished job 26.
+5 of 69 steps (7%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:36 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_ew.txt
+    jobid: 11
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_ew.txt
+    wildcards: version=stripping21r0p1, stream=ew
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:36 2023]
+Finished job 41.
+6 of 69 steps (9%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:36 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_commonparticles.txt
+    jobid: 56
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_commonparticles.txt
+    wildcards: version=stripping21r1p2, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:36 2023]
+Finished job 60.
+7 of 69 steps (10%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:36 2023]
+rule convert_index:
+    input: ../../release/stripping_pages/temp/stripping21r1/clean_index.html
+    output: ../../release/stripping_pages/processed/stripping21r1/stripping21r1-index.md
+    jobid: 66
+    reason: Input files updated by another job: ../../release/stripping_pages/temp/stripping21r1/clean_index.html
+    wildcards: version=stripping21r1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:36 2023]
+Finished job 57.
+8 of 69 steps (12%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:36 2023]
+rule convert_index:
+    input: ../../release/stripping_pages/temp/stripping21/clean_index.html
+    output: ../../release/stripping_pages/processed/stripping21/stripping21-index.md
+    jobid: 63
+    reason: Input files updated by another job: ../../release/stripping_pages/temp/stripping21/clean_index.html
+    wildcards: version=stripping21
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:37 2023]
+Finished job 64.
+9 of 69 steps (13%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:37 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_leptonic.txt
+    jobid: 49
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_leptonic.txt
+    wildcards: version=stripping21r1p2, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:37 2023]
+Finished job 67.
+10 of 69 steps (14%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:37 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1_charm.txt
+    jobid: 34
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1_charm.txt
+    wildcards: version=stripping21r1, stream=charm
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:37 2023]
+Finished job 65.
+11 of 69 steps (16%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:37 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_commonparticles.txt
+    jobid: 19
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_commonparticles.txt
+    wildcards: version=stripping21r0p1, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:37 2023]
+Finished job 68.
+12 of 69 steps (17%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:37 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21_bhadron.txt
+    jobid: 4
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21_bhadron.txt
+    wildcards: version=stripping21, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:37 2023]
+Finished job 11.
+13 of 69 steps (19%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:37 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_bhadroncompleteevent.txt
+    jobid: 42
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_bhadroncompleteevent.txt
+    wildcards: version=stripping21r1p1, stream=bhadroncompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:37 2023]
+Finished job 56.
+14 of 69 steps (20%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:37 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_semileptonic.txt
+    jobid: 27
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_semileptonic.txt
+    wildcards: version=stripping21r0p2, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:37 2023]
+Finished job 66.
+15 of 69 steps (22%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:37 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_leptonic.txt
+    jobid: 12
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_leptonic.txt
+    wildcards: version=stripping21r0p1, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:37 2023]
+Finished job 63.
+16 of 69 steps (23%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:37 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_bhadron.txt
+    jobid: 50
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_bhadron.txt
+    wildcards: version=stripping21r1p2, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:37 2023]
+Finished job 49.
+17 of 69 steps (25%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:37 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1_charmcompleteevent.txt
+    jobid: 35
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1_charmcompleteevent.txt
+    wildcards: version=stripping21r1, stream=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:38 2023]
+Finished job 34.
+18 of 69 steps (26%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:38 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_ew.txt
+    jobid: 20
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_ew.txt
+    wildcards: version=stripping21r0p2, stream=ew
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:38 2023]
+Finished job 19.
+19 of 69 steps (28%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:38 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21_bhadroncompleteevent.txt
+    jobid: 5
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21_bhadroncompleteevent.txt
+    wildcards: version=stripping21, stream=bhadroncompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:38 2023]
+Finished job 42.
+20 of 69 steps (29%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:38 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_charm.txt
+    jobid: 43
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_charm.txt
+    wildcards: version=stripping21r1p1, stream=charm
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:38 2023]
+Finished job 27.
+21 of 69 steps (30%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:38 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_commonparticles.txt
+    jobid: 28
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_commonparticles.txt
+    wildcards: version=stripping21r0p2, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:38 2023]
+Finished job 4.
+22 of 69 steps (32%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:38 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_bhadron.txt
+    jobid: 13
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_bhadron.txt
+    wildcards: version=stripping21r0p1, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:38 2023]
+Finished job 12.
+23 of 69 steps (33%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:38 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_bhadroncompleteevent.txt
+    jobid: 51
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_bhadroncompleteevent.txt
+    wildcards: version=stripping21r1p2, stream=bhadroncompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:38 2023]
+Finished job 50.
+24 of 69 steps (35%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:38 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1_dimuon.txt
+    jobid: 36
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1_dimuon.txt
+    wildcards: version=stripping21r1, stream=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:38 2023]
+Finished job 35.
+25 of 69 steps (36%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:38 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_leptonic.txt
+    jobid: 21
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_leptonic.txt
+    wildcards: version=stripping21r0p2, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:38 2023]
+Finished job 20.
+26 of 69 steps (38%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:38 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21_charm.txt
+    jobid: 6
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21_charm.txt
+    wildcards: version=stripping21, stream=charm
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:38 2023]
+Finished job 5.
+27 of 69 steps (39%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:38 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_charmcompleteevent.txt
+    jobid: 44
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_charmcompleteevent.txt
+    wildcards: version=stripping21r1p1, stream=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:39 2023]
+Finished job 28.
+28 of 69 steps (41%) done
+[Tue Oct 17 23:21:39 2023]
+Finished job 43.
+29 of 69 steps (42%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:39 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1_ew.txt
+    jobid: 29
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1_ew.txt
+    wildcards: version=stripping21r1, stream=ew
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Tue Oct 17 23:21:39 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_bhadroncompleteevent.txt
+    jobid: 14
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_bhadroncompleteevent.txt
+    wildcards: version=stripping21r0p1, stream=bhadroncompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Select jobs to execute...
+[Tue Oct 17 23:21:39 2023]
+Finished job 13.
+30 of 69 steps (43%) done
+
+[Tue Oct 17 23:21:39 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_charm.txt
+    jobid: 52
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_charm.txt
+    wildcards: version=stripping21r1p2, stream=charm
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:39 2023]
+Finished job 51.
+31 of 69 steps (45%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:39 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1_semileptonic.txt
+    jobid: 37
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1_semileptonic.txt
+    wildcards: version=stripping21r1, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:39 2023]
+Finished job 36.
+32 of 69 steps (46%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:39 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_bhadron.txt
+    jobid: 22
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_bhadron.txt
+    wildcards: version=stripping21r0p2, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:39 2023]
+Finished job 21.
+33 of 69 steps (48%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:39 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21_charmcompleteevent.txt
+    jobid: 7
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21_charmcompleteevent.txt
+    wildcards: version=stripping21, stream=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:39 2023]
+Finished job 44.
+34 of 69 steps (49%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:39 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_dimuon.txt
+    jobid: 45
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_dimuon.txt
+    wildcards: version=stripping21r1p1, stream=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:39 2023]
+Finished job 6.
+35 of 69 steps (51%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:39 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1_leptonic.txt
+    jobid: 30
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1_leptonic.txt
+    wildcards: version=stripping21r1, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:39 2023]
+Finished job 14.
+36 of 69 steps (52%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:39 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_charm.txt
+    jobid: 15
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_charm.txt
+    wildcards: version=stripping21r0p1, stream=charm
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:39 2023]
+Finished job 29.
+37 of 69 steps (54%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:39 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_charmcompleteevent.txt
+    jobid: 53
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_charmcompleteevent.txt
+    wildcards: version=stripping21r1p2, stream=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:40 2023]
+Finished job 52.
+38 of 69 steps (55%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:40 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1_commonparticles.txt
+    jobid: 38
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1_commonparticles.txt
+    wildcards: version=stripping21r1, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:40 2023]
+Finished job 37.
+39 of 69 steps (57%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:40 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_bhadroncompleteevent.txt
+    jobid: 23
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_bhadroncompleteevent.txt
+    wildcards: version=stripping21r0p2, stream=bhadroncompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:40 2023]
+Finished job 22.
+40 of 69 steps (58%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:40 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21_dimuon.txt
+    jobid: 8
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21_dimuon.txt
+    wildcards: version=stripping21, stream=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:40 2023]
+Finished job 7.
+41 of 69 steps (59%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:40 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_semileptonic.txt
+    jobid: 46
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_semileptonic.txt
+    wildcards: version=stripping21r1p1, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:40 2023]
+Finished job 45.
+42 of 69 steps (61%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:40 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1_radiative.txt
+    jobid: 31
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1_radiative.txt
+    wildcards: version=stripping21r1, stream=radiative
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:40 2023]
+Finished job 30.
+43 of 69 steps (62%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:40 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_charm.txt
+    jobid: 24
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_charm.txt
+    wildcards: version=stripping21r0p2, stream=charm
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:40 2023]
+Finished job 53.
+44 of 69 steps (64%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:40 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21_semileptonic.txt
+    jobid: 9
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21_semileptonic.txt
+    wildcards: version=stripping21, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:40 2023]
+Finished job 15.
+45 of 69 steps (65%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:40 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_commonparticles.txt
+    jobid: 47
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_commonparticles.txt
+    wildcards: version=stripping21r1p1, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:40 2023]
+Finished job 38.
+46 of 69 steps (67%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:40 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1_bhadron.txt
+    jobid: 32
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1_bhadron.txt
+    wildcards: version=stripping21r1, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:41 2023]
+Finished job 23.
+47 of 69 steps (68%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:41 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_dimuon.txt
+    jobid: 17
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_dimuon.txt
+    wildcards: version=stripping21r0p1, stream=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:41 2023]
+Finished job 8.
+48 of 69 steps (70%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:41 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21_ew.txt
+    jobid: 1
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21_ew.txt
+    wildcards: version=stripping21, stream=ew
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:41 2023]
+Finished job 46.
+49 of 69 steps (71%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:41 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_semileptonic.txt
+    jobid: 55
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_semileptonic.txt
+    wildcards: version=stripping21r1p2, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:41 2023]
+Finished job 31.
+50 of 69 steps (72%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:41 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_leptonic.txt
+    jobid: 40
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_leptonic.txt
+    wildcards: version=stripping21r1p1, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:41 2023]
+Finished job 24.
+51 of 69 steps (74%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:41 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1_bhadroncompleteevent.txt
+    jobid: 33
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1_bhadroncompleteevent.txt
+    wildcards: version=stripping21r1, stream=bhadroncompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:41 2023]
+Finished job 9.
+52 of 69 steps (75%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:41 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_charmcompleteevent.txt
+    jobid: 25
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_charmcompleteevent.txt
+    wildcards: version=stripping21r0p2, stream=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:41 2023]
+Finished job 47.
+53 of 69 steps (77%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:41 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21_commonparticles.txt
+    jobid: 10
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21_commonparticles.txt
+    wildcards: version=stripping21, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:41 2023]
+Finished job 17.
+54 of 69 steps (78%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:41 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_ew.txt
+    jobid: 48
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_ew.txt
+    wildcards: version=stripping21r1p2, stream=ew
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:42 2023]
+Finished job 1.
+55 of 69 steps (80%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:42 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_charmcompleteevent.txt
+    jobid: 16
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_charmcompleteevent.txt
+    wildcards: version=stripping21r0p1, stream=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:42 2023]
+Finished job 55.
+56 of 69 steps (81%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:42 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21_leptonic.txt
+    jobid: 2
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21_leptonic.txt
+    wildcards: version=stripping21, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:42 2023]
+Finished job 32.
+57 of 69 steps (83%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:42 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_semileptonic.txt
+    jobid: 18
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_semileptonic.txt
+    wildcards: version=stripping21r0p1, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:42 2023]
+Finished job 40.
+58 of 69 steps (84%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:42 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21_radiative.txt
+    jobid: 3
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21_radiative.txt
+    wildcards: version=stripping21, stream=radiative
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:42 2023]
+Finished job 33.
+59 of 69 steps (86%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:42 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_dimuon.txt
+    jobid: 54
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_dimuon.txt
+    wildcards: version=stripping21r1p2, stream=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:42 2023]
+Finished job 25.
+60 of 69 steps (87%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:42 2023]
+rule list_raw_stripping:
+    output: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_ew.txt
+    jobid: 39
+    reason: Missing output files: ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_ew.txt
+    wildcards: version=stripping21r1p1, stream=ew
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:42 2023]
+Finished job 10.
+61 of 69 steps (88%) done
+[Tue Oct 17 23:21:42 2023]
+Finished job 48.
+62 of 69 steps (90%) done
+[Tue Oct 17 23:21:42 2023]
+Finished job 16.
+63 of 69 steps (91%) done
+[Tue Oct 17 23:21:42 2023]
+Finished job 2.
+64 of 69 steps (93%) done
+[Tue Oct 17 23:21:43 2023]
+Finished job 18.
+65 of 69 steps (94%) done
+[Tue Oct 17 23:21:43 2023]
+Finished job 3.
+66 of 69 steps (96%) done
+[Tue Oct 17 23:21:43 2023]
+Finished job 54.
+67 of 69 steps (97%) done
+[Tue Oct 17 23:21:43 2023]
+Finished job 39.
+68 of 69 steps (99%) done
+Select jobs to execute...
+
+[Tue Oct 17 23:21:43 2023]
+localrule prepare_stripping:
+    input: ../../release/stripping_pages/temp/lists/line_list_stripping21_ew.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21_leptonic.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21_radiative.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21_bhadron.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21_bhadroncompleteevent.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21_charm.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21_charmcompleteevent.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21_dimuon.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21_semileptonic.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21_commonparticles.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_ew.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_leptonic.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_bhadron.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_bhadroncompleteevent.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_charm.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_charmcompleteevent.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_dimuon.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_semileptonic.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_commonparticles.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_ew.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_leptonic.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_bhadron.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_bhadroncompleteevent.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_charm.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_charmcompleteevent.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_dimuon.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_semileptonic.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_commonparticles.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1_ew.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1_leptonic.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1_radiative.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1_bhadron.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1_bhadroncompleteevent.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1_charm.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1_charmcompleteevent.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1_dimuon.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1_semileptonic.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1_commonparticles.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_ew.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_leptonic.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_bhadron.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_bhadroncompleteevent.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_charm.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_charmcompleteevent.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_dimuon.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_semileptonic.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_commonparticles.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_ew.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_leptonic.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_bhadron.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_bhadroncompleteevent.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_charm.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_charmcompleteevent.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_dimuon.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_semileptonic.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_commonparticles.txt, ../../release/stripping_pages/temp/stripping21/clean_index.html, ../../release/stripping_pages/temp/stripping21r0p1/clean_index.html, ../../release/stripping_pages/temp/stripping21r0p2/clean_index.html, ../../release/stripping_pages/temp/stripping21r1/clean_index.html, ../../release/stripping_pages/temp/stripping21r1p1/clean_index.html, ../../release/stripping_pages/temp/stripping21r1p2/clean_index.html, ../../release/stripping_pages/processed/stripping21/stripping21-index.md, ../../release/stripping_pages/processed/stripping21r0p1/stripping21r0p1-index.md, ../../release/stripping_pages/processed/stripping21r0p2/stripping21r0p2-index.md, ../../release/stripping_pages/processed/stripping21r1/stripping21r1-index.md, ../../release/stripping_pages/processed/stripping21r1p1/stripping21r1p1-index.md, ../../release/stripping_pages/processed/stripping21r1p2/stripping21r1p2-index.md
+    jobid: 0
+    reason: Input files updated by another job: ../../release/stripping_pages/processed/stripping21/stripping21-index.md, ../../release/stripping_pages/temp/stripping21/clean_index.html, ../../release/stripping_pages/temp/lists/line_list_stripping21_charmcompleteevent.txt, ../../release/stripping_pages/processed/stripping21r1/stripping21r1-index.md, ../../release/stripping_pages/processed/stripping21r0p1/stripping21r0p1-index.md, ../../release/stripping_pages/temp/lists/line_list_stripping21r1_leptonic.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1_dimuon.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_commonparticles.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_commonparticles.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21_charm.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1_ew.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_ew.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_leptonic.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_charm.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21_leptonic.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1_charm.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1_charmcompleteevent.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1_semileptonic.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_dimuon.txt, ../../release/stripping_pages/temp/stripping21r1/clean_index.html, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_charmcompleteevent.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_ew.txt, ../../release/stripping_pages/temp/stripping21r0p1/clean_index.html, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_bhadron.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1_bhadron.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_charmcompleteevent.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_bhadron.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_semileptonic.txt, ../../release/stripping_pages/processed/stripping21r0p2/stripping21r0p2-index.md, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_semileptonic.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_leptonic.txt, ../../release/stripping_pages/processed/stripping21r1p2/stripping21r1p2-index.md, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_ew.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21_semileptonic.txt, ../../release/stripping_pages/processed/stripping21r1p1/stripping21r1p1-index.md, ../../release/stripping_pages/temp/stripping21r0p2/clean_index.html, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_bhadroncompleteevent.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_dimuon.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_charmcompleteevent.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_bhadron.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21_radiative.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_bhadroncompleteevent.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_dimuon.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21_commonparticles.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_bhadroncompleteevent.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1_bhadroncompleteevent.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_charm.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_commonparticles.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_ew.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_bhadron.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_dimuon.txt, ../../release/stripping_pages/temp/stripping21r1p1/clean_index.html, ../../release/stripping_pages/temp/lists/line_list_stripping21r1_commonparticles.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_leptonic.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p1_charm.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_charmcompleteevent.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_commonparticles.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1_radiative.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_charm.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21_bhadroncompleteevent.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21_ew.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21_dimuon.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21_bhadron.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_leptonic.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p2_semileptonic.txt, ../../release/stripping_pages/temp/lists/line_list_stripping21r1p1_semileptonic.txt, ../../release/stripping_pages/temp/stripping21r1p2/clean_index.html, ../../release/stripping_pages/temp/lists/line_list_stripping21r0p2_bhadroncompleteevent.txt
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 17 23:21:43 2023]
+Finished job 0.
+69 of 69 steps (100%) done
+Complete log: .snakemake/log/2023-10-17T232135.257137.snakemake.log

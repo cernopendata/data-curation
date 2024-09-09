@@ -1,0 +1,130 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+download_raw_stripping        5
+list_raw_stripping            3
+prepare_stripping             1
+total                         9
+
+Select jobs to execute...
+
+[Fri Oct 13 14:10:54 2023]
+rule download_raw_stripping:
+    input: lines_downloader.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p2_bhadron.txt
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p2/bhadron
+    jobid: 19
+    reason: Updated input files: lines_downloader.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p2_bhadron.txt
+    wildcards: version=stripping21r0p2, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Oct 13 14:10:54 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p2_leptonic.txt
+    jobid: 8
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p2_leptonic.txt
+    wildcards: version=stripping21r0p2, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Oct 13 14:10:54 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p2_commonparticles.txt
+    jobid: 10
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p2_commonparticles.txt
+    wildcards: version=stripping21r0p2, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Oct 13 14:10:54 2023]
+rule download_raw_stripping:
+    input: lines_downloader.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p1_bhadron.txt
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/bhadron
+    jobid: 16
+    reason: Updated input files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p1_bhadron.txt, lines_downloader.py
+    wildcards: version=stripping21r0p1, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Oct 13 14:10:54 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21_bhadron.txt
+    jobid: 3
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21_bhadron.txt
+    wildcards: version=stripping21, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Oct 13 14:10:59 2023]
+Finished job 16.
+1 of 9 steps (11%) done
+[Fri Oct 13 14:11:02 2023]
+Finished job 19.
+2 of 9 steps (22%) done
+[Fri Oct 13 14:11:57 2023]
+Finished job 3.
+3 of 9 steps (33%) done
+Select jobs to execute...
+
+[Fri Oct 13 14:11:57 2023]
+rule download_raw_stripping:
+    input: lines_downloader.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21_bhadron.txt
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/bhadron
+    jobid: 13
+    reason: Updated input files: lines_downloader.py; Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21_bhadron.txt
+    wildcards: version=stripping21, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Oct 13 14:12:12 2023]
+Finished job 13.
+4 of 9 steps (44%) done
+[Fri Oct 13 14:17:21 2023]
+Finished job 10.
+5 of 9 steps (56%) done
+Select jobs to execute...
+
+[Fri Oct 13 14:17:21 2023]
+rule download_raw_stripping:
+    input: lines_downloader.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p2_commonparticles.txt
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p2/commonparticles
+    jobid: 20
+    reason: Updated input files: lines_downloader.py; Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p2_commonparticles.txt
+    wildcards: version=stripping21r0p2, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Oct 13 14:17:23 2023]
+Finished job 20.
+6 of 9 steps (67%) done
+[Fri Oct 13 14:17:27 2023]
+Finished job 8.
+7 of 9 steps (78%) done
+Select jobs to execute...
+
+[Fri Oct 13 14:17:27 2023]
+rule download_raw_stripping:
+    input: lines_downloader.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p2_leptonic.txt
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p2/leptonic
+    jobid: 18
+    reason: Updated input files: lines_downloader.py; Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p2_leptonic.txt
+    wildcards: version=stripping21r0p2, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Oct 13 14:17:30 2023]
+Finished job 18.
+8 of 9 steps (89%) done
+Select jobs to execute...
+
+[Fri Oct 13 14:17:30 2023]
+localrule prepare_stripping:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21_leptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21_radiative.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21_bhadron.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21_commonparticles.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p1_leptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p1_bhadron.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p1_commonparticles.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p2_leptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p2_bhadron.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p2_commonparticles.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/leptonic, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/radiative, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/bhadron, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/commonparticles, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/leptonic, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/bhadron, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p2/leptonic, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p2/bhadron, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p2/commonparticles
+    jobid: 0
+    reason: Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p2/leptonic, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21_bhadron.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p2/bhadron, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p2_commonparticles.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/bhadron, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p2/commonparticles, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/bhadron, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p2_leptonic.txt
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Oct 13 14:17:30 2023]
+Finished job 0.
+9 of 9 steps (100%) done
+Complete log: .snakemake/log/2023-10-13T141054.245842.snakemake.log

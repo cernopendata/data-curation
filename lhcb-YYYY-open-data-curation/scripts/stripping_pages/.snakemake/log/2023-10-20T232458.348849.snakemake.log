@@ -1,0 +1,120 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+create_json_files        5
+prepare_stripping        1
+total                    6
+
+Select jobs to execute...
+
+[Fri Oct 20 23:24:58 2023]
+rule create_json_files:
+    input: ../../release/stripping_pages/processed, create_json_files.py
+    output: ../../release/stripping_pages/temp/json_success_stripping21_radiative.txt
+    jobid: 11
+    reason: Missing output files: ../../release/stripping_pages/temp/json_success_stripping21_radiative.txt
+    wildcards: version=stripping21, stream=radiative
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Oct 20 23:24:58 2023]
+rule create_json_files:
+    input: ../../release/stripping_pages/processed, create_json_files.py
+    output: ../../release/stripping_pages/temp/json_success_stripping21r0p1_ew.txt
+    jobid: 13
+    reason: Missing output files: ../../release/stripping_pages/temp/json_success_stripping21r0p1_ew.txt
+    wildcards: version=stripping21r0p1, stream=ew
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Oct 20 23:24:58 2023]
+rule create_json_files:
+    input: ../../release/stripping_pages/processed, create_json_files.py
+    output: ../../release/stripping_pages/temp/json_success_stripping21_ew.txt
+    jobid: 10
+    reason: Missing output files: ../../release/stripping_pages/temp/json_success_stripping21_ew.txt
+    wildcards: version=stripping21, stream=ew
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Oct 20 23:24:58 2023]
+rule create_json_files:
+    input: ../../release/stripping_pages/processed, create_json_files.py
+    output: ../../release/stripping_pages/temp/json_success_stripping21_commonparticles.txt
+    jobid: 12
+    reason: Missing output files: ../../release/stripping_pages/temp/json_success_stripping21_commonparticles.txt
+    wildcards: version=stripping21, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Oct 20 23:24:58 2023]
+rule create_json_files:
+    input: ../../release/stripping_pages/processed, create_json_files.py
+    output: ../../release/stripping_pages/temp/json_success_stripping21r0p1_commonparticles.txt
+    jobid: 14
+    reason: Missing output files: ../../release/stripping_pages/temp/json_success_stripping21r0p1_commonparticles.txt
+    wildcards: version=stripping21r0p1, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Oct 20 23:24:58 2023]
+Error in rule create_json_files:
+    jobid: 11
+    input: ../../release/stripping_pages/processed, create_json_files.py
+    output: ../../release/stripping_pages/temp/json_success_stripping21_radiative.txt
+    shell:
+        
+        python3 create_json_files.py                     --input_path ../../release/stripping_pages/processed            --version stripping21              --stream radiative                && touch ../../release/stripping_pages/temp/json_success_stripping21_radiative.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Oct 20 23:24:58 2023]
+Error in rule create_json_files:
+    jobid: 13
+    input: ../../release/stripping_pages/processed, create_json_files.py
+    output: ../../release/stripping_pages/temp/json_success_stripping21r0p1_ew.txt
+    shell:
+        
+        python3 create_json_files.py                     --input_path ../../release/stripping_pages/processed            --version stripping21r0p1              --stream ew                && touch ../../release/stripping_pages/temp/json_success_stripping21r0p1_ew.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Oct 20 23:24:58 2023]
+Error in rule create_json_files:
+    jobid: 12
+    input: ../../release/stripping_pages/processed, create_json_files.py
+    output: ../../release/stripping_pages/temp/json_success_stripping21_commonparticles.txt
+    shell:
+        
+        python3 create_json_files.py                     --input_path ../../release/stripping_pages/processed            --version stripping21              --stream commonparticles                && touch ../../release/stripping_pages/temp/json_success_stripping21_commonparticles.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Oct 20 23:24:58 2023]
+Error in rule create_json_files:
+    jobid: 10
+    input: ../../release/stripping_pages/processed, create_json_files.py
+    output: ../../release/stripping_pages/temp/json_success_stripping21_ew.txt
+    shell:
+        
+        python3 create_json_files.py                     --input_path ../../release/stripping_pages/processed            --version stripping21              --stream ew                && touch ../../release/stripping_pages/temp/json_success_stripping21_ew.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Fri Oct 20 23:24:58 2023]
+Error in rule create_json_files:
+    jobid: 14
+    input: ../../release/stripping_pages/processed, create_json_files.py
+    output: ../../release/stripping_pages/temp/json_success_stripping21r0p1_commonparticles.txt
+    shell:
+        
+        python3 create_json_files.py                     --input_path ../../release/stripping_pages/processed            --version stripping21r0p1              --stream commonparticles                && touch ../../release/stripping_pages/temp/json_success_stripping21r0p1_commonparticles.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-20T232458.348849.snakemake.log

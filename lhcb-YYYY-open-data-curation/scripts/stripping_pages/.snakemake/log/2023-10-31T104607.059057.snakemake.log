@@ -1,0 +1,111 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count
+---------------------  -------
+clean_index                  1
+clean_stripping_pages        2
+convert_index                1
+create_json_files            2
+prepare_stripping            1
+total                        7
+
+Select jobs to execute...
+
+[Tue Oct 31 10:46:07 2023]
+rule clean_index:
+    input: ../../config.yaml, clean_index.py, /Users/mindaugassarpis/Work/StrippingPages/stripping21/index.html
+    output: ../../release/stripping_pages/temp/stripping21/clean_index.html
+    jobid: 1
+    reason: Updated input files: clean_index.py
+    wildcards: version=stripping21
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Tue Oct 31 10:46:07 2023]
+rule clean_stripping_pages:
+    input: /Users/mindaugassarpis/Work/StrippingPages/stripping21/radiative, single_clean_stripping_page.py
+    output: ../../release/stripping_pages/processed/stripping21/radiative, ../../release/stripping_pages/temp/stripping21/radiative, ../../release/stripping_pages/temp/stripping21/radiative/success.txt
+    jobid: 3
+    reason: Updated input files: single_clean_stripping_page.py
+    wildcards: version=stripping21, stream=radiative
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Tue Oct 31 10:46:07 2023]
+rule clean_stripping_pages:
+    input: /Users/mindaugassarpis/Work/StrippingPages/stripping21/commonparticles, single_clean_stripping_page.py
+    output: ../../release/stripping_pages/processed/stripping21/commonparticles, ../../release/stripping_pages/temp/stripping21/commonparticles, ../../release/stripping_pages/temp/stripping21/commonparticles/success.txt
+    jobid: 4
+    reason: Updated input files: single_clean_stripping_page.py
+    wildcards: version=stripping21, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 31 10:46:08 2023]
+Finished job 1.
+1 of 7 steps (14%) done
+Select jobs to execute...
+
+[Tue Oct 31 10:46:08 2023]
+rule convert_index:
+    input: ../../release/stripping_pages/temp/stripping21/clean_index.html
+    output: ../../release/stripping_pages/processed/stripping21/stripping21-index.md
+    jobid: 2
+    reason: Input files updated by another job: ../../release/stripping_pages/temp/stripping21/clean_index.html
+    wildcards: version=stripping21
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 31 10:46:08 2023]
+Finished job 2.
+2 of 7 steps (29%) done
+[Tue Oct 31 10:46:09 2023]
+Finished job 3.
+3 of 7 steps (43%) done
+Select jobs to execute...
+
+[Tue Oct 31 10:46:09 2023]
+rule create_json_files:
+    input: create_json_files.py, ../../release/stripping_pages/temp/stripping21/radiative/success.txt
+    output: ../../release/stripping_pages/temp/json_success_stripping21_radiative.txt
+    log: ../../release/stripping_pages/temp/logs/json_stripping21_radiative.log
+    jobid: 5
+    reason: Input files updated by another job: ../../release/stripping_pages/temp/stripping21/radiative/success.txt
+    wildcards: version=stripping21, stream=radiative
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 31 10:46:10 2023]
+Finished job 5.
+4 of 7 steps (57%) done
+[Tue Oct 31 10:46:18 2023]
+Finished job 4.
+5 of 7 steps (71%) done
+Select jobs to execute...
+
+[Tue Oct 31 10:46:18 2023]
+rule create_json_files:
+    input: create_json_files.py, ../../release/stripping_pages/temp/stripping21/commonparticles/success.txt
+    output: ../../release/stripping_pages/temp/json_success_stripping21_commonparticles.txt
+    log: ../../release/stripping_pages/temp/logs/json_stripping21_commonparticles.log
+    jobid: 6
+    reason: Input files updated by another job: ../../release/stripping_pages/temp/stripping21/commonparticles/success.txt
+    wildcards: version=stripping21, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 31 10:46:18 2023]
+Finished job 6.
+6 of 7 steps (86%) done
+Select jobs to execute...
+
+[Tue Oct 31 10:46:18 2023]
+localrule prepare_stripping:
+    input: ../../release/stripping_pages/temp/stripping21/clean_index.html, ../../release/stripping_pages/processed/stripping21/stripping21-index.md, ../../release/stripping_pages/temp/stripping21/radiative/success.txt, ../../release/stripping_pages/temp/stripping21/commonparticles/success.txt, ../../release/stripping_pages/temp/json_success_stripping21_radiative.txt, ../../release/stripping_pages/temp/json_success_stripping21_commonparticles.txt
+    jobid: 0
+    reason: Input files updated by another job: ../../release/stripping_pages/temp/stripping21/radiative/success.txt, ../../release/stripping_pages/temp/stripping21/commonparticles/success.txt, ../../release/stripping_pages/temp/json_success_stripping21_radiative.txt, ../../release/stripping_pages/processed/stripping21/stripping21-index.md, ../../release/stripping_pages/temp/stripping21/clean_index.html, ../../release/stripping_pages/temp/json_success_stripping21_commonparticles.txt
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Tue Oct 31 10:46:18 2023]
+Finished job 0.
+7 of 7 steps (100%) done
+Complete log: .snakemake/log/2023-10-31T104607.059057.snakemake.log

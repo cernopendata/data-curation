@@ -1,0 +1,7 @@
+The flag 'directory' used in rule clean_stripping_pages is only valid for outputs, not inputs.
+Building DAG of jobs...
+MissingInputException in rule prepare_stripping in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 26:
+Missing input files for rule prepare_stripping:
+    affected files:
+        ../../release/stripping_pages/temp/stripping21/commonparticles/success.txt
+        ../../release/stripping_pages/temp/stripping21/ew/success.txt

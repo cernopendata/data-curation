@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule download_raw_stripping in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 9:
+Missing input files for rule download_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p2/index.html
+    wildcards: version=stripping21r0p2
+    affected files:
+        ../raw_stripping_downloader.py
