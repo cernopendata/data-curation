@@ -19,6 +19,8 @@ import re
 import subprocess
 import sys
 
+from xrootdpyfs import XRootDPyFS
+
 from utils import (get_dataset_format, get_dataset_name, get_dataset_runperiod,
                    get_dataset_version, get_dataset_year)
 
@@ -88,43 +90,42 @@ def get_dataset_location(dataset):
     )
 
 
-def get_dataset_volumes(dataset):
+def get_dataset_volumes(fs, dataset):
     "Return list of volumes for the given dataset."
-    volumes = []
     dataset_location = get_dataset_location(dataset)
-    try:
-        output = subprocess.check_output("eos ls -1 " + dataset_location, shell=True)
-    except subprocess.CalledProcessError:
-        return []
-    output = str(output.decode("utf-8"))
-    for line in output.split("\n"):
-        if line and line != "file-indexes":
-            volumes.append(line)
+
+    volumes = []
+    for entry in fs.listdir(dataset_location, dirs_only=True):
+        if entry != "file-indexes":
+            volumes.append(entry)
     return volumes
 
 
-def get_dataset_volume_files(dataset, volume):
+def get_dataset_volume_files(fs, dataset, volume):
     "Return file list with information about name, size, location for the given dataset and volume."
-    files = []
     dataset_location = get_dataset_location(dataset)
-    output = subprocess.check_output(
-        "eos oldfind --size --checksum " + dataset_location + "/" + volume, shell=True
-    )
-    output = str(output.decode("utf-8"))
-    for line in output.split("\n"):
-        if line and line != "file-indexes":
-            match = re.match(r"^path=(.*) size=(.*) checksum=(.*)$", line)
-            if match:
-                path, size, checksum = match.groups()
-                files.append(
-                    {
-                        "filename": os.path.basename(path),
-                        "size": int(size),
-                        "checksum": "adler32:" + checksum,
-                        "uri": XROOTD_URI_BASE + path,
-                    }
-                )
-    return files
+
+    all_dirs = [f"{dataset_location}/{volume}"]
+    all_files = []
+
+    for my_dir in all_dirs:
+        all_dirs += fs.listdir(my_dir, dirs_only=True, absolute=True)
+        all_files += fs.listdir(my_dir, files_only=True, absolute=True)
+
+    all_entries = []
+    for entry in all_files:
+        status, stat = fs._client.stat(entry)
+        checksum = ":".join(fs.xrd_checksum(entry))
+        all_entries.append(
+            {
+                "filename": os.path.basename(entry),
+                "size": stat.size,
+                "checksum": checksum,
+                "uri": XROOTD_URI_BASE + entry,
+            }
+        )
+
+    return all_entries
 
 
 def create_index_file(filebase, files, eos_dir, style, volume_dir):
@@ -168,9 +169,9 @@ def copy_index_file(dataset, volume, filename, eos_dir, volume_dir):
         os.system(cmd)
 
 
-def create_index_files(dataset, volume, eos_dir, volume_dir):
+def create_index_files(fs, dataset, volume, eos_dir, volume_dir):
     "Create index files for the given dataset and volumes."
-    files = get_dataset_volume_files(dataset, volume)
+    files = get_dataset_volume_files(fs, dataset, volume)
     filebase = get_dataset_index_file_base(dataset) + "_" + volume + "_" + "file_index"
 
     for output_type in ["txt", "json"]:
@@ -187,10 +188,22 @@ def main(datasets=[], eos_dir="./inputs/eos-file-indexes/"):
     if not os.path.isdir(f"{eos_dir}/{str(volume_dir)}"):
         os.makedirs(f"{eos_dir}/{str(volume_dir)}")
 
+    try:
+        fs = XRootDPyFS(f"{XROOTD_URI_BASE}/")
+    except Exception as my_exc:
+        print("We can't get the xrootdpyfs instance:", my_exc)
+        return -1
+
+    dataset_counter = 1
     for dataset in datasets:
-        volumes = get_dataset_volumes(dataset)
+        print(f"Doing {dataset} ({dataset_counter}/{len(datasets)})")
+        dataset_counter += 1
+        volumes = get_dataset_volumes(fs, dataset)
+        if not volumes:
+            print(f"Error with the dataset '{dataset}'!")
+            return -1
         for volume in volumes:
-            create_index_files(dataset, volume, eos_dir, volume_dir)
+            create_index_files(fs, dataset, volume, eos_dir, volume_dir)
             volume_counter += 1
             if volume_counter > 999:
                 volume_counter = 0
