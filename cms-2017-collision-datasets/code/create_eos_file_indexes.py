@@ -97,13 +97,22 @@ def get_files(dataset, volume):
     "Return file list with information about name, size, location for the given dataset and volume."
     files = []
     dataset_location = get_dataset_location(dataset)
+
+
+    # TPM: note that the eos find --xurl option returns the full eos location so
+    # a lot of this code could be simplified
     output = subprocess.check_output(
         "eos find --size --checksum " + dataset_location + "/" + volume, shell=True
     )
     output = output.decode('utf-8')
+
     for line in output.split("\n"):
         if line and line != "file-indexes":
-            match = re.match(r"^path=(.*) size=(.*) checksum=(.*)$", line)
+
+            # TPM: eos doesn't return path= anymore? 
+            #match = re.match(r"^path=(.*) size=(.*) checksum=(.*)$", line)
+            match = re.match(r"^(.*) size=(.*) checksum=(.*)$", line)
+            
             if match:
                 path, size, checksum = match.groups()
                 files.append(
@@ -168,9 +177,11 @@ def create_index_files(dataset, volume):
     "Create index files for the given dataset and volumes."
     files = get_files(dataset, volume)
     filename = create_index_file(dataset, volume, files, "txt")
-    create_copy_command(dataset, volume, filename)
+    # TPM: don't do this now
+    #create_copy_command(dataset, volume, filename)
     filename = create_index_file(dataset, volume, files, "json")
-    create_copy_command(dataset, volume, filename)
+    # TPM: don't do this now
+    #create_copy_command(dataset, volume, filename)
 
 
 def main():
@@ -180,6 +191,9 @@ def main():
     for line in open(INPUT, "r").readlines():
         dataset = line.strip()
         volumes = get_volumes(dataset)
+
+        print(f'dataset: {dataset}')
+        
         for volume in volumes:
             create_index_files(dataset, volume)
 
