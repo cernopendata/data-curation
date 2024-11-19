@@ -21,7 +21,7 @@ NOTE = (
 )
 
 
-RECID_START = 29000
+RECID_START = 29000 # TPM: get a new number from Tibor
 YEAR_CREATED = "2017"
 YEAR_PUBLISHED = "2024"
 COLLISION_TYPE = "pp"
@@ -75,6 +75,10 @@ def get_process(afile):
 
 def get_run_numbers_and_software(tablename):
     "Return run numbers and software for given configuration."
+
+
+    # TPM: This file is actually the same as that found in cms-run2-hlt-triggers/inputs.
+    # Perhaps we should get it from there. It shouldn't be hard-coded here anyway. 
     for line in open("./inputs/hlt-trigger-information.txt", "r").readlines():
         cmssw, title, runs = line.split(" ", 2)
         runs = runs.strip()
@@ -170,7 +174,7 @@ def main():
                 {
                     "checksum": "adler32:%s" % get_checksum(afile),
                     "size": get_size(afile),
-                    "uri": "root://eospublic.cern.ch//eos/opendata/cms/configuration-files/2016/"
+                    "uri": f"root://eospublic.cern.ch//eos/opendata/cms/configuration-files/{YEAR_CREATED}/"
                     + afile,
                 }
             ]
