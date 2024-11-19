@@ -1,0 +1,3 @@
+[
+{"config":[{"dataset":"/DisplacedJet/Run2017C-UL2017_MiniAODv2_NanoAODv9-v2/NANOAOD","idict":{"byinputdataset":null,"byoutputdataset":["a605973cbe21b04aba0ddad52ffacab4"]},"ids":["a605973cbe21b04aba0ddad52ffacab4"],"ids_map":{"a605973cbe21b04aba0ddad52ffacab4":"ConfigCacheID"},"name":"pdmvserv_Run2017C_DisplacedJet_UL2017_MiniAODv2_NanoAODv9_211021_163712_8642","urls":["https://cmsweb.cern.ch:8443/couchdb/reqmgr_config_cache/a605973cbe21b04aba0ddad52ffacab4/configFile"]}],"das":{"expire":1732034373,"instance":"prod/global","primary_key":"config.name","record":1,"services":["reqmgr2:configs"]},"qhash":"1b863eb5d7567da2dfa0025f29897c4e"}
+]

@@ -12,7 +12,7 @@ while IFS= read -r dataset; do
 	    okay=1
 	fi
     done
-done < ./inputs/cms-2016-collision-datasets.txt
+done < ./inputs/cms-2017-collision-datasets.txt
 
 # get the config file info for the RECO step (the parent of MINI)
 minis=$(cat inputs/cms-2017-collision-datasets.txt | grep '/MINI')
