@@ -1,3 +1,0 @@
-[
-{"config":[{"dataset":"/FSQJet2/Run2017E-UL2017_MiniAODv2_NanoAODv9-v1/NANOAOD","idict":{"byinputdataset":null,"byoutputdataset":["4933d925d64ba24c928c8aeab69252b3"]},"ids":["4933d925d64ba24c928c8aeab69252b3"],"ids_map":{"4933d925d64ba24c928c8aeab69252b3":"ConfigCacheID"},"name":"pdmvserv_Run2017E_FSQJet2_UL2017_MiniAODv2_NanoAODv9_210726_145458_5156","urls":["https://cmsweb.cern.ch:8443/couchdb/reqmgr_config_cache/4933d925d64ba24c928c8aeab69252b3/configFile"]}],"das":{"expire":1732034381,"instance":"prod/global","primary_key":"config.name","record":1,"services":["reqmgr2:configs"]},"qhash":"cc872dfbbe8d782b4d4bab4729271b1d"}
-]

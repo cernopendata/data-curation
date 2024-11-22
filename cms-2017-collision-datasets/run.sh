@@ -25,7 +25,7 @@ python3 ./code/create_reco_config_file_records.py > ./outputs/cms-reco-configura
 
 ## 5) now you can create collision data
 
-python3 ./code/create_cms_2016_collision_datasets.py > ./outputs/cms-primary-datasets-Run2017.json
+python3 ./code/create_cms_2017_collision_datasets.py > ./outputs/cms-primary-datasets-Run2017.json
 
 ## 6) transfer produced files to local data-curation instance
 

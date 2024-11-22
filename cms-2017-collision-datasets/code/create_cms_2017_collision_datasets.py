@@ -187,7 +187,13 @@ def get_release_for_system_details(dataset_full_name):
 def get_global_tag_for_processing(dataset_full_name):
     """Return global tag info for the given dataset for the processing steps."""
     config_file_name = get_dataset_config_file_name(dataset_full_name)
-    content = open("./outputs/" + f"{config_file_name}.py", "r").read()
+    
+    try:
+        content = open("./outputs/" + f"{config_file_name}.py", "r").read()
+    except FileNotFoundError:
+        print(f'{dataset_full_name}  {config_file_name}.py not found')
+        return ""
+        
     processing_global_tag = ""
     pattern = r"process\.GlobalTag = GlobalTag\(process\.GlobalTag, '([^']*)'"
     m = re.search(pattern, content)
@@ -245,8 +251,15 @@ def get_dataset_config_file_name(dataset_full_name):
     config_file = f"ReReco-{run_period}-{dataset}-{version}"
     if "/AOD" in dataset_full_name:
         config_file = f"recoskim_{run_period}_{dataset}"
-        if "DoubleMuonLowMass" in dataset_full_name:
+
+        # TPM: This condition works for 2016? But isn't needed for 2017.
+        # However the condition below for SingleMuon is needed for 2017.
+        #if "DoubleMuonLowMass" in dataset_full_name:
+        #    config_file = f"ReReco-{run_period}-{dataset}-{version}"
+
+        if "SingleMuon" in dataset_full_name:
             config_file = f"ReReco-{run_period}-{dataset}-{version}"
+        
     return config_file
 
 
@@ -300,7 +313,8 @@ def create_selection_information(dataset, dataset_full_name):
 
     afile = get_dataset_config_file_name(dataset_full_name)
     step_dataset = dataset_full_name
-    for i in range(len(steps)):
+ 
+    for i in range(len(steps)):        
         generator_text = "Configuration file for " + steps[i]['process'] + " step " + afile
         release = get_release_for_processing(step_dataset)
         global_tag = get_global_tag_for_processing(step_dataset)
@@ -586,16 +600,13 @@ def print_records(records):
 @click.command()
 def main():
     "Do the job."
-    populate_dataset_trigger_list()
-    populate_doiinfo()
-    populate_containerimages_cache()
-    populate_selection_descriptions()
 
     records = []
     recid = RECID_START
-    with open("./inputs/cms-2016-collision-datasets.txt", "r") as fdesc:
+    with open("./inputs/cms-2017-collision-datasets.txt", "r") as fdesc:
         for dataset_full_name in fdesc.readlines():
             dataset_full_name = dataset_full_name.strip()
+            
             dataset = dataset_full_name.split("/")[1]
             run_period = dataset_full_name.split("/")[2].split("-", 1)[0]
             version = dataset_full_name.split("/")[2].split("-", 1)[1]

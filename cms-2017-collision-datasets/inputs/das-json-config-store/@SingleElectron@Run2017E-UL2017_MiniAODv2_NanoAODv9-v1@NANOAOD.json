@@ -1,3 +1,0 @@
-[
-{"config":[{"dataset":"/SingleElectron/Run2017E-UL2017_MiniAODv2_NanoAODv9-v1/NANOAOD","idict":{"byinputdataset":null,"byoutputdataset":["a586197244cdeafc9e2f35ae36519b9b"]},"ids":["a586197244cdeafc9e2f35ae36519b9b"],"ids_map":{"a586197244cdeafc9e2f35ae36519b9b":"ConfigCacheID"},"name":"pdmvserv_Run2017E_SingleElectron_UL2017_MiniAODv2_NanoAODv9_210711_194549_4974","urls":["https://cmsweb.cern.ch:8443/couchdb/reqmgr_config_cache/a586197244cdeafc9e2f35ae36519b9b/configFile"]}],"das":{"expire":1732034385,"instance":"prod/global","primary_key":"config.name","record":1,"services":["reqmgr2:configs"]},"qhash":"bf9ae0837d0528e8d4c3de1c28c18c92"}
-]

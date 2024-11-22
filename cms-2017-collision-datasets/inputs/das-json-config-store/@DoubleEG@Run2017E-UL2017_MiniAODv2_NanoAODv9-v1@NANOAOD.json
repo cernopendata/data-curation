@@ -1,3 +1,0 @@
-[
-{"config":[{"dataset":"/DoubleEG/Run2017E-UL2017_MiniAODv2_NanoAODv9-v1/NANOAOD","idict":{"byinputdataset":null,"byoutputdataset":["4933d925d64ba24c928c8aeab691469c"]},"ids":["4933d925d64ba24c928c8aeab691469c"],"ids_map":{"4933d925d64ba24c928c8aeab691469c":"ConfigCacheID"},"name":"pdmvserv_Run2017E_DoubleEG_UL2017_MiniAODv2_NanoAODv9_210726_145405_970","urls":["https://cmsweb.cern.ch:8443/couchdb/reqmgr_config_cache/4933d925d64ba24c928c8aeab691469c/configFile"]}],"das":{"expire":1732034380,"instance":"prod/global","primary_key":"config.name","record":1,"services":["reqmgr2:configs"]},"qhash":"66d28dfec67e422e91cb1de3eb574fbb"}
-]

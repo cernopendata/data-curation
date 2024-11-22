@@ -127,7 +127,7 @@ def main():
 
             # Skip non-RECO files
             afile_python_filename = get_python_filename(afile)
-
+                        
             if not afile_python_filename.startswith("ReReco") and not afile_python_filename.startswith("recoskim"):
                 continue
 
