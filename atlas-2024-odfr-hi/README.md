@@ -27,3 +27,11 @@ From running the scripts and the transfers, a number of metadata json records ar
 
 To generate the open data records themselves, a final script is provided, `mk_hi_json.py`. This script takes in the above-created text and json files and attempts to stitch together the actual open data portal json files. Three json files are created for records: one for MC, one for data, and one to link them. Individual json files are also created for each dataset with the file information for that dataset.
 
+Finally, the records are to be enriched with file indexes by means of `create_file_indexes.py` script:
+
+```
+$ python ./create_file_indexes.py > test/x.sh
+$ cd test && zip -r x.zip x.sh eos-file-indexes
+```
+
+The generated helper script `x.sh` is to be executed on LXPLUS by the CERN Open Data team to copy the generated EOS file indexes to the expected place in EOSPUBLIC.

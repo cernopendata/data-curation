@@ -32,6 +32,7 @@ Specific data ingestion and curation campaigns:
 - `atlas-2016-masterclasses <atlas-2016-masterclasses>`_ -- helper scripts for the ATLAS 2016 masterclasses release
 - `atlas-2016-outreach <atlas-2016-outreach>`_ -- helper scripts for the ATLAS 2016 outreach release
 - `atlas-2024-odfr <atlas-2024-odfr>`_ -- helper scripts for the ATLAS 2024 Open Data For Research release
+- `atlas-2024-odfr-hi <atlas-2024-odfr-hi>`_ -- helper scripts for the ATLAS 2024 Open Data For Research heavy ion release
 - `cms-2010-collision-datasets <cms-2010-collision-datasets>`_ -- helper scripts for the CMS 2010 open data release (collision datasets)
 - `cms-2010-simulated-datasets <cms-2010-simulated-datasets>`_ -- helper scripts for the CMS 2010 open data release (simulated datasets)
 - `cms-2011-collision-datasets <cms-2011-collision-datasets>`_ -- helper scripts for the CMS 2011 open data release (collision datasets)

@@ -5,6 +5,7 @@ venv/
 *.err
 *.pyc
 atlas-2024-odfr/test
+atlas-2024-odfr-hi/test
 cms-2010-collision-datasets/outputs/*.json
 cms-2010-simulated-datasets/outputs/*.json
 cms-2011-collision-datasets/code/das.py
