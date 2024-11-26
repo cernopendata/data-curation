@@ -61,7 +61,7 @@ evergreen_data = {
     "date_reprocessed": "2019",
     "distribution": {
       "formats": [
-        "DAOD_PHYSLITE",
+        "DAOD_HION14",
         "root"
       ],
     },
@@ -87,7 +87,7 @@ evergreen_data = {
         },
         {
           "description": "More about the DAOD_HION14 data format",
-          "url": "https://opendata.atlas.cern/docs/documentation/data_format/heavyion/"
+          "url": "https://opendata.atlas.cern/docs/documentation/data_format/HI_formats"
         },
         {
           "description": "Citation policy",
@@ -148,7 +148,7 @@ for adataset in dataset_files:
         my_json['type']['secondary'] = ['Simulated']
     # Add categories, mostly for MC datasets
     my_json['categories'] = dataset_files[adataset]['categories']
-    my_json['title'] = 'ATLAS DAOD_PHYSLITE format '+dataset_files[adataset]['name']
+    my_json['title'] = 'ATLAS DAOD_HION14 format '+dataset_files[adataset]['name']
     # Add a record ID for CERN Open Data. Reserved range for this release
     my_json['recid'] = dataset_files[adataset]['recid']
     # Add the DOI - these are pre-reserved by the Open Data Portal team
