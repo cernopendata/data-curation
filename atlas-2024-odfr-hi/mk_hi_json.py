@@ -138,13 +138,11 @@ for adataset in dataset_files:
     # Name of the collections, systematically set
     my_json['collections'] = ['ATLAS-Simulated-Datasets' if 'mc_' in adataset else 'ATLAS-Primary-Datasets']
     # data-taking year during which the collision data or for which the simulated data, software and other assets were produced
+    my_json['date_created'] = ['2015']
+    my_json['run_period'] = ['2015']
     if 'data' in adataset:
-        my_json['date_created'] = [adataset.split('_')[1]]
-        my_json['run_period'] = [adataset.split('_')[1]]
         my_json['type']['secondary'] = ['Collision']
     else:
-        my_json['date_created'] = ['2015','2016']
-        my_json['run_period'] = ['2015','2016']
         my_json['type']['secondary'] = ['Simulated']
     # Add categories, mostly for MC datasets
     my_json['categories'] = dataset_files[adataset]['categories']
