@@ -178,10 +178,10 @@ def create_index_files(dataset, volume):
     files = get_files(dataset, volume)
     filename = create_index_file(dataset, volume, files, "txt")
     # TPM: don't do this now
-    #create_copy_command(dataset, volume, filename)
+    create_copy_command(dataset, volume, filename)
     filename = create_index_file(dataset, volume, files, "json")
     # TPM: don't do this now
-    #create_copy_command(dataset, volume, filename)
+    create_copy_command(dataset, volume, filename)
 
 
 def main():
