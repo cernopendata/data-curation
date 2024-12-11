@@ -72,7 +72,7 @@ def main():
 
     rec["date_published"] = YEAR_PUBLISHED
 
-    rec["experiment"] = "CMS"
+    rec["experiment"] = ["CMS"]
 
     rec["publisher"] = "CERN Open Data Portal"
 
