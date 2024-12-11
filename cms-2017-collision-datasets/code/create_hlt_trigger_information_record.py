@@ -12,7 +12,7 @@ sys.path.insert(1, "../cms-release-info")
 from helpers import run_range_text
 
 
-RECID_START = 30300
+RECID_START = 94299 # TPM: this is a good one
 RUN_PERIOD = ["Run2017C", "Run2017E",]
 YEAR_CREATED = "2017"
 YEAR_PUBLISHED = "2024"

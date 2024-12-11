@@ -32,8 +32,12 @@ DOI_INFO = {}
 
 CONTAINERIMAGES_CACHE = {}
 
-RECID_START = 30500
-RECID_VALIDATED_RUNS = "14220"
+RECID_START = 94000
+
+#TPM this is for the json for good runs. if we know the recid then add it.
+# the record is usually made by-hand.
+RECID_VALIDATED_RUNS = "94090" #TPM reserve this one for 2017 
+
 YEAR_PUBLISHED = "2024"
 YEAR_CREATED = "2017"
 COLLISION_TYPE = "pp"

@@ -21,7 +21,7 @@ NOTE = (
 )
 
 
-RECID_START = 29000 # TPM: get a new number from Tibor
+RECID_START = 94100 # TPM: this is a good recid from which to start. There are supposed to be 113
 YEAR_CREATED = "2017"
 YEAR_PUBLISHED = "2024"
 COLLISION_TYPE = "pp"

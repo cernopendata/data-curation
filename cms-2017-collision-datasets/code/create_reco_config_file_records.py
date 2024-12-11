@@ -22,9 +22,8 @@ NOTE = (
 )
 
 
-RECID_START = 30400
-RECID_MAX = 30500   # when this record ID number is reached, continue from the "next" number
-RECID_NEXT = 30566  # next free record ID number
+RECID_START = 95500 # TPM: this is good. there are 1106 trigger path records
+
 YEAR_CREATED = "2017"
 YEAR_PUBLISHED = "2024"
 COLLISION_ENERGY = "13TeV"
@@ -210,10 +209,6 @@ def main():
                 "  '%s': %d,\n" % (afile_python_filename.split(".", 1)[0], recid)
             )
             recid += 1
-
-            # jump over some record ID range which were already preselected for collision data
-            if recid == RECID_MAX:
-                recid = RECID_NEXT
 
     fdesc.write("}\n")
     fdesc.close()

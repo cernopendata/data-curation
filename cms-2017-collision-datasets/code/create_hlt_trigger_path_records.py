@@ -11,7 +11,7 @@ LINK_INFO = {}
 # read LINK_INFO dictionary created by a friendly program ahead of this one:
 exec(open("./outputs/hlt_config_files_link_info.py", "r").read())
 
-RECID_START = 29200
+RECID_START = 94300 # TPM: this should be good
 YEAR_CREATED = "2017"
 YEAR_PUBLISHED = "2024"
 COLLISION_ENERGY = "13TeV"
