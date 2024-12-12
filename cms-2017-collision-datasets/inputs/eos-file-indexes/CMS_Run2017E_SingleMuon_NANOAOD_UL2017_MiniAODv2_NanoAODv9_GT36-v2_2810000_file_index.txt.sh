@@ -1,0 +1,1 @@
+eos cp ./CMS_Run2017E_SingleMuon_NANOAOD_UL2017_MiniAODv2_NanoAODv9_GT36-v2_2810000_file_index.txt /eos/opendata/cms/Run2017E/SingleMuon/NANOAOD/UL2017_MiniAODv2_NanoAODv9_GT36-v2/file-indexes/CMS_Run2017E_SingleMuon_NANOAOD_UL2017_MiniAODv2_NanoAODv9_GT36-v2_2810000_file_index.txt
