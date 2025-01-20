@@ -1,0 +1,1 @@
+eos cp ./CMS_Run2017E_SingleMuon_MINIAOD_UL2017_MiniAODv2_GT36-v2_50000_file_index.json /eos/opendata/cms/Run2017E/SingleMuon/MINIAOD/UL2017_MiniAODv2_GT36-v2/file-indexes/CMS_Run2017E_SingleMuon_MINIAOD_UL2017_MiniAODv2_GT36-v2_50000_file_index.json

@@ -1,0 +1,1 @@
+eos cp ./CMS_Run2017E_ZeroBias_MINIAOD_UL2017_MiniAODv2-v1_00000_file_index.txt /eos/opendata/cms/Run2017E/ZeroBias/MINIAOD/UL2017_MiniAODv2-v1/file-indexes/CMS_Run2017E_ZeroBias_MINIAOD_UL2017_MiniAODv2-v1_00000_file_index.txt

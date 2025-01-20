@@ -1,0 +1,1 @@
+eos cp ./CMS_Run2017E_MuOnia_MINIAOD_UL2017_MiniAODv2-v1_00000_file_index.json /eos/opendata/cms/Run2017E/MuOnia/MINIAOD/UL2017_MiniAODv2-v1/file-indexes/CMS_Run2017E_MuOnia_MINIAOD_UL2017_MiniAODv2-v1_00000_file_index.json

@@ -1,0 +1,1 @@
+eos cp ./CMS_Run2017C_Charmonium_NANOAOD_UL2017_MiniAODv2_NanoAODv9-v1_120000_file_index.txt /eos/opendata/cms/Run2017C/Charmonium/NANOAOD/UL2017_MiniAODv2_NanoAODv9-v1/file-indexes/CMS_Run2017C_Charmonium_NANOAOD_UL2017_MiniAODv2_NanoAODv9-v1_120000_file_index.txt

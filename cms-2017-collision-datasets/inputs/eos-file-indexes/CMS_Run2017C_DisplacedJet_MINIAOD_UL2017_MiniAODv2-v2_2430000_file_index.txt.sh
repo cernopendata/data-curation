@@ -1,0 +1,1 @@
+eos cp ./CMS_Run2017C_DisplacedJet_MINIAOD_UL2017_MiniAODv2-v2_2430000_file_index.txt /eos/opendata/cms/Run2017C/DisplacedJet/MINIAOD/UL2017_MiniAODv2-v2/file-indexes/CMS_Run2017C_DisplacedJet_MINIAOD_UL2017_MiniAODv2-v2_2430000_file_index.txt

@@ -1,0 +1,1 @@
+eos cp ./CMS_Run2017E_Tau_MINIAOD_UL2017_MiniAODv2-v1_260000_file_index.json /eos/opendata/cms/Run2017E/Tau/MINIAOD/UL2017_MiniAODv2-v1/file-indexes/CMS_Run2017E_Tau_MINIAOD_UL2017_MiniAODv2-v1_260000_file_index.json

@@ -1,0 +1,1 @@
+eos cp ./CMS_Run2017C_HighPtPhoton30AndZ_NANOAOD_UL2017_MiniAODv2_NanoAODv9-v1_270000_file_index.json /eos/opendata/cms/Run2017C/HighPtPhoton30AndZ/NANOAOD/UL2017_MiniAODv2_NanoAODv9-v1/file-indexes/CMS_Run2017C_HighPtPhoton30AndZ_NANOAOD_UL2017_MiniAODv2_NanoAODv9-v1_270000_file_index.json

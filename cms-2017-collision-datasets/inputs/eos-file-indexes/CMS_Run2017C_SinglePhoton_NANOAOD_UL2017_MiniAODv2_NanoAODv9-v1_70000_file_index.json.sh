@@ -1,0 +1,1 @@
+eos cp ./CMS_Run2017C_SinglePhoton_NANOAOD_UL2017_MiniAODv2_NanoAODv9-v1_70000_file_index.json /eos/opendata/cms/Run2017C/SinglePhoton/NANOAOD/UL2017_MiniAODv2_NanoAODv9-v1/file-indexes/CMS_Run2017C_SinglePhoton_NANOAOD_UL2017_MiniAODv2_NanoAODv9-v1_70000_file_index.json

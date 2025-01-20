@@ -1,0 +1,1 @@
+eos cp ./CMS_Run2017E_Tau_NANOAOD_UL2017_MiniAODv2_NanoAODv9-v2_80000_file_index.json /eos/opendata/cms/Run2017E/Tau/NANOAOD/UL2017_MiniAODv2_NanoAODv9-v2/file-indexes/CMS_Run2017E_Tau_NANOAOD_UL2017_MiniAODv2_NanoAODv9-v2_80000_file_index.json

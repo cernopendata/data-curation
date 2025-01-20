@@ -1,0 +1,1 @@
+eos cp ./CMS_Run2017C_DisplacedJet_NANOAOD_UL2017_MiniAODv2_NanoAODv9-v2_2520000_file_index.json /eos/opendata/cms/Run2017C/DisplacedJet/NANOAOD/UL2017_MiniAODv2_NanoAODv9-v2/file-indexes/CMS_Run2017C_DisplacedJet_NANOAOD_UL2017_MiniAODv2_NanoAODv9-v2_2520000_file_index.json

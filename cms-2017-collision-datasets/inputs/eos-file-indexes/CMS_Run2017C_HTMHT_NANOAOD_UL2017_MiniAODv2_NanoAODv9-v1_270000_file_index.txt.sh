@@ -1,0 +1,1 @@
+eos cp ./CMS_Run2017C_HTMHT_NANOAOD_UL2017_MiniAODv2_NanoAODv9-v1_270000_file_index.txt /eos/opendata/cms/Run2017C/HTMHT/NANOAOD/UL2017_MiniAODv2_NanoAODv9-v1/file-indexes/CMS_Run2017C_HTMHT_NANOAOD_UL2017_MiniAODv2_NanoAODv9-v1_270000_file_index.txt

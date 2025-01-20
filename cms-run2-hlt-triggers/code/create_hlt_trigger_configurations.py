@@ -13,7 +13,7 @@ def main():
     """Do the main job."""
 
     # find lines in input file starting with "CMSSW"
-    lines = open('./inputs/summary.txt', 'r').readlines()
+    lines = open('./inputs/summary2017.txt', 'r').readlines()
     filtered_lines = [a for a in lines if a.startswith("CMSSW")]#[:2] <-- Uncomment this to set max file count for testing purposes
 
     # print lines count

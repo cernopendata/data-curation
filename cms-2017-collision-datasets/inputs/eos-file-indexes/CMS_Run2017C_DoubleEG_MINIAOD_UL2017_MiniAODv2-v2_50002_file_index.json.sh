@@ -1,0 +1,1 @@
+eos cp ./CMS_Run2017C_DoubleEG_MINIAOD_UL2017_MiniAODv2-v2_50002_file_index.json /eos/opendata/cms/Run2017C/DoubleEG/MINIAOD/UL2017_MiniAODv2-v2/file-indexes/CMS_Run2017C_DoubleEG_MINIAOD_UL2017_MiniAODv2-v2_50002_file_index.json
