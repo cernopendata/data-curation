@@ -38,7 +38,7 @@ def get_parent_recid(parent_title):
 
 def get_file_size(file_path):
     """Return file size."""
-    file_size = os.path.getsize(file_path)/1024.0
+    file_size = os.path.getsize(file_path)
     return math.ceil(file_size)
 
 def get_collision_information(parent_title):
