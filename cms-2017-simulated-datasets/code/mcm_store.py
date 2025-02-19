@@ -1,4 +1,3 @@
-#mcm store
 import json
 import os
 import re
@@ -7,9 +6,11 @@ import sys
 import threading
 from time import sleep
 
-from das_json_store import get_das_store_json, get_parent_dataset
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'inputs')))
+import parent_dicts
+from das_json_store import get_das_store_json
 from eos_store import check_datasets_in_eos_dir
-from utils import get_dataset_format, get_dataset_year, get_from_deep_json
+from utils import get_dataset_year, get_from_deep_json
 
 
 def mcm_downloader(dataset, mcm_dir):
@@ -50,10 +51,10 @@ def mcm_downloader(dataset, mcm_dir):
         with open(outfile, 'w') as dict_file:
                 dict_file.write(mcm_script_out)
 
-    ### New 2016
+    ### New 2017
     # create a directory with the dataset name under mcm_dir + "/chain"
     # create dirs
-    if dataset.endswith('MINIAODSIM'):
+    if dataset.endswith('MINIAODSIM') and dataset in parent_dicts.mini_to_nano.keys():
         return
     path = mcm_dir + "/chain/" + dataset.replace('/', '@')
     os.makedirs(path, exist_ok=True)
@@ -117,7 +118,7 @@ def create(datasets, mcm_dir, eos_dir, threads, ignore_eos_store=False):
         eos_datasets = check_datasets_in_eos_dir(datasets, eos_dir)
 
     total = len(eos_datasets)
-    if threads > total: # if threads is less than total datasets, make threads = total
+    if threads > total: # if threads is more than total datasets, make threads = total
         threads = total
     i = 1
     for dataset in eos_datasets:
@@ -125,7 +126,7 @@ def create(datasets, mcm_dir, eos_dir, threads, ignore_eos_store=False):
         t = threading.Thread(target=mcm_downloader, args=(dataset, mcm_dir))
         t.start()
         while threading.activeCount() >= threads :
-            sleep(0.5)  # run 100 curl commands in parallel
+            sleep(0.5)  # run threads curl commands in parallel
         i += 1
 
 
@@ -159,7 +160,7 @@ def get_prepId_from_das(dataset, das_dir):
 
 
 def get_prepid_from_mcm(dataset, mcm_dir):
-    "get prepid for dataset from McM store. Not used in 2016"
+    "get prepid for dataset from McM store."
 
     # get prepid from das/dataset
     prepid = get_from_deep_json(get_mcm_dict(dataset, mcm_dir), 'prep_id')
@@ -239,6 +240,7 @@ def get_dataset_energy(dataset, mcm_dir):
                2012:  '8TeV',
                2015: '13TeV',
                2016: '13TeV',
+               2017: '13Tev'
                }.get(year, 0)
 
 def get_data_processing_year(dataset, mcm_dir):
@@ -269,14 +271,6 @@ def get_generator_name(dataset, mcm_dir):
 
     return generator_names
 
-
-def get_parent_dataset_from_mcm(dataset, mcm_dir):
-    "Return parent dataset to given DATASET from McM."
-    parent_dataset = ''
-    mcm_dict = get_mcm_dict(dataset, mcm_dir)
-    parent_dataset = get_from_deep_json(mcm_dict, 'input_dataset')
-    return parent_dataset
-
 def get_output_dataset_from_mcm(dataset, mcm_dir):
     "Return output dataset to given production step of a DATASET from McM."
     mcm_dict = get_mcm_dict(dataset, mcm_dir)
@@ -289,17 +283,6 @@ def get_conffile_ids_from_mcm(dataset, mcm_dir):
     mcm_dict = get_mcm_dict(dataset, mcm_dir)
     config_ids = get_from_deep_json(mcm_dict, 'config_id')
     return config_ids
-
-
-def get_generator_parameters_from_mcm(dataset, mcm_dir):
-    """Return generator parameters dictionary for given dataset."""
-    mcm_dict = get_mcm_dict(dataset, mcm_dir)
-    out = get_from_deep_json(mcm_dict, 'generator_parameters')
-    if out:
-        return out[0]
-    else:
-        return {}
-
 
 def get_pileup_from_mcm(dataset, mcm_dir):
     """Return pileup_dataset_name from the DIGIPremix step of a given dataset."""

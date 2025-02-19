@@ -1,9 +1,8 @@
-#dataset records
 #!/usr/bin/env python
 
 
 """
-Create MC 2016 records.
+Create MC 2017 records.
 """
 
 import hashlib
@@ -17,33 +16,35 @@ import zlib
 from datetime import datetime as dt
 from time import sleep
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'inputs')))
+import parent_dicts
+
 import requests
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 
 from categorisation import guess_title_category
-from das_json_store import (get_das_store_json, get_parent_dataset)
+from das_json_store import (get_das_store_json, get_cmssw_version_from_das)
 from eos_store import (XROOTD_URI_BASE, get_dataset_index_file_base,
                        get_dataset_location)
 from mcm_store import (get_cmsDriver_script, get_cmssw_version_from_mcm,
-                       get_conffile_ids_from_mcm, get_dataset_energy,
+                       get_conffile_ids_from_mcm,
                        get_data_processing_year,
-                       get_generator_name, get_generator_parameters_from_mcm,
+                       get_generator_name,
                        get_genfragment_url, get_global_tag, get_mcm_dict,
-                       get_parent_dataset_from_mcm, get_pileup_from_mcm,
+                       get_pileup_from_mcm,
                        get_output_dataset_from_mcm)
-from utils import (get_author_list_recid, get_dataset_format, get_dataset_year,
-                   get_dataset_runperiod, get_doi, get_from_deep_json,
-                   get_recommended_cmssw_for_analysis,
-                   get_recommended_global_tag_for_analysis, populate_doiinfo)
+from utils import (get_dataset_format,
+                   get_dataset_runperiod, get_doi, get_from_deep_json, populate_doiinfo)
 
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 
-recid_freerange_start = 30000 #FIXME not in use, using inputs/recid_info.py for now
 recommended_gt = "106X_mcRun2_asymptotic_v17"
 recommended_cmssw = "CMSSW_10_6_30"
 collision_energy = "13TeV"
 collision_type = "pp"
 year_published = "2024"
+
+parent_methodology = dict()
 
 RECOMMENDED_IMAGES_FOR_NANOAOD_DESCRIPTION = """<p>NANOAODSIM datasets are in the <a href="https://root.cern.ch/">ROOT</a> tree format and their analysis does not require the use of CMSSW or CMS open data environments. They can be analysed with common ROOT and Python tools.<p>"""
 RECOMMENDED_IMAGES_FOR_NANOAOD = [
@@ -72,8 +73,6 @@ USAGE_FOR_NANOAOD_LINKS = [
 LINK_INFO = {}
 
 CONTAINERIMAGES_CACHE = {}
-
-MININANORELATION_CACHE = {}
 
 def get_number_events(dataset, das_dir):
     """Return number of events for the dataset."""
@@ -160,8 +159,6 @@ def get_process(afile, conf_dir):
     m = re.search(r"process = cms.Process\(\s?['\"]([A-Z0-9]+)['\"]\s?(\)|,)", content)
     if m:
         process = m.groups(1)[0]
-    #if process == 'PAT':
-    #    process = "MINIAODSIM"
     return process
 
 
@@ -199,7 +196,7 @@ def get_all_generator_text(dataset, das_dir, mcm_dir, conf_dir, recid_info):
 
     # For MiniAODSIM, find the corresponding Nano and use that information
     if dataset.endswith('MINIAODSIM'):
-        dataset = MININANORELATION_CACHE[dataset]
+        dataset = parent_dicts.mini_to_nano[dataset]
 
     recid = recid_info[dataset]
     info = {}
@@ -297,25 +294,9 @@ def populate_containerimages_cache():
         for key in content.keys():
             CONTAINERIMAGES_CACHE[key] = content[key]
 
-def populate_mininanorelation_cache(dataset_full_names, mcm_dir):
-    """Populate MININANORELATION cache (to find the corresponding NANO for provenance, and for dataset -> relations)"""
-    for dataset_full_name in dataset_full_names:
-        if dataset_full_name.endswith('MINIAODSIM'):
-            nano_found = 0
-            dataset_first_name = get_from_deep_json(get_mcm_dict(dataset_full_name, mcm_dir), 'dataset_name')
-            if dataset_first_name:
-                for x in os.listdir(mcm_dir + '/chain'):
-                    if x and x.startswith('@'+dataset_first_name):
-                        dataset_name_for_nano = x.replace('@', '/')
-                        nano_found = 1
-                        MININANORELATION_CACHE[dataset_full_name] = dataset_name_for_nano
-            if nano_found==0:
-                print("A corresponding NANOAODSIM was not found for dataset: " + dataset_full_name)
-
-
 def get_dataset_semantics_doc(dataset_name, sample_file_path, recid):
     """Produce the dataset semantics files and return their data-curation paths for the given dataset."""
-    recid_rounded = int(recid)//1000 * 1000
+    recid_rounded = int(recid)//1000*1000 # round to the nearest 1000
     output_dir = f"outputs/docs/NanoAODSIM/{recid_rounded}/{recid}"
     eos_dir = f"/eos/opendata/cms/dataset-semantics/NanoAODSIM/{recid_rounded}/{recid}"
     isExist = os.path.exists(output_dir)
@@ -347,9 +328,9 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     dataset_runperiod = get_dataset_runperiod(dataset_full_name)
     dataset_version = get_dataset_version(dataset_full_name)
 
-    year_created = '2016'
+    year_created = '2017'
     year_published = '2024'
-    run_period = ['Run2016G', 'Run2016H']
+    run_period = ['Run2017B', 'Run2017C','Run2017D', 'Run2017E','Run2017F']
 
     additional_title = 'Simulated dataset ' + dataset + ' in ' + dataset_format + ' format for ' + year_created + ' collision data'
 
@@ -362,7 +343,6 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
 
     rec['collaboration'] = {}
     rec['collaboration']['name'] = 'CMS Collaboration'
-    # rec['collaboration']['recid'] = get_author_list_recid(dataset_full_name)
 
     rec['collections'] = ['CMS-Simulated-Datasets', ]
 
@@ -370,12 +350,12 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     rec['collision_information']['energy'] = collision_energy
     rec['collision_information']['type'] = collision_type
 
-    if dataset_format == "NANOAODSIM":
-        dataset_path = f"/eos/opendata/cms/mc/{dataset_runperiod}/{dataset}/NANOAODSIM/{dataset_version}"
-        intermediate_dir = os.listdir(dataset_path)
-        sample_file_path = f"{dataset_path}/{intermediate_dir[0]}"
-        sample_file_with_path = f"{sample_file_path}/{os.listdir(sample_file_path)[0]}"
-        rec["dataset_semantics_files"] = get_dataset_semantics_doc(dataset, sample_file_with_path, str(recid_info[dataset_full_name]))
+    # if dataset_format == "NANOAODSIM":
+        # dataset_path = f"/eos/opendata/cms/mc/{dataset_runperiod}/{dataset}/NANOAODSIM/{dataset_version}"
+        # intermediate_dir = os.listdir(dataset_path)
+        # sample_file_path = f"{dataset_path}/{intermediate_dir[0]}"
+        # sample_file_with_path = f"{sample_file_path}/{os.listdir(sample_file_path)[0]}"
+        #rec["dataset_semantics_files"] = get_dataset_semantics_doc(dataset, sample_file_with_path, str(recid_info[dataset_full_name]))
 
     rec['date_created'] = [year_created]
     rec['date_published'] = year_published
@@ -394,7 +374,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
 
     rec_files = get_dataset_index_files(dataset_full_name, eos_dir)
     if rec_files:
-        rec['files'] = []
+        rec['files'] = [] 
         for index_type in ['.json', '.txt']:
             index_files = [f for f in rec_files if f[0].endswith(index_type)]
             for file_number, (file_uri, file_size, file_checksum) in enumerate(index_files):
@@ -409,13 +389,21 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
 
     rec['license'] = {}
     rec['license']['attribution'] = 'CC0'
-
-    rec['methodology'] = get_all_generator_text(dataset_full_name, das_dir, mcm_dir, conffiles_dir, recid_info)
+    
+    if dataset_full_name.endswith('NANOAODSIM'):
+        rec['methodology'] = get_all_generator_text(dataset_full_name, das_dir, mcm_dir, conffiles_dir, recid_info)
+        parent_methodology[dataset_full_name] = rec['methodology']
+    else:
+        try:
+            rec['methodology'] = parent_methodology[parent_dicts.mini_to_nano[dataset_full_name]]
+        except:
+            rec['methodology'] = get_all_generator_text(dataset_full_name, das_dir, mcm_dir, conffiles_dir, recid_info)
 
     # For Mini, get the pileup from the corresponding Nano
     dataset_name_for_nano = dataset_full_name
     if dataset_full_name.endswith('MINIAODSIM'):
-        dataset_name_for_nano = MININANORELATION_CACHE[dataset_full_name]
+        dataset_name_for_nano = parent_dicts.mini_to_nano[dataset_full_name]
+
 
     pileup_dataset_name= ''
     pileup_dataset_name= get_pileup_from_mcm(dataset_name_for_nano, mcm_dir)
@@ -426,6 +414,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
         '/MinBias_TuneCUETP8M1_13TeV-pythia8/RunIISummer15GS-MCRUN2_71_V1-v2/GEN-SIM': 22314, # 2015
         #'/MinBias_TuneCUETP8M1_13TeV-pythia8/RunIISummer15GS-magnetOffBS0T_MCRUN2_71_V1-v1/GEN-SIM': {recid}, # 2015
         '/Neutrino_E-10_gun/RunIISummer20ULPrePremix-UL16_106X_mcRun2_asymptotic_v13-v1/PREMIX': 30595, # 2016
+        #'/Neutrino_E-10_gun/RunIISummer20ULPrePremix-UL17_106X_mc2017_realistic_v6-v3/PREMIX': {recid}, # 2017
         '/MinBias_TuneCP5_13TeV-pythia8/RunIIFall18GS-IdealGeometry_102X_upgrade2018_design_v9-v1/GEN-SIM': 12302 # 2018
     }.get(pileup_dataset_name, 0)
 
@@ -450,10 +439,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     rec['recid'] = str(recid_info[dataset_full_name])
 
     if dataset_full_name.endswith('NANOAODSIM'):
-        # Query from mcm dict fails for an example dataset because Mini is v1 in mcm and v2 in dataset list
-        # Get it from das instead
-        #dataset_name_for_mini = get_from_deep_json(get_mcm_dict(dataset_full_name, mcm_dir), 'input_dataset')
-        dataset_name_for_mini = get_parent_dataset(dataset_full_name, das_dir)
+        dataset_name_for_mini = parent_dicts.nano_to_mini[dataset_full_name]
         relations_description = 'The corresponding MINIAODSIM dataset:'
         relations_recid = str(recid_info[dataset_name_for_mini])
         relations_type = 'isParentOf'
@@ -503,10 +489,7 @@ def create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm
     rec['type'] = {}
     rec['type']['primary'] = 'Dataset'
     rec['type']['secondary'] = ['Simulated', ]
-
-    year_getting_started = {'2010': 2010,
-                            '2011': 2011,
-                            '2012': 2011}.get(year_created, 2011)
+    
     rec['usage'] = {}
     if dataset_full_name.endswith('NANOAODSIM'):
         rec["usage"]["description"] = USAGE_FOR_NANOAOD_DESCRIPTION
@@ -557,48 +540,25 @@ def create_records(dataset_full_names, doi_file, recid_file, eos_dir, das_dir, m
 
     doi_info = populate_doiinfo(doi_file)
 
-    if threads > len(dataset_full_names): # if threads is less than the number of datasets, make threads = number of datasets
+    if threads > len(dataset_full_names): # if threads is more than the number of datasets, make threads = number of datasets
         threads = len(dataset_full_names)
     records = []
     for dataset_full_name in dataset_full_names:
-
-        #2016: comment out threading for debugging
+        
         t= threading.Thread(target=create, args=(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir, records_dir))
         t.start()
         while threading.activeCount() >= threads :
             sleep(0.5)  # run threads parallel
 
-        #records.append(create_record(dataset_full_name, doi_info, recid_info, eos_dir, das_dir, mcm_dir, conffiles_dir))
-    #return records
-
-
-def print_records(records):
-    """Print records."""
-    print('[')
-    for (idx, rec) in enumerate(records):
-        #print(json.dumps(rec, indent=2, sort_keys=True, ensure_ascii=True))
-        print(rec)
-        if idx == len(records) - 1:
-            pass
-        else:
-            print(',')
-    print(']')
-
-
 def main(datasets, eos_dir, das_dir, mcm_dir, conffiles_dir, doi_file, recid_file, threads):
     "Do the job."
 
     populate_containerimages_cache()
-    populate_mininanorelation_cache(datasets, mcm_dir)
 
     records_dir= "./outputs/records-" + dt.now().strftime("%Y-%m")
     os.makedirs(records_dir, exist_ok=True)
 
     create_records(datasets, doi_file, recid_file, eos_dir, das_dir, mcm_dir, conffiles_dir, records_dir, threads)
-
-    #records = create_records(datasets, doi_file, recid_file, eos_dir, das_dir, mcm_dir, conffiles_dir)
-    #json.dump(records, indent=2, sort_keys=True, ensure_ascii=True, fp=sys.stdout)
-
 
 def get_step_generator_parameters(dataset, mcm_dir, recid, force_lhe=0):
     configuration_files = {}
@@ -607,17 +567,18 @@ def get_step_generator_parameters(dataset, mcm_dir, recid, force_lhe=0):
         if mcdb_id > 1:
             print("Got mcdb > 1: " + str(mcdb_id))
             configuration_files['title'] = 'Generator parameters'
-            configuration_files['url'] = "/eos/opendata/cms/lhe_generators/2017-sim/mcdb/{mcdb_id}_header.txt".format(mcdb_id=mcdb_id)
+            configuration_files['url'] = "/lhe_generators/2017-sim/mcdb/{mcdb_id}_header.txt".format(mcdb_id=mcdb_id)
             return [configuration_files]
         else:
-            dir='./lhe_generators/2017-sim/gridpacks/' + str(recid) + '/'
+            recid_rounded = int(recid)//1000*1000
+            dir=f'./lhe_generators/2017-sim/gridpacks/{recid_rounded}/{str(recid)}/'
             files = []
             files = [f for f in os.listdir(dir) if os.path.isfile(os.path.join(dir, f))]
             confarr=[]
             for f in files:
                 if f != 'LOG.txt':
                     configuration_files['title'] = 'Generator parameters: ' + f
-                    configuration_files['url'] = '/eos/opendata/cms/lhe_generators/2017-sim/gridpacks/' + str(recid) + '/'  + f
+                    configuration_files['url'] = f'/lhe_generators/2017-sim/gridpacks/{recid_rounded}/{str(recid)}/{f}'
                     confarr.append(configuration_files.copy())
             dirs = [d for d in os.listdir(dir) if os.path.isdir(os.path.join(dir, d))]
             subdir_contains = ['InputCards', '_JHUGen']
@@ -629,7 +590,7 @@ def get_step_generator_parameters(dataset, mcm_dir, recid, force_lhe=0):
                     for f in files:
                         if f != 'LOG.txt':
                             configuration_files['title'] = 'Generator parameters: ' + f
-                            configuration_files['url'] = '/eos/opendata/cms/lhe_generators/2017-sim/gridpacks/' + str(recid) + '/' + d + '/'  + f
+                            configuration_files['url'] = f'lhe_generators/2017-sim/gridpacks/{recid_rounded}/{str(recid)}/{d}/{f}'
                             confarr.append(configuration_files.copy())
             return confarr
     else:

@@ -1,4 +1,3 @@
-#lhe generators
 #!/usr/bin/env python3
 
 import datetime
@@ -55,13 +54,13 @@ def cmd_run(cmds, recid):
             cmd,
             shell=True,
             stderr=subprocess.PIPE,
-            stdout=subprocess.PIPE
+            stdout=subprocess.PIPE,
         ).stderr.decode()
 
         if err:
             log(recid, "ERROR", f"Error {err}")
             return False
-
+            
     return True
 
 
@@ -169,7 +168,6 @@ def create_lhe_generator(
         return
 
     # Find gridpack path
-    # path = re.search(r"cms.vstring\(['\"\[]\s*(/cvmfs.*?)['\"]", fragment)
     path = re.search(r"(/cvmfs/cms.cern.ch/phys_generator/gridpacks[^']*)", fragment)
     if not path:
         log(
@@ -212,7 +210,13 @@ def create_lhe_generator(
 
     # List content if all files in gridpack tarball
     files_all = []
-    res = subprocess.check_output(f"tar tf {path}", shell=True)
+    try:
+        res = subprocess.check_output(f"tar tf {path}", shell=True, stderr=subprocess.PIPE)
+    except subprocess.CalledProcessError as e:
+        log(recid, "ERROR", f"Error listing tar content: {e.stderr.decode()}")
+        print('Error listing tar content:', path)
+        return
+
     for line in res.splitlines():
         files_all.append(line.decode())
 
@@ -320,11 +324,10 @@ def create_lhe_generator(
     for afile in files_all:
         log(recid, "DEBUG", f"- {afile}")
 
-def main(threads):
+def main(threads, mcm_dir="./inputs/mcm-store"):
 
     das_dir = "./inputs/das-json-store"
-    mcm_dir = "./inputs/mcm-store"
-    with open("./inputs/cms-2017.txt", "r") as file:
+    with open("./inputs/CMS-2017-mc-datasets.txt", "r") as file:
         dataset_full_names = file.readlines()
 
     dataset_nanoaod = [
@@ -339,7 +342,7 @@ def main(threads):
 
         print(recid)
 
-        #print(f"Getting LHE {i}/{l}")
+        print(f"Getting LHE {i}/{l}")
         log(recid, "INFO", f"Getting LHE {i}/{l}")
         log(recid, "INFO", f"Found record ID {recid}")
         log(recid, "INFO", f"Found dataset {dataset}")
@@ -355,4 +358,4 @@ def main(threads):
         t.start()
         i += 1
         while threading.activeCount() >= threads:
-            sleep(0.5)  # run 20 parallel
+            sleep(0.5)  # run threads parallel

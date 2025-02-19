@@ -1,4 +1,3 @@
-# interface
 #!/usr/bin/env python
 
 """
@@ -7,6 +6,7 @@ Interface for manipulation of dataset records.
 
 import click
 import os
+import time
 import subprocess
 from utils import get_datasets_from_dir
 
@@ -58,11 +58,17 @@ from utils import get_datasets_from_dir
 @click.option('--doi-file', default='./inputs/doi-sim.txt',
               show_default=True, type=click.Path(),
               help='File with DOI information')
-@click.option('--threads', default=20, show_default=True,
+@click.option('--threads', default=32, show_default=True,
               help='Number of threads to use')
 @click.option('--lhe-generators', default=False,
               show_default=True, is_flag=True,
               help='Create LHE generators.')
+@click.option('--create-parent-dicts', default=False,
+              show_default=True, is_flag=True,
+              help='Create parent and child dictionary for nano and mini datasets.')
+@click.option('--parent-file', default="./inputs/parent_dicts.py",
+              show_default=True, type=click.Path(),
+              help='File with parents and children datasets')
 
 def main(dataset_list,
          create_eos_indexes, eos_dir, ignore_eos_store,
@@ -73,7 +79,7 @@ def main(dataset_list,
          create_records,
          create_conffile_records,
          recid_file, doi_file, threads,
-         lhe_generators
+         lhe_generators, create_parent_dicts, parent_file
          ):
     """
     Interface for manipulation of dataset records for OpenData portal.
@@ -93,7 +99,15 @@ def main(dataset_list,
         This will populate EOS_DIR with a txt and json file for each dataset.
         The files contain list of root files of that dataset.
 
-    step 2) get DAS metadata
+    step 2) create MINI-NANO map
+
+        \b
+        $ python3 code/interface.py --create-parent-dicts DATASET_LIST
+        
+        This will create two dictionaries, nano_to_mini and mini_to_nano,
+        in parent_dicts.py.
+
+    step 3) get DAS metadata
 
         \b
         $ voms-proxy-init -voms cms -rfc
@@ -106,7 +120,7 @@ def main(dataset_list,
         \b
         (It takes a lot of time to run, up to ~30 seconds / dataset)
 
-    step 3) get McM scripts to run cmsDriver
+    step 4) get McM scripts to run cmsDriver
 
         \b
         $ python ./code/interface.py --create-mcm-store DATASET_LIST
@@ -114,7 +128,7 @@ def main(dataset_list,
         This will query McM to get the dict and setup scripts for each dataset.
         It also queries the input_dataset (GEN-SIM).
 
-    step 4) get the config files
+    step 5) get the config files
 
         \b
         in ~/.globus/ dir, follow the instructions from
@@ -126,7 +140,13 @@ def main(dataset_list,
 
         This downloads the configuration files to CONF_DIR.
 
-    step 5) generate the records
+    step 6) generate the records
+
+        \b
+        $ python ./code/interface.py --create-records DATASET_LIST
+        $ python ./code/interface.py --create-conffile-records DATASET_LIST
+
+    step 7) generate lhe
 
         \b
         $ python ./code/interface.py --create-records DATASET_LIST
@@ -146,14 +166,17 @@ def main(dataset_list,
         $ python ./code/interface.py --print-categorisation DATASET_LIST > categorisation.md
     """
 
-    if threads > 1000:
-        print("Thread number cannot exceed 1000. To modify this limit, change the code of interface.py.")
-        exit()
+    start_time = time.time()
 
-    if threads > 100:
-        proceed = input("Thread number exceeds 100. Do you want to proceed? (y/n): ")
-        if proceed.lower() != 'y':
-            exit()
+    if lhe_generators and threads != 20:
+        print("LHE generators is recommended to be run with 20 threads.")
+        proceed = input("Do you want to proceed with 20 threads? (y/n): ")
+        if proceed.lower() == 'y':
+            threads = 20
+
+    elif threads > 100:
+        print("Thread number cannot exceed 100. To modify this limit, change the code of interface.py.")
+        exit()
 
     datasets = get_datasets_from_dir(dataset_list)
 
@@ -211,6 +234,12 @@ def main(dataset_list,
         import lhe_generators
         lhe_generators.main(threads)
 
+    if create_parent_dicts:
+        import create_parent_dicts
+        create_parent_dicts.main(datasets)
+
+    elapsed_time = time.time() - start_time
+    print(f"Total time taken: {elapsed_time:.2f} seconds")
 
 if __name__ == '__main__':
     main()
