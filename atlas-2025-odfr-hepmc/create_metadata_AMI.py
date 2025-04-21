@@ -111,11 +111,23 @@ with open('EVNT_metadata.csv','w') as evgen_meta_file, open('EVNT_prod_request15
         my_xsec = 0
         my_kfact = 1
         my_filteff = 1
-        if campaign in xsecs:
+        # For MC23 we do the obvious thing
+        if campaign=='23':
             if dsid in xsecs[campaign]:
                 my_xsec = xsecs[campaign][dsid][0]
                 my_filteff = xsecs[campaign][dsid][1]
                 my_kfact = xsecs[campaign][dsid][2]
+        # For MC15/16 we favor the MC16 file
+        elif campaign=='15' or campaign=='16':
+            if dsid in xsecs['16']:
+                my_xsec = xsecs['16'][dsid][0]
+                my_filteff = xsecs['16'][dsid][1]
+                my_kfact = xsecs['16'][dsid][2]
+            elif dsid in xsecs['15']:
+                my_xsec = xsecs['15'][dsid][0]
+                my_filteff = xsecs['15'][dsid][1]
+                my_kfact = xsecs['15'][dsid][2]
+
         # Get all the metadata from AMI
         metadata = AtlasAPI.get_dataset_info(client, aset)[0]
         max_events = int(metadata['totalEvents'])
@@ -167,6 +179,8 @@ with open('EVNT_metadata.csv','w') as evgen_meta_file, open('EVNT_prod_request15
         if keywords.strip()=='':
             keywords = get_keywords_from_JO(aset)
         # Last resort: Add something that seems sensible based on the sample name.
+        # Convenient list of ATLAS allowed keywords:
+        #  https://gitlab.cern.ch/atlas-physics/pmg/infrastructure/mc15joboptions/-/blob/master/common/evgenkeywords.txt
         if keywords.strip()=='':
             if '_jets_JZ' in aset or '_jetjet_JZ' in aset:
                 keywords = 'jets, qcd, sm, dijet'
@@ -236,7 +250,7 @@ with open('EVNT_metadata.csv','w') as evgen_meta_file, open('EVNT_prod_request15
 
         # Add a line to the production request if the HEPMC datasets aren't already ready
         if (aset.split('.')[0],aset.split('.')[1]) not in hepmc_ready:
-            if campaign == '15':
+            if campaign == '15' or campaign=='16':
                 prod_sheet15.writerow([dsid,aset,com,events,'HEPMC','3','HEPMC','23.6.45','EVNTtoHEPMC conversion'])
             elif campaign == '23':
                 prod_sheet23.writerow([dsid,aset,com,events,'HEPMC','3','HEPMC','23.6.45','EVNTtoHEPMC conversion'])
