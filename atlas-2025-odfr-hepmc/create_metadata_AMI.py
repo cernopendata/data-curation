@@ -93,8 +93,8 @@ with open('EVNT_metadata.csv','w') as evgen_meta_file, open('EVNT_prod_request15
     prod_sheet23 = csv.writer(prod_sheet23_file,delimiter=',',quotechar='"',quoting=csv.QUOTE_ALL,lineterminator='\n')
 
     evgen_meta.writerow(['DSName','DSID','PhysicsShort','CoMEnergy','XSec','FiltEff','kFactor','Events','GenEvents','GenName','GenTune','PDF','Keywords','PhysComment','Release','Generator','Filters','JobOptions'])
-    prod_sheet15.writerow(['DSID','Event input for evgen (optional)','E_CoM [GeV]','Output events','Type (Evgen',' FullSim',' AF2',' LHE','FCSv2',' FastChain',' ...)','Priority','Output formats','Evgen Release','Comments','Evgen tag','Evgen merge tag','Simul tag','Merge tag','Digi tag','Reco tag','Rec Merge tag','Deriv tag','Deriv merge tag','Rivet routines'])
-    prod_sheet23.writerow(['DSID','Event input for evgen (optional)','E_CoM [GeV]','Output events','Type (Evgen',' FullSim',' AF2',' LHE','FCSv2',' FastChain',' ...)','Priority','Output formats','Evgen Release','Comments','Evgen tag','Evgen merge tag','Simul tag','Merge tag','Digi tag','Reco tag','Rec Merge tag','Deriv tag','Deriv merge tag','Rivet routines'])
+    prod_sheet15.writerow(['DSID','Event input for evgen (optional)','E_CoM [GeV]','Output events','Type (Evgen, FullSim, AF2, LHE, FCSv2, FastChain, ...)','Priority','Output formats','Evgen Release','Comments','Evgen tag','Evgen merge tag','Simul tag','Merge tag','Digi tag','Reco tag','Rec Merge tag','Deriv tag','Deriv merge tag','Rivet routines'])
+    prod_sheet23.writerow(['DSID','Event input for evgen (optional)','E_CoM [GeV]','Output events','Type (Evgen, FullSim, AF2, LHE, FCSv2, FastChain, ...)','Priority','Output formats','Evgen Release','Comments','Evgen tag','Evgen merge tag','Simul tag','Merge tag','Digi tag','Reco tag','Rec Merge tag','Deriv tag','Deriv merge tag','Rivet routines'])
 
     # Iterate over our input list
     for aset_number,aset_line in enumerate(fileinput.input(files=('EVNT_list_Baseline.txt','EVNT_list_Systematic.txt','EVNT_list_Alternative.txt','EVNT_list_Specialised.txt','EVNT_exotics_datasets.txt'))):
