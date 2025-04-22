@@ -232,6 +232,8 @@ with open('EVNT_metadata.csv','w') as evgen_meta_file, open('EVNT_prod_request15
         if '801974' in aset:
             # This is an exotics sample used to study pileup jets
             keywords += ', Baseline'
+        # Last keyword manipulation: let's sort them so they're a little prettier in the spreadsheets
+        keywords = ', '.join(sorted([ x.strip() for x in keywords.split(',') ]))
 
         # More AMI metadata
         physComment = metadata['physicsComment'] if 'physicsComment' in metadata else ''

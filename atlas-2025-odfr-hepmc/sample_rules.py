@@ -152,7 +152,7 @@ record_map = [
                {'name':'SM Wt Nominal','kwl':['wt','Baseline'],'not_kwl':[], 'ODkwl':['Standard Model','Top physics']},
                {'name':'SM Wt Systematic Variations','kwl':['wt','Systematic'],'not_kwl':[], 'ODkwl':['Standard Model','Top physics']},
                {'name':'SM Wt Others','kwl':['wt'],'not_kwl':['Baseline','Systematic'], 'ODkwl':['Standard Model','Top physics']},
-               {'name':'SM t-channel Single Top','kwl':['tchannel'],'not_kwl':['ckm'], 'ODkwl':['Standard Model','Top physics']},
+               {'name':'SM t-channel Single Top','kwl':['tchannel'],'not_kwl':['ckm','exotic'], 'ODkwl':['Standard Model','Top physics']},
                {'name':'SM s-channel Single Top','kwl':['schannel'],'not_kwl':['bsm'], 'ODkwl':['Standard Model','Top physics']},
                {'name':'SM Wt Sherpa','kwl':['w','Alternative','top'],'not_kwl':[], 'ODkwl':['Standard Model','Top physics']},
                {'name':'SM ttbar + bbbar','kwl':['ttbar','bbbar'],'not_kwl':[], 'ODkwl':['Standard Model','Top physics']},

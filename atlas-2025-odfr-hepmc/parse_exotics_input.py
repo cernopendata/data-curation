@@ -65,3 +65,8 @@ with open('EVNT_exotics.data','r') as exo_input, open('EVNT_exotics_datasets.txt
         # Warn if we really didn't find anything
         if len(dids_13+dids_13p6)==0 and not found13 and not found13p6:
             print(f'Warning: for DID {aline.split()[0]} did not find any EVNT datasets.')
+
+    # Now just add some simple extras
+    with open('EVNT_exotics_extras.txt','r') as extra_datasets:
+        for aline in extra_datasets:
+            exo_output.write(aline.strip()+'\n')
