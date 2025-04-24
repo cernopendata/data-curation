@@ -92,7 +92,7 @@ with open('EVNT_metadata.csv','w') as evgen_meta_file, open('EVNT_prod_request15
     prod_sheet15 = csv.writer(prod_sheet15_file,delimiter=',',quotechar='"',quoting=csv.QUOTE_ALL,lineterminator='\n')
     prod_sheet23 = csv.writer(prod_sheet23_file,delimiter=',',quotechar='"',quoting=csv.QUOTE_ALL,lineterminator='\n')
 
-    evgen_meta.writerow(['DSName','DSID','PhysicsShort','CoMEnergy','XSec','FiltEff','kFactor','Events','GenEvents','GenName','GenTune','PDF','Keywords','PhysComment','Release','Generator','Filters','JobOptions'])
+    evgen_meta.writerow(['DSID','PhysicsShort','CoMEnergy','XSec','FiltEff','kFactor','Events','GenEvents','GenName','GenTune','PDF','Keywords','PhysComment','Release','Filters','JobOptions'])
     prod_sheet15.writerow(['DSID','Event input for evgen (optional)','E_CoM [GeV]','Output events','Type (Evgen, FullSim, AF2, LHE, FCSv2, FastChain, ...)','Priority','Output formats','Evgen Release','Comments','Evgen tag','Evgen merge tag','Simul tag','Merge tag','Digi tag','Reco tag','Rec Merge tag','Deriv tag','Deriv merge tag','Rivet routines'])
     prod_sheet23.writerow(['DSID','Event input for evgen (optional)','E_CoM [GeV]','Output events','Type (Evgen, FullSim, AF2, LHE, FCSv2, FastChain, ...)','Priority','Output formats','Evgen Release','Comments','Evgen tag','Evgen merge tag','Simul tag','Merge tag','Digi tag','Reco tag','Rec Merge tag','Deriv tag','Deriv merge tag','Rivet routines'])
 
@@ -173,7 +173,10 @@ with open('EVNT_metadata.csv','w') as evgen_meta_file, open('EVNT_prod_request15
         # Get some other useful metadata
         genName = metadata['generatorName'] if 'generatorName' in metadata else ''
         genTune = metadata['generatorTune'] if 'generatorTune' in metadata else ''
-        generator = metadata['generator'] if 'generator' in metadata else ''
+        # There is a "generator" piece of metadata that appears in all cases to be less complete
+        # and less helpful than generatorName. Let's omit it.
+        #generator = metadata['generator'] if 'generator' in metadata else ''
+
         keywords = metadata['keywords'] if 'keywords' in metadata else ''
         # Check if we have empty keywords. See if we can get them from the JO if so.
         if keywords.strip()=='':
@@ -248,7 +251,7 @@ with open('EVNT_metadata.csv','w') as evgen_meta_file, open('EVNT_prod_request15
             link = f'https://gitlab.cern.ch/atlas-physics/pmg/infrastructure/mc15joboptions/-/blob/master/share/DSID{dsid[:3]}xxx/MC15.{dsid}.{phys_short}.py'
 
         # Record the metadata to the output file
-        evgen_meta.writerow([aset,dsid,phys_short,com,my_xsec,my_filteff,my_kfact,events,max_events,genName,genTune,PDF,keywords,physComment,release,generator,filterNames,f'<a href="{link}">link</a>'])
+        evgen_meta.writerow([dsid,phys_short,com,my_xsec,my_filteff,my_kfact,events,max_events,genName,genTune,PDF,keywords,physComment,release,filterNames,link])
 
         # Add a line to the production request if the HEPMC datasets aren't already ready
         if (aset.split('.')[0],aset.split('.')[1]) not in hepmc_ready:

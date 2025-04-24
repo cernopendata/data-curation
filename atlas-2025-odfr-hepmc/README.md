@@ -44,6 +44,9 @@ loaded into the ATLAS Open Data website to help users identify samples. It is al
 for ATLAS Open Magic.
 * `EVNT_prod_request*csv` are production spreadsheets created by the above script that can
 be used to create requests in the ATLMCPROD JIRA tracker.
+* `build_metadata_json.py` is a script to construct a json and js (javascript) file for
+loading into our open data website based on the `EVNT_metadata.csv` file. Its output is
+`EVNT_metadata.js`, which packages the metadata csv file with a bit of html and javascript.
 * `sample_rules.py` is a dictionary of rules by which samples are sorted into collections.
 This is meant to avoid having thousands of Open Data Portal records and to help users find
 samples that are conceptually connected.
