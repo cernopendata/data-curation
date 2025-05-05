@@ -164,6 +164,12 @@ with open('EVNT_metadata.csv','w') as evgen_meta_file, open('EVNT_prod_request15
             # Identically zero cross sections can happen for signal samples when they are meant to be
             # reweighted. These samples require some special care, so we will need to document their use.
             print(f'Warning: DSID {dsid} has values {final_xsec=} {my_xsec=} {my_kfact=} {my_filteff=}')
+        # Check the number of events per file in case we need a warning
+        nFiles = int(metadata['nFiles'])
+        warning = ''
+        if max_events / nFiles < 100:
+            warning = f'Only {max_events/nFiles} events per file, '
+            print(f'Warning, for {dsid=} {aset} {warning}')
 
         # Calculate how many events we'd want in principle
         estimate = EVNT_round( int(final_xsec * lumi[campaign] * 2.) )
@@ -253,16 +259,20 @@ with open('EVNT_metadata.csv','w') as evgen_meta_file, open('EVNT_prod_request15
         # Record the metadata to the output file
         evgen_meta.writerow([dsid,phys_short,com,my_xsec,my_filteff,my_kfact,events,max_events,genName,genTune,PDF,keywords,physComment,release,filterNames,link])
 
-        # Add a line to the production request if the HEPMC datasets aren't already ready
-        if (aset.split('.')[0],aset.split('.')[1]) not in hepmc_ready:
-            if campaign == '15' or campaign=='16':
-                prod_sheet15.writerow([dsid,aset,com,events,'HEPMC','3','HEPMC','23.6.45','EVNTtoHEPMC conversion'])
-            elif campaign == '23':
-                prod_sheet23.writerow([dsid,aset,com,events,'HEPMC','3','HEPMC','23.6.45','EVNTtoHEPMC conversion'])
-
         # Add to our sums
         event_sum += events
         possible_events += max_events
+
+        # Now a tweak for the production system. If we are producing all events from a sample, we should just set -1 as the number of events
+        if events == max_events:
+            events = -1
+
+        # Add a line to the production request if the HEPMC datasets aren't already ready
+        if (aset.split('.')[0],aset.split('.')[1]) not in hepmc_ready:
+            if campaign == '15' or campaign=='16':
+                prod_sheet15.writerow([dsid,aset,com,events,'HEPMC','3','HEPMC','23.6.45',warning+'EVNTtoHEPMC conversion'])
+            elif campaign == '23':
+                prod_sheet23.writerow([dsid,aset,com,events,'HEPMC','3','HEPMC','23.6.45',warning+'EVNTtoHEPMC conversion'])
 
 # Print some summary statistics; useful for seeing how things are evolving (usually not too rapidly)
 print(f'Expecting to release {event_sum:,} of {possible_events:,} events ({round(event_sum/possible_events*100.,1)}%)')

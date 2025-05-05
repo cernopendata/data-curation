@@ -84,6 +84,16 @@ containing all of the individual samples for that record, as well as summary fil
 `last_record_creation.json` json file containing a list of records and samples that were
 used in the last run. This can be used to check for updates when samples are added to the
 records.
+* `reset_doi_recid_assignment.py` is a script that, in case anything ever goes horribly wrong,
+will allow the full reset of the DOI and record ID assignments back to square one (just the
+summary records are there). This should not be used once things are in the public.
+* `dump_doi_recid_assignment.py` is a script to dump the current DOI and record ID assignments.
+Handy for checking whether there are available DOIs and record IDs, or if more need to be
+requested from the CERN team.
+* `doi_recid_assignment.json` is a json file containing a list of dictionaries. Each dictionary
+has a record ID and a DOI, and those that have been assigned have the short name of the
+record to which they were assigned (the name used to generate the open data portal record json
+file name)
 
 ## Workflow for first production
 
@@ -103,7 +113,8 @@ in `sample_rules.py` accordingly. This will also update `od_hepmc_sample_map.jso
    * Generally transfers take about an hour to complete when they are a modest data volume.
 * Run `create_file_metadata.py` to generate a new `od_hepmc_file_mapping*.json`
 * Get a list of record IDs and DOIs for the Open Data Portal for all the new records
-* Run `make_od_hepmc_json.py` to test generation of json files for the Open Data Portal
+* Run `make_od_hepmc_json.py` to test generation of json files for the Open Data Portal and update
+the mapping in `doi_recid_assignment.json`
 * Create a merge request for all these scripts
 
 ## Workflow for updating datasets
@@ -123,7 +134,9 @@ in `sample_rules.py` accordingly. This will also update `od_hepmc_sample_map.jso
 * Run `check_for_HEPMC_datasets.py` to update `HEPMC_datasets.txt`
 * Run `transfer_hepmc.sh` to transfer the (additional) HEPMC files to CERN
 * Run `create_file_metadata.py` to generate a new `od_hepmc_file_mapping*.json`
-* If necessary, confirm additional record IDs and DOIs are available for the new entries
+* Run `dump_doi_recid_assignment.py` to confirm that sufficient record IDs and DOIs are available
+* If they aren't, get additional record IDs and DOIs from the CERN team and add them to the json
+file using `add_doi_recids.py`
 * Run `make_od_hepmc_json.py` to test generation of new json files for the Open Data Portal and
-check that the additions are as expected
+check that the additions are as expected; this also updates the mapping in `doi_recid_assignment.json`
 * Create a merge request for all these scripts and updated files

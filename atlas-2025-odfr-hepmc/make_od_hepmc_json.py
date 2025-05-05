@@ -25,11 +25,31 @@ import copy
 with open( 'od_hepmc_sample_map.json' , 'r' ) as metadata_map_file:
     record_map = json.load( metadata_map_file )['sample_dict']
 
-# Need new recids and DOIs
+# Load the existing list of dictionaries
+# Each dictionary has a doi and a recid
+# We assign a record to it in the dictionary
+# The original is from
+# https://github.com/cernopendata/opendata.cern.ch/pull/3737
+with open('doi_recid_assignment.json','r') as f:
+    doirecid_list = json.load(f)
 
 # recid doi pairs. We will need _lots_ of these eventually
-def get_recid_doi_pair(dsid):
-    return ('12345','10.7483/OPENDATA.ATLAS.1234.1234') # FIXME
+def get_recid_doi_pair(name_short):
+    global doirecid_list
+    # Search our global list of dictionaries of dois and record ids
+    for doirecid in doirecid_list:
+        # If we have a match and used this one, give it back
+        if 'name_short' in doirecid and doirecid['name_short']==name_short:
+            return (doirecid['recid'],doirecid['doi'])
+        # If we have used this one, don't re-use it
+        elif 'name_short' in doirecid:
+            continue
+        # If we have never used this one, then assign it
+        else:
+            doirecid['name_short'] = name_short
+            return (doirecid['recid'],doirecid['doi'])
+    print(f'ERROR: ran out of DOIs / Record IDs! None for {name_short} found')
+    raise RuntimeError('No more DOI/Record IDs')
 
 # Prepare the records to get lists of HEPMC datasets
 for a_record in record_map:
@@ -148,10 +168,9 @@ evergreen_data = {
           "description": "ATLAS Open Data Website",
           "url": "http://opendata.atlas.cern"
         },
-        # TODO This should get updated to something more appropriate
         {
-          "description": "Resources to understand and use the open data for education and outreach",
-          "url": "https://opendata.atlas.cern/docs/category/13-tev-tutorials-for-education"
+          "description": "Resources to understand and use the event generation open data",
+          "url": "https://opendata.atlas.cern/docs/data/for_research/evgen_data"
         },
         {
           "description": "More about the HEPMC format",
@@ -188,15 +207,17 @@ big_total_events13p6 = 0
 big_total_size13p6 = 0
 
 # Relationships for the files
+doirec_13 = get_recid_doi_pair('atlas-hepmc-13tev-summary')
 relation_13TeV = [ {'description':'For citing all the 13 TeV HEPMC data, and to find other related datasets, please see',
-                            'doi':'10.7483/OPENDATA.ATLAS.1234.1234', # FIXME
-                          'recid':'93910', # FIXME
+                            'doi':doirec_13[0],
+                          'recid':doirec_13[1],
                           'title':'HEPMC format 13 TeV proton-proton Open Data from the ATLAS experiment',
                            'type':'isChildOf'
                              } ]
+doirec_13p6 = get_recid_doi_pair('atlas-hepmc-13p6tev-summary')
 relation_13p6TeV = [ {'description':'For citing all the 13.6 TeV HEPMC data, and to find other related datasets, please see',
-                              'doi':'10.7483/OPENDATA.ATLAS.1234.1234', # FIXME
-                            'recid':'93910', # FIXME
+                              'doi':doirec_13p6[0],
+                            'recid':doirec_13p6[1],
                             'title':'HEPMC format 13.6 TeV proton-proton Open Data from the ATLAS experiment',
                              'type':'isChildOf'
                              } ]
@@ -316,9 +337,9 @@ if big_total_files13>0:
     my_json['date_created'] = ['2015','2016','2017','2018']
     my_json['run_period'] = ['2015','2016','2017','2018']
     # Add a record ID for CERN Open Data. Reserved range for this release
-    my_json['recid'] = '93910' # FIXME (needs to match above)
+    my_json['recid'] = doirec_13[0]
     # Add the DOI - these are pre-reserved by the Open Data Portal team
-    my_json['doi'] = '10.7483/OPENDATA.ATLAS.B5M9.44TN' # FIXME (needs to match above)
+    my_json['doi'] = doirec_13[1]
     # Add the file and event sums to the top-level record
     my_json['distribution']['number_events'] = big_total_events13
     my_json['distribution']['number_files'] = big_total_files13
@@ -367,9 +388,9 @@ if big_total_files13p6>0:
     my_json['date_created'] = ['2022','2023','2024','2025','2026']
     my_json['run_period'] = ['2022','2023','2024','2025','2026']
     # Add a record ID for CERN Open Data. Reserved range for this release
-    my_json['recid'] = '93910' # FIXME (needs to match above)
+    my_json['recid'] = doirec_13p6[0]
     # Add the DOI - these are pre-reserved by the Open Data Portal team
-    my_json['doi'] = '10.7483/OPENDATA.ATLAS.B5M9.44TN' # FIXME (needs to match above)
+    my_json['doi'] = doirec_13p6[1]
     # Add the file and event sums to the top-level record
     my_json['distribution']['number_events'] = big_total_events13p6
     my_json['distribution']['number_files'] = big_total_files13p6
@@ -439,3 +460,7 @@ with open('last_record_creation.json','w') as outfile:
         ensure_ascii=False,
         separators=(",", ": "),
     )
+
+# Finally, record a new DOI + Record ID list
+with open('doi_recid_assignment.json','w') as f:
+    json.dump( obj=doirecid_list, fp=f )
