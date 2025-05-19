@@ -1,7 +1,6 @@
 {
   "records": {
-    "Summary_13TeV": [],
-    "specialised-sm-z-boson-13TeV": [
+    "13tev-specialised-sm-z-boson": [
       "mc16_13TeV.301000.PowhegPythia8EvtGen_AZNLOCTEQ6L1_DYee_120M180.evgen.HEPMC.e3649_e8596",
       "mc16_13TeV.301001.PowhegPythia8EvtGen_AZNLOCTEQ6L1_DYee_180M250.evgen.HEPMC.e3649_e5984_e8596",
       "mc16_13TeV.301002.PowhegPythia8EvtGen_AZNLOCTEQ6L1_DYee_250M400.evgen.HEPMC.e3649_e8596",
@@ -59,6 +58,7 @@
       "mc16_13TeV.301056.PowhegPythia8EvtGen_AZNLOCTEQ6L1_DYtautau_4000M4500.evgen.HEPMC.e3649_e5984_e8596",
       "mc16_13TeV.301057.PowhegPythia8EvtGen_AZNLOCTEQ6L1_DYtautau_4500M5000.evgen.HEPMC.e3649_e8596",
       "mc16_13TeV.301058.PowhegPythia8EvtGen_AZNLOCTEQ6L1_DYtautau_5000M.evgen.HEPMC.e3649_e5984_e8596"
-    ]
+    ],
+    "Summary_13TeV": []
   }
 }

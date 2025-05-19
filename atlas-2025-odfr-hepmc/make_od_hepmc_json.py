@@ -98,7 +98,7 @@ with open('HEPMC_datasets.txt','r') as dslist:
 records_to_build = []
 for a_record in record_map:
     if len(record_map[a_record]['hepmc13p6'])>0:
-        this_record = {'name':a_record+' 13.6 TeV','name_short':a_record.lower().replace(' ','-')+'-13p6TeV'}
+        this_record = {'name':a_record+' 13.6 TeV','name_short':'13p6tev-'+a_record.lower().replace(' ','-')}
         rec_doi = get_recid_doi_pair(this_record['name_short'])
         this_record['recid'] = rec_doi[0]
         this_record['doi'] = rec_doi[1]
@@ -110,7 +110,7 @@ for a_record in record_map:
         this_record['hepmc'] = record_map[a_record]['hepmc13p6']
         records_to_build += [this_record]
     elif len(record_map[a_record]['hepmc13'])>0:
-        this_record = {'name':a_record+' 13 TeV','name_short':a_record.lower().replace(' ','-')+'-13TeV'}
+        this_record = {'name':a_record+' 13 TeV','name_short':'13tev-'+a_record.lower().replace(' ','-')}
         rec_doi = get_recid_doi_pair(this_record['name_short'])
         this_record['recid'] = rec_doi[0]
         this_record['doi'] = rec_doi[1]
@@ -234,9 +234,11 @@ for a_record in records_to_build:
     if '13 TeV' in a_record['name']:
         my_json['relations'] = relation_13TeV
         my_json['collision_information']['energy'] = '13TeV'
+        energy_stub = '13tev'
     elif '13.6 TeV' in a_record['name']:
         my_json['relations'] = relation_13p6TeV
         my_json['collision_information']['energy'] = '13.6TeV'
+        energy_stub = '13p6tev'
     else:
         print(f'Could not identify com energy for dataset {a_record}')
     # Add categories, mostly for MC datasets
@@ -260,7 +262,8 @@ for a_record in records_to_build:
     for a_hepmc in a_record['hepmc']:
         # Establish the file name for this list of HEPMC files
         my_did = a_hepmc.split('.')[1]
-        filename = 'MC_'+my_did+'_hepmc_filelist.json'
+        my_short = a_hepmc.split('.')[2]
+        filename = 'MC_'+my_did+'_'+energy_stub+'_'+my_short+'_hepmc_filelist.json'
         # Create the list of files for this HEPMC sample
         my_files = []
         if a_hepmc not in json_file_locations:
