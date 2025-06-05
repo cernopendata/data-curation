@@ -272,7 +272,7 @@ for a_record in records_to_build:
             print(f'Warning: did not find {a_hepmc} in JSON file locations')
             continue
         for a_file in json_file_locations[a_hepmc]:
-            my_files += [ { 'filename':a_file,
+            my_files += [ { 'filename':a_file.split(':')[1] if ':' in a_file else a_file,
                             'checksum':json_file_locations[a_hepmc][a_file]['checksum'],
                             'size':json_file_locations[a_hepmc][a_file]['size'],
                             'events':json_file_locations[a_hepmc][a_file]['events'],
