@@ -99,6 +99,7 @@ records_to_build = []
 for a_record in record_map:
     if len(record_map[a_record]['hepmc13p6'])>0:
         this_record = {'name':a_record+' 13.6 TeV','name_short':'13p6tev-'+a_record.lower().replace(' ','-')}
+        this_record['description'] = a_record+' samples at sqrt(s)=13.6 TeV'
         rec_doi = get_recid_doi_pair(this_record['name_short'])
         this_record['recid'] = rec_doi[0]
         this_record['doi'] = rec_doi[1]
@@ -111,6 +112,7 @@ for a_record in record_map:
         records_to_build += [this_record]
     elif len(record_map[a_record]['hepmc13'])>0:
         this_record = {'name':a_record+' 13 TeV','name_short':'13tev-'+a_record.lower().replace(' ','-')}
+        this_record['description'] = a_record+' samples at sqrt(s)=13 TeV'
         rec_doi = get_recid_doi_pair(this_record['name_short'])
         this_record['recid'] = rec_doi[0]
         this_record['doi'] = rec_doi[1]
@@ -229,7 +231,7 @@ for a_record in records_to_build:
     # Start from the stuff that's always good
     my_json = copy.deepcopy(evergreen_data)
     # Simple abstract for the collection
-    my_json['abstract'] = {'description':a_record['name']+' from the ATLAS experiment'}
+    my_json['abstract'] = {'description':a_record['description']+' from the ATLAS experiment. This record collects related samples. Some care is required when combining samples in order to ensure a complete physics representation without overlaps or omissions; please read the documentation of the open data, linked below, carefully.'}
     # Add a link to the top-level record where everything is linked together
     if '13 TeV' in a_record['name']:
         my_json['relations'] = relation_13TeV
