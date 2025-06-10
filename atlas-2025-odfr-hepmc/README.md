@@ -97,6 +97,9 @@ requested from the CERN team.
 has a record ID and a DOI, and those that have been assigned have the short name of the
 record to which they were assigned (the name used to generate the open data portal record json
 file name)
+* `build_full_metadata_json.py` is a script to tie together the various other metadata json
+files and provide a single file that is appropriate for upload to the metadata database being
+used by atlasopenmagic.
 
 ## Workflow for first production
 

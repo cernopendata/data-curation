@@ -324,13 +324,21 @@ for a_record in records_to_build:
             separators=(",", ": "),
         )
 
+description_extras = '''
+
+This summary record is provided as a single point of entry and single record to cite for the HEPMC open data.
+As additional datasets are added to the open data, this record will be extended.
+
+<i>Note as of June 10. The record currently only contains the first set of samples. This is to allow time for
+community feedback (which is welcome). More samples will be added in the near future.</i>'''
+
 # Add the top-level json files - 13 TeV first - only if we have some data
 if big_total_files13>0:
     my_json = {}
     # Update with the stuff that's always good
     my_json.update(evergreen_data)
     # Simple abstract for the collection
-    my_json['abstract'] = {'description':'HEPMC format 13 TeV proton-proton Open Data from the ATLAS experiment'}
+    my_json['abstract'] = {'description':'HEPMC format 13 TeV proton-proton Open Data from the ATLAS experiment.'+description_extras}
     # Name of the collections, systematically set
     my_json['collections'] = ['ATLAS-Simulated-Datasets']
     my_json['type']['secondary'] = ['Simulated']
@@ -381,7 +389,7 @@ if big_total_files13p6>0:
     # Update with the stuff that's always good
     my_json.update(evergreen_data)
     # Simple abstract for the collection
-    my_json['abstract'] = {'description':'HEPMC format 13.6 TeV proton-proton Open Data from the ATLAS experiment'}
+    my_json['abstract'] = {'description':'HEPMC format 13.6 TeV proton-proton Open Data from the ATLAS experiment.'+description_extras}
     # Name of the collections, systematically set
     my_json['collections'] = ['ATLAS-Simulated-Datasets']
     my_json['type']['secondary'] = ['Simulated']
