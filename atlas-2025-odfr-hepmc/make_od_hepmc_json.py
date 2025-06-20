@@ -325,12 +325,13 @@ for a_record in records_to_build:
         )
 
 description_extras = '''
-
-This summary record is provided as a single point of entry and single record to cite for the HEPMC open data.
-As additional datasets are added to the open data, this record will be extended.
-
-<i>Note as of June 10. The record currently only contains the first set of samples. This is to allow time for
-community feedback (which is welcome). More samples will be added in the near future.</i>'''
+</p>
+<p>This summary record is provided as a single point of entry and single record to cite for the HEPMC open data.
+</p>
+<p>As additional datasets are added to the open data, this record will be extended.
+</p>
+<p><i>Created on June 10th 2025. The record currently only contains the first set of samples. This is to
+allow time for community feedback (which is welcome). More samples will be added in the near future.</i></p>'''
 
 # Add the top-level json files - 13 TeV first - only if we have some data
 if big_total_files13>0:
