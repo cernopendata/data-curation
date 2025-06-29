@@ -9,6 +9,16 @@ datasets are created per skim: one for MC, and one for data.
 * `unskimmed_data.txt` is the list of unskimmed data and MC files available on
 rucio. Some of the files are quite large, so this had to be handled separately.
 
+* `updated_bjet_skims.txt` is a special list of files for updating the b-jet
+skims, which needed a second round of updates following further validation.
+
+* `qcd_skims.txt` contains a list of QCD jet datasets that are provided for
+validation purposes for the beta release, and will be made available publicly
+with the full release.
+
+* `rucio_jetskim_specialhandling.sh` is a script for special handling of the
+b-jet skim updates and QCD jet skim files.
+
 * `rucio_reformat_unskimmed.sh` moves the unskimmed data into the appropriate
 places and renames the datasets as needed.
 
@@ -27,8 +37,16 @@ a dictionary of files. For each file, it contains the following metadata:
    * type (root)
    * uri (file location on the rucio endpoint)
 
-* `odeo_file_mapping_ODEO_v0_FEB2025_2025-03-01.json` is the output from the
+* `odeo_file_mapping_ODEO_v0_FEB2025_2025-06-30.json` is the output from the
 most recent run of `create_metadata.py`
 
 * `make_odeo_json.py` creates all of the json files for the CERN open data
 portal records. One record is created per rucio dataset.
+
+* `build_full_metadata_json.py` is a script for building json-formatted
+metadata files for the data and MC following the running of all of the above
+scripts, for injection of the metadata into the atlasopenmagic database. It
+requires the csv file available from
+`https://opendata.atlas.cern/docs/data/for_education/13TeV25_metadata` and
+produces files named `data_database_metadata_2025e.json` and
+`mc_database_metadata_2025e.json`

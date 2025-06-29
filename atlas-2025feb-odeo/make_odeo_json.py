@@ -77,11 +77,14 @@ recid_doi_pairs = [
 dataset_files = {}
 with open('dataset_list.txt','r') as dslist:
     for aline in dslist:
+        # Account for commented out lines
+        if len(aline.split('#')[0].strip())==0:
+            continue
         skim = aline.split('_')[2]
         if skim=='noskim':
             skim = 'no' # Fun little hack to fix the English...
         name_short = '-'.join(aline.split('_')[2:4]).lower()
-        if 'Data' in aline:
+        if '_data' in aline.lower():
             name = f'Run 2 2015+2016 proton-proton collision data beta release, {skim} skim'
         else:
             name = f'MC simulation, 2015+2016 proton-proton collisions beta release, {skim} skim'
@@ -135,15 +138,15 @@ evergreen_data = {
         },
         {
           "description": "Resources to understand and use the open data for education and outreach",
-          "url": "https://opendata.atlas.cern/docs/category/13-tev-tutorials-for-education"
+          "url": "https://opendata.atlas.cern/docs/category/13-tev-2025-beta-release"
         },
         {
           "description": "More about this ntuple format",
-          "url": "https://opendata.atlas.cern/docs/data/for_education/13TeV25_details"
+          "url": "https://opendata.atlas.cern/docs/data/for_education/13TeV25_details#variable-list"
         },
         {
-          "description": "Ntuple making framework",
-          "url": "https://zenodo.org/records/194139"
+          "description": "Ntuple making framework (PhysLiteToOpenData)",
+          "url": "https://doi.org/10.5281/zenodo.15791091"
         },
         {
           "description": "Citation policy",
@@ -161,7 +164,7 @@ evergreen_data = {
 }
 
 # File with the mapping of file names for each dataset
-json_metadata_file = open('odeo_file_mapping_ODEO_v0_FEB2025_2025-03-01.json','r')
+json_metadata_file = open('odeo_file_mapping_ODEO_v0_FEB2025_2025-06-30.json','r')
 json_file_locations = json.load(json_metadata_file)['file_locations']
 
 # Sums for use later on
@@ -177,7 +180,7 @@ for adataset in dataset_files:
     my_json['abstract'] = {'description':dataset_files[adataset]['name']+' from the ATLAS experiment'}
     # Name of the collections, systematically set
     my_json['collections'] = ['ATLAS-Simulated-Datasets' if 'mc_' in adataset else 'ATLAS-Primary-Datasets']
-    if 'Data' in adataset:
+    if '_data' in adataset.lower():
         my_json['type']['secondary'] = ['Collision']
     else:
         my_json['type']['secondary'] = ['Simulated']
@@ -197,7 +200,7 @@ for adataset in dataset_files:
     # For direct upload, only the size, checksum, and uri_root are needed; see https://github.com/cernopendata/data-curation/pull/258#issuecomment-2747547600
     my_json['files'] = [ {#'filename':afile,
                           # Bug in the metadata creation script, no ':' after adler32; patching here to skip metadata recreation
-                          'checksum':json_file_locations[adataset][afile]['checksum'].replace('adler32','adler32:'),
+                          'checksum':json_file_locations[adataset][afile]['checksum'],
                           'size':json_file_locations[adataset][afile]['size'],
                           #'events':json_file_locations[adataset][afile]['events'],
                           #'type':json_file_locations[adataset][afile]['type'],

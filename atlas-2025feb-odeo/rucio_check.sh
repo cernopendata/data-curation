@@ -4,7 +4,7 @@
 SKIM_LOCATION=/eos/user/e/egramsta/OpenData/FEB2025/
 
 # Automatic version - check all the skims in the area
-for askim in `ls /eos/user/e/egramsta/OpenData/FEB2025`
+for askim in `ls /eos/user/e/egramsta/OpenData/FEB2025 | grep -ve newxsec`
 do
   echo "Working on skim ${askim} from area ${SKIM_LOCATION}"
   # Go over all the directories in there - basically just data and MC
@@ -32,3 +32,21 @@ rucio list-dataset-replicas opendata:opendata.ODEO_FEB2025_noskim_Data_v0 | grep
 echo "Unskimmed MC: " `grep "mc_" unskimmed_data.txt | wc -l`
 rucio list-files opendata:opendata.ODEO_FEB2025_noskim_MC_v0 | grep "Total files"
 rucio list-dataset-replicas opendata:opendata.ODEO_FEB2025_noskim_MC_v0 | grep "CERN-PROD_OPENDATA"
+
+# Now the comparison for the jet skims that had to be dealt with separately - first data and then MC
+echo "b-jet data: " `grep "data" updated_bjet_skims.txt | wc -l`
+rucio list-files opendata:opendata.ODEO_FEB2025_2bjets_data_v1 | grep "Total files"
+rucio list-dataset-replicas opendata:opendata.ODEO_FEB2025_2bjets_data_v1 | grep "CERN-PROD_OPENDATA"
+
+echo "b-jet MC: " `grep "mc" updated_bjet_skims.txt | wc -l`
+rucio list-files opendata:opendata.ODEO_FEB2025_2bjets_mc_v1 | grep "Total files"
+rucio list-dataset-replicas opendata:opendata.ODEO_FEB2025_2bjets_mc_v1 | grep "CERN-PROD_OPENDATA"
+
+# And finally the QCD jet skims that had to be dealt with separately - first data and then MC
+echo "QCD jet data: " `grep "data" qcd_skims.txt | wc -l`
+rucio list-files opendata:opendata.ODEO_FEB2025_qcdjet_data_v1 | grep "Total files"
+rucio list-dataset-replicas opendata:opendata.ODEO_FEB2025_qcdjet_data_v1 | grep "CERN-PROD_OPENDATA"
+
+echo "QCD jet MC: " `grep "mc" qcd_skims.txt | wc -l`
+rucio list-files opendata:opendata.ODEO_FEB2025_qcdjet_mc_v1 | grep "Total files"
+rucio list-dataset-replicas opendata:opendata.ODEO_FEB2025_qcdjet_mc_v1 | grep "CERN-PROD_OPENDATA"
