@@ -26,9 +26,9 @@ with open('EVNT_metadata.csv','r') as evgen_metadata_csv_file:
         kw_list = [x.strip() for x in row['Keywords'].split(',')]
         # Check for a bad sample
         if len(kw_list)==0:
-            print(f'Warning: sample {row["DSName"]} has no keywords')
+            print(f'Warning: sample {row["DSID"]} has no keywords')
         if '' in kw_list:
-            print(f'Found empty keyword in sample {row["DSName"]}')
+            print(f'Found empty keyword in sample {row["DSID"]}')
 
         # First see if this one is already established
         found = False
@@ -36,10 +36,10 @@ with open('EVNT_metadata.csv','r') as evgen_metadata_csv_file:
             # Identified a match
             if all([ (x in kw_list) for x in anitem['kwl'] ]) and not any([ (x in kw_list) for x in anitem['not_kwl'] ]):
                 if found:
-                    print(f'Sample {row["DSName"]} with keywords {kw_list} found more than once')
+                    print(f'Sample {row["DSID"]} with keywords {kw_list} found more than once')
                 found = True
                 anitem['entries'] += 1
-                anitem['ds_list'] += [ row['DSName'] ]
+                anitem['ds_list'] += [ row['DSID'] ]
 
         # If the sample wasn't found, add it to the unsorted sample list
         if not found:

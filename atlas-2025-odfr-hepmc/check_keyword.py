@@ -51,7 +51,7 @@ with open('EVNT_metadata.csv','r') as evgen_metadata_csv_file:
 
         if all([x in kw_list for x in test_kws]) and not any([x in kw_list for x in test_not_kws]):
             if show_samples:
-                print(f'Sample {row["DSName"]}')
+                print(f'Sample {row["DSID"]}')
             for kw in kw_list:
                 if kw not in unsorted_kw_dict:
                     unsorted_kw_dict[kw] = 0

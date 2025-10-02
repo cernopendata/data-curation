@@ -83,7 +83,7 @@ with open('HEPMC_datasets.txt','r') as dslist:
             # All the samples for this Open Data Portal Record
             for a_sample in record_map[a_record]['samples']:
                 # If we have a match, keep it!
-                if match_EVNT_HEPMC(a_sample.strip(),aline.strip()):
+                if a_sample.strip() == aline.strip().split('.')[1]: #match_EVNT_HEPMC(a_sample.strip(),aline.strip()):
                     if '13p6TeV' in aline:
                         record_map[a_record]['hepmc13p6'] += [ aline.strip() ]
                     else:
@@ -176,7 +176,7 @@ evergreen_data = {
         },
         {
           "description": "More about the HEPMC format",
-          "url": "https://github.com/alisw/hepmc/tree/master"
+          "url": "https://hepmc.web.cern.ch/hepmc"
         },
         {
           "description": "Citation policy",
@@ -196,8 +196,7 @@ evergreen_data = {
 # File with the mapping of file names for each dataset - merge all the metadata files we have
 import glob
 json_file_locations = {}
-for md_file in glob.glob('od_hepmc_file_mapping*.json'):
-    json_metadata_file = open(md_file,'r')
+with open('od_hepmc_file_mapping.json','r') as json_metadata_file:
     json_file_locations.update( json.load(json_metadata_file)['file_locations'] )
 
 # Sums for use later on
@@ -272,6 +271,9 @@ for a_record in records_to_build:
             print(f'Warning: did not find {a_hepmc} in JSON file locations')
             continue
         for a_file in json_file_locations[a_hepmc]:
+            if 'uri' not in json_file_locations[a_hepmc][a_file]:
+                print(f'Warning: URI not found for {a_hepmc} {a_file}')
+                continue
             my_files += [ { 'filename':a_file.split(':')[1] if ':' in a_file else a_file,
                             'checksum':json_file_locations[a_hepmc][a_file]['checksum'],
                             'size':json_file_locations[a_hepmc][a_file]['size'],
@@ -313,7 +315,8 @@ for a_record in records_to_build:
         big_total_files13p6 += total_files
         big_total_size13p6 += total_size
     # Write myself a json file
-    summary_file_name = 'atlas-hepmc-'+a_record['name_short']+'.json'
+    clean_short = a_record['name_short'].replace('>','').replace('(','').replace(')','').replace('/','')
+    summary_file_name = 'atlas-hepmc-'+clean_short+'.json'
     with open(output_directory+'/'+summary_file_name,'w') as outfile:
         json.dump(
             [ my_json ],

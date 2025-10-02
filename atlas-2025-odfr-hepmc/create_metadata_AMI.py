@@ -23,7 +23,8 @@ for campaign in xsecs:
             if 'dataset_number' in line:
                 continue
             my_DSID = line.split()[0]
-            my_xsec = [ float(line.split()[2]), float(line.split()[3]), float(line.split()[4]) ]
+            # Pull out: Cross section [pb], generator filter efficiency, kFactor, max of up/down relative uncertainty
+            my_xsec = [ float(line.split()[2]), float(line.split()[3]), float(line.split()[4]), max(float(line.split()[5]),float(line.split()[6])) ]
             xsecs[campaign][my_DSID] = my_xsec
 
 # MC20 == MC16
@@ -84,6 +85,9 @@ if os.access('HEPMC_datasets.txt',os.R_OK):
     with open('HEPMC_datasets.txt','r') as hepmc_input:
         for aline in hepmc_input:
             hepmc_ready += [ (aline.split('.')[0],aline.split('.')[1]) ]
+            # MC15 == MC16
+            if 'mc16_13TeV' in aline:
+                hepmc_ready += [ ('mc15_13TeV',aline.split('.')[1]) ]
 
 # Read the list of EVNT and output events; keep statistics as well
 with open('EVNT_metadata.csv','w') as evgen_meta_file, open('EVNT_prod_request15.csv','w') as prod_sheet15_file, open('EVNT_prod_request23.csv','w') as prod_sheet23_file, open('EVNT_empty_datasets.txt','w') as empty_sets:
@@ -92,7 +96,7 @@ with open('EVNT_metadata.csv','w') as evgen_meta_file, open('EVNT_prod_request15
     prod_sheet15 = csv.writer(prod_sheet15_file,delimiter=',',quotechar='"',quoting=csv.QUOTE_ALL,lineterminator='\n')
     prod_sheet23 = csv.writer(prod_sheet23_file,delimiter=',',quotechar='"',quoting=csv.QUOTE_ALL,lineterminator='\n')
 
-    evgen_meta.writerow(['DSID','PhysicsShort','CoMEnergy','XSec','FiltEff','kFactor','Events','GenEvents','GenName','GenTune','PDF','Keywords','PhysComment','Release','Filters','JobOptions'])
+    evgen_meta.writerow(['DSID','PhysicsShort','CoMEnergy','XSec','FiltEff','kFactor','Uncertainty','Events','GenEvents','GenName','GenTune','PDF','Keywords','PhysComment','Release','Filters','JobOptions','HEPMC'])
     prod_sheet15.writerow(['DSID','Event input for evgen (optional)','E_CoM [GeV]','Output events','Type (Evgen, FullSim, AF2, LHE, FCSv2, FastChain, ...)','Priority','Output formats','Evgen Release','Comments','Evgen tag','Evgen merge tag','Simul tag','Merge tag','Digi tag','Reco tag','Rec Merge tag','Deriv tag','Deriv merge tag','Rivet routines'])
     prod_sheet23.writerow(['DSID','Event input for evgen (optional)','E_CoM [GeV]','Output events','Type (Evgen, FullSim, AF2, LHE, FCSv2, FastChain, ...)','Priority','Output formats','Evgen Release','Comments','Evgen tag','Evgen merge tag','Simul tag','Merge tag','Digi tag','Reco tag','Rec Merge tag','Deriv tag','Deriv merge tag','Rivet routines'])
 
@@ -111,22 +115,26 @@ with open('EVNT_metadata.csv','w') as evgen_meta_file, open('EVNT_prod_request15
         my_xsec = 0
         my_kfact = 1
         my_filteff = 1
+        my_unc = 0.
         # For MC23 we do the obvious thing
         if campaign=='23':
             if dsid in xsecs[campaign]:
                 my_xsec = xsecs[campaign][dsid][0]
                 my_filteff = xsecs[campaign][dsid][1]
                 my_kfact = xsecs[campaign][dsid][2]
+                my_unc = xsecs[campaign][dsid][3]
         # For MC15/16 we favor the MC16 file
         elif campaign=='15' or campaign=='16':
             if dsid in xsecs['16']:
                 my_xsec = xsecs['16'][dsid][0]
                 my_filteff = xsecs['16'][dsid][1]
                 my_kfact = xsecs['16'][dsid][2]
+                my_unc = xsecs['16'][dsid][3]
             elif dsid in xsecs['15']:
                 my_xsec = xsecs['15'][dsid][0]
                 my_filteff = xsecs['15'][dsid][1]
                 my_kfact = xsecs['15'][dsid][2]
+                my_unc = xsecs['15'][dsid][3]
 
         # Get all the metadata from AMI
         metadata = AtlasAPI.get_dataset_info(client, aset)[0]
@@ -190,6 +198,7 @@ with open('EVNT_metadata.csv','w') as evgen_meta_file, open('EVNT_prod_request15
         # Last resort: Add something that seems sensible based on the sample name.
         # Convenient list of ATLAS allowed keywords:
         #  https://gitlab.cern.ch/atlas-physics/pmg/infrastructure/mc15joboptions/-/blob/master/common/evgenkeywords.txt
+
         if keywords.strip()=='':
             if '_jets_JZ' in aset or '_jetjet_JZ' in aset:
                 keywords = 'jets, qcd, sm, dijet'
@@ -221,6 +230,22 @@ with open('EVNT_metadata.csv','w') as evgen_meta_file, open('EVNT_prod_request15
                 keywords = 'ttbar, higgs, ttHiggs, sm'
             elif '346602' in aset:
                 keywords = 'tHiggs, higgs, sm'
+            elif '601227' in aset: # Weirdly no keywords on 13 TeV samples, but they're there on the 13.6 TeV samples
+                keywords = '1lepton, bbbar, sm, top, ttbar'
+            elif 'MGPy8EG_tt' in aset and 'SMEFTsim_reweighted' in aset:
+                # 561980-561990
+                keywords = 'top, sm'
+                if '561980' in aset: keywords += ', ttHiggs, inclusive'
+                if '561981' in aset: keywords += ', 4top, inclusive'
+                if '561982' in aset: keywords += ', ttV, neutrino'
+                if '561983' in aset: keywords += ', ttV, photon'
+                if '561984' in aset: keywords += ', ttV, photon'
+                if '561985' in aset: keywords += ', ttW, multilepton, electron'
+                if '561986' in aset: keywords += ', ttW, multilepton, electron'
+                if '561987' in aset: keywords += ', ttW, multilepton, muon'
+                if '561988' in aset: keywords += ', ttW, multilepton, muon'
+                if '561989' in aset: keywords += ', ttW, multilepton, tau'
+                if '561990' in aset: keywords += ', ttW, multilepton, tau'
         # Add to the keywords the type of file we are processing
         for atype in ['Baseline','Systematic','Alternative','Specialised']:
             if fileinput.filename() == f'EVNT_list_{atype}.txt':
@@ -241,6 +266,11 @@ with open('EVNT_metadata.csv','w') as evgen_meta_file, open('EVNT_prod_request15
         if '801974' in aset:
             # This is an exotics sample used to study pileup jets
             keywords += ', Baseline'
+        if '500553' in aset or '500555' in aset:
+            keywords += ', zhiggs'
+        if '500554' in aset:
+            keywords += ', whiggs'
+
         # Last keyword manipulation: let's sort them so they're a little prettier in the spreadsheets
         keywords = ', '.join(sorted([ x.strip() for x in keywords.split(',') ]))
 
@@ -257,7 +287,8 @@ with open('EVNT_metadata.csv','w') as evgen_meta_file, open('EVNT_prod_request15
             link = f'https://gitlab.cern.ch/atlas-physics/pmg/infrastructure/mc15joboptions/-/blob/master/share/DSID{dsid[:3]}xxx/MC15.{dsid}.{phys_short}.py'
 
         # Record the metadata to the output file
-        evgen_meta.writerow([dsid,phys_short,com,my_xsec,my_filteff,my_kfact,events,max_events,genName,genTune,PDF,keywords,physComment,release,filterNames,link])
+        evgen_meta.writerow([dsid,phys_short,com,my_xsec,my_filteff,my_kfact,my_unc,events,max_events,genName,genTune,PDF,keywords,physComment,release,filterNames,link,'2'])
+        ## evgen_meta.writerow(['DSID','PhysicsShort','CoMEnergy','XSec','FiltEff','kFactor','Uncertainty','Events','GenEvents','GenName','GenTune','PDF','Keywords','PhysComment','Release','Filters','JobOptions','HEPMC'])
 
         # Add to our sums
         event_sum += events

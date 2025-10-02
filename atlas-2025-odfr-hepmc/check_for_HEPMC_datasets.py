@@ -59,7 +59,7 @@ with open('HEPMC_datasets.txt','a') as output_list:
             print(f'Multiple HEPMC sets found for {dataset}: {dids}')
         # Record the one we think is the correct one
         if len(dids)>0:
-            output_list.write(dids[0]+'\n')
+            output_list.write(dids[-1]+'\n')
         # If we didn't find one, then add it to the list of sets still to go
         else:
             no_hepmc += [dataset]
