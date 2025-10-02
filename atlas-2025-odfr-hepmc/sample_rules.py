@@ -165,9 +165,9 @@ record_map = [
 
                # Catch-all for any other top physics samples
                {'name':'SM Other Top+X Nominal','kwl':['top','Baseline'],'not_kwl':['bbbar','ttbar','higgs','wt','ttbar','tchannel','ttvv','tz','schannel','4top','ttgammagamma'], 'ODkwl':['Standard Model','Top physics']},
-               {'name':'SM Other Top+X Systematic Variations','kwl':['top','Systematic'],'not_kwl':['higgs','tthiggs','bbbar','wt','ttbar','tz','schannel','tchannel','ttw','ttgammagamma'], 'ODkwl':['Standard Model','Top physics']},
+               {'name':'SM Other Top+X Systematic Variations','kwl':['top','Systematic'],'not_kwl':['4top','higgs','tthiggs','bbbar','wt','ttbar','tz','schannel','tchannel','ttw','ttgammagamma'], 'ODkwl':['Standard Model','Top physics']},
                {'name':'SM Other Top+X Alternative','kwl':['top','Alternative'],'not_kwl':['ttbar','w','wt','4top'], 'ODkwl':['Standard Model','Top physics']},
-               {'name':'SM Other Top+X Specialised','kwl':['top','Specialised'],'not_kwl':['jpsi','fcnc','ttbar','tchannel','schannel','ckm','wt','ttvv','higgs'], 'ODkwl':['Standard Model','Top physics']},
+               {'name':'SM Other Top+X Specialised','kwl':['top','Specialised'],'not_kwl':['jpsi','fcnc','ttbar','tchannel','schannel','ckm','wt','ttvv','higgs','4top'], 'ODkwl':['Standard Model','Top physics']},
 
                # QCD jet production
                {'name':'SM Di-jet Nominal','kwl':['qcd','jets','Baseline'],'not_kwl':['photon'], 'ODkwl':['Standard Model','QCD']},
