@@ -10,7 +10,7 @@ import csv
 
 # File with the mapping of file names for each dataset - merge all the metadata files we have
 json_file_locations = {}
-with open('od_hepmc_file_mapping.json','r') as json_metadata_file:
+with open('/eos/opendata/atlas/upload/evgen_metadata/od_hepmc_file_mapping.json','r') as json_metadata_file:
     json_file_locations.update( json.load(json_metadata_file)['file_locations'] )
 
 no_uris = []

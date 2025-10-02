@@ -14,7 +14,7 @@ file_locations = {}
 
 # Get the previously created metadata
 previously_processed = []
-with open( 'od_hepmc_file_mapping.json' , 'r' ) as file_backup:
+with open( '/eos/opendata/atlas/upload/evgen_metadata/od_hepmc_file_mapping.json' , 'r' ) as file_backup:
     md_data = json.load(file_backup)
     datasets = md_data['file_dictionary']
     file_locations = md_data['file_locations']
@@ -112,5 +112,6 @@ else:
 # Record the file mapping that we established if we had at least one dataset
 with open( 'od_hepmc_file_mapping.json' , 'w' ) as file_backup:
     json.dump( obj={'file_dictionary':datasets, 'file_locations':file_locations} , fp=file_backup )
+# This should replace the one in /eos/opendata/atlas/upload/evgen_metadata/
 
 # All done!
