@@ -24,7 +24,7 @@ def main():
 
     rec["abstract"] = {}
 
-    abstract_description = '\n      The list of trigger configuration files for the CMS 2013 proton-lead collision data (HIRun2013 from run number 2610498 to run number 211631) and CMS 2013 proton-proton heavy-ion reference collision data (Run2013A from run number 211739 to run number 211831):\n      <table class="table">\n      <thead>'
+    abstract_description = '\n      The list of trigger configuration files for the CMS 2013 proton-lead collision data (HIRun2013 from run number 2610498 to run number 211631) and CMS 2013 proton-proton heavy-ion reference collision data (Run2013A from run number 211739 to run number 211831):\n      <table class="table">\n      <thead>\n     <tr><th>Run number</th><th>Software version</th><th>Trigger configuration</th></tr>\n      </thead>\n      <tbody>'
 
     with open("outputs/cms-trigger-information-2013-helper.html", "r") as fdesc:
 

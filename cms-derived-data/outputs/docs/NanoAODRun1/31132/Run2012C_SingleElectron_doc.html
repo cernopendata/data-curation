@@ -1,0 +1,1055 @@
+
+    <html>
+    <head>
+        <title>Documentation for 023B111A-DC55-4044-BBA3-8B42DA9A10E0.root </title>
+        <link rel="stylesheet" type="text/css" href="https://gpetrucc.web.cern.ch/gpetrucc/micro/patsize.css" />
+    </head>
+    <body>
+    <h1>Content</h1>
+    <table>
+    <tr class='header'><th>Collection</th><th>Description</th></tr>
+<th><a href='#Alsoon'>Alsoon</a></th><td style='text-align : left;'>flag: event also on ZeroBias dataset</td></tr>
+<th><a href='#Bsp'>Bsp</a></th><td style='text-align : left;'>beam spot position x coordinate</td></tr>
+<th><a href='#CMSSW'>CMSSW</a></th><td style='text-align : left;'>CMSSW version used for the processing</td></tr>
+<th><a href='#CaloMET'>CaloMET</a></th><td style='text-align : left;'>pt</td></tr>
+<th><a href='#Dataset'>Dataset</a></th><td style='text-align : left;'>flag: event is from MC dataset</td></tr>
+<th><a href='#Dimu'>Dimu</a></th><td style='text-align : left;'>number of dimuons after vertex refit</td></tr>
+<th><a href='#Electron'>Electron</a></th><td style='text-align : left;'>number of Electrons</td></tr>
+<th><a href='#FatJet'>FatJet</a></th><td style='text-align : left;'>ak7 (Run 1) or ak8 (Run 2) PFjets for wide jet or boosted analysis</td></tr>
+<th><a href='#GoodLumisection'>GoodLumisection</a></th><td style='text-align : left;'>flag: good lumi section, from Golden JSON (not all datasets)</td></tr>
+<th><a href='#HLT'>HLT</a></th><td style='text-align : left;'>HLT_Activity_Ecal_SC7/O</td></tr>
+<th><a href='#HLTriggerFinalPath'>HLTriggerFinalPath</a></th><td style='text-align : left;'>HLTriggerFinalPath/O</td></tr>
+<th><a href='#HLTriggerFirstPath'>HLTriggerFirstPath</a></th><td style='text-align : left;'>HLTriggerFirstPath/O</td></tr>
+<th><a href='#Jet'>Jet</a></th><td style='text-align : left;'>PFJets, ak5 for Run 1, ak4 for Run2, after basic selection (pt > 15)</td></tr>
+<th><a href='#L1'>L1</a></th><td style='text-align : left;'>L1_AlwaysTrue/O</td></tr>
+<th><a href='#MET'>MET</a></th><td style='text-align : left;'>pt</td></tr>
+<th><a href='#Muon'>Muon</a></th><td style='text-align : left;'>(AOD) muons after basic nanoAODplus selection</td></tr>
+<th><a href='#OtherPV'>OtherPV</a></th><td style='text-align : left;'>other primary vertices</td></tr>
+<th><a href='#PV'>PV</a></th><td style='text-align : left;'>total number of reconstructed primary vertices</td></tr>
+<th><a href='#PVtx'>PVtx</a></th><td style='text-align : left;'>primary vertices (AOD, with or w/o cuts)</td></tr>
+<th><a href='#Photon'>Photon</a></th><td style='text-align : left;'>Photons after basic selection (pt > 5 )</td></tr>
+<th><a href='#Tau'>Tau</a></th><td style='text-align : left;'>Taus after basic selection (pt > 18 && tauID('decayModeFindingNewDMs') && (tauID('byLooseCombinedIsolationDeltaBetaCorr3Hits') || tauID('byVLooseIsolationMVArun2v1DBoldDMwLT2015') || tauID('byVLooseIsolationMVArun2v1DBnewDMwLT') || tauID('byVLooseIsolationMVArun2v1DBdR03oldDMwLT') || tauID('byVVLooseIsolationMVArun2v1DBoldDMwLT') || tauID('byVVLooseIsolationMVArun2v1DBoldDMwLT2017v2') || tauID('byVVLooseIsolationMVArun2v1DBnewDMwLT2017v2') || tauID('byVVLooseIsolationMVArun2v1DBdR03oldDMwLT2017v2')))</td></tr>
+<th><a href='#TrackJet'>TrackJet</a></th><td style='text-align : left;'>ak5 (Run 1) or ak4 (Run 2) track jets</td></tr>
+<th><a href='#Trig'>Trig</a></th><td style='text-align : left;'>generic flag: event trigger suited for Minimum Bias analysis</td></tr>
+<th><a href='#TrigObj'>TrigObj</a></th><td style='text-align : left;'>trigger objects, only partially filled so far</td></tr>
+<th><a href='#event'>event</a></th><td style='text-align : left;'>event/l</td></tr>
+<th><a href='#luminosityBlock'>luminosityBlock</a></th><td style='text-align : left;'>luminosityBlock/i</td></tr>
+<th><a href='#nIsoTrack'>nIsoTrack</a></th><td style='text-align : left;'>isolated tracks after basic selection (((pt>5 && (abs(pdgId) == 11 || abs(pdgId) == 13)) || pt > 10) && (abs(pdgId) < 15 || abs(eta) < 2.5) && abs(dxy) < 0.2 && abs(dz) < 0.1 && ((pfIsolationDR03().chargedHadronIso < 5 && pt < 25) || pfIsolationDR03().chargedHadronIso/pt < 0.2)) and lepton veto</td></tr>
+<th><a href='#nTrk'>nTrk</a></th><td style='text-align : left;'>number of tracks in input track collection</td></tr>
+<th><a href='#run'>run</a></th><td style='text-align : left;'>run/i</td></tr>
+</table>
+
+<h1>Events detail</h1>
+<h2><a name='run' id='run'>run</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>run</th><td style='text-align : left;'>UInt_t</td><td style='text-align : left;'>run/i</td></tr>
+</table>
+<h2><a name='event' id='event'>event</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>event</th><td style='text-align : left;'>ULong64_t</td><td style='text-align : left;'>event/l</td></tr>
+</table>
+<h2><a name='luminosityBlock' id='luminosityBlock'>luminosityBlock</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>luminosityBlock</th><td style='text-align : left;'>UInt_t</td><td style='text-align : left;'>luminosityBlock/i</td></tr>
+</table>
+<h2><a name='CMSSW' id='CMSSW'>CMSSW</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>CMSSW</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>CMSSW version used for the processing</td></tr>
+</table>
+<h2><a name='GoodLumisection' id='GoodLumisection'>GoodLumisection</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>GoodLumisection</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: good lumi section, from Golden JSON (not all datasets)</td></tr>
+</table>
+<h2><a name='Dataset' id='Dataset'>Dataset</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>Dataset_BParking</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event from BParking dataset</td></tr>
+<th>Dataset_BTau</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event from BTau dataset</td></tr>
+<th>Dataset_Charmonium</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event from Charmonium dataset</td></tr>
+<th>Dataset_Commissioning</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event from Commissioning dataset</td></tr>
+<th>Dataset_DoubleElectron</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event from DoubleElectron dataset</td></tr>
+<th>Dataset_DoubleMu</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event from DoubleMu(Parked) dataset</td></tr>
+<th>Dataset_EGMonitor</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event from EGMonitor dataset</td></tr>
+<th>Dataset_Electron</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event from EG or Electron dataset</td></tr>
+<th>Dataset_Jet</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event from Jet dataset</td></tr>
+<th>Dataset_JetMETTauMonitor</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event from JetMETTauMonitor dataset</td></tr>
+<th>Dataset_METFwd</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event from METFwd dataset</td></tr>
+<th>Dataset_MinimumBias</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event from MinimumBias dataset</td></tr>
+<th>Dataset_Mu</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event from Mu or SingleMuon dataset</td></tr>
+<th>Dataset_MuEG</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event from MuEG dataset</td></tr>
+<th>Dataset_MuHad</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event from MuHad dataset</td></tr>
+<th>Dataset_MuMonitor</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event from MuMonitor dataset</td></tr>
+<th>Dataset_MuOnia</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event from MuOnia dataset</td></tr>
+<th>Dataset_MultiJet</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event from MultiJet dataset</td></tr>
+<th>Dataset_Photon</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event from Photon dataset</td></tr>
+<th>Dataset_ZeroBias</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event from ZeroBias dataset</td></tr>
+<th>Dataset_isMC</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event is from MC dataset</td></tr>
+</table>
+<h2><a name='Alsoon' id='Alsoon'>Alsoon</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>Alsoon_BParking</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event also on BParking dataset</td></tr>
+<th>Alsoon_BTau</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event also on BTau dataset</td></tr>
+<th>Alsoon_Charmonium</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event also on Charmonium dataset</td></tr>
+<th>Alsoon_Commissioning</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event also on Commissioning dataset</td></tr>
+<th>Alsoon_DoubleElectron</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event also on DoubleElectron dataset</td></tr>
+<th>Alsoon_DoubleMu</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event also on DoubleMu(Parked) dataset</td></tr>
+<th>Alsoon_EGMonitor</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event also on EGMonitor dataset</td></tr>
+<th>Alsoon_Electron</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event also on EG or Electron dataset</td></tr>
+<th>Alsoon_Jet</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event also on Jet dataset</td></tr>
+<th>Alsoon_JetMETTauMonitor</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event also on JetMETTauMonitor dataset</td></tr>
+<th>Alsoon_METFwd</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event also on METFwd dataset</td></tr>
+<th>Alsoon_MinimumBias</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event also on MinimumBias dataset</td></tr>
+<th>Alsoon_Mu</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event also on Mu or SingleMuon dataset</td></tr>
+<th>Alsoon_MuEG</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event also on MuEG dataset</td></tr>
+<th>Alsoon_MuHad</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event also on MuHad dataset</td></tr>
+<th>Alsoon_MuMonitor</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event also on MuMonitor dataset</td></tr>
+<th>Alsoon_MuOnia</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event also on MuOnia dataset</td></tr>
+<th>Alsoon_MultiJet</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event also on MultiJet dataset</td></tr>
+<th>Alsoon_Photon</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event also on Photon datset</td></tr>
+<th>Alsoon_ZeroBias</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>flag: event also on ZeroBias dataset</td></tr>
+</table>
+<h2><a name='nTrk' id='nTrk'>nTrk</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>nTrk</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>number of tracks in input track collection</td></tr>
+</table>
+<h2><a name='nIsoTrack' id='nIsoTrack'>nIsoTrack</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>nIsoTrack</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>isolated tracks after basic selection (((pt>5 && (abs(pdgId) == 11 || abs(pdgId) == 13)) || pt > 10) && (abs(pdgId) < 15 || abs(eta) < 2.5) && abs(dxy) < 0.2 && abs(dz) < 0.1 && ((pfIsolationDR03().chargedHadronIso < 5 && pt < 25) || pfIsolationDR03().chargedHadronIso/pt < 0.2)) and lepton veto</td></tr>
+</table>
+<h2><a name='PV' id='PV'>PV</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>PV_chi2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>main primary vertex reduced chi2</td></tr>
+<th>PV_ndof</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>main primary vertex number of degree of freedom</td></tr>
+<th>PV_npvs</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>total number of reconstructed primary vertices</td></tr>
+<th>PV_npvsGood</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>number of good reconstructed primary vertices. selection:!isFake && ndof > 4 && abs(z) <= 24 && position.Rho <= 2</td></tr>
+<th>PV_score</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>main primary vertex score, i.e. sum pt2 of clustered objects</td></tr>
+<th>PV_x</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>main primary vertex position x coordinate</td></tr>
+<th>PV_y</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>main primary vertex position y coordinate</td></tr>
+<th>PV_z</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>main primary vertex position z coordinate</td></tr>
+</table>
+<h2><a name='OtherPV' id='OtherPV'>OtherPV</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>OtherPV_z</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Z position of other primary vertices, excluding the main PV</td></tr>
+<th>nOtherPV</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>other primary vertices</td></tr>
+</table>
+<h2><a name='PVtx' id='PVtx'>PVtx</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>PVtx_Id</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>unique id of reconstructed primary vertex for list-independent cross-referencing</td></tr>
+<th>PVtx_Rho</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>radial distance to beam spot</td></tr>
+<th>PVtx_chi2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>primary vertex reduced chi2</td></tr>
+<th>PVtx_isFake</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>PVtx_isFake</td></tr>
+<th>PVtx_isGood</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>satisfies good vertex cuts</td></tr>
+<th>PVtx_isMain</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>is the main primary vertex, PV</td></tr>
+<th>PVtx_isMainSim</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>is the main simulated vertex</td></tr>
+<th>PVtx_isTrigUnique</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>is the unique Trigger vertex; only set if no other vertices contribute to trigger</td></tr>
+<th>PVtx_isUnbiased</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>is unbiased by the main relevant trigger (e.g. inclusive muon trigger on muon dataset)</td></tr>
+<th>PVtx_isValid</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>PVtx_isValid</td></tr>
+<th>PVtx_ndof</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>number of degrees of freedom (including weights)</td></tr>
+<th>PVtx_ntrk</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>number of tracks associated to this vertex (including nonfitted close secondaries)</td></tr>
+<th>PVtx_ntrkfit</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>number of tracks used in the vertex fit</td></tr>
+<th>PVtx_score</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>sum pt2 score</td></tr>
+<th>PVtx_sumPt</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>sum pt of all tracks</td></tr>
+<th>PVtx_x</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>x position of vertex</td></tr>
+<th>PVtx_y</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>y position of vertex</td></tr>
+<th>PVtx_z</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>z position of vertex</td></tr>
+<th>nPVtx</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>primary vertices (AOD, with or w/o cuts)</td></tr>
+</table>
+<h2><a name='Bsp' id='Bsp'>Bsp</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>Bsp_dxdz</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>beam spot x slope</td></tr>
+<th>Bsp_dydz</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>beam spot y slope</td></tr>
+<th>Bsp_sigmaz</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>beam spot z width</td></tr>
+<th>Bsp_widthx</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>beam spot x width</td></tr>
+<th>Bsp_widthy</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>beam spot y width</td></tr>
+<th>Bsp_x</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>beam spot position x coordinate</td></tr>
+<th>Bsp_y</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>beam spot position y coordinate</td></tr>
+<th>Bsp_z</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>beam spot position z coordinate</td></tr>
+</table>
+<h2><a name='Muon' id='Muon'>Muon</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>Muon_Chi2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>tracker muon chi2/ndof</td></tr>
+<th>Muon_Id</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>Unique identifier of muon, for list-independent cross-referencing</td></tr>
+<th>Muon_charge</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>electric charge</td></tr>
+<th>Muon_dxy</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dxy (with sign) wrt first PV, in cm</td></tr>
+<th>Muon_dxyBest</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dxy (with sign) wrt best PV, in cm</td></tr>
+<th>Muon_dxyErr</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dxy uncertainty, in cm</td></tr>
+<th>Muon_dxybs</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dxy (with sign) wrt beam spot, in cm</td></tr>
+<th>Muon_dz</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dz (with sign) wrt first PV, in cm</td></tr>
+<th>Muon_dzBest</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dz (with sign) wrt best PV, in cm</td></tr>
+<th>Muon_dzErr</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dz uncertainty, in cm</td></tr>
+<th>Muon_eta</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>eta</td></tr>
+<th>Muon_gChi2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>global muon chi2/ndof</td></tr>
+<th>Muon_genPartFlav</th><td style='text-align : left;'>UChar_t</td><td style='text-align : left;'>Flavour of genParticle for MC matching to status==1 muons: 1 = prompt muon (including gamma*->mu mu), 15 = muon from prompt tau, 5 = muon from b, 4 = muon from c, 3 = muon from light or unknown, 0 = unmatched</td></tr>
+<th>Muon_genPartIdx</th><td style='text-align : left;'>Int_t(index to Genpart)</td><td style='text-align : left;'>GenPart index of the associated gen object (-1 if none)</td></tr>
+<th>Muon_geta</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>global muon eta</td></tr>
+<th>Muon_gnPix</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>number of valid pixel hits, global muon</td></tr>
+<th>Muon_gnValid</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>number of valid tracker hits, global muon</td></tr>
+<th>Muon_gnValidMu</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>Muon_gnValidMu</td></tr>
+<th>Muon_gphi</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>global muon phi</td></tr>
+<th>Muon_gpt</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>global muon pt</td></tr>
+<th>Muon_highPtId</th><td style='text-align : left;'>UChar_t</td><td style='text-align : left;'>high-pT cut-based ID (1 = tracker high pT, 2 = global high pT, which includes tracker high pT)</td></tr>
+<th>Muon_highPurity</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>satisfies high purity criteria</td></tr>
+<th>Muon_ip3d</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>3D impact parameter wrt first PV, in cm</td></tr>
+<th>Muon_ip3dBest</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>3D impact parameter wrt best PV, in cm</td></tr>
+<th>Muon_isArbitrated</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>isGood(TrackerMuonArbitrated)</td></tr>
+<th>Muon_isGlobal</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>muon is global muon</td></tr>
+<th>Muon_isGood</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>isGood(TMAnyStationTight)</td></tr>
+<th>Muon_isGoodAng</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>isGood(TMLastStationAngTight)</td></tr>
+<th>Muon_isGoodLast</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>isGood(TMLastStationTight)</td></tr>
+<th>Muon_isMini</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>can be found on MiniAOD</td></tr>
+<th>Muon_isNano</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>can be found on NanoAOD</td></tr>
+<th>Muon_isPFcand</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>muon is PF candidate</td></tr>
+<th>Muon_isRPCcand</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>RPC Muon</td></tr>
+<th>Muon_isStandAlone</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>StandAlone Muon</td></tr>
+<th>Muon_isTracker</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>muon is tracker muon</td></tr>
+<th>Muon_jetIdx</th><td style='text-align : left;'>Int_t(index to Jet)</td><td style='text-align : left;'>index of the associated jet (-1 if none)</td></tr>
+<th>Muon_looseId</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>loose cut-based ID</td></tr>
+<th>Muon_mass</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>mass</td></tr>
+<th>Muon_mediumId</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>cut-based ID, medium WP</td></tr>
+<th>Muon_miniPFRelIso_all</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>mini PF relative isolation, total (with scaled rho*EA PU corrections)</td></tr>
+<th>Muon_miniPFRelIso_chg</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>mini PF relative isolation, charged component</td></tr>
+<th>Muon_nNano</th><td style='text-align : left;'>UInt_t</td><td style='text-align : left;'>number of muons satisfying isNano</td></tr>
+<th>Muon_nPix</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>number of valid pixel hits</td></tr>
+<th>Muon_nStations</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>number of matched stations with default arbitration (segment & track)</td></tr>
+<th>Muon_nTrackerLayers</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>number of layers in the tracker</td></tr>
+<th>Muon_nValid</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>number of valid tracker hits</td></tr>
+<th>Muon_pdgId</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>PDG code assigned by the event reconstruction (not by MC truth)</td></tr>
+<th>Muon_pfIsoId</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>Muon_pfIsoId</td></tr>
+<th>Muon_pfRelIso03_all</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>PF relative isolation dR=0.3, total (deltaBeta corrections)</td></tr>
+<th>Muon_pfRelIso03_chg</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>PF relative isolation dR=0.3, charged component</td></tr>
+<th>Muon_pfRelIso04_all</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>PF relative isolation dR=0.4, total (deltaBeta corrections)</td></tr>
+<th>Muon_phi</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>phi</td></tr>
+<th>Muon_pt</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pt</td></tr>
+<th>Muon_ptErr</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>ptError of the muon track</td></tr>
+<th>Muon_segmentComp</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>muon segment compatibility</td></tr>
+<th>Muon_simId</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>GenPart Id of the associated gen object (-1 if none)</td></tr>
+<th>Muon_sip3d</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>3D impact parameter significance wrt first PV</td></tr>
+<th>Muon_sip3dBest</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>3D impact parameter significance wrt best PV</td></tr>
+<th>Muon_softId</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>soft cut-based ID</td></tr>
+<th>Muon_softId4</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>soft cut-based ID, 2010 version</td></tr>
+<th>Muon_softIdBest</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>soft cut-based ID, w.r.t. best PV</td></tr>
+<th>Muon_tightCharge</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>Tight charge criterion using pterr/pt of muonBestTrack (0:fail, 2:pass)</td></tr>
+<th>Muon_tightId</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>cut-based ID, tight WP</td></tr>
+<th>Muon_trkId</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>Id of the associated track in track list (-1 if none)</td></tr>
+<th>Muon_vtxFlag</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>quality flag for vertex association</td></tr>
+<th>Muon_vtxIdx</th><td style='text-align : left;'>Int_t(index to Vtx)</td><td style='text-align : left;'>index of the associated primary vertex (-1 if none)</td></tr>
+<th>Muon_x</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>x point of closest approach to beam line, in cm</td></tr>
+<th>Muon_y</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>y point of closest approach to beam line, in cm</td></tr>
+<th>Muon_z</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>z point of closest approach to beam line, in cm</td></tr>
+<th>nMuon</th><td style='text-align : left;'>UInt_t</td><td style='text-align : left;'>(AOD) muons after basic nanoAODplus selection</td></tr>
+</table>
+<h2><a name='Dimu' id='Dimu'>Dimu</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>Dimu_charge</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>dimuon charge</td></tr>
+<th>Dimu_chi2</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dimuon vertex chi2/ndof</td></tr>
+<th>Dimu_cosphi</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>cosine of vertex alignment angle in 3D</td></tr>
+<th>Dimu_cosphixy</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>cosine of vertex alignment angle in xy</td></tr>
+<th>Dimu_dl</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dimuon decay length in 3D</td></tr>
+<th>Dimu_dlErr</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dimuon decay length error in 3D</td></tr>
+<th>Dimu_dlSig</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dimuon decay length significance in 3D</td></tr>
+<th>Dimu_dlxy</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dimuon decay length in xy</td></tr>
+<th>Dimu_dlxyErr</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dimuon decay length error in xy</td></tr>
+<th>Dimu_dlxySig</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dimuon decay length significance in xy</td></tr>
+<th>Dimu_eta</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dimuon eta after vertex fit</td></tr>
+<th>Dimu_genPartIdx</th><td style='text-align : left;'>Int_t(index to Genpart)</td><td style='text-align : left;'>cross reference to parent meson or boson in GenPart</td></tr>
+<th>Dimu_mass</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dimuon mass after vertex fit</td></tr>
+<th>Dimu_phi</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dimuon phi after vertex fit</td></tr>
+<th>Dimu_pt</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dimuon pt after vertex fit</td></tr>
+<th>Dimu_ptfrac</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>transverse momentum fraction w.r.t. total of associated primary vertex</td></tr>
+<th>Dimu_rap</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dimuon rapidity after vertex fit</td></tr>
+<th>Dimu_simId</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>cross reference to parent meson or boson in GenPart</td></tr>
+<th>Dimu_t1dxy</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dxy of first muon (needed?)</td></tr>
+<th>Dimu_t1dz</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dz of first muon (needed?)</td></tr>
+<th>Dimu_t1muIdx</th><td style='text-align : left;'>Int_t(index to T1Mu)</td><td style='text-align : left;'>index of first muon in Muon</td></tr>
+<th>Dimu_t2dxy</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dxy of 2nd muon (needed?)</td></tr>
+<th>Dimu_t2dz</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dz of 2nd muon (needed?)</td></tr>
+<th>Dimu_t2muIdx</th><td style='text-align : left;'>Int_t(index to T2Mu)</td><td style='text-align : left;'>index of 2nd muon in Muon</td></tr>
+<th>Dimu_vtxIdx</th><td style='text-align : left;'>Int_t(index to Vtx)</td><td style='text-align : left;'>cross reference to associated primary vertex</td></tr>
+<th>Dimu_x</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>x position of dimuon vertex</td></tr>
+<th>Dimu_y</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>y position of dimuon vertex</td></tr>
+<th>Dimu_z</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>z position of dimuon vertex</td></tr>
+<th>nDimu</th><td style='text-align : left;'>UInt_t</td><td style='text-align : left;'>number of dimuons after vertex refit</td></tr>
+</table>
+<h2><a name='Electron' id='Electron'>Electron</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>Electron_SCeta</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Super Cluster eta</td></tr>
+<th>Electron_charge</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>electric charge</td></tr>
+<th>Electron_convDcot</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>NanoAODplus extension</td></tr>
+<th>Electron_convDist</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>NanoAODplus extension</td></tr>
+<th>Electron_convVeto</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>pass conversion veto</td></tr>
+<th>Electron_convVetoOld</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>pass conversion veto</td></tr>
+<th>Electron_cutBased</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>cut-based ID Fall17 V2 (0:fail, 1:veto, 2:loose, 3:medium, 4:tight)</td></tr>
+<th>Electron_deltaEtaSC</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>delta eta (SC,ele) with sign</td></tr>
+<th>Electron_deltaEtaSCtr</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>NanoAODplus extension</td></tr>
+<th>Electron_deltaPhiSC</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>delta phi (SC,ele) with sign</td></tr>
+<th>Electron_deltaPhiSCtr</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>NanoAODplus extension</td></tr>
+<th>Electron_dr03EcalRecHitSumEt</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Non-PF Ecal isolation within a delta R cone of 0.3 with electron pt > 35 GeV</td></tr>
+<th>Electron_dr03EcalRecHitSumEtOld</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Non-PF Ecal isolation within a delta R cone of 0.3</td></tr>
+<th>Electron_dr03HcalDepth1TowerSumEt</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Non-PF Hcal isolation within a delta R cone of 0.3 with electron pt > 35 GeV</td></tr>
+<th>Electron_dr03HcalDepth1TowerSumEtOld</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Non-PF Hcal isolation within a delta R cone of 0.3</td></tr>
+<th>Electron_dr03HcalTowerSumEt</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>NanoAODplus extension</td></tr>
+<th>Electron_dr03TkSumPt</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Non-PF track isolation within a delta R cone of 0.3 with electron pt > 35 GeV</td></tr>
+<th>Electron_dr03TkSumPtOld</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>old: Non-PF track isolation within a delta R cone of 0.3</td></tr>
+<th>Electron_dxy</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dxy (with sign) wrt first PV, in cm</td></tr>
+<th>Electron_dxyErr</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dxy uncertainty, in cm</td></tr>
+<th>Electron_dz</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dz (with sign) wrt first PV, in cm</td></tr>
+<th>Electron_dzErr</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>dz uncertainty, in cm</td></tr>
+<th>Electron_eInvMinusPInv</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>1/E_SC - 1/p_trk</td></tr>
+<th>Electron_eInvMinusPInvOld</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>NanoAODplus Run1</td></tr>
+<th>Electron_eta</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>eta</td></tr>
+<th>Electron_genPartIdx</th><td style='text-align : left;'>Int_t(index to Genpart)</td><td style='text-align : left;'>GenPart index of the associated true electron (-1 if none)</td></tr>
+<th>Electron_hoe</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>H over E</td></tr>
+<th>Electron_ip3d</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>3D impact parameter wrt first PV, in cm</td></tr>
+<th>Electron_isEB</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>NanoAODplus extension</td></tr>
+<th>Electron_isEE</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>NanoAODplus extension</td></tr>
+<th>Electron_isNano</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>NanoAODplus extension</td></tr>
+<th>Electron_isPFcand</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>NanoAODplus extension</td></tr>
+<th>Electron_lostHits</th><td style='text-align : left;'>UChar_t</td><td style='text-align : left;'>NanoAODplus extension</td></tr>
+<th>Electron_mass</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>mass</td></tr>
+<th>Electron_nNano</th><td style='text-align : left;'>UInt_t</td><td style='text-align : left;'>electron that follows nanoAOD cut (pT < 5 GeV)</td></tr>
+<th>Electron_pfRelIso03_all</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>PF relative isolation dR=0.3</td></tr>
+<th>Electron_pfRelIso03_chg</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>PF relative isolation dR=0.3, charged component</td></tr>
+<th>Electron_phi</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>phi</td></tr>
+<th>Electron_pt</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pt</td></tr>
+<th>Electron_sieie</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>sigma_IetaIeta of the supercluster, calculated with full 5x5 region</td></tr>
+<th>Electron_sieieR1</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>NanoAODplus Run1</td></tr>
+<th>Electron_simId</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>GenPart Id of the associated true electron (-1 if none)</td></tr>
+<th>Electron_sip3d</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>3D impact parameter significance wrt first PV, in cm</td></tr>
+<th>Electron_tightCharge</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>tight charge criteria</td></tr>
+<th>Electron_vtxIdx</th><td style='text-align : left;'>Int_t(index to Vtx)</td><td style='text-align : left;'>index of the associated primary vertex (-1 if none)</td></tr>
+<th>Electron_x</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>x point of closest approach to beam line, in cm</td></tr>
+<th>Electron_y</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>y point of closest approach to beam line, in cm</td></tr>
+<th>Electron_z</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>z point of closest approach to beam line, in cm</td></tr>
+<th>nElectron</th><td style='text-align : left;'>UInt_t</td><td style='text-align : left;'>number of Electrons</td></tr>
+</table>
+<h2><a name='Tau' id='Tau'>Tau</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>Tau_charge</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>electric charge</td></tr>
+<th>Tau_chargedIso</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>charged isolation</td></tr>
+<th>Tau_decayMode</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>decayMode()</td></tr>
+<th>Tau_eta</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>eta</td></tr>
+<th>Tau_idAntieletight</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>antieletight id (POET)</td></tr>
+<th>Tau_idAntimutight</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>antimutight id (POET)</td></tr>
+<th>Tau_idDecaymode</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>decay mode id (POET)</td></tr>
+<th>Tau_idIsoloose</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Isoloose id (POET)</td></tr>
+<th>Tau_idIsomedium</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Isomedium id (POET)</td></tr>
+<th>Tau_idIsoraw</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Isoraw id (POET)</td></tr>
+<th>Tau_idIsotight</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Isotight id (POET)</td></tr>
+<th>Tau_idIsovloose</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>Isovloose id (POET)</td></tr>
+<th>Tau_mass</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>mass</td></tr>
+<th>Tau_neutralIso</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>neutral (photon) isolation</td></tr>
+<th>Tau_phi</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>phi</td></tr>
+<th>Tau_pt</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pt</td></tr>
+<th>nTau</th><td style='text-align : left;'>UInt_t</td><td style='text-align : left;'>Taus after basic selection (pt > 18 && tauID('decayModeFindingNewDMs') && (tauID('byLooseCombinedIsolationDeltaBetaCorr3Hits') || tauID('byVLooseIsolationMVArun2v1DBoldDMwLT2015') || tauID('byVLooseIsolationMVArun2v1DBnewDMwLT') || tauID('byVLooseIsolationMVArun2v1DBdR03oldDMwLT') || tauID('byVVLooseIsolationMVArun2v1DBoldDMwLT') || tauID('byVVLooseIsolationMVArun2v1DBoldDMwLT2017v2') || tauID('byVVLooseIsolationMVArun2v1DBnewDMwLT2017v2') || tauID('byVVLooseIsolationMVArun2v1DBdR03oldDMwLT2017v2')))</td></tr>
+</table>
+<h2><a name='Photon' id='Photon'>Photon</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>Photon_charge</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>electric charge</td></tr>
+<th>Photon_cutBased</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>Quality flag: 1=Loose, 2=Medium, 3=Tight</td></tr>
+<th>Photon_eta</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>eta</td></tr>
+<th>Photon_mass</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>mass</td></tr>
+<th>Photon_pfRelIso03_all</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>PF relative isolation dR=0.3, total (with rho*EA PU corrections)</td></tr>
+<th>Photon_pfRelIso03_chg</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>PF relative isolation dR=0.3, charged (with rho*EA PU corrections)</td></tr>
+<th>Photon_phIso</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>PF relative isolation dR=0.3, ph (with rho*EA PU corrections)</td></tr>
+<th>Photon_phi</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>phi</td></tr>
+<th>Photon_pt</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pt</td></tr>
+<th>nPhoton</th><td style='text-align : left;'>UInt_t</td><td style='text-align : left;'>Photons after basic selection (pt > 5 )</td></tr>
+</table>
+<h2><a name='MET' id='MET'>MET</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>MET_covXX</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>xx element of met covariance matrix</td></tr>
+<th>MET_covXY</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>xy element of met covariance matrix</td></tr>
+<th>MET_covYY</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>yy element of met covariance matrix</td></tr>
+<th>MET_phi</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>phi</td></tr>
+<th>MET_pt</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pt</td></tr>
+<th>MET_significance</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>MET significance</td></tr>
+<th>MET_sumEt</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>scalar sum of Et</td></tr>
+</table>
+<h2><a name='CaloMET' id='CaloMET'>CaloMET</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>CaloMET_phi</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>phi</td></tr>
+<th>CaloMET_pt</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pt</td></tr>
+<th>CaloMET_sumEt</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>scalar sum of Et</td></tr>
+</table>
+<h2><a name='Jet' id='Jet'>Jet</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>Jet_area</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>jet catchment area, for JECs</td></tr>
+<th>Jet_btag</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>jet b tagging flag, combinedSecondaryVertex algorithm</td></tr>
+<th>Jet_chEmEF</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>charged Electromagnetic Energy Fraction</td></tr>
+<th>Jet_chHEF</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>charged Hadron Energy Fraction</td></tr>
+<th>Jet_eta</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>eta</td></tr>
+<th>Jet_jetId</th><td style='text-align : left;'>UInt_t</td><td style='text-align : left;'>Jet ID flags bit1 is loose (does not always exist), bit2 is tight, bit3 is tightLepVeto</td></tr>
+<th>Jet_mass</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>mass</td></tr>
+<th>Jet_nConstituents</th><td style='text-align : left;'>UInt_t</td><td style='text-align : left;'>number of particles in the jet</td></tr>
+<th>Jet_nElectrons</th><td style='text-align : left;'>UInt_t</td><td style='text-align : left;'>number of electrons in the jet</td></tr>
+<th>Jet_nMuons</th><td style='text-align : left;'>UInt_t</td><td style='text-align : left;'>number of muons in the jet</td></tr>
+<th>Jet_neEmEF</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>neutral Electromagnetic Energy Fraction</td></tr>
+<th>Jet_neHEF</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>neutral Hadron Energy Fraction</td></tr>
+<th>Jet_phi</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>phi</td></tr>
+<th>Jet_pt</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pt with JEC applied</td></tr>
+<th>Jet_ptuncor</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pt before application of JEC</td></tr>
+<th>nJet</th><td style='text-align : left;'>UInt_t</td><td style='text-align : left;'>PFJets, ak5 for Run 1, ak4 for Run2, after basic selection (pt > 15)</td></tr>
+</table>
+<h2><a name='FatJet' id='FatJet'>FatJet</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>FatJet_area</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>jet catchment area, for JECs</td></tr>
+<th>FatJet_chEmEF</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>FatJet_chEmEF</td></tr>
+<th>FatJet_chHEF</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>FatJet_chHEF</td></tr>
+<th>FatJet_eta</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>eta</td></tr>
+<th>FatJet_mass</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>mass</td></tr>
+<th>FatJet_nConstituents</th><td style='text-align : left;'>UInt_t</td><td style='text-align : left;'>number of PF constituents</td></tr>
+<th>FatJet_nElectrons</th><td style='text-align : left;'>UInt_t</td><td style='text-align : left;'>number of Electrons in jet</td></tr>
+<th>FatJet_nMuons</th><td style='text-align : left;'>UInt_t</td><td style='text-align : left;'>number of Muons in jet</td></tr>
+<th>FatJet_neEmEF</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>FatJet_neEmEF</td></tr>
+<th>FatJet_neHEF</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>FatJet_neHEF</td></tr>
+<th>FatJet_phi</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>phi</td></tr>
+<th>FatJet_pt</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pt</td></tr>
+<th>nFatJet</th><td style='text-align : left;'>UInt_t</td><td style='text-align : left;'>ak7 (Run 1) or ak8 (Run 2) PFjets for wide jet or boosted analysis</td></tr>
+</table>
+<h2><a name='TrackJet' id='TrackJet'>TrackJet</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>TrackJet_area</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>area</td></tr>
+<th>TrackJet_eta</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>eta</td></tr>
+<th>TrackJet_mass</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>mass</td></tr>
+<th>TrackJet_nConstituents</th><td style='text-align : left;'>UInt_t</td><td style='text-align : left;'>number of track constituents</td></tr>
+<th>TrackJet_nElectrons</th><td style='text-align : left;'>UInt_t</td><td style='text-align : left;'>number of Electrons in jet</td></tr>
+<th>TrackJet_nMuons</th><td style='text-align : left;'>UInt_t</td><td style='text-align : left;'>number of Muons in jet</td></tr>
+<th>TrackJet_phi</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>phi</td></tr>
+<th>TrackJet_pt</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pt</td></tr>
+<th>nTrackJet</th><td style='text-align : left;'>UInt_t</td><td style='text-align : left;'>ak5 (Run 1) or ak4 (Run 2) track jets</td></tr>
+</table>
+<h2><a name='TrigObj' id='TrigObj'>TrigObj</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>TrigObj_eta</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>eta</td></tr>
+<th>TrigObj_filterBits</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>extra bits of associated information: 1 = CaloIdL_TrackIdL_IsoVL, 2 = 1e (WPTight), 4 = 1e (WPLoose), 8 = OverlapFilter PFTau, 16 = 2e, 32 = 1e-1mu, 64 = 1e-1tau, 128 = 3e, 256 = 2e-1mu, 512 = 1e-2mu for Electron (PixelMatched e/gamma); 1 = TrkIsoVVL, 2 = Iso, 4 = OverlapFilter PFTau, 8 = 1mu, 16 = 2mu, 32 = 1mu-1e, 64 = 1mu-1tau, 128 = 3mu, 256 = 2mu-1e, 512 =1mu-2e for Muon; 1 = LooseChargedIso, 2 = MediumChargedIso, 4 = TightChargedIso, 8 = TightID OOSC photons, 16 = HPS, 32 = single-tau + tau+MET, 64 = di-tau, 128 = e-tau, 256 = mu-tau, 512 = VBF+di-tau for Tau; 1 = VBF cross-cleaned from loose iso PFTau for Jet; </td></tr>
+<th>TrigObj_id</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>ID of the object: 11 = Electron (PixelMatched e/gamma), 22 = Photon (PixelMatch-vetoed e/gamma), 13 = Muon, 15 = Tau, 1 = Jet, 6 = FatJet, 2 = MET, 3 = HT, 4 = MHT</td></tr>
+<th>TrigObj_phi</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>phi</td></tr>
+<th>TrigObj_pt</th><td style='text-align : left;'>Float_t</td><td style='text-align : left;'>pt</td></tr>
+<th>nTrigObj</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>trigger objects, only partially filled so far</td></tr>
+</table>
+<h2><a name='Trig' id='Trig'>Trig</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>Trig_BThresh</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>threshold of B trigger object</td></tr>
+<th>Trig_DiJetThresh</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>diJet trigger Et threshold</td></tr>
+<th>Trig_DoubleElectronThresh</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>double electron trigger lower pt threshold</td></tr>
+<th>Trig_DoubleMuThresh</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>double muon trigger, lower pt threshold</td></tr>
+<th>Trig_ElectronThresh</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>electron trigger pt threshold</td></tr>
+<th>Trig_HTThresh</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>HT trigger HT threshold</td></tr>
+<th>Trig_IsoMuThresh</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>isolated muon trigger pt threshold</td></tr>
+<th>Trig_JetThresh</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>jet trigger Et threshold</td></tr>
+<th>Trig_JpsiThresh</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>Jpsi trigger, Jpsi pt threshold</td></tr>
+<th>Trig_METThresh</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>MET trigger threshold</td></tr>
+<th>Trig_MinBiasFlag</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>flag for kind of MinimumBias irigger</td></tr>
+<th>Trig_MinBiasMult</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>flag for multiplicity in Minimum Bias Multiplicity triggers</td></tr>
+<th>Trig_MuEGFlag</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>flag for kind of Muon+Electron or Photon trigger</td></tr>
+<th>Trig_MuHadFlag</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>flag for kind of Muon+Hadron trigger</td></tr>
+<th>Trig_MuL1Thresh</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>L1 muon trigger pt threshold</td></tr>
+<th>Trig_MuL2Thresh</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>L2 muon trigger pt threshold</td></tr>
+<th>Trig_MuThresh</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>muon trigger pt threshold</td></tr>
+<th>Trig_PhotonThresh</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>photon trigger pt threshold</td></tr>
+<th>Trig_QuadJetThresh</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>four-Jet trigger Et threshold</td></tr>
+<th>Trig_TriJetThresh</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>triJet trigger Et threshold</td></tr>
+<th>Trig_ZeroBiasFlag</th><td style='text-align : left;'>Int_t</td><td style='text-align : left;'>flag for kind of ZeroBias trigger</td></tr>
+<th>Trig_goodETrigger</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>generic flag: event trigger suited for inclusive Electron analysis</td></tr>
+<th>Trig_goodJetTrigger</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>generic flag: event trigger suited for inclusive Jet analysis</td></tr>
+<th>Trig_goodMinBiasTrigger</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>generic flag: event trigger suited for Minimum Bias analysis</td></tr>
+<th>Trig_goodMuTrigger</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>generic flag: event trigger suited for inclusive Muon analysis</td></tr>
+</table>
+<h2><a name='HLTriggerFirstPath' id='HLTriggerFirstPath'>HLTriggerFirstPath</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>HLTriggerFirstPath</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLTriggerFirstPath/O</td></tr>
+</table>
+<h2><a name='HLT' id='HLT'>HLT</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>HLT_Activity_Ecal_SC7</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Activity_Ecal_SC7/O</td></tr>
+<th>HLT_BTagMu_DiJet110_Mu5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_BTagMu_DiJet110_Mu5/O</td></tr>
+<th>HLT_BTagMu_DiJet20_Mu5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_BTagMu_DiJet20_Mu5/O</td></tr>
+<th>HLT_BTagMu_DiJet40_Mu5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_BTagMu_DiJet40_Mu5/O</td></tr>
+<th>HLT_BTagMu_DiJet70_Mu5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_BTagMu_DiJet70_Mu5/O</td></tr>
+<th>HLT_BTagMu_Jet20_Mu4</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_BTagMu_Jet20_Mu4/O</td></tr>
+<th>HLT_BTagMu_Jet300_Mu5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_BTagMu_Jet300_Mu5/O</td></tr>
+<th>HLT_BTagMu_Jet60_Mu4</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_BTagMu_Jet60_Mu4/O</td></tr>
+<th>HLT_BeamGas_HF_Beam1</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_BeamGas_HF_Beam1/O</td></tr>
+<th>HLT_BeamGas_HF_Beam2</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_BeamGas_HF_Beam2/O</td></tr>
+<th>HLT_BeamHalo</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_BeamHalo/O</td></tr>
+<th>HLT_CleanPFNoPUHT300_Ele15_CaloIdT_CaloIsoVL_TrkIdT_TrkIsoVL_PFMET45</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_CleanPFNoPUHT300_Ele15_CaloIdT_CaloIsoVL_TrkIdT_TrkIsoVL_PFMET45/O</td></tr>
+<th>HLT_CleanPFNoPUHT300_Ele15_CaloIdT_CaloIsoVL_TrkIdT_TrkIsoVL_PFMET50</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_CleanPFNoPUHT300_Ele15_CaloIdT_CaloIsoVL_TrkIdT_TrkIsoVL_PFMET50/O</td></tr>
+<th>HLT_CleanPFNoPUHT300_Ele40_CaloIdVT_TrkIdT</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_CleanPFNoPUHT300_Ele40_CaloIdVT_TrkIdT/O</td></tr>
+<th>HLT_CleanPFNoPUHT300_Ele60_CaloIdVT_TrkIdT</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_CleanPFNoPUHT300_Ele60_CaloIdVT_TrkIdT/O</td></tr>
+<th>HLT_CleanPFNoPUHT350_Ele5_CaloIdT_CaloIsoVL_TrkIdT_TrkIsoVL_PFMET45</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_CleanPFNoPUHT350_Ele5_CaloIdT_CaloIsoVL_TrkIdT_TrkIsoVL_PFMET45/O</td></tr>
+<th>HLT_CleanPFNoPUHT350_Ele5_CaloIdT_CaloIsoVL_TrkIdT_TrkIsoVL_PFMET50</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_CleanPFNoPUHT350_Ele5_CaloIdT_CaloIsoVL_TrkIdT_TrkIsoVL_PFMET50/O</td></tr>
+<th>HLT_DTCalibration</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DTCalibration/O</td></tr>
+<th>HLT_DTErrors</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DTErrors/O</td></tr>
+<th>HLT_DiCentralJetSumpT100_dPhi05_DiCentralPFJet60_25_PFMET100_HBHENoiseCleaned</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DiCentralJetSumpT100_dPhi05_DiCentralPFJet60_25_PFMET100_HBHENoiseCleaned/O</td></tr>
+<th>HLT_DiCentralPFJet30_PFMET80</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DiCentralPFJet30_PFMET80/O</td></tr>
+<th>HLT_DiCentralPFJet30_PFMET80_BTagCSV07</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DiCentralPFJet30_PFMET80_BTagCSV07/O</td></tr>
+<th>HLT_DiCentralPFNoPUJet50_PFMETORPFMETNoMu80</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DiCentralPFNoPUJet50_PFMETORPFMETNoMu80/O</td></tr>
+<th>HLT_DiJet35_MJJ650_AllJets_DEta3p5_VBF</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DiJet35_MJJ650_AllJets_DEta3p5_VBF/O</td></tr>
+<th>HLT_DiJet35_MJJ700_AllJets_DEta3p5_VBF</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DiJet35_MJJ700_AllJets_DEta3p5_VBF/O</td></tr>
+<th>HLT_DiJet35_MJJ750_AllJets_DEta3p5_VBF</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DiJet35_MJJ750_AllJets_DEta3p5_VBF/O</td></tr>
+<th>HLT_DiJet40Eta2p6_BTagIP3DFastPV</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DiJet40Eta2p6_BTagIP3DFastPV/O</td></tr>
+<th>HLT_DiJet80Eta2p6_BTagIP3DFastPVLoose</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DiJet80Eta2p6_BTagIP3DFastPVLoose/O</td></tr>
+<th>HLT_DiJet80_DiJet60_DiJet20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DiJet80_DiJet60_DiJet20/O</td></tr>
+<th>HLT_DiPFJet40_PFMETnoMu65_MJJ600VBF_LeadingJets</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DiPFJet40_PFMETnoMu65_MJJ600VBF_LeadingJets/O</td></tr>
+<th>HLT_DiPFJet40_PFMETnoMu65_MJJ800VBF_AllJets</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DiPFJet40_PFMETnoMu65_MJJ800VBF_AllJets/O</td></tr>
+<th>HLT_DiPFJet80_DiPFJet30_BTagCSVd07d05</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DiPFJet80_DiPFJet30_BTagCSVd07d05/O</td></tr>
+<th>HLT_DiPFJet80_DiPFJet30_BTagCSVd07d05d03</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DiPFJet80_DiPFJet30_BTagCSVd07d05d03/O</td></tr>
+<th>HLT_DiPFJet80_DiPFJet30_BTagCSVd07d05d05</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DiPFJet80_DiPFJet30_BTagCSVd07d05d05/O</td></tr>
+<th>HLT_DiPFJetAve140</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DiPFJetAve140/O</td></tr>
+<th>HLT_DiPFJetAve200</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DiPFJetAve200/O</td></tr>
+<th>HLT_DiPFJetAve260</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DiPFJetAve260/O</td></tr>
+<th>HLT_DiPFJetAve320</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DiPFJetAve320/O</td></tr>
+<th>HLT_DiPFJetAve40</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DiPFJetAve40/O</td></tr>
+<th>HLT_DiPFJetAve400</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DiPFJetAve400/O</td></tr>
+<th>HLT_DiPFJetAve80</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DiPFJetAve80/O</td></tr>
+<th>HLT_Dimuon0_Jpsi</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Dimuon0_Jpsi/O</td></tr>
+<th>HLT_Dimuon0_Jpsi_Muon</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Dimuon0_Jpsi_Muon/O</td></tr>
+<th>HLT_Dimuon0_Jpsi_NoVertexing</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Dimuon0_Jpsi_NoVertexing/O</td></tr>
+<th>HLT_Dimuon0_PsiPrime</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Dimuon0_PsiPrime/O</td></tr>
+<th>HLT_Dimuon0_Upsilon</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Dimuon0_Upsilon/O</td></tr>
+<th>HLT_Dimuon0_Upsilon_Muon</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Dimuon0_Upsilon_Muon/O</td></tr>
+<th>HLT_Dimuon10_Jpsi</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Dimuon10_Jpsi/O</td></tr>
+<th>HLT_Dimuon11_Upsilon</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Dimuon11_Upsilon/O</td></tr>
+<th>HLT_Dimuon3p5_SameSign</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Dimuon3p5_SameSign/O</td></tr>
+<th>HLT_Dimuon5_PsiPrime</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Dimuon5_PsiPrime/O</td></tr>
+<th>HLT_Dimuon5_Upsilon</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Dimuon5_Upsilon/O</td></tr>
+<th>HLT_Dimuon7_PsiPrime</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Dimuon7_PsiPrime/O</td></tr>
+<th>HLT_Dimuon7_Upsilon</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Dimuon7_Upsilon/O</td></tr>
+<th>HLT_Dimuon8_Jpsi</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Dimuon8_Jpsi/O</td></tr>
+<th>HLT_Dimuon8_Upsilon</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Dimuon8_Upsilon/O</td></tr>
+<th>HLT_DisplacedPhoton65EBOnly_CaloIdVL_IsoL_PFMET30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DisplacedPhoton65EBOnly_CaloIdVL_IsoL_PFMET30/O</td></tr>
+<th>HLT_DisplacedPhoton65_CaloIdVL_IsoL_PFMET25</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DisplacedPhoton65_CaloIdVL_IsoL_PFMET25/O</td></tr>
+<th>HLT_DoubleDisplacedMu4_DiPFJet40Neutral</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleDisplacedMu4_DiPFJet40Neutral/O</td></tr>
+<th>HLT_DoubleEle10_CaloIdL_TrkIdVL_Ele10_CaloIdT_TrkIdVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleEle10_CaloIdL_TrkIdVL_Ele10_CaloIdT_TrkIdVL/O</td></tr>
+<th>HLT_DoubleEle14_CaloIdT_TrkIdVL_Mass8_PFMET40</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleEle14_CaloIdT_TrkIdVL_Mass8_PFMET40/O</td></tr>
+<th>HLT_DoubleEle14_CaloIdT_TrkIdVL_Mass8_PFMET50</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleEle14_CaloIdT_TrkIdVL_Mass8_PFMET50/O</td></tr>
+<th>HLT_DoubleEle33_CaloIdL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleEle33_CaloIdL/O</td></tr>
+<th>HLT_DoubleEle33_CaloIdL_GsfTrkIdVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleEle33_CaloIdL_GsfTrkIdVL/O</td></tr>
+<th>HLT_DoubleEle33_CaloIdT</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleEle33_CaloIdT/O</td></tr>
+<th>HLT_DoubleEle8_CaloIdT_TrkIdVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleEle8_CaloIdT_TrkIdVL/O</td></tr>
+<th>HLT_DoubleEle8_CaloIdT_TrkIdVL_Mass8_PFNoPUHT175</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleEle8_CaloIdT_TrkIdVL_Mass8_PFNoPUHT175/O</td></tr>
+<th>HLT_DoubleEle8_CaloIdT_TrkIdVL_Mass8_PFNoPUHT225</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleEle8_CaloIdT_TrkIdVL_Mass8_PFNoPUHT225/O</td></tr>
+<th>HLT_DoubleJet20_ForwardBackward</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleJet20_ForwardBackward/O</td></tr>
+<th>HLT_DoubleMediumIsoPFTau30_Trk1_eta2p1</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleMediumIsoPFTau30_Trk1_eta2p1/O</td></tr>
+<th>HLT_DoubleMediumIsoPFTau30_Trk1_eta2p1_Jet30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleMediumIsoPFTau30_Trk1_eta2p1_Jet30/O</td></tr>
+<th>HLT_DoubleMediumIsoPFTau35_Trk1_eta2p1</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleMediumIsoPFTau35_Trk1_eta2p1/O</td></tr>
+<th>HLT_DoubleMediumIsoPFTau35_Trk1_eta2p1_Prong1</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleMediumIsoPFTau35_Trk1_eta2p1_Prong1/O</td></tr>
+<th>HLT_DoubleMu11_Acoplanarity03</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleMu11_Acoplanarity03/O</td></tr>
+<th>HLT_DoubleMu14_Mass8_PFMET40</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleMu14_Mass8_PFMET40/O</td></tr>
+<th>HLT_DoubleMu14_Mass8_PFMET50</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleMu14_Mass8_PFMET50/O</td></tr>
+<th>HLT_DoubleMu3_4_Dimuon5_Bs_Central</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleMu3_4_Dimuon5_Bs_Central/O</td></tr>
+<th>HLT_DoubleMu3p5_4_Dimuon5_Bs_Central</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleMu3p5_4_Dimuon5_Bs_Central/O</td></tr>
+<th>HLT_DoubleMu3p5_LowMassNonResonant_Displaced</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleMu3p5_LowMassNonResonant_Displaced/O</td></tr>
+<th>HLT_DoubleMu3p5_LowMass_Displaced</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleMu3p5_LowMass_Displaced/O</td></tr>
+<th>HLT_DoubleMu4_Acoplanarity03</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleMu4_Acoplanarity03/O</td></tr>
+<th>HLT_DoubleMu4_Dimuon7_Bs_Forward</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleMu4_Dimuon7_Bs_Forward/O</td></tr>
+<th>HLT_DoubleMu4_JpsiTk_Displaced</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleMu4_JpsiTk_Displaced/O</td></tr>
+<th>HLT_DoubleMu4_Jpsi_Displaced</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleMu4_Jpsi_Displaced/O</td></tr>
+<th>HLT_DoubleMu5_Ele8_CaloIdT_TrkIdVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleMu5_Ele8_CaloIdT_TrkIdVL/O</td></tr>
+<th>HLT_DoubleMu5_IsoMu5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleMu5_IsoMu5/O</td></tr>
+<th>HLT_DoubleMu8_Ele8_CaloIdT_TrkIdVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleMu8_Ele8_CaloIdT_TrkIdVL/O</td></tr>
+<th>HLT_DoubleMu8_Mass8_PFNoPUHT175</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleMu8_Mass8_PFNoPUHT175/O</td></tr>
+<th>HLT_DoubleMu8_Mass8_PFNoPUHT225</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleMu8_Mass8_PFNoPUHT225/O</td></tr>
+<th>HLT_DoublePhoton40_CaloIdL_Rsq0p035</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoublePhoton40_CaloIdL_Rsq0p035/O</td></tr>
+<th>HLT_DoublePhoton40_CaloIdL_Rsq0p06</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoublePhoton40_CaloIdL_Rsq0p06/O</td></tr>
+<th>HLT_DoublePhoton48_HEVT</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoublePhoton48_HEVT/O</td></tr>
+<th>HLT_DoublePhoton53_HEVT</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoublePhoton53_HEVT/O</td></tr>
+<th>HLT_DoublePhoton5_IsoVL_CEP</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoublePhoton5_IsoVL_CEP/O</td></tr>
+<th>HLT_DoublePhoton70</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoublePhoton70/O</td></tr>
+<th>HLT_DoublePhoton80</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoublePhoton80/O</td></tr>
+<th>HLT_DoubleRelIso1p0Mu5_Mass8_PFNoPUHT175</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleRelIso1p0Mu5_Mass8_PFNoPUHT175/O</td></tr>
+<th>HLT_DoubleRelIso1p0Mu5_Mass8_PFNoPUHT225</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_DoubleRelIso1p0Mu5_Mass8_PFNoPUHT225/O</td></tr>
+<th>HLT_EcalCalibration</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_EcalCalibration/O</td></tr>
+<th>HLT_EightJet30_eta3p0</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_EightJet30_eta3p0/O</td></tr>
+<th>HLT_EightJet35_eta3p0</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_EightJet35_eta3p0/O</td></tr>
+<th>HLT_Ele12_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_DoubleCentralJet65</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele12_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_DoubleCentralJet65/O</td></tr>
+<th>HLT_Ele12_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_RsqMR30_Rsq0p04_MR200</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele12_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_RsqMR30_Rsq0p04_MR200/O</td></tr>
+<th>HLT_Ele12_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_RsqMR40_Rsq0p04_MR200</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele12_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_RsqMR40_Rsq0p04_MR200/O</td></tr>
+<th>HLT_Ele15_Ele8_Ele5_CaloIdL_TrkIdVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele15_Ele8_Ele5_CaloIdL_TrkIdVL/O</td></tr>
+<th>HLT_Ele17_CaloIdL_CaloIsoVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele17_CaloIdL_CaloIsoVL/O</td></tr>
+<th>HLT_Ele17_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele17_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL/O</td></tr>
+<th>HLT_Ele17_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_Ele8_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele17_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_Ele8_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL/O</td></tr>
+<th>HLT_Ele17_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_Jet30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele17_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_Jet30/O</td></tr>
+<th>HLT_Ele17_CaloIdVT_CaloIsoVT_TrkIdT_TrkIsoVT_Ele8_Mass50</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele17_CaloIdVT_CaloIsoVT_TrkIdT_TrkIsoVT_Ele8_Mass50/O</td></tr>
+<th>HLT_Ele20_CaloIdVT_CaloIsoVT_TrkIdT_TrkIsoVT_SC4_Mass50</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele20_CaloIdVT_CaloIsoVT_TrkIdT_TrkIsoVT_SC4_Mass50/O</td></tr>
+<th>HLT_Ele22_CaloIdL_CaloIsoVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele22_CaloIdL_CaloIsoVL/O</td></tr>
+<th>HLT_Ele22_eta2p1_WP90NoIso_LooseIsoPFTau20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele22_eta2p1_WP90NoIso_LooseIsoPFTau20/O</td></tr>
+<th>HLT_Ele22_eta2p1_WP90Rho_LooseIsoPFTau20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele22_eta2p1_WP90Rho_LooseIsoPFTau20/O</td></tr>
+<th>HLT_Ele23_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_HFT30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele23_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_HFT30/O</td></tr>
+<th>HLT_Ele25_CaloIdVL_CaloIsoT_TrkIdVL_TrkIsoT_TriCentralPFNoPUJet30_30_20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele25_CaloIdVL_CaloIsoT_TrkIdVL_TrkIsoT_TriCentralPFNoPUJet30_30_20/O</td></tr>
+<th>HLT_Ele25_CaloIdVT_CaloIsoT_TrkIdT_TrkIsoT_CentralPFNoPUJet30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele25_CaloIdVT_CaloIsoT_TrkIdT_TrkIsoT_CentralPFNoPUJet30/O</td></tr>
+<th>HLT_Ele25_CaloIdVT_CaloIsoT_TrkIdT_TrkIsoT_CentralPFNoPUJet30_BTagIPIter</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele25_CaloIdVT_CaloIsoT_TrkIdT_TrkIsoT_CentralPFNoPUJet30_BTagIPIter/O</td></tr>
+<th>HLT_Ele25_CaloIdVT_CaloIsoT_TrkIdT_TrkIsoT_TriCentralPFNoPUJet30_30_20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele25_CaloIdVT_CaloIsoT_TrkIdT_TrkIsoT_TriCentralPFNoPUJet30_30_20/O</td></tr>
+<th>HLT_Ele25_CaloIdVT_CaloIsoVL_TrkIdVL_TrkIsoT_DiCentralPFNoPUJet30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele25_CaloIdVT_CaloIsoVL_TrkIdVL_TrkIsoT_DiCentralPFNoPUJet30/O</td></tr>
+<th>HLT_Ele25_CaloIdVT_CaloIsoVL_TrkIdVL_TrkIsoT_TriCentralPFNoPUJet30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele25_CaloIdVT_CaloIsoVL_TrkIdVL_TrkIsoT_TriCentralPFNoPUJet30/O</td></tr>
+<th>HLT_Ele25_CaloIdVT_CaloIsoVL_TrkIdVL_TrkIsoT_TriCentralPFNoPUJet45_35_25</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele25_CaloIdVT_CaloIsoVL_TrkIdVL_TrkIsoT_TriCentralPFNoPUJet45_35_25/O</td></tr>
+<th>HLT_Ele25_CaloIdVT_CaloIsoVL_TrkIdVL_TrkIsoT_TriCentralPFNoPUJet50_40_30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele25_CaloIdVT_CaloIsoVL_TrkIdVL_TrkIsoT_TriCentralPFNoPUJet50_40_30/O</td></tr>
+<th>HLT_Ele25_CaloIdVT_TrkIdT_TriCentralPFNoPUJet30_30_20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele25_CaloIdVT_TrkIdT_TriCentralPFNoPUJet30_30_20/O</td></tr>
+<th>HLT_Ele27_CaloIdL_CaloIsoVL_TrkIdVL_TrkIsoVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele27_CaloIdL_CaloIsoVL_TrkIdVL_TrkIsoVL/O</td></tr>
+<th>HLT_Ele27_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_Ele15_CaloIdT_CaloIsoVL_trackless</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele27_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_Ele15_CaloIdT_CaloIsoVL_trackless/O</td></tr>
+<th>HLT_Ele27_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_HFT15</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele27_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_HFT15/O</td></tr>
+<th>HLT_Ele27_WP80</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele27_WP80/O</td></tr>
+<th>HLT_Ele27_WP80_CentralPFJet80</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele27_WP80_CentralPFJet80/O</td></tr>
+<th>HLT_Ele27_WP80_PFMET_MT50</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele27_WP80_PFMET_MT50/O</td></tr>
+<th>HLT_Ele27_WP80_WCandPt80</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele27_WP80_WCandPt80/O</td></tr>
+<th>HLT_Ele30_CaloIdVT_TrkIdT</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele30_CaloIdVT_TrkIdT/O</td></tr>
+<th>HLT_Ele30_CaloIdVT_TrkIdT_PFNoPUJet100_PFNoPUJet25</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele30_CaloIdVT_TrkIdT_PFNoPUJet100_PFNoPUJet25/O</td></tr>
+<th>HLT_Ele30_CaloIdVT_TrkIdT_PFNoPUJet150_PFNoPUJet25</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele30_CaloIdVT_TrkIdT_PFNoPUJet150_PFNoPUJet25/O</td></tr>
+<th>HLT_Ele32_CaloIdL_CaloIsoVL_TrkIdVL_TrkIsoVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele32_CaloIdL_CaloIsoVL_TrkIdVL_TrkIsoVL/O</td></tr>
+<th>HLT_Ele32_CaloIdT_CaloIsoT_TrkIdT_TrkIsoT_SC17_Mass50</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele32_CaloIdT_CaloIsoT_TrkIdT_TrkIsoT_SC17_Mass50/O</td></tr>
+<th>HLT_Ele32_WP80_CentralPFJet35_CentralPFJet25</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele32_WP80_CentralPFJet35_CentralPFJet25/O</td></tr>
+<th>HLT_Ele32_WP80_CentralPFJet35_CentralPFJet25_PFMET20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele32_WP80_CentralPFJet35_CentralPFJet25_PFMET20/O</td></tr>
+<th>HLT_Ele32_WP80_PFJet30_PFJet25_Deta3</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele32_WP80_PFJet30_PFJet25_Deta3/O</td></tr>
+<th>HLT_Ele32_WP80_PFJet30_PFJet25_Deta3_CentralPFJet30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele32_WP80_PFJet30_PFJet25_Deta3_CentralPFJet30/O</td></tr>
+<th>HLT_Ele5_SC5_Jpsi_Mass2to15</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele5_SC5_Jpsi_Mass2to15/O</td></tr>
+<th>HLT_Ele80_CaloIdVT_GsfTrkIdT</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele80_CaloIdVT_GsfTrkIdT/O</td></tr>
+<th>HLT_Ele8_CaloIdL_CaloIsoVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele8_CaloIdL_CaloIsoVL/O</td></tr>
+<th>HLT_Ele8_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele8_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL/O</td></tr>
+<th>HLT_Ele8_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_Jet30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele8_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL_Jet30/O</td></tr>
+<th>HLT_Ele8_CaloIdT_TrkIdT_DiJet30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele8_CaloIdT_TrkIdT_DiJet30/O</td></tr>
+<th>HLT_Ele8_CaloIdT_TrkIdT_QuadJet30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele8_CaloIdT_TrkIdT_QuadJet30/O</td></tr>
+<th>HLT_Ele8_CaloIdT_TrkIdT_TriJet30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele8_CaloIdT_TrkIdT_TriJet30/O</td></tr>
+<th>HLT_Ele8_CaloIdT_TrkIdVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele8_CaloIdT_TrkIdVL/O</td></tr>
+<th>HLT_Ele8_CaloIdT_TrkIdVL_EG7</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele8_CaloIdT_TrkIdVL_EG7/O</td></tr>
+<th>HLT_Ele8_CaloIdT_TrkIdVL_Jet30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele8_CaloIdT_TrkIdVL_Jet30/O</td></tr>
+<th>HLT_Ele90_CaloIdVT_GsfTrkIdT</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Ele90_CaloIdVT_GsfTrkIdT/O</td></tr>
+<th>HLT_ExclDiJet35_HFAND</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_ExclDiJet35_HFAND/O</td></tr>
+<th>HLT_ExclDiJet35_HFOR</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_ExclDiJet35_HFOR/O</td></tr>
+<th>HLT_ExclDiJet80_HFAND</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_ExclDiJet80_HFAND/O</td></tr>
+<th>HLT_FatDiPFJetMass750_DR1p1_Deta1p5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_FatDiPFJetMass750_DR1p1_Deta1p5/O</td></tr>
+<th>HLT_GlobalRunHPDNoise</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_GlobalRunHPDNoise/O</td></tr>
+<th>HLT_HT200</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT200/O</td></tr>
+<th>HLT_HT200_AlphaT0p57</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT200_AlphaT0p57/O</td></tr>
+<th>HLT_HT250</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT250/O</td></tr>
+<th>HLT_HT250_AlphaT0p55</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT250_AlphaT0p55/O</td></tr>
+<th>HLT_HT250_AlphaT0p57</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT250_AlphaT0p57/O</td></tr>
+<th>HLT_HT300</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT300/O</td></tr>
+<th>HLT_HT300_AlphaT0p53</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT300_AlphaT0p53/O</td></tr>
+<th>HLT_HT300_AlphaT0p54</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT300_AlphaT0p54/O</td></tr>
+<th>HLT_HT300_DoubleDisplacedPFJet60</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT300_DoubleDisplacedPFJet60/O</td></tr>
+<th>HLT_HT300_DoubleDisplacedPFJet60_ChgFraction10</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT300_DoubleDisplacedPFJet60_ChgFraction10/O</td></tr>
+<th>HLT_HT300_SingleDisplacedPFJet60</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT300_SingleDisplacedPFJet60/O</td></tr>
+<th>HLT_HT300_SingleDisplacedPFJet60_ChgFraction10</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT300_SingleDisplacedPFJet60_ChgFraction10/O</td></tr>
+<th>HLT_HT350</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT350/O</td></tr>
+<th>HLT_HT350_AlphaT0p52</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT350_AlphaT0p52/O</td></tr>
+<th>HLT_HT350_AlphaT0p53</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT350_AlphaT0p53/O</td></tr>
+<th>HLT_HT400</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT400/O</td></tr>
+<th>HLT_HT400_AlphaT0p51</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT400_AlphaT0p51/O</td></tr>
+<th>HLT_HT400_AlphaT0p52</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT400_AlphaT0p52/O</td></tr>
+<th>HLT_HT450</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT450/O</td></tr>
+<th>HLT_HT450_AlphaT0p51</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT450_AlphaT0p51/O</td></tr>
+<th>HLT_HT500</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT500/O</td></tr>
+<th>HLT_HT550</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT550/O</td></tr>
+<th>HLT_HT650</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT650/O</td></tr>
+<th>HLT_HT650_Track50_dEdx3p6</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT650_Track50_dEdx3p6/O</td></tr>
+<th>HLT_HT650_Track60_dEdx3p7</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT650_Track60_dEdx3p7/O</td></tr>
+<th>HLT_HT750</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HT750/O</td></tr>
+<th>HLT_HcalCalibration</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HcalCalibration/O</td></tr>
+<th>HLT_HcalNZS</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HcalNZS/O</td></tr>
+<th>HLT_HcalPhiSym</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_HcalPhiSym/O</td></tr>
+<th>HLT_IsoMu12_DoubleCentralJet65</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu12_DoubleCentralJet65/O</td></tr>
+<th>HLT_IsoMu12_RsqMR30_Rsq0p04_MR200</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu12_RsqMR30_Rsq0p04_MR200/O</td></tr>
+<th>HLT_IsoMu12_RsqMR40_Rsq0p04_MR200</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu12_RsqMR40_Rsq0p04_MR200/O</td></tr>
+<th>HLT_IsoMu15_eta2p1_L1ETM20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu15_eta2p1_L1ETM20/O</td></tr>
+<th>HLT_IsoMu15_eta2p1_LooseIsoPFTau35_Trk20_Prong1_L1ETM20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu15_eta2p1_LooseIsoPFTau35_Trk20_Prong1_L1ETM20/O</td></tr>
+<th>HLT_IsoMu17_eta2p1_CentralPFNoPUJet30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu17_eta2p1_CentralPFNoPUJet30/O</td></tr>
+<th>HLT_IsoMu17_eta2p1_CentralPFNoPUJet30_BTagIPIter</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu17_eta2p1_CentralPFNoPUJet30_BTagIPIter/O</td></tr>
+<th>HLT_IsoMu17_eta2p1_DiCentralPFNoPUJet30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu17_eta2p1_DiCentralPFNoPUJet30/O</td></tr>
+<th>HLT_IsoMu17_eta2p1_DiCentralPFNoPUJet30_PFNoPUHT350_PFMHT40</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu17_eta2p1_DiCentralPFNoPUJet30_PFNoPUHT350_PFMHT40/O</td></tr>
+<th>HLT_IsoMu17_eta2p1_LooseIsoPFTau20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu17_eta2p1_LooseIsoPFTau20/O</td></tr>
+<th>HLT_IsoMu17_eta2p1_TriCentralPFNoPUJet30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu17_eta2p1_TriCentralPFNoPUJet30/O</td></tr>
+<th>HLT_IsoMu17_eta2p1_TriCentralPFNoPUJet30_30_20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu17_eta2p1_TriCentralPFNoPUJet30_30_20/O</td></tr>
+<th>HLT_IsoMu17_eta2p1_TriCentralPFNoPUJet45_35_25</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu17_eta2p1_TriCentralPFNoPUJet45_35_25/O</td></tr>
+<th>HLT_IsoMu18_eta2p1_MediumIsoPFTau25_Trk1_eta2p1</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu18_eta2p1_MediumIsoPFTau25_Trk1_eta2p1/O</td></tr>
+<th>HLT_IsoMu20_WCandPt80</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu20_WCandPt80/O</td></tr>
+<th>HLT_IsoMu20_eta2p1</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu20_eta2p1/O</td></tr>
+<th>HLT_IsoMu20_eta2p1_CentralPFJet80</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu20_eta2p1_CentralPFJet80/O</td></tr>
+<th>HLT_IsoMu24</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu24/O</td></tr>
+<th>HLT_IsoMu24_CentralPFJet30_CentralPFJet25</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu24_CentralPFJet30_CentralPFJet25/O</td></tr>
+<th>HLT_IsoMu24_CentralPFJet30_CentralPFJet25_PFMET20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu24_CentralPFJet30_CentralPFJet25_PFMET20/O</td></tr>
+<th>HLT_IsoMu24_PFJet30_PFJet25_Deta3_CentralPFJet25</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu24_PFJet30_PFJet25_Deta3_CentralPFJet25/O</td></tr>
+<th>HLT_IsoMu24_eta2p1</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu24_eta2p1/O</td></tr>
+<th>HLT_IsoMu30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu30/O</td></tr>
+<th>HLT_IsoMu30_eta2p1</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu30_eta2p1/O</td></tr>
+<th>HLT_IsoMu34_eta2p1</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu34_eta2p1/O</td></tr>
+<th>HLT_IsoMu40_eta2p1</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoMu40_eta2p1/O</td></tr>
+<th>HLT_IsoTrackHB</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoTrackHB/O</td></tr>
+<th>HLT_IsoTrackHE</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_IsoTrackHE/O</td></tr>
+<th>HLT_Jet160Eta2p4_Jet120Eta2p4_DiBTagIP3DFastPVLoose</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Jet160Eta2p4_Jet120Eta2p4_DiBTagIP3DFastPVLoose/O</td></tr>
+<th>HLT_Jet370_NoJetID</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Jet370_NoJetID/O</td></tr>
+<th>HLT_Jet60Eta1p7_Jet53Eta1p7_DiBTagIP3DFastPV</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Jet60Eta1p7_Jet53Eta1p7_DiBTagIP3DFastPV/O</td></tr>
+<th>HLT_Jet80Eta1p7_Jet70Eta1p7_DiBTagIP3DFastPV</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Jet80Eta1p7_Jet70Eta1p7_DiBTagIP3DFastPV/O</td></tr>
+<th>HLT_JetE30_NoBPTX</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_JetE30_NoBPTX/O</td></tr>
+<th>HLT_JetE30_NoBPTX3BX_NoHalo</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_JetE30_NoBPTX3BX_NoHalo/O</td></tr>
+<th>HLT_JetE50_NoBPTX3BX_NoHalo</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_JetE50_NoBPTX3BX_NoHalo/O</td></tr>
+<th>HLT_JetE70_NoBPTX3BX_NoHalo</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_JetE70_NoBPTX3BX_NoHalo/O</td></tr>
+<th>HLT_L1DoubleEG3_FwdVeto</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L1DoubleEG3_FwdVeto/O</td></tr>
+<th>HLT_L1DoubleJet36Central</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L1DoubleJet36Central/O</td></tr>
+<th>HLT_L1ETM100</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L1ETM100/O</td></tr>
+<th>HLT_L1ETM30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L1ETM30/O</td></tr>
+<th>HLT_L1ETM40</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L1ETM40/O</td></tr>
+<th>HLT_L1ETM70</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L1ETM70/O</td></tr>
+<th>HLT_L1SingleEG12</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L1SingleEG12/O</td></tr>
+<th>HLT_L1SingleEG5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L1SingleEG5/O</td></tr>
+<th>HLT_L1SingleJet16</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L1SingleJet16/O</td></tr>
+<th>HLT_L1SingleJet36</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L1SingleJet36/O</td></tr>
+<th>HLT_L1SingleMu12</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L1SingleMu12/O</td></tr>
+<th>HLT_L1SingleMuOpen</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L1SingleMuOpen/O</td></tr>
+<th>HLT_L1SingleMuOpen_AntiBPTX</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L1SingleMuOpen_AntiBPTX/O</td></tr>
+<th>HLT_L1Tech_HBHEHO_totalOR</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L1Tech_HBHEHO_totalOR/O</td></tr>
+<th>HLT_L1Tech_HCAL_HF_single_channel</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L1Tech_HCAL_HF_single_channel/O</td></tr>
+<th>HLT_L1TrackerCosmics</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L1TrackerCosmics/O</td></tr>
+<th>HLT_L2DoubleMu23_NoVertex</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L2DoubleMu23_NoVertex/O</td></tr>
+<th>HLT_L2DoubleMu23_NoVertex_2Cha_Angle2p5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L2DoubleMu23_NoVertex_2Cha_Angle2p5/O</td></tr>
+<th>HLT_L2DoubleMu38_NoVertex_2Cha_Angle2p5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L2DoubleMu38_NoVertex_2Cha_Angle2p5/O</td></tr>
+<th>HLT_L2Mu10_NoVertex_NoBPTX3BX_NoHalo</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L2Mu10_NoVertex_NoBPTX3BX_NoHalo/O</td></tr>
+<th>HLT_L2Mu20_NoVertex_2Cha_NoBPTX3BX_NoHalo</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L2Mu20_NoVertex_2Cha_NoBPTX3BX_NoHalo/O</td></tr>
+<th>HLT_L2Mu20_eta2p1_NoVertex</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L2Mu20_eta2p1_NoVertex/O</td></tr>
+<th>HLT_L2Mu30_NoVertex_2Cha_NoBPTX3BX_NoHalo</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L2Mu30_NoVertex_2Cha_NoBPTX3BX_NoHalo/O</td></tr>
+<th>HLT_L2Mu70_2Cha_eta2p1_PFMET55</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L2Mu70_2Cha_eta2p1_PFMET55/O</td></tr>
+<th>HLT_L2Mu70_2Cha_eta2p1_PFMET60</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L2Mu70_2Cha_eta2p1_PFMET60/O</td></tr>
+<th>HLT_L2Mu70_eta2p1_PFMET55</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L2Mu70_eta2p1_PFMET55/O</td></tr>
+<th>HLT_L2Mu70_eta2p1_PFMET60</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L2Mu70_eta2p1_PFMET60/O</td></tr>
+<th>HLT_L2TripleMu10_0_0_NoVertex_PFJet40Neutral</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_L2TripleMu10_0_0_NoVertex_PFJet40Neutral/O</td></tr>
+<th>HLT_LogMonitor</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_LogMonitor/O</td></tr>
+<th>HLT_LooseIsoPFTau35_Trk20_Prong1</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_LooseIsoPFTau35_Trk20_Prong1/O</td></tr>
+<th>HLT_LooseIsoPFTau35_Trk20_Prong1_MET70</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_LooseIsoPFTau35_Trk20_Prong1_MET70/O</td></tr>
+<th>HLT_LooseIsoPFTau35_Trk20_Prong1_MET75</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_LooseIsoPFTau35_Trk20_Prong1_MET75/O</td></tr>
+<th>HLT_MET120</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_MET120/O</td></tr>
+<th>HLT_MET120_HBHENoiseCleaned</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_MET120_HBHENoiseCleaned/O</td></tr>
+<th>HLT_MET200</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_MET200/O</td></tr>
+<th>HLT_MET200_HBHENoiseCleaned</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_MET200_HBHENoiseCleaned/O</td></tr>
+<th>HLT_MET300</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_MET300/O</td></tr>
+<th>HLT_MET300_HBHENoiseCleaned</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_MET300_HBHENoiseCleaned/O</td></tr>
+<th>HLT_MET400</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_MET400/O</td></tr>
+<th>HLT_MET400_HBHENoiseCleaned</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_MET400_HBHENoiseCleaned/O</td></tr>
+<th>HLT_MET80</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_MET80/O</td></tr>
+<th>HLT_MET80_Track50_dEdx3p6</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_MET80_Track50_dEdx3p6/O</td></tr>
+<th>HLT_MET80_Track60_dEdx3p7</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_MET80_Track60_dEdx3p7/O</td></tr>
+<th>HLT_MonoCentralPFJet80_PFMETnoMu105_NHEF0p95</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_MonoCentralPFJet80_PFMETnoMu105_NHEF0p95/O</td></tr>
+<th>HLT_Mu12</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu12/O</td></tr>
+<th>HLT_Mu12_eta2p1_DiCentral_20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu12_eta2p1_DiCentral_20/O</td></tr>
+<th>HLT_Mu12_eta2p1_DiCentral_40_20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu12_eta2p1_DiCentral_40_20/O</td></tr>
+<th>HLT_Mu12_eta2p1_DiCentral_40_20_BTagIP3D1stTrack</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu12_eta2p1_DiCentral_40_20_BTagIP3D1stTrack/O</td></tr>
+<th>HLT_Mu12_eta2p1_DiCentral_40_20_DiBTagIP3D1stTrack</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu12_eta2p1_DiCentral_40_20_DiBTagIP3D1stTrack/O</td></tr>
+<th>HLT_Mu12_eta2p1_L1Mu10erJetC12WdEtaPhi1DiJetsC</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu12_eta2p1_L1Mu10erJetC12WdEtaPhi1DiJetsC/O</td></tr>
+<th>HLT_Mu13_Mu8</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu13_Mu8/O</td></tr>
+<th>HLT_Mu14_Ele14_CaloIdT_TrkIdVL_Mass8_PFMET40</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu14_Ele14_CaloIdT_TrkIdVL_Mass8_PFMET40/O</td></tr>
+<th>HLT_Mu14_Ele14_CaloIdT_TrkIdVL_Mass8_PFMET50</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu14_Ele14_CaloIdT_TrkIdVL_Mass8_PFMET50/O</td></tr>
+<th>HLT_Mu15_TkMu5_Onia</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu15_TkMu5_Onia/O</td></tr>
+<th>HLT_Mu15_eta2p1</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu15_eta2p1/O</td></tr>
+<th>HLT_Mu15_eta2p1_DiCentral_20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu15_eta2p1_DiCentral_20/O</td></tr>
+<th>HLT_Mu15_eta2p1_DiCentral_40_20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu15_eta2p1_DiCentral_40_20/O</td></tr>
+<th>HLT_Mu15_eta2p1_L1ETM20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu15_eta2p1_L1ETM20/O</td></tr>
+<th>HLT_Mu15_eta2p1_L1Mu10erJetC12WdEtaPhi1DiJetsC</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu15_eta2p1_L1Mu10erJetC12WdEtaPhi1DiJetsC/O</td></tr>
+<th>HLT_Mu15_eta2p1_TriCentral_40_20_20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu15_eta2p1_TriCentral_40_20_20/O</td></tr>
+<th>HLT_Mu15_eta2p1_TriCentral_40_20_20_BTagIP3D1stTrack</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu15_eta2p1_TriCentral_40_20_20_BTagIP3D1stTrack/O</td></tr>
+<th>HLT_Mu15_eta2p1_TriCentral_40_20_20_DiBTagIP3D1stTrack</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu15_eta2p1_TriCentral_40_20_20_DiBTagIP3D1stTrack/O</td></tr>
+<th>HLT_Mu17</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu17/O</td></tr>
+<th>HLT_Mu17_Ele8_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu17_Ele8_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL/O</td></tr>
+<th>HLT_Mu17_Mu8</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu17_Mu8/O</td></tr>
+<th>HLT_Mu17_TkMu8</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu17_TkMu8/O</td></tr>
+<th>HLT_Mu17_eta2p1_CentralPFNoPUJet30_BTagIPIter</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu17_eta2p1_CentralPFNoPUJet30_BTagIPIter/O</td></tr>
+<th>HLT_Mu17_eta2p1_LooseIsoPFTau20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu17_eta2p1_LooseIsoPFTau20/O</td></tr>
+<th>HLT_Mu17_eta2p1_TriCentralPFNoPUJet30_30_20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu17_eta2p1_TriCentralPFNoPUJet30_30_20/O</td></tr>
+<th>HLT_Mu17_eta2p1_TriCentralPFNoPUJet45_35_25</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu17_eta2p1_TriCentralPFNoPUJet45_35_25/O</td></tr>
+<th>HLT_Mu22_Photon22_CaloIdL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu22_Photon22_CaloIdL/O</td></tr>
+<th>HLT_Mu22_TkMu22</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu22_TkMu22/O</td></tr>
+<th>HLT_Mu22_TkMu8</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu22_TkMu8/O</td></tr>
+<th>HLT_Mu24</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu24/O</td></tr>
+<th>HLT_Mu24_CentralPFJet30_CentralPFJet25</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu24_CentralPFJet30_CentralPFJet25/O</td></tr>
+<th>HLT_Mu24_PFJet30_PFJet25_Deta3_CentralPFJet25</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu24_PFJet30_PFJet25_Deta3_CentralPFJet25/O</td></tr>
+<th>HLT_Mu24_eta2p1</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu24_eta2p1/O</td></tr>
+<th>HLT_Mu30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu30/O</td></tr>
+<th>HLT_Mu30_Ele30_CaloIdL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu30_Ele30_CaloIdL/O</td></tr>
+<th>HLT_Mu30_eta2p1</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu30_eta2p1/O</td></tr>
+<th>HLT_Mu40</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu40/O</td></tr>
+<th>HLT_Mu40_HT200</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu40_HT200/O</td></tr>
+<th>HLT_Mu40_PFNoPUHT350</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu40_PFNoPUHT350/O</td></tr>
+<th>HLT_Mu40_eta2p1</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu40_eta2p1/O</td></tr>
+<th>HLT_Mu40_eta2p1_Track50_dEdx3p6</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu40_eta2p1_Track50_dEdx3p6/O</td></tr>
+<th>HLT_Mu40_eta2p1_Track60_dEdx3p7</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu40_eta2p1_Track60_dEdx3p7/O</td></tr>
+<th>HLT_Mu5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu5/O</td></tr>
+<th>HLT_Mu50_eta2p1</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu50_eta2p1/O</td></tr>
+<th>HLT_Mu5_L2Mu3_Jpsi</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu5_L2Mu3_Jpsi/O</td></tr>
+<th>HLT_Mu5_Track2_Jpsi</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu5_Track2_Jpsi/O</td></tr>
+<th>HLT_Mu5_Track3p5_Jpsi</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu5_Track3p5_Jpsi/O</td></tr>
+<th>HLT_Mu60_PFNoPUHT350</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu60_PFNoPUHT350/O</td></tr>
+<th>HLT_Mu7_Ele7_CaloIdT_CaloIsoVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu7_Ele7_CaloIdT_CaloIsoVL/O</td></tr>
+<th>HLT_Mu7_Track7_Jpsi</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu7_Track7_Jpsi/O</td></tr>
+<th>HLT_Mu8</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu8/O</td></tr>
+<th>HLT_Mu8_DiJet30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu8_DiJet30/O</td></tr>
+<th>HLT_Mu8_DoubleEle8_CaloIdT_TrkIdVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu8_DoubleEle8_CaloIdT_TrkIdVL/O</td></tr>
+<th>HLT_Mu8_Ele17_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu8_Ele17_CaloIdT_CaloIsoVL_TrkIdVL_TrkIsoVL/O</td></tr>
+<th>HLT_Mu8_Ele8_CaloIdT_TrkIdVL_Ele8_CaloIdL_TrkIdVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu8_Ele8_CaloIdT_TrkIdVL_Ele8_CaloIdL_TrkIdVL/O</td></tr>
+<th>HLT_Mu8_Ele8_CaloIdT_TrkIdVL_Mass8_PFNoPUHT175</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu8_Ele8_CaloIdT_TrkIdVL_Mass8_PFNoPUHT175/O</td></tr>
+<th>HLT_Mu8_Ele8_CaloIdT_TrkIdVL_Mass8_PFNoPUHT225</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu8_Ele8_CaloIdT_TrkIdVL_Mass8_PFNoPUHT225/O</td></tr>
+<th>HLT_Mu8_QuadJet30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu8_QuadJet30/O</td></tr>
+<th>HLT_Mu8_TriJet30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Mu8_TriJet30/O</td></tr>
+<th>HLT_PFJet140</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_PFJet140/O</td></tr>
+<th>HLT_PFJet200</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_PFJet200/O</td></tr>
+<th>HLT_PFJet260</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_PFJet260/O</td></tr>
+<th>HLT_PFJet320</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_PFJet320/O</td></tr>
+<th>HLT_PFJet40</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_PFJet40/O</td></tr>
+<th>HLT_PFJet400</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_PFJet400/O</td></tr>
+<th>HLT_PFJet80</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_PFJet80/O</td></tr>
+<th>HLT_PFMET150</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_PFMET150/O</td></tr>
+<th>HLT_PFMET180</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_PFMET180/O</td></tr>
+<th>HLT_PFNoPUHT350</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_PFNoPUHT350/O</td></tr>
+<th>HLT_PFNoPUHT350_Mu15_PFMET45</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_PFNoPUHT350_Mu15_PFMET45/O</td></tr>
+<th>HLT_PFNoPUHT350_Mu15_PFMET50</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_PFNoPUHT350_Mu15_PFMET50/O</td></tr>
+<th>HLT_PFNoPUHT350_PFMET100</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_PFNoPUHT350_PFMET100/O</td></tr>
+<th>HLT_PFNoPUHT400_Mu5_PFMET45</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_PFNoPUHT400_Mu5_PFMET45/O</td></tr>
+<th>HLT_PFNoPUHT400_Mu5_PFMET50</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_PFNoPUHT400_Mu5_PFMET50/O</td></tr>
+<th>HLT_PFNoPUHT400_PFMET100</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_PFNoPUHT400_PFMET100/O</td></tr>
+<th>HLT_PFNoPUHT650</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_PFNoPUHT650/O</td></tr>
+<th>HLT_PFNoPUHT650_DiCentralPFNoPUJet80_CenPFNoPUJet40</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_PFNoPUHT650_DiCentralPFNoPUJet80_CenPFNoPUJet40/O</td></tr>
+<th>HLT_PFNoPUHT700</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_PFNoPUHT700/O</td></tr>
+<th>HLT_PFNoPUHT750</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_PFNoPUHT750/O</td></tr>
+<th>HLT_Photon135</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon135/O</td></tr>
+<th>HLT_Photon150</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon150/O</td></tr>
+<th>HLT_Photon160</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon160/O</td></tr>
+<th>HLT_Photon20_CaloIdVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon20_CaloIdVL/O</td></tr>
+<th>HLT_Photon20_CaloIdVL_IsoL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon20_CaloIdVL_IsoL/O</td></tr>
+<th>HLT_Photon22_R9Id90_HE10_Iso40_EBOnly</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon22_R9Id90_HE10_Iso40_EBOnly/O</td></tr>
+<th>HLT_Photon26_CaloId10_Iso50_Photon18_CaloId10_Iso50_Mass60</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon26_CaloId10_Iso50_Photon18_CaloId10_Iso50_Mass60/O</td></tr>
+<th>HLT_Photon26_CaloId10_Iso50_Photon18_R9Id85_Mass60</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon26_CaloId10_Iso50_Photon18_R9Id85_Mass60/O</td></tr>
+<th>HLT_Photon26_Photon18</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon26_Photon18/O</td></tr>
+<th>HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18/O</td></tr>
+<th>HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_Mass60</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_Mass60/O</td></tr>
+<th>HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_Mass70</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon26_R9Id85_OR_CaloId10_Iso50_Photon18_R9Id85_OR_CaloId10_Iso50_Mass70/O</td></tr>
+<th>HLT_Photon26_R9Id85_Photon18_CaloId10_Iso50_Mass60</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon26_R9Id85_Photon18_CaloId10_Iso50_Mass60/O</td></tr>
+<th>HLT_Photon26_R9Id85_Photon18_R9Id85_Mass60</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon26_R9Id85_Photon18_R9Id85_Mass60/O</td></tr>
+<th>HLT_Photon300_NoHE</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon300_NoHE/O</td></tr>
+<th>HLT_Photon30_CaloIdVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon30_CaloIdVL/O</td></tr>
+<th>HLT_Photon30_CaloIdVL_IsoL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon30_CaloIdVL_IsoL/O</td></tr>
+<th>HLT_Photon36_CaloId10_Iso50_Photon22_CaloId10_Iso50</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon36_CaloId10_Iso50_Photon22_CaloId10_Iso50/O</td></tr>
+<th>HLT_Photon36_CaloId10_Iso50_Photon22_R9Id85</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon36_CaloId10_Iso50_Photon22_R9Id85/O</td></tr>
+<th>HLT_Photon36_Photon22</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon36_Photon22/O</td></tr>
+<th>HLT_Photon36_R9Id85_OR_CaloId10_Iso50_Photon22</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon36_R9Id85_OR_CaloId10_Iso50_Photon22/O</td></tr>
+<th>HLT_Photon36_R9Id85_OR_CaloId10_Iso50_Photon22_R9Id85_OR_CaloId10_Iso50</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon36_R9Id85_OR_CaloId10_Iso50_Photon22_R9Id85_OR_CaloId10_Iso50/O</td></tr>
+<th>HLT_Photon36_R9Id85_Photon22_CaloId10_Iso50</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon36_R9Id85_Photon22_CaloId10_Iso50/O</td></tr>
+<th>HLT_Photon36_R9Id85_Photon22_R9Id85</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon36_R9Id85_Photon22_R9Id85/O</td></tr>
+<th>HLT_Photon36_R9Id90_HE10_Iso40_EBOnly</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon36_R9Id90_HE10_Iso40_EBOnly/O</td></tr>
+<th>HLT_Photon40_CaloIdL_RsqMR35_Rsq0p09_MR150</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon40_CaloIdL_RsqMR35_Rsq0p09_MR150/O</td></tr>
+<th>HLT_Photon40_CaloIdL_RsqMR40_Rsq0p09_MR150</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon40_CaloIdL_RsqMR40_Rsq0p09_MR150/O</td></tr>
+<th>HLT_Photon40_CaloIdL_RsqMR45_Rsq0p09_MR150</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon40_CaloIdL_RsqMR45_Rsq0p09_MR150/O</td></tr>
+<th>HLT_Photon40_CaloIdL_RsqMR50_Rsq0p09_MR150</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon40_CaloIdL_RsqMR50_Rsq0p09_MR150/O</td></tr>
+<th>HLT_Photon50_CaloIdVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon50_CaloIdVL/O</td></tr>
+<th>HLT_Photon50_CaloIdVL_IsoL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon50_CaloIdVL_IsoL/O</td></tr>
+<th>HLT_Photon50_R9Id90_HE10_Iso40_EBOnly</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon50_R9Id90_HE10_Iso40_EBOnly/O</td></tr>
+<th>HLT_Photon60_CaloIdL_HT300</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon60_CaloIdL_HT300/O</td></tr>
+<th>HLT_Photon60_CaloIdL_MHT70</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon60_CaloIdL_MHT70/O</td></tr>
+<th>HLT_Photon70_CaloIdXL_PFMET100</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon70_CaloIdXL_PFMET100/O</td></tr>
+<th>HLT_Photon70_CaloIdXL_PFNoPUHT400</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon70_CaloIdXL_PFNoPUHT400/O</td></tr>
+<th>HLT_Photon70_CaloIdXL_PFNoPUHT500</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon70_CaloIdXL_PFNoPUHT500/O</td></tr>
+<th>HLT_Photon75_CaloIdVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon75_CaloIdVL/O</td></tr>
+<th>HLT_Photon75_CaloIdVL_IsoL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon75_CaloIdVL_IsoL/O</td></tr>
+<th>HLT_Photon75_R9Id90_HE10_Iso40_EBOnly</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon75_R9Id90_HE10_Iso40_EBOnly/O</td></tr>
+<th>HLT_Photon90_CaloIdVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon90_CaloIdVL/O</td></tr>
+<th>HLT_Photon90_CaloIdVL_IsoL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon90_CaloIdVL_IsoL/O</td></tr>
+<th>HLT_Photon90_R9Id90_HE10_Iso40_EBOnly</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Photon90_R9Id90_HE10_Iso40_EBOnly/O</td></tr>
+<th>HLT_Physics</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Physics/O</td></tr>
+<th>HLT_PixelTracks_Multiplicity70</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_PixelTracks_Multiplicity70/O</td></tr>
+<th>HLT_PixelTracks_Multiplicity80</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_PixelTracks_Multiplicity80/O</td></tr>
+<th>HLT_PixelTracks_Multiplicity90</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_PixelTracks_Multiplicity90/O</td></tr>
+<th>HLT_QuadJet50</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_QuadJet50/O</td></tr>
+<th>HLT_QuadJet50_Jet20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_QuadJet50_Jet20/O</td></tr>
+<th>HLT_QuadJet60_DiJet20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_QuadJet60_DiJet20/O</td></tr>
+<th>HLT_QuadJet70</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_QuadJet70/O</td></tr>
+<th>HLT_QuadJet75_55_35_20_BTagIP_VBF</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_QuadJet75_55_35_20_BTagIP_VBF/O</td></tr>
+<th>HLT_QuadJet75_55_38_20_BTagIP_VBF</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_QuadJet75_55_38_20_BTagIP_VBF/O</td></tr>
+<th>HLT_QuadJet80</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_QuadJet80/O</td></tr>
+<th>HLT_QuadJet90</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_QuadJet90/O</td></tr>
+<th>HLT_QuadPFJet78_61_44_31_BTagCSV_VBF</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_QuadPFJet78_61_44_31_BTagCSV_VBF/O</td></tr>
+<th>HLT_QuadPFJet82_65_48_35_BTagCSV_VBF</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_QuadPFJet82_65_48_35_BTagCSV_VBF/O</td></tr>
+<th>HLT_Random</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Random/O</td></tr>
+<th>HLT_RelIso1p0Mu20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_RelIso1p0Mu20/O</td></tr>
+<th>HLT_RelIso1p0Mu5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_RelIso1p0Mu5/O</td></tr>
+<th>HLT_RelIso1p0Mu5_Ele8_CaloIdT_TrkIdVL_Mass8_PFNoPUHT175</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_RelIso1p0Mu5_Ele8_CaloIdT_TrkIdVL_Mass8_PFNoPUHT175/O</td></tr>
+<th>HLT_RelIso1p0Mu5_Ele8_CaloIdT_TrkIdVL_Mass8_PFNoPUHT225</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_RelIso1p0Mu5_Ele8_CaloIdT_TrkIdVL_Mass8_PFNoPUHT225/O</td></tr>
+<th>HLT_RsqMR40_Rsq0p04</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_RsqMR40_Rsq0p04/O</td></tr>
+<th>HLT_RsqMR45_Rsq0p09</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_RsqMR45_Rsq0p09/O</td></tr>
+<th>HLT_RsqMR55_Rsq0p09_MR150</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_RsqMR55_Rsq0p09_MR150/O</td></tr>
+<th>HLT_RsqMR60_Rsq0p09_MR150</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_RsqMR60_Rsq0p09_MR150/O</td></tr>
+<th>HLT_RsqMR65_Rsq0p09_MR150</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_RsqMR65_Rsq0p09_MR150/O</td></tr>
+<th>HLT_SingleForJet15</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_SingleForJet15/O</td></tr>
+<th>HLT_SingleForJet25</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_SingleForJet25/O</td></tr>
+<th>HLT_SixJet35</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_SixJet35/O</td></tr>
+<th>HLT_SixJet45</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_SixJet45/O</td></tr>
+<th>HLT_SixJet50</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_SixJet50/O</td></tr>
+<th>HLT_Tau2Mu_ItTrack</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_Tau2Mu_ItTrack/O</td></tr>
+<th>HLT_TrackerCalibration</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_TrackerCalibration/O</td></tr>
+<th>HLT_TripleEle10_CaloIdL_TrkIdVL</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_TripleEle10_CaloIdL_TrkIdVL/O</td></tr>
+<th>HLT_TripleMu5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_TripleMu5/O</td></tr>
+<th>HLT_ZeroBias</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_ZeroBias/O</td></tr>
+<th>HLT_ZeroBiasPart1</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_ZeroBiasPart1/O</td></tr>
+<th>HLT_ZeroBiasPart2</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_ZeroBiasPart2/O</td></tr>
+<th>HLT_ZeroBiasPart3</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_ZeroBiasPart3/O</td></tr>
+<th>HLT_ZeroBiasPart4</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_ZeroBiasPart4/O</td></tr>
+<th>HLT_ZeroBiasPixel_DoubleTrack</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLT_ZeroBiasPixel_DoubleTrack/O</td></tr>
+</table>
+<h2><a name='HLTriggerFinalPath' id='HLTriggerFinalPath'>HLTriggerFinalPath</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>HLTriggerFinalPath</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>HLTriggerFinalPath/O</td></tr>
+</table>
+<h2><a name='L1' id='L1'>L1</a> <sup><a href="#top">[back to top]</a></sup></h2>
+<table>
+<tr class='header'><th>Object property</th><th>Type</th><th>Description</th></tr>
+<th>L1_AlwaysTrue</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_AlwaysTrue/O</td></tr>
+<th>L1_BeamGas_Hf_BptxMinusPostQuiet</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_BeamGas_Hf_BptxMinusPostQuiet/O</td></tr>
+<th>L1_BeamGas_Hf_BptxPlusPostQuiet</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_BeamGas_Hf_BptxPlusPostQuiet/O</td></tr>
+<th>L1_BeamHalo</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_BeamHalo/O</td></tr>
+<th>L1_DoubleEG3_FwdVeto</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleEG3_FwdVeto/O</td></tr>
+<th>L1_DoubleEG5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleEG5/O</td></tr>
+<th>L1_DoubleEG5_RomanPotsOR</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleEG5_RomanPotsOR/O</td></tr>
+<th>L1_DoubleEG6_HTT100</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleEG6_HTT100/O</td></tr>
+<th>L1_DoubleEG6_HTT125</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleEG6_HTT125/O</td></tr>
+<th>L1_DoubleEG6_HTT25</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleEG6_HTT25/O</td></tr>
+<th>L1_DoubleEG6_HTT50</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleEG6_HTT50/O</td></tr>
+<th>L1_DoubleEG6_HTT75</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleEG6_HTT75/O</td></tr>
+<th>L1_DoubleEG_13_7</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleEG_13_7/O</td></tr>
+<th>L1_DoubleForJet16_EtaOpp</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleForJet16_EtaOpp/O</td></tr>
+<th>L1_DoubleJet20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleJet20/O</td></tr>
+<th>L1_DoubleJet20_RomanPotsOR</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleJet20_RomanPotsOR/O</td></tr>
+<th>L1_DoubleJet24</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleJet24/O</td></tr>
+<th>L1_DoubleJetC36</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleJetC36/O</td></tr>
+<th>L1_DoubleJetC36_ETM30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleJetC36_ETM30/O</td></tr>
+<th>L1_DoubleJetC36_RomanPotsOR</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleJetC36_RomanPotsOR/O</td></tr>
+<th>L1_DoubleJetC44_ETM30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleJetC44_ETM30/O</td></tr>
+<th>L1_DoubleJetC44_Eta1p74_WdEta4</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleJetC44_Eta1p74_WdEta4/O</td></tr>
+<th>L1_DoubleJetC52</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleJetC52/O</td></tr>
+<th>L1_DoubleJetC56</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleJetC56/O</td></tr>
+<th>L1_DoubleJetC56_Eta1p74_WdEta4</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleJetC56_Eta1p74_WdEta4/O</td></tr>
+<th>L1_DoubleJetC64</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleJetC64/O</td></tr>
+<th>L1_DoubleMu0</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleMu0/O</td></tr>
+<th>L1_DoubleMu0er_HighQ</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleMu0er_HighQ/O</td></tr>
+<th>L1_DoubleMu3er_HighQ_WdEta22</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleMu3er_HighQ_WdEta22/O</td></tr>
+<th>L1_DoubleMu3p5_EG5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleMu3p5_EG5/O</td></tr>
+<th>L1_DoubleMu5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleMu5/O</td></tr>
+<th>L1_DoubleMu5_EG5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleMu5_EG5/O</td></tr>
+<th>L1_DoubleMu5_RomanPotsOR</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleMu5_RomanPotsOR/O</td></tr>
+<th>L1_DoubleMu_10_3p5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleMu_10_3p5/O</td></tr>
+<th>L1_DoubleMu_10_Open</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleMu_10_Open/O</td></tr>
+<th>L1_DoubleMu_12_5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleMu_12_5/O</td></tr>
+<th>L1_DoubleMu_3er_0er_HighQ_WdEta22</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleMu_3er_0er_HighQ_WdEta22/O</td></tr>
+<th>L1_DoubleMu_5er_0er_HighQ_WdEta22</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleMu_5er_0er_HighQ_WdEta22/O</td></tr>
+<th>L1_DoubleTauJet44er</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_DoubleTauJet44er/O</td></tr>
+<th>L1_EG22_ForJet24</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_EG22_ForJet24/O</td></tr>
+<th>L1_EG22_ForJet32</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_EG22_ForJet32/O</td></tr>
+<th>L1_EG8_DoubleJetC20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_EG8_DoubleJetC20/O</td></tr>
+<th>L1_ETM100</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_ETM100/O</td></tr>
+<th>L1_ETM30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_ETM30/O</td></tr>
+<th>L1_ETM36</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_ETM36/O</td></tr>
+<th>L1_ETM40</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_ETM40/O</td></tr>
+<th>L1_ETM50</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_ETM50/O</td></tr>
+<th>L1_ETM70</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_ETM70/O</td></tr>
+<th>L1_ETT140</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_ETT140/O</td></tr>
+<th>L1_ETT300</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_ETT300/O</td></tr>
+<th>L1_ETT80</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_ETT80/O</td></tr>
+<th>L1_HTT100</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_HTT100/O</td></tr>
+<th>L1_HTT125</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_HTT125/O</td></tr>
+<th>L1_HTT150</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_HTT150/O</td></tr>
+<th>L1_HTT175</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_HTT175/O</td></tr>
+<th>L1_HTT200</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_HTT200/O</td></tr>
+<th>L1_HTT50</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_HTT50/O</td></tr>
+<th>L1_HTT75</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_HTT75/O</td></tr>
+<th>L1_Mu0_HTT100</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_Mu0_HTT100/O</td></tr>
+<th>L1_Mu0_HTT25</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_Mu0_HTT25/O</td></tr>
+<th>L1_Mu0_HTT50</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_Mu0_HTT50/O</td></tr>
+<th>L1_Mu10er_JetC12_WdEtaPhi1_DoubleJetC_20_12</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_Mu10er_JetC12_WdEtaPhi1_DoubleJetC_20_12/O</td></tr>
+<th>L1_Mu10er_JetC12_WdEtaPhi1_DoubleJetC_32_12</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_Mu10er_JetC12_WdEtaPhi1_DoubleJetC_32_12/O</td></tr>
+<th>L1_Mu10er_JetC32</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_Mu10er_JetC32/O</td></tr>
+<th>L1_Mu12_EG7</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_Mu12_EG7/O</td></tr>
+<th>L1_Mu12er_ETM20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_Mu12er_ETM20/O</td></tr>
+<th>L1_Mu3_JetC16_WdEtaPhi2</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_Mu3_JetC16_WdEtaPhi2/O</td></tr>
+<th>L1_Mu3_JetC52_WdEtaPhi2</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_Mu3_JetC52_WdEtaPhi2/O</td></tr>
+<th>L1_Mu3p5_EG12</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_Mu3p5_EG12/O</td></tr>
+<th>L1_Mu4_HTT125</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_Mu4_HTT125/O</td></tr>
+<th>L1_Mu5_DoubleEG5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_Mu5_DoubleEG5/O</td></tr>
+<th>L1_Mu5_DoubleEG6</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_Mu5_DoubleEG6/O</td></tr>
+<th>L1_Mu8_DoubleJetC20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_Mu8_DoubleJetC20/O</td></tr>
+<th>L1_MuOpen_EG12</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_MuOpen_EG12/O</td></tr>
+<th>L1_MuOpen_EG5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_MuOpen_EG5/O</td></tr>
+<th>L1_QuadJetC32</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_QuadJetC32/O</td></tr>
+<th>L1_QuadJetC36</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_QuadJetC36/O</td></tr>
+<th>L1_QuadJetC40</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_QuadJetC40/O</td></tr>
+<th>L1_SingleEG12</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleEG12/O</td></tr>
+<th>L1_SingleEG18er</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleEG18er/O</td></tr>
+<th>L1_SingleEG20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleEG20/O</td></tr>
+<th>L1_SingleEG20_RomanPotsOR</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleEG20_RomanPotsOR/O</td></tr>
+<th>L1_SingleEG22</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleEG22/O</td></tr>
+<th>L1_SingleEG24</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleEG24/O</td></tr>
+<th>L1_SingleEG30</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleEG30/O</td></tr>
+<th>L1_SingleEG5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleEG5/O</td></tr>
+<th>L1_SingleEG7</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleEG7/O</td></tr>
+<th>L1_SingleForJet16</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleForJet16/O</td></tr>
+<th>L1_SingleIsoEG18er</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleIsoEG18er/O</td></tr>
+<th>L1_SingleIsoEG20er</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleIsoEG20er/O</td></tr>
+<th>L1_SingleJet128</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleJet128/O</td></tr>
+<th>L1_SingleJet16</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleJet16/O</td></tr>
+<th>L1_SingleJet16_FwdVeto5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleJet16_FwdVeto5/O</td></tr>
+<th>L1_SingleJet36</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleJet36/O</td></tr>
+<th>L1_SingleJet36_FwdVeto5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleJet36_FwdVeto5/O</td></tr>
+<th>L1_SingleJet52</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleJet52/O</td></tr>
+<th>L1_SingleJet52_RomanPotsOR</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleJet52_RomanPotsOR/O</td></tr>
+<th>L1_SingleJet68</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleJet68/O</td></tr>
+<th>L1_SingleJet92</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleJet92/O</td></tr>
+<th>L1_SingleJetC20_NotBptxOR</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleJetC20_NotBptxOR/O</td></tr>
+<th>L1_SingleJetC32_NotBptxOR</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleJetC32_NotBptxOR/O</td></tr>
+<th>L1_SingleMu12</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleMu12/O</td></tr>
+<th>L1_SingleMu12er</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleMu12er/O</td></tr>
+<th>L1_SingleMu14er</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleMu14er/O</td></tr>
+<th>L1_SingleMu16</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleMu16/O</td></tr>
+<th>L1_SingleMu16er</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleMu16er/O</td></tr>
+<th>L1_SingleMu18er</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleMu18er/O</td></tr>
+<th>L1_SingleMu20</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleMu20/O</td></tr>
+<th>L1_SingleMu20_RomanPotsOR</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleMu20_RomanPotsOR/O</td></tr>
+<th>L1_SingleMu20er</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleMu20er/O</td></tr>
+<th>L1_SingleMu25er</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleMu25er/O</td></tr>
+<th>L1_SingleMu3</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleMu3/O</td></tr>
+<th>L1_SingleMu6_NotBptxOR</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleMu6_NotBptxOR/O</td></tr>
+<th>L1_SingleMu7</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleMu7/O</td></tr>
+<th>L1_SingleMuBeamHalo</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleMuBeamHalo/O</td></tr>
+<th>L1_SingleMuOpen</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_SingleMuOpen/O</td></tr>
+<th>L1_TripleEG7</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_TripleEG7/O</td></tr>
+<th>L1_TripleEG_12_7_5</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_TripleEG_12_7_5/O</td></tr>
+<th>L1_TripleJetC_52_28_28</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_TripleJetC_52_28_28/O</td></tr>
+<th>L1_TripleJet_64_44_24_VBF</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_TripleJet_64_44_24_VBF/O</td></tr>
+<th>L1_TripleJet_64_48_28_VBF</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_TripleJet_64_48_28_VBF/O</td></tr>
+<th>L1_TripleJet_68_48_32_VBF</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_TripleJet_68_48_32_VBF/O</td></tr>
+<th>L1_TripleMu0</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_TripleMu0/O</td></tr>
+<th>L1_TripleMu0_HighQ</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_TripleMu0_HighQ/O</td></tr>
+<th>L1_TripleMu_5_5_0</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_TripleMu_5_5_0/O</td></tr>
+<th>L1_ZeroBias</th><td style='text-align : left;'>Bool_t</td><td style='text-align : left;'>L1_ZeroBias/O</td></tr>
+</table>
+
+    </body></html>
+    

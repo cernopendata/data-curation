@@ -1,0 +1,602 @@
+[
+  {
+    "checksum": "adler32:19c49fac",
+    "filename": "00BB91B5-8077-7740-B490-60A2B0E8BA61.root",
+    "size": 3226756750,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/00BB91B5-8077-7740-B490-60A2B0E8BA61.root"
+  },
+  {
+    "checksum": "adler32:fe5226b6",
+    "filename": "04364943-A2A2-2549-93DC-228FB55BCA13.root",
+    "size": 3216002236,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/04364943-A2A2-2549-93DC-228FB55BCA13.root"
+  },
+  {
+    "checksum": "adler32:87951f78",
+    "filename": "04887D6C-A1F7-9B44-8255-461DCD762B28.root",
+    "size": 3198496582,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/04887D6C-A1F7-9B44-8255-461DCD762B28.root"
+  },
+  {
+    "checksum": "adler32:ff18c885",
+    "filename": "06675861-D105-1041-84B5-A9479E8F07E8.root",
+    "size": 3224825066,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/06675861-D105-1041-84B5-A9479E8F07E8.root"
+  },
+  {
+    "checksum": "adler32:157c9bae",
+    "filename": "090DD4CF-ED5C-5D47-922E-6D81486A8BE5.root",
+    "size": 3233684028,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/090DD4CF-ED5C-5D47-922E-6D81486A8BE5.root"
+  },
+  {
+    "checksum": "adler32:11b7caec",
+    "filename": "0F6F3315-E6E4-6042-AF03-B40C23B1723F.root",
+    "size": 3213056740,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/0F6F3315-E6E4-6042-AF03-B40C23B1723F.root"
+  },
+  {
+    "checksum": "adler32:180ccb0b",
+    "filename": "107AE82A-90D2-5845-A569-9FA402A02CEF.root",
+    "size": 3232683107,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/107AE82A-90D2-5845-A569-9FA402A02CEF.root"
+  },
+  {
+    "checksum": "adler32:71924464",
+    "filename": "117FEF27-CCC2-6E4E-A4E5-ACC224997C3F.root",
+    "size": 3239200145,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/117FEF27-CCC2-6E4E-A4E5-ACC224997C3F.root"
+  },
+  {
+    "checksum": "adler32:c8f37716",
+    "filename": "12271712-DD6B-944B-9198-59606367537F.root",
+    "size": 3172586998,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/12271712-DD6B-944B-9198-59606367537F.root"
+  },
+  {
+    "checksum": "adler32:bffc1d65",
+    "filename": "14F2276B-8CEA-0C45-91B6-3B6325DF91E4.root",
+    "size": 3218745357,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/14F2276B-8CEA-0C45-91B6-3B6325DF91E4.root"
+  },
+  {
+    "checksum": "adler32:afdf6c0d",
+    "filename": "188A70B2-326E-9F4E-9B94-21ADBF1B1502.root",
+    "size": 3241911827,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/188A70B2-326E-9F4E-9B94-21ADBF1B1502.root"
+  },
+  {
+    "checksum": "adler32:04d647de",
+    "filename": "1ABF9980-581C-0540-8E08-A5BB04FA2863.root",
+    "size": 3246153980,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/1ABF9980-581C-0540-8E08-A5BB04FA2863.root"
+  },
+  {
+    "checksum": "adler32:f9d43786",
+    "filename": "2054D214-C920-A245-B8C2-C72DF1EFCDA7.root",
+    "size": 3226201269,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/2054D214-C920-A245-B8C2-C72DF1EFCDA7.root"
+  },
+  {
+    "checksum": "adler32:df0f0991",
+    "filename": "206A5CFE-93FA-9E47-BA40-C397204C1F98.root",
+    "size": 3204984891,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/206A5CFE-93FA-9E47-BA40-C397204C1F98.root"
+  },
+  {
+    "checksum": "adler32:799da786",
+    "filename": "23A07898-81A9-ED44-B49F-4D7AEB13C402.root",
+    "size": 3206712874,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/23A07898-81A9-ED44-B49F-4D7AEB13C402.root"
+  },
+  {
+    "checksum": "adler32:e6d2342e",
+    "filename": "24033A13-FF49-3844-9EE4-5F7977231BEF.root",
+    "size": 3182817326,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/24033A13-FF49-3844-9EE4-5F7977231BEF.root"
+  },
+  {
+    "checksum": "adler32:67d2781e",
+    "filename": "24220184-C8AD-E845-8DD9-4606DE3719F2.root",
+    "size": 3209705700,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/24220184-C8AD-E845-8DD9-4606DE3719F2.root"
+  },
+  {
+    "checksum": "adler32:e93b587e",
+    "filename": "259808B3-9742-3347-B15D-48CFCE28BD25.root",
+    "size": 3184948818,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/259808B3-9742-3347-B15D-48CFCE28BD25.root"
+  },
+  {
+    "checksum": "adler32:bae7f524",
+    "filename": "259F6DBB-3554-CD4B-9F85-9B50782CAD52.root",
+    "size": 3212107064,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/259F6DBB-3554-CD4B-9F85-9B50782CAD52.root"
+  },
+  {
+    "checksum": "adler32:5231a548",
+    "filename": "2C1A6BA9-32E4-9D4E-A460-98BC8823D1AF.root",
+    "size": 3199756759,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/2C1A6BA9-32E4-9D4E-A460-98BC8823D1AF.root"
+  },
+  {
+    "checksum": "adler32:d5531102",
+    "filename": "2CE716F0-CA35-1049-BEF6-28C3D17EEEF1.root",
+    "size": 3242642356,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/2CE716F0-CA35-1049-BEF6-28C3D17EEEF1.root"
+  },
+  {
+    "checksum": "adler32:aac81d5e",
+    "filename": "2FFB38DB-C7D1-CE44-A09E-237E4CA52E2B.root",
+    "size": 3215745782,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/2FFB38DB-C7D1-CE44-A09E-237E4CA52E2B.root"
+  },
+  {
+    "checksum": "adler32:c6af92b2",
+    "filename": "364DCDCF-1BA8-C44B-90D3-9D7AFF29215C.root",
+    "size": 3236494839,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/364DCDCF-1BA8-C44B-90D3-9D7AFF29215C.root"
+  },
+  {
+    "checksum": "adler32:44e7425c",
+    "filename": "3CEC339A-C793-5E42-AAA9-6DF2E8C1F175.root",
+    "size": 3196550550,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/3CEC339A-C793-5E42-AAA9-6DF2E8C1F175.root"
+  },
+  {
+    "checksum": "adler32:8e2ca120",
+    "filename": "3CF21EFD-BF4F-8A42-9B18-02C132F2BBE9.root",
+    "size": 3213882430,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/3CF21EFD-BF4F-8A42-9B18-02C132F2BBE9.root"
+  },
+  {
+    "checksum": "adler32:719840f2",
+    "filename": "3FE56B75-A24B-514E-87F9-808FBC4A1712.root",
+    "size": 3219325568,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/3FE56B75-A24B-514E-87F9-808FBC4A1712.root"
+  },
+  {
+    "checksum": "adler32:a519b4c2",
+    "filename": "3FFC40C9-90A2-E74D-80F1-34D8ECFA3814.root",
+    "size": 3237268899,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/3FFC40C9-90A2-E74D-80F1-34D8ECFA3814.root"
+  },
+  {
+    "checksum": "adler32:55263a49",
+    "filename": "408BBDDC-B96C-CC42-AB19-F4367C23AD58.root",
+    "size": 3245427424,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/408BBDDC-B96C-CC42-AB19-F4367C23AD58.root"
+  },
+  {
+    "checksum": "adler32:806b93c1",
+    "filename": "436191A9-76B3-E44D-987E-3114FAA4517A.root",
+    "size": 3228060939,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/436191A9-76B3-E44D-987E-3114FAA4517A.root"
+  },
+  {
+    "checksum": "adler32:e138778a",
+    "filename": "485C5EE9-9A98-2842-847D-C8D83A22B109.root",
+    "size": 3213657215,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/485C5EE9-9A98-2842-847D-C8D83A22B109.root"
+  },
+  {
+    "checksum": "adler32:a7e1e56d",
+    "filename": "48AE5D3A-9109-3542-89DD-75A84DA2D513.root",
+    "size": 3236177471,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/48AE5D3A-9109-3542-89DD-75A84DA2D513.root"
+  },
+  {
+    "checksum": "adler32:b6aa9f2b",
+    "filename": "4A21F2E7-7E1B-914A-B57A-9012FD4D4C37.root",
+    "size": 3207910232,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/4A21F2E7-7E1B-914A-B57A-9012FD4D4C37.root"
+  },
+  {
+    "checksum": "adler32:519fa662",
+    "filename": "4A850828-AFA0-F949-B0FB-A7F5C4624EAE.root",
+    "size": 3215128186,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/4A850828-AFA0-F949-B0FB-A7F5C4624EAE.root"
+  },
+  {
+    "checksum": "adler32:937a71bf",
+    "filename": "4BFD8AD8-89EF-5446-9EFE-2A40D43DDB51.root",
+    "size": 3207565352,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/4BFD8AD8-89EF-5446-9EFE-2A40D43DDB51.root"
+  },
+  {
+    "checksum": "adler32:6f05e8a0",
+    "filename": "4D7FAEFB-67D9-144E-AE20-20F02541199D.root",
+    "size": 3202484838,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/4D7FAEFB-67D9-144E-AE20-20F02541199D.root"
+  },
+  {
+    "checksum": "adler32:b40cff6d",
+    "filename": "4E7A37B5-1339-6045-AD95-2A6F0CC57BB0.root",
+    "size": 3216289406,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/4E7A37B5-1339-6045-AD95-2A6F0CC57BB0.root"
+  },
+  {
+    "checksum": "adler32:899eda41",
+    "filename": "521D3F23-B3C3-6B43-834B-A5787BF0F58F.root",
+    "size": 3238097159,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/521D3F23-B3C3-6B43-834B-A5787BF0F58F.root"
+  },
+  {
+    "checksum": "adler32:8ed43ca6",
+    "filename": "533FDA63-3613-0545-BC5F-CCC61527EEB6.root",
+    "size": 3239113061,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/533FDA63-3613-0545-BC5F-CCC61527EEB6.root"
+  },
+  {
+    "checksum": "adler32:fde581d2",
+    "filename": "5AB6853E-B319-7245-8B06-34903A2C7EE3.root",
+    "size": 3245775811,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/5AB6853E-B319-7245-8B06-34903A2C7EE3.root"
+  },
+  {
+    "checksum": "adler32:2836c951",
+    "filename": "5B5A524B-EBC7-A74F-A968-911D077040B9.root",
+    "size": 3190427077,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/5B5A524B-EBC7-A74F-A968-911D077040B9.root"
+  },
+  {
+    "checksum": "adler32:8b5fdb32",
+    "filename": "5DBF5F6D-33AC-A241-BEC2-1534D16905F7.root",
+    "size": 3192513102,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/5DBF5F6D-33AC-A241-BEC2-1534D16905F7.root"
+  },
+  {
+    "checksum": "adler32:efe5e28d",
+    "filename": "5F75834B-2D0D-D84F-9F8A-57518103346E.root",
+    "size": 3188218265,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/5F75834B-2D0D-D84F-9F8A-57518103346E.root"
+  },
+  {
+    "checksum": "adler32:068f7346",
+    "filename": "6242DE70-9527-3B4A-88CB-99D79CC3624F.root",
+    "size": 3234328996,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/6242DE70-9527-3B4A-88CB-99D79CC3624F.root"
+  },
+  {
+    "checksum": "adler32:d0021f8b",
+    "filename": "679D176D-6E54-9242-A91A-A9759E9C0982.root",
+    "size": 3198798415,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/679D176D-6E54-9242-A91A-A9759E9C0982.root"
+  },
+  {
+    "checksum": "adler32:4b25abea",
+    "filename": "69894F5D-E54D-F54B-8F8B-D411A56FADA2.root",
+    "size": 3194836675,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/69894F5D-E54D-F54B-8F8B-D411A56FADA2.root"
+  },
+  {
+    "checksum": "adler32:b3bf0786",
+    "filename": "6C7184C8-0E45-314A-8926-FC819E0DF973.root",
+    "size": 3178763021,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/6C7184C8-0E45-314A-8926-FC819E0DF973.root"
+  },
+  {
+    "checksum": "adler32:bd730263",
+    "filename": "6E5ECD26-214F-5440-93D0-0A2F1DF2B6FE.root",
+    "size": 3215275373,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/6E5ECD26-214F-5440-93D0-0A2F1DF2B6FE.root"
+  },
+  {
+    "checksum": "adler32:2defc68a",
+    "filename": "6FA6AF4D-CDB7-EA47-96B1-AF37130C0E5A.root",
+    "size": 3217921574,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/6FA6AF4D-CDB7-EA47-96B1-AF37130C0E5A.root"
+  },
+  {
+    "checksum": "adler32:fa500b3b",
+    "filename": "6FF3299C-0410-CA44-9B70-E6A11062D0D0.root",
+    "size": 3202717464,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/6FF3299C-0410-CA44-9B70-E6A11062D0D0.root"
+  },
+  {
+    "checksum": "adler32:393fc3b5",
+    "filename": "71AE7D74-6670-E845-A9F5-E4501BCE71EC.root",
+    "size": 3212471859,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/71AE7D74-6670-E845-A9F5-E4501BCE71EC.root"
+  },
+  {
+    "checksum": "adler32:f5ab1c8f",
+    "filename": "7256275F-CA7B-4C4E-92F2-665B88C8FBC1.root",
+    "size": 3219086028,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/7256275F-CA7B-4C4E-92F2-665B88C8FBC1.root"
+  },
+  {
+    "checksum": "adler32:7e585757",
+    "filename": "78C4F840-DD2A-634A-9474-FF7C26CCF006.root",
+    "size": 3220382374,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/78C4F840-DD2A-634A-9474-FF7C26CCF006.root"
+  },
+  {
+    "checksum": "adler32:3d9e9dd6",
+    "filename": "7B8288F4-529C-2540-B35F-79B9485DB86A.root",
+    "size": 3211467406,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/7B8288F4-529C-2540-B35F-79B9485DB86A.root"
+  },
+  {
+    "checksum": "adler32:4726aee1",
+    "filename": "7D643BCF-5119-3948-963B-80A711459446.root",
+    "size": 3206242048,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/7D643BCF-5119-3948-963B-80A711459446.root"
+  },
+  {
+    "checksum": "adler32:242e5810",
+    "filename": "7DC90688-8E42-8F48-9B65-2BE31DCCE0CD.root",
+    "size": 3202974345,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/7DC90688-8E42-8F48-9B65-2BE31DCCE0CD.root"
+  },
+  {
+    "checksum": "adler32:21676062",
+    "filename": "7E6E5B57-B570-1C44-BE06-A87CBF37D800.root",
+    "size": 3250162928,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/7E6E5B57-B570-1C44-BE06-A87CBF37D800.root"
+  },
+  {
+    "checksum": "adler32:b5ac67d9",
+    "filename": "8562575F-D073-4445-A10A-5DEA0455056E.root",
+    "size": 3212530532,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/8562575F-D073-4445-A10A-5DEA0455056E.root"
+  },
+  {
+    "checksum": "adler32:64ee65c4",
+    "filename": "89DE3D44-3114-7541-877B-5E8E1A36638C.root",
+    "size": 3208812834,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/89DE3D44-3114-7541-877B-5E8E1A36638C.root"
+  },
+  {
+    "checksum": "adler32:c847a4f3",
+    "filename": "8A975A02-C3BD-B147-AFBB-D6309C36D8A9.root",
+    "size": 3218538577,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/8A975A02-C3BD-B147-AFBB-D6309C36D8A9.root"
+  },
+  {
+    "checksum": "adler32:e5716184",
+    "filename": "8E7356EE-9944-3F44-9A63-84A8241D506A.root",
+    "size": 3199309478,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/8E7356EE-9944-3F44-9A63-84A8241D506A.root"
+  },
+  {
+    "checksum": "adler32:5fcf12a8",
+    "filename": "8EF8BA74-68D1-6D42-8CAC-8FD5226A8877.root",
+    "size": 3227198392,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/8EF8BA74-68D1-6D42-8CAC-8FD5226A8877.root"
+  },
+  {
+    "checksum": "adler32:13427568",
+    "filename": "90872EAA-0894-8149-8A55-4E6468B0454C.root",
+    "size": 3198658650,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/90872EAA-0894-8149-8A55-4E6468B0454C.root"
+  },
+  {
+    "checksum": "adler32:95b5209b",
+    "filename": "92F68964-1AC0-9A44-AF2A-8897780D18E4.root",
+    "size": 3220811301,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/92F68964-1AC0-9A44-AF2A-8897780D18E4.root"
+  },
+  {
+    "checksum": "adler32:6f0a29ed",
+    "filename": "93120A7A-54B2-1F4F-892D-7C4FC049E459.root",
+    "size": 3210244208,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/93120A7A-54B2-1F4F-892D-7C4FC049E459.root"
+  },
+  {
+    "checksum": "adler32:13dac4a6",
+    "filename": "944400AD-59B8-A747-8F40-F86AA94E53ED.root",
+    "size": 3219692318,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/944400AD-59B8-A747-8F40-F86AA94E53ED.root"
+  },
+  {
+    "checksum": "adler32:e27ae707",
+    "filename": "9479F6E7-F4AE-3648-8A84-3F95BCB99163.root",
+    "size": 3231599767,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/9479F6E7-F4AE-3648-8A84-3F95BCB99163.root"
+  },
+  {
+    "checksum": "adler32:b7ab71b9",
+    "filename": "9D13EC83-7203-6E48-BC56-6783B42BC61C.root",
+    "size": 3222746239,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/9D13EC83-7203-6E48-BC56-6783B42BC61C.root"
+  },
+  {
+    "checksum": "adler32:ae9ad9de",
+    "filename": "A008C152-AF47-8F42-8FFA-61467B873004.root",
+    "size": 3215487565,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/A008C152-AF47-8F42-8FFA-61467B873004.root"
+  },
+  {
+    "checksum": "adler32:426f46bf",
+    "filename": "A09FA398-D54C-294E-9380-56675590B7B8.root",
+    "size": 3273801811,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/A09FA398-D54C-294E-9380-56675590B7B8.root"
+  },
+  {
+    "checksum": "adler32:1aec5a82",
+    "filename": "A24107C0-B29A-DA46-B2F6-DFE8A76D296D.root",
+    "size": 3212919901,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/A24107C0-B29A-DA46-B2F6-DFE8A76D296D.root"
+  },
+  {
+    "checksum": "adler32:e57d3d49",
+    "filename": "A313F827-FC20-2C4E-92C8-88713F4F1ACE.root",
+    "size": 3207000481,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/A313F827-FC20-2C4E-92C8-88713F4F1ACE.root"
+  },
+  {
+    "checksum": "adler32:2d46d3b7",
+    "filename": "A4BF37DA-C7E8-9F45-9C3E-9DAF1422A731.root",
+    "size": 3203862217,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/A4BF37DA-C7E8-9F45-9C3E-9DAF1422A731.root"
+  },
+  {
+    "checksum": "adler32:32bb3e6d",
+    "filename": "A6A53FE6-609E-884B-832C-947B07D78168.root",
+    "size": 3198157388,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/A6A53FE6-609E-884B-832C-947B07D78168.root"
+  },
+  {
+    "checksum": "adler32:ba2cfd20",
+    "filename": "A6AA9883-355A-434E-809E-30C250E65242.root",
+    "size": 3215071465,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/A6AA9883-355A-434E-809E-30C250E65242.root"
+  },
+  {
+    "checksum": "adler32:199af3b0",
+    "filename": "A8A57FBF-1E8F-6F45-ABAA-8B1F10BDF89D.root",
+    "size": 3237704290,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/A8A57FBF-1E8F-6F45-ABAA-8B1F10BDF89D.root"
+  },
+  {
+    "checksum": "adler32:25e0101f",
+    "filename": "AC1731BC-4105-744C-AE10-4336E5FDD346.root",
+    "size": 3225541237,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/AC1731BC-4105-744C-AE10-4336E5FDD346.root"
+  },
+  {
+    "checksum": "adler32:05be3d2e",
+    "filename": "B14D0D55-6CB8-834F-9E81-3657FF4B59D5.root",
+    "size": 3225433592,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/B14D0D55-6CB8-834F-9E81-3657FF4B59D5.root"
+  },
+  {
+    "checksum": "adler32:a78bb0e6",
+    "filename": "B86C8B97-162C-B14C-9D52-2DB17732668A.root",
+    "size": 3241731218,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/B86C8B97-162C-B14C-9D52-2DB17732668A.root"
+  },
+  {
+    "checksum": "adler32:e70ef46c",
+    "filename": "BBAE4E96-D3BD-D741-9F26-29E15ADA9F11.root",
+    "size": 3204953294,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/BBAE4E96-D3BD-D741-9F26-29E15ADA9F11.root"
+  },
+  {
+    "checksum": "adler32:66c14808",
+    "filename": "C032FA78-E778-4D49-A0E1-B7DC65FABDCD.root",
+    "size": 3190154806,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/C032FA78-E778-4D49-A0E1-B7DC65FABDCD.root"
+  },
+  {
+    "checksum": "adler32:a0973dc5",
+    "filename": "C20ED5A6-AF90-6E42-90C8-6549154DC453.root",
+    "size": 3196114368,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/C20ED5A6-AF90-6E42-90C8-6549154DC453.root"
+  },
+  {
+    "checksum": "adler32:fedef9fe",
+    "filename": "C2A2AC5F-B1C3-A248-8011-F2A7BDBC3C4C.root",
+    "size": 3220195603,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/C2A2AC5F-B1C3-A248-8011-F2A7BDBC3C4C.root"
+  },
+  {
+    "checksum": "adler32:416ff864",
+    "filename": "C48E08ED-CB5A-3D45-A8D4-40A1CE9BBE4E.root",
+    "size": 3192962735,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/C48E08ED-CB5A-3D45-A8D4-40A1CE9BBE4E.root"
+  },
+  {
+    "checksum": "adler32:b07ab3c2",
+    "filename": "C7F528B7-4E75-DC46-B50A-EEFE8F5B5781.root",
+    "size": 3194773284,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/C7F528B7-4E75-DC46-B50A-EEFE8F5B5781.root"
+  },
+  {
+    "checksum": "adler32:0807f9b5",
+    "filename": "CCB7A3B1-7494-834D-B7EB-E5FB3C7DF8C1.root",
+    "size": 3232424993,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/CCB7A3B1-7494-834D-B7EB-E5FB3C7DF8C1.root"
+  },
+  {
+    "checksum": "adler32:50b23b15",
+    "filename": "CCBCB0FE-EFC5-6042-97A3-CC7722112B20.root",
+    "size": 3235423611,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/CCBCB0FE-EFC5-6042-97A3-CC7722112B20.root"
+  },
+  {
+    "checksum": "adler32:741b558d",
+    "filename": "D4D4EB5E-2A3E-1144-ACB7-15EE1A050C60.root",
+    "size": 3211957870,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/D4D4EB5E-2A3E-1144-ACB7-15EE1A050C60.root"
+  },
+  {
+    "checksum": "adler32:d0dc3fce",
+    "filename": "D5338D2E-44B7-D64D-83DD-AAEF7DA26846.root",
+    "size": 3222304221,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/D5338D2E-44B7-D64D-83DD-AAEF7DA26846.root"
+  },
+  {
+    "checksum": "adler32:2bb7fce8",
+    "filename": "D789D6D1-C32A-0D43-817E-1B22F7E5D02B.root",
+    "size": 3206082520,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/D789D6D1-C32A-0D43-817E-1B22F7E5D02B.root"
+  },
+  {
+    "checksum": "adler32:eb406be6",
+    "filename": "D81E19B7-C568-7C4E-8FB6-2F0727D5402F.root",
+    "size": 3219360854,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/D81E19B7-C568-7C4E-8FB6-2F0727D5402F.root"
+  },
+  {
+    "checksum": "adler32:7d57e065",
+    "filename": "DD804D03-7B0C-3046-AF25-CA06F4B3FAC3.root",
+    "size": 3205623017,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/DD804D03-7B0C-3046-AF25-CA06F4B3FAC3.root"
+  },
+  {
+    "checksum": "adler32:3f2b3b48",
+    "filename": "DE76B9FE-669B-6848-8B73-1E8A52A17155.root",
+    "size": 3206965731,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/DE76B9FE-669B-6848-8B73-1E8A52A17155.root"
+  },
+  {
+    "checksum": "adler32:f0386dc1",
+    "filename": "DE979EAA-A834-654B-830C-EEBEDE0E28C3.root",
+    "size": 3196670590,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/DE979EAA-A834-654B-830C-EEBEDE0E28C3.root"
+  },
+  {
+    "checksum": "adler32:3c7328e5",
+    "filename": "E14EEB34-EDFE-CE4E-894E-84D1315A15A0.root",
+    "size": 3187809711,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/E14EEB34-EDFE-CE4E-894E-84D1315A15A0.root"
+  },
+  {
+    "checksum": "adler32:381aea3e",
+    "filename": "E3E1C457-53FC-A043-AD69-13E4480E5D95.root",
+    "size": 3227801255,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/E3E1C457-53FC-A043-AD69-13E4480E5D95.root"
+  },
+  {
+    "checksum": "adler32:060686ac",
+    "filename": "E92B44F8-EA8B-E54C-9803-6896D9CB41B7.root",
+    "size": 3216587987,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/E92B44F8-EA8B-E54C-9803-6896D9CB41B7.root"
+  },
+  {
+    "checksum": "adler32:bd64afcb",
+    "filename": "ED28E776-B3A8-E84F-B78A-F2FD82A26DF6.root",
+    "size": 3218623304,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/ED28E776-B3A8-E84F-B78A-F2FD82A26DF6.root"
+  },
+  {
+    "checksum": "adler32:a1bc3d17",
+    "filename": "EFC60051-C4DC-5746-9049-FB5C6BB69C10.root",
+    "size": 3205302974,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/EFC60051-C4DC-5746-9049-FB5C6BB69C10.root"
+  },
+  {
+    "checksum": "adler32:a4d44f83",
+    "filename": "F1A63197-7133-D649-9A6C-852106ABACD2.root",
+    "size": 3225212039,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/F1A63197-7133-D649-9A6C-852106ABACD2.root"
+  },
+  {
+    "checksum": "adler32:93a8d9f0",
+    "filename": "F31053A9-6CCD-B845-BF5F-5A9AF794AB29.root",
+    "size": 3240356775,
+    "uri": "root://eospublic.cern.ch//eos/opendata/cms/mc/RunIISummer20ULPrePremix/Neutrino_E-10_gun/PREMIX/UL16_106X_mcRun2_asymptotic_v13-v1/120013/F31053A9-6CCD-B845-BF5F-5A9AF794AB29.root"
+  }
+]

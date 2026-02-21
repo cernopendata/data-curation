@@ -5,11 +5,11 @@
 Create RECO CMS Configuration Files records.
 """
 
-import hashlib
 import json
 import re
 import os
 import shutil
+import zlib
 
 
 NOTE = (
@@ -98,9 +98,9 @@ def get_size(afile):
 
 
 def get_checksum(afile):
-    """Return the SHA1 checksum of the configuration file."""
+    """Return the ADLER32 checksum of a file."""
     file_path = "./inputs/config-store/" + afile
-    return hashlib.sha1(open(file_path, "rb").read()).hexdigest()
+    return hex(zlib.adler32(open(file_path, "rb").read(), 1) & 0xFFFFFFFF)[2:]
 
 
 def main():
@@ -164,7 +164,7 @@ def main():
             rec["distribution"]["number_files"] = 1
             rec["distribution"]["size"] = get_size(afile)
 
-            rec["experiment"] = "CMS"
+            rec["experiment"] = ["CMS"]
 
             rec["files"] = [
                 {

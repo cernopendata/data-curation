@@ -1,0 +1,355 @@
+Note 0 Index
+
+Note 2 Graphic Facilities on the JADE NORD-10 Computer
+
+Note 3 Status of Monte-Carlo and Off-Line Programs
+
+Note 4 Standards to JADE-Library programmers
+
+Note 5 Conventions of Jet Chamber Data Formats for Pattern Recognition and Related Programs
+
+Note 6 Proposal for Management of Calibration Data
+
+Note 7 IBM - NORD, Data transfer via magnetic tape
+
+Note 8 The JADE BOS System
+
+Note 9 Version No. Identifier for Lead Glass analysis Programs
+
+Note 10 Monte Carlo Formats
+
+Note 11a Track Bank from Pattern Recognition Program last version 18.4.80 by G.F. Pearce
+
+Note 11 Use of BOS-Banks Generating Subroutine Package in the First Stage Data Reduction Program
+
+Note 12 Track bank from pattern recognition program
+
+Note 12v2 Track bank from pattern recognition program
+
+Note 13 Simple Way to Analyse JADE Data on Tapes
+
+Note 14a JADE Computer Note 14a
+
+Note 14c JADE Computer Note 14c
+
+Note 14d JADE Computer Note 14d
+
+Note 14 Lead glass cluster bank structure
+
+Note 15 Data Acquisition System: Physical Record
+
+Note 16 Data format of the tagging bank
+
+Note 17 Data format of the tagging Banks
+
+Note 18 How to Change Existing Analysis Routines
+
+Note 19 LIFILE - a Program to Prepare File Statistics on the NORD
+
+Note 20a Output Format of TOF Program
+
+Note 20 Output Format of TOF Program
+
+Note 21 Hit label bank created by PATREC
+
+Note 22 Mu Software Information, Issue 4
+
+Note 23a IBM Trigger Banks
+
+Note 23b Trigger Words
+
+Note 23 IBM data banks
+
+Note 24a JADE Computer Note 24a
+
+Note 24 Printing Half-Word Banks
+
+Note 25 Reading and writing of real and MTC-event data
+
+Note 26 Monte Carlo tracking
+
+Note 27 JADE data reduction, STEP 1
+
+Note 28 Editing pattern recognition results in the JADE graphics
+
+Note 29 How to create graphics modules within the JADE graphics framework
+
+Note 30 Spinning lead glass analysis
+
+Note 31 Description of philosophy of muon filter tracks pattern recognition program 'TRACK'
+
+Note 32 How to use vertex fit program
+
+Note 33 Small programs with very large PROG files
+
+Note 34 JADE graphics program
+
+Note 35 Energy correction for showers in the lead glass counters
+
+Note 36 The function EBEAM
+
+Note 37 IBM action Bits in the bank 'HEAD'
+
+Note 38 Cuts of first data reduction
+
+Note 39a The CPU-Time Contingent and its Usage
+
+Note 39 Convention about the Use of Computer Time
+
+Note 40 Monte Carlo tracking through lead glass
+
+Note 41 Document preparation using the Nord 10/S
+
+Note 42 The Subroutines REDONE and REDTVA A General Second Reduction Program
+
+Note 43 A general second reduction program
+
+Note 44 Change of JETCAL + improve Resolution for Tracks close to the Wire Plane
+
+Note 45a New jet chamber constants which are applied for the data taken in 1981
+
+Note 45 New corrections for the space-time relation in the JET chamber
+
+Note 46 Instalment of the New Jet Chamber Calibration
+
+Note 47 New Pattern Recognition Programs
+
+Note 48 Subroutine JREKAL (IERR) on 'F11CH0.JADEGL'
+
+Note 49 Subroutine REFITO(IPTR;IPJHTL,X0,YO,WGHT0) on 1F11GOO.PATRELID1
+
+Note 50 Miproc Result Bank 'MPRS'
+
+Note 51 A General Routine for the Fast Reconstruction of Jet Events
+
+Note 52 Adendum to computer note 52. Replacing computer note 22
+
+Note 53 How to use JADE volumes on mass storage system
+
+Note 54 Detector Monte-Carlo
+
+Note 55 The muon Monte-Carlo at DESY
+
+Note 56 Search for a track in PATR(10) bank or any other PATR bank - which corresponds to a selected Monte Carlo generated track of PATR bank 12
+
+Note 57 How to use the improved Jet Cahmber callibration
+
+Note 58 New conventions for callibration data
+
+Note 59 Run dependent Event Vertex on callibration file
+
+Note 60 Refit tracks with run vertex constrain
+
+Note 61 Refit all tracks with run vertex constrain
+
+Note 62 JADE reformat program
+
+Note 63a JADE computer note 63a
+
+Note 63 z-Recalibration
+
+Note 64 Help for JADE (on the computer)
+
+Note 65 Subroutine GGFIT(EMAS,PROB)
+
+Note 66a JADE computer note 66a
+
+Note 66 Inner detector spearing and detector simulation in JADE Monte Carlo events
+
+Note 67 The JADE MOnte Carlo
+
+Note 68 The JADE calibration scheme
+
+Note 69 Monte Carlo traceback
+
+Note 70 Monte Carlo simulation of electormagnetic Showers in the Lead-Glass
+
+Note 71 New dE/dx callibration
+
+Note 72 Monte Carlo data validation
+
+Note 73 The JADE supervison program: An introduction for newcommers
+
+Note 74 Analysis routines for tagging system
+
+Note 75 Routines for converted photons
+
+Note 76 A collection of Programs used in the analysis of inclusive photon production
+
+Note 77 Copying of source files and data files from the JADE-NORD10 to the IBM and vice-versa
+
+Note 78 Decays of K± and K0 in MC
+
+Note 79 The JADE TP program
+
+Note 80 Format of the generation 8 TP banks
+
+Note 81 LUMI and RANDOM events on TAPE
+
+Note 82 MUTANA -- a simple algorithm to find tracks in the muon filter
+
+Note 83 Re-analysis of multihadronic events
+
+Note 84 Efficiency corrections due to online and offline event filtering
+
+Note 85 JADEZ the JADE graphics program
+
+Note 86 Tagging System Monte Carlo
+
+Note 87a JADE computer note 87a
+
+Note 87 Error in the Monte Carlo simulation
+
+Note 88 How to Handle Lead Glass Clusters in Calculating the Visible Energy
+
+Note 89 Calibration for 1986 REUC1 and status of Rutherford tapes
+
+Note 90 Jet chanber cell inefficiencies in 1986
+
+Note 91 Neutral triggers on tape
+
+Note 92 REDUC1 and REDUC2 for 1986 Data
+
+Note 93 JADE computer note 94
+
+Note 94 A general s−z fit routine ZSRFTV
+
+Note 95 Improved resolution with z-chamber hits
+
+Note 96 Changes to dE/dx routines and description of Bank JHQT
+
+Note 97 dE/dx Monte Carlo
+
+Note 98 Minutes of the JADE software meeting of Dec. 14 1987 at DESY
+
+Note 99 A new compact data format: description of bank ZE4V
+
+Note 100 Vertex chanber software
+
+Note 101 Reconstruction of cluster energies in the barrel lead glass
+
+Note 102 The new TP program version 9
+
+Note 103 A Guide to the Resurrected JADE Data and Software (2003)
+
+[", "Mills", "Bartel", "Dittmann", "Heuer, Nozaki, Olsson, Steffen", "O'Neill", "Dittmann", "Stork", "Yamada", "", "Steffen", "Steffen", "Steffen", "Steffen", "Steffen", "Yamada", "Yamada", "Yamada", "Yamada", "Dittmann, Yen", "Hughes, Wriedt", "Steffen", "Allison et al.", "Mills", "Kawabata", "Kawabata", "Steffen", "Allison et al", "Helm, Naroska", "Naroska", "Bartel", "Yamada", "Allison", "Elsen, Olsson", "Elsen", "Goddard, Olsson", "Olsson, Goddard", "Pearce, Olsson", "Watanabe", "Prosper", "Dittmann", "Mills", "Olsson, O'Neill", "Takeda, Watanabe", "Olsson", "Steffen", "Goddard, Olsson, Steffen", "Bartel", "Bartel", "Bartel et al.", "Mills", "Olsson", "Olsson", "Steffen", "Nozaki", "Nozaki", "Elsen et al.", "Steffen", "Steffen", "Steffen", "Eichler", "Goddard", "Bowdery, McCann", "Steffen", "Elsen", "Barlow", "Steffen", "Steffen", "Steffen", "Steffen", "Steffen", "Steffen", "Bartel, Becker", "Becker", "Becker, Heinzelmann", "Glasser", "Glasser", "Hagemann, Olsson, Ramcke", "Hagemann, Olsson, Ramcke", "Barlow", "Steffen", "Bowdery", "Meier", "Becker, Heinzelmann", "Bowdery", "Bowdery, Olsson", "Finch", "Kuhlen", "Meyer", "Krehbiel", "Hellenbrand", "Yamada, Bowdery, Elsen", "Bowdery, Yamada", "Olsson", "Mills", "Elsen, Hellenbrand", "Mills, Olsson", "Bowdery, Olsson", "Finch", "Olsson", "Bartel, Olsson", "Hellenbrand", "Elsen, Olsson", "Elsen", "Olsson", "Elsen, Olsson", "Hill", "Spitzer", "Elsen, Spitzer", "Elsen, Ambrus", "Elsen", "Bartel", "Eckerlin, Zimmer", "Hagermann, Kleinworth, Ramcke", "Pitzl", "Bowdery, Pryce", "Fernández]
+
+[010189, 140877, 150177, 011277, 300178, 030878, 040978, 050878, 061078, 091178, 171178, 010279, 211178, 211178, 201178, 291178, 230279, 070897, 050599, 310779, 260379, 010279, 010279, 150279, 210279, 090379, 140182, 010284, 090379, 060679, 090879, 140379, 120881, 150579, 050679, 051079, 121079, 211079, 151179, 110280, 150280, 030982, 040380, 110480, 150480, 090580, 020680, 020680, 120680, 250680, 160980, 250880, 250880, 080980, 080980, 270381, 271080, 281180, 281180, 281180, 230281, 110581, 201081, 101180, 150582, 1181, 140182, 120882, 120882, 120882, 180882, 121082, 260583, 051283, 270783, 180883, 240883, 0883, 210983, 281083, 150584, 250183, 270284, 010284, 220384, 160584, 110684, 280684, 071184, 171284, 121284, 170485, 060685, 240685, 100785, 200885, 070186, 120686, 191086, 150386, 130686, 100786, 281186, 130187, 090287, 240287, 0387, 260387, 100587, 220787, 251187, 050188, 260188, 150288, 190588, 110888, 200903]
+
+path=/eos/opendata/jade/documentation/notes/0Index.pdf size=137529 checksum=46c1eb5f
+path=/eos/opendata/jade/documentation/notes/10.pdf size=306074 checksum=cbb6b90c
+path=/eos/opendata/jade/documentation/notes/100.pdf size=360837 checksum=55a69faa
+path=/eos/opendata/jade/documentation/notes/101.pdf size=385882 checksum=10986d99
+path=/eos/opendata/jade/documentation/notes/102.pdf size=1254353 checksum=e5c800b9
+path=/eos/opendata/jade/documentation/notes/103.pdf size=829048 checksum=b525b56a
+path=/eos/opendata/jade/documentation/notes/11.pdf size=46679 checksum=62cec278
+path=/eos/opendata/jade/documentation/notes/11a.pdf size=95947 checksum=54566301
+path=/eos/opendata/jade/documentation/notes/12.pdf size=117423 checksum=1b6424a9
+path=/eos/opendata/jade/documentation/notes/12v2.pdf size=164278 checksum=e3fa3123
+path=/eos/opendata/jade/documentation/notes/13.pdf size=29812 checksum=b2116786
+path=/eos/opendata/jade/documentation/notes/14.pdf size=114411 checksum=c0a96ddc
+path=/eos/opendata/jade/documentation/notes/14a.pdf size=134099 checksum=4f9fe3ee
+path=/eos/opendata/jade/documentation/notes/14c.pdf size=189175 checksum=876e8410
+path=/eos/opendata/jade/documentation/notes/14d.pdf size=260037 checksum=a16841d6
+path=/eos/opendata/jade/documentation/notes/15.pdf size=115760 checksum=d0286dbe
+path=/eos/opendata/jade/documentation/notes/16.pdf size=322560 checksum=24e3e7ee
+path=/eos/opendata/jade/documentation/notes/17.pdf size=50439 checksum=c7db83b4
+path=/eos/opendata/jade/documentation/notes/18.pdf size=143379 checksum=6e2e9116
+path=/eos/opendata/jade/documentation/notes/19.pdf size=178474 checksum=ca8a23f0
+path=/eos/opendata/jade/documentation/notes/2.pdf size=190428 checksum=8291869e
+path=/eos/opendata/jade/documentation/notes/20.pdf size=48895 checksum=81a6122d
+path=/eos/opendata/jade/documentation/notes/20a.pdf size=50124 checksum=bd43e350
+path=/eos/opendata/jade/documentation/notes/21.pdf size=305918 checksum=d19c6bec
+path=/eos/opendata/jade/documentation/notes/22.pdf size=3623540 checksum=0582b6d5
+path=/eos/opendata/jade/documentation/notes/23.pdf size=347446 checksum=59d6d838
+path=/eos/opendata/jade/documentation/notes/23a.pdf size=268146 checksum=aade2d4f
+path=/eos/opendata/jade/documentation/notes/23b.pdf size=41647 checksum=ea2b0267
+path=/eos/opendata/jade/documentation/notes/24.pdf size=74940 checksum=6a653eaf
+path=/eos/opendata/jade/documentation/notes/24a.pdf size=262335 checksum=1de52c33
+path=/eos/opendata/jade/documentation/notes/25.pdf size=66303 checksum=2da6e027
+path=/eos/opendata/jade/documentation/notes/26.pdf size=100106 checksum=a6030199
+path=/eos/opendata/jade/documentation/notes/27.pdf size=249887 checksum=8286bfeb
+path=/eos/opendata/jade/documentation/notes/28.pdf size=329352 checksum=d66b9a25
+path=/eos/opendata/jade/documentation/notes/29.pdf size=167766 checksum=e5cd8e9c
+path=/eos/opendata/jade/documentation/notes/3.pdf size=239271 checksum=8fa1721f
+path=/eos/opendata/jade/documentation/notes/30.pdf size=217490 checksum=9871cde6
+path=/eos/opendata/jade/documentation/notes/31.pdf size=246645 checksum=596ba454
+path=/eos/opendata/jade/documentation/notes/32.pdf size=204572 checksum=30cf74ae
+path=/eos/opendata/jade/documentation/notes/33.pdf size=77495 checksum=ff586b22
+path=/eos/opendata/jade/documentation/notes/34.pdf size=625295 checksum=1886ec9f
+path=/eos/opendata/jade/documentation/notes/35.pdf size=940564 checksum=e870ff62
+path=/eos/opendata/jade/documentation/notes/36.pdf size=40577 checksum=fd154572
+path=/eos/opendata/jade/documentation/notes/37.pdf size=33430 checksum=4249d8b9
+path=/eos/opendata/jade/documentation/notes/38.pdf size=187956 checksum=d52470cc
+path=/eos/opendata/jade/documentation/notes/39.pdf size=36456 checksum=5eba79a4
+path=/eos/opendata/jade/documentation/notes/39a.pdf size=178903 checksum=b870ef0b
+path=/eos/opendata/jade/documentation/notes/4.pdf size=81823 checksum=17a6ec26
+path=/eos/opendata/jade/documentation/notes/40.pdf size=31411 checksum=82e3b9ef
+path=/eos/opendata/jade/documentation/notes/41.pdf size=448841 checksum=0dabf3d8
+path=/eos/opendata/jade/documentation/notes/42.pdf size=91854 checksum=97147e70
+path=/eos/opendata/jade/documentation/notes/43.pdf size=294509 checksum=34d1201a
+path=/eos/opendata/jade/documentation/notes/44.pdf size=40871 checksum=bc8c4fd7
+path=/eos/opendata/jade/documentation/notes/45.pdf size=300845 checksum=fa607b80
+path=/eos/opendata/jade/documentation/notes/45a.pdf size=90590 checksum=6f3a85be
+path=/eos/opendata/jade/documentation/notes/46.pdf size=124831 checksum=6af99040
+path=/eos/opendata/jade/documentation/notes/47.pdf size=59789 checksum=3b24170f
+path=/eos/opendata/jade/documentation/notes/48.pdf size=18050 checksum=28fb54ea
+path=/eos/opendata/jade/documentation/notes/49.pdf size=66377 checksum=3ad1b92d
+path=/eos/opendata/jade/documentation/notes/5.pdf size=261490 checksum=aab33a1b
+path=/eos/opendata/jade/documentation/notes/50.pdf size=51934 checksum=9a2f7d6d
+path=/eos/opendata/jade/documentation/notes/51.pdf size=1145458 checksum=0db113d1
+path=/eos/opendata/jade/documentation/notes/52.pdf size=77313 checksum=89308edc
+path=/eos/opendata/jade/documentation/notes/53.pdf size=111515 checksum=4b5621c7
+path=/eos/opendata/jade/documentation/notes/54.pdf size=187350 checksum=5d96e158
+path=/eos/opendata/jade/documentation/notes/55.pdf size=140334 checksum=2b80311c
+path=/eos/opendata/jade/documentation/notes/56.pdf size=160104 checksum=7d70588c
+path=/eos/opendata/jade/documentation/notes/57.pdf size=94889 checksum=bf76f4dc
+path=/eos/opendata/jade/documentation/notes/58.pdf size=102619 checksum=afe25a60
+path=/eos/opendata/jade/documentation/notes/59.pdf size=44714 checksum=b353a8cb
+path=/eos/opendata/jade/documentation/notes/6.pdf size=327803 checksum=ca97e806
+path=/eos/opendata/jade/documentation/notes/60.pdf size=95921 checksum=4a268e14
+path=/eos/opendata/jade/documentation/notes/61.pdf size=53664 checksum=ccec24d1
+path=/eos/opendata/jade/documentation/notes/62.pdf size=128074 checksum=8bc6d001
+path=/eos/opendata/jade/documentation/notes/63.pdf size=179464 checksum=81b0a9dd
+path=/eos/opendata/jade/documentation/notes/63a.pdf size=52775 checksum=653c030c
+path=/eos/opendata/jade/documentation/notes/64.pdf size=88352 checksum=799d9aae
+path=/eos/opendata/jade/documentation/notes/65.pdf size=98988 checksum=a98d257c
+path=/eos/opendata/jade/documentation/notes/66.pdf size=801251 checksum=89a4c4b9
+path=/eos/opendata/jade/documentation/notes/66a.pdf size=77194 checksum=ced0e952
+path=/eos/opendata/jade/documentation/notes/67.pdf size=691593 checksum=cbfcf4b4
+path=/eos/opendata/jade/documentation/notes/68.pdf size=233990 checksum=05ac7b52
+path=/eos/opendata/jade/documentation/notes/69.pdf size=459468 checksum=7e13c542
+path=/eos/opendata/jade/documentation/notes/7.pdf size=342016 checksum=9602a417
+path=/eos/opendata/jade/documentation/notes/70.pdf size=231213 checksum=e330deb0
+path=/eos/opendata/jade/documentation/notes/71.pdf size=125655 checksum=79baf953
+path=/eos/opendata/jade/documentation/notes/72.pdf size=127216 checksum=5687eb44
+path=/eos/opendata/jade/documentation/notes/73.pdf size=328510 checksum=2f824ce9
+path=/eos/opendata/jade/documentation/notes/74.pdf size=423149 checksum=98bb30be
+path=/eos/opendata/jade/documentation/notes/75.pdf size=146431 checksum=52ae6426
+path=/eos/opendata/jade/documentation/notes/76.pdf size=196831 checksum=6d28f0ee
+path=/eos/opendata/jade/documentation/notes/77.pdf size=306828 checksum=25339e55
+path=/eos/opendata/jade/documentation/notes/78.pdf size=353094 checksum=b9990244
+path=/eos/opendata/jade/documentation/notes/79.pdf size=599534 checksum=7c4db87e
+path=/eos/opendata/jade/documentation/notes/8.pdf size=391923 checksum=95918cc6
+path=/eos/opendata/jade/documentation/notes/80.pdf size=292509 checksum=05b9251c
+path=/eos/opendata/jade/documentation/notes/81.pdf size=385265 checksum=dc6df55b
+path=/eos/opendata/jade/documentation/notes/82.pdf size=572542 checksum=5018e6ce
+path=/eos/opendata/jade/documentation/notes/83.pdf size=122691 checksum=ff6b4dea
+path=/eos/opendata/jade/documentation/notes/84.pdf size=155150 checksum=519de047
+path=/eos/opendata/jade/documentation/notes/85.pdf size=845055 checksum=e5af7c3f
+path=/eos/opendata/jade/documentation/notes/86.pdf size=183134 checksum=8f6edbba
+path=/eos/opendata/jade/documentation/notes/87.pdf size=295617 checksum=0e894446
+path=/eos/opendata/jade/documentation/notes/87a.pdf size=83243 checksum=67433820
+path=/eos/opendata/jade/documentation/notes/88.pdf size=322170 checksum=c7df8730
+path=/eos/opendata/jade/documentation/notes/89.pdf size=350874 checksum=83b22ebe
+path=/eos/opendata/jade/documentation/notes/9.pdf size=52882 checksum=fbe0fdf2
+path=/eos/opendata/jade/documentation/notes/90.pdf size=163882 checksum=4607a06e
+path=/eos/opendata/jade/documentation/notes/91.pdf size=1174385 checksum=e720af20
+path=/eos/opendata/jade/documentation/notes/92.pdf size=427876 checksum=40c97135
+path=/eos/opendata/jade/documentation/notes/93.pdf size=334110 checksum=e19fd81c
+path=/eos/opendata/jade/documentation/notes/94.pdf size=845400 checksum=6aa99cd3
+path=/eos/opendata/jade/documentation/notes/95.pdf size=229667 checksum=6824dc89
+path=/eos/opendata/jade/documentation/notes/96.pdf size=82304 checksum=4518c8b8
+path=/eos/opendata/jade/documentation/notes/97.pdf size=293114 checksum=a74e4c63
+path=/eos/opendata/jade/documentation/notes/98.pdf size=2485521 checksum=080e0c4f
+path=/eos/opendata/jade/documentation/notes/99.pdf size=329116 checksum=778977ed
