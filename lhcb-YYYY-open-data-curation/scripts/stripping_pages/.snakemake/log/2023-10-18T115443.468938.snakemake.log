@@ -1,0 +1,4 @@
+Building DAG of jobs...
+WildcardError in rule prepare_stripping in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 26:
+Wildcards in input files cannot be determined from output files:
+'version'

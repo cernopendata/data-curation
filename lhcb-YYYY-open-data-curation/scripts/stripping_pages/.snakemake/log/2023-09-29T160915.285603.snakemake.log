@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule clean_stripping_pages in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 83:
+Missing input files for rule clean_stripping_pages:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/radiative/clean-stdloosedsplus2kkpi.html
+    wildcards: version=stripping21r0p1, stream=radiative, linename=stdloosedsplus2kkpi
+    affected files:
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/radiative/stdloosedsplus2kkpi.html

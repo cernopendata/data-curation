@@ -1,0 +1,54 @@
+The flag 'temp' used in rule create_json_files is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+create_json_files        2
+prepare_stripping        1
+total                    3
+
+Select jobs to execute...
+
+[Mon Oct 23 13:07:40 2023]
+rule create_json_files:
+    input: ../../release/stripping_pages/processed, create_json_files.py, ../../release/stripping_pages/temp/stripping21/commonparticles/success.txt
+    output: ../../release/stripping_pages/temp/json_success_stripping21_commonparticles.txt
+    jobid: 6
+    reason: Updated input files: create_json_files.py
+    wildcards: version=stripping21, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Mon Oct 23 13:07:40 2023]
+rule create_json_files:
+    input: ../../release/stripping_pages/processed, create_json_files.py, ../../release/stripping_pages/temp/stripping21/ew/success.txt
+    output: ../../release/stripping_pages/temp/json_success_stripping21_ew.txt
+    jobid: 5
+    reason: Updated input files: create_json_files.py
+    wildcards: version=stripping21, stream=ew
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Mon Oct 23 13:07:41 2023]
+Finished job 6.
+1 of 3 steps (33%) done
+[Mon Oct 23 13:07:41 2023]
+Finished job 5.
+2 of 3 steps (67%) done
+Select jobs to execute...
+
+[Mon Oct 23 13:07:41 2023]
+localrule prepare_stripping:
+    input: ../../release/stripping_pages/temp/stripping21/clean_index.html, ../../release/stripping_pages/processed/stripping21/stripping21-index.md, ../../release/stripping_pages/temp/stripping21/ew/success.txt, ../../release/stripping_pages/temp/stripping21/commonparticles/success.txt, ../../release/stripping_pages/temp/json_success_stripping21_ew.txt, ../../release/stripping_pages/temp/json_success_stripping21_commonparticles.txt
+    jobid: 0
+    reason: Input files updated by another job: ../../release/stripping_pages/temp/json_success_stripping21_commonparticles.txt, ../../release/stripping_pages/temp/json_success_stripping21_ew.txt
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Mon Oct 23 13:07:41 2023]
+Finished job 0.
+3 of 3 steps (100%) done
+Removing temporary output ../../release/stripping_pages/temp/stripping21/ew/success.txt.
+Removing temporary output ../../release/stripping_pages/temp/stripping21/commonparticles/success.txt.
+Complete log: .snakemake/log/2023-10-23T130740.644414.snakemake.log

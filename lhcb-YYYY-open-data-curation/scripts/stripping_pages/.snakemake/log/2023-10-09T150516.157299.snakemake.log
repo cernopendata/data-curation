@@ -1,0 +1,90 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+download_raw_stripping        5
+prepare_stripping             1
+total                         6
+
+Select jobs to execute...
+
+[Mon Oct  9 15:05:16 2023]
+rule download_raw_stripping:
+    input: lines_downloader.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p1_leptonic.txt
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/leptonic
+    jobid: 9
+    reason: Updated input files: lines_downloader.py
+    wildcards: version=stripping21r0p1, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Mon Oct  9 15:05:16 2023]
+rule download_raw_stripping:
+    input: lines_downloader.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21_leptonic.txt
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/leptonic
+    jobid: 6
+    reason: Updated input files: lines_downloader.py
+    wildcards: version=stripping21, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Mon Oct  9 15:05:16 2023]
+rule download_raw_stripping:
+    input: lines_downloader.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21_commonparticles.txt
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/commonparticles
+    jobid: 8
+    reason: Updated input files: lines_downloader.py
+    wildcards: version=stripping21, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Mon Oct  9 15:05:16 2023]
+rule download_raw_stripping:
+    input: lines_downloader.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p1_commonparticles.txt
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles
+    jobid: 10
+    reason: Updated input files: lines_downloader.py
+    wildcards: version=stripping21r0p1, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Mon Oct  9 15:05:16 2023]
+rule download_raw_stripping:
+    input: lines_downloader.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21_radiative.txt
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/radiative
+    jobid: 7
+    reason: Updated input files: lines_downloader.py
+    wildcards: version=stripping21, stream=radiative
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Mon Oct  9 15:05:16 2023]
+Finished job 7.
+1 of 6 steps (17%) done
+[Mon Oct  9 15:05:18 2023]
+Finished job 9.
+2 of 6 steps (33%) done
+[Mon Oct  9 15:05:19 2023]
+Finished job 10.
+3 of 6 steps (50%) done
+[Mon Oct  9 15:05:19 2023]
+Finished job 8.
+4 of 6 steps (67%) done
+[Mon Oct  9 15:05:19 2023]
+Finished job 6.
+5 of 6 steps (83%) done
+Select jobs to execute...
+
+[Mon Oct  9 15:05:19 2023]
+localrule prepare_stripping:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21_leptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21_radiative.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21_commonparticles.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p1_leptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p1_commonparticles.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/leptonic, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/radiative, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/commonparticles, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/leptonic, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles
+    jobid: 0
+    reason: Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/leptonic, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/leptonic, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/radiative, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Mon Oct  9 15:05:19 2023]
+Finished job 0.
+6 of 6 steps (100%) done
+Complete log: .snakemake/log/2023-10-09T150516.157299.snakemake.log

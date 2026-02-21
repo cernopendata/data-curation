@@ -1,0 +1,3 @@
+TypeError in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 16:
+unsupported operand type(s) for -: 'list' and 'list'
+  File "/Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile", line 16, in <module>

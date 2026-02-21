@@ -1,0 +1,3 @@
+TypeError in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 158:
+get_input() got an unexpected keyword argument 'version'
+  File "/Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile", line 158, in <module>

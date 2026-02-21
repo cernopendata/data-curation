@@ -1,0 +1,665 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                   count
+------------------  -------
+list_raw_stripping       50
+prepare_stripping         1
+total                    51
+
+Select jobs to execute...
+
+[Thu Oct  5 17:44:34 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_semileptonic.txt
+    jobid: 41
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_semileptonic.txt
+    wildcards: version=stripping21r1p1, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Oct  5 17:44:34 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_leptonic.txt
+    jobid: 26
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_leptonic.txt
+    wildcards: version=stripping21r1, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Oct  5 17:44:34 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_bhadron.txt
+    jobid: 11
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_bhadron.txt
+    wildcards: version=stripping21r0p1, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Oct  5 17:44:34 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_semileptonic.txt
+    jobid: 49
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_semileptonic.txt
+    wildcards: version=stripping21r1p2, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Oct  5 17:44:34 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_commonparticles.txt
+    jobid: 34
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_commonparticles.txt
+    wildcards: version=stripping21r1, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Oct  5 17:44:34 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_bhadron.txt
+    jobid: 19
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_bhadron.txt
+    wildcards: version=stripping21r0p2, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Oct  5 17:44:34 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_bhadroncompleteevent.txt
+    jobid: 4
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_bhadroncompleteevent.txt
+    wildcards: version=stripping21, stream=bhadroncompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Oct  5 17:44:34 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_commonparticles.txt
+    jobid: 42
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_commonparticles.txt
+    wildcards: version=stripping21r1p1, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:35 2023]
+Finished job 41.
+1 of 51 steps (2%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:35 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_radiative.txt
+    jobid: 27
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_radiative.txt
+    wildcards: version=stripping21r1, stream=radiative
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:35 2023]
+Finished job 26.
+2 of 51 steps (4%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:35 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_bhadroncompleteevent.txt
+    jobid: 12
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_bhadroncompleteevent.txt
+    wildcards: version=stripping21r0p1, stream=bhadroncompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:35 2023]
+Finished job 49.
+3 of 51 steps (6%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:35 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_commonparticles.txt
+    jobid: 50
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_commonparticles.txt
+    wildcards: version=stripping21r1p2, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:35 2023]
+Finished job 34.
+4 of 51 steps (8%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:35 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_leptonic.txt
+    jobid: 35
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_leptonic.txt
+    wildcards: version=stripping21r1p1, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:35 2023]
+Finished job 4.
+5 of 51 steps (10%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:35 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_bhadroncompleteevent.txt
+    jobid: 20
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_bhadroncompleteevent.txt
+    wildcards: version=stripping21r0p2, stream=bhadroncompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:35 2023]
+Finished job 42.
+6 of 51 steps (12%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:35 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_charm.txt
+    jobid: 5
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_charm.txt
+    wildcards: version=stripping21, stream=charm
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:35 2023]
+Finished job 11.
+7 of 51 steps (14%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:35 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_leptonic.txt
+    jobid: 43
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_leptonic.txt
+    wildcards: version=stripping21r1p2, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:35 2023]
+Finished job 19.
+8 of 51 steps (16%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:35 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_bhadron.txt
+    jobid: 28
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_bhadron.txt
+    wildcards: version=stripping21r1, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:36 2023]
+Finished job 27.
+9 of 51 steps (18%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:36 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_charm.txt
+    jobid: 13
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_charm.txt
+    wildcards: version=stripping21r0p1, stream=charm
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:36 2023]
+Finished job 12.
+10 of 51 steps (20%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:36 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_bhadron.txt
+    jobid: 36
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_bhadron.txt
+    wildcards: version=stripping21r1p1, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:36 2023]
+Finished job 50.
+11 of 51 steps (22%) done
+[Thu Oct  5 17:44:36 2023]
+Finished job 35.
+12 of 51 steps (24%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:36 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_charm.txt
+    jobid: 21
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_charm.txt
+    wildcards: version=stripping21r0p2, stream=charm
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Oct  5 17:44:36 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_charmcompleteevent.txt
+    jobid: 6
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_charmcompleteevent.txt
+    wildcards: version=stripping21, stream=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:36 2023]
+Finished job 20.
+13 of 51 steps (25%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:36 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_bhadron.txt
+    jobid: 44
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_bhadron.txt
+    wildcards: version=stripping21r1p2, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Select jobs to execute...
+[Thu Oct  5 17:44:36 2023]
+Finished job 5.
+14 of 51 steps (27%) done
+
+[Thu Oct  5 17:44:36 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_bhadroncompleteevent.txt
+    jobid: 29
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_bhadroncompleteevent.txt
+    wildcards: version=stripping21r1, stream=bhadroncompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:36 2023]
+Finished job 43.
+15 of 51 steps (29%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:36 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_charmcompleteevent.txt
+    jobid: 14
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_charmcompleteevent.txt
+    wildcards: version=stripping21r0p1, stream=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:36 2023]
+Finished job 28.
+16 of 51 steps (31%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:36 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_bhadroncompleteevent.txt
+    jobid: 37
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_bhadroncompleteevent.txt
+    wildcards: version=stripping21r1p1, stream=bhadroncompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:37 2023]
+Finished job 13.
+17 of 51 steps (33%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:37 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_charmcompleteevent.txt
+    jobid: 22
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_charmcompleteevent.txt
+    wildcards: version=stripping21r0p2, stream=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:37 2023]
+Finished job 21.
+18 of 51 steps (35%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:37 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_dimuon.txt
+    jobid: 7
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_dimuon.txt
+    wildcards: version=stripping21, stream=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:37 2023]
+Finished job 6.
+19 of 51 steps (37%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:37 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_bhadroncompleteevent.txt
+    jobid: 45
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_bhadroncompleteevent.txt
+    wildcards: version=stripping21r1p2, stream=bhadroncompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:37 2023]
+Finished job 36.
+20 of 51 steps (39%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:37 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_charm.txt
+    jobid: 30
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_charm.txt
+    wildcards: version=stripping21r1, stream=charm
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:37 2023]
+Finished job 29.
+21 of 51 steps (41%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:37 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_dimuon.txt
+    jobid: 15
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_dimuon.txt
+    wildcards: version=stripping21r0p1, stream=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:37 2023]
+Finished job 44.
+22 of 51 steps (43%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:37 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_charm.txt
+    jobid: 38
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_charm.txt
+    wildcards: version=stripping21r1p1, stream=charm
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:37 2023]
+Finished job 14.
+23 of 51 steps (45%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:37 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_dimuon.txt
+    jobid: 23
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_dimuon.txt
+    wildcards: version=stripping21r0p2, stream=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:37 2023]
+Finished job 37.
+24 of 51 steps (47%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:37 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_semileptonic.txt
+    jobid: 8
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_semileptonic.txt
+    wildcards: version=stripping21, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:37 2023]
+Finished job 22.
+25 of 51 steps (49%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:37 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_semileptonic.txt
+    jobid: 24
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_semileptonic.txt
+    wildcards: version=stripping21r0p2, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:38 2023]
+Finished job 7.
+26 of 51 steps (51%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:38 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_commonparticles.txt
+    jobid: 9
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_commonparticles.txt
+    wildcards: version=stripping21, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:38 2023]
+Finished job 45.
+27 of 51 steps (53%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:38 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_charmcompleteevent.txt
+    jobid: 47
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_charmcompleteevent.txt
+    wildcards: version=stripping21r1p2, stream=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:38 2023]
+Finished job 15.
+28 of 51 steps (55%) done
+[Thu Oct  5 17:44:38 2023]
+Finished job 23.
+29 of 51 steps (57%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:38 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_dimuon.txt
+    jobid: 32
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_dimuon.txt
+    wildcards: version=stripping21r1, stream=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Oct  5 17:44:38 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_commonparticles.txt
+    jobid: 17
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_commonparticles.txt
+    wildcards: version=stripping21r0p1, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:38 2023]
+Finished job 38.
+30 of 51 steps (59%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:38 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_radiative.txt
+    jobid: 2
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_radiative.txt
+    wildcards: version=stripping21, stream=radiative
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Select jobs to execute...
+[Thu Oct  5 17:44:38 2023]
+Finished job 30.
+31 of 51 steps (61%) done
+
+[Thu Oct  5 17:44:38 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_dimuon.txt
+    jobid: 40
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_dimuon.txt
+    wildcards: version=stripping21r1p1, stream=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:38 2023]
+Finished job 8.
+32 of 51 steps (63%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:38 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_commonparticles.txt
+    jobid: 25
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_commonparticles.txt
+    wildcards: version=stripping21r0p2, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:38 2023]
+Finished job 24.
+33 of 51 steps (65%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:38 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_semileptonic.txt
+    jobid: 33
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_semileptonic.txt
+    wildcards: version=stripping21r1, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:38 2023]
+Finished job 9.
+34 of 51 steps (67%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:38 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_leptonic.txt
+    jobid: 10
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_leptonic.txt
+    wildcards: version=stripping21r0p1, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:38 2023]
+Finished job 47.
+35 of 51 steps (69%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:38 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_dimuon.txt
+    jobid: 48
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_dimuon.txt
+    wildcards: version=stripping21r1p2, stream=dimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:39 2023]
+Finished job 32.
+36 of 51 steps (71%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:39 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_charm.txt
+    jobid: 46
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_charm.txt
+    wildcards: version=stripping21r1p2, stream=charm
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:39 2023]
+Finished job 17.
+37 of 51 steps (73%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:39 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_charmcompleteevent.txt
+    jobid: 31
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_charmcompleteevent.txt
+    wildcards: version=stripping21r1, stream=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:39 2023]
+Finished job 2.
+38 of 51 steps (75%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:39 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_semileptonic.txt
+    jobid: 16
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_semileptonic.txt
+    wildcards: version=stripping21r0p1, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:39 2023]
+Finished job 40.
+39 of 51 steps (76%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:39 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_leptonic.txt
+    jobid: 1
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_leptonic.txt
+    wildcards: version=stripping21, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:39 2023]
+Finished job 25.
+40 of 51 steps (78%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:39 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_leptonic.txt
+    jobid: 18
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_leptonic.txt
+    wildcards: version=stripping21r0p2, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:39 2023]
+Finished job 33.
+41 of 51 steps (80%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:39 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_bhadron.txt
+    jobid: 3
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_bhadron.txt
+    wildcards: version=stripping21, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:39 2023]
+Finished job 10.
+42 of 51 steps (82%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:39 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_charmcompleteevent.txt
+    jobid: 39
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_charmcompleteevent.txt
+    wildcards: version=stripping21r1p1, stream=charmcompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:39 2023]
+Finished job 48.
+43 of 51 steps (84%) done
+[Thu Oct  5 17:44:39 2023]
+Finished job 46.
+44 of 51 steps (86%) done
+[Thu Oct  5 17:44:40 2023]
+Finished job 31.
+45 of 51 steps (88%) done
+[Thu Oct  5 17:44:40 2023]
+Finished job 16.
+46 of 51 steps (90%) done
+[Thu Oct  5 17:44:40 2023]
+Finished job 1.
+47 of 51 steps (92%) done
+[Thu Oct  5 17:44:40 2023]
+Finished job 18.
+48 of 51 steps (94%) done
+[Thu Oct  5 17:44:40 2023]
+Finished job 39.
+49 of 51 steps (96%) done
+[Thu Oct  5 17:44:40 2023]
+Finished job 3.
+50 of 51 steps (98%) done
+Select jobs to execute...
+
+[Thu Oct  5 17:44:40 2023]
+localrule prepare_stripping:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_leptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_radiative.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_bhadron.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_bhadroncompleteevent.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_charm.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_charmcompleteevent.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_dimuon.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_semileptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_commonparticles.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_leptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_bhadron.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_bhadroncompleteevent.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_charm.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_charmcompleteevent.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_dimuon.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_semileptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_commonparticles.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_leptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_bhadron.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_bhadroncompleteevent.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_charm.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_charmcompleteevent.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_dimuon.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_semileptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_commonparticles.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_leptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_radiative.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_bhadron.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_bhadroncompleteevent.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_charm.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_charmcompleteevent.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_dimuon.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_semileptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_commonparticles.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_leptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_bhadron.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_bhadroncompleteevent.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_charm.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_charmcompleteevent.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_dimuon.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_semileptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_commonparticles.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_leptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_bhadron.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_bhadroncompleteevent.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_charm.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_charmcompleteevent.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_dimuon.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_semileptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_commonparticles.txt
+    jobid: 0
+    reason: Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_charm.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_dimuon.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_bhadron.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_bhadron.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_radiative.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_bhadroncompleteevent.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_commonparticles.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_commonparticles.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_bhadron.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_charmcompleteevent.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_leptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_bhadroncompleteevent.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_semileptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_charmcompleteevent.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_leptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_bhadroncompleteevent.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_dimuon.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_commonparticles.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_commonparticles.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_charmcompleteevent.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_charmcompleteevent.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_charm.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_leptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_semileptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_leptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_charmcompleteevent.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_charm.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_dimuon.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_semileptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_semileptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_charm.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_charmcompleteevent.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_radiative.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_commonparticles.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21_leptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_charm.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_charm.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_dimuon.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1_bhadron.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_bhadron.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_bhadroncompleteevent.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_bhadroncompleteevent.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_semileptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p1_dimuon.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_bhadroncompleteevent.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p1_semileptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r0p2_commonparticles.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_leptonic.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_bhadron.txt, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/lists/line_list_stripping21r1p2_dimuon.txt
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Oct  5 17:44:40 2023]
+Finished job 0.
+51 of 51 steps (100%) done
+Complete log: .snakemake/log/2023-10-05T174434.089542.snakemake.log

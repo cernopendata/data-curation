@@ -1,0 +1,79 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+clean_index              2
+convert_index            2
+prepare_stripping        1
+total                    5
+
+Select jobs to execute...
+
+[Thu Sep 28 12:41:00 2023]
+rule clean_index:
+    input: clean_index_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21_html/index.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21_html/index_clean.html
+    jobid: 5
+    reason: Updated input files: clean_index_pages.py
+    wildcards: version=stripping21
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Sep 28 12:41:00 2023]
+rule clean_index:
+    input: clean_index_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1_html/index.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1_html/index_clean.html
+    jobid: 6
+    reason: Updated input files: clean_index_pages.py
+    wildcards: version=stripping21r1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Sep 28 12:41:00 2023]
+Finished job 6.
+1 of 5 steps (20%) done
+[Thu Sep 28 12:41:00 2023]
+Finished job 5.
+2 of 5 steps (40%) done
+Select jobs to execute...
+
+[Thu Sep 28 12:41:00 2023]
+rule convert_index:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21_html/index_clean.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/stripping21_index.md
+    jobid: 7
+    reason: Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21_html/index_clean.html
+    wildcards: version=stripping21
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Thu Sep 28 12:41:00 2023]
+rule convert_index:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1_html/index_clean.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/stripping21r1_index.md
+    jobid: 8
+    reason: Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1_html/index_clean.html
+    wildcards: version=stripping21r1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Sep 28 12:41:01 2023]
+Finished job 8.
+3 of 5 steps (60%) done
+[Thu Sep 28 12:41:01 2023]
+Finished job 7.
+4 of 5 steps (80%) done
+Select jobs to execute...
+
+[Thu Sep 28 12:41:01 2023]
+localrule prepare_stripping:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21_html/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1_html/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21_html/index_clean.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1_html/index_clean.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/stripping21_index.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/stripping21r1_index.md
+    jobid: 0
+    reason: Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/stripping21r1_index.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1_html/index_clean.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/stripping21_index.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21_html/index_clean.html
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Thu Sep 28 12:41:01 2023]
+Finished job 0.
+5 of 5 steps (100%) done
+Complete log: .snakemake/log/2023-09-28T124100.324986.snakemake.log

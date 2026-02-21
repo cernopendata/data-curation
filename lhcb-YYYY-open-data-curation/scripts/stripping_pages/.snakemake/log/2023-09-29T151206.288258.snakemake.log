@@ -1,0 +1,3 @@
+ValueError in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 17:
+list.remove(x): x not in list
+  File "/Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile", line 17, in <module>

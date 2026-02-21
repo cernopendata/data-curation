@@ -1,0 +1,130 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+download_raw_stripping       50
+list_raw_stripping           48
+prepare_stripping             1
+total                        99
+
+Select jobs to execute...
+
+[Mon Oct  9 14:31:41 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p1_bhadron.txt
+    jobid: 11
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p1_bhadron.txt
+    wildcards: version=stripping21r0p1, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Mon Oct  9 14:31:41 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r1p2_semileptonic.txt
+    jobid: 49
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r1p2_semileptonic.txt
+    wildcards: version=stripping21r1p2, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Mon Oct  9 14:31:41 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r1_commonparticles.txt
+    jobid: 34
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r1_commonparticles.txt
+    wildcards: version=stripping21r1, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Mon Oct  9 14:31:41 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p2_bhadron.txt
+    jobid: 19
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r0p2_bhadron.txt
+    wildcards: version=stripping21r0p2, stream=bhadron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Mon Oct  9 14:31:41 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21_bhadroncompleteevent.txt
+    jobid: 4
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21_bhadroncompleteevent.txt
+    wildcards: version=stripping21, stream=bhadroncompleteevent
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Mon Oct  9 14:31:41 2023]
+rule list_raw_stripping:
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r1p1_commonparticles.txt
+    jobid: 42
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r1p1_commonparticles.txt
+    wildcards: version=stripping21r1p1, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Mon Oct  9 14:31:41 2023]
+rule download_raw_stripping:
+    input: lines_downloader.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r1p1_semileptonic.txt
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/semileptonic
+    jobid: 91
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/semileptonic
+    wildcards: version=stripping21r1p1, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Mon Oct  9 14:31:41 2023]
+rule download_raw_stripping:
+    input: lines_downloader.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r1_leptonic.txt
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/leptonic
+    jobid: 76
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/leptonic
+    wildcards: version=stripping21r1, stream=leptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Mon Oct  9 14:31:41 2023]
+Error in rule download_raw_stripping:
+    jobid: 91
+    input: lines_downloader.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r1p1_semileptonic.txt
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1p1/semileptonic
+    shell:
+        
+        python3 lines_downloader.py --inputfile
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Oct  9 14:31:41 2023]
+Error in rule download_raw_stripping:
+    jobid: 76
+    input: lines_downloader.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/lists/line_list_stripping21r1_leptonic.txt
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/leptonic
+    shell:
+        
+        python3 lines_downloader.py --inputfile
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Mon Oct  9 14:31:42 2023]
+Finished job 49.
+1 of 99 steps (1%) done
+[Mon Oct  9 14:31:42 2023]
+Finished job 42.
+2 of 99 steps (2%) done
+[Mon Oct  9 14:31:42 2023]
+Finished job 34.
+3 of 99 steps (3%) done
+[Mon Oct  9 14:31:42 2023]
+Finished job 4.
+4 of 99 steps (4%) done
+[Mon Oct  9 14:31:42 2023]
+Finished job 19.
+5 of 99 steps (5%) done
+[Mon Oct  9 14:31:42 2023]
+Finished job 11.
+6 of 99 steps (6%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-09T143140.870992.snakemake.log

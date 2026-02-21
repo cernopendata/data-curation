@@ -1,0 +1,38 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+prepare_stripping        1
+strip_index              1
+total                    2
+
+Select jobs to execute...
+
+[Wed Sep 27 16:53:06 2023]
+rule strip_index:
+    input: strip_index_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/index.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1_html/index.html
+    jobid: 3
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1_html/index.html
+    wildcards: version=stripping21r1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Wed Sep 27 16:53:06 2023]
+Finished job 3.
+1 of 2 steps (50%) done
+Select jobs to execute...
+
+[Wed Sep 27 16:53:06 2023]
+localrule prepare_stripping:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21_html/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1_html/index.html
+    jobid: 0
+    reason: Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1_html/index.html
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Wed Sep 27 16:53:06 2023]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: .snakemake/log/2023-09-27T165305.857754.snakemake.log

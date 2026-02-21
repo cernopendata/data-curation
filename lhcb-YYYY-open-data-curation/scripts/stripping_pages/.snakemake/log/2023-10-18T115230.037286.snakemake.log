@@ -1,0 +1,4 @@
+Building DAG of jobs...
+FileNotFoundError in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 143:
+[Errno 2] No such file or directory: '/Users/mindaugassarpis/Work/StrippingPages/stripping21/EW.DST'
+  File "/Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile", line 143, in get_input

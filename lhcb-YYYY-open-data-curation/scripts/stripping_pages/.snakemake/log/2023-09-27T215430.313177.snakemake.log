@@ -1,0 +1,51 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+clean_index              2
+prepare_stripping        1
+total                    3
+
+Select jobs to execute...
+
+[Wed Sep 27 21:54:30 2023]
+rule clean_index:
+    input: clean_index_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21_html/index.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21_html/index_clean.html
+    jobid: 5
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21_html/index_clean.html
+    wildcards: version=stripping21
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Wed Sep 27 21:54:30 2023]
+rule clean_index:
+    input: clean_index_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1_html/index.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1_html/index_clean.html
+    jobid: 6
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1_html/index_clean.html
+    wildcards: version=stripping21r1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Wed Sep 27 21:54:30 2023]
+Finished job 6.
+1 of 3 steps (33%) done
+[Wed Sep 27 21:54:30 2023]
+Finished job 5.
+2 of 3 steps (67%) done
+Select jobs to execute...
+
+[Wed Sep 27 21:54:30 2023]
+localrule prepare_stripping:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21_html/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1_html/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21_html/index_clean.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1_html/index_clean.html
+    jobid: 0
+    reason: Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21_html/index_clean.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1_html/index_clean.html
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Wed Sep 27 21:54:30 2023]
+Finished job 0.
+3 of 3 steps (100%) done
+Complete log: .snakemake/log/2023-09-27T215430.313177.snakemake.log

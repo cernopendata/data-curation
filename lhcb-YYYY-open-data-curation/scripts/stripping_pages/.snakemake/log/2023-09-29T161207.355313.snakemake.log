@@ -1,0 +1,1941 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count
+---------------------  -------
+clean_stripping_pages      139
+prepare_stripping            1
+total                      140
+
+Select jobs to execute...
+
+[Fri Sep 29 16:12:07 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdallloosegammadd.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallloosegammadd.html
+    jobid: 88
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallloosegammadd.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdallloosegammadd
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:07 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdalltightsymgammall.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalltightsymgammall.html
+    jobid: 60
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalltightsymgammall.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdalltightsymgammall
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:07 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdalltightgammall.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalltightgammall.html
+    jobid: 98
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalltightgammall.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdalltightgammall
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:07 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdalltightsymgammadd.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalltightsymgammadd.html
+    jobid: 10
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalltightsymgammadd.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdalltightsymgammadd
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:07 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdalltightgammadd.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalltightgammadd.html
+    jobid: 134
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalltightgammadd.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdalltightgammadd
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:07 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stddielectrongamma.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stddielectrongamma.html
+    jobid: 46
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stddielectrongamma.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stddielectrongamma
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:07 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdallloosegammall.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallloosegammall.html
+    jobid: 110
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallloosegammall.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdallloosegammall
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:07 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stddielectronfromtracks.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stddielectronfromtracks.html
+    jobid: 9
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stddielectronfromtracks.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stddielectronfromtracks
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:08 2023]
+Finished job 60.
+1 of 140 steps (1%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:08 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooseanndownelectrons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseanndownelectrons.html
+    jobid: 64
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseanndownelectrons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooseanndownelectrons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:08 2023]
+Finished job 98.
+2 of 140 steps (1%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:08 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdtightanndownelectrons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightanndownelectrons.html
+    jobid: 124
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightanndownelectrons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdtightanndownelectrons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:08 2023]
+Finished job 46.
+3 of 140 steps (2%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:08 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooseannupelectrons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannupelectrons.html
+    jobid: 80
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannupelectrons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooseannupelectrons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:08 2023]
+Finished job 88.
+4 of 140 steps (3%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:08 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdtightannupelectrons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannupelectrons.html
+    jobid: 94
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannupelectrons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdtightannupelectrons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:08 2023]
+Finished job 110.
+5 of 140 steps (4%) done
+[Fri Sep 29 16:12:08 2023]
+Finished job 10.
+6 of 140 steps (4%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:08 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdalllooseannelectrons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalllooseannelectrons.html
+    jobid: 54
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalllooseannelectrons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdalllooseannelectrons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:08 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooseanndownprotons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseanndownprotons.html
+    jobid: 138
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseanndownprotons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooseanndownprotons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:08 2023]
+Finished job 9.
+7 of 140 steps (5%) done
+[Fri Sep 29 16:12:08 2023]
+Finished job 134.
+8 of 140 steps (6%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:08 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdtightannelectrons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannelectrons.html
+    jobid: 38
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannelectrons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdtightannelectrons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:08 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdtightanndownprotons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightanndownprotons.html
+    jobid: 118
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightanndownprotons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdtightanndownprotons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Select jobs to execute...
+[Fri Sep 29 16:12:08 2023]
+Finished job 64.
+9 of 140 steps (6%) done
+
+[Fri Sep 29 16:12:08 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdalllooseelectrons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalllooseelectrons.html
+    jobid: 57
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalllooseelectrons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdalllooseelectrons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:08 2023]
+Finished job 124.
+10 of 140 steps (7%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:08 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdtightannupprotons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannupprotons.html
+    jobid: 87
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannupprotons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdtightannupprotons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:08 2023]
+Finished job 80.
+11 of 140 steps (8%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:08 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooseannupprotons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannupprotons.html
+    jobid: 37
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannupprotons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooseannupprotons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:08 2023]
+Finished job 94.
+12 of 140 steps (9%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:08 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdtightanndownpions.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightanndownpions.html
+    jobid: 123
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightanndownpions.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdtightanndownpions
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:08 2023]
+Finished job 54.
+13 of 140 steps (9%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:08 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdtightanndownmuons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightanndownmuons.html
+    jobid: 68
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightanndownmuons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdtightanndownmuons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:08 2023]
+Finished job 138.
+14 of 140 steps (10%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:08 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooseanndownpions.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseanndownpions.html
+    jobid: 29
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseanndownpions.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooseanndownpions
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:08 2023]
+Finished job 38.
+15 of 140 steps (11%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:08 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooseanndownkaons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseanndownkaons.html
+    jobid: 139
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseanndownkaons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooseanndownkaons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:08 2023]
+Finished job 118.
+16 of 140 steps (11%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:08 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdtightanndownkaons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightanndownkaons.html
+    jobid: 26
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightanndownkaons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdtightanndownkaons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:09 2023]
+Finished job 87.
+17 of 140 steps (12%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:09 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdallveryloosemuons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallveryloosemuons.html
+    jobid: 122
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallveryloosemuons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdallveryloosemuons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:09 2023]
+Finished job 37.
+18 of 140 steps (13%) done
+[Fri Sep 29 16:12:09 2023]
+Finished job 57.
+19 of 140 steps (14%) done
+[Fri Sep 29 16:12:09 2023]
+Finished job 123.
+20 of 140 steps (14%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:09 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdalllooseprotons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalllooseprotons.html
+    jobid: 36
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalllooseprotons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdalllooseprotons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:09 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdtightelectrons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightelectrons.html
+    jobid: 97
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightelectrons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdtightelectrons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:09 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosedownkaons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedownkaons.html
+    jobid: 117
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedownkaons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosedownkaons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:09 2023]
+Finished job 68.
+21 of 140 steps (15%) done
+[Fri Sep 29 16:12:09 2023]
+Finished job 29.
+22 of 140 steps (16%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:09 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdtightannupmuons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannupmuons.html
+    jobid: 72
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannupmuons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdtightannupmuons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:09 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooseannuppions.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannuppions.html
+    jobid: 90
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannuppions.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooseannuppions
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:09 2023]
+Finished job 139.
+23 of 140 steps (16%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:09 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooseannupkaons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannupkaons.html
+    jobid: 55
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannupkaons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooseannupkaons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Select jobs to execute...
+[Fri Sep 29 16:12:09 2023]
+Finished job 26.
+24 of 140 steps (17%) done
+
+[Fri Sep 29 16:12:09 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdtightannuppions.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannuppions.html
+    jobid: 15
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannuppions.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdtightannuppions
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:09 2023]
+Finished job 122.
+25 of 140 steps (18%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:09 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdtightannupkaons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannupkaons.html
+    jobid: 112
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannupkaons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdtightannupkaons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:09 2023]
+Finished job 36.
+26 of 140 steps (19%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:09 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdtightmuons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightmuons.html
+    jobid: 47
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightmuons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdtightmuons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:09 2023]
+Finished job 97.
+27 of 140 steps (19%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:09 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosedownmuons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedownmuons.html
+    jobid: 81
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedownmuons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosedownmuons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:09 2023]
+Finished job 117.
+28 of 140 steps (20%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:09 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdallloosekaons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallloosekaons.html
+    jobid: 71
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallloosekaons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdallloosekaons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:09 2023]
+Finished job 72.
+29 of 140 steps (21%) done
+[Fri Sep 29 16:12:09 2023]
+Finished job 90.
+30 of 140 steps (21%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:09 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdtightprotons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightprotons.html
+    jobid: 28
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightprotons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdtightprotons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:09 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdalllooseannprotons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalllooseannprotons.html
+    jobid: 91
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalllooseannprotons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdalllooseannprotons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:09 2023]
+Finished job 55.
+31 of 140 steps (22%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:09 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdallloosemuons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallloosemuons.html
+    jobid: 116
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallloosemuons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdallloosemuons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Select jobs to execute...
+[Fri Sep 29 16:12:10 2023]
+Finished job 15.
+32 of 140 steps (23%) done
+
+[Fri Sep 29 16:12:10 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdalllooseannpions.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalllooseannpions.html
+    jobid: 99
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalllooseannpions.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdalllooseannpions
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:10 2023]
+Finished job 47.
+33 of 140 steps (24%) done
+[Fri Sep 29 16:12:10 2023]
+Finished job 112.
+34 of 140 steps (24%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:10 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdtightpions.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightpions.html
+    jobid: 114
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightpions.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdtightpions
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:10 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdalllooseannkaons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalllooseannkaons.html
+    jobid: 69
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalllooseannkaons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdalllooseannkaons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:10 2023]
+Finished job 81.
+35 of 140 steps (25%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:10 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdtightkaons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightkaons.html
+    jobid: 12
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightkaons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdtightkaons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:10 2023]
+Finished job 71.
+36 of 140 steps (26%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:10 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdtightannprotons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannprotons.html
+    jobid: 104
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannprotons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdtightannprotons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:10 2023]
+Finished job 91.
+37 of 140 steps (26%) done
+[Fri Sep 29 16:12:10 2023]
+Finished job 28.
+38 of 140 steps (27%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:10 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdtightannmuons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannmuons.html
+    jobid: 106
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannmuons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdtightannmuons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:10 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdtightannpions.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannpions.html
+    jobid: 56
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannpions.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdtightannpions
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:10 2023]
+Finished job 116.
+39 of 140 steps (28%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:10 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdtightannkaons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannkaons.html
+    jobid: 86
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannkaons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdtightannkaons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Select jobs to execute...
+[Fri Sep 29 16:12:10 2023]
+Finished job 99.
+40 of 140 steps (29%) done
+
+[Fri Sep 29 16:12:10 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdallloosepions.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallloosepions.html
+    jobid: 48
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallloosepions.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdallloosepions
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:10 2023]
+Finished job 114.
+41 of 140 steps (29%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:10 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdjets.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdjets.html
+    jobid: 74
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdjets.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdjets
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:10 2023]
+Finished job 69.
+42 of 140 steps (30%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:10 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdnopidsdownprotons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsdownprotons.html
+    jobid: 19
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsdownprotons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdnopidsdownprotons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:10 2023]
+Finished job 104.
+43 of 140 steps (31%) done
+[Fri Sep 29 16:12:10 2023]
+Finished job 12.
+44 of 140 steps (31%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:10 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdnopidsdownelectrons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsdownelectrons.html
+    jobid: 22
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsdownelectrons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdnopidsdownelectrons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:10 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdnopidsdownpions.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsdownpions.html
+    jobid: 129
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsdownpions.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdnopidsdownpions
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Select jobs to execute...
+[Fri Sep 29 16:12:10 2023]
+Finished job 106.
+45 of 140 steps (32%) done
+
+[Fri Sep 29 16:12:10 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdallnopidselectrons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallnopidselectrons.html
+    jobid: 126
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallnopidselectrons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdallnopidselectrons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:11 2023]
+Finished job 56.
+46 of 140 steps (33%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:11 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdallnopidsprotons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallnopidsprotons.html
+    jobid: 5
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallnopidsprotons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdallnopidsprotons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:11 2023]
+Finished job 86.
+47 of 140 steps (34%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:11 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdnopidsupkaons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsupkaons.html
+    jobid: 127
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsupkaons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdnopidsupkaons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:11 2023]
+Finished job 48.
+48 of 140 steps (34%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:11 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdnopidsuppions.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsuppions.html
+    jobid: 18
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsuppions.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdnopidsuppions
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:11 2023]
+Finished job 74.
+49 of 140 steps (35%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:11 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdallnopidskaons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallnopidskaons.html
+    jobid: 31
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallnopidskaons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdallnopidskaons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:11 2023]
+Finished job 22.
+50 of 140 steps (36%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:11 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdallnopidsmuons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallnopidsmuons.html
+    jobid: 62
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallnopidsmuons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdallnopidsmuons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:11 2023]
+Finished job 19.
+51 of 140 steps (36%) done
+[Fri Sep 29 16:12:11 2023]
+Finished job 129.
+52 of 140 steps (37%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:11 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdallnopidspions.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallnopidspions.html
+    jobid: 135
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallnopidspions.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdallnopidspions
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:11 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooseeta2gg.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseeta2gg.html
+    jobid: 8
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseeta2gg.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooseeta2gg
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:11 2023]
+Finished job 126.
+53 of 140 steps (38%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:11 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosepi02gg.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosepi02gg.html
+    jobid: 96
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosepi02gg.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosepi02gg
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:11 2023]
+Finished job 5.
+54 of 140 steps (39%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:11 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdverylooseallphotons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdverylooseallphotons.html
+    jobid: 66
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdverylooseallphotons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdverylooseallphotons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Select jobs to execute...
+[Fri Sep 29 16:12:11 2023]
+Finished job 127.
+55 of 140 steps (39%) done
+
+[Fri Sep 29 16:12:11 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosecnvphotons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosecnvphotons.html
+    jobid: 77
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosecnvphotons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosecnvphotons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:11 2023]
+Finished job 18.
+56 of 140 steps (40%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:11 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooseallphotons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseallphotons.html
+    jobid: 83
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseallphotons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooseallphotons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:11 2023]
+Finished job 31.
+57 of 140 steps (41%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:11 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosephotons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosephotons.html
+    jobid: 107
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosephotons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosephotons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:11 2023]
+Finished job 135.
+58 of 140 steps (41%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:11 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosedplus2hhh.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedplus2hhh.html
+    jobid: 3
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedplus2hhh.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosedplus2hhh
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:11 2023]
+Finished job 62.
+59 of 140 steps (42%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:11 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosedsplus2kkpioppsign.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedsplus2kkpioppsign.html
+    jobid: 78
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedsplus2kkpioppsign.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosedsplus2kkpioppsign
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:11 2023]
+Finished job 8.
+60 of 140 steps (43%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:11 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdtightdetachedtau3pi.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightdetachedtau3pi.html
+    jobid: 111
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightdetachedtau3pi.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdtightdetachedtau3pi
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:11 2023]
+Finished job 96.
+61 of 140 steps (44%) done
+[Fri Sep 29 16:12:11 2023]
+Finished job 66.
+62 of 140 steps (44%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:11 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosedetachedtau3pi.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedetachedtau3pi.html
+    jobid: 132
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedetachedtau3pi.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosedetachedtau3pi
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:11 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosedplus2kkk.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedplus2kkk.html
+    jobid: 16
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedplus2kkk.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosedplus2kkk
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:12 2023]
+Finished job 77.
+63 of 140 steps (45%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:12 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosedetacheddipion.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedetacheddipion.html
+    jobid: 63
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedetacheddipion.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosedetacheddipion
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Select jobs to execute...
+[Fri Sep 29 16:12:12 2023]
+Finished job 83.
+64 of 140 steps (46%) done
+
+[Fri Sep 29 16:12:12 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooselambdac2pkpi.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooselambdac2pkpi.html
+    jobid: 93
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooselambdac2pkpi.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooselambdac2pkpi
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:12 2023]
+Finished job 107.
+65 of 140 steps (46%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:12 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdtightdplus2kpipioppsignpi.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightdplus2kpipioppsignpi.html
+    jobid: 35
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightdplus2kpipioppsignpi.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdtightdplus2kpipioppsignpi
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:12 2023]
+Finished job 3.
+66 of 140 steps (47%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:12 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdverytightdsplus2kkpi.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdverytightdsplus2kkpi.html
+    jobid: 136
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdverytightdsplus2kkpi.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdverytightdsplus2kkpi
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:12 2023]
+Finished job 78.
+67 of 140 steps (48%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:12 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooserhoplus.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooserhoplus.html
+    jobid: 128
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooserhoplus.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooserhoplus
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:12 2023]
+Finished job 111.
+68 of 140 steps (49%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:12 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosepi02gee.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosepi02gee.html
+    jobid: 121
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosepi02gee.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosepi02gee
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:12 2023]
+Finished job 132.
+69 of 140 steps (49%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:12 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosedplus2kpipioppsignpi.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedplus2kpipioppsignpi.html
+    jobid: 120
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedplus2kpipioppsignpi.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosedplus2kpipioppsignpi
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:12 2023]
+Finished job 16.
+70 of 140 steps (50%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:12 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdverylooselambdall.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdverylooselambdall.html
+    jobid: 17
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdverylooselambdall.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdverylooselambdall
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:12 2023]
+Finished job 63.
+71 of 140 steps (51%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:12 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosedsplus2kkpi.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedsplus2kkpi.html
+    jobid: 1
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedsplus2kkpi.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosedsplus2kkpi
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:12 2023]
+Finished job 93.
+72 of 140 steps (51%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:12 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosedplus2kpipi.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedplus2kpipi.html
+    jobid: 39
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedplus2kpipi.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosedplus2kpipi
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:12 2023]
+Finished job 35.
+73 of 140 steps (52%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:12 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosedplus2kkpi.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedplus2kkpi.html
+    jobid: 51
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedplus2kkpi.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosedplus2kkpi
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:12 2023]
+Finished job 136.
+74 of 140 steps (53%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:12 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooselambdadd.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooselambdadd.html
+    jobid: 79
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooselambdadd.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooselambdadd
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:12 2023]
+Finished job 128.
+75 of 140 steps (54%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:12 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosed02kpidcs.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosed02kpidcs.html
+    jobid: 58
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosed02kpidcs.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosed02kpidcs
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:12 2023]
+Finished job 121.
+76 of 140 steps (54%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:12 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosed02pipi.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosed02pipi.html
+    jobid: 102
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosed02pipi.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosed02pipi
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:12 2023]
+Finished job 120.
+77 of 140 steps (55%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:12 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosed02kpi.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosed02kpi.html
+    jobid: 14
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosed02kpi.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosed02kpi
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:12 2023]
+Finished job 17.
+78 of 140 steps (56%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:12 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosed02kk.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosed02kk.html
+    jobid: 52
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosed02kk.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosed02kk
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:12 2023]
+Finished job 1.
+79 of 140 steps (56%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:12 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooselambdall.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooselambdall.html
+    jobid: 105
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooselambdall.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooselambdall
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:13 2023]
+Finished job 39.
+80 of 140 steps (57%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:13 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosedalitzpi0.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedalitzpi0.html
+    jobid: 40
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedalitzpi0.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosedalitzpi0
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:13 2023]
+Finished job 51.
+81 of 140 steps (58%) done
+[Fri Sep 29 16:12:13 2023]
+Finished job 79.
+82 of 140 steps (59%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:13 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosedplus2pipipi.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedplus2pipipi.html
+    jobid: 20
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedplus2pipipi.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosedplus2pipipi
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:13 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdallloosemupion.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallloosemupion.html
+    jobid: 76
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallloosemupion.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdallloosemupion
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Select jobs to execute...
+[Fri Sep 29 16:12:13 2023]
+Finished job 58.
+83 of 140 steps (59%) done
+
+[Fri Sep 29 16:12:13 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosedstarwithd02kpidcs.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedstarwithd02kpidcs.html
+    jobid: 59
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedstarwithd02kpidcs.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosedstarwithd02kpidcs
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:13 2023]
+Finished job 102.
+84 of 140 steps (60%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:13 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosedstarwithd02pipi.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedstarwithd02pipi.html
+    jobid: 65
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedstarwithd02pipi.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosedstarwithd02pipi
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:13 2023]
+Finished job 14.
+85 of 140 steps (61%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:13 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosed02kspipi.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosed02kspipi.html
+    jobid: 103
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosed02kspipi.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosed02kspipi
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:13 2023]
+Finished job 52.
+86 of 140 steps (61%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:13 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosedstarwithd02kpi.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedstarwithd02kpi.html
+    jobid: 43
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedstarwithd02kpi.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosedstarwithd02kpi
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:13 2023]
+Finished job 105.
+87 of 140 steps (62%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:13 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosedstarwithd02kk.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedstarwithd02kk.html
+    jobid: 82
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedstarwithd02kk.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosedstarwithd02kk
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:13 2023]
+Finished job 40.
+88 of 140 steps (63%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:13 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosed02kskk.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosed02kskk.html
+    jobid: 108
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosed02kskk.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosed02kskk
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:13 2023]
+Finished job 20.
+89 of 140 steps (64%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:13 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosekstar2kpi.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosekstar2kpi.html
+    jobid: 95
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosekstar2kpi.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosekstar2kpi
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:13 2023]
+Finished job 76.
+90 of 140 steps (64%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:13 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdveryloosedetachedkst2kpi.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdveryloosedetachedkst2kpi.html
+    jobid: 53
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdveryloosedetachedkst2kpi.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdveryloosedetachedkst2kpi
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:13 2023]
+Finished job 59.
+91 of 140 steps (65%) done
+[Fri Sep 29 16:12:13 2023]
+Finished job 65.
+92 of 140 steps (66%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:13 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdmassconstrainedjpsi2mumu.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdmassconstrainedjpsi2mumu.html
+    jobid: 34
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdmassconstrainedjpsi2mumu.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdmassconstrainedjpsi2mumu
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:13 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooselambdastar2pk.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooselambdastar2pk.html
+    jobid: 119
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooselambdastar2pk.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooselambdastar2pk
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:13 2023]
+Finished job 103.
+93 of 140 steps (66%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:13 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosedetachedkpi.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedetachedkpi.html
+    jobid: 70
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedetachedkpi.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosedetachedkpi
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Select jobs to execute...
+[Fri Sep 29 16:12:13 2023]
+Finished job 43.
+94 of 140 steps (67%) done
+
+[Fri Sep 29 16:12:13 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooseksdd.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseksdd.html
+    jobid: 109
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseksdd.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooseksdd
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:13 2023]
+Finished job 82.
+95 of 140 steps (68%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:13 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosepi024e.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosepi024e.html
+    jobid: 73
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosepi024e.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosepi024e
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:14 2023]
+Finished job 108.
+96 of 140 steps (69%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:14 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooseksll.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseksll.html
+    jobid: 89
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseksll.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooseksll
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:14 2023]
+Finished job 95.
+97 of 140 steps (69%) done
+[Fri Sep 29 16:12:14 2023]
+Finished job 53.
+98 of 140 steps (70%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:14 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosedetacheddielectron.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedetacheddielectron.html
+    jobid: 125
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedetacheddielectron.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosedetacheddielectron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:14 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooserho0.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooserho0.html
+    jobid: 131
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooserho0.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooserho0
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:14 2023]
+Finished job 34.
+99 of 140 steps (71%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:14 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosedetachedphi2kk.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedetachedphi2kk.html
+    jobid: 101
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedetachedphi2kk.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosedetachedphi2kk
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:14 2023]
+Finished job 119.
+100 of 140 steps (71%) done
+[Fri Sep 29 16:12:14 2023]
+Finished job 70.
+101 of 140 steps (72%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:14 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdveryloosejpsi2mumu.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdveryloosejpsi2mumu.html
+    jobid: 30
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdveryloosejpsi2mumu.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdveryloosejpsi2mumu
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:14 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdveryloosedimuon.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdveryloosedimuon.html
+    jobid: 6
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdveryloosedimuon.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdveryloosedimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:14 2023]
+Finished job 109.
+102 of 140 steps (73%) done
+[Fri Sep 29 16:12:14 2023]
+Finished job 73.
+103 of 140 steps (74%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:14 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdtightphi2kk.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightphi2kk.html
+    jobid: 67
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightphi2kk.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdtightphi2kk
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:14 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosedielectron.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedielectron.html
+    jobid: 84
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedielectron.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosedielectron
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Select jobs to execute...
+[Fri Sep 29 16:12:14 2023]
+Finished job 89.
+104 of 140 steps (74%) done
+
+[Fri Sep 29 16:12:14 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosejpsi2mumu.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosejpsi2mumu.html
+    jobid: 24
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosejpsi2mumu.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosejpsi2mumu
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:14 2023]
+Finished job 131.
+105 of 140 steps (75%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:14 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosejpsi2ee.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosejpsi2ee.html
+    jobid: 27
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosejpsi2ee.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosejpsi2ee
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:14 2023]
+Finished job 125.
+106 of 140 steps (76%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:14 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosedimuonsamesign.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedimuonsamesign.html
+    jobid: 25
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedimuonsamesign.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosedimuonsamesign
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:14 2023]
+Finished job 101.
+107 of 140 steps (76%) done
+[Fri Sep 29 16:12:14 2023]
+Finished job 30.
+108 of 140 steps (77%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:14 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosedimuon.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedimuon.html
+    jobid: 113
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedimuon.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosedimuon
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:14 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosephi2kk.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosephi2kk.html
+    jobid: 41
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosephi2kk.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosephi2kk
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:14 2023]
+Finished job 6.
+109 of 140 steps (78%) done
+[Fri Sep 29 16:12:14 2023]
+Finished job 67.
+110 of 140 steps (79%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:14 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdltunbiasedjpsi2mumu.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdltunbiasedjpsi2mumu.html
+    jobid: 23
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdltunbiasedjpsi2mumu.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdltunbiasedjpsi2mumu
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:14 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosedetachedkst2kpi.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedetachedkst2kpi.html
+    jobid: 137
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedetachedkst2kpi.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosedetachedkst2kpi
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:14 2023]
+Finished job 84.
+111 of 140 steps (79%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:14 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooseannelectrons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannelectrons.html
+    jobid: 85
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannelectrons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooseannelectrons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Select jobs to execute...
+[Fri Sep 29 16:12:14 2023]
+Finished job 24.
+112 of 140 steps (80%) done
+
+[Fri Sep 29 16:12:14 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooseannprotons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannprotons.html
+    jobid: 32
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannprotons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooseannprotons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:15 2023]
+Finished job 27.
+113 of 140 steps (81%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:15 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdnopidselectrons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidselectrons.html
+    jobid: 42
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidselectrons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdnopidselectrons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:15 2023]
+Finished job 25.
+114 of 140 steps (81%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:15 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdveryloosemuons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdveryloosemuons.html
+    jobid: 4
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdveryloosemuons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdveryloosemuons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:15 2023]
+Finished job 113.
+115 of 140 steps (82%) done
+[Fri Sep 29 16:12:15 2023]
+Finished job 41.
+116 of 140 steps (83%) done
+[Fri Sep 29 16:12:15 2023]
+Finished job 23.
+117 of 140 steps (84%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:15 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdnopidsprotons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsprotons.html
+    jobid: 75
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsprotons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdnopidsprotons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:15 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooseelectrons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseelectrons.html
+    jobid: 100
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseelectrons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooseelectrons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:15 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooseannkaons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannkaons.html
+    jobid: 130
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannkaons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooseannkaons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:15 2023]
+Finished job 137.
+118 of 140 steps (84%) done
+[Fri Sep 29 16:12:15 2023]
+Finished job 85.
+119 of 140 steps (85%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:15 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooseannpions.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannpions.html
+    jobid: 33
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannpions.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooseannpions
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:15 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooseprotons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseprotons.html
+    jobid: 49
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseprotons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooseprotons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Select jobs to execute...
+[Fri Sep 29 16:12:15 2023]
+Finished job 32.
+120 of 140 steps (86%) done
+
+[Fri Sep 29 16:12:15 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdnopidskaons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidskaons.html
+    jobid: 13
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidskaons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdnopidskaons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:15 2023]
+Finished job 42.
+121 of 140 steps (86%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:15 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdnopidsmuons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsmuons.html
+    jobid: 45
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsmuons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdnopidsmuons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:15 2023]
+Finished job 4.
+122 of 140 steps (87%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:15 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdnopidspions.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidspions.html
+    jobid: 115
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidspions.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdnopidspions
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:15 2023]
+Finished job 75.
+123 of 140 steps (88%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:15 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosepions.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosepions.html
+    jobid: 92
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosepions.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosepions
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:15 2023]
+Finished job 100.
+124 of 140 steps (89%) done
+[Fri Sep 29 16:12:15 2023]
+Finished job 130.
+125 of 140 steps (89%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:15 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosemuons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosemuons.html
+    jobid: 2
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosemuons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosemuons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 16:12:15 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosekaons.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosekaons.html
+    jobid: 50
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosekaons.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosekaons
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:15 2023]
+Finished job 33.
+126 of 140 steps (90%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:15 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooseresolvedpi0.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseresolvedpi0.html
+    jobid: 133
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseresolvedpi0.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooseresolvedpi0
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:15 2023]
+Finished job 49.
+127 of 140 steps (91%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:15 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooseresolvedeta.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseresolvedeta.html
+    jobid: 7
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseresolvedeta.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooseresolvedeta
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Select jobs to execute...
+[Fri Sep 29 16:12:15 2023]
+Finished job 13.
+128 of 140 steps (91%) done
+
+[Fri Sep 29 16:12:15 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooselambdald.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooselambdald.html
+    jobid: 44
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooselambdald.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooselambdald
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:16 2023]
+Finished job 45.
+129 of 140 steps (92%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:16 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdlooseksld.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseksld.html
+    jobid: 11
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseksld.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdlooseksld
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:16 2023]
+Finished job 115.
+130 of 140 steps (93%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:16 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdloosemergedpi0.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosemergedpi0.html
+    jobid: 21
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosemergedpi0.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdloosemergedpi0
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:16 2023]
+Finished job 92.
+131 of 140 steps (94%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:16 2023]
+rule clean_stripping_pages:
+    input: clean_stripping_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/commonparticles/stdparticleflow.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdparticleflow.html
+    jobid: 61
+    reason: Missing output files: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdparticleflow.html
+    wildcards: version=stripping21r0p1, stream=commonparticles, linename=stdparticleflow
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:16 2023]
+Finished job 2.
+132 of 140 steps (94%) done
+[Fri Sep 29 16:12:16 2023]
+Finished job 50.
+133 of 140 steps (95%) done
+[Fri Sep 29 16:12:16 2023]
+Finished job 133.
+134 of 140 steps (96%) done
+[Fri Sep 29 16:12:16 2023]
+Finished job 7.
+135 of 140 steps (96%) done
+[Fri Sep 29 16:12:16 2023]
+Finished job 44.
+136 of 140 steps (97%) done
+[Fri Sep 29 16:12:16 2023]
+Finished job 11.
+137 of 140 steps (98%) done
+[Fri Sep 29 16:12:16 2023]
+Finished job 61.
+138 of 140 steps (99%) done
+[Fri Sep 29 16:12:16 2023]
+Finished job 21.
+139 of 140 steps (99%) done
+Select jobs to execute...
+
+[Fri Sep 29 16:12:16 2023]
+localrule prepare_stripping:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedsplus2kkpi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosemuons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedplus2hhh.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdveryloosemuons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallnopidsprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdveryloosedimuon.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseresolvedeta.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseeta2gg.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stddielectronfromtracks.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalltightsymgammadd.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseksld.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightkaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidskaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosed02kpi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannuppions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedplus2kkk.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdverylooselambdall.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsuppions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsdownprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedplus2pipipi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosemergedpi0.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsdownelectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdltunbiasedjpsi2mumu.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosejpsi2mumu.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedimuonsamesign.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightanndownkaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosejpsi2ee.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseanndownpions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdveryloosejpsi2mumu.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallnopidskaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannpions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdmassconstrainedjpsi2mumu.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightdplus2kpipioppsignpi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalllooseprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannupprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannelectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedplus2kpipi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedalitzpi0.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosephi2kk.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidselectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedstarwithd02kpi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooselambdald.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsmuons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stddielectrongamma.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightmuons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallloosepions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosekaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedplus2kkpi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosed02kk.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdveryloosedetachedkst2kpi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalllooseannelectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannupkaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannpions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalllooseelectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosed02kpidcs.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedstarwithd02kpidcs.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalltightsymgammall.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdparticleflow.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallnopidsmuons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedetacheddipion.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseanndownelectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedstarwithd02pipi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdverylooseallphotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightphi2kk.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightanndownmuons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalllooseannkaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedetachedkpi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallloosekaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannupmuons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosepi024e.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdjets.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallloosemupion.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosecnvphotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedsplus2kkpioppsign.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooselambdadd.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannupelectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedownmuons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedstarwithd02kk.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseallphotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedielectron.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannelectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannkaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannupprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallloosegammadd.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseksll.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannuppions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalllooseannprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosepions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooselambdac2pkpi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannupelectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosekstar2kpi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosepi02gg.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightelectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalltightgammall.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalllooseannpions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseelectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedetachedphi2kk.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosed02pipi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosed02kspipi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooselambdall.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannmuons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosephotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosed02kskk.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseksdd.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallloosegammall.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightdetachedtau3pi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannupkaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedimuon.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightpions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidspions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallloosemuons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedownkaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightanndownprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooselambdastar2pk.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedplus2kpipioppsignpi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosepi02gee.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallveryloosemuons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightanndownpions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightanndownelectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedetacheddielectron.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallnopidselectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsupkaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooserhoplus.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsdownpions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannkaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooserho0.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedetachedtau3pi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseresolvedpi0.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalltightgammadd.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallnopidspions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdverytightdsplus2kkpi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedetachedkst2kpi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseanndownprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseanndownkaons.html
+    jobid: 0
+    reason: Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalllooseannkaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsdownpions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedstarwithd02kpi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooselambdastar2pk.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseallphotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidskaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallnopidselectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedstarwithd02pipi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdveryloosejpsi2mumu.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightanndownmuons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannkaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedsplus2kkpi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdparticleflow.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalllooseannprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdverylooselambdall.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stddielectronfromtracks.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannupprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightanndownprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosed02kk.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsuppions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedetachedkst2kpi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedimuonsamesign.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseresolvedeta.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedetacheddipion.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseksdd.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalltightgammadd.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosepi024e.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdverytightdsplus2kkpi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalltightsymgammadd.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalllooseannelectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallveryloosemuons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosed02kskk.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosemuons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooselambdadd.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannupkaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannpions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannupelectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedetacheddielectron.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedsplus2kkpioppsign.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedstarwithd02kpidcs.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalllooseelectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseanndownprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedplus2kpipi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdveryloosemuons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallnopidskaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseanndownkaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsupkaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosejpsi2ee.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannuppions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosephotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedalitzpi0.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallloosekaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosephi2kk.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightelectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightpions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallloosemuons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallloosegammall.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedimuon.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidselectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannupelectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallloosepions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedetachedtau3pi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallloosemupion.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightanndownelectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedstarwithd02kk.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooselambdald.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosed02kspipi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightphi2kk.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdjets.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedownkaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stddielectrongamma.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightanndownpions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallloosegammadd.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannupmuons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedetachedphi2kk.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedplus2hhh.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooselambdall.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidspions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsmuons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdveryloosedetachedkst2kpi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannpions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightmuons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedetachedkpi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooserhoplus.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallnopidspions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdmassconstrainedjpsi2mumu.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosekaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosepi02gee.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannuppions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosed02kpidcs.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosekstar2kpi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdltunbiasedjpsi2mumu.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsdownprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedielectron.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightkaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightdplus2kpipioppsignpi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannelectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosepions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannmuons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdverylooseallphotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosemergedpi0.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseeta2gg.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseksll.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannelectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightanndownkaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseanndownelectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedownmuons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosed02pipi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalllooseprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosepi02gg.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseannupkaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosed02kpi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedplus2kpipioppsignpi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedplus2pipipi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalllooseannpions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedplus2kkpi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalltightgammall.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosejpsi2mumu.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdnopidsdownelectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdveryloosedimuon.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseksld.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdalltightsymgammall.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannkaons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightdetachedtau3pi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseanndownpions.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooserho0.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseelectrons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosedplus2kkk.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooseresolvedpi0.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdloosecnvphotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallnopidsmuons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdtightannupprotons.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdlooselambdac2pkpi.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-stdallnopidsprotons.html
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 16:12:16 2023]
+Finished job 0.
+140 of 140 steps (100%) done
+Complete log: .snakemake/log/2023-09-29T161207.355313.snakemake.log

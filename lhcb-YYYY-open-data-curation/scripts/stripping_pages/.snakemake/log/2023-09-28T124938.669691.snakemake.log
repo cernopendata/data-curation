@@ -1,0 +1,5 @@
+TypeError in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 11:
+expected str, bytes or os.PathLike object, not list
+  File "/Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile", line 11, in <module>
+  File "/Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile", line 11, in <listcomp>
+  File "/usr/local/anaconda3/lib/python3.10/posixpath.py", line 152, in dirname

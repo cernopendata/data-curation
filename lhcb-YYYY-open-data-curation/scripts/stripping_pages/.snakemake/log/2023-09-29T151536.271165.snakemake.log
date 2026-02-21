@@ -1,0 +1,52 @@
+Building DAG of jobs...
+MissingInputException in rule prepare_stripping in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 19:
+Missing input files for rule prepare_stripping:
+    affected files:
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/commonparticles/strippingbetasbs2jpsieephiline.md
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/commonparticles/clean-strippingb2xgammaexclbs2phigammaline.html
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-strippingbc2ds1gammaws_line.html
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/commonparticles/strippingbetasbd2jpsieeksbd2jpsieeksprescaledline.md
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-strippingbc2ds1gamma_line.html
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r0p1/commonparticles/strippingbc2ds1gamma_line.md
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r0p1/commonparticles/strippingb2xgammaexclbs2phigammaline.md
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/commonparticles/strippingbetasbd2jpsieeksbd2jpsieeksdetachedline.md
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/commonparticles/strippingbetasbs2jpsieephiline.md
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r0p1/commonparticles/strippingbetasbs2jpsieephifromtracksline.md
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/commonparticles/strippingbetasbd2jpsieeksbd2jpsieeksdetachedline.md
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-strippingbetasbs2jpsieephifromtracksline.html
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/commonparticles/strippingbetasbs2jpsieephidetachedline.md
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/commonparticles/strippingbetasbs2jpsieephidetachedline.md
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r0p1/commonparticles/strippingbetasbs2jpsieephiline.md
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r0p1/commonparticles/strippingbetasbd2jpsieeksbd2jpsieeksdetachedline.md
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/commonparticles/clean-strippingb2xgammaexclbs2phigammaline.html
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/commonparticles/strippingbc2ds1gammaws_line.md
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/commonparticles/clean-strippingbetasbs2jpsieephifromtracksline.html
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/commonparticles/clean-strippingbc2ds1gammaws_line.html
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r0p1/commonparticles/strippingbc2ds1gammaws_line.md
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/commonparticles/clean-strippingbetasbd2jpsieeksbd2jpsieeksprescaledline.html
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r0p1/commonparticles/strippingbetasbd2jpsieeksbd2jpsieeksprescaledline.md
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-strippingbetasbd2jpsieeksbd2jpsieeksdetachedline.html
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-strippingbetasbd2jpsieeksbd2jpsieeksprescaledline.html
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/commonparticles/strippingbetasbd2jpsieeksbd2jpsieeksprescaledline.md
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r0p1/commonparticles/strippingbetasbs2jpsieephidetachedline.md
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/commonparticles/clean-strippingbetasbs2jpsieephidetachedline.html
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/commonparticles/strippingbc2ds1gammaws_line.md
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/commonparticles/clean-strippingbetasbs2jpsieephiline.html
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/commonparticles/strippingbc2ds1gamma_line.md
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-strippingbetasbs2jpsieephidetachedline.html
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/commonparticles/strippingbetasbs2jpsieephifromtracksline.md
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/commonparticles/clean-strippingbc2ds1gammaws_line.html
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/commonparticles/strippingb2xgammaexclbs2phigammaline.md
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/commonparticles/strippingbetasbs2jpsieephifromtracksline.md
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-strippingb2xgammaexclbs2phigammaline.html
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/commonparticles/clean-strippingbc2ds1gamma_line.html
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/commonparticles/clean-strippingbetasbs2jpsieephiline.html
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/commonparticles/clean-strippingbc2ds1gamma_line.html
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/commonparticles/clean-strippingbetasbd2jpsieeksbd2jpsieeksdetachedline.html
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/commonparticles/clean-strippingbetasbs2jpsieephidetachedline.html
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/commonparticles/strippingb2xgammaexclbs2phigammaline.md
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/commonparticles/clean-strippingbetasbs2jpsieephiline.html
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/commonparticles/clean-strippingbetasbd2jpsieeksbd2jpsieeksprescaledline.html
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/commonparticles/strippingbc2ds1gamma_line.md
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/commonparticles/clean-strippingbetasbs2jpsieephifromtracksline.html
+        /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/commonparticles/clean-strippingbetasbd2jpsieeksbd2jpsieeksdetachedline.html

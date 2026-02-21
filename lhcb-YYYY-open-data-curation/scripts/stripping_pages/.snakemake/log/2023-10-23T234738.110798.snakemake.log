@@ -1,0 +1,46 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count
+---------------------  -------
+clean_stripping_pages        2
+create_json_files            2
+prepare_stripping            1
+total                        5
+
+Select jobs to execute...
+
+[Mon Oct 23 23:47:38 2023]
+rule clean_stripping_pages:
+    input: /Users/mindaugassarpis/Work/StrippingPages/stripping21/semileptonic, single_clean_stripping_page.py
+    output: ../../release/stripping_pages/processed/stripping21/semileptonic, ../../release/stripping_pages/temp/stripping21/semileptonic, ../../release/stripping_pages/temp/stripping21/semileptonic/success.txt
+    jobid: 3
+    reason: Missing output files: ../../release/stripping_pages/temp/stripping21/semileptonic/success.txt
+    wildcards: version=stripping21, stream=semileptonic
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Mon Oct 23 23:47:38 2023]
+rule clean_stripping_pages:
+    input: /Users/mindaugassarpis/Work/StrippingPages/stripping21/commonparticles, single_clean_stripping_page.py
+    output: ../../release/stripping_pages/processed/stripping21/commonparticles, ../../release/stripping_pages/temp/stripping21/commonparticles, ../../release/stripping_pages/temp/stripping21/commonparticles/success.txt
+    jobid: 4
+    reason: Missing output files: ../../release/stripping_pages/temp/stripping21/commonparticles/success.txt
+    wildcards: version=stripping21, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Terminating processes on user request, this might take some time.
+[Mon Oct 23 23:47:46 2023]
+Error in rule clean_stripping_pages:
+    jobid: 3
+    input: /Users/mindaugassarpis/Work/StrippingPages/stripping21/semileptonic, single_clean_stripping_page.py
+    output: ../../release/stripping_pages/processed/stripping21/semileptonic, ../../release/stripping_pages/temp/stripping21/semileptonic, ../../release/stripping_pages/temp/stripping21/semileptonic/success.txt
+    shell:
+        
+        python3 single_clean_stripping_page.py                     --input_path /Users/mindaugassarpis/Work/StrippingPages/stripping21/semileptonic            --output_path ../../release/stripping_pages/processed/stripping21/semileptonic         --temp_path ../../release/stripping_pages/temp/stripping21/semileptonic         --version stripping21              --stream semileptonic                && touch ../../release/stripping_pages/temp/stripping21/semileptonic/success.txt
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Cancelling snakemake on user request.

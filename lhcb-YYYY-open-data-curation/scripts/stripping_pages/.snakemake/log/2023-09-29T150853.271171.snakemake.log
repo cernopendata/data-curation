@@ -1,0 +1,194 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                       count
+----------------------  -------
+clean_index                   3
+convert_index                 3
+download_raw_stripping        3
+prepare_stripping             1
+strip_index                   3
+total                        13
+
+Select jobs to execute...
+
+[Fri Sep 29 15:08:53 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/index.html
+    jobid: 1
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 15:08:53 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/index.html
+    jobid: 3
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+
+[Fri Sep 29 15:08:53 2023]
+rule download_raw_stripping:
+    input: raw_stripping_downloader.py
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/index.html
+    jobid: 2
+    reason: Updated input files: raw_stripping_downloader.py
+    wildcards: version=stripping21r0p1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 15:08:59 2023]
+Finished job 1.
+1 of 13 steps (8%) done
+Select jobs to execute...
+
+[Fri Sep 29 15:08:59 2023]
+rule strip_index:
+    input: strip_index_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/index.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/index.html
+    jobid: 4
+    reason: Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/index.html
+    wildcards: version=stripping21
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 15:08:59 2023]
+Finished job 4.
+2 of 13 steps (15%) done
+Select jobs to execute...
+
+[Fri Sep 29 15:08:59 2023]
+rule clean_index:
+    input: clean_index_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/index.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/index_clean.html
+    jobid: 7
+    reason: Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/index.html
+    wildcards: version=stripping21
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 15:08:59 2023]
+Finished job 7.
+3 of 13 steps (23%) done
+Select jobs to execute...
+
+[Fri Sep 29 15:08:59 2023]
+rule convert_index:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/index_clean.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/stripping21-index.md
+    jobid: 10
+    reason: Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/index_clean.html
+    wildcards: version=stripping21
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 15:08:59 2023]
+Finished job 2.
+4 of 13 steps (31%) done
+Select jobs to execute...
+
+[Fri Sep 29 15:08:59 2023]
+rule strip_index:
+    input: strip_index_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/index.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/index.html
+    jobid: 5
+    reason: Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/index.html
+    wildcards: version=stripping21r0p1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 15:08:59 2023]
+Finished job 10.
+5 of 13 steps (38%) done
+[Fri Sep 29 15:08:59 2023]
+Finished job 5.
+6 of 13 steps (46%) done
+Select jobs to execute...
+
+[Fri Sep 29 15:08:59 2023]
+rule clean_index:
+    input: clean_index_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/index.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/index_clean.html
+    jobid: 8
+    reason: Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/index.html
+    wildcards: version=stripping21r0p1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+Waiting at most 5 seconds for missing files.
+[Fri Sep 29 15:09:01 2023]
+Finished job 3.
+7 of 13 steps (54%) done
+Select jobs to execute...
+
+[Fri Sep 29 15:09:01 2023]
+rule strip_index:
+    input: strip_index_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/index.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/index.html
+    jobid: 6
+    reason: Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/index.html
+    wildcards: version=stripping21r1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 15:09:01 2023]
+Finished job 8.
+8 of 13 steps (62%) done
+Select jobs to execute...
+
+[Fri Sep 29 15:09:01 2023]
+rule convert_index:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/index_clean.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r0p1/stripping21r0p1-index.md
+    jobid: 11
+    reason: Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/index_clean.html
+    wildcards: version=stripping21r0p1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 15:09:01 2023]
+Finished job 11.
+9 of 13 steps (69%) done
+[Fri Sep 29 15:09:01 2023]
+Finished job 6.
+10 of 13 steps (77%) done
+Select jobs to execute...
+
+[Fri Sep 29 15:09:01 2023]
+rule clean_index:
+    input: clean_index_pages.py, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/index.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/index_clean.html
+    jobid: 9
+    reason: Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/index.html
+    wildcards: version=stripping21r1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 15:09:01 2023]
+Finished job 9.
+11 of 13 steps (85%) done
+Select jobs to execute...
+
+[Fri Sep 29 15:09:01 2023]
+rule convert_index:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/index_clean.html
+    output: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/stripping21r1-index.md
+    jobid: 12
+    reason: Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/index_clean.html
+    wildcards: version=stripping21r1
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 15:09:01 2023]
+Finished job 12.
+12 of 13 steps (92%) done
+Select jobs to execute...
+
+[Fri Sep 29 15:09:01 2023]
+localrule prepare_stripping:
+    input: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/index_clean.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/index_clean.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/index_clean.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/stripping21-index.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r0p1/stripping21r0p1-index.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/stripping21r1-index.md
+    jobid: 0
+    reason: Input files updated by another job: /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r1/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21r0p1/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/raw/stripping21/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/index_clean.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/index_clean.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r0p1/stripping21r0p1-index.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r0p1/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/index.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21/stripping21-index.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/processed/stripping21r1/stripping21r1-index.md, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21r1/index_clean.html, /Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/index.html
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Fri Sep 29 15:09:01 2023]
+Finished job 0.
+13 of 13 steps (100%) done
+Complete log: .snakemake/log/2023-09-29T150853.271171.snakemake.log

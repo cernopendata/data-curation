@@ -1,0 +1,36 @@
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                  count
+-----------------  -------
+clean_index              1
+prepare_stripping        1
+total                    2
+
+Select jobs to execute...
+
+[Mon Oct 16 17:22:25 2023]
+rule clean_index:
+    input: clean_index_pages.py, ../release/stripping_pages/temp/stripping21/stripped_index.html
+    output: ../release/stripping_pages/temp/stripping21/clean_index.html
+    jobid: 2
+    reason: Missing output files: ../release/stripping_pages/temp/stripping21/clean_index.html
+    wildcards: version=stripping21
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Mon Oct 16 17:22:25 2023]
+Error in rule clean_index:
+    jobid: 2
+    input: clean_index_pages.py, ../release/stripping_pages/temp/stripping21/stripped_index.html
+    output: ../release/stripping_pages/temp/stripping21/clean_index.html
+    shell:
+        
+        python3 clean_index_pages.py                     --inputfile ../release/stripping_pages/temp/stripping21/stripped_index.html         --version stripping21              --outputfile ../release/stripping_pages/temp/stripping21/clean_index.html
+        
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-16T172225.036089.snakemake.log

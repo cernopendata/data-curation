@@ -1,0 +1,57 @@
+The flag 'directory' used in rule clean_stripping_pages is only valid for outputs, not inputs.
+Building DAG of jobs...
+Using shell: /bin/bash
+Provided cores: 8
+Rules claiming more threads will be scaled down.
+Job stats:
+job                      count
+---------------------  -------
+clean_stripping_pages        2
+prepare_stripping            1
+total                        3
+
+Select jobs to execute...
+
+[Wed Oct 18 13:01:54 2023]
+rule clean_stripping_pages:
+    input: /Users/mindaugassarpis/Work/StrippingPages/stripping21/ew
+    output: ../../release/stripping_pages/temp/stripping21/ew), ../../release/stripping_pages/temp/stripping21/ew/success.txt
+    jobid: 3
+    reason: Missing output files: ../../release/stripping_pages/temp/stripping21/ew/success.txt
+    wildcards: version=stripping21, stream=ew
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Wed Oct 18 13:01:54 2023]
+rule clean_stripping_pages:
+    input: /Users/mindaugassarpis/Work/StrippingPages/stripping21/commonparticles
+    output: ../../release/stripping_pages/temp/stripping21/commonparticles), ../../release/stripping_pages/temp/stripping21/commonparticles/success.txt
+    jobid: 4
+    reason: Missing output files: ../../release/stripping_pages/temp/stripping21/commonparticles/success.txt
+    wildcards: version=stripping21, stream=commonparticles
+    resources: tmpdir=/var/folders/45/mg69sv5j77930c4g6fztkg5w0000gn/T
+
+[Wed Oct 18 13:01:54 2023]
+Error in rule clean_stripping_pages:
+    jobid: 3
+    input: /Users/mindaugassarpis/Work/StrippingPages/stripping21/ew
+    output: ../../release/stripping_pages/temp/stripping21/ew), ../../release/stripping_pages/temp/stripping21/ew/success.txt
+
+[Wed Oct 18 13:01:54 2023]
+Error in rule clean_stripping_pages:
+    jobid: 4
+    input: /Users/mindaugassarpis/Work/StrippingPages/stripping21/commonparticles
+    output: ../../release/stripping_pages/temp/stripping21/commonparticles), ../../release/stripping_pages/temp/stripping21/commonparticles/success.txt
+
+RuleException:
+NameError in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 84:
+The name 'output' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}
+  File "/Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile", line 84, in __rule_clean_stripping_pages
+  File "/usr/local/anaconda3/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+RuleException:
+NameError in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 84:
+The name 'output' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}
+  File "/Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile", line 84, in __rule_clean_stripping_pages
+  File "/usr/local/anaconda3/lib/python3.10/concurrent/futures/thread.py", line 58, in run
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: .snakemake/log/2023-10-18T130153.904694.snakemake.log

@@ -1,0 +1,3 @@
+WorkflowError in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 59:
+Duplicate output file pattern in rule list_raw_stripping. First two duplicate for entries 1 and 2.
+  File "/Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile", line 59, in <module>

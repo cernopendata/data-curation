@@ -1,0 +1,5 @@
+Building DAG of jobs...
+ChildIOException:
+File/directory is a child to another output:
+('/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/commonparticles', clean_stripping_pages)
+('/Users/mindaugassarpis/Work/OpenData/release/stripping_pages/temp/stripping21/commonparticles/json_success.txt', create_json_files)

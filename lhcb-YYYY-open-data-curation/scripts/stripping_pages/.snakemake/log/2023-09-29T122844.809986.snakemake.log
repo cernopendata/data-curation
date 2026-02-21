@@ -1,0 +1,3 @@
+NameError in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 83:
+name 'stream_constr' is not defined
+  File "/Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile", line 83, in <module>

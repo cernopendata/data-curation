@@ -1,0 +1,8 @@
+Building DAG of jobs...
+InputFunctionException in rule prepare_stripping in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 39:
+Error:
+  AttributeError: 'Wildcards' object has no attribute 'stream'
+Wildcards:
+
+Traceback:
+  File "/Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile", line 34, in filter_input_by_wildcards

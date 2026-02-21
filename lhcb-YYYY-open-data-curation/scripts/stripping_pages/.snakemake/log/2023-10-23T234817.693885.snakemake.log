@@ -1,0 +1,7 @@
+Building DAG of jobs...
+MissingInputException in rule create_json_files in file /Users/mindaugassarpis/Work/OpenData/scripts/stripping_pages/Snakefile, line 78:
+Missing input files for rule create_json_files:
+    output: ../../release/stripping_pages/temp/json_success_stripping21_semileptonic.txt
+    wildcards: version=stripping21, stream=semileptonic
+    affected files:
+        ../../release/stripping_pages/processed
