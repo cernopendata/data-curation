@@ -10,7 +10,7 @@ import csv
 
 # File with the mapping of file names for each dataset - merge all the metadata files we have
 json_file_locations = {}
-with open('/eos/opendata/atlas/upload/evgen_metadata/od_hepmc_file_mapping.json','r') as json_metadata_file:
+with open('od_hepmc_file_mapping.json','r') as json_metadata_file:
     json_file_locations.update( json.load(json_metadata_file)['file_locations'] )
 
 no_uris = []
@@ -34,21 +34,30 @@ with open('EVNT_metadata.csv','r') as evgen_metadata_csv_file, open('database_me
         my_dsid = row['DSID']
         if row['CoMEnergy'] not in ['13000.0','13600.0']:
             print(f'Did not understand CoM Energy: {row["CoMEnergy"]}')
+            continue
         ci = '13' if row['CoMEnergy']=='13000.0' else '13p6'
 
         full_md[ci][my_dsid] = { x:row[x] for x in ['CoMEnergy','kFactor','GenEvents','Filters','GenTune','PDF','Release'] }
         # List of files if we have it
+        actual_nEvents = 0
+        # Loop through all the keys to match the dataset
         for akey in json_file_locations:
-            if akey.split('.')[1]==my_dsid:
+            # Match the dataset
+            if akey.split('.')[1]==my_dsid and (('13p6' in akey.split('.')[0] and ci=='13p6') or ('13p6' not in akey.split('.')[0] and ci=='13')):
+                # Update the file list field
                 full_md[ci][my_dsid]['file_list'] = [ json_file_locations[akey][x]['uri'] for x in json_file_locations[akey] if 'uri' in json_file_locations[akey][x] ]
+                actual_nEvents = sum([ json_file_locations[akey][x]['events'] for x in json_file_locations[akey] if 'events' in json_file_locations[akey][x] ])
+                # Additionally check for instances where we don't have files transferred and flag them
                 for x in json_file_locations[akey]:
                     if 'uri' not in json_file_locations[akey][x]:
-                        if akey not in no_uris: no_uris += [akey]
+                        if akey not in no_uris:
+                            no_uris += [akey]
+
         # Now a few parts of the metadata that need to be reformated
         full_md[ci][my_dsid]['keywords'] = [ x.strip() for x in row['Keywords'].split(',') ]
         full_md[ci][my_dsid]['job_path'] = row['JobOptions']
         full_md[ci][my_dsid]['genFiltEff'] = row['FiltEff']
-        full_md[ci][my_dsid]['nEvents'] = row['Events']
+        full_md[ci][my_dsid]['nEvents'] = actual_nEvents #row['Events']
         full_md[ci][my_dsid]['generator'] = row['GenName']
         full_md[ci][my_dsid]['description'] = row['PhysComment']
         full_md[ci][my_dsid]['physics_short'] = row['PhysicsShort']
@@ -88,4 +97,3 @@ print(f'Releasing {dsid_tot:,} total datasets in the metadata with {dsid_wfiles:
 print(f'   In the releases, we have {len(full_md["13"])} 13 TeV datasets and {len(full_md["13p6"])} 13.6 TeV datasets')
 print(f'   with {dsid_wfilesCOM["13"]} files ({eventsCOM["13"]} events) at 13 TeV and')
 print(f'   with {dsid_wfilesCOM["13p6"]} files ({eventsCOM["13p6"]} events) at 13.6 TeV')
-
