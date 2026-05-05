@@ -18,7 +18,9 @@ static_did_post = '_OpenData_v0_p6026_'+datetime.date.today().isoformat()
 # Previous request json files to ensure we don't bother processing duplicate datasets
 previous_requests = ['mc_file_mapping_OpenData_v0_p6026_2024-04-16_with_metadata.json',
                      'mc_file_mapping_OpenData_v1_p6026_2024-04-23_with_metadata.json',
-                     'mc_file_mapping_OpenData_v0_p6026_2024-04-30_with_metadata.json']
+                     'mc_file_mapping_OpenData_v0_p6026_2024-04-30_with_metadata.json',
+                     'mc_file_mapping_OpenData_v0_p6026_2024-05-13_with_metadata.json',
+                     'mc_file_mapping_OpenData_v0_p6026_2026-05-05.json']
 already_processed_datasets = []
 for old_request_json in previous_requests:
     with open(old_request_json,'r') as old_request_file:
@@ -26,7 +28,7 @@ for old_request_json in previous_requests:
         already_processed_datasets += old_request_data['file_dictionary'].keys()
 
 # Flag to disable the use of rucio - so that we can test and make json files without making rules
-really_use_rucio = True
+really_use_rucio = False #True
 if really_use_rucio:
     print('Really using rucio for data transfers')
 else:
@@ -126,11 +128,12 @@ if really_use_rucio:
         # Or activity="User Subscriptions"
     except Exception as e:
         print('An error occurred during rucio rule creation. Check the rules carefully!')
-print(f'Created rules {rid} for {len(user_did_list)} datasets to be transferred')
 
-# Record the rules that we just made
-with open( 'mc_rule_list'+static_did_post+'.txt' , 'w' ) as rule_list:
-    rule_list.write( '\n'.join(rid) )
+    # Record the rules that we just made
+    with open( 'mc_rule_list'+static_did_post+'.txt' , 'w' ) as rule_list:
+        rule_list.write( '\n'.join(rid) )
+
+print(f'Created rules {rid} for {len(user_did_list)} datasets to be transferred')
 
 # Record the file mapping that we established
 with open( 'mc_file_mapping'+static_did_post+'.json', 'w' ) as file_backup:

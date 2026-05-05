@@ -50,6 +50,8 @@ dataset_files = {
               'categories':{'primary':'Standard Model Physics','secondary':['Top physics'], 'source':'ATLAS Collaboration'},'doi':'10.7483/OPENDATA.ATLAS.MM1Y.O0PH'},
   'mc_top_systematics.txt':{'name':'MC simulation top systematic variation samples','recid':'80018','name_short':'mc-pp-top-syst',
               'categories':{'primary':'Standard Model Physics','secondary':['Top physics'], 'source':'ATLAS Collaboration'},'doi':'10.7483/OPENDATA.ATLAS.F7P0.VAST'},
+  'mc_ew_susy_grid.txt':{'name':'MC simulation SUSY EW signal samples','recid':'00000', 'name_short':'mc-pp-susy-ewgrid',
+              'categories':{'primary':'Exotica','secondary':['Miscellaneous'], 'source':'ATLAS Collaboration'},'doi':'10.7483/OPENDATA.ATLAS.0000.0000'},
     }
 
 
@@ -127,7 +129,8 @@ evergreen_data = {
 mc_json_filenames = ['mc_file_mapping_OpenData_v1_p6026_2024-04-23_with_metadata.json',
                      'mc_file_mapping_OpenData_v0_p6026_2024-04-16_with_metadata.json',
                      'mc_file_mapping_OpenData_v0_p6026_2024-04-30_with_metadata.json',
-                     'mc_file_mapping_OpenData_v0_p6026_2024-05-13_with_metadata.json']
+                     'mc_file_mapping_OpenData_v0_p6026_2024-05-13_with_metadata.json',
+                     'mc_file_mapping_OpenData_v0_p6026_2026-05-05_with_metadata.json']
 mc_json_files = [ open(x,'r') for x in mc_json_filenames ]
 mc_json_sets = [ json.load(x) for x in mc_json_files ]
 mc_json = None
