@@ -63,7 +63,7 @@ def get_keywords_from_JO(set_name):
                 if 'evgenConfig.keywords' in aline.split('#')[0]:
                     exec( aline.replace('evgenConfig.','') )
                     return keywords
-        print(f'For MC15 JO for {set_name} no keywords found')
+        #print(f'For MC15 JO for {set_name} no keywords found')
     else:
         # Otherwise it had better be MC16
         from glob import glob
@@ -74,7 +74,7 @@ def get_keywords_from_JO(set_name):
                     if 'evgenConfig.keywords' in aline.split('#')[0]:
                         exec( aline.replace('evgenConfig.','') )
                         return keywords
-        print(f'For MC(16/23) JO for {set_name} no keywords found')
+        #print(f'For MC(16/23) JO for {set_name} no keywords found')
     return ''
 
 # Check what datasets have already been processed, so they are excluded from the production spreadsheets
@@ -101,7 +101,7 @@ with open('EVNT_metadata.csv','w') as evgen_meta_file, open('EVNT_prod_request15
     prod_sheet23.writerow(['DSID','Event input for evgen (optional)','E_CoM [GeV]','Output events','Type (Evgen, FullSim, AF2, LHE, FCSv2, FastChain, ...)','Priority','Output formats','Evgen Release','Comments','Evgen tag','Evgen merge tag','Simul tag','Merge tag','Digi tag','Reco tag','Rec Merge tag','Deriv tag','Deriv merge tag','Rivet routines'])
 
     # Iterate over our input list
-    for aset_number,aset_line in enumerate(fileinput.input(files=('EVNT_list_Baseline.txt','EVNT_list_Systematic.txt','EVNT_list_Alternative.txt','EVNT_list_Specialised.txt','EVNT_exotics_datasets.txt'))):
+    for aset_number,aset_line in enumerate(fileinput.input(files=('EVNT_list_Baseline.txt','EVNT_list_Systematic.txt','EVNT_list_Alternative.txt','EVNT_list_Specialised.txt','EVNT_exotics_datasets.txt','EVNT_extra_datasets.txt'))):
         # Keep folks posted on how we're doing here
         if (aset_number+1)%100==0:
             print(f'Processing dataset {aset_number+1}')
@@ -175,7 +175,7 @@ with open('EVNT_metadata.csv','w') as evgen_meta_file, open('EVNT_prod_request15
         # Check the number of events per file in case we need a warning
         nFiles = int(metadata['nFiles'])
         warning = ''
-        if max_events / nFiles < 100:
+        if max_events / nFiles < 10:
             warning = f'Only {max_events/nFiles} events per file, '
             print(f'Warning, for {dsid=} {aset} {warning}')
 
@@ -246,6 +246,13 @@ with open('EVNT_metadata.csv','w') as evgen_meta_file, open('EVNT_prod_request15
                 if '561988' in aset: keywords += ', ttW, multilepton, muon'
                 if '561989' in aset: keywords += ', ttW, multilepton, tau'
                 if '561990' in aset: keywords += ', ttW, multilepton, tau'
+            elif '570436' in aset:
+                keywords = '2lepton,Higgs,singleTop,tHiggs'
+            elif '570437' in aset:
+                keywords = '2lepton,Higgs,singleTop,tHiggs,Wt,WHiggs'
+        if keywords.strip()=='':
+            print(f'Warning: No really, you need to add keywords to the sample {aset}')
+
         # Add to the keywords the type of file we are processing
         for atype in ['Baseline','Systematic','Alternative','Specialised']:
             if fileinput.filename() == f'EVNT_list_{atype}.txt':
@@ -270,6 +277,8 @@ with open('EVNT_metadata.csv','w') as evgen_meta_file, open('EVNT_prod_request15
             keywords += ', zhiggs'
         if '500554' in aset:
             keywords += ', whiggs'
+        if '_MVLL' in aset:
+            keywords += ", BSM, VLL"
 
         # Last keyword manipulation: let's sort them so they're a little prettier in the spreadsheets
         keywords = ', '.join(sorted([ x.strip() for x in keywords.split(',') ]))

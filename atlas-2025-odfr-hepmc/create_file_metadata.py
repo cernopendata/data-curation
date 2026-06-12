@@ -37,16 +37,7 @@ with open(dataset_input,'r') as input_hepmc:
 print(f'Read in {len(datasets.keys())} datasets')
 
 # Now we will remove by hand a couple of datasets so that their information is re-added
-for aset in [
-'mc16_13TeV.345056.PowhegPythia8EvtGen_NNPDF3_AZNLO_ZH125J_MINLO_vvbb_VpT.evgen.HEPMC.e5706_e8601',
-'mc16_13TeV.363604.MGPy8EG_N30NLO_Wenu_Ht70_140_CFilterBVeto.evgen.HEPMC.e4944_e8601',
-'mc16_13TeV.364306.Sherpa_222_NNPDF30NNLO_gammagammajj_EWK.evgen.HEPMC.e6264_e8596',
-'mc23_13p6TeV.525662.MGPy8EG_A14NNPDF23_tttw.evgen.HEPMC.e8562_e8528_e8596',
-'mc16_13TeV.700322.Sh_2211_Zee_maxHTpTV2_CVetoBVeto.evgen.HEPMC.e8351_e8596',
-'mc16_13TeV.700336.Sh_2211_Znunu_pTV2_CFilterBVeto.evgen.HEPMC.e8351_e8596',
-'mc16_13TeV.700709.Sh_2212_lvgammajj.evgen.HEPMC.e8433_e8601',
-'mc23_13p6TeV.700773.Sh_2214_enugamma.evgen.HEPMC.e8514_e8528_e8596'
-    ]:
+for aset in []:
     datasets[aset] = []
     file_locations[aset] = {}
 
@@ -105,8 +96,8 @@ for dataset_number,dataset in enumerate(datasets):
         added_datasets += 1
     else:
         print(f'Already have information for {dataset}')
-    if added_datasets>300:
-        print('Added over 300 datasets. Thats enough work for one pass. Stopping here.')
+    if added_datasets>600:
+        print('Added over 600 datasets. Thats enough work for one pass. Stopping here.')
         break
 else:
     print('Got the metadata for all the datasets!')

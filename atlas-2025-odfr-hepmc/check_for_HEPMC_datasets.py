@@ -52,14 +52,16 @@ with open('HEPMC_datasets.txt','a') as output_list:
         if dataset.split('.EVNT')[0] in already_processed:
             continue
         # Try to find out the name of the corresponding HEPMC dataset
-        dsname = dataset.replace('.EVNT.','.HEPMC.')+'_e*'
+        dsname = dataset.replace('.EVNT.','.HEPMC.').replace('.merge','.evgen')+'_e*'
         dids = [ did for did in rc.list_dids(scope=my_scope,filters={'name':dsname}) if '_tid' not in did ]
+        # Match e-tags
+        matched_dids = [ did for did in dids if adataset.split('.')[-1] in did ]
         # This should not happen - HEPMC datasets should be unique (no reason for multiple versions)
-        if len(dids)>1:
+        if len(matched_dids)>1:
             print(f'Multiple HEPMC sets found for {dataset}: {dids}')
         # Record the one we think is the correct one
-        if len(dids)>0:
-            output_list.write(dids[-1]+'\n')
+        if len(matched_dids)>0:
+            output_list.write(matched_dids[-1]+'\n')
         # If we didn't find one, then add it to the list of sets still to go
         else:
             no_hepmc += [dataset]

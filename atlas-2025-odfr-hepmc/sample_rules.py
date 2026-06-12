@@ -61,6 +61,9 @@ record_map = [
                # Leptoquark models
                {'name':'BSM Leptoquark','kwl':['leptoquark'],'not_kwl':[], 'ODkwl':['Exotica','Leptoquarks']},
 
+               # Vector-like leptons
+               {'name':'BSM Vector-like leptons','kwl':['exotic','multilepton'],'not_kwl':['chargedhiggs'], 'ODkwl':['Exotica']},
+
                # Hidden valley / semi-visible jet models
                {'name':'BSM 4-jet Hidden Valley','kwl':['hiddenvalley','4jet'],'not_kwl':[], 'ODkwl':['Exotica','Miscalleneous']},
                {'name':'BSM 2-jet Hidden Valley','kwl':['hiddenvalley','2jet'],'not_kwl':[], 'ODkwl':['Exotica','Miscalleneous']},
@@ -90,8 +93,11 @@ record_map = [
                {'name':'SM ttbar+Higgs','kwl':['higgs','top'],'not_kwl':[], 'ODkwl':['Higgs Physics','Standard Model']},
                {'name':'SM ttbar+Higgs','kwl':['higgs','ttbar'],'not_kwl':[], 'ODkwl':['Higgs Physics','Standard Model']},
                {'name':'SM single top+Higgs','kwl':['higgs','thiggs'],'not_kwl':[], 'ODkwl':['Higgs Physics','Standard Model']},
+               {'name':'SM single top+Higgs','kwl':['Higgs','thiggs'],'not_kwl':[], 'ODkwl':['Higgs Physics','Standard Model']},
+               {'name':'SM single top+Higgs','kwl':['Higgs','tHiggs'],'not_kwl':[], 'ODkwl':['Higgs Physics','Standard Model']},
                {'name':'SM Other Higgs','kwl':['higgs'],'not_kwl':['whiggs','zhiggs','thiggs','bsm','top','ttbar','bsmhiggs'], 'ODkwl':['Higgs Physics','Standard Model']},
                {'name':'SM Other Higgs','kwl':['zz','higgs','resonance'],'not_kwl':['whiggs','zhiggs','thiggs','bsm','top','ttbar','bsmhiggs'], 'ODkwl':['Higgs Physics','Standard Model']},
+               {'name':'SM Other Higgs','kwl':['smhiggs'],'not_kwl':['higgs','whiggs','zhiggs','thiggs','bsm','top','ttbar','bsmhiggs'], 'ODkwl':['Higgs Physics','Standard Model']},
 
                # SM Diboson production
                {'name':'SM WW Diboson','kwl':['ww'],'not_kwl':['higgs','smhiggs'], 'ODkwl':['Standard Model','ElectroWeak']},
@@ -171,7 +177,7 @@ record_map = [
 
                # QCD jet production
                {'name':'SM Di-jet Nominal','kwl':['qcd','jets','Baseline'],'not_kwl':['photon'], 'ODkwl':['Standard Model','QCD']},
-               {'name':'SM Di-jet Systematic Variation','kwl':['qcd','jets','Systematic'],'not_kwl':[], 'ODkwl':['Standard Model','QCD']},
+               {'name':'SM Di-jet Systematic Variation','kwl':['qcd','jets','Systematic'],'not_kwl':['photon'], 'ODkwl':['Standard Model','QCD']},
                {'name':'SM Di-jet Alternative','kwl':['qcd','jets','Alternative'],'not_kwl':['photon'], 'ODkwl':['Standard Model','QCD']},
                {'name':'SM Di-jet Specialised','kwl':['qcd','jets','Specialised'],'not_kwl':[], 'ODkwl':['Standard Model','QCD']},
                {'name':'SM Di-jet Systematic Variation','kwl':['2jet','Systematic'],'not_kwl':['1lepton','wz','diboson','hiddenvalley','zz','ww','z','vbs','jets'], 'ODkwl':['Standard Model','QCD']},

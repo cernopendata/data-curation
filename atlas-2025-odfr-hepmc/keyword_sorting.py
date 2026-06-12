@@ -15,6 +15,7 @@ for a in record_map:
 # The dictionary of keywords and number of entries matching each keyword
 unsorted_kw_dict = {}
 samples = {'sorted':0, 'unsorted':0}
+unsorted_samples = []
 
 # Open our metadata file to go through all the EVNT samples we've gathered metadata for
 with open('EVNT_metadata.csv','r') as evgen_metadata_csv_file:
@@ -49,6 +50,7 @@ with open('EVNT_metadata.csv','r') as evgen_metadata_csv_file:
                 if kw not in unsorted_kw_dict:
                     unsorted_kw_dict[kw] = 0
                 unsorted_kw_dict[kw] += 1
+            unsorted_samples += [ row['DSID'] ]
         else:
             samples['sorted'] += 1
 
@@ -61,6 +63,8 @@ for anitem in uniq_record_names:
     my_count = sum( [ x['entries'] for x in record_map if x['name']==anitem ] )
     print(f'Collection {anitem} has {my_count} samples')
 print(f'\n{samples["sorted"]} samples sorted into {len(uniq_record_names)} entries; {samples["unsorted"]} still to go')
+if 0<len(unsorted_samples)<10:
+    print(f'Unsorted DSIDs remaining: {unsorted_samples}')
 
 # Now create a small metadata JSON file
 # This one we will build as a dictionary indexed by name, with the samples we want included
@@ -74,5 +78,10 @@ for anitem in uniq_record_names:
 
 # Record the sample and keyword mapping that we established
 with open( 'od_hepmc_sample_map.json' , 'w' ) as file_backup:
-    json.dump( obj={'sample_dict':sample_dict} , fp=file_backup )
+    json.dump( obj={'sample_dict':sample_dict},
+               fp=file_backup,
+               indent=2,
+               sort_keys=True,
+               ensure_ascii=False,
+               separators=(",", ": ") )
 # All done!

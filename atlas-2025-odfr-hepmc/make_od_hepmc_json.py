@@ -480,4 +480,9 @@ with open('last_record_creation.json','w') as outfile:
 
 # Finally, record a new DOI + Record ID list
 with open('doi_recid_assignment.json','w') as f:
-    json.dump( obj=doirecid_list, fp=f )
+    json.dump( obj=doirecid_list,
+               fp=f,
+               indent=2,
+               sort_keys=True,
+               ensure_ascii=False,
+               separators=(",", ": ") )
