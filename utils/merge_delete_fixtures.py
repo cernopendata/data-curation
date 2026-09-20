@@ -79,10 +79,8 @@ def main(input_file, source_path, target_path, delete_path, wrap_symbol):
             record = concat_nested_value(record, target_paths, wraped_value)
             record = delete_nested_value(record, delete_paths)
         except KeyError:
-            logging.error(
-                "Path you specified not found! Will continue to \
-            the next record..."
-            )
+            logging.error("Path you specified not found! Will continue to \
+            the next record...")
 
     write_file(records, input_paths[-1])
 

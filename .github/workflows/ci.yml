@@ -4,10 +4,10 @@ on: [push, pull_request]
 
 jobs:
   lint-shellcheck:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Runs shell script static analysis
         run: |
@@ -15,14 +15,14 @@ jobs:
           ./run-tests.sh --check-shellscript
   
   lint-black:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
 
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.8
+          python-version: "3.12"
 
       - name: Check Python code formatting
         run: |
@@ -30,15 +30,15 @@ jobs:
           ./run-tests.sh --check-black
 
   lint-pydocstyle:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Setup Python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.8
+          python-version: "3.12"
 
       - name: Check compliance with Python docstring conventions
         run: |
