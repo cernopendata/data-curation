@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import glob
 import json
 import os
 import sys
@@ -21,10 +22,7 @@ def get_file_checksum(afile):
     return checksum
 
 
-for AFIXTUREFILE in [
-    "test/atlas-hepmc-13tev-specialised-sm-z-boson.json",
-    "test/atlas-hepmc-13tev-summary.json",
-]:
+for AFIXTUREFILE in sorted(glob.glob("test/atlas-hepmc-*.json")):
 
     with open(AFIXTUREFILE, "r") as fdesc:
         records = json.loads(fdesc.read())
