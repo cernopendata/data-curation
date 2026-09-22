@@ -1,0 +1,6 @@
+"DSID","Event input for evgen (optional)","E_CoM [GeV]","Output events","Type (Evgen, FullSim, AF2, LHE, FCSv2, FastChain, ...)","Priority","Output formats","Evgen Release","Comments","Evgen tag","Evgen merge tag","Simul tag","Merge tag","Digi tag","Reco tag","Rec Merge tag","Deriv tag","Deriv merge tag","Rivet routines"
+"572415","mc23_13p6TeV.572415.aMCH7EG_DR_NNPDF31luxqed_A14_tttjp_NLO_dil.evgen.EVNT.e8577","13600.0","10000","HEPMC","3","HEPMC","23.6.45","EVNTtoHEPMC conversion"
+"572416","mc23_13p6TeV.572416.aMCH7EG_DR_NNPDF31luxqed_A14_tttjm_NLO_dil.evgen.EVNT.e8577","13600.0","10000","HEPMC","3","HEPMC","23.6.45","EVNTtoHEPMC conversion"
+"572417","mc23_13p6TeV.572417.aMCH7EG_DR_NNPDF31luxqed_A14_tttwp_NLO_dil.evgen.EVNT.e8577","13600.0","10000","HEPMC","3","HEPMC","23.6.45","EVNTtoHEPMC conversion"
+"572418","mc23_13p6TeV.572418.aMCH7EG_DR_NNPDF31luxqed_A14_tttwm_NLO_dil.evgen.EVNT.e8577","13600.0","10000","HEPMC","3","HEPMC","23.6.45","EVNTtoHEPMC conversion"
+"545868","mc23_13p6TeV.545868.MGaMCPy8EG_ggH_FxFx_SM_ZZ.evgen.EVNT.e8612","13600.0","10000","HEPMC","3","HEPMC","23.6.45","EVNTtoHEPMC conversion"
