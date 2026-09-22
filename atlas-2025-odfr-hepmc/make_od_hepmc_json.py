@@ -210,15 +210,15 @@ big_total_size13p6 = 0
 # Relationships for the files
 doirec_13 = get_recid_doi_pair('atlas-hepmc-13tev-summary')
 relation_13TeV = [ {'description':'For citing all the 13 TeV HEPMC data, and to find other related datasets, please see',
-                            'doi':doirec_13[0],
-                          'recid':doirec_13[1],
+                            'doi':doirec_13[1],
+                          'recid':doirec_13[0],
                           'title':'HEPMC format 13 TeV proton-proton Open Data from the ATLAS experiment',
                            'type':'isChildOf'
                              } ]
 doirec_13p6 = get_recid_doi_pair('atlas-hepmc-13p6tev-summary')
 relation_13p6TeV = [ {'description':'For citing all the 13.6 TeV HEPMC data, and to find other related datasets, please see',
-                              'doi':doirec_13p6[0],
-                            'recid':doirec_13p6[1],
+                              'doi':doirec_13p6[1],
+                            'recid':doirec_13p6[0],
                             'title':'HEPMC format 13.6 TeV proton-proton Open Data from the ATLAS experiment',
                              'type':'isChildOf'
                              } ]
