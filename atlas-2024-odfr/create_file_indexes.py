@@ -29,6 +29,7 @@ for AFIXTUREFILE in [
     "test/atlas-2024-mc-pp-jet-nominal.json",
     "test/atlas-2024-mc-pp-jet-syst.json",
     "test/atlas-2024-mc-pp-susy-nominal.json",
+    "test/atlas-2024-mc-pp-susy-ewgrid.json",
     "test/atlas-2024-mc-pp-top-nominal.json",
     "test/atlas-2024-mc-pp-top-syst.json",
     "test/atlas-2024-pp-2015-data.json",
